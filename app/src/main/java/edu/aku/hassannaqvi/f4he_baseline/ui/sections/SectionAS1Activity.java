@@ -67,7 +67,7 @@ public class SectionAS1Activity extends AppCompatActivity {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SF2, form.sF2toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SE3, form.sE3toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

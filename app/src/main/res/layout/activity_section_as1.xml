@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -12,12 +13,16 @@
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS1Activity" />
+
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
 
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
@@ -30,12 +35,15 @@
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/as1"
+            app:subtitle="@string/as1"
+            app:title="@string/atitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -43,39 +51,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- atitle  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVatitle"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/atitle" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- as1  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/as1" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- as1q01  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -100,10 +76,10 @@
                                 android:text="@string/Q_as1q01" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/as1q01" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -142,9 +118,13 @@
                                 android:checked="@{form.as1q01.equals(`4`)}"
                                 android:onClick="@{()->form.setAs1q01(`4`)}"
                                 android:text="@string/as1q01k" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- as1q02  Input   -->
                 <androidx.cardview.widget.CardView
@@ -169,10 +149,10 @@
                                 android:text="@string/Q_as1q02" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/as1q02" />
+
                         </LinearLayout>
 
                         <EditText
@@ -181,8 +161,11 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/as1q02"
                             android:text="@={form.as1q02}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- as1q03  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -207,10 +190,10 @@
                                 android:text="@string/Q_as1q03" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/as1q03" />
+
                         </LinearLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -221,11 +204,14 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.as1q03}"
-
+                            app:minValue="0"
                             app:maxValue="10"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- as1q04  Input   -->
                 <androidx.cardview.widget.CardView
@@ -250,10 +236,10 @@
                                 android:text="@string/Q_as1q04" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/as1q04" />
+
                         </LinearLayout>
 
                         <EditText
@@ -262,8 +248,11 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/as1q04"
                             android:text="@={form.as1q04}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- as1q05  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1394,10 +1383,10 @@
                                 android:text="@string/Q_as1q23a" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/as1q23a" />
+
                         </LinearLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -1406,12 +1395,15 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/as1q23a"
                             android:inputType="number"
-
-
                             android:text="@={form.as1q23a}"
+                            app:maxValue="99"
+                            app:minValue="0"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
@@ -1440,9 +1432,16 @@
                         android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
+
         </ScrollView>
+
 
     </LinearLayout>
 
