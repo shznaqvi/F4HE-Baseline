@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="">
+    package="edu.aku.hassannaqvi.f4he_baseline">
 
     <uses-sdk
         android:targetSdkVersion="22"
@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name="edu.aku.hassannaqvi.f4he_baseline.core.MainApp"
+        android:name=".core.MainApp"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_icon"
@@ -28,6 +28,11 @@
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
+
+        <activity
+            android:name=".ui.IdentificationActivity"
+            android:exported="true"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.LoginActivity"
             android:exported="true"
@@ -46,16 +51,6 @@
             android:hardwareAccelerated="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".ui.sections.SectionA1Activity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity
-            android:name=".ui.SyncActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
@@ -64,28 +59,15 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".ui.IdentificationActivity"
+            android:name=".ui.SyncActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
-            android:name=".database.AndroidDatabaseManager"
-            android:theme="@style/AppTheme" />
+            android:name="edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS1Activity"
+            android:exported="true" />
         <activity
-            android:name=".ui.lists.FormsReportCluster"
-            android:exported="false"
-            android:label="Forms Report"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ui.lists.FormsReportDate"
-            android:exported="false"
-            android:label="Forms Report"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ui.lists.FamilyMambersListActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:name="edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS2Activity"
+            android:exported="true" />
     </application>
 </manifest>

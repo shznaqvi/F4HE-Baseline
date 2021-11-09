@@ -116,4 +116,7 @@ dependencies {
     // Permissions Handeling
     implementation 'com.karumi:dexter:6.2.3'
 
+    // EditText Picker (Ali)
+    implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
+
 }
