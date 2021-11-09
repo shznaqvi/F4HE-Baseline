@@ -7417,6 +7417,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs3q2(String es3q2) {
         this.es3q2 = es3q2;
+        setEs3q296x(es3q2.equals("96") ? this.es3q296x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.es3q2);
     }
 
@@ -7437,6 +7438,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs3q3(String es3q3) {
         this.es3q3 = es3q3;
+        setEs3q396x(es3q3.equals("96") ? this.es3q396x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.es3q3);
     }
 
@@ -7476,6 +7478,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q501(String es3q501) {
+        if (this.es3q501.equals(es3q501)) return; // for all checkboxes
         this.es3q501 = es3q501;
         notifyPropertyChanged(BR.es3q501);
     }
@@ -7486,6 +7489,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q502(String es3q502) {
+        if (this.es3q502.equals(es3q502)) return; // for all checkboxes
         this.es3q502 = es3q502;
         notifyPropertyChanged(BR.es3q502);
     }
@@ -7496,6 +7500,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q503(String es3q503) {
+        if (this.es3q503.equals(es3q503)) return; // for all checkboxes
         this.es3q503 = es3q503;
         notifyPropertyChanged(BR.es3q503);
     }
@@ -7506,6 +7511,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q504(String es3q504) {
+        if (this.es3q504.equals(es3q504)) return; // for all checkboxes
         this.es3q504 = es3q504;
         notifyPropertyChanged(BR.es3q504);
     }
@@ -7516,6 +7522,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q505(String es3q505) {
+        if (this.es3q505.equals(es3q505)) return; // for all checkboxes
         this.es3q505 = es3q505;
         notifyPropertyChanged(BR.es3q505);
     }
@@ -7526,6 +7533,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q506(String es3q506) {
+        if (this.es3q506.equals(es3q506)) return; // for all checkboxes
         this.es3q506 = es3q506;
         notifyPropertyChanged(BR.es3q506);
     }
@@ -7536,6 +7544,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q507(String es3q507) {
+        if (this.es3q507.equals(es3q507)) return; // for all checkboxes
         this.es3q507 = es3q507;
         notifyPropertyChanged(BR.es3q507);
     }
@@ -7546,7 +7555,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q596(String es3q596) {
+        if (this.es3q596.equals(es3q596)) return; // for all checkboxes
         this.es3q596 = es3q596;
+        setEs3q596x(es3q596.equals("96") ? this.es3q596x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.es3q596);
     }
 
@@ -7606,6 +7617,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q901(String es3q901) {
+        if (this.es3q901.equals(es3q901)) return; // for all checkboxes
         this.es3q901 = es3q901;
         notifyPropertyChanged(BR.es3q901);
     }
@@ -7616,6 +7628,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q902(String es3q902) {
+        if (this.es3q902.equals(es3q902)) return; // for all checkboxes
         this.es3q902 = es3q902;
         notifyPropertyChanged(BR.es3q902);
     }
@@ -7626,6 +7639,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q903(String es3q903) {
+        if (this.es3q596.equals(es3q596)) return; // for all checkboxes
         this.es3q903 = es3q903;
         notifyPropertyChanged(BR.es3q903);
     }
@@ -7636,6 +7650,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q904(String es3q904) {
+        if (this.es3q904.equals(es3q904)) return; // for all checkboxes
         this.es3q904 = es3q904;
         notifyPropertyChanged(BR.es3q904);
     }
@@ -7646,6 +7661,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q905(String es3q905) {
+        if (this.es3q905.equals(es3q905)) return; // for all checkboxes
         this.es3q905 = es3q905;
         notifyPropertyChanged(BR.es3q905);
     }
@@ -7656,6 +7672,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q906(String es3q906) {
+        if (this.es3q906.equals(es3q906)) return; // for all checkboxes
         this.es3q906 = es3q906;
         notifyPropertyChanged(BR.es3q906);
     }
@@ -7666,6 +7683,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q907(String es3q907) {
+        if (this.es3q907.equals(es3q907)) return; // for all checkboxes
         this.es3q907 = es3q907;
         notifyPropertyChanged(BR.es3q907);
     }
@@ -7676,6 +7694,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q908(String es3q908) {
+        if (this.es3q908.equals(es3q908)) return; // for all checkboxes
         this.es3q908 = es3q908;
         notifyPropertyChanged(BR.es3q908);
     }
@@ -7686,7 +7705,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q996(String es3q996) {
+        if (this.es3q996.equals(es3q996)) return; // for all checkboxes
         this.es3q996 = es3q996;
+        setEs3q996x(es3q996.equals("96") ? this.es3q996x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.es3q996);
     }
 
@@ -7706,6 +7727,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q998(String es3q998) {
+        if (this.es3q998.equals(es3q998)) return; // for all checkboxes
         this.es3q998 = es3q998;
         notifyPropertyChanged(BR.es3q998);
     }
@@ -7726,6 +7748,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q1001(String es3q1001) {
+        if (this.es3q1001.equals(es3q1001)) return; // for all checkboxes
         this.es3q1001 = es3q1001;
         notifyPropertyChanged(BR.es3q1001);
     }
@@ -7736,6 +7759,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q1002(String es3q1002) {
+        if (this.es3q1002.equals(es3q1002)) return; // for all checkboxes
         this.es3q1002 = es3q1002;
         notifyPropertyChanged(BR.es3q1002);
     }
@@ -7746,6 +7770,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q1003(String es3q1003) {
+        if (this.es3q1003.equals(es3q1003)) return; // for all checkboxes
         this.es3q1003 = es3q1003;
         notifyPropertyChanged(BR.es3q1003);
     }
@@ -7756,6 +7781,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q1004(String es3q1004) {
+        if (this.es3q1004.equals(es3q1004)) return; // for all checkboxes
         this.es3q1004 = es3q1004;
         notifyPropertyChanged(BR.es3q1004);
     }
@@ -7766,6 +7792,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q1005(String es3q1005) {
+        if (this.es3q1005.equals(es3q1005)) return; // for all checkboxes
         this.es3q1005 = es3q1005;
         notifyPropertyChanged(BR.es3q1005);
     }
@@ -7776,6 +7803,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q1006(String es3q1006) {
+        if (this.es3q1006.equals(es3q1006)) return; // for all checkboxes
         this.es3q1006 = es3q1006;
         notifyPropertyChanged(BR.es3q1006);
     }
@@ -7785,7 +7813,8 @@ public class Form extends BaseObservable implements Observable {
         return es3q1007;
     }
 
-    public void setEs3q1007(String es3q1007) {
+    public void es3q1007(String es3q1007) {
+        if (this.es3q998.equals(es3q1007)) return; // for all checkboxes
         this.es3q1007 = es3q1007;
         notifyPropertyChanged(BR.es3q1007);
     }
@@ -7796,6 +7825,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q1008(String es3q1008) {
+        if (this.es3q1008.equals(es3q1008)) return; // for all checkboxes
         this.es3q1008 = es3q1008;
         notifyPropertyChanged(BR.es3q1008);
     }
@@ -7806,7 +7836,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q196(String es3q196) {
+        if (this.es3q196.equals(es3q196)) return; // for all checkboxes
         this.es3q196 = es3q196;
+        setEs3q196x(es3q196.equals("96") ? this.es3q196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.es3q196);
     }
 
@@ -7826,6 +7858,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setEs3q1098(String es3q1098) {
+        if (this.es3q1098.equals(es3q1098)) return; // for all checkboxes
         this.es3q1098 = es3q1098;
         notifyPropertyChanged(BR.es3q1098);
     }
@@ -7837,6 +7870,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs3q11(String es3q11) {
         this.es3q11 = es3q11;
+        setEs3q1106x(es3q11.equals("96") ? this.es3q1106x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.es3q11);
     }
 
