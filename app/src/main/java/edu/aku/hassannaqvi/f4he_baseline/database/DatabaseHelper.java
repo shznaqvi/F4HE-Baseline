@@ -1,12 +1,5 @@
 package edu.aku.hassannaqvi.f4he_baseline.database;
 
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.DATABASE_VERSION;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_ENUMBLOCKS;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_FAMILY_MEMBERS;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_FORMS;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_USERS;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_VERSIONAPP;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -51,18 +44,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, CreateTable.DATABASE_NAME, null, CreateTable.DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_CREATE_USERS);
-        db.execSQL(SQL_CREATE_ENUMBLOCKS);
+        db.execSQL(CreateTable.SQL_CREATE_USERS);
+        db.execSQL(CreateTable.SQL_CREATE_ENUMBLOCKS);
         //db.execSQL(SQL_CREATE_RANDOM);
-        db.execSQL(SQL_CREATE_FORMS);
+        db.execSQL(CreateTable.SQL_CREATE_FORMS);
         //db.execSQL(SQL_CREATE_FOODS_CONSUMPTION);
-        db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
-        db.execSQL(SQL_CREATE_VERSIONAPP);
+        db.execSQL(CreateTable.SQL_CREATE_FAMILY_MEMBERS);
+        db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
     }
 

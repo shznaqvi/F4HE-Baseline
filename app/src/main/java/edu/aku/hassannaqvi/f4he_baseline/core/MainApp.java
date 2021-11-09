@@ -14,9 +14,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.BuildConfig;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
-import edu.aku.hassannaqvi.f4he_baseline.models.FoodConsumption;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
-import edu.aku.hassannaqvi.f4he_baseline.models.RandomHH;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 
 
@@ -75,8 +73,8 @@ public class MainApp extends Application {
     public static boolean memberComplete;
     //public static int mwraCount;
     public static FamilyMembers mwra;
-    public static RandomHH currentHousehold;
-    public static List<FoodConsumption> foodConsumption;
+    /*public static RandomHH currentHousehold;
+    public static List<FoodConsumption> foodConsumption;*/
     public static int foodIndex;
     public static boolean hhheadSelected = false;
 

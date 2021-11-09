@@ -3,8 +3,8 @@ package edu.aku.hassannaqvi.f4he_baseline.core
 import android.content.Context
 import android.content.pm.PackageManager
 import android.provider.Settings
+import edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper
-import org.apache.commons.lang3.StringUtils
 import java.text.SimpleDateFormat
 import java.util.*
 
