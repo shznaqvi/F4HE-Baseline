@@ -34,8 +34,8 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:subtitle="@string/as1"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/atitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
@@ -52,8 +52,7 @@
                 android:orientation="vertical">
 
 
-
-                <!-- as1q01  Radio   -->
+                <!-- as1q01 CountrySpinner   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q01"
                     style="@style/cardView">
@@ -61,72 +60,71 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_as1q01" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_as1q01" />
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/as1q01" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/as1q01" />
-
-                        </LinearLayout>
-
-                        <RadioGroup
+                        <Spinner
                             android:id="@+id/as1q01"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <RadioButton
-                                android:id="@+id/as1q01p"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.as1q01.equals(`1`)}"
-                                android:onClick="@{()->form.setAs1q01(`1`)}"
-                                android:text="@string/as1q01p" />
-
-                            <RadioButton
-                                android:id="@+id/as1q01a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.as1q01.equals(`2`)}"
-                                android:onClick="@{()->form.setAs1q01(`2`)}"
-                                android:text="@string/as1q01a" />
-
-                            <RadioButton
-                                android:id="@+id/as1q01t"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.as1q01.equals(`3`)}"
-                                android:onClick="@{()->form.setAs1q01(`3`)}"
-                                android:text="@string/as1q01t" />
-
-                            <RadioButton
-                                android:id="@+id/as1q01k"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.as1q01.equals(`4`)}"
-                                android:onClick="@{()->form.setAs1q01(`4`)}"
-                                android:text="@string/as1q01k" />
-
-                        </RadioGroup>
+                            android:layout_height="match_parent"
+                            android:minHeight="56dp"
+                            android:prompt="@string/as1q01"
+                            android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q02  Input   -->
+                <!-- as1q02 CountrySpinner   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVas1q02"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_as1q02" />
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/as1q02" />
+
+                        <Spinner
+                            android:id="@+id/as1q02"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="56dp"
+                            android:prompt="@string/as1q02"
+                            android:spinnerMode="dropdown" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!--&lt;!&ndash; as1q02  Input   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q02"
                     style="@style/cardView">
@@ -164,19 +162,13 @@
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
                 <!-- as1q03  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q03"
                     style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -190,30 +182,30 @@
                                 android:text="@string/Q_as1q03" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
+                                android:gravity="center"
                                 android:text="@string/as1q03" />
 
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/as1q03"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:hint="#####"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:text="@={form.as1q03}"
+                                app:maxValue="99999"
+                                app:minValue="1"
+                                app:type="range" />
+
                         </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/as1q03"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/as1q03"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.as1q03}"
-                            app:minValue="0"
-                            app:maxValue="10"
-                            app:type="range" />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q04  Input   -->
+                <!-- as1q04 CountrySpinner   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q04"
                     style="@style/cardView">
@@ -221,7 +213,74 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_as1q04" />
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/as1q04" />
+
+                        <Spinner
+                            android:id="@+id/as1q04"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="56dp"
+                            android:prompt="@string/as1q04"
+                            android:spinnerMode="dropdown" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- as1q06 CountrySpinner   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVas1q06"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_as1q06" />
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/as1q06" />
+
+                        <Spinner
+                            android:id="@+id/as1q06"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="56dp"
+                            android:prompt="@string/as1q06"
+                            android:spinnerMode="dropdown" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- as1q04  Input   -->
+                <!--<androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVas1q04"
+                    style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -236,25 +295,24 @@
                                 android:text="@string/Q_as1q04" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
+                                android:gravity="center"
                                 android:text="@string/as1q04" />
 
+                            <EditText
+                                android:id="@+id/as1q04"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/as1q04"
+                                android:text="@={form.as1q04}" />
+
                         </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/as1q04"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/as1q04"
-                            android:text="@={form.as1q04}" />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q05  Input-Numeric   -->
+                &lt;!&ndash; as1q05  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q05"
                     style="@style/cardView">
@@ -277,10 +335,10 @@
                                 android:text="@string/Q_as1q05" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/as1q05" />
+
                         </LinearLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -291,8 +349,8 @@
                             android:inputType="number"
                             android:maxLength="1"
                             android:text="@={form.as1q05}"
-                            app:minValue="0"
                             app:maxValue="5"
+                            app:minValue="0"
                             app:type="range" />
 
                     </LinearLayout>
@@ -300,7 +358,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q06  Input   -->
+                &lt;!&ndash; as1q06  Input   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q06"
                     style="@style/cardView">
@@ -337,8 +395,9 @@
                             android:text="@={form.as1q06}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+                
 
-                <!-- as1q07  Input-Numeric   -->
+                &lt;!&ndash; as1q07  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q07"
                     style="@style/cardView">
@@ -379,7 +438,8 @@
                             app:maxValue="5"
                             app:type="range" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
+
 
                 <!-- as1q08  Input   -->
                 <androidx.cardview.widget.CardView
@@ -389,12 +449,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
+                        android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
                             <TextView
@@ -403,21 +458,29 @@
                                 android:layout_height="match_parent"
                                 android:text="@string/Q_as1q08" />
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/as1q08" />
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/as1q08" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/as1q08"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/as1q08"
-                            android:text="@={form.as1q08}" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:hint="#####"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:text="@={form.as1q08}"
+                            app:maxValue="99999"
+                            app:minValue="1"
+                            app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- as1q09  Input   -->
                 <androidx.cardview.widget.CardView
@@ -446,7 +509,9 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/as1q09" />
+
                         </LinearLayout>
+
 
                         <EditText
                             android:id="@+id/as1q09"
@@ -454,8 +519,11 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/as1q09"
                             android:text="@={form.as1q09}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- as1q10  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -745,16 +813,12 @@
                                 android:onClick="@{()->form.setAs1q10(`39`)}"
                                 android:text="@string/as1q1039" />
 
-                            <RadioButton
-                                android:id="@+id/as1q1040"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.as1q10.equals(`40`)}"
-                                android:onClick="@{()->form.setAs1q10(`40`)}"
-                                android:text="@string/as1q1040" />
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- as1q11  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
