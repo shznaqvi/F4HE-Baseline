@@ -49,7 +49,6 @@ import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EnumBlocksTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.RandomTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
@@ -163,7 +162,7 @@ public class SyncActivity extends AppCompatActivity {
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
 
                     downloadTables.add(new SyncModel(EnumBlocksTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(RandomTable.TABLE_NAME));
+//                    downloadTables.add(new SyncModel(RandomTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
                 } else {
                     // Set tables to DOWNLOAD
@@ -251,10 +250,10 @@ public class SyncActivity extends AppCompatActivity {
                                         jsonArray = new JSONArray(result);
                                         insertCount = db.syncClusters(jsonArray);
                                         break;
-                                    case RandomTable.TABLE_NAME:
+                                    /*case RandomTable.TABLE_NAME:
                                         jsonArray = new JSONArray(result);
                                         insertCount = db.syncRandom(jsonArray);
-                                        break;
+                                        break;*/
                                     case VersionTable.TABLE_NAME:
                                         insertCount = db.syncVersionApp(new JSONObject(result));
                                         if (insertCount == 1) jsonArray.put("1");
