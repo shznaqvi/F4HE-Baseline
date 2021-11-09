@@ -1820,6 +1820,7 @@ For adolescents less than 18 years of age, an assent will be taken from the resp
     <string name='Q_bs1resp'>bs1resp</string>
     <string name='Q_bs1respline'>bs1respline</string>
     <string name='Q_bs2q1'>bs2q1</string>
+    <string name='Q_bs2q2'>bs2q2</string>
     <string name='Q_bs2q3'>bs2q3</string>
     <string name='Q_bs2q4'>bs2q4</string>
     <string name='Q_bs2q5'>bs2q5</string>
