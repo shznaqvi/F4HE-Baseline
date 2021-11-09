@@ -90,13 +90,15 @@
                         </LinearLayout>
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/cs5q01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cs5q0101"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q01.equals(`1`)}"
                                 android:onClick="@{()->form.setCs5q01(`1`)}"
@@ -104,7 +106,8 @@
 
                             <RadioButton
                                 android:id="@+id/cs5q0102"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q01.equals(`2`)}"
                                 android:onClick="@{()->form.setCs5q01(`2`)}"
@@ -124,6 +127,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cs5inst1" />
@@ -160,13 +164,15 @@
                         </LinearLayout>
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/cs5q02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cs5q0201"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q02.equals(`1`)}"
                                 android:onClick="@{()->form.setCs5q02(`1`)}"
@@ -174,7 +180,8 @@
 
                             <RadioButton
                                 android:id="@+id/cs5q0202"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q02.equals(`2`)}"
                                 android:onClick="@{()->form.setCs5q02(`2`)}"
@@ -213,13 +220,15 @@
                         </LinearLayout>
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/cs5q03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cs5q0301"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q03.equals(`1`)}"
                                 android:onClick="@{()->form.setCs5q03(`1`)}"
@@ -227,7 +236,8 @@
 
                             <RadioButton
                                 android:id="@+id/cs5q0302"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q03.equals(`2`)}"
                                 android:onClick="@{()->form.setCs5q03(`2`)}"
@@ -266,13 +276,15 @@
                         </LinearLayout>
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/cs5q04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cs5q0401"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q04.equals(`1`)}"
                                 android:onClick="@{()->form.setCs5q04(`1`)}"
@@ -280,7 +292,8 @@
 
                             <RadioButton
                                 android:id="@+id/cs5q0402"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q04.equals(`2`)}"
                                 android:onClick="@{()->form.setCs5q04(`2`)}"
@@ -353,13 +366,15 @@
                         </LinearLayout>
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/cs5q05"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cs5q0501"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q05.equals(`1`)}"
                                 android:onClick="@{()->form.setCs5q05(`1`)}"
@@ -367,7 +382,8 @@
 
                             <RadioButton
                                 android:id="@+id/cs5q0502"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q05.equals(`2`)}"
                                 android:onClick="@{()->form.setCs5q05(`2`)}"
@@ -544,13 +560,15 @@
                         </LinearLayout>
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/cs5q07"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cs5q0701"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q07.equals(`1`)}"
                                 android:onClick="@{()->form.setCs5q07(`1`)}"
@@ -558,7 +576,8 @@
 
                             <RadioButton
                                 android:id="@+id/cs5q0702"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q07.equals(`2`)}"
                                 android:onClick="@{()->form.setCs5q07(`2`)}"
@@ -735,13 +754,15 @@
                         </LinearLayout>
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/cs5q09"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cs5q0901"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q09.equals(`1`)}"
                                 android:onClick="@{()->form.setCs5q09(`1`)}"
@@ -749,7 +770,8 @@
 
                             <RadioButton
                                 android:id="@+id/cs5q0902"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs5q09.equals(`2`)}"
                                 android:onClick="@{()->form.setCs5q09(`2`)}"
@@ -1321,6 +1343,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cs5q18inst" />
