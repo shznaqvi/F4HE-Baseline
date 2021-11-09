@@ -98,11 +98,14 @@
                             android:inputType="number"
                             android:maxLength="3"
                             android:text="@={form.hl1}"
-
+                            app:minValue="0"
                             app:maxValue="100"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- hl2  Input   -->
                 <androidx.cardview.widget.CardView
@@ -448,8 +451,11 @@
                             app:maxValue="2021"
                             app:minValue="2021"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- hl6  Title   -->
                 <androidx.cardview.widget.CardView
@@ -511,8 +517,11 @@
 
                             app:maxValue="100"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- hl7  Radio   -->
                 <androidx.cardview.widget.CardView

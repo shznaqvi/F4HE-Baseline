@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -12,12 +13,15 @@
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS4Activity" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
 
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
@@ -30,8 +34,10 @@
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:subtitle="@string/ctitle1"
             app:title="@string/cs4childdiscipline_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -43,22 +49,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- cs4  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcs4"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cs4" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- cs4q01  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -83,10 +74,10 @@
                                 android:text="@string/Q_cs4q01" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/cs4q01" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -112,9 +103,13 @@
                                 android:checked="@{form.cs4q01.equals(`2`)}"
                                 android:onClick="@{()->form.setCs4q01(`2`)}"
                                 android:text="@string/cs4q0102" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cs4q02t1  Title   -->
                 <androidx.cardview.widget.CardView
@@ -127,11 +122,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cs4q02t1" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cs4q02a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -787,7 +786,7 @@
                             <RadioButton
                                 android:id="@+id/cs4q0301"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
+                                android:layout_weight="2"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs4q03.equals(`1`)}"
                                 android:onClick="@{()->form.setCs4q03(`1`)}"
@@ -796,7 +795,7 @@
                             <RadioButton
                                 android:id="@+id/cs4q0302"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
+                                android:layout_weight="2"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs4q03.equals(`2`)}"
                                 android:onClick="@{()->form.setCs4q03(`2`)}"
@@ -805,14 +804,18 @@
                             <RadioButton
                                 android:id="@+id/cs4q0398"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
+                                android:layout_weight="3"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs4q03.equals(`98`)}"
                                 android:onClick="@{()->form.setCs4q03(`98`)}"
                                 android:text="@string/cs4q0398" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
@@ -841,8 +844,15 @@
                         android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
+
 </layout>

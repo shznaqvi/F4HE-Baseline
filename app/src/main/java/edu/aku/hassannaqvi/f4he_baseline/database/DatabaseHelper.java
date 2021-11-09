@@ -21,6 +21,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EnumBlocksTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMemberListTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormBTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable;
@@ -28,6 +29,7 @@ import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.models.EnumBlocks;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
+import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 import edu.aku.hassannaqvi.f4he_baseline.models.VersionApp;
 
@@ -53,6 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_ENUMBLOCKS);
         //db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
+        db.execSQL(CreateTable.SQL_CREATE_FORMB);
         //db.execSQL(SQL_CREATE_FOODS_CONSUMPTION);
         db.execSQL(CreateTable.SQL_CREATE_FAMILY_MEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
@@ -115,6 +118,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addFormB(FormB b) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(FormBTable.COLUMN_PROJECT_NAME, b.getProjectName());
+        values.put(FormBTable.COLUMN_UID, b.getUid());
+        values.put(FormBTable.COLUMN_UUID, b.getUuid());
+        values.put(FormBTable.COLUMN_ENUM_BLOCK, b.getEbCode());
+        values.put(FormBTable.COLUMN_HHID, b.getHhid());
+        values.put(FormBTable.COLUMN_SNO, b.getSno());
+        values.put(FormBTable.COLUMN_USERNAME, b.getUserName());
+        values.put(FormBTable.COLUMN_SYSDATE, b.getSysDate());
+        values.put(FormBTable.COLUMN_SB1, b.sB1toString());
+        values.put(FormBTable.COLUMN_SB2, b.sB2toString());
+        values.put(FormBTable.COLUMN_SB3, b.sB3toString());
+        values.put(FormBTable.COLUMN_SB41, b.sB41toString());
+        values.put(FormBTable.COLUMN_SB42, b.sB42toString());
+        values.put(FormBTable.COLUMN_SB5, b.sB5toString());
+        values.put(FormBTable.COLUMN_SB6, b.sB6toString());
+        values.put(FormBTable.COLUMN_SB7, b.sB7toString());
+        values.put(FormBTable.COLUMN_ISTATUS, b.getiStatus());
+        values.put(FormBTable.COLUMN_DEVICETAGID, b.getDeviceTag());
+        values.put(FormBTable.COLUMN_DEVICEID, b.getDeviceId());
+        values.put(FormBTable.COLUMN_APPVERSION, b.getAppver());
+
+        long newRowId;
+        newRowId = db.insert(
+                FormBTable.TABLE_NAME,
+                FormBTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
     //ADDITION in DB
     public Long addFamilyMembers(FamilyMembers members) throws JSONException {
 
@@ -161,6 +196,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.form.getId())};
 
         return db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesFormBColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = FormBTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.formB.getId())};
+
+        return db.update(FormBTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

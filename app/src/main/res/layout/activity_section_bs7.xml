@@ -133,12 +133,16 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/bs7q2line"
                             android:inputType="number"
-
-
+                            android:maxLength="3"
+                            app:maxValue="100"
+                            app:minValue="0"
                             android:text="@={form.bs7q2line}"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bs7q3  Radio   -->
                 <androidx.cardview.widget.CardView
