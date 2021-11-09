@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.models;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -8,7 +10,6 @@ import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
