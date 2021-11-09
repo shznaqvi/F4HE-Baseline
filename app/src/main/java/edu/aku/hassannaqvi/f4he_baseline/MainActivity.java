@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
-import edu.aku.hassannaqvi.f4he_baseline.database.AndroidDatabaseManager;
+import edu.aku.hassannaqvi.f4he_baseline.database.AndroidManager;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.ui.IdentificationActivity;
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionDS2Activity.class));
                 break;
             case R.id.dbManager:
-                startActivity(new Intent(this, AndroidDatabaseManager.class));
+                startActivity(new Intent(this, AndroidManager.class));
                 break;
 
 
