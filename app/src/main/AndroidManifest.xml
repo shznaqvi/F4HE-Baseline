@@ -214,7 +214,7 @@
         <activity
             android:name="edu.aku.hassannaqvi.f4he_baseline.database.AndroidManager"
             android:screenOrientation="portrait"
-            android:theme="@style/android:Theme.Holo.Light.DarkActionBar" />
+            android:theme="@style/style/android:Theme.Holo.Light.DarkActionBar" />
 
     </application>
 
