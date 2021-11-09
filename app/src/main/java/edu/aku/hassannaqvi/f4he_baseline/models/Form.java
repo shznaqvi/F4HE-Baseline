@@ -7822,7 +7822,7 @@ public class Form extends BaseObservable implements Observable {
         return es3q1007;
     }
 
-    public void es3q1007(String es3q1007) {
+    public void setEs3q1007(String es3q1007) {
         if (this.es3q998.equals(es3q1007)) return; // for all checkboxes
         this.es3q1007 = es3q1007;
         notifyPropertyChanged(BR.es3q1007);

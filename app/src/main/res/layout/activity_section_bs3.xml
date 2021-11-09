@@ -286,7 +286,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- bs3q2b  Title   -->
-                <androidx.cardview.widget.CardView
+               <!-- <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbs3q2b"
                     style="@style/cardView">
 
@@ -337,10 +337,10 @@
                             android:hint="@string/bs3q2b96"
                             android:text="@={form.bs3q2b96}" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
                 <!-- bs3q2c  Title   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbs3q2c"
                     style="@style/cardView">
 
@@ -391,10 +391,10 @@
                             android:hint="@string/bs3q2c96"
                             android:text="@={form.bs3q2c96}" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
                 <!-- bs3q2d  Title   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbs3q2d"
                     style="@style/cardView">
 
@@ -445,7 +445,7 @@
                             android:hint="@string/bs3q2d96"
                             android:text="@={form.bs3q2d96}" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
                 <!-- bs3q3  Radio   -->
                 <androidx.cardview.widget.CardView
