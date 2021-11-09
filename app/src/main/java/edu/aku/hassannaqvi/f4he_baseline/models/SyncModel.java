@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.models;
 
-import org.apache.commons.lang3.StringUtils;
+
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
 public class SyncModel {
     String tableName;
