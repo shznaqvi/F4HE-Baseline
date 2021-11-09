@@ -16,27 +16,25 @@ import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.SyncActivity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportCluster;
-import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportPending;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionA31Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionA32Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionB1Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionB2Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionC1Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionC2Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionD1Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionE1Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionF1Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionF2Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionF3Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionG1Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionG2Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionG3Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionG4Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionG5Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionG6Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionG7Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS2Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS2Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS3Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS4AActivity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS4BActivity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS5Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS6Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS7Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS2Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS3AActivity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS3BActivity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS4Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS5Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionDS1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionDS2Activity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -92,76 +90,76 @@ public class MainActivity extends AppCompatActivity {
                 break;*/
             case R.id.seca1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionA31Activity.class));
+                startActivity(new Intent(this, SectionAS1Activity.class));
                 break;
             case R.id.seca2:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionA32Activity.class));
+                startActivity(new Intent(this, SectionAS2Activity.class));
                 break;
 
             case R.id.seca3:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionB1Activity.class));
+                startActivity(new Intent(this, SectionBS1Activity.class));
                 break;
             case R.id.secb1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionB2Activity.class));
+                startActivity(new Intent(this, SectionBS2Activity.class));
                 break;
             case R.id.secc1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionC1Activity.class));
+                startActivity(new Intent(this, SectionBS3Activity.class));
                 break;
             case R.id.secc2:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionC2Activity.class));
+                startActivity(new Intent(this, SectionBS4AActivity.class));
                 break;
             case R.id.secd1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionD1Activity.class));
+                startActivity(new Intent(this, SectionBS4BActivity.class));
                 break;
             case R.id.sece1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionE1Activity.class));
+                startActivity(new Intent(this, SectionBS5Activity.class));
                 break;
             case R.id.secf1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionF1Activity.class));
+                startActivity(new Intent(this, SectionBS6Activity.class));
                 break;
             case R.id.secf2:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionF2Activity.class));
+                startActivity(new Intent(this, SectionBS7Activity.class));
                 break;
             case R.id.secf3:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionF3Activity.class));
+                startActivity(new Intent(this, SectionCS1Activity.class));
                 break;
             case R.id.secg1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionG1Activity.class));
+                startActivity(new Intent(this, SectionCS2Activity.class));
                 break;
             case R.id.secg2:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionG2Activity.class));
+                startActivity(new Intent(this, SectionCS3AActivity.class));
                 break;
             case R.id.secg3:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionG3Activity.class));
+                startActivity(new Intent(this, SectionCS3BActivity.class));
                 break;
             case R.id.secg4:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionG4Activity.class));
+                startActivity(new Intent(this, SectionCS4Activity.class));
                 break;
             case R.id.secg5:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionG5Activity.class));
+                startActivity(new Intent(this, SectionCS5Activity.class));
                 break;
             case R.id.secg6:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionG6Activity.class));
+                startActivity(new Intent(this, SectionDS1Activity.class));
                 break;
             case R.id.secg7:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionG7Activity.class));
+                startActivity(new Intent(this, SectionDS2Activity.class));
                 break;
             case R.id.dbManager:
                 startActivity(new Intent(this, AndroidDatabaseManager.class));
@@ -176,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = null;
         switch (item.getItemId()) {
             case R.id.action_database:
-                intent = new Intent(MainActivity.this, AndroidDatabaseManager.class);
+                //intent = new Intent(MainActivity.this, AndroidDatabaseManager.class);
                 startActivity(intent);
                 break;
             case R.id.onSync:
@@ -188,11 +186,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.formsReportDate:
-                intent = new Intent(MainActivity.this, FormsReportDate.class);
+                //intent = new Intent(MainActivity.this, FormsReportDate.class);
                 startActivity(intent);
                 break;
             case R.id.formsReportCluster:
-                intent = new Intent(MainActivity.this, FormsReportCluster.class);
+                //intent = new Intent(MainActivity.this, FormsReportCluster.class);
                 startActivity(intent);
                 break;
         }
