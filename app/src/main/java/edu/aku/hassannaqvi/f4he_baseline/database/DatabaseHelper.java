@@ -4,9 +4,7 @@ import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.DATABASE_NA
 import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.DATABASE_VERSION;
 import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_ENUMBLOCKS;
 import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_FAMILY_MEMBERS;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_FOODS_CONSUMPTION;
 import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_FORMS;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_RANDOM;
 import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.SQL_CREATE_VERSIONAPP;
 
@@ -30,17 +28,13 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EnumBlocksTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMemberListTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FoodConsumptionTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.RandomTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.models.EnumBlocks;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
-import edu.aku.hassannaqvi.f4he_baseline.models.FoodConsumption;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
-import edu.aku.hassannaqvi.f4he_baseline.models.RandomHH;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 import edu.aku.hassannaqvi.f4he_baseline.models.VersionApp;
 
@@ -64,9 +58,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_ENUMBLOCKS);
-        db.execSQL(SQL_CREATE_RANDOM);
+        //db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(SQL_CREATE_FORMS);
-        db.execSQL(SQL_CREATE_FOODS_CONSUMPTION);
+        //db.execSQL(SQL_CREATE_FOODS_CONSUMPTION);
         db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
         db.execSQL(SQL_CREATE_VERSIONAPP);
 
@@ -83,11 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //ADDITION in DB
     public Long addForm(Form form) throws JSONException {
-
-        // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
-
-// Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(FormsTable.COLUMN_UID, form.getUid());
@@ -97,24 +87,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SA1, form.sA1toString());
-/*        values.put(FormsTable.COLUMN_SA3, form.sA3toString());
+        values.put(FormsTable.COLUMN_SA2, form.sA2toString());
         values.put(FormsTable.COLUMN_SB1, form.sB1toString());
+        values.put(FormsTable.COLUMN_SB2, form.sB2toString());
+        values.put(FormsTable.COLUMN_SB3, form.sB3toString());
+        values.put(FormsTable.COLUMN_SB41, form.sB41toString());
+        values.put(FormsTable.COLUMN_SB42, form.sB42toString());
+        values.put(FormsTable.COLUMN_SB5, form.sB5toString());
+        values.put(FormsTable.COLUMN_SB6, form.sB6toString());
+        values.put(FormsTable.COLUMN_SB7, form.sB7toString());
+        values.put(FormsTable.COLUMN_SC1, form.sC1toString());
         values.put(FormsTable.COLUMN_SC2, form.sC2toString());
+        values.put(FormsTable.COLUMN_SC31, form.sC31toString());
+        values.put(FormsTable.COLUMN_SC32, form.sC32toString());
+        values.put(FormsTable.COLUMN_SC4, form.sC4toString());
+        values.put(FormsTable.COLUMN_SC5, form.sC5toString());
         values.put(FormsTable.COLUMN_SD1, form.sD1toString());
+        values.put(FormsTable.COLUMN_SD2, form.sD2toString());
+        values.put(FormsTable.COLUMN_SD3, form.sD3toString());
         values.put(FormsTable.COLUMN_SE1, form.sE1toString());
-        values.put(FormsTable.COLUMN_SF1, form.sF1toString());
-        values.put(FormsTable.COLUMN_SF2, form.sF2toString());
-        values.put(FormsTable.COLUMN_SF3, form.sF3toString());*/
-
-
+        values.put(FormsTable.COLUMN_SE2, form.sE2toString());
+        values.put(FormsTable.COLUMN_SE3, form.sE3toString());
+        values.put(FormsTable.COLUMN_SE4, form.sE4toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
-
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
 
-
-        // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
                 FormsTable.TABLE_NAME,
@@ -124,49 +123,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //ADDITION in DB
-    public Long addFoodConsumption(FoodConsumption foodConsumption) throws JSONException {
-
-        // Gets the data repository in write mode
-        SQLiteDatabase db = this.getWritableDatabase();
-
-// Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put(FoodConsumptionTable.COLUMN_PROJECT_NAME, foodConsumption.getProjectName());
-        values.put(FoodConsumptionTable.COLUMN_UID, foodConsumption.getUid());
-        values.put(FoodConsumptionTable.COLUMN_UUID, foodConsumption.getUuid());
-        values.put(FoodConsumptionTable.COLUMN_ENUM_BLOCK, foodConsumption.getEbCode());
-        values.put(FoodConsumptionTable.COLUMN_HHID, foodConsumption.getHhid());
-        values.put(FoodConsumptionTable.COLUMN_SNO, foodConsumption.getSno());
-        values.put(FoodConsumptionTable.COLUMN_USERNAME, foodConsumption.getUserName());
-        values.put(FoodConsumptionTable.COLUMN_SYSDATE, foodConsumption.getSysDate());
-
-        values.put(FoodConsumptionTable.COLUMN_SC1, foodConsumption.sC1toString());
-      
-/*        values.put(FoodConsumptionTable.COLUMN_SG1, foodConsumption.sG1toString());
-        values.put(FoodConsumptionTable.COLUMN_SG2, foodConsumption.sG2toString());
-        values.put(FoodConsumptionTable.COLUMN_SG3, foodConsumption.sG3toString());
-        values.put(FoodConsumptionTable.COLUMN_SG4, foodConsumption.sG4toString());
-        values.put(FoodConsumptionTable.COLUMN_SG5, foodConsumption.sG5toString());
-        values.put(FoodConsumptionTable.COLUMN_SG6, foodConsumption.sG6toString());
-        values.put(FoodConsumptionTable.COLUMN_SG7, foodConsumption.sG7toString());*/
-
-
-        values.put(FoodConsumptionTable.COLUMN_ISTATUS, foodConsumption.getiStatus());
-
-        values.put(FoodConsumptionTable.COLUMN_DEVICETAGID, foodConsumption.getDeviceTag());
-        values.put(FoodConsumptionTable.COLUMN_DEVICEID, foodConsumption.getDeviceId());
-        values.put(FoodConsumptionTable.COLUMN_APPVERSION, foodConsumption.getAppver());
-
-
-        // Insert the new row, returning the primary key value of the new row
-        long newRowId;
-        newRowId = db.insert(
-                FoodConsumptionTable.TABLE_NAME,
-                FoodConsumptionTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
     public Long addFamilyMembers(FamilyMembers members) throws JSONException {
 
         // Gets the data repository in write mode
@@ -217,20 +173,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesFoodConsumptionColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-
-        String selection = FoodConsumptionTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.foodConsumption.get(MainApp.foodIndex).getId())};
-
-        return db.update(FoodConsumptionTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
 
     public int updatesMemberColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -541,7 +483,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insertCount;
     }
 
-    public int syncRandom(JSONArray list) {
+    /*public int syncRandom(JSONArray list) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(RandomTable.TABLE_NAME, null, null);
         int insertCount = 0;
@@ -569,7 +511,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
         return insertCount;
-    }
+    }*/
 
 
     //get UnSyncedTables
@@ -693,7 +635,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public RandomHH checkHousehold(String cluster_no, String hh_no) {
+    /*public RandomHH checkHousehold(String cluster_no, String hh_no) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -729,7 +671,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return hh;
 
-    }
+    }*/
 
     public Form getFormByClusterHHNo(String enumblock, String hh_no) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -959,7 +901,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public RandomHH getHHbyEnumBlocks(String ebcode, String hhno) {
+    /*public RandomHH getHHbyEnumBlocks(String ebcode, String hhno) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1001,7 +943,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return randHH;
-    }
+    }*/
 
     public List<FamilyMembers> getMemberBYUID(String uid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1086,7 +1028,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return membersByUID;
     }
 
-    public List<FoodConsumption> getFoodConsumptionBYUID(String uid) throws JSONException {
+    /*public List<FoodConsumption> getFoodConsumptionBYUID(String uid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1124,7 +1066,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return foodConsumption;
-    }
+    }*/
 
     public int updatesfamilyListColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
