@@ -5637,6 +5637,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs2q05(String cs2q05) {
         this.cs2q05 = cs2q05;
+        setCs2q0596x(cs2q05.equals("96") ? this.cs2q0596x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.cs2q05);
     }
 
@@ -5657,6 +5658,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs2q06(String cs2q06) {
         this.cs2q06 = cs2q06;
+        setCs2q0696x(cs2q06.equals("96") ? this.cs2q0696x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.cs2q06);
     }
 
