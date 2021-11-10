@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.f4he_baseline.workers;
 
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;

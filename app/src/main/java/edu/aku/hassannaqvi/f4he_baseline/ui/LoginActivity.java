@@ -1,10 +1,5 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui;
 
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.URDU;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.sharedPref;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.DATABASE_COPY;
-import static edu.aku.hassannaqvi.f4he_baseline.database.CreateTable.DATABASE_NAME;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -57,6 +52,7 @@ import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.core.AppInfo;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
+import edu.aku.hassannaqvi.f4he_baseline.database.CreateTable;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
@@ -231,9 +227,9 @@ public class LoginActivity extends AppCompatActivity {
     public void dbBackup() {
 
 
-        if (sharedPref.getBoolean("flag", false)) {
+        if (MainApp.sharedPref.getBoolean("flag", false)) {
 
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+            String dt = MainApp.sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
             if (!dt.equals(new SimpleDateFormat("dd-MM-yy").format(new Date()))) {
                 MainApp.editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
@@ -248,7 +244,7 @@ public class LoginActivity extends AppCompatActivity {
             }
             if (success) {
 
-                DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
+                DirectoryName = folder.getPath() + File.separator + MainApp.sharedPref.getString("dt", "");
                 folder = new File(DirectoryName);
                 if (!folder.exists()) {
                     success = folder.mkdirs();
@@ -256,9 +252,9 @@ public class LoginActivity extends AppCompatActivity {
                 if (success) {
 
                     try {
-                        File dbFile = new File(this.getDatabasePath(DATABASE_NAME).getPath());
+                        File dbFile = new File(this.getDatabasePath(CreateTable.DATABASE_NAME).getPath());
                         FileInputStream fis = new FileInputStream(dbFile);
-                        String outFileName = DirectoryName + File.separator + DATABASE_COPY;
+                        String outFileName = DirectoryName + File.separator + CreateTable.DATABASE_COPY;
                         // Open the empty db as the output stream
                         OutputStream output = new FileOutputStream(outFileName);
 
@@ -414,7 +410,7 @@ public class LoginActivity extends AppCompatActivity {
     private void changeLanguage(int countryCode) {
         String lang;
         String country;
-        if (countryCode == URDU) {
+        if (countryCode == MainApp.URDU) {
             lang = "ur";
             country = "PK";
             MainApp.editor
@@ -438,7 +434,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void settingCountryCode() {
 
-        bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
+        bi.countrySwitch.setChecked(MainApp.sharedPref.getString("lang", "1").equals("1"));
 
         bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -458,12 +454,12 @@ public class LoginActivity extends AppCompatActivity {
      * Setting country code in Shared Preference
      * */
     private void initializingCountry() {
-        countryCode = Integer.parseInt(sharedPref.getString("lang", "0"));
+        countryCode = Integer.parseInt(MainApp.sharedPref.getString("lang", "0"));
         if (countryCode == 0) {
             MainApp.editor.putString("lang", "1").apply();
         }
 
-        changeLanguage(Integer.parseInt(sharedPref.getString("lang", "0")));
+        changeLanguage(Integer.parseInt(MainApp.sharedPref.getString("lang", "0")));
     }
 
 /*    public void TakePhoto(View view) {
