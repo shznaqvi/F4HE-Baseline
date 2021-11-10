@@ -8393,6 +8393,14 @@ public class Form extends BaseObservable implements Observable {
     public void setEs4q197(String es4q197) {
         if (this.es4q197.equals(es4q197)) return; // for all checkboxes
         this.es4q197 = es4q197;
+        setEs4q101(es4q197.equals("97") ? "" : this.es4q101);
+        setEs4q102(es4q197.equals("97") ? "" : this.es4q102);
+        setEs4q103(es4q197.equals("97") ? "" : this.es4q103);
+        setEs4q104(es4q197.equals("97") ? "" : this.es4q104);
+        setEs4q105(es4q197.equals("97") ? "" : this.es4q105);
+        setEs4q106(es4q197.equals("97") ? "" : this.es4q106);
+        setEs4q196(es4q197.equals("97") ? "" : this.es4q196);
+        setEs4q198(es4q197.equals("97") ? "" : this.es4q198);
         notifyPropertyChanged(BR.es4q197);
     }
 
@@ -8404,6 +8412,14 @@ public class Form extends BaseObservable implements Observable {
     public void setEs4q198(String es4q198) {
         if (this.es4q198.equals(es4q198)) return; // for all checkboxes
         this.es4q198 = es4q198;
+        setEs4q101(es4q198.equals("98") ? "" : this.es4q101);
+        setEs4q102(es4q198.equals("98") ? "" : this.es4q102);
+        setEs4q103(es4q198.equals("98") ? "" : this.es4q103);
+        setEs4q104(es4q198.equals("98") ? "" : this.es4q104);
+        setEs4q105(es4q198.equals("98") ? "" : this.es4q105);
+        setEs4q106(es4q198.equals("98") ? "" : this.es4q106);
+        setEs4q196(es4q198.equals("98") ? "" : this.es4q196);
+        setEs4q197(es4q198.equals("98") ? "" : this.es4q197);
         notifyPropertyChanged(BR.es4q198);
     }
 
@@ -8534,6 +8550,14 @@ public class Form extends BaseObservable implements Observable {
     public void setEs4q398(String es4q398) {
         if (this.es4q398.equals(es4q398)) return; // for all checkboxes
         this.es4q398 = es4q398;
+        setEs4q301(es4q398.equals("98") ? "" : this.es4q301);
+        setEs4q302(es4q398.equals("98") ? "" : this.es4q302);
+        setEs4q303(es4q398.equals("98") ? "" : this.es4q303);
+        setEs4q304(es4q398.equals("98") ? "" : this.es4q304);
+        setEs4q305(es4q398.equals("98") ? "" : this.es4q305);
+        setEs4q306(es4q398.equals("98") ? "" : this.es4q306);
+        setEs4q307(es4q398.equals("98") ? "" : this.es4q307);
+        setEs4q396(es4q398.equals("98") ? "" : this.es4q396);
         notifyPropertyChanged(BR.es4q398);
     }
 
@@ -8621,6 +8645,11 @@ public class Form extends BaseObservable implements Observable {
     public void setEs4q498(String es4q498) {
         if (this.es4q498.equals(es4q498)) return; // for all checkboxes
         this.es4q498 = es4q498;
+        setEs4q401(es4q498.equals("98") ? "" : this.es4q401);
+        setEs4q402(es4q498.equals("98") ? "" : this.es4q402);
+        setEs4q403(es4q498.equals("98") ? "" : this.es4q403);
+        setEs4q404(es4q498.equals("98") ? "" : this.es4q404);
+        setEs4q496(es4q498.equals("98") ? "" : this.es4q496);
         notifyPropertyChanged(BR.es4q498);
     }
 
@@ -8763,6 +8792,16 @@ public class Form extends BaseObservable implements Observable {
     public void setEs4q598(String es4q598) {
         if (this.es4q598.equals(es4q598)) return; // for all checkboxes
         this.es4q598 = es4q598;
+        setEs4q501(es4q598.equals("98") ? "" : this.es4q501);
+        setEs4q502(es4q598.equals("98") ? "" : this.es4q502);
+        setEs4q503(es4q598.equals("98") ? "" : this.es4q503);
+        setEs4q504(es4q598.equals("98") ? "" : this.es4q504);
+        setEs4q505(es4q598.equals("98") ? "" : this.es4q505);
+        setEs4q506(es4q598.equals("98") ? "" : this.es4q506);
+        setEs4q507(es4q598.equals("98") ? "" : this.es4q507);
+        setEs4q508(es4q598.equals("98") ? "" : this.es4q508);
+        setEs4q506(es4q598.equals("98") ? "" : this.es4q506);
+        setEs4q596(es4q598.equals("98") ? "" : this.es4q596);
         notifyPropertyChanged(BR.es4q598);
     }
 
@@ -8861,6 +8900,12 @@ public class Form extends BaseObservable implements Observable {
     public void setEs4q698(String es4q698) {
         if (this.es4q698.equals(es4q698)) return; // for all checkboxes
         this.es4q698 = es4q698;
+        setEs4q601(es4q698.equals("98") ? "" : this.es4q601);
+        setEs4q602(es4q698.equals("98") ? "" : this.es4q602);
+        setEs4q603(es4q698.equals("98") ? "" : this.es4q603);
+        setEs4q604(es4q698.equals("98") ? "" : this.es4q604);
+        setEs4q605(es4q698.equals("98") ? "" : this.es4q605);
+        setEs4q696(es4q698.equals("98") ? "" : this.es4q696);
         notifyPropertyChanged(BR.es4q698);
     }
 
@@ -9090,6 +9135,25 @@ public class Form extends BaseObservable implements Observable {
     public void setEs4q866(String es4q866) {
         if (this.es4q866.equals(es4q866)) return; // for all checkboxes
         this.es4q866 = es4q866;
+        setEs4q801(es4q866.equals("66") ? "" : this.es4q801);
+        setEs4q802(es4q866.equals("66") ? "" : this.es4q802);
+        setEs4q803(es4q866.equals("66") ? "" : this.es4q803);
+        setEs4q804(es4q866.equals("66") ? "" : this.es4q804);
+        setEs4q805(es4q866.equals("66") ? "" : this.es4q805);
+        setEs4q806(es4q866.equals("66") ? "" : this.es4q806);
+        setEs4q807(es4q866.equals("66") ? "" : this.es4q807);
+        setEs4q808(es4q866.equals("66") ? "" : this.es4q808);
+        setEs4q809(es4q866.equals("66") ? "" : this.es4q809);
+        setEs4q8010(es4q866.equals("66") ? "" : this.es4q8010);
+        setEs4q8011(es4q866.equals("66") ? "" : this.es4q8011);
+        setEs4q8012(es4q866.equals("66") ? "" : this.es4q8012);
+        setEs4q8013(es4q866.equals("66") ? "" : this.es4q8013);
+        setEs4q8014(es4q866.equals("66") ? "" : this.es4q8014);
+        setEs4q8015(es4q866.equals("66") ? "" : this.es4q8015);
+        setEs4q8016(es4q866.equals("66") ? "" : this.es4q8016);
+        setEs4q8017(es4q866.equals("66") ? "" : this.es4q8017);
+        setEs4q8018(es4q866.equals("66") ? "" : this.es4q8018);
+        setEs4q896(es4q866.equals("66") ? "" : this.es4q896);
         notifyPropertyChanged(BR.es4q866);
     }
 
