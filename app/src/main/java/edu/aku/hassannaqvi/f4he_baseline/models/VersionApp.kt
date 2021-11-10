@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.f4he_baseline.models
 
 import android.database.Cursor
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable
+import edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_
 import org.json.JSONException
 import org.json.JSONObject
 

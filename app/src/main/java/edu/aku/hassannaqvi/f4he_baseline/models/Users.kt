@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.f4he_baseline.models
 
 import android.database.Cursor
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable
-import edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -11,9 +10,9 @@ import org.json.JSONObject
  */
 class Users {
     var userID: Long = 0
-    var userName: String = _EMPTY_
-    var password: String = _EMPTY_
-    var fullname: String = _EMPTY_
+    var userName: String = ""
+    var password: String = ""
+    var fullname: String = ""
 
     constructor() {
         // Default Constructor

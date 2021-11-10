@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.f4he_baseline.core
 import android.content.Context
 import android.content.pm.PackageManager
 import android.provider.Settings
-import edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper
 import java.text.SimpleDateFormat
 import java.util.*
@@ -13,12 +12,12 @@ import java.util.*
  * @update Ali Azaz Alam dt. 12.16.20
  * */
 class AppInfo {
-    var versionName: String = _EMPTY_
+    var versionName: String = ""
     var installedOn: Long = 0
     var versionCode = 0
     var tagName: String? = null
-    var deviceID: String = _EMPTY_
-    var appVersion: String = _EMPTY_
+    var deviceID: String = ""
+    var appVersion: String = ""
     val dtToday: String
         get() = SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(Date().time)
     val isTestingApp: Boolean

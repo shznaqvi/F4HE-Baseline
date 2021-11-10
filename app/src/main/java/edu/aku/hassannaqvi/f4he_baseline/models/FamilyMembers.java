@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.models;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -80,8 +81,8 @@ public class FamilyMembers extends BaseObservable {
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setAppver(MainApp.appInfo.getAppVersion());
-        setEbCode(MainApp.currentHousehold.getEbcode());
-        setHhid(MainApp.currentHousehold.getHhno());
+        /*setEbCode(MainApp.currentHousehold.getEbcode());
+        setHhid(MainApp.currentHousehold.getHhno());*/
 
     }
 

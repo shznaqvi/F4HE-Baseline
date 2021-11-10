@@ -32,7 +32,6 @@ public class FormsReportPending extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_forms_report);
-        bi.setPendingReport(this);
         setSupportActionBar(bi.toolbar);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
