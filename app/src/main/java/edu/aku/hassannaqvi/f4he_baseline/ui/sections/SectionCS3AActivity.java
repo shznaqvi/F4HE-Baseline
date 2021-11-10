@@ -31,7 +31,6 @@ public class SectionCS3AActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs3a);
-        bi.setCallback(this);
         bi.setForm(form);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;

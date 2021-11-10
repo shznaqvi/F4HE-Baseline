@@ -31,7 +31,6 @@ public class SectionBS5Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs5);
-        bi.setCallback(this);
         bi.setForm(form);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;

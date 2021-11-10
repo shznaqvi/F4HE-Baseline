@@ -11,10 +11,6 @@
             name="form"
             type="edu.aku.hassannaqvi.tas.models.Form" />-->
 
-        <variable
-            name="callback"
-            type="edu.aku.hassannaqvi.f4he_baseline.ui.IdentificationActivity" />
-
     </data>
 
     <LinearLayout

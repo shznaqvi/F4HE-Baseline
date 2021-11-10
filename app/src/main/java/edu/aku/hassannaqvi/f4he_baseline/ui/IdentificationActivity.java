@@ -29,8 +29,7 @@ import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityIdentificationBinding;
 import edu.aku.hassannaqvi.f4he_baseline.models.EnumBlocks;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
-import edu.aku.hassannaqvi.f4he_baseline.models.RandomHH;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionA1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS1Activity;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -49,7 +48,6 @@ public class IdentificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
-        bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         // populateSpinner();
 
@@ -58,7 +56,7 @@ public class IdentificationActivity extends AppCompatActivity {
             case 1:
                 bi.btnContinue.setText(R.string.open_hh_form);
                 MainApp.form = new Form();
-                openIntent = new Intent(this, SectionA1Activity.class);
+                openIntent = new Intent(this, SectionAS1Activity.class);
                 break;
          /*   case 2:
                 bi.btnContinue.setText(R.string.open_anhtro_form);
@@ -219,11 +217,11 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form.setDeviceId(MainApp.deviceid);
         MainApp.form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.form.setA105(bi.a105.getText().toString());
+        /*MainApp.form.setA105(bi.a105.getText().toString());
         MainApp.form.setA107(bi.a107.getText().toString());
         MainApp.form.setA108(bi.a108.getText().toString());
         MainApp.form.setA110(bi.a110.getText().toString());
-        MainApp.form.setSno(MainApp.currentHousehold.getSno());
+        MainApp.form.setSno(MainApp.currentHousehold.getSno());*/
 
 
     }
@@ -259,7 +257,7 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     public void checkHousehold(View view) {
-        RandomHH testRand = new RandomHH();
+        /*RandomHH testRand = new RandomHH();
         testRand.setSno("1");
         testRand.setEbcode("909090909");
         testRand.setHeadhh("Test Head");
@@ -282,7 +280,7 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.ahhead.setError("Not Found!");
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
             bi.btnContinue.setEnabled(false);
-        }
+        }*/
         /*ArrayList<String> households = new ArrayList<String>();
         for (RandomHH r : randHH) {
             households.add(r.getHhno());

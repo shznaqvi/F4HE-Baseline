@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -9,15 +10,14 @@
             name="form"
             type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
 
-        <variable
-            name="callback"
-            type="edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS4AActivity" />
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
 
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
@@ -31,17 +31,21 @@
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/bs4ainformationonnoncommunicablediseasesbreastcancer_mainheading"
+            app:subtitle="@string/bs4atitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- bs4atitle  Title   -->
                 <androidx.cardview.widget.CardView
@@ -54,11 +58,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/bs4atitle" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bs4aq1  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -83,35 +91,42 @@
                                 android:text="@string/Q_bs4aq1" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/bs4aq1" />
+
                         </LinearLayout>
 
                         <RadioGroup
                             android:id="@+id/bs4aq1"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/bs4aq101"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.bs4aq1.equals(`1`)}"
                                 android:onClick="@{()->form.setBs4aq1(`1`)}"
                                 android:text="@string/bs4aq101" />
 
                             <RadioButton
                                 android:id="@+id/bs4aq102"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.bs4aq1.equals(`2`)}"
                                 android:onClick="@{()->form.setBs4aq1(`2`)}"
                                 android:text="@string/bs4aq102" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bs4aq2  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -140,6 +155,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/bs4aq2" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -153,6 +169,7 @@
                                 android:id="@+id/bs4aq201"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq201.equals(`1`)}"
                                 android:onClick="@{()->form.setBs4aq201(form.bs4aq201.equals(`1`)?``:`1`)}"
                                 android:text="@string/bs4aq201" />
@@ -161,6 +178,7 @@
                                 android:id="@+id/bs4aq202"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq202.equals(`2`)}"
                                 android:onClick="@{()->form.setBs4aq202(form.bs4aq202.equals(`2`)?``:`2`)}"
                                 android:text="@string/bs4aq202" />
@@ -169,6 +187,7 @@
                                 android:id="@+id/bs4aq203"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq203.equals(`3`)}"
                                 android:onClick="@{()->form.setBs4aq203(form.bs4aq203.equals(`3`)?``:`3`)}"
                                 android:text="@string/bs4aq203" />
@@ -177,6 +196,7 @@
                                 android:id="@+id/bs4aq204"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq204.equals(`4`)}"
                                 android:onClick="@{()->form.setBs4aq204(form.bs4aq204.equals(`4`)?``:`4`)}"
                                 android:text="@string/bs4aq204" />
@@ -185,6 +205,7 @@
                                 android:id="@+id/bs4aq205"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq205.equals(`5`)}"
                                 android:onClick="@{()->form.setBs4aq205(form.bs4aq205.equals(`5`)?``:`5`)}"
                                 android:text="@string/bs4aq205" />
@@ -193,6 +214,7 @@
                                 android:id="@+id/bs4aq206"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq206.equals(`6`)}"
                                 android:onClick="@{()->form.setBs4aq206(form.bs4aq206.equals(`6`)?``:`6`)}"
                                 android:text="@string/bs4aq206" />
@@ -201,6 +223,7 @@
                                 android:id="@+id/bs4aq207"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq207.equals(`7`)}"
                                 android:onClick="@{()->form.setBs4aq207(form.bs4aq207.equals(`7`)?``:`7`)}"
                                 android:text="@string/bs4aq207" />
@@ -209,6 +232,7 @@
                                 android:id="@+id/bs4aq208"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq208.equals(`8`)}"
                                 android:onClick="@{()->form.setBs4aq208(form.bs4aq208.equals(`8`)?``:`8`)}"
                                 android:text="@string/bs4aq208" />
@@ -225,6 +249,7 @@
                                 android:id="@+id/bs4aq296"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.bs4aq298.equals(`98`)}"
                                 android:checked="@{form.bs4aq296.equals(`96`)}"
                                 android:onClick="@{()->form.setBs4aq296(form.bs4aq296.equals(`96`)?``:`96`)}"
                                 android:text="@string/bs4aq296" />
@@ -237,10 +262,14 @@
                                 android:hint="@string/bs4aq296"
                                 android:tag="bs4aq296"
                                 android:text="@={form.bs4aq296x}"
-                                android:visibility='@{bs4aq296.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.bs4aq296.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bs4aq3  Radio   -->
                 <androidx.cardview.widget.CardView

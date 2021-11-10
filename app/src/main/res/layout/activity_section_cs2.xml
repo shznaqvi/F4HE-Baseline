@@ -9,10 +9,9 @@
             name="form"
             type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
 
-        <variable
-            name="callback"
-            type="edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS2Activity" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -9,10 +9,6 @@
             name="form"
             type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
 
-        <variable
-            name="callback"
-            type="edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS1Activity" />
-
     </data>
 
 

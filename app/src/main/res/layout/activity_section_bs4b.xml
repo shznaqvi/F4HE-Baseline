@@ -9,15 +9,14 @@
             name="form"
             type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
 
-        <variable
-            name="callback"
-            type="edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS4BActivity" />
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
 
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
@@ -33,15 +32,18 @@
             app:title="@string/bs4binformationonnoncommunicablediseasescervicalcancer_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- bs4bq1  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -70,6 +72,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/bs4bq1" />
+
                         </LinearLayout>
 
                         <RadioGroup
