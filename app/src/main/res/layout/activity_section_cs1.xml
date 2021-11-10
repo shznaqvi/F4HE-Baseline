@@ -163,10 +163,10 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q0102"
                             android:inputType="number"
-                            android:maxLength="3"
                             android:text="@={form.cs1q0102}"
-
-                            app:maxValue="100"
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -244,8 +244,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c1"
                             android:inputType="number"
-
-
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             android:text="@={form.cs1q02c1}"
                             app:type="range" />
                     </LinearLayout>
@@ -427,8 +428,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c2"
                             android:inputType="number"
-
-
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             android:text="@={form.cs1q02c2}"
                             app:type="range" />
                     </LinearLayout>
@@ -469,8 +471,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c2n"
                             android:inputType="number"
-
-
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             android:text="@={form.cs1q02c2n}"
                             app:type="range" />
                     </LinearLayout>
@@ -614,8 +617,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c3"
                             android:inputType="number"
-
-
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             android:text="@={form.cs1q02c3}"
                             app:type="range" />
                     </LinearLayout>
@@ -656,8 +660,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c3n"
                             android:inputType="number"
-
-
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             android:text="@={form.cs1q02c3n}"
                             app:type="range" />
                     </LinearLayout>
@@ -801,8 +806,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c4"
                             android:inputType="number"
-
-
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             android:text="@={form.cs1q02c4}"
                             app:type="range" />
                     </LinearLayout>
@@ -984,8 +990,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c5"
                             android:inputType="number"
-
-
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             android:text="@={form.cs1q02c5}"
                             app:type="range" />
                     </LinearLayout>
@@ -1026,8 +1033,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c5n"
                             android:inputType="number"
-
-
+                            android:maxLength="2"
+                            app:maxValue="99"
+                            app:minValue="0"
                             android:text="@={form.cs1q02c5n}"
                             app:type="range" />
                     </LinearLayout>
