@@ -2,14 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
 
-        <variable
-            name="callback"
-            type="edu.aku.hassannaqvi.f4he_baseline.MainActivity" />
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"

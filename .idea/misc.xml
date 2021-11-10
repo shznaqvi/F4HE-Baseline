@@ -8,11 +8,17 @@
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_main.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_sync.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/preg_row.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_camera.xml" value="0.38515625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_ending.xml" value="0.38515625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_family_list.xml" value="0.38515625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_forms_report.xml" value="0.38515625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_identification.xml" value="0.7757009345794392" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_login.xml" value="0.38515625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_main.xml" value="0.38515625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.2239273410585656" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.22684010152284265" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1.xml" value="0.6" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs2.xml" value="0.19132994380519133" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs2.xml" value="0.536" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs3.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs4a.xml" value="0.325591985428051" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs4b.xml" value="0.3411764705882353" />
@@ -32,10 +38,15 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es2.xml" value="0.38515625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es3.xml" value="0.2734375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es4.xml" value="0.23145539906103285" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_sync.xml" value="0.38515625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/famlily_member_row.xml" value="0.38515625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/pendingform_layout.xml" value="0.38515625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/preg_row.xml" value="0.38515625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/sync_list_adapter.xml" value="0.38515625" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

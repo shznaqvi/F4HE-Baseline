@@ -904,7 +904,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public EnumBlocks getEnumBlocks(String ebCode) {
+    /*public EnumBlocks getEnumBlocks(String ebCode) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -942,7 +942,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return e;
 
-    }
+    }*/
 
     /*public RandomHH getHHbyEnumBlocks(String ebcode, String hhno) {
         SQLiteDatabase db = this.getReadableDatabase();
