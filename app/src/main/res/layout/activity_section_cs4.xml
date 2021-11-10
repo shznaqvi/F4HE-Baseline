@@ -184,9 +184,13 @@
                                 android:checked="@{form.cs4q02a.equals(`2`)}"
                                 android:onClick="@{()->form.setCs4q02a(`2`)}"
                                 android:text="@string/cs4q02a02" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cs4q02b  Radio   -->
                 <androidx.cardview.widget.CardView
