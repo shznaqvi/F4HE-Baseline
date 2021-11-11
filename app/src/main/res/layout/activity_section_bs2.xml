@@ -850,7 +850,7 @@
                                 android:hint="@string/bs2q6010"
                                 android:tag="bs2q6010"
                                 android:text="@={form.bs2q6010x}"
-                                android:visibility='@{bs2q6010.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.bs2q6010.equals(`10`) ? View.VISIBLE : View.GONE}" />
 
                             <TextView
                                 style="@style/textView"
