@@ -1657,6 +1657,51 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs1con(String bs1con) {
         this.bs1con = bs1con;
+        setBs1q1(bs1con.equals("2") ? "" : this.bs1q1);
+        setBs1q2(bs1con.equals("2") ? "" : this.bs1q2);
+        setBs1q3(bs1con.equals("2") ? "" : this.bs1q3);
+        setBs1q4(bs1con.equals("2") ? "" : this.bs1q4);
+        setBs1q5(bs1con.equals("2") ? "" : this.bs1q5);
+        setBs1q6(bs1con.equals("2") ? "" : this.bs1q6);
+        setBs1q7p1d(bs1con.equals("2") ? "" : this.bs1q7p1d);
+        setBs1q7p1g(bs1con.equals("2") ? "" : this.bs1q7p1g);
+        setBs1q7p1b(bs1con.equals("2") ? "" : this.bs1q7p1b);
+        setBs1q7p2d(bs1con.equals("2") ? "" : this.bs1q7p2d);
+        setBs1q7p2g(bs1con.equals("2") ? "" : this.bs1q7p2g);
+        setBs1q7p2b(bs1con.equals("2") ? "" : this.bs1q7p2b);
+        setBs1q7p3d(bs1con.equals("2") ? "" : this.bs1q7p3d);
+        setBs1q7p3g(bs1con.equals("2") ? "" : this.bs1q7p3g);
+        setBs1q7p3b(bs1con.equals("2") ? "" : this.bs1q7p3b);
+        setBs1q7p4d(bs1con.equals("2") ? "" : this.bs1q7p4d);
+        setBs1q7p4g(bs1con.equals("2") ? "" : this.bs1q7p4g);
+        setBs1q7p4b(bs1con.equals("2") ? "" : this.bs1q7p4b);
+        setBs1q7p5d(bs1con.equals("2") ? "" : this.bs1q7p5d);
+        setBs1q7p5g(bs1con.equals("2") ? "" : this.bs1q7p5g);
+        setBs1q7p5b(bs1con.equals("2") ? "" : this.bs1q7p5b);
+        setBs1q08(bs1con.equals("2") ? "" : this.bs1q08);
+        setBs1q0901(bs1con.equals("2") ? "" : this.bs1q0901);
+        setBs1q0902(bs1con.equals("2") ? "" : this.bs1q0902);
+        setBs1q0903(bs1con.equals("2") ? "" : this.bs1q0903);
+        setBs1q0904(bs1con.equals("2") ? "" : this.bs1q0904);
+        setBs1q0905(bs1con.equals("2") ? "" : this.bs1q0905);
+        setBs1q0906(bs1con.equals("2") ? "" : this.bs1q0906);
+        setBs1q0907(bs1con.equals("2") ? "" : this.bs1q0907);
+        setBs1q0908(bs1con.equals("2") ? "" : this.bs1q0908);
+        setBs1q09t296(bs1con.equals("2") ? "" : this.bs1q09t296);
+        setBs1q1001(bs1con.equals("2") ? "" : this.bs1q1001);
+        setBs1q1002(bs1con.equals("2") ? "" : this.bs1q1002);
+        setBs1q1098(bs1con.equals("2") ? "" : this.bs1q1098);
+        setBs1q11(bs1con.equals("2") ? "" : this.bs1q11);
+        setBs1q12(bs1con.equals("2") ? "" : this.bs1q12);
+        setBs1q1301(bs1con.equals("2") ? "" : this.bs1q1301);
+        setBs1q1302(bs1con.equals("2") ? "" : this.bs1q1302);
+        setBs1q1303(bs1con.equals("2") ? "" : this.bs1q1303);
+        setBs1q1304(bs1con.equals("2") ? "" : this.bs1q1304);
+        setBs1q1305(bs1con.equals("2") ? "" : this.bs1q1305);
+        setBs1q1306(bs1con.equals("2") ? "" : this.bs1q1306);
+        setBs1q1307(bs1con.equals("2") ? "" : this.bs1q1307);
+        setBs1q1308(bs1con.equals("2") ? "" : this.bs1q1308);
+        setBs1q1396(bs1con.equals("2") ? "" : this.bs1q1396);
         notifyPropertyChanged(BR.bs1con);
     }
 
@@ -1932,6 +1977,20 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs1q08(String bs1q08) {
         this.bs1q08 = bs1q08;
+        setBs1q0901(bs1q08.equals("2") ? "" : this.bs1q0901);
+        setBs1q0901(bs1q08.equals("2") ? "" : this.bs1q0901);
+        setBs1q0902(bs1q08.equals("2") ? "" : this.bs1q0902);
+        setBs1q0903(bs1q08.equals("2") ? "" : this.bs1q0903);
+        setBs1q0904(bs1q08.equals("2") ? "" : this.bs1q0904);
+        setBs1q0905(bs1q08.equals("2") ? "" : this.bs1q0905);
+        setBs1q0906(bs1q08.equals("2") ? "" : this.bs1q0906);
+        setBs1q0907(bs1q08.equals("2") ? "" : this.bs1q0907);
+        setBs1q0908(bs1q08.equals("2") ? "" : this.bs1q0908);
+        setBs1q09t296(bs1q08.equals("2") ? "" : this.bs1q09t296);
+        setBs1q1001(bs1q08.equals("2") ? "" : this.bs1q1001);
+        setBs1q1002(bs1q08.equals("2") ? "" : this.bs1q1002);
+        setBs1q1098(bs1q08.equals("2") ? "" : this.bs1q1098);
+        setBs1q11(bs1q08.equals("2") ? "" : this.bs1q11);
         notifyPropertyChanged(BR.bs1q08);
     }
 
@@ -2081,6 +2140,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setBs1q1098(String bs1q1098) {
+        if (this.bs1q1098.equals(bs1q1098)) return;
         this.bs1q1098 = bs1q1098;
         setBs1q1001(bs1q1098.equals("98") ? "" : this.bs1q1001);
         setBs1q1002(bs1q1098.equals("98") ? "" : this.bs1q1002);
