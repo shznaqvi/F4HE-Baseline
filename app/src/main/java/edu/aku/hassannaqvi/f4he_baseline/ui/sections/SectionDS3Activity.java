@@ -15,6 +15,7 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
@@ -45,7 +46,7 @@ public class SectionDS3Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SE4, MainApp.form.sE4toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SD3, MainApp.form.sD3toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -64,7 +65,8 @@ public class SectionDS3Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionBS3Activity.class).putExtra("complete", true));
+            //startActivity(new Intent(this, SectionBS3Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, MainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
@@ -75,7 +77,8 @@ public class SectionDS3Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, SectionES1Activity.class).putExtra("complete", false));
+        //startActivity(new Intent(this, SectionES1Activity.class).putExtra("complete", false));
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 

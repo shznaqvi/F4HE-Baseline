@@ -20,12 +20,12 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionAs1Binding;
-import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionAS1Activity extends AppCompatActivity {
     private static final String TAG = "SectionAS1Activity";
@@ -73,7 +73,7 @@ public class SectionAS1Activity extends AppCompatActivity {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SE3, form.sE3toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, form.sA1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -101,14 +101,16 @@ public class SectionAS1Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionAS2Activity.class).putExtra("complete", true));
+            //startActivity(new Intent(this, SectionAS2Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, MainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 

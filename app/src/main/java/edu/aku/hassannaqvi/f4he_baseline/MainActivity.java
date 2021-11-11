@@ -35,6 +35,11 @@ import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS4Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS5Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionDS1Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionDS2Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionDS3Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionES1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionES2Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionES3Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionES4Activity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -159,6 +164,26 @@ public class MainActivity extends AppCompatActivity {
             case R.id.secg7:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionDS2Activity.class));
+                break;
+            case R.id.d3:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionDS3Activity.class));
+                break;
+            case R.id.e1:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionES1Activity.class));
+                break;
+            case R.id.e2:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionES2Activity.class));
+                break;
+            case R.id.e3:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionES3Activity.class));
+                break;
+            case R.id.e4:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionES4Activity.class));
                 break;
             case R.id.dbManager:
                 startActivity(new Intent(this, AndroidManager.class));

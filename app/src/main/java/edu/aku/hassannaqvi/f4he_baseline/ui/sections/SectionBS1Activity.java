@@ -15,12 +15,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1Binding;
-import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionBS1Activity extends AppCompatActivity {
     private static final String TAG = "SectionBS1Activity";
@@ -46,7 +46,7 @@ public class SectionBS1Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SE4, form.sE4toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SB1, form.sB1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -65,7 +65,8 @@ public class SectionBS1Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
+            //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, MainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
@@ -76,7 +77,8 @@ public class SectionBS1Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 

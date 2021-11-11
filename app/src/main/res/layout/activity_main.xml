@@ -321,7 +321,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="A31"
+                            android:text="A1"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -336,7 +336,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="A32"
+                            android:text="A2"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -381,7 +381,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="C1"
+                            android:text="B3"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -396,7 +396,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="C2"
+                            android:text="B41"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -420,7 +420,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="D1"
+                            android:text="B42"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -435,7 +435,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="E1"
+                            android:text="B5"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -450,7 +450,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="F1"
+                            android:text="B6"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -465,7 +465,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="F2"
+                            android:text="B7"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -480,7 +480,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="F3"
+                            android:text="C1"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -495,7 +495,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="G1"
+                            android:text="C2"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -519,7 +519,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="G2"
+                            android:text="C31"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -534,7 +534,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="G3"
+                            android:text="C32"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -549,7 +549,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="G4"
+                            android:text="C4"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -564,7 +564,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="G5"
+                            android:text="C5"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -580,7 +580,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="G6"
+                            android:text="D1"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -595,7 +595,92 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="G7"
+                            android:text="D2"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/d3"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="D3"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/e1"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="E1"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/e2"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="E2"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/e3"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="E3"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+
+                        <TextView
+                            android:id="@+id/e4"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="E4"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -620,8 +705,11 @@
                             android:text="Android Database Manager"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </LinearLayout>
 
 
