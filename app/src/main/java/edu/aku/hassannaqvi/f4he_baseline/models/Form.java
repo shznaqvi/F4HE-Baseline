@@ -3068,11 +3068,11 @@ public class Form extends BaseObservable implements Observable {
     public void setBs2q898(String bs2q898) {
         if (this.bs2q898.equals(bs2q898)) return;
         this.bs2q898 = bs2q898;
-        setBs2q801(bs2q898.equals("98") ? this.bs2q801 : "");
-        setBs2q802(bs2q898.equals("98") ? this.bs2q802 : "");
-        setBs2q803(bs2q898.equals("98") ? this.bs2q803 : "");
-        setBs2q804(bs2q898.equals("98") ? this.bs2q804 : "");
-        setBs2q896(bs2q898.equals("98") ? this.bs2q896 : "");
+        setBs2q801(bs2q898.equals("98") ? "" : this.bs2q801);
+        setBs2q802(bs2q898.equals("98") ? "" : this.bs2q802);
+        setBs2q803(bs2q898.equals("98") ? "" : this.bs2q803);
+        setBs2q804(bs2q898.equals("98") ? "" : this.bs2q804);
+        setBs2q896(bs2q898.equals("98") ? "" : this.bs2q896);
         notifyPropertyChanged(BR.bs2q898);
     }
 
