@@ -31,6 +31,7 @@
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/bs6informationontechnologyuse_mainheading"
+            app:subtitle="@string/bs6t"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -45,22 +46,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- bs6t  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVbs6t"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/bs6t" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- bs6q1  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -85,10 +70,10 @@
                                 android:text="@string/Q_bs6q1" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/bs6q1" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -120,31 +105,41 @@
                                 android:onClick="@{()->form.setBs6q1(`3`)}"
                                 android:text="@string/bs4bq2303" />
 
-                            <RadioButton
-                                android:id="@+id/bs6q1m"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.bs6q1.equals(``)}"
-                                android:onClick="@{()->form.setBs6q1(``)}"
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="@{form.bs6q1.equals(`2`) ? View.VISIBLE : View.GONE}">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:text="@string/bs6q1m" />
 
                             <EditText
                                 android:id="@+id/bs6q1mx"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:layout_height="match_parent"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                                 android:hint="@string/bs6q1m"
-                                android:tag="bs6q1m"
-                                android:text="@={form.bs6q1mx}"
-                                android:visibility='@{bs6q1m.checked? View.VISIBLE : View.GONE}' />
-                        </RadioGroup>
+                                android:tag="bs4bq2302"
+                                android:text="@={form.bs6q1mx}" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bs6q2  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbs6q2"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.bs6q1.equals(`3`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -164,10 +159,10 @@
                                 android:text="@string/Q_bs6q2" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/bs6q2" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -198,14 +193,19 @@
                                 android:checked="@{form.bs6q2.equals(`3`)}"
                                 android:onClick="@{()->form.setBs6q2(`3`)}"
                                 android:text="@string/bs4bq3103" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bs6q3  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbs6q3"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.bs6q1.equals(`3`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -225,10 +225,10 @@
                                 android:text="@string/Q_bs6q3" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/bs6q3" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -260,26 +260,35 @@
                                 android:onClick="@{()->form.setBs6q3(`3`)}"
                                 android:text="@string/bs4bq3503" />
 
-                            <RadioButton
-                                android:id="@+id/bs6q3m"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.bs6q3.equals(``)}"
-                                android:onClick="@{()->form.setBs6q3(``)}"
-                                android:text="@string/bs6q3m" />
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="@{form.bs6q3.equals(`2`) ? View.VISIBLE : View.GONE}">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/bs6q1m" />
 
                             <EditText
                                 android:id="@+id/bs6q3mx"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:layout_height="match_parent"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                                 android:hint="@string/bs6q3m"
                                 android:tag="bs6q3m"
-                                android:text="@={form.bs6q3mx}"
-                                android:visibility='@{bs6q3m.checked? View.VISIBLE : View.GONE}' />
-                        </RadioGroup>
+                                android:text="@={form.bs6q3mx}" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
@@ -308,8 +317,18 @@
                         android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
+
         </ScrollView>
+
+
     </LinearLayout>
+
+
 </layout>

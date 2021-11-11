@@ -5760,6 +5760,9 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs6q1(String bs6q1) {
         this.bs6q1 = bs6q1;
+        setBs6q1mx(bs6q1.equals("2") ? this.bs6q1mx : "");
+        setBs6q2(bs6q1.equals("3") ? "" : this.bs6q2);
+        setBs6q3(bs6q1.equals("3") ? this.bs6q3 : "");
         notifyPropertyChanged(BR.bs6q1);
     }
 
@@ -5790,6 +5793,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs6q3(String bs6q3) {
         this.bs6q3 = bs6q3;
+        setBs6q3mx(bs6q3.equals("2") ? this.bs6q3mx : "");
         notifyPropertyChanged(BR.bs6q3);
     }
 

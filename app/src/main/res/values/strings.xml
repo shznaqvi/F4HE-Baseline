@@ -846,7 +846,7 @@
     <string name="bs4bq2301">Yes, I have my own phone</string>
     <string name="bs4bq2302">Yes, but I use my family member’s phone </string>
     <string name="bs4bq2303">No</string>
-    <string name="bs6q1m">If option 2 , please mention which family member:</string>
+    <string name="bs6q1m"> Mention Family Member: </string>
     <string name="bs6q1m_info">DROP DOWN LIST OF MEMBERS</string>
     <string name="bs6q2">Do you have access to internet connectivity on smart phone?</string>
     <string name="bs4bq3101">Yes, most of the time</string>
