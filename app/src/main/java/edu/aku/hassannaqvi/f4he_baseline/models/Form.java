@@ -2572,6 +2572,23 @@ public class Form extends BaseObservable implements Observable {
         setBs2q417(bs2q3.equals("2") ? "" : this.bs2q417);
         setBs2q418(bs2q3.equals("2") ? "" : this.bs2q418);
         setBs2q4096(bs2q3.equals("2") ? "" : this.bs2q4096);
+        setBs2q5(bs2q3.equals("2") ? "" : this.bs2q5);
+        setBs2q601(bs2q3.equals("2") ? "" : this.bs2q601);
+        setBs2q602(bs2q3.equals("2") ? "" : this.bs2q602);
+        setBs2q603(bs2q3.equals("2") ? "" : this.bs2q603);
+        setBs2q604(bs2q3.equals("2") ? "" : this.bs2q604);
+        setBs2q605(bs2q3.equals("2") ? "" : this.bs2q605);
+        setBs2q606(bs2q3.equals("2") ? "" : this.bs2q606);
+        setBs2q607(bs2q3.equals("2") ? "" : this.bs2q607);
+        setBs2q608(bs2q3.equals("2") ? "" : this.bs2q608);
+        setBs2q609(bs2q3.equals("2") ? "" : this.bs2q609);
+        setBs2q6010(bs2q3.equals("2") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q3.equals("2") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q3.equals("2") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q3.equals("2") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q3.equals("2") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q3.equals("2") ? "" : this.bs2q6015);
+        setBs2q696(bs2q3.equals("2") ? "" : this.bs2q696);
         notifyPropertyChanged(BR.bs2q3);
     }
 
