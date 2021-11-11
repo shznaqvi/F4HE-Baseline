@@ -104,7 +104,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es4q101.equals(`1`)}"
-                                android:enabled="@{!form.es4q198.equals(`98`) + !form.es4q197.equals(`97`)}"
+                                android:enabled="@{!form.es4q198.equals(`98`) &amp;&amp; !form.es4q197.equals(`97`)}"
                                 android:onClick="@{()->form.setEs4q101(form.es4q101.equals(`1`)?``:`1`)}"
                                 android:text="@string/es4q101" />
 
@@ -113,7 +113,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es4q102.equals(`2`)}"
-                                android:enabled="@{!form.es4q198.equals(`98`) + !form.es4q197.equals(`97`)}"
+                                android:enabled="@{!form.es4q198.equals(`98`) &amp;&amp; !form.es4q197.equals(`97`)}"
                                 android:onClick="@{()->form.setEs4q102(form.es4q102.equals(`2`)?``:`2`)}"
                                 android:text="@string/es4q102" />
 
@@ -122,7 +122,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es4q103.equals(`3`)}"
-                                android:enabled="@{!form.es4q198.equals(`98`) + !form.es4q197.equals(`97`)}"
+                                android:enabled="@{!form.es4q198.equals(`98`) &amp;&amp; !form.es4q197.equals(`97`)}"
                                 android:onClick="@{()->form.setEs4q103(form.es4q103.equals(`3`)?``:`3`)}"
                                 android:text="@string/es4q103" />
 
@@ -131,7 +131,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es4q104.equals(`4`)}"
-                                android:enabled="@{!form.es4q198.equals(`98`) + !form.es4q197.equals(`97`)}"
+                                android:enabled="@{!form.es4q198.equals(`98`) &amp;&amp; !form.es4q197.equals(`97`)}"
                                 android:onClick="@{()->form.setEs4q104(form.es4q104.equals(`4`)?``:`4`)}"
                                 android:text="@string/es4q104" />
 
@@ -140,7 +140,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es4q105.equals(`5`)}"
-                                android:enabled="@{!form.es4q198.equals(`98`) + !form.es4q197.equals(`97`)}"
+                                android:enabled="@{!form.es4q198.equals(`98`) &amp;&amp; !form.es4q197.equals(`97`)}"
                                 android:onClick="@{()->form.setEs4q105(form.es4q105.equals(`5`)?``:`5`)}"
                                 android:text="@string/es4q105" />
 
@@ -149,7 +149,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es4q106.equals(`6`)}"
-                                android:enabled="@{!form.es4q198.equals(`98`) + !form.es4q197.equals(`97`)}"
+                                android:enabled="@{!form.es4q198.equals(`98`) &amp;&amp; !form.es4q197.equals(`97`)}"
                                 android:onClick="@{()->form.setEs4q106(form.es4q106.equals(`6`)?``:`6`)}"
                                 android:text="@string/es4q106" />
 
@@ -166,7 +166,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es4q196.equals(`96`)}"
-                                android:enabled="@{!form.es4q198.equals(`98`) + !form.es4q197.equals(`97`)}"
+                                android:enabled="@{!form.es4q198.equals(`98`) &amp;&amp; !form.es4q197.equals(`97`)}"
                                 android:onClick="@{()->form.setEs4q196(form.es4q196.equals(`96`)?``:`96`)}"
                                 android:text="@string/es4q196" />
 

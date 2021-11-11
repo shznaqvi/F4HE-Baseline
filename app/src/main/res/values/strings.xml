@@ -2143,5 +2143,7 @@ For adolescents less than 18 years of age, an assent will be taken from the resp
     <string name='Q_hl7'>hl7</string>
     <string name='Q_hl8'>hl8</string>
     <string name='Q_hl9'>hl9</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
