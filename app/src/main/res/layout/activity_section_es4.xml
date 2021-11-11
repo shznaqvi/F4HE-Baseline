@@ -122,7 +122,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es4q103.equals(`3`)}"
-                                android:enabled="@{!form.es4q198.equals(`98`) + !form.es4q197.equals(`97`)}"
+                                android:enabled="@{!form.es4q198.equals(`98`) &amp;&amp; !form.es4q197.equals(`97`)}"
                                 android:onClick="@{()->form.setEs4q103(form.es4q103.equals(`3`)?``:`3`)}"
                                 android:text="@string/es4q103" />
 
