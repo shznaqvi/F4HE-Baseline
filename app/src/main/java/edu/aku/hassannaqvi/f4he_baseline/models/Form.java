@@ -5179,6 +5179,13 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs5q1(String bs5q1) {
         this.bs5q1 = bs5q1;
+        setBs5q201(bs5q1.equals("2") ? "" : this.bs5q201);
+        setBs5q202(bs5q1.equals("2") ? "" : this.bs5q202);
+        setBs5q203(bs5q1.equals("2") ? "" : this.bs5q203);
+        setBs5q204(bs5q1.equals("2") ? "" : this.bs5q204);
+        setBs5q205(bs5q1.equals("2") ? "" : this.bs5q205);
+        setBs5q296(bs5q1.equals("2") ? "" : this.bs5q296);
+        setBs5q297(bs5q1.equals("2") ? "" : this.bs5q297);
         notifyPropertyChanged(BR.bs5q1);
     }
 
@@ -5277,6 +5284,12 @@ public class Form extends BaseObservable implements Observable {
     public void setBs5q297(String bs5q297) {
         if (this.bs5q297.equals(bs5q297)) return;
         this.bs5q297 = bs5q297;
+        setBs5q201(bs5q297.equals("97") ? "" : this.bs5q201);
+        setBs5q202(bs5q297.equals("97") ? "" : this.bs5q202);
+        setBs5q203(bs5q297.equals("97") ? "" : this.bs5q203);
+        setBs5q204(bs5q297.equals("97") ? "" : this.bs5q204);
+        setBs5q205(bs5q297.equals("97") ? "" : this.bs5q205);
+        setBs5q296(bs5q297.equals("97") ? "" : this.bs5q296);
         notifyPropertyChanged(BR.bs5q297);
     }
 
@@ -5287,6 +5300,12 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs5q3(String bs5q3) {
         this.bs5q3 = bs5q3;
+        setBs5q401(bs5q3.equals("2") ? "" : this.bs5q401);
+        setBs5q402(bs5q3.equals("2") ? "" : this.bs5q402);
+        setBs5q403(bs5q3.equals("2") ? "" : this.bs5q403);
+        setBs5q404(bs5q3.equals("2") ? "" : this.bs5q404);
+        setBs5q496(bs5q3.equals("2") ? "" : this.bs5q496);
+        setBs5q497(bs5q3.equals("2") ? "" : this.bs5q497);
         notifyPropertyChanged(BR.bs5q3);
     }
 
@@ -5374,6 +5393,11 @@ public class Form extends BaseObservable implements Observable {
     public void setBs5q497(String bs5q497) {
         if (this.bs5q497.equals(bs5q497)) return;
         this.bs5q497 = bs5q497;
+        setBs5q401(bs5q497.equals("97") ? "" : this.bs5q401);
+        setBs5q402(bs5q497.equals("97") ? "" : this.bs5q402);
+        setBs5q403(bs5q497.equals("97") ? "" : this.bs5q403);
+        setBs5q404(bs5q497.equals("97") ? "" : this.bs5q404);
+        setBs5q496(bs5q497.equals("97") ? "" : this.bs5q496);
         notifyPropertyChanged(BR.bs5q497);
     }
 
@@ -5394,6 +5418,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs5q6(String bs5q6) {
         this.bs5q6 = bs5q6;
+        setBs5q7(bs5q6.equals("2") ? "" : this.bs5q7);
         notifyPropertyChanged(BR.bs5q6);
     }
 
@@ -5535,6 +5560,15 @@ public class Form extends BaseObservable implements Observable {
     public void setBs5q898(String bs5q898) {
         if (this.bs5q898.equals(bs5q898)) return;
         this.bs5q898 = bs5q898;
+        setBs5q801(bs5q898.equals("98") ? "" : this.bs5q801);
+        setBs5q802(bs5q898.equals("98") ? "" : this.bs5q802);
+        setBs5q803(bs5q898.equals("98") ? "" : this.bs5q803);
+        setBs5q804(bs5q898.equals("98") ? "" : this.bs5q804);
+        setBs5q805(bs5q898.equals("98") ? "" : this.bs5q805);
+        setBs5q806(bs5q898.equals("98") ? "" : this.bs5q806);
+        setBs5q807(bs5q898.equals("98") ? "" : this.bs5q807);
+        setBs5q808(bs5q898.equals("98") ? "" : this.bs5q808);
+        setBs5q896(bs5q898.equals("98") ? "" : this.bs5q896);
         notifyPropertyChanged(BR.bs5q898);
     }
 
@@ -5666,6 +5700,15 @@ public class Form extends BaseObservable implements Observable {
     public void setBs5q998(String bs5q998) {
         if (this.bs5q998.equals(bs5q998)) return;
         this.bs5q998 = bs5q998;
+        setBs5q901(bs5q998.equals("98") ? "" : this.bs5q901);
+        setBs5q902(bs5q998.equals("98") ? "" : this.bs5q902);
+        setBs5q903(bs5q998.equals("98") ? "" : this.bs5q903);
+        setBs5q904(bs5q998.equals("98") ? "" : this.bs5q904);
+        setBs5q905(bs5q998.equals("98") ? "" : this.bs5q905);
+        setBs5q906(bs5q998.equals("98") ? "" : this.bs5q906);
+        setBs5q907(bs5q998.equals("98") ? "" : this.bs5q907);
+        setBs5q908(bs5q998.equals("98") ? "" : this.bs5q908);
+        setBs5q996(bs5q998.equals("98") ? "" : this.bs5q996);
         notifyPropertyChanged(BR.bs5q998);
     }
 
