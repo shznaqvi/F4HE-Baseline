@@ -4319,6 +4319,24 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4aq1(String bs4aq1) {
         this.bs4aq1 = bs4aq1;
+        setBs4aq201(bs4aq1.equals("2") ? "" : this.bs4aq201);
+        setBs4aq202(bs4aq1.equals("2") ? "" : this.bs4aq202);
+        setBs4aq203(bs4aq1.equals("2") ? "" : this.bs4aq203);
+        setBs4aq204(bs4aq1.equals("2") ? "" : this.bs4aq204);
+        setBs4aq205(bs4aq1.equals("2") ? "" : this.bs4aq205);
+        setBs4aq206(bs4aq1.equals("2") ? "" : this.bs4aq206);
+        setBs4aq207(bs4aq1.equals("2") ? "" : this.bs4aq207);
+        setBs4aq208(bs4aq1.equals("2") ? "" : this.bs4aq208);
+        setBs4aq296(bs4aq1.equals("2") ? "" : this.bs4aq296);
+        setBs4aq298(bs4aq1.equals("2") ? "" : this.bs4aq298);
+        setBs4aq3(bs4aq1.equals("2") ? "" : this.bs4aq3);
+        setBs4aq4(bs4aq1.equals("2") ? "" : this.bs4aq4);
+        setBs4aq5(bs4aq1.equals("2") ? "" : this.bs4aq5);
+        setBs4aq6(bs4aq1.equals("2") ? "" : this.bs4aq6);
+        setBs4aq7(bs4aq1.equals("2") ? "" : this.bs4aq7);
+        setBs4aq8(bs4aq1.equals("2") ? "" : this.bs4aq8);
+        setBs4aq9(bs4aq1.equals("2") ? "" : this.bs4aq9);
+        setBs4aq10(bs4aq1.equals("2") ? "" : this.bs4aq10);
         notifyPropertyChanged(BR.bs4aq1);
     }
 
@@ -4459,6 +4477,9 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4aq3(String bs4aq3) {
         this.bs4aq3 = bs4aq3;
+        setBs4aq4(bs4aq3.equals("2") ? "" : this.bs4aq4);
+        setBs4aq5(bs4aq3.equals("2") ? "" : this.bs4aq5);
+        setBs4aq6(bs4aq3.equals("2") ? "" : this.bs4aq6);
         notifyPropertyChanged(BR.bs4aq3);
     }
 
@@ -4469,6 +4490,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4aq4(String bs4aq4) {
         this.bs4aq4 = bs4aq4;
+        setBs4aq5(bs4aq4.equals("2") ? "" : this.bs4aq5);
+        setBs4aq6(bs4aq4.equals("2") ? "" : this.bs4aq6);
         notifyPropertyChanged(BR.bs4aq4);
     }
 
@@ -4479,6 +4502,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4aq5(String bs4aq5) {
         this.bs4aq5 = bs4aq5;
+        setBs4aq6(bs4aq5.equals("2") ? "" : this.bs4aq6);
         notifyPropertyChanged(BR.bs4aq5);
     }
 
@@ -4489,6 +4513,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4aq6(String bs4aq6) {
         this.bs4aq6 = bs4aq6;
+        setBs4aq696x(bs4aq6.equals("96") ? this.bs4aq696x : "");
         notifyPropertyChanged(BR.bs4aq6);
     }
 
@@ -4509,6 +4534,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4aq7(String bs4aq7) {
         this.bs4aq7 = bs4aq7;
+        setBs4aq8(bs4aq7.equals("1") ? this.bs4aq8 : "");
         notifyPropertyChanged(BR.bs4aq7);
     }
 
@@ -4519,6 +4545,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4aq8(String bs4aq8) {
         this.bs4aq8 = bs4aq8;
+        setBs4aq896x(bs4aq8.equals("96") ? this.bs4aq896x : "");
         notifyPropertyChanged(BR.bs4aq8);
     }
 
@@ -4539,6 +4566,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4aq9(String bs4aq9) {
         this.bs4aq9 = bs4aq9;
+        setBs4aq10(bs4aq9.equals("1") ? this.bs4aq10 : "");
         notifyPropertyChanged(BR.bs4aq9);
     }
 
@@ -4629,6 +4657,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setBs4bq296(String bs4bq296) {
         this.bs4bq296 = bs4bq296;
+        setBs4bq296x(bs4bq296.equals("96") ? this.bs4bq296x : "");
         notifyPropertyChanged(BR.bs4bq296);
     }
 
