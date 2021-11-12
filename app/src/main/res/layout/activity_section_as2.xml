@@ -36,7 +36,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
 
 
             <LinearLayout
@@ -64,9 +66,8 @@
                             android:text="@string/Q_hl1" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="130dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/hl1" />
 
@@ -88,11 +89,6 @@
                     android:id="@+id/fldGrpCVhl2"
                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -106,22 +102,21 @@
                                 android:text="@string/Q_hl2" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="130dp"
                                 android:layout_height="match_parent"
+                                android:gravity="center"
                                 android:text="@string/hl2" />
 
+                            <EditText
+                                android:id="@+id/hl2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:hint="@string/hl2"
+                                android:maxLength="20"
+                                android:text="@={form.hl2}" />
+
                         </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/hl2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:hint="@string/hl2"
-                            android:maxLength="20"
-                            android:text="@={form.hl2}" />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
@@ -1087,7 +1082,7 @@
                                 android:hint="@string/hl1296"
                                 android:tag="hl1296"
                                 android:text="@={form.hl1296x}"
-                                android:visibility='@{hl1296.checked ? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.hl12.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 
