@@ -7,13 +7,11 @@
     <color name="colorAccent">#00E5FF</color>
     <color name="colorAccentLight">#00E5FF</color>
 
-    <color name="colorPrimaryLightOverlay">#60A563</color>
     <color name="colorPrimaryOverlay">#7f388E3C</color>
-    <color name="colorPrimaryDarkOverlay">#328436</color>
-    <color name="colorAccentLightOverlay">#33EAFF</color>
+    <color name="colorPrimaryLightOverlay">#7f81C784</color>
+    <color name="colorPrimaryDarkOverlay">#7f1B5E20</color>
     <color name="colorAccentOverlay">#7f00E5FF</color>
-    <color name="colorAccentDarkOverlay">#00CAE0</color>
-
+    <color name="colorAccentLightOverlay">#7f00E5FF</color>
 
     <!-- Standard App Colors -->
     <color name="gray">#757575</color>
