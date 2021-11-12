@@ -6290,6 +6290,31 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs2q07(String cs2q07) {
         this.cs2q07 = cs2q07;
+        setCs2q0801(cs2q07.equals("2") ? "" : this.cs2q0801);
+        setCs2q08021(cs2q07.equals("2") ? "" : this.cs2q08021);
+        setCs2q08022(cs2q07.equals("2") ? "" : this.cs2q08022);
+        setCs2q08023(cs2q07.equals("2") ? "" : this.cs2q08023);
+        setCs2q08024(cs2q07.equals("2") ? "" : this.cs2q08024);
+        setCs2q0803(cs2q07.equals("2") ? "" : this.cs2q0803);
+        setCs2q0804(cs2q07.equals("2") ? "" : this.cs2q0804);
+        setCs2q0805(cs2q07.equals("2") ? "" : this.cs2q0805);
+        setCs2q0806(cs2q07.equals("2") ? "" : this.cs2q0806);
+        setCs2q0807(cs2q07.equals("2") ? "" : this.cs2q0807);
+        setCs2q08081(cs2q07.equals("2") ? "" : this.cs2q08081);
+        setCs2q08082(cs2q07.equals("2") ? "" : this.cs2q08082);
+        setCs2q08083(cs2q07.equals("2") ? "" : this.cs2q08083);
+        setCs2q0809(cs2q07.equals("2") ? "" : this.cs2q0809);
+        setCs2q0810(cs2q07.equals("2") ? "" : this.cs2q0810);
+        setCs2q0811(cs2q07.equals("2") ? "" : this.cs2q0811);
+        setCs2q0812(cs2q07.equals("2") ? "" : this.cs2q0812);
+        setCs2q0813(cs2q07.equals("2") ? "" : this.cs2q0813);
+        setCs2q0814(cs2q07.equals("2") ? "" : this.cs2q0814);
+        setCs2q0815(cs2q07.equals("2") ? "" : this.cs2q0815);
+        setCs2q0816(cs2q07.equals("2") ? "" : this.cs2q0816);
+        setCs2q0817(cs2q07.equals("2") ? "" : this.cs2q0817);
+        setCs2q0818(cs2q07.equals("2") ? "" : this.cs2q0818);
+        setCs2q0819(cs2q07.equals("2") ? "" : this.cs2q0819);
+        setCs2q0820(cs2q07.equals("2") ? "" : this.cs2q0820);
         notifyPropertyChanged(BR.cs2q07);
     }
 
