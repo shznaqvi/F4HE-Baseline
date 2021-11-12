@@ -8953,7 +8953,7 @@ public class Form extends BaseObservable implements Observable {
         setEs4q506(es4q598.equals("98") ? "" : this.es4q506);
         setEs4q507(es4q598.equals("98") ? "" : this.es4q507);
         setEs4q508(es4q598.equals("98") ? "" : this.es4q508);
-        setEs4q506(es4q598.equals("98") ? "" : this.es4q506);
+        setEs4q509(es4q598.equals("98") ? "" : this.es4q509);
         setEs4q596(es4q598.equals("98") ? "" : this.es4q596);
         notifyPropertyChanged(BR.es4q598);
     }
