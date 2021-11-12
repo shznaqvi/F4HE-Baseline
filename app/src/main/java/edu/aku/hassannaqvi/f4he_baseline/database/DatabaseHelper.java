@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EnumBlocksTabl
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMemberListTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormBTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.HHMembersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
@@ -30,6 +31,7 @@ import edu.aku.hassannaqvi.f4he_baseline.models.EnumBlocks;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
+import edu.aku.hassannaqvi.f4he_baseline.models.HHMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 import edu.aku.hassannaqvi.f4he_baseline.models.VersionApp;
 
@@ -55,6 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_ENUMBLOCKS);
         //db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
+        db.execSQL(CreateTable.SQL_CREATE_HHMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMB);
         //db.execSQL(SQL_CREATE_FOODS_CONSUMPTION);
         db.execSQL(CreateTable.SQL_CREATE_FAMILY_MEMBERS);
@@ -83,7 +86,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SA1, form.sA1toString());
-        values.put(FormsTable.COLUMN_SA2, form.sA2toString());
         values.put(FormsTable.COLUMN_SB1, form.sB1toString());
         values.put(FormsTable.COLUMN_SB2, form.sB2toString());
         values.put(FormsTable.COLUMN_SB3, form.sB3toString());
@@ -114,6 +116,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 FormsTable.TABLE_NAME,
                 FormsTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addHHMembers(HHMembers members) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(HHMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
+        values.put(HHMembersTable.COLUMN_UID, members.getUid());
+        values.put(HHMembersTable.COLUMN_UUID, members.getUuid());
+        values.put(HHMembersTable.COLUMN_ENUM_BLOCK, members.getEbCode());
+        values.put(HHMembersTable.COLUMN_HHID, members.getHhid());
+        values.put(HHMembersTable.COLUMN_SNO, members.getSno());
+        values.put(HHMembersTable.COLUMN_USERNAME, members.getUserName());
+        values.put(HHMembersTable.COLUMN_SYSDATE, members.getSysDate());
+        values.put(HHMembersTable.COLUMN_SA2, members.sA2toString());
+        values.put(HHMembersTable.COLUMN_ISTATUS, members.getiStatus());
+        values.put(HHMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
+        values.put(HHMembersTable.COLUMN_DEVICEID, members.getDeviceId());
+        values.put(HHMembersTable.COLUMN_APPVERSION, members.getAppver());
+
+        long newRowId;
+        newRowId = db.insert(
+                HHMembersTable.TABLE_NAME,
+                HHMembersTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -223,10 +250,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = FamilyMemberListTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.familyMember.getId())};
+        String selection = HHMembersTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.hhMembers.getId())};
 
-        return db.update(FamilyMemberListTable.TABLE_NAME,
+        return db.update(HHMembersTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

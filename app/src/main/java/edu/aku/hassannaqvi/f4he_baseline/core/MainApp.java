@@ -16,6 +16,7 @@ import edu.aku.hassannaqvi.f4he_baseline.BuildConfig;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
+import edu.aku.hassannaqvi.f4he_baseline.models.HHMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 
 
@@ -41,6 +42,7 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
+    public static HHMembers hhMembers;
     public static FormB formB;
     public static FamilyMembers familyMember;
 

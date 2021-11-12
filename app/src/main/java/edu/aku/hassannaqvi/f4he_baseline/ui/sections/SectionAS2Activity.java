@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.hhMembers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,22 +31,18 @@ public class SectionAS2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_as2);
-        bi.setForm(form);
+        bi.setHhmember(hhMembers);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        setupSkips();
     }
 
-
-    private void setupSkips() {
-    }
 
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA2, form.sA2toString());
+            updcount = db.updatesMemberColumn(TableContracts.HHMembersTable.COLUMN_SA2, hhMembers.sA2toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
