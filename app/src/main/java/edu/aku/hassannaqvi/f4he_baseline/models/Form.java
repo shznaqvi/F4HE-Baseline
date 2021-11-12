@@ -6154,7 +6154,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs1q8(String cs1q8) {
         this.cs1q8 = cs1q8;
-        setCs1q8096x(cs1q8.equals("96") ? this.cs1q8096x : ""); // for all skips, mention all skipped questions
+        setCs1q8096x(cs1q8.equals("96") ? this.cs1q8096x : "");
         notifyPropertyChanged(BR.cs1q8);
     }
 
@@ -6175,7 +6175,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs1q9(String cs1q9) {
         this.cs1q9 = cs1q9;
-        setCs1q9096x(cs1q9.equals("96") ? this.cs1q9096x : ""); // for all skips, mention all skipped questions
+        setCs1q9096x(cs1q9.equals("96") ? this.cs1q9096x : "");
         notifyPropertyChanged(BR.cs1q9);
     }
 
@@ -6196,6 +6196,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs1q10(String cs1q10) {
         this.cs1q10 = cs1q10;
+        setCs1q11(cs1q10.equals("2") ? this.cs1q11 : "");
         notifyPropertyChanged(BR.cs1q10);
     }
 
@@ -6206,7 +6207,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs1q11(String cs1q11) {
         this.cs1q11 = cs1q11;
-        setCs1q11096x(cs1q11.equals("96") ? this.cs1q11096x : ""); // for all skips, mention all skipped questions
+        setCs1q11096x(cs1q11.equals("96") ? this.cs1q11096x : "");
         notifyPropertyChanged(BR.cs1q11);
     }
 
