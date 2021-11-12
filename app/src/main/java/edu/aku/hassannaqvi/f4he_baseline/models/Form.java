@@ -8535,6 +8535,7 @@ public class Form extends BaseObservable implements Observable {
         setEs4q104(es4q197.equals("97") ? "" : this.es4q104);
         setEs4q105(es4q197.equals("97") ? "" : this.es4q105);
         setEs4q106(es4q197.equals("97") ? "" : this.es4q106);
+        setEs4q107(es4q197.equals("97") ? "" : this.es4q107);
         setEs4q196(es4q197.equals("97") ? "" : this.es4q196);
         setEs4q198(es4q197.equals("97") ? "" : this.es4q198);
         notifyPropertyChanged(BR.es4q197);
@@ -8554,6 +8555,7 @@ public class Form extends BaseObservable implements Observable {
         setEs4q104(es4q198.equals("98") ? "" : this.es4q104);
         setEs4q105(es4q198.equals("98") ? "" : this.es4q105);
         setEs4q106(es4q198.equals("98") ? "" : this.es4q106);
+        setEs4q107(es4q198.equals("98") ? "" : this.es4q107);
         setEs4q196(es4q198.equals("98") ? "" : this.es4q196);
         setEs4q197(es4q198.equals("98") ? "" : this.es4q197);
         notifyPropertyChanged(BR.es4q198);
@@ -8566,6 +8568,21 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs4q2(String es4q2) {
         this.es4q2 = es4q2;
+        setEs4q301(es4q2.equals("2") ? "" : this.es4q301);
+        setEs4q302(es4q2.equals("2") ? "" : this.es4q302);
+        setEs4q303(es4q2.equals("2") ? "" : this.es4q303);
+        setEs4q304(es4q2.equals("2") ? "" : this.es4q304);
+        setEs4q305(es4q2.equals("2") ? "" : this.es4q305);
+        setEs4q306(es4q2.equals("2") ? "" : this.es4q306);
+        setEs4q307(es4q2.equals("2") ? "" : this.es4q307);
+        setEs4q396(es4q2.equals("2") ? "" : this.es4q396);
+        setEs4q398(es4q2.equals("2") ? "" : this.es4q398);
+        setEs4q401(es4q2.equals("2") ? "" : this.es4q401);
+        setEs4q402(es4q2.equals("2") ? "" : this.es4q402);
+        setEs4q403(es4q2.equals("2") ? "" : this.es4q403);
+        setEs4q404(es4q2.equals("2") ? "" : this.es4q404);
+        setEs4q496(es4q2.equals("2") ? "" : this.es4q496);
+        setEs4q498(es4q2.equals("2") ? "" : this.es4q498);
         notifyPropertyChanged(BR.es4q2);
     }
 
@@ -9052,6 +9069,26 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs4q7(String es4q7) {
         this.es4q7 = es4q7;
+        setEs4q801(es4q7.equals("2") ? "" : this.es4q801);
+        setEs4q802(es4q7.equals("2") ? "" : this.es4q802);
+        setEs4q803(es4q7.equals("2") ? "" : this.es4q803);
+        setEs4q804(es4q7.equals("2") ? "" : this.es4q804);
+        setEs4q805(es4q7.equals("2") ? "" : this.es4q805);
+        setEs4q806(es4q7.equals("2") ? "" : this.es4q806);
+        setEs4q807(es4q7.equals("2") ? "" : this.es4q807);
+        setEs4q808(es4q7.equals("2") ? "" : this.es4q808);
+        setEs4q809(es4q7.equals("2") ? "" : this.es4q809);
+        setEs4q8010(es4q7.equals("2") ? "" : this.es4q8010);
+        setEs4q8011(es4q7.equals("2") ? "" : this.es4q8011);
+        setEs4q8012(es4q7.equals("2") ? "" : this.es4q8012);
+        setEs4q8013(es4q7.equals("2") ? "" : this.es4q8013);
+        setEs4q8014(es4q7.equals("2") ? "" : this.es4q8014);
+        setEs4q8015(es4q7.equals("2") ? "" : this.es4q8015);
+        setEs4q8016(es4q7.equals("2") ? "" : this.es4q8016);
+        setEs4q8017(es4q7.equals("2") ? "" : this.es4q8017);
+        setEs4q8018(es4q7.equals("2") ? "" : this.es4q8018);
+        setEs4q866(es4q7.equals("2") ? "" : this.es4q866);
+        setEs4q896(es4q7.equals("2") ? "" : this.es4q896);
         notifyPropertyChanged(BR.es4q7);
     }
 
