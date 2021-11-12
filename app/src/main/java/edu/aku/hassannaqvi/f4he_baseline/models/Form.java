@@ -2537,6 +2537,23 @@ public class Form extends BaseObservable implements Observable {
     public void setBs2q412(String bs2q412) {
         if (this.bs2q412.equals(bs2q412)) return;
         this.bs2q412 = bs2q412;
+        setBs2q5(bs2q412.equals("12") ? "" : this.bs2q5);
+        setBs2q601(bs2q412.equals("12") ? "" : this.bs2q601);
+        setBs2q602(bs2q412.equals("12") ? "" : this.bs2q602);
+        setBs2q603(bs2q412.equals("12") ? "" : this.bs2q603);
+        setBs2q604(bs2q412.equals("12") ? "" : this.bs2q604);
+        setBs2q605(bs2q412.equals("12") ? "" : this.bs2q605);
+        setBs2q606(bs2q412.equals("12") ? "" : this.bs2q606);
+        setBs2q607(bs2q412.equals("12") ? "" : this.bs2q607);
+        setBs2q608(bs2q412.equals("12") ? "" : this.bs2q608);
+        setBs2q609(bs2q412.equals("12") ? "" : this.bs2q609);
+        setBs2q6010(bs2q412.equals("12") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q412.equals("12") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q412.equals("12") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q412.equals("12") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q412.equals("12") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q412.equals("12") ? "" : this.bs2q6015);
+        setBs2q696(bs2q412.equals("12") ? "" : this.bs2q696);
         notifyPropertyChanged(BR.bs2q412);
     }
 
@@ -2548,6 +2565,23 @@ public class Form extends BaseObservable implements Observable {
     public void setBs2q413(String bs2q413) {
         if (this.bs2q413.equals(bs2q413)) return;
         this.bs2q413 = bs2q413;
+        setBs2q5(bs2q413.equals("13") ? "" : this.bs2q5);
+        setBs2q601(bs2q413.equals("13") ? "" : this.bs2q601);
+        setBs2q602(bs2q413.equals("13") ? "" : this.bs2q602);
+        setBs2q603(bs2q413.equals("13") ? "" : this.bs2q603);
+        setBs2q604(bs2q413.equals("13") ? "" : this.bs2q604);
+        setBs2q605(bs2q413.equals("13") ? "" : this.bs2q605);
+        setBs2q606(bs2q413.equals("13") ? "" : this.bs2q606);
+        setBs2q607(bs2q413.equals("13") ? "" : this.bs2q607);
+        setBs2q608(bs2q413.equals("13") ? "" : this.bs2q608);
+        setBs2q609(bs2q413.equals("13") ? "" : this.bs2q609);
+        setBs2q6010(bs2q413.equals("13") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q413.equals("13") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q413.equals("13") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q413.equals("13") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q413.equals("13") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q413.equals("13") ? "" : this.bs2q6015);
+        setBs2q696(bs2q413.equals("13") ? "" : this.bs2q696);
         notifyPropertyChanged(BR.bs2q413);
     }
 
@@ -2559,6 +2593,23 @@ public class Form extends BaseObservable implements Observable {
     public void setBs2q414(String bs2q414) {
         if (this.bs2q414.equals(bs2q414)) return;
         this.bs2q414 = bs2q414;
+        setBs2q5(bs2q414.equals("14") ? "" : this.bs2q5);
+        setBs2q601(bs2q414.equals("14") ? "" : this.bs2q601);
+        setBs2q602(bs2q414.equals("14") ? "" : this.bs2q602);
+        setBs2q603(bs2q414.equals("14") ? "" : this.bs2q603);
+        setBs2q604(bs2q414.equals("14") ? "" : this.bs2q604);
+        setBs2q605(bs2q414.equals("14") ? "" : this.bs2q605);
+        setBs2q606(bs2q414.equals("14") ? "" : this.bs2q606);
+        setBs2q607(bs2q414.equals("14") ? "" : this.bs2q607);
+        setBs2q608(bs2q414.equals("14") ? "" : this.bs2q608);
+        setBs2q609(bs2q414.equals("14") ? "" : this.bs2q609);
+        setBs2q6010(bs2q414.equals("14") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q414.equals("14") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q414.equals("14") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q414.equals("14") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q414.equals("14") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q414.equals("14") ? "" : this.bs2q6015);
+        setBs2q696(bs2q414.equals("14") ? "" : this.bs2q696);
         notifyPropertyChanged(BR.bs2q414);
     }
 
@@ -2570,6 +2621,23 @@ public class Form extends BaseObservable implements Observable {
     public void setBs2q415(String bs2q415) {
         if (this.bs2q415.equals(bs2q415)) return;
         this.bs2q415 = bs2q415;
+        setBs2q5(bs2q415.equals("15") ? "" : this.bs2q5);
+        setBs2q601(bs2q415.equals("15") ? "" : this.bs2q601);
+        setBs2q602(bs2q415.equals("15") ? "" : this.bs2q602);
+        setBs2q603(bs2q415.equals("15") ? "" : this.bs2q603);
+        setBs2q604(bs2q415.equals("15") ? "" : this.bs2q604);
+        setBs2q605(bs2q415.equals("15") ? "" : this.bs2q605);
+        setBs2q606(bs2q415.equals("15") ? "" : this.bs2q606);
+        setBs2q607(bs2q415.equals("15") ? "" : this.bs2q607);
+        setBs2q608(bs2q415.equals("15") ? "" : this.bs2q608);
+        setBs2q609(bs2q415.equals("15") ? "" : this.bs2q609);
+        setBs2q6010(bs2q415.equals("15") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q415.equals("15") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q415.equals("15") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q415.equals("15") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q415.equals("15") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q415.equals("15") ? "" : this.bs2q6015);
+        setBs2q696(bs2q415.equals("15") ? "" : this.bs2q696);
         notifyPropertyChanged(BR.bs2q415);
     }
 
@@ -2581,6 +2649,23 @@ public class Form extends BaseObservable implements Observable {
     public void setBs2q416(String bs2q416) {
         if (this.bs2q416.equals(bs2q416)) return;
         this.bs2q416 = bs2q416;
+        setBs2q5(bs2q416.equals("16") ? "" : this.bs2q5);
+        setBs2q601(bs2q416.equals("16") ? "" : this.bs2q601);
+        setBs2q602(bs2q416.equals("16") ? "" : this.bs2q602);
+        setBs2q603(bs2q416.equals("16") ? "" : this.bs2q603);
+        setBs2q604(bs2q416.equals("16") ? "" : this.bs2q604);
+        setBs2q605(bs2q416.equals("16") ? "" : this.bs2q605);
+        setBs2q606(bs2q416.equals("16") ? "" : this.bs2q606);
+        setBs2q607(bs2q416.equals("16") ? "" : this.bs2q607);
+        setBs2q608(bs2q416.equals("16") ? "" : this.bs2q608);
+        setBs2q609(bs2q416.equals("16") ? "" : this.bs2q609);
+        setBs2q6010(bs2q416.equals("16") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q416.equals("16") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q416.equals("16") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q416.equals("16") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q416.equals("16") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q416.equals("16") ? "" : this.bs2q6015);
+        setBs2q696(bs2q416.equals("16") ? "" : this.bs2q696);
         notifyPropertyChanged(BR.bs2q416);
     }
 
@@ -2592,6 +2677,23 @@ public class Form extends BaseObservable implements Observable {
     public void setBs2q417(String bs2q417) {
         if (this.bs2q417.equals(bs2q417)) return;
         this.bs2q417 = bs2q417;
+        setBs2q5(bs2q417.equals("17") ? "" : this.bs2q5);
+        setBs2q601(bs2q417.equals("17") ? "" : this.bs2q601);
+        setBs2q602(bs2q417.equals("17") ? "" : this.bs2q602);
+        setBs2q603(bs2q417.equals("17") ? "" : this.bs2q603);
+        setBs2q604(bs2q417.equals("17") ? "" : this.bs2q604);
+        setBs2q605(bs2q417.equals("17") ? "" : this.bs2q605);
+        setBs2q606(bs2q417.equals("17") ? "" : this.bs2q606);
+        setBs2q607(bs2q417.equals("17") ? "" : this.bs2q607);
+        setBs2q608(bs2q417.equals("17") ? "" : this.bs2q608);
+        setBs2q609(bs2q417.equals("17") ? "" : this.bs2q609);
+        setBs2q6010(bs2q417.equals("17") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q417.equals("17") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q417.equals("17") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q417.equals("17") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q417.equals("17") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q417.equals("17") ? "" : this.bs2q6015);
+        setBs2q696(bs2q417.equals("17") ? "" : this.bs2q696);
         notifyPropertyChanged(BR.bs2q417);
     }
 
@@ -2603,6 +2705,23 @@ public class Form extends BaseObservable implements Observable {
     public void setBs2q418(String bs2q418) {
         if (this.bs2q418.equals(bs2q418)) return;
         this.bs2q418 = bs2q418;
+        setBs2q5(bs2q418.equals("18") ? "" : this.bs2q5);
+        setBs2q601(bs2q418.equals("18") ? "" : this.bs2q601);
+        setBs2q602(bs2q418.equals("18") ? "" : this.bs2q602);
+        setBs2q603(bs2q418.equals("18") ? "" : this.bs2q603);
+        setBs2q604(bs2q418.equals("18") ? "" : this.bs2q604);
+        setBs2q605(bs2q418.equals("18") ? "" : this.bs2q605);
+        setBs2q606(bs2q418.equals("18") ? "" : this.bs2q606);
+        setBs2q607(bs2q418.equals("18") ? "" : this.bs2q607);
+        setBs2q608(bs2q418.equals("18") ? "" : this.bs2q608);
+        setBs2q609(bs2q418.equals("18") ? "" : this.bs2q609);
+        setBs2q6010(bs2q418.equals("18") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q418.equals("18") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q418.equals("18") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q418.equals("18") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q418.equals("18") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q418.equals("18") ? "" : this.bs2q6015);
+        setBs2q696(bs2q418.equals("18") ? "" : this.bs2q696);
         notifyPropertyChanged(BR.bs2q418);
     }
 

@@ -544,6 +544,7 @@
                                 android:id="@+id/bs2q412"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onCheckedChanged="@{()->bs2q5.clearCheck()}"
                                 android:checked="@{form.bs2q412.equals(`12`)}"
                                 android:onClick="@{()->form.setBs2q412(form.bs2q412.equals(`12`)?``:`12`)}"
                                 android:text="@string/bs2q412" />
@@ -552,6 +553,7 @@
                                 android:id="@+id/bs2q413"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onCheckedChanged="@{()->bs2q5.clearCheck()}"
                                 android:checked="@{form.bs2q413.equals(`13`)}"
                                 android:onClick="@{()->form.setBs2q413(form.bs2q413.equals(`13`)?``:`13`)}"
                                 android:text="@string/bs2q413" />
@@ -560,6 +562,7 @@
                                 android:id="@+id/bs2q414"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onCheckedChanged="@{()->bs2q5.clearCheck()}"
                                 android:checked="@{form.bs2q414.equals(`14`)}"
                                 android:onClick="@{()->form.setBs2q414(form.bs2q414.equals(`14`)?``:`14`)}"
                                 android:text="@string/bs2q414" />
@@ -568,6 +571,7 @@
                                 android:id="@+id/bs2q415"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onCheckedChanged="@{()->bs2q5.clearCheck()}"
                                 android:checked="@{form.bs2q415.equals(`15`)}"
                                 android:onClick="@{()->form.setBs2q415(form.bs2q415.equals(`15`)?``:`15`)}"
                                 android:text="@string/bs2q415" />
@@ -576,6 +580,7 @@
                                 android:id="@+id/bs2q416"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onCheckedChanged="@{()->bs2q5.clearCheck()}"
                                 android:checked="@{form.bs2q416.equals(`16`)}"
                                 android:onClick="@{()->form.setBs2q416(form.bs2q416.equals(`16`)?``:`16`)}"
                                 android:text="@string/bs2q416" />
@@ -584,6 +589,7 @@
                                 android:id="@+id/bs2q417"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onCheckedChanged="@{()->bs2q5.clearCheck()}"
                                 android:checked="@{form.bs2q417.equals(`17`)}"
                                 android:onClick="@{()->form.setBs2q417(form.bs2q417.equals(`17`)?``:`17`)}"
                                 android:text="@string/bs2q417" />
@@ -592,6 +598,7 @@
                                 android:id="@+id/bs2q418"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onCheckedChanged="@{()->bs2q5.clearCheck()}"
                                 android:checked="@{form.bs2q418.equals(`18`)}"
                                 android:onClick="@{()->form.setBs2q418(form.bs2q418.equals(`18`)?``:`18`)}"
                                 android:text="@string/bs2q418" />
@@ -625,7 +632,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbs2q5"
                     style="@style/cardView"
-                    android:visibility="@{form.bs2q3.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{form.bs2q3.equals(`2`) || form.bs2q412.equals(`12`)  || form.bs2q413.equals(`13`)  || form.bs2q414.equals(`14`)  || form.bs2q415.equals(`15`)  || form.bs2q416.equals(`16`)  || form.bs2q417.equals(`17`)   || form.bs2q418.equals(`18`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -707,7 +714,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbs2q6"
                     style="@style/cardView"
-                    android:visibility="@{form.bs2q3.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{form.bs2q3.equals(`2`) || form.bs2q412.equals(`12`)  || form.bs2q413.equals(`13`)  || form.bs2q414.equals(`14`)  || form.bs2q415.equals(`15`)  || form.bs2q416.equals(`16`)  || form.bs2q417.equals(`17`)   || form.bs2q418.equals(`18`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
