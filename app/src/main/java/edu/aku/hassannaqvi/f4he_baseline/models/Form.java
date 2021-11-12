@@ -6668,6 +6668,42 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs3bq04(String cs3bq04) {
         this.cs3bq04 = cs3bq04;
+        setCs3bq05(cs3bq04.equals("1") ? "" : this.cs3bq05);
+        setCs3bq05aa(cs3bq04.equals("1") ? "" : this.cs3bq05aa);
+        setCs3bq05ab(cs3bq04.equals("1") ? "" : this.cs3bq05ab);
+        setCs3bq05ax(cs3bq04.equals("1") ? "" : this.cs3bq05ax);
+        setCs3bq05a97(cs3bq04.equals("1") ? "" : this.cs3bq05a97);
+        setCs3bq05ba(cs3bq04.equals("1") ? "" : this.cs3bq05ba);
+        setCs3bq05bb(cs3bq04.equals("1") ? "" : this.cs3bq05bb);
+        setCs3bq05bx(cs3bq04.equals("1") ? "" : this.cs3bq05bx);
+        setCs3bq05b97(cs3bq04.equals("1") ? "" : this.cs3bq05b97);
+        setCs3bq05ca(cs3bq04.equals("1") ? "" : this.cs3bq05ca);
+        setCs3bq05cb(cs3bq04.equals("1") ? "" : this.cs3bq05cb);
+        setCs3bq05cx(cs3bq04.equals("1") ? "" : this.cs3bq05cx);
+        setCs3bq05c97(cs3bq04.equals("1") ? "" : this.cs3bq05c97);
+        setCs3bq05da(cs3bq04.equals("1") ? "" : this.cs3bq05da);
+        setCs3bq05db(cs3bq04.equals("1") ? "" : this.cs3bq05db);
+        setCs3bq05dx(cs3bq04.equals("1") ? "" : this.cs3bq05dx);
+        setCs3bq05d97(cs3bq04.equals("1") ? "" : this.cs3bq05d97);
+        setCs3bq05ea(cs3bq04.equals("1") ? "" : this.cs3bq05ea);
+        setCs3bq05eb(cs3bq04.equals("1") ? "" : this.cs3bq05eb);
+        setCs3bq05ex(cs3bq04.equals("1") ? "" : this.cs3bq05ex);
+        setCs3bq05e97(cs3bq04.equals("1") ? "" : this.cs3bq05e97);
+        setCs3bq05fa(cs3bq04.equals("1") ? "" : this.cs3bq05fa);
+        setCs3bq05fb(cs3bq04.equals("1") ? "" : this.cs3bq05fb);
+        setCs3bq05fx(cs3bq04.equals("1") ? "" : this.cs3bq05fx);
+        setCs3bq05f97(cs3bq04.equals("1") ? "" : this.cs3bq05f97);
+        setCs3bq06(cs3bq04.equals("1") ? "" : this.cs3bq06);
+        setCs3bq07(cs3bq04.equals("1") ? "" : this.cs3bq07);
+        setCs3bq08(cs3bq04.equals("1") ? "" : this.cs3bq08);
+        setCs3bq09(cs3bq04.equals("1") ? "" : this.cs3bq09);
+        setCs3bq10(cs3bq04.equals("1") ? "" : this.cs3bq10);
+        setCs3bq11(cs3bq04.equals("1") ? "" : this.cs3bq11);
+        setCs3bq12(cs3bq04.equals("1") ? "" : this.cs3bq12);
+        setCs3bq13(cs3bq04.equals("1") ? "" : this.cs3bq13);
+        setCs3bq14(cs3bq04.equals("1") ? "" : this.cs3bq14);
+        setCs3bq15(cs3bq04.equals("1") ? "" : this.cs3bq15);
+        setCs3bq16(cs3bq04.equals("1") ? "" : this.cs3bq16);
         notifyPropertyChanged(BR.cs3bq04);
     }
 
