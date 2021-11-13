@@ -4,6 +4,7 @@ import android.provider.BaseColumns;
 
 public class TableContracts {
 
+
     public static abstract class FormsTable implements BaseColumns {
         public static final String TABLE_NAME = "formHH";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
@@ -128,7 +129,15 @@ public class TableContracts {
             public static final String COLUMN_SNO = "sno";
             public static final String COLUMN_USERNAME = "username";
             public static final String COLUMN_SYSDATE = "sysdate";
-            public static final String COLUMN_BS1 = "bS1";
+            public static final String COLUMN_SB1 = "sB1";
+            public static final String COLUMN_SB2 = "sB2";
+            public static final String COLUMN_SB3 = "sB3";
+            public static final String COLUMN_SB41 = "sB41";
+            public static final String COLUMN_SB42 = "sB42";
+            public static final String COLUMN_SB5 = "sB5";
+            public static final String COLUMN_SB6 = "sB6";
+            public static final String COLUMN_SB7 = "sB7";
+
             public static final String COLUMN_DEVICEID = "deviceid";
             public static final String COLUMN_DEVICETAGID = "devicetagid";
             public static final String COLUMN_SYNCED = "synced";
@@ -172,5 +181,36 @@ public class TableContracts {
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
     }
+
+    public static abstract class MwraTable implements BaseColumns {
+        public static final String TABLE_NAME = "MWRA";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_EB_CODE = "ebCode";
+        public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_INDEXED = "indexed";
+        public static final String COLUMN_SB1 = "sb1";
+
+        public static final String COLUMN_SB2 = "sb2";
+        public static final String COLUMN_SB3 = "sb3";
+        public static final String COLUMN_SB41 = "sb41";
+        public static final String COLUMN_SB42 = "sb42";
+        public static final String COLUMN_SB5 = "sb5";
+        public static final String COLUMN_SB6 = "sb6";
+        public static final String COLUMN_SB7 = "sb7";
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
 
 }
