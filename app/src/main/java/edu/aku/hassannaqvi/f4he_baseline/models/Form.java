@@ -7176,6 +7176,18 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs4q01(String cs4q01) {
         this.cs4q01 = cs4q01;
+        setCs4q02a(cs4q01.equals("1") ? "" : this.cs4q02a);
+        setCs4q02b(cs4q01.equals("1") ? "" : this.cs4q02b);
+        setCs4q02c(cs4q01.equals("1") ? "" : this.cs4q02c);
+        setCs4q02d(cs4q01.equals("1") ? "" : this.cs4q02d);
+        setCs4q02e(cs4q01.equals("1") ? "" : this.cs4q02e);
+        setCs4q02f(cs4q01.equals("1") ? "" : this.cs4q02f);
+        setCs4q02g(cs4q01.equals("1") ? "" : this.cs4q02g);
+        setCs4q02h(cs4q01.equals("1") ? "" : this.cs4q02h);
+        setCs4q02i(cs4q01.equals("1") ? "" : this.cs4q02i);
+        setCs4q02j(cs4q01.equals("1") ? "" : this.cs4q02j);
+        setCs4q02k(cs4q01.equals("1") ? "" : this.cs4q02k);
+        setCs4q03(cs4q01.equals("1") ? "" : this.cs4q03);
         notifyPropertyChanged(BR.cs4q01);
     }
 
@@ -7306,6 +7318,25 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs5q01(String cs5q01) {
         this.cs5q01 = cs5q01;
+        setCs5q02(cs5q01.equals("1") ? "" : this.cs5q02);
+        setCs5q03(cs5q01.equals("1") ? "" : this.cs5q03);
+        setCs5q04(cs5q01.equals("1") ? "" : this.cs5q04);
+        setCs5q05(cs5q01.equals("1") ? "" : this.cs5q05);
+        setCs5q06a(cs5q01.equals("1") ? "" : this.cs5q06a);
+        setCs5q06b(cs5q01.equals("1") ? "" : this.cs5q06b);
+        setCs5q07(cs5q01.equals("1") ? "" : this.cs5q07);
+        setCs5q08a(cs5q01.equals("1") ? "" : this.cs5q08a);
+        setCs5q08b(cs5q01.equals("1") ? "" : this.cs5q08b);
+        setCs5q09(cs5q01.equals("1") ? "" : this.cs5q09);
+        setCs5q10(cs5q01.equals("1") ? "" : this.cs5q10);
+        setCs5q11(cs5q01.equals("1") ? "" : this.cs5q11);
+        setCs5q12(cs5q01.equals("1") ? "" : this.cs5q12);
+        setCs5q13(cs5q01.equals("1") ? "" : this.cs5q13);
+        setCs5q14(cs5q01.equals("1") ? "" : this.cs5q14);
+        setCs5q15(cs5q01.equals("1") ? "" : this.cs5q15);
+        setCs5q16(cs5q01.equals("1") ? "" : this.cs5q16);
+        setCs5q17(cs5q01.equals("1") ? "" : this.cs5q17);
+        setCs5q18(cs5q01.equals("1") ? "" : this.cs5q18);
         notifyPropertyChanged(BR.cs5q01);
     }
 
@@ -7346,6 +7377,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs5q05(String cs5q05) {
         this.cs5q05 = cs5q05;
+        setCs5q06a(cs5q05.equals("2") ? "" : cs5q06a);
+        setCs5q06b(cs5q05.equals("1") ? "" : cs5q06b);
         notifyPropertyChanged(BR.cs5q05);
     }
 
@@ -7376,6 +7409,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs5q07(String cs5q07) {
         this.cs5q07 = cs5q07;
+        setCs5q08a(cs5q07.equals("2") ? "" : cs5q08a);
+        setCs5q08b(cs5q07.equals("1") ? "" : cs5q08b);
         notifyPropertyChanged(BR.cs5q07);
     }
 
@@ -7406,6 +7441,11 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs5q09(String cs5q09) {
         this.cs5q09 = cs5q09;
+        setCs5q10(cs5q09.equals("2") ? "" : this.cs5q10);
+        setCs5q11(cs5q09.equals("2") ? "" : this.cs5q11);
+        setCs5q12(cs5q09.equals("2") ? "" : this.cs5q12);
+
+
         notifyPropertyChanged(BR.cs5q09);
     }
 

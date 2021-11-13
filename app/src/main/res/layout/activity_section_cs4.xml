@@ -111,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility='@{cs4q0101.checked? View.GONE : View.VISIBLE}'>
+                    android:visibility="@{form.cs4q01.equals(`1`) ? View.GONE : View.VISIBLE}">
                 <!-- cs4q02t1  Title   -->
 
                 <androidx.cardview.widget.CardView
