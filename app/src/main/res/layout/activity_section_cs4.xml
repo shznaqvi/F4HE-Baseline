@@ -80,6 +80,7 @@
                             android:id="@+id/cs4q01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{()->cs4q02a.clearCheck() + cs4q02b.clearCheck() + cs4q02c.clearCheck() + cs4q02d.clearCheck() + cs4q02e.clearCheck() + cs4q02f.clearCheck() + cs4q02g.clearCheck() + cs4q02h.clearCheck() + cs4q02i.clearCheck() + cs4q02j.clearCheck() + cs4q02k.clearCheck() + cs4q03.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
