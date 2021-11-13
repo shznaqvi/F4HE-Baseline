@@ -176,6 +176,31 @@ object CreateTable {
             + " );"
             )
 
+    const val SQL_CREATE_ADOLESCENT = ("CREATE TABLE "
+            + LateAdolescent_Table.TABLE_NAME + "("
+            + LateAdolescent_Table.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + LateAdolescent_Table.COLUMN_PROJECT_NAME + " TEXT,"
+            + LateAdolescent_Table.COLUMN_UID + " TEXT,"
+            + LateAdolescent_Table.COLUMN_UUID + " TEXT,"
+            + LateAdolescent_Table.COLUMN_EB_CODE + " TEXT,"
+            + LateAdolescent_Table.COLUMN_HHID + " TEXT,"
+            + LateAdolescent_Table.COLUMN_USERNAME + " TEXT,"
+            + LateAdolescent_Table.COLUMN_SYSDATE + " TEXT,"
+            + LateAdolescent_Table.COLUMN_INDEXED + " TEXT,"
+            + LateAdolescent_Table.COLUMN_ISTATUS + " TEXT,"
+            + LateAdolescent_Table.COLUMN_DEVICEID + " TEXT,"
+            + LateAdolescent_Table.COLUMN_DEVICETAGID + " TEXT,"
+            + LateAdolescent_Table.COLUMN_SYNCED + " TEXT,"
+            + LateAdolescent_Table.COLUMN_SYNCED_DATE + " TEXT,"
+            + LateAdolescent_Table.COLUMN_APPVERSION + " TEXT,"
+            + LateAdolescent_Table.COLUMN_SE1 + " TEXT,"
+            + LateAdolescent_Table.COLUMN_SE2 + " TEXT,"
+            + LateAdolescent_Table.COLUMN_SE3 + " TEXT,"
+            + LateAdolescent_Table.COLUMN_SE4 + " TEXT,"
+
+            + " );"
+            )
+
 
 
     const val SQL_CREATE_USERS = ("CREATE TABLE "

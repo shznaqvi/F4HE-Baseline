@@ -40,6 +40,9 @@ public class Pregnancy extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
 
+    // Section Variables
+    private String sB1 = _EMPTY_;
+
     //Field Variables;
     private String bs1q7p1g= _EMPTY_ ;
     private String bs1q7p1d= _EMPTY_;
@@ -90,6 +93,14 @@ public class Pregnancy extends BaseObservable implements Observable {
     private String bs1q1396= _EMPTY_;
     private String bs1q1396x= _EMPTY_;
 
+
+    public String getsB1() {
+        return sB1;
+    }
+
+    public void setsB1(String sB1) {
+        this.sB1 = sB1;
+    }
 
     private String getProjectName() {
         return projectName;

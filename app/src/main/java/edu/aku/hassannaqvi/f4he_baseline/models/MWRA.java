@@ -46,6 +46,17 @@ public class MWRA extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
 
+    //Section Vaiables
+    private String sB1 = _EMPTY_;
+    private String sB2 = _EMPTY_;
+    private String sB3 = _EMPTY_;
+    private String sB41 = _EMPTY_;
+    private String sB42 = _EMPTY_;
+    private String sB5 = _EMPTY_;
+    private String sB6 = _EMPTY_;
+    private String sB7 = _EMPTY_;
+
+
     // Field Variables bs1
 
     private String bs1resp = _EMPTY_;
@@ -424,6 +435,38 @@ public class MWRA extends BaseObservable implements Observable {
         setHhid(MainApp.form.getHhid());
     }
 
+    public String getsB1() {
+        return sB1;
+    }
+
+    public String getsB2() {
+        return sB2;
+    }
+
+    public String getsB3() {
+        return sB3;
+    }
+
+    public String getsB41() {
+        return sB41;
+    }
+
+    public String getsB42() {
+        return sB42;
+    }
+
+    public String getsB5() {
+        return sB5;
+    }
+
+    public String getsB6() {
+        return sB6;
+    }
+
+    public String getsB7() {
+        return sB7;
+    }
+
     public String getProjectName() {
         return projectName;
     }
@@ -492,7 +535,37 @@ public class MWRA extends BaseObservable implements Observable {
         return syncDate;
     }
 
+    public void setsB1(String sB1) {
+        this.sB1 = sB1;
+    }
 
+    public void setsB2(String sB2) {
+        this.sB2 = sB2;
+    }
+
+    public void setsB3(String sB3) {
+        this.sB3 = sB3;
+    }
+
+    public void setsB41(String sB41) {
+        this.sB41 = sB41;
+    }
+
+    public void setsB42(String sB42) {
+        this.sB42 = sB42;
+    }
+
+    public void setsB5(String sB5) {
+        this.sB5 = sB5;
+    }
+
+    public void setsB6(String sB6) {
+        this.sB6 = sB6;
+    }
+
+    public void setsB7(String sB7) {
+        this.sB7 = sB7;
+    }
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
