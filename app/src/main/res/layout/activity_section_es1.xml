@@ -31,18 +31,22 @@
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/es1knowledgeattitudeandpractices_mainheading"
+            app:subtitle="@string/es1title"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- es1title  Title   -->
                 <androidx.cardview.widget.CardView
@@ -58,8 +62,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/es1title" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es1resp  Input   -->
                 <androidx.cardview.widget.CardView
@@ -84,10 +91,10 @@
                                 android:text="@string/Q_es1resp" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es1resp" />
+
                         </LinearLayout>
 
                         <EditText
@@ -96,8 +103,11 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/es1resp"
                             android:text="@={form.es1resp}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es1respline  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -122,10 +132,10 @@
                                 android:text="@string/Q_es1respline" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es1respline" />
+
                         </LinearLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -143,6 +153,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es1cons  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -167,23 +178,23 @@
                                 android:text="@string/Q_es1cons" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es1cons" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/es1cons"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/es1cons01"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.es1cons.equals(`1`)}"
                                 android:onClick="@{()->form.setEs1cons(`1`)}"
                                 android:text="@string/es1cons01" />
@@ -191,14 +202,18 @@
                             <RadioButton
                                 android:id="@+id/es1cons02"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.es1cons.equals(`2`)}"
                                 android:onClick="@{()->form.setEs1cons(`2`)}"
                                 android:text="@string/es1cons02" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es1q1  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -223,10 +238,10 @@
                                 android:text="@string/Q_es1q1" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es1q1" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -290,7 +305,7 @@
                                 android:hint="@string/es1q196"
                                 android:tag="es1q196"
                                 android:text="@={form.es1q196x}"
-                                android:visibility='@{es1q196.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.es1q1.equals(`96`)? View.VISIBLE : View.GONE}" />
 
                             <RadioButton
                                 android:id="@+id/es1q197"
@@ -307,9 +322,13 @@
                                 android:checked="@{form.es1q1.equals(`98`)}"
                                 android:onClick="@{()->form.setEs1q1(`98`)}"
                                 android:text="@string/es1q198" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es1q2  Radio   -->
                 <androidx.cardview.widget.CardView
