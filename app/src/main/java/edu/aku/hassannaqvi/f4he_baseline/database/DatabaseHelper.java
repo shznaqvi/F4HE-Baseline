@@ -57,6 +57,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_ENUMBLOCKS);
         //db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
+        db.execSQL(CreateTable.SQL_CREATE_MWRA);
+        db.execSQL(CreateTable.SQL_CREATE_PREGNANCY);
         db.execSQL(CreateTable.SQL_CREATE_HHMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMB);
         //db.execSQL(SQL_CREATE_FOODS_CONSUMPTION);
