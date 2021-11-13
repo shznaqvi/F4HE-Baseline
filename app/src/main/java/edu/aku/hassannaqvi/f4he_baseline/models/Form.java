@@ -7776,6 +7776,25 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs1cons(String es1cons) {
         this.es1cons = es1cons;
+        setEs1q1(es1cons.equals("2") ? "" : this.es1q1);
+        setEs1q2(es1cons.equals("2") ? "" : this.es1q2);
+        setEs1q3(es1cons.equals("2") ? "" : this.es1q3);
+        setEs1q405(es1cons.equals("2") ? "" : this.es1q405);
+        setEs1q406(es1cons.equals("2") ? "" : this.es1q406);
+        setEs1q407(es1cons.equals("2") ? "" : this.es1q407);
+        setEs1q408(es1cons.equals("2") ? "" : this.es1q408);
+        setEs1q409(es1cons.equals("2") ? "" : this.es1q409);
+        setEs1q496(es1cons.equals("2") ? "" : this.es1q496);
+        setEs1q496x(es1cons.equals("2") ? "" : this.es1q496x);
+        setEs1q5(es1cons.equals("2") ? "" : this.es1q5);
+        setEs1q6(es1cons.equals("2") ? "" : this.es1q6);
+        setEs1q7(es1cons.equals("2") ? "" : this.es1q7);
+        setEs1q8a(es1cons.equals("2") ? "" : this.es1q8a);
+        setEs1q8b(es1cons.equals("2") ? "" : this.es1q8b);
+        setEs1q8c(es1cons.equals("2") ? "" : this.es1q8c);
+        setEs1q9(es1cons.equals("2") ? "" : this.es1q9);
+        setEs1q10(es1cons.equals("2") ? "" : this.es1q10);
+        setEs1q11(es1cons.equals("2") ? "" : this.es1q11);
         notifyPropertyChanged(BR.es1cons);
     }
 
@@ -7807,6 +7826,17 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs1q2(String es1q2) {
         this.es1q2 = es1q2;
+        setEs1q3(es1q2.equals("97") ? this.es1q3 : "");
+        setEs1q405(es1q2.equals("97") ? this.es1q405 : "");
+        setEs1q406(es1q2.equals("97") ? this.es1q406 : "");
+        setEs1q407(es1q2.equals("97") ? this.es1q407 : "");
+        setEs1q408(es1q2.equals("97") ? this.es1q408 : "");
+        setEs1q409(es1q2.equals("97") ? this.es1q409 : "");
+        setEs1q496(es1q2.equals("97") ? this.es1q496 : "");
+        setEs1q496x(es1q2.equals("97") ? this.es1q496x : "");
+        setEs1q5(es1q2.equals("97") ? this.es1q5 : "");
+        setEs1q6(es1q2.equals("97") ? this.es1q6 : "");
+
         notifyPropertyChanged(BR.es1q2);
     }
 
@@ -7934,6 +7964,10 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs1q7(String es1q7) {
         this.es1q7 = es1q7;
+        setEs1q8a(es1q7.equals("1") ? this.es1q8a : "" );
+        setEs1q8b(es1q7.equals("1") ? this.es1q8b : "" );
+        setEs1q8c(es1q7.equals("1") ? this.es1q8c : "" );
+
         notifyPropertyChanged(BR.es1q7);
     }
 

@@ -642,7 +642,7 @@
                                 android:hint="@string/es2q196"
                                 android:tag="es2q196"
                                 android:text="@={form.es2q196x}"
-                                android:visibility="@{form.es2q196.equals(`96`)? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{form.es2q10.equals(`96`)? View.VISIBLE : View.GONE}" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
