@@ -1627,9 +1627,9 @@
                             android:inputType="number"
                             android:text="@={form.as1q23a}"
                             app:mask="0XXXXXXXXXX"
-                            app:maxValue="03333333333"
+                            app:maxValue="03599999999"
                             app:minValue="01111111111"
-                            app:type="range" />
+                            app:type="equal" />
 
                     </LinearLayout>
 

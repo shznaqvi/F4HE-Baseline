@@ -598,7 +598,7 @@
                                 android:id="@+id/cs5q07"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:onCheckedChanged="@{()->cs5q06a.clearCheck() + cs5q06b.clearCheck()}"
+                                android:onCheckedChanged="@{()->cs5q08a.clearCheck() + cs5q08b.clearCheck()}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
