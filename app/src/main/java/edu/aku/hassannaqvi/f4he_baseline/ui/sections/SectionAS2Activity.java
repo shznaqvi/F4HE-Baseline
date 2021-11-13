@@ -34,6 +34,7 @@ public class SectionAS2Activity extends AppCompatActivity {
         bi.setHhmember(hhMembers);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        //bi.hl5y.setMaxvalue(Float.parseFloat(""));
     }
 
 
