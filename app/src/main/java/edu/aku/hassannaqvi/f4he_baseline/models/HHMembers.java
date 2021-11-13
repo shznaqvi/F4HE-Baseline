@@ -24,7 +24,7 @@ import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 
 public class HHMembers extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "HHMembers";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
