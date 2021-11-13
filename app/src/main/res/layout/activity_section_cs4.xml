@@ -107,7 +107,13 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{cs4q0101.checked? View.GONE : View.VISIBLE}">
                 <!-- cs4q02t1  Title   -->
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs4q02t1"
                     style="@style/cardView">
@@ -815,6 +821,9 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
 
 
                 <!--EndButton LinearLayout-->
