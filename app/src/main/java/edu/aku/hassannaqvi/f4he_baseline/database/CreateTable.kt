@@ -196,10 +196,38 @@ object CreateTable {
             + LateAdolescent_Table.COLUMN_SE1 + " TEXT,"
             + LateAdolescent_Table.COLUMN_SE2 + " TEXT,"
             + LateAdolescent_Table.COLUMN_SE3 + " TEXT,"
-            + LateAdolescent_Table.COLUMN_SE4 + " TEXT,"
+            + LateAdolescent_Table.COLUMN_SE4 + " TEXT"
 
             + " );"
             )
+
+    const val SQL_CREATE_CHILD = ("CREATE TABLE "
+            + Child_Table.TABLE_NAME + "("
+            + Child_Table.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + Child_Table.COLUMN_PROJECT_NAME + " TEXT,"
+            + Child_Table.COLUMN_UID + " TEXT,"
+            + Child_Table.COLUMN_UUID + " TEXT,"
+            + Child_Table.COLUMN_EB_CODE + " TEXT,"
+            + Child_Table.COLUMN_HHID + " TEXT,"
+            + Child_Table.COLUMN_USERNAME + " TEXT,"
+            + Child_Table.COLUMN_SYSDATE + " TEXT,"
+            + Child_Table.COLUMN_INDEXED + " TEXT,"
+            + Child_Table.COLUMN_ISTATUS + " TEXT,"
+            + Child_Table.COLUMN_DEVICEID + " TEXT,"
+            + Child_Table.COLUMN_DEVICETAGID + " TEXT,"
+            + Child_Table.COLUMN_SYNCED + " TEXT,"
+            + Child_Table.COLUMN_SYNCED_DATE + " TEXT,"
+            + Child_Table.COLUMN_APPVERSION + " TEXT,"
+            + Child_Table.COLUMN_SC1 + " TEXT,"
+            + Child_Table.COLUMN_SC2 + " TEXT,"
+            + Child_Table.COLUMN_SC31 + " TEXT,"
+            + Child_Table.COLUMN_SC32 + " TEXT,"
+            + Child_Table.COLUMN_SC4 + " TEXT,"
+            + Child_Table.COLUMN_SC5 + " TEXT"
+
+            + " );"
+            )
+
 
 
 

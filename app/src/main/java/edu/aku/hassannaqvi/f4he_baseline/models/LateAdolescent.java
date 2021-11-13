@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.f4he_baseline.models;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
+import android.database.Cursor;
 import android.util.Log;
 
 import androidx.databinding.BaseObservable;
@@ -2671,6 +2672,28 @@ public class LateAdolescent extends BaseObservable {
         json.put(TableContracts.LateAdolescent_Table.COLUMN_SE3, new JSONObject(sE3toString()));
         json.put(TableContracts.LateAdolescent_Table.COLUMN_SE4, new JSONObject(sE4toString()));
         return json;
+    }
+
+    public LateAdolescent Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_UID));
+        //this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_ENUM_BLOCK));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_HHID));
+        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SNO));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SYNCED_DATE));
+
+        sE1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SE1)));
+        sE2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SE2)));
+        sE3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SE3)));
+        sE4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SE4)));
+        return this;
     }
 
 
