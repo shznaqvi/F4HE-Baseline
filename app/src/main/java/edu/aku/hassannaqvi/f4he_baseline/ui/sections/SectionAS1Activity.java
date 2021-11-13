@@ -42,7 +42,7 @@ public class SectionAS1Activity extends AppCompatActivity {
         bi.setForm(form);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
-        populateSpinner(this);
+        //populateSpinner(this);
 
     }
 
