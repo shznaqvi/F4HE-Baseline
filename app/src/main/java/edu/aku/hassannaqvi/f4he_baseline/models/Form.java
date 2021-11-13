@@ -7451,11 +7451,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs5q09(String cs5q09) {
         this.cs5q09 = cs5q09;
-        setCs5q10(cs5q09.equals("2") ? "" : this.cs5q10);
+        setCs5q10(cs5q09.equals("1") ? "" : this.cs5q10);
         setCs5q11(cs5q09.equals("2") ? "" : this.cs5q11);
-        setCs5q12(cs5q09.equals("2") ? "" : this.cs5q12);
-
-
         notifyPropertyChanged(BR.cs5q09);
     }
 
