@@ -117,6 +117,11 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility='@{cs5q0101.checked ? View.GONE : View.VISIBLE}'>
                 <!-- cs5inst1  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs5inst1"
@@ -396,7 +401,8 @@
                 <!-- cs5q06a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs5q06a"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility='@{cs5q0501.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -465,7 +471,8 @@
                 <!-- cs5q06b  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs5q06b"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility='@{cs5q0502.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -590,7 +597,8 @@
                 <!-- cs5q08a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs5q08a"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility='@{cs5q0701.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -659,7 +667,8 @@
                 <!-- cs5q08b  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs5q08b"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility='@{cs5q0701.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -784,7 +793,8 @@
                 <!-- cs5q10  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs5q10"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility='@{cs5q0901.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -991,7 +1001,8 @@
                 <!-- cs5q13  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs5q13"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility='@{cs5q0902.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1427,6 +1438,8 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
