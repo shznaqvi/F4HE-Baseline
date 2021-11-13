@@ -8064,6 +8064,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setEs2q7(String es2q7) {
         this.es2q7 = es2q7;
+        setEs2q8(es2q7.equals("1") ? "" : this.es2q8);
         notifyPropertyChanged(BR.es2q7);
     }
 
