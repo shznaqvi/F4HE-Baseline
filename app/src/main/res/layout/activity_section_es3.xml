@@ -122,7 +122,8 @@
                 <!-- es3q2  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes3q2"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.es3q1.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -233,7 +234,7 @@
                                 android:hint="@string/es3q296"
                                 android:tag="es3q296"
                                 android:text="@={form.es3q296x}"
-                                android:visibility='@{es3q296.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.es3q2.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             <RadioButton
                                 android:id="@+id/es3q297"
@@ -336,7 +337,7 @@
                                 android:hint="@string/es3q396"
                                 android:tag="es3q396"
                                 android:text="@={form.es3q396x}"
-                                android:visibility='@{es3q396.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.es3q3.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             <RadioButton
                                 android:id="@+id/es3q397"
@@ -408,7 +409,9 @@
                 <!-- es3q5  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes3q5"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.es3q4.equals(`1`) ? View.VISIBLE : View.GONE}">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -513,7 +516,7 @@
                                 android:hint="@string/es3q596"
                                 android:tag="es3q596"
                                 android:text="@={form.es3q596x}"
-                                android:visibility='@{es3q596.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.es3q5.equals(`96`)? View.VISIBLE : View.GONE}" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -646,7 +649,8 @@
                 <!-- es3q8  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes3q8"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.es3q7.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -754,7 +758,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q901.equals(`1`)}"
                                 android:onClick="@{()->form.setEs3q901(form.es3q901.equals(`1`)?``:`1`)}"
-                                android:text="@string/es3q901" />
+                                android:text="@string/es3q901"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <CheckBox
                                 android:id="@+id/es3q902"
@@ -762,7 +767,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q902.equals(`2`)}"
                                 android:onClick="@{()->form.setEs3q902(form.es3q902.equals(`2`)?``:`2`)}"
-                                android:text="@string/es3q902" />
+                                android:text="@string/es3q902"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <CheckBox
                                 android:id="@+id/es3q903"
@@ -770,7 +776,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q903.equals(`3`)}"
                                 android:onClick="@{()->form.setEs3q903(form.es3q903.equals(`3`)?``:`3`)}"
-                                android:text="@string/es3q903" />
+                                android:text="@string/es3q903"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <CheckBox
                                 android:id="@+id/es3q904"
@@ -778,7 +785,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q904.equals(`4`)}"
                                 android:onClick="@{()->form.setEs3q904(form.es3q904.equals(`4`)?``:`4`)}"
-                                android:text="@string/es3q904" />
+                                android:text="@string/es3q904"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <CheckBox
                                 android:id="@+id/es3q905"
@@ -786,7 +794,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q905.equals(`5`)}"
                                 android:onClick="@{()->form.setEs3q905(form.es3q905.equals(`5`)?``:`5`)}"
-                                android:text="@string/es3q905" />
+                                android:text="@string/es3q905"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <CheckBox
                                 android:id="@+id/es3q906"
@@ -794,7 +803,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q906.equals(`6`)}"
                                 android:onClick="@{()->form.setEs3q906(form.es3q906.equals(`6`)?``:`6`)}"
-                                android:text="@string/es3q906" />
+                                android:text="@string/es3q906"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <CheckBox
                                 android:id="@+id/es3q907"
@@ -802,7 +812,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q907.equals(`7`)}"
                                 android:onClick="@{()->form.setEs3q907(form.es3q907.equals(`7`)?``:`7`)}"
-                                android:text="@string/es3q907" />
+                                android:text="@string/es3q907"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <CheckBox
                                 android:id="@+id/es3q908"
@@ -810,7 +821,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q908.equals(`8`)}"
                                 android:onClick="@{()->form.setEs3q908(form.es3q908.equals(`8`)?``:`8`)}"
-                                android:text="@string/es3q908" />
+                                android:text="@string/es3q908"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <CheckBox
                                 android:id="@+id/es3q996"
@@ -818,7 +830,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.es3q996.equals(`96`)}"
                                 android:onClick="@{()->form.setEs3q996(form.es3q996.equals(`96`)?``:`96`)}"
-                                android:text="@string/es3q996" />
+                                android:text="@string/es3q996"
+                                android:enabled="@{!form.es3q9.equals(`98`)}"/>
 
                             <EditText
                                 android:id="@+id/es3q996x"
@@ -828,7 +841,8 @@
                                 android:hint="@string/es3q996"
                                 android:tag="es3q996"
                                 android:text="@={form.es3q996x}"
-                                android:visibility='@{es3q996.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.es3q9.equals(`96`)? View.VISIBLE : View.GONE}"
+                                />
 
                             <CheckBox
                                 android:id="@+id/es3q998"
@@ -966,7 +980,7 @@
                                 android:hint="@string/es3q196"
                                 android:tag="es3q196"
                                 android:text="@={form.es3q196x}"
-                                android:visibility='@{es3q196.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.es3q10.equals(`96`)? View.VISIBLE : View.GONE}" />
 
                             <CheckBox
                                 android:id="@+id/es3q1098"
