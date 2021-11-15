@@ -4,19 +4,12 @@ import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
-
-import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -76,7 +69,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
         }
 
-        bi.a105.addTextChangedListener(new TextWatcher() {
+        /*bi.a105.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
@@ -95,9 +88,9 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
             }
-        });
+        });*/
 
-        bi.a110.addTextChangedListener(new TextWatcher() {
+        /*bi.a110.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
@@ -112,7 +105,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
             }
-        });
+        });*/
 
 
     }
@@ -291,7 +284,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private boolean hhExists() {
 
-        switch (MainApp.idType) {
+        /*switch (MainApp.idType) {
             case 1:
                 MainApp.form = new Form();
                 try {
@@ -313,7 +306,7 @@ public class IdentificationActivity extends AppCompatActivity {
                         MainApp.subjectNames = new ArrayList<>();
                         MainApp.subjectNames.add("...");
 
-                    /*    // Add woman if exist
+                    *//*    // Add woman if exist
                         if (!MainApp.form.getA104n().equals("")) {
                             MainApp.subjectNames.add(MainApp.form.getA104n() + " (" + MainApp.form.getW102() + ")");
                             // Add child if both woman and child exist
@@ -328,12 +321,12 @@ public class IdentificationActivity extends AppCompatActivity {
                             Toast.makeText(this, R.string.woman_child_info_missing, Toast.LENGTH_SHORT).show();
                             return false;
 
-                        }*/
+                        }*//*
                     } else {
                         return MainApp.form != null;
                     }
-             /*       MainApp.samples = new Samples();
-                    MainApp.anthro = new Anthro();*/
+             *//*       MainApp.samples = new Samples();
+                    MainApp.anthro = new Anthro();*//*
                     //MainApp.samples = db.getSamplesByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -345,7 +338,8 @@ public class IdentificationActivity extends AppCompatActivity {
             default:
                 return false;
 
-        }
+        }*/
+        return true;
     }
 
     public void searchEB(View view) {
@@ -355,20 +349,20 @@ public class IdentificationActivity extends AppCompatActivity {
         testEb.setDistrictName("Test District 9");
         testEb.setTehsilName("Test Tehsil 9");
         EnumBlocks enumBlock = new EnumBlocks();
-        if (!bi.a105.getText().toString().equals(testEb.getEnumBlock())) {
+        /*if (!bi.a105.getText().toString().equals(testEb.getEnumBlock())) {
             enumBlock = db.getEnumBlocks(bi.a105.getText().toString());
         } else {
             enumBlock = testEb;
         }
 
-       /* ebCode = new ArrayList<>();
+       *//* ebCode = new ArrayList<>();
         districtNames = new ArrayList<>();
         tehsilNames = new ArrayList<>();
         for (EnumBlocks eb : enumBlocks) {
             ebCode.add(eb.getEnumBlock());
             districtNames.add(eb.getDistrictName());
             tehsilNames.add(eb.getTehsilName()); //
-        }*/
+        }*//*
         if (!enumBlock.getEnumBlock().equals("")) {
             bi.a107.setError(null);
             bi.a108.setError(null);
@@ -382,6 +376,6 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.a110.setText(null);
             bi.ahhead.setText(null);
             bi.fldGrpHH.setVisibility(View.GONE);
-        }
+        }*/
     }
 }
