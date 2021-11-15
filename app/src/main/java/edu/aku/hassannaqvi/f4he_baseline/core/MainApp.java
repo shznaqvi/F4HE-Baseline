@@ -7,12 +7,13 @@ import android.os.Build;
 import android.provider.Settings;
 import android.view.View;
 
+import com.edittextpicker.aliazaz.BuildConfig;
+
 import org.json.JSONArray;
 
 import java.io.File;
 import java.util.List;
 
-import edu.aku.hassannaqvi.f4he_baseline.BuildConfig;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
