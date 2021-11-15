@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,32 +14,27 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
-import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionAs1Binding;
+import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityConsentBinding;
 
-public class SectionAS1Activity extends AppCompatActivity {
-    private static final String TAG = "SectionAS1Activity";
-    ActivitySectionAs1Binding bi;
-    private List<String> countryCode, provinceCode, districtCode, villageCode;
-    private List<String> countryName, provinceName, districtName, villageName;
+
+public class ConsentActivity extends AppCompatActivity {
+    private static final String TAG = "ConsentActivity";
+    ActivityConsentBinding bi;
     private DatabaseHelper db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_as1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_consent);
         bi.setForm(form);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
-        //populateSpinner(this);
 
     }
 
@@ -112,63 +106,4 @@ public class SectionAS1Activity extends AppCompatActivity {
     }
 
 
-    public void populateSpinner(final Context context) {
-
-        countryName = new ArrayList<>();
-        countryCode = new ArrayList<>();
-
-        //Collection<HealthFacilities> dc = db.getAllTehsils(MainApp.DIST_ID);
-        /*ArrayList<Districts> dc = db.getDistrictsByUser(MainApp.user.getDist_id());
-
-        for (Districts d : dc) {
-            districtName.add(d.getDistrictName());
-            districtCode.add(d.getDistrictCode());
-        }*/
-
-
-        countryName = new ArrayList<>();
-        countryCode = new ArrayList<>();
-        countryName.add("....");
-        countryCode.add("....");
-        countryName.add("Pakistan");
-        countryCode.add("1");
-        countryName.add("Afghanistan");
-        countryCode.add("2");
-        countryName.add("Tajikistan");
-        countryCode.add("3");
-        countryName.add("Kyrgyztan");
-        countryCode.add("4");
-
-        //bi.as1q01.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, provinceName));
-
-
-        /*bi.as1q01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (position == 0) return;
-
-                provinceName = new ArrayList<>();
-                provinceCode = new ArrayList<>();
-                provinceName.add("....");
-                provinceCode.add("....");
-                countryName.add("Sindh");
-                countryCode.add("11111");
-                countryName.add("Punjab");
-                countryCode.add("22222");
-                countryName.add("Balochistan");
-                countryCode.add("33333");
-                countryName.add("Kyber Pakhtunkah");
-                countryCode.add("44444");
-
-                bi.as1q02.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, provinceName));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });*/
-
-
-    }
 }

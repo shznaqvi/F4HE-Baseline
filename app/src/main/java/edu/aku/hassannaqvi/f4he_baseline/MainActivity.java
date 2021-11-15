@@ -17,6 +17,7 @@ import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.SyncActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportPending;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.ConsentActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS1Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS2Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS1Activity;
@@ -184,6 +185,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.e4:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionES4Activity.class));
+                break;
+            case R.id.con:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, ConsentActivity.class));
                 break;
             case R.id.dbManager:
                 startActivity(new Intent(this, AndroidManager.class));

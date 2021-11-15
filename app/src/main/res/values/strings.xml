@@ -248,7 +248,7 @@
     <string name="as1q23">Informed Consent provided by respondent?</string>
     <string name="as1q2301">Yes</string>
     <string name="as1q2302">No</string>
-    <string name="as1q23a">Cell Number of Respondent/Head of Household</string>
+    <string name="as1q23a"> Cell Number of Respondent / Head of Household </string>
     <string name="as2">Section 2: Household Roaster</string>
     <string name="hl1"> Line Number </string>
     <string name="hl2"> Name </string>
