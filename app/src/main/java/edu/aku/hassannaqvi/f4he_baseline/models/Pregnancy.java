@@ -103,139 +103,139 @@ public class Pregnancy extends BaseObservable implements Observable {
         this.sB1 = sB1;
     }
 
-    private String getProjectName() {
+    public String getProjectName() {
         return projectName;
     }
 
-    private String getId() {
+    public String getId() {
         return id;
     }
 
-    private String getUid() {
+    public String getUid() {
         return uid;
     }
 
-    private String getUuid() {
+    public String getUuid() {
         return Uuid;
     }
 
-    private String getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    private String getSysDate() {
+    public String getSysDate() {
         return sysDate;
     }
 
-    private String getEbCode() {
+    public String getEbCode() {
         return ebCode;
     }
 
-    private String getHhid() {
+    public String getHhid() {
         return hhid;
     }
 
-    private String getSno() {
+    public String getSno() {
         return sno;
     }
 
-    private String getDeviceId() {
+    public String getDeviceId() {
         return deviceId;
     }
 
-    private String getDeviceTag() {
+    public String getDeviceTag() {
         return deviceTag;
     }
 
-    private String getAppver() {
+    public String getAppver() {
         return appver;
     }
 
-    private String getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    private String getiStatus() {
+    public String getiStatus() {
         return iStatus;
     }
 
-    private String getiStatus96x() {
+    public String getiStatus96x() {
         return iStatus96x;
     }
 
-    private String getSynced() {
+    public String getSynced() {
         return synced;
     }
 
-    private String getSyncDate() {
+    public String getSyncDate() {
         return syncDate;
     }
 
-    private void setProjectName(String projectName) {
+    public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
 
-    private void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    private void setUid(String uid) {
+    public void setUid(String uid) {
         this.uid = uid;
     }
 
-    private void setUuid(String uuid) {
+    public void setUuid(String uuid) {
         Uuid = uuid;
     }
 
-    private void setUserName(String userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    private void setSysDate(String sysDate) {
+    public void setSysDate(String sysDate) {
         this.sysDate = sysDate;
     }
 
-    private void setEbCode(String ebCode) {
+    public void setEbCode(String ebCode) {
         this.ebCode = ebCode;
     }
 
-    private void setHhid(String hhid) {
+    public void setHhid(String hhid) {
         this.hhid = hhid;
     }
 
-    private void setSno(String sno) {
+    public void setSno(String sno) {
         this.sno = sno;
     }
 
-    private void setDeviceId(String deviceId) {
+    public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
 
-    private void setDeviceTag(String deviceTag) {
+    public void setDeviceTag(String deviceTag) {
         this.deviceTag = deviceTag;
     }
 
-    private void setAppver(String appver) {
+    public void setAppver(String appver) {
         this.appver = appver;
     }
 
-    private void setEndTime(String endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
-    private void setiStatus(String iStatus) {
+    public void setiStatus(String iStatus) {
         this.iStatus = iStatus;
     }
 
-    private void setiStatus96x(String iStatus96x) {
+    public void setiStatus96x(String iStatus96x) {
         this.iStatus96x = iStatus96x;
     }
 
-    private void setSynced(String synced) {
+    public void setSynced(String synced) {
         this.synced = synced;
     }
 
-    private void setSyncDate(String syncDate) {
+    public void setSyncDate(String syncDate) {
         this.syncDate = syncDate;
     }
 
@@ -907,9 +907,9 @@ public class Pregnancy extends BaseObservable implements Observable {
     public Pregnancy Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_UID));
-        this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_ENUM_BLOCK));
+        //this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_ENUM_BLOCK));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_HHID));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SNO));
+        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_DEVICEID));
