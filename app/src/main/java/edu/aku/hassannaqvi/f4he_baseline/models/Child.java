@@ -26,6 +26,7 @@ public class Child extends BaseObservable implements Observable {
     // APP VARIABLES
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
+    private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String ebCode = _EMPTY_;
@@ -55,7 +56,7 @@ public class Child extends BaseObservable implements Observable {
     private String cs1q0102 = _EMPTY_;
     private String cs1q02 = _EMPTY_;
     private String cs1q02c1 = _EMPTY_;
-    private String cs1q02c1n = _EMPTY_;
+    /*private String cs1q02c1n = _EMPTY_;
     private String cs1q02c1ecd = _EMPTY_;
     private String cs1q02c1cent = _EMPTY_;
     private String cs1q02c2 = _EMPTY_;
@@ -74,7 +75,7 @@ public class Child extends BaseObservable implements Observable {
     private String cs1q02c5n = _EMPTY_;
     private String cs1q02c5ecd = _EMPTY_;
     private String cs1q02c5cent = _EMPTY_;
-    private String cs1q8 = _EMPTY_;
+    */private String cs1q8 = _EMPTY_;
     private String cs1q8096x = _EMPTY_;
     private String cs1q9 = _EMPTY_;
     private String cs1q9096x = _EMPTY_;
@@ -212,6 +213,14 @@ public class Child extends BaseObservable implements Observable {
 
     public String getId() {
         return id;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getUid() {
@@ -422,7 +431,7 @@ public class Child extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.cs1q02c1);
     }
 
-    @Bindable
+    /*@Bindable
     public String getCs1q02c1n() {
         return cs1q02c1n;
     }
@@ -611,7 +620,7 @@ public class Child extends BaseObservable implements Observable {
         this.cs1q02c5cent = cs1q02c5cent;
         notifyPropertyChanged(BR.cs1q02c5cent);
     }
-
+*/
     @Bindable
     public String getCs1q8() {
         return cs1q8;
@@ -2109,7 +2118,7 @@ public class Child extends BaseObservable implements Observable {
             this.cs1q0102 = json.getString("cs1q0102");
             this.cs1q02 = json.getString("cs1q02");
             this.cs1q02c1 = json.getString("cs1q02c1");
-            this.cs1q02c1n = json.getString("cs1q02c1n");
+          /*  this.cs1q02c1n = json.getString("cs1q02c1n");
             this.cs1q02c1ecd = json.getString("cs1q02c1ecd");
             this.cs1q02c1cent = json.getString("cs1q02c1cent");
             this.cs1q02c2 = json.getString("cs1q02c2");
@@ -2128,7 +2137,7 @@ public class Child extends BaseObservable implements Observable {
             this.cs1q02c5n = json.getString("cs1q02c5n");
             this.cs1q02c5ecd = json.getString("cs1q02c5ecd");
             this.cs1q02c5cent = json.getString("cs1q02c5cent");
-            this.cs1q8 = json.getString("cs1q8");
+          */  this.cs1q8 = json.getString("cs1q8");
             this.cs1q8096x = json.getString("cs1q8096x");
             this.cs1q9 = json.getString("cs1q9");
             this.cs1q9096x = json.getString("cs1q9096x");
@@ -2309,7 +2318,7 @@ public class Child extends BaseObservable implements Observable {
                 .put("cs1q0102", cs1q0102)
                 .put("cs1q02", cs1q02)
                 .put("cs1q02c1", cs1q02c1)
-                .put("cs1q02c1n", cs1q02c1n)
+                /*.put("cs1q02c1n", cs1q02c1n)
                 .put("cs1q02c1ecd", cs1q02c1ecd)
                 .put("cs1q02c1cent", cs1q02c1cent)
                 .put("cs1q02c2", cs1q02c2)
@@ -2327,7 +2336,7 @@ public class Child extends BaseObservable implements Observable {
                 .put("cs1q02c5", cs1q02c5)
                 .put("cs1q02c5n", cs1q02c5n)
                 .put("cs1q02c5ecd", cs1q02c5ecd)
-                .put("cs1q02c5cent", cs1q02c5cent)
+                .put("cs1q02c5cent", cs1q02c5cent)*/
                 .put("cs1q8", cs1q8)
                 .put("cs1q8096x", cs1q8096x)
                 .put("cs1q9", cs1q9)

@@ -295,4 +295,27 @@ public class TableContracts {
     }
 
 
+    public static abstract class ECDInfo_Table implements BaseColumns {
+        public static final String TABLE_NAME = "EcdInfo";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        //public static final String COLUMN_EB_CODE = "ebCode";
+        public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_INDEXED = "indexed";
+        public static final String COLUMN_ECDINFO = "ecdinfo";
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
+
 }

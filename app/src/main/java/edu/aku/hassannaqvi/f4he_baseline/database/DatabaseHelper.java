@@ -19,6 +19,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EnumBlocksTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMemberListTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormBTable;
@@ -26,12 +27,21 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.HHMembersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.MwraTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.Child_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescent_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.Pregnancy_Table;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
+import edu.aku.hassannaqvi.f4he_baseline.models.Child;
+import edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.f4he_baseline.models.EnumBlocks;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
 import edu.aku.hassannaqvi.f4he_baseline.models.HHMembers;
+import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
+import edu.aku.hassannaqvi.f4he_baseline.models.MWRA;
+import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 import edu.aku.hassannaqvi.f4he_baseline.models.VersionApp;
 
@@ -61,6 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_PREGNANCY);
         db.execSQL(CreateTable.SQL_CREATE_ADOLESCENT);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
+        db.execSQL(CreateTable.SQL_CREATE_ECDINFO);
 
         db.execSQL(CreateTable.SQL_CREATE_HHMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMB);
@@ -124,6 +135,143 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values);
         return newRowId;
     }
+
+    public Long addMWRA(MWRA mwra) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TableContracts.MwraTable.COLUMN_PROJECT_NAME, mwra.getProjectName());
+        values.put(TableContracts.MwraTable.COLUMN_UID, mwra.getUid());
+        values.put(TableContracts.MwraTable.COLUMN_UUID, mwra.getUuid());
+        values.put(TableContracts.MwraTable.COLUMN_HHID, mwra.getHhid());
+        values.put(MwraTable.COLUMN_USERNAME, mwra.getUserName());
+        values.put(MwraTable.COLUMN_SYSDATE, mwra.getSysDate());
+        values.put(MwraTable.COLUMN_SB1, mwra.sB1toString());
+        values.put(MwraTable.COLUMN_SB2, mwra.sB2toString());
+        values.put(MwraTable.COLUMN_SB3, mwra.sB3toString());
+        values.put(MwraTable.COLUMN_SB41, mwra.sB41toString());
+        values.put(MwraTable.COLUMN_SB42, mwra.sB42toString());
+        values.put(MwraTable.COLUMN_SB5, mwra.sB5toString());
+        values.put(MwraTable.COLUMN_SB6, mwra.sB6toString());
+        values.put(MwraTable.COLUMN_SB7, mwra.sB7toString());
+        values.put(MwraTable.COLUMN_SD1, mwra.sD1toString());
+        values.put(MwraTable.COLUMN_SD2, mwra.sD2toString());
+        values.put(MwraTable.COLUMN_SD3, mwra.sD3toString());
+        values.put(MwraTable.COLUMN_ISTATUS, mwra.getiStatus());
+        values.put(MwraTable.COLUMN_DEVICETAGID, mwra.getDeviceTag());
+        values.put(MwraTable.COLUMN_DEVICEID, mwra.getDeviceId());
+        values.put(MwraTable.COLUMN_APPVERSION, mwra.getAppver());
+
+        long newRowId;
+        newRowId = db.insert(
+                MwraTable.TABLE_NAME,
+                MwraTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
+    public Long addChild(Child child) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TableContracts.Child_Table.COLUMN_PROJECT_NAME, child.getProjectName());
+        values.put(TableContracts.Child_Table.COLUMN_UID, child.getUid());
+        values.put(TableContracts.Child_Table.COLUMN_UUID, child.getUuid());
+        values.put(TableContracts.Child_Table.COLUMN_HHID, child.getHhid());
+        values.put(TableContracts.Child_Table.COLUMN_USERNAME, child.getUserName());
+        values.put(Child_Table.COLUMN_SYSDATE, child.getSysDate());
+        values.put(Child_Table.COLUMN_SC1, child.sC1toString());
+        values.put(Child_Table.COLUMN_SC2, child.sC2toString());
+        values.put(Child_Table.COLUMN_SC31, child.sC31toString());
+        values.put(Child_Table.COLUMN_SC32, child.sC32toString());
+        values.put(Child_Table.COLUMN_SC4, child.sC4toString());
+        values.put(Child_Table.COLUMN_SC5, child.sC5toString());
+        values.put(Child_Table.COLUMN_ISTATUS, child.getiStatus());
+        values.put(Child_Table.COLUMN_DEVICETAGID, child.getDeviceTag());
+        values.put(Child_Table.COLUMN_DEVICEID, child.getDeviceId());
+        values.put(Child_Table.COLUMN_APPVERSION, child.getAppver());
+
+        long newRowId;
+        newRowId = db.insert(
+                Child_Table.TABLE_NAME,
+                Child_Table.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
+    public Long addAdolescent(LateAdolescent adol) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TableContracts.LateAdolescent_Table.COLUMN_PROJECT_NAME, adol.getProjectName());
+        values.put(TableContracts.LateAdolescent_Table.COLUMN_UID, adol.getUid());
+        values.put(TableContracts.LateAdolescent_Table.COLUMN_UUID, adol.getUuid());
+        values.put(TableContracts.LateAdolescent_Table.COLUMN_HHID, adol.getHhid());
+        values.put(TableContracts.LateAdolescent_Table.COLUMN_USERNAME, adol.getUserName());
+        values.put(LateAdolescent_Table.COLUMN_SYSDATE, adol.getSysDate());
+        values.put(LateAdolescent_Table.COLUMN_SE1, adol.sE1toString());
+        values.put(LateAdolescent_Table.COLUMN_SE2, adol.sE2toString());
+        values.put(LateAdolescent_Table.COLUMN_SE3, adol.sE3toString());
+        values.put(LateAdolescent_Table.COLUMN_SE4, adol.sE4toString());
+        values.put(LateAdolescent_Table.COLUMN_ISTATUS, adol.getiStatus());
+        values.put(LateAdolescent_Table.COLUMN_DEVICETAGID, adol.getDeviceTag());
+        values.put(LateAdolescent_Table.COLUMN_DEVICEID, adol.getDeviceId());
+        values.put(LateAdolescent_Table.COLUMN_APPVERSION, adol.getAppver());
+
+        long newRowId;
+        newRowId = db.insert(
+                LateAdolescent_Table.TABLE_NAME,
+                LateAdolescent_Table.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addPregnancy(Pregnancy preg) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TableContracts.Pregnancy_Table.COLUMN_PROJECT_NAME, preg.getProjectName());
+        values.put(TableContracts.Pregnancy_Table.COLUMN_UID, preg.getUid());
+        values.put(TableContracts.Pregnancy_Table.COLUMN_UUID, preg.getUuid());
+        values.put(TableContracts.Pregnancy_Table.COLUMN_HHID, preg.getHhid());
+        values.put(TableContracts.Pregnancy_Table.COLUMN_USERNAME, preg.getUserName());
+        values.put(Pregnancy_Table.COLUMN_SYSDATE, preg.getSysDate());
+        values.put(Pregnancy_Table.COLUMN_SB1, preg.sB1toString());
+        values.put(Pregnancy_Table.COLUMN_ISTATUS, preg.getiStatus());
+        values.put(Pregnancy_Table.COLUMN_DEVICETAGID, preg.getDeviceTag());
+        values.put(Pregnancy_Table.COLUMN_DEVICEID, preg.getDeviceId());
+        values.put(Pregnancy_Table.COLUMN_APPVERSION, preg.getAppver());
+
+        long newRowId;
+        newRowId = db.insert(
+                Pregnancy_Table.TABLE_NAME,
+                Pregnancy_Table.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addEcdInfo(ECDInfo ecd) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TableContracts.ECDInfo_Table.COLUMN_PROJECT_NAME, ecd.getProjectName());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_UID, ecd.getUid());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_UUID, ecd.getUuid());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_HHID, ecd.getHhid());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_USERNAME, ecd.getUserName());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_SYSDATE, ecd.getSysDate());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_ECDINFO, ecd.ecdInfotoString());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_ISTATUS, ecd.getiStatus());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_DEVICETAGID, ecd.getDeviceTag());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_DEVICEID, ecd.getDeviceId());
+        values.put(TableContracts.ECDInfo_Table.COLUMN_APPVERSION, ecd.getAppver());
+
+        long newRowId;
+        newRowId = db.insert(
+                Pregnancy_Table.TABLE_NAME,
+                Pregnancy_Table.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
 
     public Long addHHMembers(HHMembers members) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
