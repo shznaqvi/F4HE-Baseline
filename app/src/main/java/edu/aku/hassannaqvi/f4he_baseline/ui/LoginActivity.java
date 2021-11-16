@@ -479,7 +479,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        bi.countrySwitch.setAdapter(new ArrayAdapter<>(LoginActivity.this, android.R.layout.simple_dropdown_item_1line, countryNameList));
+        bi.countrySwitch.setAdapter(new ArrayAdapter<>(LoginActivity.this, R.layout.custom_spinner, countryNameList));
 
 
         bi.countrySwitch.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -487,7 +487,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (position != 0 && position != pos) {
-                    MainApp.selectedCountry = countryCodeList.indexOf(bi.countrySwitch.getSelectedItemPosition());
+                    MainApp.selectedCountry = Integer.parseInt(countryCodeList.get(position));
                     changeLanguage(MainApp.selectedCountry);
 
                     startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).putExtra("pos", position));

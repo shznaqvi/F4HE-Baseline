@@ -80,7 +80,7 @@ public class IdentificationActivity extends AppCompatActivity {
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                android.R.layout.simple_dropdown_item_1line, provinceNames);
+                R.layout.custom_spinner, provinceNames);
 
         bi.as1q02.setAdapter(adapter);
 
@@ -106,7 +106,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                        android.R.layout.simple_dropdown_item_1line, districtNames);
+                        R.layout.custom_spinner, districtNames);
 
                 bi.as1q04.setAdapter(adapter);
 
@@ -137,14 +137,14 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 for (Villages v : villages) {
 
-                    villageNames.add(v.getProvince());
-                    villageCodes.add(v.getProvcode());
+                    villageNames.add(v.getVillage());
+                    villageCodes.add(v.getVcode());
                     psuCode.add(v.getPsucode());
 
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                        android.R.layout.simple_dropdown_item_1line, villageNames);
+                        R.layout.custom_spinner, villageNames);
 
                 bi.as1q06.setAdapter(adapter);
 
