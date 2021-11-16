@@ -2756,7 +2756,7 @@ public class Form extends BaseObservable implements Observable {
         setBs2q417(bs2q466.equals("66") ? "" : this.bs2q417);
         setBs2q418(bs2q466.equals("66") ? "" : this.bs2q418);
         setBs2q4096(bs2q466.equals("66") ? "" : this.bs2q4096);
-        notifyPropertyChanged(BR.bs2q418);
+        notifyPropertyChanged(BR.bs2q466);
     }
 
     @Bindable
