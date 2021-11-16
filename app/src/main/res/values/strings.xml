@@ -508,7 +508,8 @@
     <string name="bs2q415">Basal body temperature method</string>
     <string name="bs2q416">Two-day method</string>
     <string name="bs2q417">Sympto-Thermal method</string>
-    <string name="bs2q418">Withdrawal</string>
+    <string name="bs2q418"> Withdrawal </string>
+    <string name="bs2q466"> Prefer Not to Answer </string>
     <string name="bs2q4096">Others, specify</string>
     <string name="bs2q5">How satisfied are you with the use of modern method of Family planning?</string>
     <string name="bs2q501">Very Satisfied</string>

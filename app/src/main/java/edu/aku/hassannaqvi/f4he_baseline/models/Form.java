@@ -198,6 +198,7 @@ public class Form extends BaseObservable implements Observable {
     private String bs2q416 = _EMPTY_;
     private String bs2q417 = _EMPTY_;
     private String bs2q418 = _EMPTY_;
+    private String bs2q466 = _EMPTY_;
     private String bs2q4096 = _EMPTY_;
     private String bs2q4096x = _EMPTY_;
     private String bs2q5 = _EMPTY_;
@@ -2725,6 +2726,36 @@ public class Form extends BaseObservable implements Observable {
         setBs2q6014(bs2q418.equals("18") ? "" : this.bs2q6014);
         setBs2q6015(bs2q418.equals("18") ? "" : this.bs2q6015);
         setBs2q696(bs2q418.equals("18") ? "" : this.bs2q696);
+        notifyPropertyChanged(BR.bs2q418);
+    }
+
+    @Bindable
+    public String getBs2q466() {
+        return bs2q466;
+    }
+
+    public void setBs2q466(String bs2q466) {
+        if (this.bs2q466.equals(bs2q466)) return;
+        this.bs2q466 = bs2q466;
+        setBs2q401(bs2q466.equals("66") ? "" : this.bs2q401);
+        setBs2q402(bs2q466.equals("66") ? "" : this.bs2q402);
+        setBs2q403(bs2q466.equals("66") ? "" : this.bs2q403);
+        setBs2q404(bs2q466.equals("66") ? "" : this.bs2q404);
+        setBs2q405(bs2q466.equals("66") ? "" : this.bs2q405);
+        setBs2q406(bs2q466.equals("66") ? "" : this.bs2q406);
+        setBs2q407(bs2q466.equals("66") ? "" : this.bs2q407);
+        setBs2q408(bs2q466.equals("66") ? "" : this.bs2q408);
+        setBs2q409(bs2q466.equals("66") ? "" : this.bs2q409);
+        setBs2q410(bs2q466.equals("66") ? "" : this.bs2q410);
+        setBs2q411(bs2q466.equals("66") ? "" : this.bs2q411);
+        setBs2q412(bs2q466.equals("66") ? "" : this.bs2q412);
+        setBs2q413(bs2q466.equals("66") ? "" : this.bs2q413);
+        setBs2q414(bs2q466.equals("66") ? "" : this.bs2q414);
+        setBs2q415(bs2q466.equals("66") ? "" : this.bs2q415);
+        setBs2q416(bs2q466.equals("66") ? "" : this.bs2q416);
+        setBs2q417(bs2q466.equals("66") ? "" : this.bs2q417);
+        setBs2q418(bs2q466.equals("66") ? "" : this.bs2q418);
+        setBs2q4096(bs2q466.equals("66") ? "" : this.bs2q4096);
         notifyPropertyChanged(BR.bs2q418);
     }
 
@@ -9827,6 +9858,7 @@ public class Form extends BaseObservable implements Observable {
             this.bs2q416 = json.getString("bs2q416");
             this.bs2q417 = json.getString("bs2q417");
             this.bs2q418 = json.getString("bs2q418");
+            this.bs2q466 = json.getString("bs2q466");
             this.bs2q4096 = json.getString("bs2q4096");
             this.bs2q4096x = json.getString("bs2q4096x");
             this.bs2q5 = json.getString("bs2q5");
@@ -10728,6 +10760,7 @@ public class Form extends BaseObservable implements Observable {
                 .put("bs2q416", bs2q416)
                 .put("bs2q417", bs2q417)
                 .put("bs2q418", bs2q418)
+                .put("bs2q466", bs2q466)
                 .put("bs2q4096", bs2q4096)
                 .put("bs2q4096x", bs2q4096x)
                 .put("bs2q5", bs2q5)
