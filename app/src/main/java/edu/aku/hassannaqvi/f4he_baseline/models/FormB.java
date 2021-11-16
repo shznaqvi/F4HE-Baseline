@@ -30,7 +30,7 @@ public class FormB extends BaseObservable implements Observable {
     private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String ebCode = _EMPTY_;
+    private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -461,13 +461,13 @@ public class FormB extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getEbCode() {
-        return ebCode;
+    public String getpsuCode() {
+        return psuCode;
     }
 
-    public void setEbCode(String ebCode) {
-        this.ebCode = ebCode;
-        notifyPropertyChanged(BR.ebCode);
+    public void setpsuCode(String psuCode) {
+        this.psuCode = psuCode;
+        notifyPropertyChanged(BR.psuCode);
     }
 
     @Bindable
@@ -4327,7 +4327,7 @@ public class FormB extends BaseObservable implements Observable {
     public FormB Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormBTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormBTable.COLUMN_UID));
-        this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(FormBTable.COLUMN_ENUM_BLOCK));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FormBTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FormBTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FormBTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormBTable.COLUMN_USERNAME));
@@ -5205,7 +5205,7 @@ public class FormB extends BaseObservable implements Observable {
 
         json.put(FormBTable.COLUMN_ID, this.id);
         json.put(FormBTable.COLUMN_UID, this.uid);
-        json.put(FormBTable.COLUMN_ENUM_BLOCK, this.ebCode);
+        json.put(FormBTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(FormBTable.COLUMN_HHID, this.hhid);
         json.put(FormBTable.COLUMN_SNO, this.sno);
         json.put(FormBTable.COLUMN_USERNAME, this.userName);

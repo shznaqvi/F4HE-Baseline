@@ -20,30 +20,28 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EnumBlocksTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMemberListTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.Child_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormBTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.HHMembersTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescent_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.MwraTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.Pregnancy_Table;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.MwraTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.Child_Table;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescent_Table;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.Pregnancy_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VillagesTable;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.models.Child;
 import edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo;
-import edu.aku.hassannaqvi.f4he_baseline.models.EnumBlocks;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
-import edu.aku.hassannaqvi.f4he_baseline.models.HHMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.f4he_baseline.models.MWRA;
 import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 import edu.aku.hassannaqvi.f4he_baseline.models.VersionApp;
+import edu.aku.hassannaqvi.f4he_baseline.models.Villages;
 
 
 
@@ -64,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
-        db.execSQL(CreateTable.SQL_CREATE_ENUMBLOCKS);
+        db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
         //db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_MWRA);
@@ -73,10 +71,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
         db.execSQL(CreateTable.SQL_CREATE_ECDINFO);
 
-        db.execSQL(CreateTable.SQL_CREATE_HHMEMBERS);
+        db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMB);
-        //db.execSQL(SQL_CREATE_FOODS_CONSUMPTION);
-        db.execSQL(CreateTable.SQL_CREATE_FAMILY_MEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
     }
@@ -96,7 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(FormsTable.COLUMN_UID, form.getUid());
-        values.put(FormsTable.COLUMN_ENUM_BLOCK, form.getEbCode());
+        values.put(FormsTable.COLUMN_PSU_CODE, form.getPsuCode());
         values.put(FormsTable.COLUMN_HHID, form.getHhid());
         values.put(FormsTable.COLUMN_SNO, form.getSno());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
@@ -272,28 +268,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
-    public Long addHHMembers(HHMembers members) throws JSONException {
+    public Long addHHMembers(FamilyMembers members) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(HHMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
-        values.put(HHMembersTable.COLUMN_UID, members.getUid());
-        values.put(HHMembersTable.COLUMN_UUID, members.getUuid());
-        values.put(HHMembersTable.COLUMN_ENUM_BLOCK, members.getEbCode());
-        values.put(HHMembersTable.COLUMN_HHID, members.getHhid());
-        values.put(HHMembersTable.COLUMN_SNO, members.getSno());
-        values.put(HHMembersTable.COLUMN_USERNAME, members.getUserName());
-        values.put(HHMembersTable.COLUMN_SYSDATE, members.getSysDate());
-        values.put(HHMembersTable.COLUMN_SA2, members.sA2toString());
-        values.put(HHMembersTable.COLUMN_ISTATUS, members.getiStatus());
-        values.put(HHMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
-        values.put(HHMembersTable.COLUMN_DEVICEID, members.getDeviceId());
-        values.put(HHMembersTable.COLUMN_APPVERSION, members.getAppver());
+        values.put(FamilyMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
+        values.put(FamilyMembersTable.COLUMN_UID, members.getUid());
+        values.put(FamilyMembersTable.COLUMN_UUID, members.getUuid());
+        values.put(FamilyMembersTable.COLUMN_PSU_CODE, members.getpsuCode());
+        values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
+        values.put(FamilyMembersTable.COLUMN_SNO, members.getSno());
+        values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
+        values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
+        values.put(FamilyMembersTable.COLUMN_SA2, members.sA2toString());
+        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
+        values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
+        values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
+        values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
 
         long newRowId;
         newRowId = db.insert(
-                HHMembersTable.TABLE_NAME,
-                HHMembersTable.COLUMN_NAME_NULLABLE,
+                FamilyMembersTable.TABLE_NAME,
+                FamilyMembersTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -304,7 +299,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormBTable.COLUMN_PROJECT_NAME, b.getProjectName());
         values.put(FormBTable.COLUMN_UID, b.getUid());
         values.put(FormBTable.COLUMN_UUID, b.getUuid());
-        values.put(FormBTable.COLUMN_ENUM_BLOCK, b.getEbCode());
+        values.put(FormBTable.COLUMN_PSU_CODE, b.getpsuCode());
         values.put(FormBTable.COLUMN_HHID, b.getHhid());
         values.put(FormBTable.COLUMN_SNO, b.getSno());
         values.put(FormBTable.COLUMN_USERNAME, b.getUserName());
@@ -338,28 +333,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(FamilyMemberListTable.COLUMN_PROJECT_NAME, members.getProjectName());
-        values.put(FamilyMemberListTable.COLUMN_UID, members.getUid());
-        values.put(FamilyMemberListTable.COLUMN_UUID, members.getUuid());
-        values.put(FamilyMemberListTable.COLUMN_EB_CODE, members.getEbCode());
-        values.put(FamilyMemberListTable.COLUMN_HHID, members.getHhid());
-        values.put(FamilyMemberListTable.COLUMN_USERNAME, members.getUserName());
-        values.put(FamilyMemberListTable.COLUMN_SYSDATE, members.getSysDate());
-        values.put(FamilyMemberListTable.COLUMN_INDEXED, members.getIndexed());
-        values.put(FamilyMemberListTable.COLUMN_SA2, members.sA2toString());
+        values.put(FamilyMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
+        values.put(FamilyMembersTable.COLUMN_UID, members.getUid());
+        values.put(FamilyMembersTable.COLUMN_UUID, members.getUuid());
+        values.put(FamilyMembersTable.COLUMN_PSU_CODE, members.getpsuCode());
+        values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
+        values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
+        values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
+        values.put(FamilyMembersTable.COLUMN_INDEXED, members.getIndexed());
+        values.put(FamilyMembersTable.COLUMN_SA2, members.sA2toString());
 
-        values.put(FamilyMemberListTable.COLUMN_ISTATUS, members.getiStatus());
+        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
 
-        values.put(FamilyMemberListTable.COLUMN_DEVICETAGID, members.getDeviceTag());
-        values.put(FamilyMemberListTable.COLUMN_DEVICEID, members.getDeviceId());
-        values.put(FamilyMemberListTable.COLUMN_APPVERSION, members.getAppver());
+        values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
+        values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
+        values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
 
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                FamilyMemberListTable.TABLE_NAME,
-                FamilyMemberListTable.COLUMN_NAME_NULLABLE,
+                FamilyMembersTable.TABLE_NAME,
+                FamilyMembersTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -403,10 +398,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = HHMembersTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.hhMembers.getId())};
+        String selection = FamilyMembersTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.familyMembers.getId())};
 
-        return db.update(HHMembersTable.TABLE_NAME,
+        return db.update(FamilyMembersTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -679,21 +674,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int syncClusters(JSONArray clusterList) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(EnumBlocksTable.TABLE_NAME, null, null);
+        db.delete(VillagesTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
             for (int i = 0; i < clusterList.length(); i++) {
 
                 JSONObject json = clusterList.getJSONObject(i);
 
-                EnumBlocks cluster = new EnumBlocks();
-                cluster.sync(json);
+                Villages villages = new Villages();
+                villages.sync(json);
                 ContentValues values = new ContentValues();
 
-                values.put(EnumBlocksTable.COLUMN_DISTRICT_NAME, cluster.getDistrictName());
-                values.put(EnumBlocksTable.COLUMN_TEHSIL_NAME, cluster.getTehsilName());
-                values.put(EnumBlocksTable.COLUMN_ENUM_BLOCK_CODE, cluster.getEnumBlock());
-                long rowID = db.insert(EnumBlocksTable.TABLE_NAME, null, values);
+                values.put(VillagesTable.COLUMN_COUNTRY, villages.getCountry());
+                values.put(VillagesTable.COLUMN_CCODE, villages.getCcode());
+                values.put(VillagesTable.COLUMN_PROVINCE, villages.getProvince());
+                values.put(VillagesTable.COLUMN_PROVCODE, villages.getProvcode());
+                values.put(VillagesTable.COLUMN_DISTRICT_NAME, villages.getDistrict_name());
+                values.put(VillagesTable.COLUMN_DCODE, villages.getDcode());
+                values.put(VillagesTable.COLUMN_VILLAGE, villages.getVillage());
+                values.put(VillagesTable.COLUMN_VCODE, villages.getVcode());
+                values.put(VillagesTable.COLUMN_PSUCODE, villages.getPsucode());
+
+
+                long rowID = db.insert(VillagesTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
@@ -720,7 +723,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ContentValues values = new ContentValues();
                 values.put(RandomTable.COLUMN_ID, ran.getID());
                 values.put(RandomTable.COLUMN_SNO, ran.getSno());
-                values.put(RandomTable.COLUMN_ENUM_BLOCK_CODE, ran.getEbcode());
+                values.put(RandomTable.COLUMN_ENUM_BLOCK_CODE, ran.getpsuCode());
                 values.put(RandomTable.COLUMN_HH_NO, ran.getHhno());
                 values.put(RandomTable.COLUMN_HEAD_HH, ran.getHeadhh());
                 long rowID = db.insert(RandomTable.TABLE_NAME, null, values);
@@ -896,16 +899,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }*/
 
-    public Form getFormByClusterHHNo(String enumblock, String hh_no) throws JSONException {
+    public Form getFormByPsuHHNo(String psuCode, String hhid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
         String whereClause;
-        whereClause = FormsTable.COLUMN_ENUM_BLOCK + "=? AND " +
+        whereClause = FormsTable.COLUMN_PSU_CODE + "=? AND " +
                 FormsTable.COLUMN_HHID + " =? ";
 
-        String[] whereArgs = {enumblock, hh_no};
+        String[] whereArgs = {psuCode, hhid};
 
         String groupBy = null;
         String having = null;
@@ -944,7 +947,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
-        String whereClause = FormsTable.COLUMN_ENUM_BLOCK + " = ? ";
+        String whereClause = FormsTable.COLUMN_PSU_CODE + " = ? ";
         String[] whereArgs = new String[]{cluster};
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
@@ -969,7 +972,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
                 fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
                 fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-                fc.setEbCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ENUM_BLOCK)));
+                fc.setPsuCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE)));
                 fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
                 fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
                 fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
@@ -1017,7 +1020,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
                 fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
                 fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-                fc.setEbCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ENUM_BLOCK)));
+                fc.setPsuCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE)));
                 fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
                 fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
                 fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
@@ -1065,7 +1068,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
                 fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
                 fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-                fc.setEbCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ENUM_BLOCK)));
+                fc.setPsuCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE)));
                 fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
                 fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
                 fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
@@ -1084,24 +1087,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public EnumBlocks getEnumBlocks(String ebCode) {
+    public Villages getVillagesByCode(String psucode) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = EnumBlocksTable.COLUMN_ENUM_BLOCK_CODE + " = ?";
+        String whereClause = VillagesTable.COLUMN_PSUCODE + " = ?";
 
-        String[] whereArgs = {ebCode};
+        String[] whereArgs = {psucode};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = EnumBlocksTable.COLUMN_ENUM_BLOCK_CODE + " ASC";
+        String orderBy = VillagesTable.COLUMN_PSUCODE + " ASC";
 
-        EnumBlocks e = new EnumBlocks();
+        Villages e = new Villages();
         try {
             c = db.query(
-                    EnumBlocksTable.TABLE_NAME,  // The table to query
+                    VillagesTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1110,7 +1113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy
             );
             while (c.moveToNext()) {
-                e = new EnumBlocks().hydrate(c);
+                e = new Villages().hydrate(c);
             }
         } finally {
             if (c != null) {
@@ -1124,7 +1127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    /*public RandomHH getHHbyEnumBlocks(String ebcode, String hhno) {
+    /*public RandomHH getHHbyEnumBlocks(String psuCode, String hhno) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1132,7 +1135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause = RandomTable.COLUMN_ENUM_BLOCK_CODE + " = ? AND " +
                 RandomTable.COLUMN_HH_NO + " = ?";
 
-        String[] whereArgs = {ebcode, hhno};
+        String[] whereArgs = {psuCode, hhno};
 
         String groupBy = null;
         String having = null;
@@ -1174,19 +1177,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = FamilyMemberListTable.COLUMN_UUID + "=?";
+        whereClause = FamilyMembersTable.COLUMN_UUID + "=?";
 
         String[] whereArgs = {uid};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = FamilyMemberListTable.COLUMN_ID + " ASC";
+        String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
 
         ArrayList<FamilyMembers> membersByUID = new ArrayList<>();
         try {
             c = db.query(
-                    FamilyMemberListTable.TABLE_NAME,  // The table to query
+                    FamilyMembersTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1216,20 +1219,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = FamilyMemberListTable.COLUMN_UUID + "=? AND "
-                + FamilyMemberListTable.COLUMN_INDEXED + "=?";
+        whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND "
+                + FamilyMembersTable.COLUMN_INDEXED + "=?";
 
         String[] whereArgs = {uid, "1"};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = FamilyMemberListTable.COLUMN_ID + " ASC";
+        String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
 
         FamilyMembers membersByUID = new FamilyMembers();
         try {
             c = db.query(
-                    FamilyMemberListTable.TABLE_NAME,  // The table to query
+                    FamilyMembersTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1297,14 +1300,229 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = FamilyMemberListTable._ID + " =? ";
+        String selection = FamilyMembersTable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.familyMember.getId())};
 
-        return db.update(FamilyMemberListTable.TABLE_NAME,
+        return db.update(FamilyMembersTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
     }
 
 
+    public Collection<Villages> getAllCountries() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+
+        Boolean distinct = true;
+        String tableName = VillagesTable.TABLE_NAME;
+        String[] columns = null;
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = VillagesTable.COLUMN_COUNTRY;
+        String having = null;
+        String orderBy = VillagesTable.COLUMN_COUNTRY + " ASC";
+        String limitRows = "9999";
+
+        Collection<Villages> allCountries = new ArrayList<>();
+        try {
+            c = db.query(
+                    distinct,       // Distinct values
+                    tableName,      // The table to query
+                    columns,        // The columns to return
+                    whereClause,    // The columns for the WHERE clause
+                    whereArgs,      // The values for the WHERE clause
+                    groupBy,        // don't group the rows
+                    having,         // don't filter by row groups
+                    orderBy,
+                    limitRows
+            );
+            while (c.moveToNext()) {
+
+                allCountries.add(new Villages().hydrate(c));
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allCountries;
+    }
+
+    public Collection<Villages> getProvinceByCountry(String cCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+
+        Boolean distinct = true;
+        String tableName = VillagesTable.TABLE_NAME;
+        String[] columns = null;
+        String whereClause = VillagesTable.COLUMN_CCODE + "= ?";
+        String[] whereArgs = {cCode};
+        String groupBy = VillagesTable.COLUMN_PROVINCE;
+        String having = null;
+        String orderBy = VillagesTable.COLUMN_PROVINCE + " ASC";
+        String limitRows = "9999";
+
+        Collection<Villages> allProvinces = new ArrayList<>();
+        try {
+            c = db.query(
+                    distinct,       // Distinct values
+                    tableName,      // The table to query
+                    columns,        // The columns to return
+                    whereClause,    // The columns for the WHERE clause
+                    whereArgs,      // The values for the WHERE clause
+                    groupBy,        // don't group the rows
+                    having,         // don't filter by row groups
+                    orderBy,
+                    limitRows
+            );
+            while (c.moveToNext()) {
+
+                allProvinces.add(new Villages().hydrate(c));
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allProvinces;
+    }
+
+    public Collection<Villages> getDistrictsByProvince(String cCode, String provCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+
+        Boolean distinct = true;
+        String tableName = VillagesTable.TABLE_NAME;
+        String[] columns = null;
+        String whereClause = VillagesTable.COLUMN_CCODE + "= ? AND " +
+                VillagesTable.COLUMN_PROVCODE + "= ? ";
+        String[] whereArgs = {cCode, provCode};
+        String groupBy = VillagesTable.COLUMN_DISTRICT_NAME;
+        String having = null;
+        String orderBy = VillagesTable.COLUMN_DISTRICT_NAME + " ASC";
+        String limitRows = "9999";
+
+        Collection<Villages> allProvinces = new ArrayList<>();
+        try {
+            c = db.query(
+                    distinct,       // Distinct values
+                    tableName,      // The table to query
+                    columns,        // The columns to return
+                    whereClause,    // The columns for the WHERE clause
+                    whereArgs,      // The values for the WHERE clause
+                    groupBy,        // don't group the rows
+                    having,         // don't filter by row groups
+                    orderBy,
+                    limitRows
+            );
+            while (c.moveToNext()) {
+
+                allProvinces.add(new Villages().hydrate(c));
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allProvinces;
+    }
+
+    public Collection<Villages> getVillagesByDistrict(String cCode, String provCode, String distCode) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+
+        Boolean distinct = true;
+        String tableName = VillagesTable.TABLE_NAME;
+        String[] columns = null;
+        String whereClause = VillagesTable.COLUMN_CCODE + "= ? AND " +
+                VillagesTable.COLUMN_PROVCODE + "= ? AND " +
+                VillagesTable.COLUMN_DCODE + "= ? ";
+        String[] whereArgs = {cCode, provCode, distCode};
+        String groupBy = VillagesTable.COLUMN_VILLAGE;
+        String having = null;
+        String orderBy = VillagesTable.COLUMN_VILLAGE + " ASC";
+        String limitRows = "9999";
+
+        Collection<Villages> allVillages = new ArrayList<>();
+        try {
+            c = db.query(
+                    distinct,       // Distinct values
+                    tableName,      // The table to query
+                    columns,        // The columns to return
+                    whereClause,    // The columns for the WHERE clause
+                    whereArgs,      // The values for the WHERE clause
+                    groupBy,        // don't group the rows
+                    having,         // don't filter by row groups
+                    orderBy,
+                    limitRows
+            );
+            while (c.moveToNext()) {
+
+                allVillages.add(new Villages().hydrate(c));
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allVillages;
+    }
+
+    public Form getFormByPSUHHNo(String psuCode, String hhid) throws JSONException {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+
+        Boolean distinct = false;
+        String tableName = FormsTable.TABLE_NAME;
+        String[] columns = null;
+        String whereClause = FormsTable.COLUMN_PSU_CODE + "= ? AND " +
+                FormsTable.COLUMN_HHID + "= ? ";
+        String[] whereArgs = {psuCode, hhid};
+        String groupBy = null;
+        String having = null;
+        String orderBy = FormsTable.COLUMN_SYSDATE + " ASC";
+        String limitRows = "1";
+
+        c = db.query(
+                distinct,       // Distinct values
+                tableName,      // The table to query
+                columns,        // The columns to return
+                whereClause,    // The columns for the WHERE clause
+                whereArgs,      // The values for the WHERE clause
+                groupBy,        // don't group the rows
+                having,         // don't filter by row groups
+                orderBy,
+                limitRows
+        );
+
+        Form form = null;
+        while (c.moveToNext()) {
+            form = (new Form().Hydrate(c));
+        }
+
+        c.close();
+        db.close();
+        return form;
+
+    }
 }

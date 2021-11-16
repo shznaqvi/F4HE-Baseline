@@ -13,8 +13,8 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -38,7 +38,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -56,6 +58,7 @@ import edu.aku.hassannaqvi.f4he_baseline.database.CreateTable;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
+import edu.aku.hassannaqvi.f4he_baseline.models.Villages;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -70,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
     ArrayAdapter<String> provinceAdapter;
     int attemptCounter = 0;
     private int countryCode;
+    private ArrayList<String> countryNameList;
+    private ArrayList<String> countryCodeList;
    /* private int PhotoSerial = 0;
     private String photolist;
     ActivityResultLauncher<Intent> takePhotoLauncher = registerForActivityResult(
@@ -197,11 +202,30 @@ public class LoginActivity extends AppCompatActivity {
                 .apply();*//*
         bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
 
-        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // do something, the isChecked will be
-                // true if the switch is in the On position
-                changeLanguage(isChecked ? 1 : 3);
+        countryNameList = new ArrayList<>();
+        countryCodeList = new ArrayList<>();
+
+        countryNameList.add("...");
+        countryCodeList.add("...");
+
+        for (Villages c : countries){
+            countryNameList.add(c.getCountry());
+            countryCodeList.add(c.getCcode());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, countryNameList);
+
+        bi.countrySwitch.setAdapter(adapter);
+
+        bi.countrySwitch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                MainApp.selectedCountry = countryCodeList.indexOf(bi.countrySwitch.getSelectedItemPosition());
+                changeLanguage(MainApp.selectedCountry);
 
                 startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -410,19 +434,35 @@ public class LoginActivity extends AppCompatActivity {
     private void changeLanguage(int countryCode) {
         String lang;
         String country;
-        if (countryCode == MainApp.URDU) {
-            lang = "ur";
-            country = "PK";
-            MainApp.editor
-                    .putString("lang", "3")
-                    .apply();
-        } else {
-            lang = "en";
-            country = "US";
-            MainApp.editor
-                    .putString("lang", "1")
-                    .apply();
+
+        switch (countryCode) {
+            case 1:
+                lang = "ur";
+                country = "PK";
+                MainApp.editor
+                        .putString("lang", "1")
+                        .apply();
+            case 2:
+                lang = "ps";
+                country = "AF";
+                MainApp.editor
+                        .putString("lang", "2")
+                        .apply();
+            case 3:
+                lang = "ru";
+                country = "KG";
+                MainApp.editor
+                        .putString("lang", "4")
+                        .apply();
+            case 4:
+            default:
+                lang = "en";
+                country = "US";
+                MainApp.editor
+                        .putString("lang", "0")
+                        .apply();
         }
+
         Locale locale = new Locale(lang, country);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
@@ -434,19 +474,41 @@ public class LoginActivity extends AppCompatActivity {
 
     private void settingCountryCode() {
 
-        bi.countrySwitch.setChecked(MainApp.sharedPref.getString("lang", "1").equals("1"));
+        bi.countrySwitch.setSelection(Integer.parseInt(MainApp.sharedPref.getString("lang", "0")));
 
-        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // do something, the isChecked will be
-                // true if the switch is in the On position
-                changeLanguage(isChecked ? 1 : 3);
+        Collection<Villages> countries = db.getAllCountries();
+
+        countryNameList = new ArrayList<>();
+        countryCodeList = new ArrayList<>();
+
+        countryNameList.add("...");
+        countryCodeList.add("...");
+
+        for (Villages c : countries) {
+            countryNameList.add(c.getCountry());
+            countryCodeList.add(c.getCcode());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, countryNameList);
+
+        bi.countrySwitch.setAdapter(adapter);
+
+        bi.countrySwitch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                MainApp.selectedCountry = countryCodeList.indexOf(bi.countrySwitch.getSelectedItemPosition());
+                changeLanguage(MainApp.selectedCountry);
 
                 startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
             }
         });
+
 
     }
 

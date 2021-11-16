@@ -60,11 +60,11 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
         MainApp.memberComplete = completeCount == MainApp.memberCount;
 
-        fName.setText(members.getA202());
-        fAge.setText(members.getA206() + "y ");
+        fName.setText(members.getHl2());
+        fAge.setText(members.getHl6y() + "y ");
 
         String marStatus = "";
-        switch (members.getA207t()) {
+        switch (members.getHl7()) {
             case "1":
                 marStatus = "Married";
                 break;
@@ -86,9 +86,9 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
 
         cloaked.setVisibility(members.isMwra() ? View.GONE : View.VISIBLE);
-        mainIcon.setImageResource((members.getA204().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl));
+        mainIcon.setImageResource((members.getHl4().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl));
         MainApp.selectedMWRA = members.getIndexed().equals("1") || members.getIndexed().equals("2") ? "-" : "";
-        mainIcon.setBackgroundColor(members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getA204().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink));
+        mainIcon.setBackgroundColor(members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getHl4().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink));
         //  mainIcon.setBackgroundColor(  ((ColorDrawable) mainIcon.getBackground()).getColor());
         if (!MainApp.selectedMWRA.equals("")) {
             cloaked.setVisibility(members.getIndexed().equals("1") ? View.GONE : View.VISIBLE);

@@ -127,9 +127,9 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         }
 
         holder.hhno.setText(fc.get(position).getHhid());
-        holder.ebCode.setText(fc.get(position).getEbCode());
-        holder.ebCode.setText(fc.get(position).getEbCode());
-        holder.ebCode.setText(fc.get(position).getEbCode());
+        holder.psuCode.setText(fc.get(position).getPsuCode());
+        holder.psuCode.setText(fc.get(position).getPsuCode());
+        holder.psuCode.setText(fc.get(position).getPsuCode());
         holder.istatus.setText(iStatus);
       /*  holder.fatherName.setText(motherName + " / " + childName);
         holder.secStatusAnthro.setText(anthroStatus == 2 ? "  Done   " : " Pending ");
@@ -171,7 +171,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     private void editHousehold(int position) {
         MainApp.form = new Form();
         try {
-            MainApp.form = db.getFormByClusterHHNo(fc.get(position).getEbCode(), fc.get(position).getHhid());
+            MainApp.form = db.getFormByPsuHHNo(fc.get(position).getPsuCode(), fc.get(position).getHhid());
         } catch (JSONException e) {
             Log.d(TAG, c.getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(c, c.getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -184,7 +184,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public RecyclerView rv;
         public TextView sysdate;
-        public TextView ebCode;
+        public TextView psuCode;
         public TextView hhno;
         public TextView istatus;
         public TextView secStatusAnthro;
@@ -197,7 +197,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
             super(v);
 //            rv = v.findViewById(R.id.FormsList);
             sysdate = v.findViewById(R.id.sysdate);
-            ebCode = v.findViewById(R.id.ebCode);
+            psuCode = v.findViewById(R.id.psuCode);
             hhno = v.findViewById(R.id.hhno);
             istatus = v.findViewById(R.id.istatus);
             fatherName = v.findViewById(R.id.fathername);

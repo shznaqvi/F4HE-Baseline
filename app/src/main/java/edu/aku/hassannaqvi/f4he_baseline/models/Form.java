@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.models;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
@@ -27,13 +28,13 @@ public class Form extends BaseObservable implements Observable {
     private final String TAG = "Form";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
-    private String projectName = MainApp.PROJECT_NAME;
+    private String projectName = PROJECT_NAME;
     // APP VARIABLES
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String ebCode = _EMPTY_;
+    private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -818,6 +819,48 @@ public class Form extends BaseObservable implements Observable {
     }
 
 
+    public void populateMeta() {
+
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        //   setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setAppver(MainApp.appInfo.getAppVersion());
+        setProjectName(PROJECT_NAME);
+        setPsuCode(MainApp.selectedPSU);
+        setHhid(MainApp.selectedHHID);
+
+    }
+
+
+    public void populateMeta() {
+
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        //   setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setAppver(MainApp.appInfo.getAppVersion());
+        setProjectName(PROJECT_NAME);
+        setPsuCode(MainApp.selectedPSU);
+        setHhid(MainApp.selectedHHID);
+
+    }
+
+
+    public void populateMeta() {
+
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        //   setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setAppver(MainApp.appInfo.getAppVersion());
+        setProjectName(PROJECT_NAME);
+        setPsuCode(MainApp.selectedPSU);
+        setHhid(MainApp.selectedHHID);
+
+    }
+
+
     public String getProjectName() {
         return projectName;
     }
@@ -843,13 +886,13 @@ public class Form extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getEbCode() {
-        return ebCode;
+    public String getPsuCode() {
+        return psuCode;
     }
 
-    public void setEbCode(String ebCode) {
-        this.ebCode = ebCode;
-        notifyPropertyChanged(BR.ebCode);
+    public void setPsuCode(String psuCode) {
+        this.psuCode = psuCode;
+        notifyPropertyChanged(BR.psuCode);
     }
 
     @Bindable
@@ -9754,7 +9797,7 @@ public class Form extends BaseObservable implements Observable {
     public Form Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-        this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ENUM_BLOCK));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
@@ -11574,7 +11617,7 @@ public class Form extends BaseObservable implements Observable {
 
         json.put(FormsTable.COLUMN_ID, this.id);
         json.put(FormsTable.COLUMN_UID, this.uid);
-        json.put(FormsTable.COLUMN_ENUM_BLOCK, this.ebCode);
+        json.put(FormsTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(FormsTable.COLUMN_HHID, this.hhid);
         json.put(FormsTable.COLUMN_SNO, this.sno);
         json.put(FormsTable.COLUMN_USERNAME, this.userName);

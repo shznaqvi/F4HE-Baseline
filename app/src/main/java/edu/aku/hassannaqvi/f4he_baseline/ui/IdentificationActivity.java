@@ -4,15 +4,22 @@ import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
 
@@ -20,8 +27,8 @@ import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityIdentificationBinding;
-import edu.aku.hassannaqvi.f4he_baseline.models.EnumBlocks;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
+import edu.aku.hassannaqvi.f4he_baseline.models.Villages;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS1Activity;
 
 
@@ -30,9 +37,13 @@ public class IdentificationActivity extends AppCompatActivity {
     private static final String TAG = "IdentificationActivity";
     ActivityIdentificationBinding bi;
     private DatabaseHelper db;
-    private ArrayList<String> ebCode;
+    private ArrayList<String> provinceNames;
+    private ArrayList<String> provinceCodes;
     private ArrayList<String> districtNames;
-    private ArrayList<String> tehsilNames;
+    private ArrayList<String> districtCodes;
+    private ArrayList<String> villageNames;
+    private ArrayList<String> villageCodes;
+    private ArrayList<String> psuCode;
     private ArrayList<String> headHH;
     private Intent openIntent;
 
@@ -44,159 +55,120 @@ public class IdentificationActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         // populateSpinner();
 
-        openIntent = new Intent();
-        switch (MainApp.idType) {
-            case 1:
-                bi.btnContinue.setText(R.string.open_hh_form);
-                MainApp.form = new Form();
-                openIntent = new Intent(this, SectionAS1Activity.class);
-                break;
-         /*   case 2:
-                bi.btnContinue.setText(R.string.open_anhtro_form);
-                MainApp.anthro = new Anthro();
-                openIntent = new Intent(this, SectionAnthroActivity.class);
-                break;
-            case 3:
-                bi.btnContinue.setText(R.string.open_blood_form);
-                //     MainApp.sample = new Sample();
-                openIntent = new Intent(this, SectionSamplesActivity.class);
-                break;
-            case 4:
-                bi.btnContinue.setText(R.string.open_stool_form);
-                //    MainApp.sample = new Sample();
-                openIntent = new Intent(this, SectionSamplesActivity.class);
-                break;*/
-
-        }
-
-        /*bi.a105.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                bi.a107.setText(null);
-                bi.a108.setText(null);
-                bi.a110.setText(null);
-                bi.ahhead.setText(null);
-                bi.fldGrpHH.setVisibility(View.GONE);
-                bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
-                bi.btnContinue.setEnabled(false);
-            }
-        });*/
-
-        /*bi.a110.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                bi.ahhead.setText(null);
-                bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
-                bi.btnContinue.setEnabled(false);
-            }
-        });*/
+        bi.btnContinue.setText(R.string.open_hh_form);
+        MainApp.form = new Form();
 
 
     }
 
     private void populateSpinner() {
-     /*   Collection<EnumBlocks> enumBlocks = db.getEnumBlocks();
-        ebCode = new ArrayList<>();
-        districtNames = new ArrayList<>();
-        tehsilNames = new ArrayList<>();
-        for (EnumBlocks eb : enumBlocks) {
-            ebCode.add(eb.getEnumBlock());
-            districtNames.add(eb.getDistrictName());
-            tehsilNames.add(eb.getTehsilName()); //
+
+        // Populate Provinces
+        Collection<Villages> provinces = db.getProvinceByCountry(String.valueOf(MainApp.selectedCountry));
+
+        provinceNames = new ArrayList<>();
+        provinceCodes = new ArrayList<>();
+
+        provinceNames.add("...");
+        provinceCodes.add("...");
+
+        for (Villages p : provinces) {
+
+            provinceNames.add(p.getProvince());
+            provinceCodes.add(p.getProvcode());
+
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, ebCode);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
+                android.R.layout.simple_dropdown_item_1line, provinceNames);
 
-        bi.a105.setAdapter(adapter);
+        bi.as1q02.setAdapter(adapter);
 
-        bi.a105.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
+        bi.as1q02.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                int position = ebCode.indexOf(bi.a105.getText().toString());
-                bi.a107.setText(districtNames.get(position));
-                bi.a108.setText(tehsilNames.get(position));
+                MainApp.selectedProvince = provinceCodes.get(position);
 
-                Collection<RandomHH> randHH = db.getHHbyEnumBlocks(bi.a105.getText().toString());
-                ArrayList<String> households = new ArrayList<String>();
-                for (RandomHH r : randHH) {
-                    households.add(r.getHhno());
-                    headHH = new ArrayList<String>();
-                    headHH.add(r.getHeadhh());
+                // Populate Districts
+                Collection<Villages> districts = db.getDistrictsByProvince(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince);
 
+                districtNames = new ArrayList<>();
+                districtCodes = new ArrayList<>();
 
+                districtNames.add("...");
+                districtCodes.add("...");
+
+                for (Villages d : districts) {
+
+                    districtNames.add(d.getDistrict_name());
+                    districtCodes.add(d.getDcode());
 
                 }
 
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
+                        android.R.layout.simple_dropdown_item_1line, districtNames);
 
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                        android.R.layout.simple_dropdown_item_1line, households);
-
-                bi.a105.setAdapter(adapter);
+                bi.as1q04.setAdapter(adapter);
 
             }
         });
 
-        bi.a110.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
+        bi.as1q04.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                MainApp.selectedDistrict = districtCodes.get(position);
+
+                // Populate Villages
+                Collection<Villages> villages = db.getVillagesByDistrict(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince, MainApp.selectedDistrict);
+
+                villageNames = new ArrayList<>();
+                villageCodes = new ArrayList<>();
+
+                villageNames.add("...");
+                villageCodes.add("...");
+                psuCode.add("...");
+
+                for (Villages v : villages) {
+
+                    villageNames.add(v.getProvince());
+                    villageCodes.add(v.getProvcode());
+                    psuCode.add(v.getPsucode());
+
+                }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
+                        android.R.layout.simple_dropdown_item_1line, villageNames);
+
+                bi.as1q06.setAdapter(adapter);
+
+            }
+        });
+
+        bi.as1q06.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                MainApp.selectedVillage = villageCodes.get(position);
+                MainApp.selectedPSU = psuCode.get(position);
 
 
             }
-        });*/
+        });
+
 
     }
 
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        switch (MainApp.idType) {
-            case 1:
-                if (!hhExists())
-                    saveDraftForm();
-                finish();
-                startActivity(openIntent);
-                break;
-          /*  case 2:
-                if (hhExists()) {
-                    saveDraftAnthro();
-                    finish();
-                    startActivity(openIntent);
-                } else {
-                    Toast.makeText(this, getString(R.string.info_hh_form_not_exist), Toast.LENGTH_LONG).show();
-                }
-                break;
-            case 3:
-            case 4:
-                if (hhExists()) {
-                    saveDraftSamples();
-                    finish();
-                    startActivity(openIntent);
-                } else {
-                    Toast.makeText(this, getString(R.string.info_hh_form_not_exist), Toast.LENGTH_LONG).show();
-                }
-                break;
-*/
-        }
+        MainApp.selectedHHID = bi.as1q08.getText().toString();
+
+        if (!hhExists())
+            saveDraftForm();
+        finish();
+        startActivity(new Intent(this, SectionAS1Activity.class));
 
 
     }
@@ -252,7 +224,7 @@ public class IdentificationActivity extends AppCompatActivity {
     public void checkHousehold(View view) {
         /*RandomHH testRand = new RandomHH();
         testRand.setSno("1");
-        testRand.setEbcode("909090909");
+        testRand.setpsuCode("909090909");
         testRand.setHeadhh("Test Head");
         testRand.setHhno("999-99");
         RandomHH randHH = new RandomHH();
@@ -261,7 +233,7 @@ public class IdentificationActivity extends AppCompatActivity {
         } else {
             randHH = testRand;
         }
-        if (!randHH.getEbcode().equals("")) {
+        if (!randHH.getpsuCode().equals("")) {
             bi.ahhead.setError(null);
             bi.ahhead.setText(randHH.getHeadhh());
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
@@ -284,85 +256,40 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private boolean hhExists() {
 
-        /*switch (MainApp.idType) {
-            case 1:
-                MainApp.form = new Form();
-                try {
-                    MainApp.form = db.getFormByClusterHHNo(bi.a105.getText().toString(), bi.a110.getText().toString());
-                } catch (JSONException e) {
-                    Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
-                    Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                return MainApp.form != null;
 
-            case 2:
-            case 3:
-            case 4:
-                MainApp.form = new Form();
-                try {
-                    MainApp.form = db.getFormByClusterHHNo(bi.a105.getText().toString(), bi.a110.getText().toString());
-                    // Populate Subject Names for spinner Adapter in Samples Activity.
-                    if (MainApp.form != null) {
-                        MainApp.subjectNames = new ArrayList<>();
-                        MainApp.subjectNames.add("...");
+        MainApp.form = new Form();
+        try {
+            MainApp.form = db.getFormByPSUHHNo(MainApp.selectedPSU, MainApp.selectedHHID);
+        } catch (JSONException e) {
+            Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
+            Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        return MainApp.form != null;
 
-                    *//*    // Add woman if exist
-                        if (!MainApp.form.getA104n().equals("")) {
-                            MainApp.subjectNames.add(MainApp.form.getA104n() + " (" + MainApp.form.getW102() + ")");
-                            // Add child if both woman and child exist
-                            if (!MainApp.form.getA104n().equals("")) {
-                                MainApp.subjectNames.add(MainApp.form.getA104n());
-                            } else {
-                                Toast.makeText(this, R.string.child_info_missing, Toast.LENGTH_SHORT).show();
-                                return false;
 
-                            }
-                        } else {
-                            Toast.makeText(this, R.string.woman_child_info_missing, Toast.LENGTH_SHORT).show();
-                            return false;
-
-                        }*//*
-                    } else {
-                        return MainApp.form != null;
-                    }
-             *//*       MainApp.samples = new Samples();
-                    MainApp.anthro = new Anthro();*//*
-                    //MainApp.samples = db.getSamplesByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
-                    Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                return MainApp.form != null;
-
-            default:
-                return false;
-
-        }*/
-        return true;
     }
 
-    public void searchEB(View view) {
+  /*  public void searchEB(View view) {
         bi.btnContinue.setEnabled(false);
-        EnumBlocks testEb = new EnumBlocks();
+        Villages testEb = new Villages();
         testEb.setEnumBlock("909090909");
         testEb.setDistrictName("Test District 9");
         testEb.setTehsilName("Test Tehsil 9");
-        EnumBlocks enumBlock = new EnumBlocks();
-        /*if (!bi.a105.getText().toString().equals(testEb.getEnumBlock())) {
+        Villages enumBlock = new Villages();
+        *//*if (!bi.a105.getText().toString().equals(testEb.getEnumBlock())) {
             enumBlock = db.getEnumBlocks(bi.a105.getText().toString());
         } else {
             enumBlock = testEb;
         }
 
-       *//* ebCode = new ArrayList<>();
+       *//**//* psuCode = new ArrayList<>();
         districtNames = new ArrayList<>();
-        tehsilNames = new ArrayList<>();
-        for (EnumBlocks eb : enumBlocks) {
-            ebCode.add(eb.getEnumBlock());
+        villageNames = new ArrayList<>();
+        for (Villages eb : enumBlocks) {
+            psuCode.add(eb.getEnumBlock());
             districtNames.add(eb.getDistrictName());
-            tehsilNames.add(eb.getTehsilName()); //
-        }*//*
+            villageNames.add(eb.getTehsilName()); //
+        }*//**//*
         if (!enumBlock.getEnumBlock().equals("")) {
             bi.a107.setError(null);
             bi.a108.setError(null);
@@ -376,6 +303,6 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.a110.setText(null);
             bi.ahhead.setText(null);
             bi.fldGrpHH.setVisibility(View.GONE);
-        }*/
-    }
+        }*//*
+    }*/
 }

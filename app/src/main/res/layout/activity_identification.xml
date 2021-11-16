@@ -44,13 +44,13 @@
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
                 android:orientation="vertical">
 
 
                 <!-- as1q01 CountrySpinner   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q01"
+                    android:visibility="gone"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -60,32 +60,32 @@
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_as1q01" />
+            <!--                        <TextView
+                                        style="@style/quesNum"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/Q_as1q01" />
 
-                        <TextView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="@string/as1q01" />
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="@string/as1q01" />
 
-                        <Spinner
-                            android:id="@+id/as1q01"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:minHeight="56dp"
-                            android:prompt="@string/as1q01"
-                            android:spinnerMode="dropdown" />
+                                    <androidx.appcompat.widget.AppCompatSpinner
+                                        android:id="@+id/as1q01"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:minHeight="56dp"
+                                        android:prompt="@string/as1q01"
+                                        android:spinnerMode="dropdown" />
 
-                    </LinearLayout>
+                                </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                            </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q02 CountrySpinner   -->
+                            <!-- as1q02 CountrySpinner   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q02"
                     style="@style/cardView">
@@ -97,11 +97,11 @@
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_as1q02" />
+                        <!--        <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_as1q02" />-->
 
                         <TextView
                             android:layout_width="150dp"
@@ -109,7 +109,7 @@
                             android:gravity="center"
                             android:text="@string/as1q02" />
 
-                        <Spinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/as1q02"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -175,11 +175,11 @@
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_as1q04" />
+                        <!--                       <TextView
+                                                   style="@style/quesNum"
+                                                   android:layout_width="wrap_content"
+                                                   android:layout_height="match_parent"
+                                                   android:text="@string/Q_as1q04" />-->
 
                         <TextView
                             android:layout_width="150dp"
@@ -187,7 +187,7 @@
                             android:gravity="center"
                             android:text="@string/as1q04" />
 
-                        <Spinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/as1q04"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -367,6 +367,7 @@
                 <!-- as1q03  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q03"
+                    android:visibility="gone"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -376,36 +377,36 @@
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_as1q03" />
+                        <!--                   <TextView
+                                               style="@style/quesNum"
+                                               android:layout_width="wrap_content"
+                                               android:layout_height="match_parent"
+                                               android:text="@string/Q_as1q03" />
 
-                        <TextView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="@string/as1q03" />
+                                           <TextView
+                                               android:layout_width="150dp"
+                                               android:layout_height="match_parent"
+                                               android:gravity="center"
+                                               android:text="@string/as1q03" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/as1q03"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:hint="#####"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            app:maxValue="99999"
-                            app:minValue="1"
-                            app:type="range" />
+                                           <com.edittextpicker.aliazaz.EditTextPicker
+                                               android:id="@+id/as1q03"
+                                               android:layout_width="match_parent"
+                                               android:layout_height="match_parent"
+                                               android:gravity="center"
+                                               android:hint="#####"
+                                               android:inputType="number"
+                                               android:maxLength="5"
+                                               app:maxValue="99999"
+                                               app:minValue="1"
+                                               app:type="range" />
 
-                    </LinearLayout>
+                                       </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                                   </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q06 VillageSpinner   -->
+                                   <!-- as1q06 VillageSpinner   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q06"
                     style="@style/cardView">
@@ -417,11 +418,11 @@
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_as1q06" />
+                        <!--                   <TextView
+                                               style="@style/quesNum"
+                                               android:layout_width="wrap_content"
+                                               android:layout_height="match_parent"
+                                               android:text="@string/Q_as1q06" />-->
 
                         <TextView
                             android:layout_width="150dp"
@@ -429,7 +430,7 @@
                             android:gravity="center"
                             android:text="@string/as1q06" />
 
-                        <Spinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/as1q06"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -454,11 +455,11 @@
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_as1q08" />
+                        <!--                        <TextView
+                                                    style="@style/quesNum"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="match_parent"
+                                                    android:text="@string/Q_as1q08" />-->
 
                         <TextView
                             android:layout_width="150dp"
@@ -503,13 +504,11 @@
                     -->
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:background="@drawable/capsule"
-                        android:backgroundTint="@color/gray"
+                        android:backgroundTint="@color/colorAccentOverlay"
                         android:backgroundTintMode="src_atop"
-                        android:enabled="false"
                         android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/black"

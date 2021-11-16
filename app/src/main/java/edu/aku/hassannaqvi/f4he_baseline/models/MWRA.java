@@ -34,7 +34,7 @@ public class MWRA extends BaseObservable implements Observable {
     private String uuid = _EMPTY_;
     private String cluster = _EMPTY_;
     private String hhid = _EMPTY_;
-    private String ebCode = _EMPTY_;
+    private String psuCode = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String indexed = _EMPTY_;
@@ -432,7 +432,7 @@ public class MWRA extends BaseObservable implements Observable {
         setDeviceId(MainApp.form.getDeviceId());
         setUuid(MainApp.form.getUid());
         setAppver(MainApp.form.getAppver());
-        setEbCode(MainApp.form.getEbCode());
+        setpsuCode(MainApp.form.getPsuCode());
         setHhid(MainApp.form.getHhid());
     }
 
@@ -636,12 +636,12 @@ public class MWRA extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public String getEbCode() {
-        return ebCode;
+    public String getpsuCode() {
+        return psuCode;
     }
 
-    private void setEbCode(String ebCode) {
-        this.ebCode = ebCode;
+    private void setpsuCode(String psuCode) {
+        this.psuCode = psuCode;
     }
 
 
@@ -5625,7 +5625,7 @@ public class MWRA extends BaseObservable implements Observable {
     public MWRA Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UID));
-        //this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ENUM_BLOCK));
+        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_HHID));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_USERNAME));

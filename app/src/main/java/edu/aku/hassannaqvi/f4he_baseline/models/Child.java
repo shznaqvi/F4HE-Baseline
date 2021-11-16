@@ -29,7 +29,7 @@ public class Child extends BaseObservable implements Observable {
     private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String ebCode = _EMPTY_;
+    private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -235,8 +235,8 @@ public class Child extends BaseObservable implements Observable {
         return sysDate;
     }
 
-    public String getEbCode() {
-        return ebCode;
+    public String getpsuCode() {
+        return psuCode;
     }
 
     public String getHhid() {
@@ -323,8 +323,8 @@ public class Child extends BaseObservable implements Observable {
         this.sysDate = sysDate;
     }
 
-    public void setEbCode(String ebCode) {
-        this.ebCode = ebCode;
+    public void setpsuCode(String psuCode) {
+        this.psuCode = psuCode;
     }
 
     public void setHhid(String hhid) {
@@ -2086,7 +2086,7 @@ public class Child extends BaseObservable implements Observable {
     public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_UID));
-        //this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_ENUM_BLOCK));
+        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_HHID));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_USERNAME));
@@ -2506,7 +2506,7 @@ public class Child extends BaseObservable implements Observable {
 
         json.put(TableContracts.Child_Table.COLUMN_ID, this.id);
         json.put(TableContracts.Child_Table.COLUMN_UID, this.uid);
-        //json.put(TableContracts.Child_Table.COLUMN_ENUM_BLOCK, this.ebCode);
+        //json.put(TableContracts.Child_Table.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.Child_Table.COLUMN_HHID, this.hhid);
         //json.put(TableContracts.Child_Table.COLUMN_SNO, this.sno);
         json.put(TableContracts.Child_Table.COLUMN_USERNAME, this.userName);

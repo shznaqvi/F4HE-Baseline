@@ -47,6 +47,8 @@ public class SectionAS1Activity extends AppCompatActivity {
 
     private boolean insertNewRecord() {
         if (!form.getUid().equals("")) return true;
+        MainApp.form.populateMeta();
+
         long rowId = 0;
         try {
             rowId = db.addForm(form);

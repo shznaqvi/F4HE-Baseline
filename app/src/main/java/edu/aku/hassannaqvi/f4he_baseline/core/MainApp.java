@@ -7,8 +7,6 @@ import android.os.Build;
 import android.provider.Settings;
 import android.view.View;
 
-import com.edittextpicker.aliazaz.BuildConfig;
-
 import org.json.JSONArray;
 
 import java.io.File;
@@ -17,7 +15,6 @@ import java.util.List;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
-import edu.aku.hassannaqvi.f4he_baseline.models.HHMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 
 
@@ -43,7 +40,7 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
-    public static HHMembers hhMembers;
+    public static FamilyMembers familyMembers;
     public static FormB formB;
     public static FamilyMembers familyMember;
 
@@ -57,8 +54,8 @@ public class MainApp extends Application {
     public static SharedPreferences.Editor editor;
     public static SharedPreferences sharedPref;
     public static String deviceid;
-    public static int versionCode = BuildConfig.VERSION_CODE;
-    public static String versionName = BuildConfig.VERSION_NAME;
+    public static int versionCode = edu.aku.hassannaqvi.f4he_baseline.BuildConfig.VERSION_CODE;
+    public static String versionName = edu.aku.hassannaqvi.f4he_baseline.BuildConfig.VERSION_NAME;
     public static int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 2;
     public static long TWO_MINUTES = 1000 * 60 * 2;
     public static boolean permissionCheck = false;
@@ -82,6 +79,13 @@ public class MainApp extends Application {
     public static List<FoodConsumption> foodConsumption;*/
     public static int foodIndex;
     public static boolean hhheadSelected = false;
+    public static boolean superuser;
+    public static int selectedCountry = 0;
+    public static String selectedProvince = "";
+    public static String selectedDistrict = "";
+    public static String selectedVillage = "";
+    public static String selectedPSU = "";
+    public static String selectedHHID = "";
 
 
     public static void hideSystemUI(View decorView) {

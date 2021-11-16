@@ -27,9 +27,9 @@ public class LateAdolescent extends BaseObservable {
     private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String ebCode = _EMPTY_;
+    private final String sno = _EMPTY_;
     private String hhid = _EMPTY_;
-    private String sno = _EMPTY_;
+    private String psuCode = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
@@ -214,7 +214,7 @@ public class LateAdolescent extends BaseObservable {
         setDeviceId(MainApp.form.getDeviceId());
         setUuid(MainApp.form.getUid());
         setAppver(MainApp.form.getAppver());
-        setEbCode(MainApp.form.getEbCode());
+        setpsuCode(MainApp.form.getPsuCode());
         setHhid(MainApp.form.getHhid());
     }
 
@@ -358,12 +358,12 @@ public class LateAdolescent extends BaseObservable {
         this.syncDate = syncDate;
     }
 
-    public String getEbCode() {
-        return ebCode;
+    public String getpsuCode() {
+        return psuCode;
     }
 
-    private void setEbCode(String ebCode) {
-        this.ebCode = ebCode;
+    private void setpsuCode(String psuCode) {
+        this.psuCode = psuCode;
     }
 
 
@@ -2677,7 +2677,7 @@ public class LateAdolescent extends BaseObservable {
     public LateAdolescent Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_UID));
-        //this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_ENUM_BLOCK));
+        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_HHID));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescent_Table.COLUMN_USERNAME));

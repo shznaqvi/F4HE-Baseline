@@ -51,6 +51,10 @@ public class FormsReportPending extends AppCompatActivity {
         bi.fcRecyclerView.setAdapter(formsAdapter);
     }
 
+    public void filterForms(View view) {
+
+    }
+
 /*    public void filterForms(View view) {
         Toast.makeText(this, "updated", Toast.LENGTH_SHORT).show();
         fc = db.getTodayForms(bi.dtFilter.getText().toString());

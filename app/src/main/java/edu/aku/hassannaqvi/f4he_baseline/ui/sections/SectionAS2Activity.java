@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.hhMembers;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.familyMembers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,7 +33,7 @@ public class SectionAS2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_as2);
-        bi.setHhmember(hhMembers);
+        bi.setHhmember(familyMembers);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.hl5y.setMaxvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))));
@@ -46,7 +46,7 @@ public class SectionAS2Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesMemberColumn(TableContracts.HHMembersTable.COLUMN_SA2, hhMembers.sA2toString());
+            updcount = db.updatesMemberColumn(TableContracts.FamilyMembersTable.COLUMN_SA2, familyMembers.sA2toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
