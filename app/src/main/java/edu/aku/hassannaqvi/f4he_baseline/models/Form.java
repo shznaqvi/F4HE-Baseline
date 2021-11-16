@@ -247,9 +247,12 @@ public class Form extends BaseObservable implements Observable {
     private String bs3q196x = _EMPTY_;
     private String bs3q2a = _EMPTY_;
     private String bs3q2a96x = _EMPTY_;
-    private String bs3q2b96 = _EMPTY_;
-    private String bs3q2c96 = _EMPTY_;
-    private String bs3q2d96 = _EMPTY_;
+    private String bs3q2b = _EMPTY_;
+    private String bs3q2b96x = _EMPTY_;
+    private String bs3q2c = _EMPTY_;
+    private String bs3q2c96x = _EMPTY_;
+    private String bs3q2d = _EMPTY_;
+    private String bs3q2d96x = _EMPTY_;
     private String bs3q3 = _EMPTY_;
     private String bs3q4 = _EMPTY_;
     private String bs3q401 = _EMPTY_;
@@ -3305,33 +3308,66 @@ public class Form extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getBs3q2b96() {
-        return bs3q2b96;
+    public String getBs3q2b() {
+        return bs3q2b;
     }
 
-    public void setBs3q2b96(String bs3q2b96) {
-        this.bs3q2b96 = bs3q2b96;
-        notifyPropertyChanged(BR.bs3q2b96);
-    }
-
-    @Bindable
-    public String getBs3q2c96() {
-        return bs3q2c96;
-    }
-
-    public void setBs3q2c96(String bs3q2c96) {
-        this.bs3q2c96 = bs3q2c96;
-        notifyPropertyChanged(BR.bs3q2c96);
+    public void setBs3q2b(String bs3q2b) {
+        this.bs3q2b = bs3q2b;
+        setBs3q2b96x(bs3q2b.equals("96") ? this.bs3q2b96x : "");
+        notifyPropertyChanged(BR.bs3q2b);
     }
 
     @Bindable
-    public String getBs3q2d96() {
-        return bs3q2d96;
+    public String getBs3q2b96x() {
+        return bs3q2b96x;
     }
 
-    public void setBs3q2d96(String bs3q2d96) {
-        this.bs3q2d96 = bs3q2d96;
-        notifyPropertyChanged(BR.bs3q2d96);
+    public void setBs3q2b96x(String bs3q2b96x) {
+        this.bs3q2b96x = bs3q2b96x;
+        notifyPropertyChanged(BR.bs3q2b96x);
+    }
+
+    @Bindable
+    public String getBs3q2c() {
+        return bs3q2c;
+    }
+
+    public void setBs3q2c(String bs3q2c) {
+        this.bs3q2c = bs3q2c;
+        setBs3q2c96x(bs3q2c.equals("96") ? this.bs3q2c96x : "");
+        notifyPropertyChanged(BR.bs3q2c);
+    }
+
+    @Bindable
+    public String getBs3q2c96x() {
+        return bs3q2c96x;
+    }
+
+    public void setBs3q2c96x(String bs3q2c96x) {
+        this.bs3q2c96x = bs3q2c96x;
+        notifyPropertyChanged(BR.bs3q2c96x);
+    }
+
+    @Bindable
+    public String getBs3q2d() {
+        return bs3q2d;
+    }
+
+    public void setBs3q2d(String bs3q2d) {
+        this.bs3q2d = bs3q2d;
+        setBs3q2d96x(bs3q2d.equals("96") ? this.bs3q2d96x : "");
+        notifyPropertyChanged(BR.bs3q2d);
+    }
+
+    @Bindable
+    public String getBs3q2d96x() {
+        return bs3q2d96x;
+    }
+
+    public void setBs3q2d96x(String bs3q2d96x) {
+        this.bs3q2d96x = bs3q2d96x;
+        notifyPropertyChanged(BR.bs3q2d96x);
     }
 
     @Bindable
@@ -9915,9 +9951,12 @@ public class Form extends BaseObservable implements Observable {
             this.bs3q196x = json.getString("bs3q196x");
             this.bs3q2a = json.getString("bs3q2a");
             this.bs3q2a96x = json.getString("bs3q2a96x");
-            this.bs3q2b96 = json.getString("bs3q2b96");
-            this.bs3q2c96 = json.getString("bs3q2c96");
-            this.bs3q2d96 = json.getString("bs3q2d96");
+            this.bs3q2b = json.getString("bs3q2b");
+            this.bs3q2b96x = json.getString("bs3q2b96x");
+            this.bs3q2c = json.getString("bs3q2c");
+            this.bs3q2c96x = json.getString("bs3q2c96x");
+            this.bs3q2d = json.getString("bs3q2d");
+            this.bs3q2d96x = json.getString("bs3q2d96x");
             this.bs3q3 = json.getString("bs3q3");
             this.bs3q4 = json.getString("bs3q4");
             this.bs3q401 = json.getString("bs3q401");
@@ -10815,9 +10854,12 @@ public class Form extends BaseObservable implements Observable {
                 .put("bs3q196x", bs3q196x)
                 .put("bs3q2a", bs3q2a)
                 .put("bs3q2a96x", bs3q2a96x)
-                .put("bs3q2b96", bs3q2b96)
-                .put("bs3q2c96", bs3q2c96)
-                .put("bs3q2d96", bs3q2d96)
+                .put("bs3q2b", bs3q2b)
+                .put("bs3q2b96x", bs3q2b96x)
+                .put("bs3q2c", bs3q2c)
+                .put("bs3q2c96x", bs3q2c96x)
+                .put("bs3q2d", bs3q2d)
+                .put("bs3q2d96x", bs3q2d96x)
                 .put("bs3q3", bs3q3)
                 .put("bs3q4", bs3q4)
                 .put("bs3q401", bs3q401)
