@@ -481,8 +481,8 @@
                                 android:maxLength="4"
                                 android:text="@={hhmember.hl5y}"
                                 app:defaultValue="9998"
-                                app:maxValue="2021"
-                                app:minValue="1900"
+                                app:maxValue="0"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>

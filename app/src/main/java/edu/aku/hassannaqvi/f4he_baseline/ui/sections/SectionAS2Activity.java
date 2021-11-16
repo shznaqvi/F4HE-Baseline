@@ -15,9 +15,7 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.Calendar;
 
 import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
@@ -38,7 +36,8 @@ public class SectionAS2Activity extends AppCompatActivity {
         bi.setHhmember(hhMembers);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        bi.hl5y.setMaxvalue(Float.parseFloat(new SimpleDateFormat("yyyy", Locale.ENGLISH).format(new Date().getTime())));
+        bi.hl5y.setMaxvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))));
+        bi.hl5y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))) - 100);
     }
 
 
