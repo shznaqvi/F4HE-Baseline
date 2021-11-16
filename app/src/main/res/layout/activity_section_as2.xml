@@ -31,6 +31,7 @@
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/as2"
+            app:subtitle="@string/atitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -449,6 +450,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={hhmember.hl5d}"
+                                app:defaultValue="98"
                                 app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
@@ -463,6 +465,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={hhmember.hl5m}"
+                                app:defaultValue="98"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
@@ -477,6 +480,7 @@
                                 android:inputType="number"
                                 android:maxLength="4"
                                 android:text="@={hhmember.hl5y}"
+                                app:defaultValue="9998"
                                 app:maxValue="2021"
                                 app:minValue="1900"
                                 app:type="range" />
@@ -521,13 +525,7 @@
                             style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/hl6t1" />
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/hl6t2" />
+                            android:text="@string/hl6info" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -708,13 +706,27 @@
 
                         </LinearLayout>
 
-                        <RadioButton
-                            android:id="@+id/hl897"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{hhmember.hl8.equals(``)}"
-                            android:onClick="@{()->hhmember.setHl8(``)}"
-                            android:text="@string/hl897" />
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/hl897"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{hhmember.hl8.equals(`97`)}"
+                                android:onClick="@{()->hhmember.setHl8(hhmember.hl8.equals(`97`)?``:`97`)}"
+                                android:text="@string/hl897" />
+
+                            <TextView
+                                android:id="@+id/hl8"
+                                style="@style/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@={hhmember.hl8}" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -750,13 +762,27 @@
 
                         </LinearLayout>
 
-                        <RadioButton
-                            android:id="@+id/hl997"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{hhmember.hl9.equals(`97`)}"
-                            android:onClick="@{()->hhmember.setHl9(`97`)}"
-                            android:text="@string/hl997" />
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/hl997"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{hhmember.hl9.equals(`97`)}"
+                                android:onClick="@{()->hhmember.setHl9(hhmember.hl9.equals(`97`)?``:`97`)}"
+                                android:text="@string/hl997" />
+
+                            <TextView
+                                android:id="@+id/hl9"
+                                style="@style/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@={hhmember.hl9}" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

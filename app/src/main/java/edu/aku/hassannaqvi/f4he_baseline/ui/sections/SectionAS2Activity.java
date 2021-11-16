@@ -15,6 +15,10 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
@@ -34,7 +38,7 @@ public class SectionAS2Activity extends AppCompatActivity {
         bi.setHhmember(hhMembers);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        //bi.hl5y.setMaxvalue(Float.parseFloat(""));
+        bi.hl5y.setMaxvalue(Float.parseFloat(new SimpleDateFormat("yyyy", Locale.ENGLISH).format(new Date().getTime())));
     }
 
 

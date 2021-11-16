@@ -27,7 +27,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_login.xml" value="0.38515625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_main.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.2907686051240342" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1.xml" value="0.536" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs2.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs3.xml" value="0.15811587793011941" />
@@ -57,7 +57,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
