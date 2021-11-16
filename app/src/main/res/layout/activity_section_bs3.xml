@@ -296,7 +296,7 @@
                             <EditText
                                 android:id="@+id/bs3q2a96x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/bs3q2a96"
                                 android:tag="bs3q2a96"
@@ -364,7 +364,7 @@
                             <EditText
                                 android:id="@+id/bs3q2b96x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/bs3q2b96"
                                 android:tag="bs3q2b96"
@@ -432,7 +432,7 @@
                             <EditText
                                 android:id="@+id/bs3q2c96x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/bs3q2c96"
                                 android:tag="bs3q2c96"
@@ -500,7 +500,7 @@
                             <EditText
                                 android:id="@+id/bs3q2d96x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="50dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/bs3q2d96"
                                 android:tag="bs3q2d96"
