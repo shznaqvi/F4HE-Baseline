@@ -214,7 +214,7 @@ public class TableContracts {
         public static final String COLUMN_SB7 = "sb7";
         public static final String COLUMN_SD1 = "sd1";
         public static final String COLUMN_SD2 = "sd2";
-        public static final String COLUMN_SD3 = "sd2";
+        public static final String COLUMN_SD3 = "sd3";
 
 
 

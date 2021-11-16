@@ -53,7 +53,7 @@ public class IdentificationActivity extends AppCompatActivity {
         setTheme(sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
-        // populateSpinner();
+        populateSpinner();
 
         bi.btnContinue.setText(R.string.open_hh_form);
         MainApp.form = new Form();
@@ -84,10 +84,9 @@ public class IdentificationActivity extends AppCompatActivity {
 
         bi.as1q02.setAdapter(adapter);
 
-        bi.as1q02.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        bi.as1q02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 MainApp.selectedProvince = provinceCodes.get(position);
 
                 // Populate Districts
@@ -112,11 +111,16 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.as1q04.setAdapter(adapter);
 
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
         });
 
-        bi.as1q04.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        bi.as1q04.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 MainApp.selectedDistrict = districtCodes.get(position);
 
@@ -125,6 +129,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 villageNames = new ArrayList<>();
                 villageCodes = new ArrayList<>();
+                psuCode = new ArrayList<>();
 
                 villageNames.add("...");
                 villageCodes.add("...");
@@ -144,15 +149,25 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.as1q06.setAdapter(adapter);
 
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
         });
 
-        bi.as1q06.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        bi.as1q06.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 MainApp.selectedVillage = villageCodes.get(position);
                 MainApp.selectedPSU = psuCode.get(position);
 
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });

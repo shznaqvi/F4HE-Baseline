@@ -264,7 +264,6 @@ object CreateTable {
             + VillagesTable.TABLE_NAME + "("
             + VillagesTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + VillagesTable.COLUMN_COUNTRY + " TEXT,"
-            + VillagesTable.COLUMN_COUNTRY + " TEXT,"
             + VillagesTable.COLUMN_CCODE + " TEXT,"
             + VillagesTable.COLUMN_PROVINCE + " TEXT,"
             + VillagesTable.COLUMN_PROVCODE + " TEXT,"
@@ -272,7 +271,7 @@ object CreateTable {
             + VillagesTable.COLUMN_DCODE + " TEXT,"
             + VillagesTable.COLUMN_VILLAGE + " TEXT,"
             + VillagesTable.COLUMN_VCODE + " TEXT,"
-            + VillagesTable.COLUMN_PSUCODE + " TEXT,"
+            + VillagesTable.COLUMN_PSUCODE + " TEXT"
             + " );"
             )
 

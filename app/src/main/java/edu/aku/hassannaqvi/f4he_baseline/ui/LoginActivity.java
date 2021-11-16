@@ -75,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
     private int countryCode;
     private ArrayList<String> countryNameList;
     private ArrayList<String> countryCodeList;
+    private int pos = 0;
    /* private int PhotoSerial = 0;
     private String photolist;
     ActivityResultLauncher<Intent> takePhotoLauncher = registerForActivityResult(
@@ -171,10 +172,9 @@ public class LoginActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
+
         db = MainApp.appInfo.getDbHelper();
 
-
-        settingCountryCode();
 
         MainApp.appInfo = new AppInfo(this);
         MainApp.user = new Users();
@@ -183,6 +183,15 @@ public class LoginActivity extends AppCompatActivity {
         dbBackup();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        settingCountryCode();
+        if (getIntent().hasExtra("pos")) {
+            pos = getIntent().getExtras().getInt("pos");
+            bi.countrySwitch.setSelection(pos);
+        }
+    }
     /*    private void settingCountryCode() {
 
 
@@ -202,30 +211,11 @@ public class LoginActivity extends AppCompatActivity {
                 .apply();*//*
         bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
 
-        countryNameList = new ArrayList<>();
-        countryCodeList = new ArrayList<>();
-
-        countryNameList.add("...");
-        countryCodeList.add("...");
-
-        for (Villages c : countries){
-            countryNameList.add(c.getCountry());
-            countryCodeList.add(c.getCcode());
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, countryNameList);
-
-        bi.countrySwitch.setAdapter(adapter);
-
-        bi.countrySwitch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-                MainApp.selectedCountry = countryCodeList.indexOf(bi.countrySwitch.getSelectedItemPosition());
-                changeLanguage(MainApp.selectedCountry);
+        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // do something, the isChecked will be
+                // true if the switch is in the On position
+                changeLanguage(isChecked ? 1 : 3);
 
                 startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -474,7 +464,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void settingCountryCode() {
 
-        bi.countrySwitch.setSelection(Integer.parseInt(MainApp.sharedPref.getString("lang", "0")));
 
         Collection<Villages> countries = db.getAllCountries();
 
@@ -489,22 +478,25 @@ public class LoginActivity extends AppCompatActivity {
             countryCodeList.add(c.getCcode());
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, countryNameList);
 
-        bi.countrySwitch.setAdapter(adapter);
+        bi.countrySwitch.setAdapter(new ArrayAdapter<>(LoginActivity.this, android.R.layout.simple_dropdown_item_1line, countryNameList));
 
-        bi.countrySwitch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        bi.countrySwitch.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                if (position != 0 && position != pos) {
+                    MainApp.selectedCountry = countryCodeList.indexOf(bi.countrySwitch.getSelectedItemPosition());
+                    changeLanguage(MainApp.selectedCountry);
+
+                    startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).putExtra("pos", position));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                }
+            }
 
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-                MainApp.selectedCountry = countryCodeList.indexOf(bi.countrySwitch.getSelectedItemPosition());
-                changeLanguage(MainApp.selectedCountry);
-
-                startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });

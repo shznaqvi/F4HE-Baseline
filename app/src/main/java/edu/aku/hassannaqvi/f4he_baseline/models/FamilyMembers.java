@@ -105,7 +105,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setDeviceId(MainApp.form.getDeviceId());
         setUuid(MainApp.form.getUid());
         setAppver(MainApp.form.getAppver());
-
         setpsuCode(MainApp.form.getPsuCode());
         setHhid(MainApp.form.getHhid());
     }
