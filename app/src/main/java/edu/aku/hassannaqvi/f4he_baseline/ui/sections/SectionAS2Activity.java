@@ -37,7 +37,7 @@ public class SectionAS2Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.hl5y.setMaxvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))));
-        bi.hl5y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))) - 100);
+        bi.hl5y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))) - 120);
     }
 
 
