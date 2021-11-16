@@ -259,6 +259,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.sA2 = sA2;
     }
 
+/*
     public void setSno(String sno) {
         this.sno = sno;
     }
@@ -267,6 +268,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public boolean isMwra() {
         return mwra;
     }
+*/
 
     @Bindable
     public String getHl1() {

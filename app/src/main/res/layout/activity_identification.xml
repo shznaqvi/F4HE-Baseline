@@ -47,7 +47,7 @@
                 android:orientation="vertical">
 
 
-                <!-- as1q01 CountrySpinner   -->
+             <!--   &lt;!&ndash; as1q01 CountrySpinner   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q01"
                     android:visibility="gone"
@@ -60,32 +60,32 @@
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
-            <!--                        <TextView
-                                        style="@style/quesNum"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:text="@string/Q_as1q01" />
+&lt;!&ndash;                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_as1q01" />
 
-                                    <TextView
-                                        android:layout_width="150dp"
-                                        android:layout_height="match_parent"
-                                        android:gravity="center"
-                                        android:text="@string/as1q01" />
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/as1q01" />
 
-                                    <androidx.appcompat.widget.AppCompatSpinner
-                                        android:id="@+id/as1q01"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:minHeight="56dp"
-                                        android:prompt="@string/as1q01"
-                                        android:spinnerMode="dropdown" />
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/as1q01"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="56dp"
+                            android:prompt="@string/as1q01"
+                            android:spinnerMode="dropdown" />
 
-                                </LinearLayout>
+                    </LinearLayout>
 
-                            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+-->
 
-
-                            <!-- as1q02 CountrySpinner   -->
+                <!-- as1q02 CountrySpinner   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q02"
                     style="@style/cardView">
@@ -364,49 +364,49 @@
                 </androidx.cardview.widget.CardView>-->
 
 
-                <!-- as1q03  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q03"
-                    android:visibility="gone"
-                    style="@style/cardView">
+                <!--               &lt;!&ndash; as1q03  Input-Numeric   &ndash;&gt;
+                               <androidx.cardview.widget.CardView
+                                   android:id="@+id/fldGrpCVas1q03"
+                                   android:visibility="gone"
+                                   style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="60dp"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                                   <LinearLayout
+                                       android:layout_width="match_parent"
+                                       android:layout_height="wrap_content"
+                                       android:minHeight="60dp"
+                                       android:background="@drawable/bottom"
+                                       android:orientation="horizontal">
 
-                        <!--                   <TextView
-                                               style="@style/quesNum"
-                                               android:layout_width="wrap_content"
-                                               android:layout_height="match_parent"
-                                               android:text="@string/Q_as1q03" />
+                    &lt;!&ndash;                   <TextView
+                                           style="@style/quesNum"
+                                           android:layout_width="wrap_content"
+                                           android:layout_height="match_parent"
+                                           android:text="@string/Q_as1q03" />
 
-                                           <TextView
-                                               android:layout_width="150dp"
-                                               android:layout_height="match_parent"
-                                               android:gravity="center"
-                                               android:text="@string/as1q03" />
+                                       <TextView
+                                           android:layout_width="150dp"
+                                           android:layout_height="match_parent"
+                                           android:gravity="center"
+                                           android:text="@string/as1q03" />
 
-                                           <com.edittextpicker.aliazaz.EditTextPicker
-                                               android:id="@+id/as1q03"
-                                               android:layout_width="match_parent"
-                                               android:layout_height="match_parent"
-                                               android:gravity="center"
-                                               android:hint="#####"
-                                               android:inputType="number"
-                                               android:maxLength="5"
-                                               app:maxValue="99999"
-                                               app:minValue="1"
-                                               app:type="range" />
+                                       <com.edittextpicker.aliazaz.EditTextPicker
+                                           android:id="@+id/as1q03"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:gravity="center"
+                                           android:hint="#####"
+                                           android:inputType="number"
+                                           android:maxLength="5"
+                                           app:maxValue="99999"
+                                           app:minValue="1"
+                                           app:type="range" />
 
-                                       </LinearLayout>
+                                   </LinearLayout>
 
-                                   </androidx.cardview.widget.CardView>
+                               </androidx.cardview.widget.CardView>
 
-
-                                   <!-- as1q06 VillageSpinner   -->
+               -->
+                <!-- as1q06 VillageSpinner   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVas1q06"
                     style="@style/cardView">
