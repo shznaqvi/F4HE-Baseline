@@ -5420,6 +5420,7 @@ public class Form extends BaseObservable implements Observable {
         setBs5q404(bs5q3.equals("2") ? "" : this.bs5q404);
         setBs5q496(bs5q3.equals("2") ? "" : this.bs5q496);
         setBs5q497(bs5q3.equals("2") ? "" : this.bs5q497);
+        setBs5q5(bs5q3.equals("2") ? "" : this.bs5q5);
         notifyPropertyChanged(BR.bs5q3);
     }
 
