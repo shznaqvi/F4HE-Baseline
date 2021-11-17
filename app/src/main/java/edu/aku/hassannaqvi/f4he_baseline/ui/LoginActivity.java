@@ -12,6 +12,9 @@ import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -75,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
     private int countryCode;
     private ArrayList<String> countryNameList;
     private ArrayList<String> countryCodeList;
-    private int pos = 0;
+    private final int pos = 0;
    /* private int PhotoSerial = 0;
     private String photolist;
     ActivityResultLauncher<Intent> takePhotoLauncher = registerForActivityResult(
@@ -171,7 +174,7 @@ public class LoginActivity extends AppCompatActivity {
         }).check();
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_login);
-
+        setSupportActionBar(bi.toolbar);
 
         db = MainApp.appInfo.getDbHelper();
 
@@ -187,10 +190,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         settingCountryCode();
-        if (getIntent().hasExtra("pos")) {
+        /*if (getIntent().hasExtra("pos")) {
             pos = getIntent().getExtras().getInt("pos");
             bi.countrySwitch.setSelection(pos);
-        }
+        }*/
     }
     /*    private void settingCountryCode() {
 
@@ -439,12 +442,17 @@ public class LoginActivity extends AppCompatActivity {
                         .putString("lang", "2")
                         .apply();
             case 3:
+                lang = "tg";
+                country = "TJ";
+                MainApp.editor
+                        .putString("lang", "3")
+                        .apply();
+            case 4:
                 lang = "ru";
                 country = "KG";
                 MainApp.editor
                         .putString("lang", "4")
                         .apply();
-            case 4:
             default:
                 lang = "en";
                 country = "US";
@@ -488,10 +496,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (position != 0 && position != pos) {
                     MainApp.selectedCountry = Integer.parseInt(countryCodeList.get(position));
-                    changeLanguage(MainApp.selectedCountry);
+                    // changeLanguage(MainApp.selectedCountry);
 
-                    startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).putExtra("pos", position));
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    //  startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).putExtra("pos", position));
+                    //   overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
             }
 
@@ -528,5 +536,45 @@ public class LoginActivity extends AppCompatActivity {
         takePhotoLauncher.launch(intent);
 
     }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.language_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.NO:
+                return true;
+
+            case R.id.PK:
+                MainApp.selectedLanguage = 1;
+                break;
+
+            case R.id.AF:
+                MainApp.selectedLanguage = 2;
+                break;
+
+            case R.id.TJ:
+                MainApp.selectedLanguage = 3;
+                break;
+
+            case R.id.KG:
+                MainApp.selectedLanguage = 4;
+                break;
+
+            default:
+                MainApp.selectedLanguage = 0;
+        }
+        changeLanguage(MainApp.selectedLanguage);
+        startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+        return true;
+    }
 }
 
