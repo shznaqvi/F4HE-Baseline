@@ -88,10 +88,20 @@ public class SectionBS1AActivity extends AppCompatActivity {
             if (Integer.parseInt(form.getBs1q1()) >= Integer.parseInt(familyMembers.getHl6y())) {
                 return Validator.emptyCustomTextBox(this, bi.bs1q1, "Age on marriage must be Less Than age given in Roster");
             }
+        }
+
+        if (form.getBs1q1().length() > 0 && form.getBs1q5().length() > 0) {
             if (Integer.parseInt(form.getBs1q1()) >= Integer.parseInt(form.getBs1q5())) {
-                return Validator.emptyCustomTextBox(this, bi.bs1q5, "BS1Q5 Must Be Greater Than BS1Q1");
+                return Validator.emptyCustomTextBox(this, bi.bs1q5, "Must Be Greater Than BS1Q1");
             }
         }
+
+        if (form.getBs1q3().length() > 0 && form.getBs1q6().length() > 0) {
+            if (Integer.parseInt(form.getBs1q6()) > Integer.parseInt(form.getBs1q3())) {
+                return Validator.emptyCustomTextBox(this, bi.bs1q6, "Must be Less Than BS1Q3");
+            }
+        }
+
         return true;
     }
 }
