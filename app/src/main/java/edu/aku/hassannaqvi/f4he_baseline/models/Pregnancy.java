@@ -49,7 +49,7 @@ public class Pregnancy extends BaseObservable implements Observable {
     private String bs1q7p1d= _EMPTY_;
     private String bs1q7p1d96x= _EMPTY_;
     private String bs1q7p1b= _EMPTY_;
-    private String bs1q7p2g= _EMPTY_;
+    /*private String bs1q7p2g= _EMPTY_;
     private String bs1q7p2d= _EMPTY_;
     private String bs1q7p2d96x= _EMPTY_;
     private String bs1q7p2b= _EMPTY_;
@@ -93,7 +93,7 @@ public class Pregnancy extends BaseObservable implements Observable {
     private String bs1q1308= _EMPTY_;
     private String bs1q1396= _EMPTY_;
     private String bs1q1396x= _EMPTY_;
-
+*/
 
     public String getsB1() {
         return sB1;
@@ -294,7 +294,7 @@ public class Pregnancy extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.bs1q7p1b);
     }
 
-    @Bindable
+    /*@Bindable
     public String getBs1q7p2g() {
         return bs1q7p2g;
     }
@@ -774,7 +774,7 @@ public class Pregnancy extends BaseObservable implements Observable {
         this.bs1q1396x = bs1q1396x;
         notifyPropertyChanged(BR.bs1q1396x);
     }
-
+*/
 
     public void sB1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sB1Hydrate: " + string);
@@ -785,7 +785,7 @@ public class Pregnancy extends BaseObservable implements Observable {
             this.bs1q7p1d = json.getString("bs1q7p1d");
             this.bs1q7p1d96x = json.getString("bs1q7p1d96x");
             this.bs1q7p1b = json.getString("bs1q7p1b");
-            this.bs1q7p2g = json.getString("bs1q7p2g");
+            /*this.bs1q7p2g = json.getString("bs1q7p2g");
             this.bs1q7p2d = json.getString("bs1q7p2d");
             this.bs1q7p2d96x = json.getString("bs1q7p2d96x");
             this.bs1q7p2b = json.getString("bs1q7p2b");
@@ -828,7 +828,7 @@ public class Pregnancy extends BaseObservable implements Observable {
             this.bs1q1307 = json.getString("bs1q1307");
             this.bs1q1308 = json.getString("bs1q1308");
             this.bs1q1396 = json.getString("bs1q1396");
-            this.bs1q1396x = json.getString("bs1q1396x");
+            this.bs1q1396x = json.getString("bs1q1396x");*/
         }
     }
 
@@ -838,8 +838,8 @@ public class Pregnancy extends BaseObservable implements Observable {
         json.put("bs1q7p1g", bs1q7p1g)
                 .put("bs1q7p1d", bs1q7p1d)
                 .put("bs1q7p1d96x", bs1q7p1d96x)
-                .put("bs1q7p1b", bs1q7p1b)
-                .put("bs1q7p2g", bs1q7p2g)
+                .put("bs1q7p1b", bs1q7p1b);
+                /*.put("bs1q7p2g", bs1q7p2g)
                 .put("bs1q7p2d", bs1q7p2d)
                 .put("bs1q7p2d96x", bs1q7p2d96x)
                 .put("bs1q7p2b", bs1q7p2b)
@@ -882,7 +882,7 @@ public class Pregnancy extends BaseObservable implements Observable {
                 .put("bs1q1307", bs1q1307)
                 .put("bs1q1308", bs1q1308)
                 .put("bs1q1396", bs1q1396)
-                .put("bs1q1396x", bs1q1396x);
+                .put("bs1q1396x", bs1q1396x);*/
         return json.toString();
     }
 
