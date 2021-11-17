@@ -553,22 +553,28 @@ public class LoginActivity extends AppCompatActivity {
 
             case R.id.PK:
                 MainApp.selectedLanguage = 1;
+                MainApp.langRTL = true;
                 break;
 
             case R.id.AF:
                 MainApp.selectedLanguage = 2;
+                MainApp.langRTL = true;
                 break;
 
             case R.id.TJ:
                 MainApp.selectedLanguage = 3;
+                MainApp.langRTL = false;
                 break;
 
             case R.id.KG:
                 MainApp.selectedLanguage = 4;
+                MainApp.langRTL = false;
                 break;
 
             default:
                 MainApp.selectedLanguage = 0;
+                MainApp.langRTL = false;
+
         }
         changeLanguage(MainApp.selectedLanguage);
         startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));

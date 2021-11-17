@@ -91,6 +91,7 @@ public class MainApp extends Application {
     public static String selectedVillage = "";
     public static String selectedPSU = "";
     public static String selectedHHID = "";
+    public static boolean langRTL = false;
 
 
     public static void hideSystemUI(View decorView) {
