@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.AndroidManager;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.SyncActivity;
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionAS1Activity.class));
                 break;
             case R.id.seca2:
-                MainApp.form = new Form();
+                MainApp.familyMembers = new FamilyMembers();
                 startActivity(new Intent(this, SectionAS2Activity.class));
                 break;
 
