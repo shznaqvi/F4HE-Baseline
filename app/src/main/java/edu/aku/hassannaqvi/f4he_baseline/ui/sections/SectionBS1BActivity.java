@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.pregnancy;
 
 import android.content.Intent;
@@ -91,10 +92,10 @@ public class SectionBS1BActivity extends AppCompatActivity {
             MainApp.preg_count --;
             if (MainApp.preg_count > 0) {
 
-                pregnancy.setBs1q7p1g(null);
-                pregnancy.setBs1q7p1d(null);
-                pregnancy.setBs1q7p1d96x(null);
-                pregnancy.setBs1q7p1b(null);
+                form.setBs1q7p1g(null);
+                form.setBs1q7p1d(null);
+                form.setBs1q7p1d96x(null);
+                form.setBs1q7p1b(null);
                 startActivity(new Intent(this, SectionBS1BActivity.class).putExtra("count", MainApp.preg_count));
             } else {
                 startActivity(new Intent(this, SectionBS1CActivity.class));
