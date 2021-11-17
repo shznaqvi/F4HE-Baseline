@@ -39,6 +39,28 @@ public class SectionBS1Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
+
+        /*bi.bs1q1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.bs1q1.getText().toString().trim().length() < 1) return;
+                bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });*/
+
+    }
+
+
+    public void bs1q1SetMax(CharSequence s, int start, int before, int count) {
+        Log.w("tag", "bs1q1SetMax " + s);
     }
 
 
