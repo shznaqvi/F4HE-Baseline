@@ -20,17 +20,18 @@ import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
-import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionCs1Binding;
+import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionCs1ABinding;
 
-public class SectionCS1Activity extends AppCompatActivity {
+
+public class SectionCS1AActivity extends AppCompatActivity {
     private static final String TAG = "SectionCS1Activity";
-    ActivitySectionCs1Binding bi;
+    ActivitySectionCs1ABinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_a);
         bi.setForm(form);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
