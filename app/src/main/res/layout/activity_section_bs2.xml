@@ -632,6 +632,7 @@
                                     android:id="@+id/bs2q466"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:onCheckedChanged="@{()->bs2q5.clearCheck()}"
                                     android:checked="@{form.bs2q466.equals(`66`)}"
                                     android:onClick="@{()->form.setBs2q466(form.bs2q466.equals(`66`)?``:`66`)}"
                                     android:text="@string/bs2q466" />
@@ -666,7 +667,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVbs2q5"
                         style="@style/cardView"
-                        android:visibility="@{form.bs2q3.equals(`2`) || form.bs2q412.equals(`12`)  || form.bs2q413.equals(`13`)  || form.bs2q414.equals(`14`)  || form.bs2q415.equals(`15`)  || form.bs2q416.equals(`16`)  || form.bs2q417.equals(`17`)   || form.bs2q418.equals(`18`) ? View.GONE : View.VISIBLE}">
+                        android:visibility="@{form.bs2q3.equals(`2`) || form.bs2q412.equals(`12`) || form.bs2q413.equals(`13`) || form.bs2q414.equals(`14`) || form.bs2q415.equals(`15`) || form.bs2q416.equals(`16`) || form.bs2q417.equals(`17`) || form.bs2q418.equals(`18`) || form.bs2q466.equals(`66`) ? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -748,7 +749,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVbs2q6"
                         style="@style/cardView"
-                        android:visibility="@{form.bs2q3.equals(`2`) || form.bs2q412.equals(`12`)  || form.bs2q413.equals(`13`)  || form.bs2q414.equals(`14`)  || form.bs2q415.equals(`15`)  || form.bs2q416.equals(`16`)  || form.bs2q417.equals(`17`)   || form.bs2q418.equals(`18`) ? View.GONE : View.VISIBLE}">
+                        android:visibility="@{form.bs2q3.equals(`2`) || form.bs2q412.equals(`12`) || form.bs2q413.equals(`13`) || form.bs2q414.equals(`14`) || form.bs2q415.equals(`15`) || form.bs2q416.equals(`16`) || form.bs2q417.equals(`17`) || form.bs2q418.equals(`18`) || form.bs2q466.equals(`66`) ? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"

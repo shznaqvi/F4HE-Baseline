@@ -20,52 +20,32 @@ import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
-import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1Binding;
+import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1cBinding;
 
-public class SectionBS1Activity extends AppCompatActivity {
-    private static final String TAG = "SectionBS1Activity";
-    ActivitySectionBs1Binding bi;
+public class SectionBS1CActivity extends AppCompatActivity {
+
+    private static final String TAG = "SectionBS1AActivity";
+    ActivitySectionBs1cBinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1c);
         bi.setForm(form);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         setupSkips();
-    }
 
+
+    }
 
     private void setupSkips() {
-
-        /*bi.bs1q1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (bi.bs1q1.getText().toString().trim().length() < 1) return;
-                bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });*/
-
-    }
-
-
-    public void bs1q1SetMax(CharSequence s, int start, int before, int count) {
-        Log.w("tag", "bs1q1SetMax " + s);
     }
 
 
     private boolean updateDB() {
-       /* db = MainApp.appInfo.getDbHelper();
+        db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
             updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SB1, form.sB1toString());
@@ -78,23 +58,16 @@ public class SectionBS1Activity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
-
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {
             finish();
-            if (Integer.valueOf(form.getBs1q6()) > 0 || Integer.valueOf(form.getBs1q3()) > 0) {
-                //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
-                startActivity(new Intent(this, PregnancyActivity.class).putExtra("count",Integer.valueOf(form.getBs1q6())));
-            }
-            else {
-                startActivity(new Intent(this, SectionBS2Activity.class));
-            }
+            //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, MainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

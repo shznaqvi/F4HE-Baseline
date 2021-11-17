@@ -29,7 +29,7 @@ import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityFamilyListBinding;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS1AActivity;
 
 
 public class FamilyMembersListActivity extends AppCompatActivity {
@@ -278,7 +278,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
         //MainApp.familyList = new ArrayList<>();
         finish();
-        startActivity(new Intent(this, MainApp.selectedMWRA.equals("") ? EndingActivity.class : SectionBS1Activity.class).putExtra("complete", true));
+        startActivity(new Intent(this, MainApp.selectedMWRA.equals("") ? EndingActivity.class : SectionBS1AActivity.class).putExtra("complete", true));
 
         //MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
 
@@ -383,7 +383,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     private void addMoreMember() {
         MainApp.familyMember = new FamilyMembers();
-        Intent intent = new Intent(this, SectionBS1Activity.class);
+        Intent intent = new Intent(this, SectionBS1AActivity.class);
         //   finish();
         MemberInfoLauncher.launch(intent);
     }

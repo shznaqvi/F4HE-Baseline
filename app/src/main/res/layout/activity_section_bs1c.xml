@@ -473,7 +473,7 @@
                                     android:id="@+id/bs1q1201"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
+                                    android:layout_weight="2"
                                     android:checked="@{form.bs1q12.equals(`1`)}"
                                     android:onClick="@{()->form.setBs1q12(`1`)}"
                                     android:text="@string/bs1q1201" />
@@ -491,7 +491,7 @@
                                     android:id="@+id/bs1q1203"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
+                                    android:layout_weight="2"
                                     android:checked="@{form.bs1q12.equals(`3`)}"
                                     android:onClick="@{()->form.setBs1q12(`3`)}"
                                     android:text="@string/bs1q1203" />
