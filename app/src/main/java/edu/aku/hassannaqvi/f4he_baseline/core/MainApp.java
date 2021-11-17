@@ -12,6 +12,8 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
+import edu.aku.hassannaqvi.f4he_baseline.models.Child;
+import edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
@@ -43,10 +45,13 @@ public class MainApp extends Application {
     public static String[] downloadData;
     public static Form form;
     public static Pregnancy pregnancy;
+    public static Child child;
+    public static ECDInfo ecd;
     public static FamilyMembers familyMembers;
     public static FormB formB;
     public static FamilyMembers familyMember;
     public static int preg_count = 0;
+    public static int child_count = 0;
 
     //public static Samples samples;
 

@@ -377,6 +377,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //UPDATE in DB
+    public int updatesChildColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = Child_Table._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.child.getId())};
+
+        return db.update(Child_Table.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    //UPDATE in DB
+    public int updatesECDColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = TableContracts.ECDInfo_Table._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.ecd.getId())};
+
+        return db.update(TableContracts.ECDInfo_Table.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+    //UPDATE in DB
     public int updatesPregnancyColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 

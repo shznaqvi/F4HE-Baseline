@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
 import android.content.Intent;
@@ -24,7 +25,7 @@ import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionCs1ABinding;
 
 
 public class SectionCS1AActivity extends AppCompatActivity {
-    private static final String TAG = "SectionCS1Activity";
+    private static final String TAG = "SectionCS1AActivity";
     ActivitySectionCs1ABinding bi;
     private DatabaseHelper db;
 
@@ -42,9 +43,34 @@ public class SectionCS1AActivity extends AppCompatActivity {
     private void setupSkips() {
     }
 
+    private boolean insertNewRecord() {
+        /*if (!child.getUid().equals("")) return true;
+        child.populateMeta();
+
+        long rowId = 0;
+        try {
+            rowId = db.addChild(child);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        child.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            child.setUid(child.getDeviceId() + child.getId());
+            db.updatesChildColumn(TableContracts.Child_Table.COLUMN_UID, child.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
+
+        return true;
+    }
+
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
+        /*db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
             updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SC1, form.sC1toString());
@@ -57,17 +83,27 @@ public class SectionCS1AActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
     }
 
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         saveDraft();
         if (updateDB()) {
             finish();
-            //startActivity(new Intent(this, SectionCS2Activity.class).putExtra("complete", true));
-            startActivity(new Intent(this, MainActivity.class));
+
+            if (Integer.valueOf(form.getCs1q02()) > 0) {
+
+                //startActivity(new Intent(this, SectionCS2Activity.class).putExtra("complete", true));
+                startActivity(new Intent(this, SectionCS1BActivity.class).putExtra("ecdCount", Integer.valueOf(form.getCs1q02())));
+            }
+            else{
+                startActivity(new Intent(this, SectionCS1CActivity.class).putExtra("ecdCount", Integer.valueOf(form.getCs1q02())));
+            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

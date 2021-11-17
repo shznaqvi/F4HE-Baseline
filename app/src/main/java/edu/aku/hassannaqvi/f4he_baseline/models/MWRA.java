@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.models;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
@@ -13,7 +14,10 @@ import androidx.databinding.PropertyChangeRegistry;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.f4he_baseline.BR;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
@@ -482,6 +486,19 @@ public class MWRA extends BaseObservable implements Observable {
         setHhid(MainApp.form.getHhid());
     }
 
+
+    public void populateMeta() {
+
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setAppver(MainApp.appInfo.getAppVersion());
+        setProjectName(PROJECT_NAME);
+        setpsuCode(MainApp.selectedPSU);
+        setHhid(MainApp.selectedHHID);
+
+    }
     public String getsB1() {
         return sB1;
     }
