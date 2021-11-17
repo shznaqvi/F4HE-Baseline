@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportPending;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.ConsentActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS1Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS2Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS1AActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS2Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS3Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS4AActivity;
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.seca3:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS1Activity.class));
+                startActivity(new Intent(this, SectionBS1AActivity.class));
                 break;
             case R.id.secb1:
                 MainApp.form = new Form();

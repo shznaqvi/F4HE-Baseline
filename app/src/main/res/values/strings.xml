@@ -346,7 +346,7 @@
     <string name="bs1q6_info">CANT BE GREATER THAN BS1Q7</string>
     <string name="bs1q6t">(Including current Pregnancy)</string>
     <string name="bs1q7t1">Please provide the following information for each pregnancy in last five years: </string>
-    <string name="bs1q7p1"> Pregnancy One</string>
+    <string name="bs1q7p1"> PREGNANCY  OUTCOME </string>
     <string name="bs1q7p1g"> Multiple Gestation ? </string>
     <string name="bs1q7p1g01"> Yes </string>
     <string name="bs1q7p1g02"> No </string>
