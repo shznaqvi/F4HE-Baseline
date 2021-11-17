@@ -195,6 +195,7 @@
                                 android:id="@+id/hl302"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`2`)}"
                                 android:onClick="@{()->familymember.setHl3(`2`)}"
                                 android:text="@string/hl302" />
@@ -203,6 +204,7 @@
                                 android:id="@+id/hl303"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`3`)}"
                                 android:onClick="@{()->familymember.setHl3(`3`)}"
                                 android:text="@string/hl303" />
@@ -211,6 +213,7 @@
                                 android:id="@+id/hl304"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`4`)}"
                                 android:onClick="@{()->familymember.setHl3(`4`)}"
                                 android:text="@string/hl304" />
@@ -219,6 +222,7 @@
                                 android:id="@+id/hl305"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`5`)}"
                                 android:onClick="@{()->familymember.setHl3(`5`)}"
                                 android:text="@string/hl305" />
@@ -227,6 +231,7 @@
                                 android:id="@+id/hl306"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`6`)}"
                                 android:onClick="@{()->familymember.setHl3(`6`)}"
                                 android:text="@string/hl306" />
@@ -235,6 +240,7 @@
                                 android:id="@+id/hl307"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`7`)}"
                                 android:onClick="@{()->familymember.setHl3(`7`)}"
                                 android:text="@string/hl307" />
@@ -243,6 +249,7 @@
                                 android:id="@+id/hl308"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`8`)}"
                                 android:onClick="@{()->familymember.setHl3(`8`)}"
                                 android:text="@string/hl308" />
@@ -251,6 +258,7 @@
                                 android:id="@+id/hl309"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`9`)}"
                                 android:onClick="@{()->familymember.setHl3(`9`)}"
                                 android:text="@string/hl309" />
@@ -259,6 +267,7 @@
                                 android:id="@+id/hl310"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`10`)}"
                                 android:onClick="@{()->familymember.setHl3(`10`)}"
                                 android:text="@string/hl310" />
@@ -267,6 +276,7 @@
                                 android:id="@+id/hl311"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`11`)}"
                                 android:onClick="@{()->familymember.setHl3(`11`)}"
                                 android:text="@string/hl311" />
@@ -275,6 +285,7 @@
                                 android:id="@+id/hl312"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`12`)}"
                                 android:onClick="@{()->familymember.setHl3(`12`)}"
                                 android:text="@string/hl312" />
@@ -283,6 +294,7 @@
                                 android:id="@+id/hl313"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`13`)}"
                                 android:onClick="@{()->familymember.setHl3(`13`)}"
                                 android:text="@string/hl313" />
@@ -291,6 +303,7 @@
                                 android:id="@+id/hl314"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`14`)}"
                                 android:onClick="@{()->familymember.setHl3(`14`)}"
                                 android:text="@string/hl314" />
@@ -299,6 +312,7 @@
                                 android:id="@+id/hl396"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`96`)}"
                                 android:onClick="@{()->familymember.setHl3(`96`)}"
                                 android:text="@string/hl396" />
@@ -307,6 +321,7 @@
                                 android:id="@+id/hl398"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`98`)}"
                                 android:onClick="@{()->familymember.setHl3(`98`)}"
                                 android:text="@string/hl398" />
@@ -579,7 +594,7 @@
                                 android:maxLength="2"
                                 android:text="@={familymember.hl6m}"
                                 app:maxValue="11"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>

@@ -349,6 +349,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl6y(String hl6y) {
         this.hl6y = hl6y;
+        setHl7(Integer.parseInt(hl6y) < 13 ? "" : this.hl7);
         notifyPropertyChanged(BR.hl6y);
     }
 

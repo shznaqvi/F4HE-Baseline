@@ -85,6 +85,7 @@ public class MainApp extends Application {
     public static boolean hhheadSelected = false;
     public static boolean superuser;
     public static int selectedCountry = 0;
+    public static int selectedLanguage = 0;
     public static String selectedProvince = "";
     public static String selectedDistrict = "";
     public static String selectedVillage = "";
