@@ -101,8 +101,8 @@ public class SectionAS1Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            //startActivity(new Intent(this, SectionAS2Activity.class).putExtra("complete", true));
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, SectionAS2Activity.class).putExtra("complete", true));
+            // startActivity(new Intent(this, MainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
