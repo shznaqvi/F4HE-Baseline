@@ -84,7 +84,7 @@ public class SectionBS1AActivity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
         //TODO: Need to Identify MWRA by ID
-        if (familyMembers.getHl6y().length() > 0 && form.getBs1q1().length() > 0 && form.getBs1q5().length() > 0) {
+        if (familyMembers.getHl6y().length() > 0 && form.getBs1q1().length() > 0) {
             if (Integer.parseInt(form.getBs1q1()) >= Integer.parseInt(familyMembers.getHl6y())) {
                 return Validator.emptyCustomTextBox(this, bi.bs1q1, "Age on marriage must be Less Than age given in Roster");
             }

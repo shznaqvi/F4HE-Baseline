@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.pregnancy;
 
 import android.content.Intent;
@@ -18,6 +17,7 @@ import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1bBinding;
+import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
 
 public class SectionBS1BActivity extends AppCompatActivity {
 
@@ -31,6 +31,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
         MainApp.preg_count = getIntent().getExtras().getInt("count");
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1b);
+        if (pregnancy == null) pregnancy = new Pregnancy();
         bi.setPreg(MainApp.pregnancy);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
@@ -38,6 +39,10 @@ public class SectionBS1BActivity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+        bi.bs1q7p1g.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.bs1q7p1g02.getId()) bi.bs1q7p1b.setMaxvalue(1f);
+            else bi.bs1q7p1b.setMaxvalue(2f);
+        });
     }
 
 
@@ -92,10 +97,10 @@ public class SectionBS1BActivity extends AppCompatActivity {
             MainApp.preg_count --;
             if (MainApp.preg_count > 0) {
 
-                form.setBs1q7p1g(null);
-                form.setBs1q7p1d(null);
-                form.setBs1q7p1d96x(null);
-                form.setBs1q7p1b(null);
+                pregnancy.setBs1q7p1g(null);
+                pregnancy.setBs1q7p1d(null);
+                pregnancy.setBs1q7p1d96x(null);
+                pregnancy.setBs1q7p1b(null);
                 startActivity(new Intent(this, SectionBS1BActivity.class).putExtra("count", MainApp.preg_count));
             } else {
                 startActivity(new Intent(this, SectionBS1CActivity.class));

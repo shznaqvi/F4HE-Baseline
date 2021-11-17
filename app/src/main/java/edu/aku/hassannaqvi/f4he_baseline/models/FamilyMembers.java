@@ -316,7 +316,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl5d(String hl5d) {
         this.hl5d = hl5d;
-        CaluculateAge();
+        //CaluculateAge();
         notifyPropertyChanged(BR.hl5d);
     }
 
@@ -327,7 +327,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl5m(String hl5m) {
         this.hl5m = hl5m;
-        CaluculateAge();
+        //CaluculateAge();
         notifyPropertyChanged(BR.hl5m);
     }
 
@@ -338,7 +338,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl5y(String hl5y) {
         this.hl5y = hl5y;
-        CaluculateAge();
+        //CaluculateAge();
         notifyPropertyChanged(BR.hl5y);
     }
 

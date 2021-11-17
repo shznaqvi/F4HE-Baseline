@@ -243,9 +243,13 @@
                                 android:checked="@{form.es3q2.equals(`97`)}"
                                 android:onClick="@{()->form.setEs3q2(`97`)}"
                                 android:text="@string/es3q297" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es3q3  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -270,10 +274,10 @@
                                 android:text="@string/Q_es3q3" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es3q3" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -346,9 +350,13 @@
                                 android:checked="@{form.es3q3.equals(`97`)}"
                                 android:onClick="@{()->form.setEs3q3(`97`)}"
                                 android:text="@string/es3q397" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es3q4  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -373,23 +381,24 @@
                                 android:text="@string/Q_es3q4" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es3q4" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/es3q4"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{()->es3q6.clearCheck()}"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/es3q401"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.es3q4.equals(`1`)}"
                                 android:onClick="@{()->form.setEs3q4(`1`)}"
                                 android:text="@string/es3q401" />
@@ -397,14 +406,18 @@
                             <RadioButton
                                 android:id="@+id/es3q402"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.es3q4.equals(`2`)}"
                                 android:onClick="@{()->form.setEs3q4(`2`)}"
                                 android:text="@string/es3q402" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es3q5  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -431,10 +444,10 @@
                                 android:text="@string/Q_es3q5" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es3q5" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -517,14 +530,19 @@
                                 android:tag="es3q596"
                                 android:text="@={form.es3q596x}"
                                 android:visibility="@{form.es3q5.equals(`96`)? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es3q6  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes3q6"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.es3q4.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -544,10 +562,10 @@
                                 android:text="@string/Q_es3q6" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es3q6" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -586,9 +604,13 @@
                                 android:checked="@{form.es3q6.equals(`4`)}"
                                 android:onClick="@{()->form.setEs3q6(`4`)}"
                                 android:text="@string/es3q604" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es3q7  Radio   -->
                 <androidx.cardview.widget.CardView
