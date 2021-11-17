@@ -574,7 +574,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:onTextChanged="@{()->hl7.clearCheck()}"
+                                android:onTextChanged="@{()->hl7.clearCheck() + hl11.clearCheck() + hl12.clearCheck()}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -608,7 +608,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhl7"
                     style="@style/cardView"
-                    android:visibility="@{familymember.hl6y.length() &gt; 1 ? (Integer.parseInt(familymember.hl6y) &gt; 12 ? View.VISIBLE : View.GONE) : View.GONE}">
+                    android:visibility="@{familymember.hl6y.length() > 0 ? (Integer.parseInt(familymember.hl6y) > 12 ? View.VISIBLE : View.GONE) : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -869,7 +869,8 @@
                 <!-- hl11  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhl11"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{familymember.hl6y.length() > 0 ? (Integer.parseInt(familymember.hl6y) &lt; 3 ? View.GONE : View.VISIBLE) : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -998,7 +999,8 @@
                 <!-- hl12  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhl12"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{familymember.hl6y.length() > 0 ? (Integer.parseInt(familymember.hl6y) &lt; 10 ? View.GONE : View.VISIBLE) : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
