@@ -376,6 +376,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
+    //UPDATE in DB
+    public int updatesPregnancyColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = Pregnancy_Table._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.pregnancy.getId())};
+
+        return db.update(Pregnancy_Table.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
     public int updatesFormBColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -1525,4 +1541,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return form;
 
     }
+
+
 }
