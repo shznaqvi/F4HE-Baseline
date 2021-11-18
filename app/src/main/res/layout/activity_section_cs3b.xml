@@ -1385,7 +1385,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="@{form.cs3bq06.equals(`2`) ? View.GONE : View.VISIBLE}">
+                        android:visibility="@{form.cs3bq06.equals(`1`) ? View.GONE : View.VISIBLE}">
 
 
                         <!-- cs3bq07t  Title   -->
