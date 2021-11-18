@@ -1,10 +1,10 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.familyMembers;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -31,34 +31,8 @@ public class SectionBS1AActivity extends AppCompatActivity {
         bi.setForm(form);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        setupSkips();
     }
 
-
-    private void setupSkips() {
-
-        /*bi.bs1q1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (bi.bs1q1.getText().toString().trim().length() < 1) return;
-                bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });*/
-
-    }
-
-
-    public void bs1q1SetMax(CharSequence s, int start, int before, int count) {
-        Log.w("tag", "bs1q1SetMax " + s);
-    }
 
 
     private boolean updateDB() {
@@ -107,6 +81,27 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+
+        //TODO: Need to Identify MWRA by ID
+        if (familyMembers.getHl6y().length() > 0 && form.getBs1q1().length() > 0) {
+            if (Integer.parseInt(form.getBs1q1()) >= Integer.parseInt(familyMembers.getHl6y())) {
+                return Validator.emptyCustomTextBox(this, bi.bs1q1, "Age on marriage must be Less Than age given in Roster");
+            }
+        }
+
+        if (form.getBs1q1().length() > 0 && form.getBs1q5().length() > 0) {
+            if (Integer.parseInt(form.getBs1q1()) >= Integer.parseInt(form.getBs1q5())) {
+                return Validator.emptyCustomTextBox(this, bi.bs1q5, "Must Be Greater Than BS1Q1");
+            }
+        }
+
+        if (form.getBs1q3().length() > 0 && form.getBs1q6().length() > 0) {
+            if (Integer.parseInt(form.getBs1q6()) > Integer.parseInt(form.getBs1q3())) {
+                return Validator.emptyCustomTextBox(this, bi.bs1q6, "Must be Less Than BS1Q3");
+            }
+        }
+
+        return true;
     }
 }

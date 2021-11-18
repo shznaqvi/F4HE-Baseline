@@ -359,10 +359,10 @@
                                 android:text="@string/Q_es1q2" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es1q2" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -401,11 +401,15 @@
                                 android:checked="@{form.es1q2.equals(`97`)}"
                                 android:onClick="@{()->form.setEs1q2(`97`)}"
                                 android:text="@string/es1q297" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- es1q3  Input-Numeric   -->
+
+                    <!-- es1q3  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes1q3"
                     style="@style/cardView"
@@ -429,10 +433,10 @@
                                 android:text="@string/Q_es1q3" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es1q3" />
+
                         </LinearLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -443,13 +447,16 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.es1q3}"
-                            app:maxValue="12"
-                            app:minValue="3"
+                            app:maxValue="20"
+                            app:minValue="4"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- es1q4  CheckBox   -->
+
+                    <!-- es1q4  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes1q4"
                     style="@style/cardView"
@@ -473,10 +480,10 @@
                                 android:text="@string/Q_es1q4" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es1q4" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -543,11 +550,15 @@
                                 android:tag="es1q496"
                                 android:text="@={form.es1q496x}"
                                 android:visibility="@{form.es1q4.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- es1q5  Radio   -->
+
+                    <!-- es1q5  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes1q5"
                     style="@style/cardView"

@@ -29,7 +29,7 @@ import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS4BActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS5Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS6Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionBS7Activity;
-import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS1Activity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS1AActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS2Activity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS3AActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionCS3BActivity;
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.secf3:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionCS1Activity.class));
+                startActivity(new Intent(this, SectionCS1AActivity.class));
                 break;
             case R.id.secg1:
                 MainApp.form = new Form();
