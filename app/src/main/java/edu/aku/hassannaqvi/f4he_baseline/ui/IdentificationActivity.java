@@ -85,10 +85,16 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.as1q02.setAdapter(adapter);
 
         bi.as1q02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainApp.selectedProvince = provinceCodes.get(position);
+                bi.as1q04.setAdapter(null);
+                bi.as1q06.setAdapter(null);
+                bi.as1q08.setText(null);
 
+                if (position == 0) return;
+                MainApp.selectedProvince = provinceCodes.get(position);
                 // Populate Districts
                 Collection<Villages> districts = db.getDistrictsByProvince(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince);
 
@@ -121,9 +127,11 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.as1q04.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.as1q06.setAdapter(null);
+                bi.as1q08.setText(null);
+                if (position == 0) return;
 
                 MainApp.selectedDistrict = districtCodes.get(position);
-
                 // Populate Villages
                 Collection<Villages> villages = db.getVillagesByDistrict(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince, MainApp.selectedDistrict);
 
@@ -159,6 +167,8 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.as1q06.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.as1q08.setText(null);
+                if (position == 0) return;
 
                 MainApp.selectedVillage = villageCodes.get(position);
                 MainApp.selectedPSU = psuCode.get(position);
