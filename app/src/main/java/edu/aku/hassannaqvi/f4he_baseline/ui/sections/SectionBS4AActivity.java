@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.mwra;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,10 +44,10 @@ public class SectionBS4AActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
+        /*db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SB41, form.sB41toString());
+            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SB41, mwra.sB41toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -56,7 +57,9 @@ public class SectionBS4AActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
     }
 
 

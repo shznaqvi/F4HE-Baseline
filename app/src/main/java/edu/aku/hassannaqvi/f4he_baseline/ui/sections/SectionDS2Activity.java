@@ -42,10 +42,10 @@ public class SectionDS2Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
+        /*db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SD2, MainApp.form.sD2toString());
+            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SD2, MainApp.mwra.sD2toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -55,7 +55,9 @@ public class SectionDS2Activity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
     }
 
 

@@ -41,7 +41,7 @@ public class SectionES4Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
+        /*db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
             updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SE4, MainApp.form.sE4toString());
@@ -54,7 +54,9 @@ public class SectionES4Activity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
     }
 
 

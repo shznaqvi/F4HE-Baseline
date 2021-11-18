@@ -17,6 +17,7 @@ import edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
+import edu.aku.hassannaqvi.f4he_baseline.models.MWRA;
 import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 
@@ -83,7 +84,7 @@ public class MainApp extends Application {
     public static int memberCountComplete;
     public static boolean memberComplete;
     //public static int mwraCount;
-    public static FamilyMembers mwra;
+    public static MWRA mwra;
     /*public static RandomHH currentHousehold;
     public static List<FoodConsumption> foodConsumption;*/
     public static int foodIndex;

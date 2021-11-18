@@ -423,6 +423,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
+    public int updatesMWRAColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = MwraTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.mwra.getId())};
+
+        return db.update(MwraTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+
+
     public int updatesFormBColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
