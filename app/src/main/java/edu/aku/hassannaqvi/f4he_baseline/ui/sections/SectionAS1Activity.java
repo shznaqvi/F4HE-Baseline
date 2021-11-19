@@ -14,6 +14,7 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.Calendar;
 import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.R;
@@ -39,7 +40,7 @@ public class SectionAS1Activity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         //populateSpinner(this);
-        formType();
+        if (MainApp.idType == 1) formType();
 
     }
 
@@ -118,11 +119,21 @@ public class SectionAS1Activity extends AppCompatActivity {
     }
 
     public void formType() {
-        if (MainApp.idType == 1) {
-            bi.Grp1.setVisibility(View.GONE);
-            bi.fldGrpCVas1q17.setVisibility(View.GONE);
-            bi.Grp2.setVisibility(View.GONE);
-        }
+        bi.Grp1.setVisibility(View.GONE);
+        bi.fldGrpCVas1q17.setVisibility(View.GONE);
+        bi.Grp2.setVisibility(View.GONE);
+        bi.as1q15y.setEnabled(false);
+        bi.as1q15m.setEnabled(false);
+        bi.as1q15d.setEnabled(false);
+        bi.as1q16h.setEnabled(false);
+        bi.as1q16m.setEnabled(false);
+        bi.as1q18.setEnabled(false);
+        MainApp.form.setAs1q15y(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
+        MainApp.form.setAs1q15m(String.valueOf(Calendar.getInstance().get(Calendar.MONTH)));
+        MainApp.form.setAs1q15d(String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)));
+        MainApp.form.setAs1q16h(String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)));
+        MainApp.form.setAs1q16m(String.valueOf(Calendar.getInstance().get(Calendar.MINUTE)));
+        MainApp.form.setAs1q18(MainApp.user.getFullname());
     }
 
 

@@ -69,7 +69,6 @@
                             android:text="@string/aq1q22contitle"
                             android:textSize="18sp"
                             android:textStyle="normal"
-                            android:shadowColor="@color/material_on_surface_disabled"
                             android:letterSpacing="0.08"
                             android:justificationMode="inter_word" />
 
