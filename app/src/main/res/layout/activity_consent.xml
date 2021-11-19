@@ -576,12 +576,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:hint="+9###########"
+                                android:hint="###########"
                                 android:inputType="number"
+                                android:maxLength="11"
                                 android:text="@={form.as1q23a}"
-                                app:mask="+9###########"
-                                app:maxValue="9999999999999"
-                                app:minValue="0"
+                                app:mask="###########"
+                                app:maxValue="99999999999"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>

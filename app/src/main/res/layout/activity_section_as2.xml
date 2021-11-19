@@ -680,6 +680,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.hl7.equals(`5`)}"
+                                android:enabled="@{!familymember.hl3.equals(`2`)}"
                                 android:onClick="@{()->familymember.setHl7(`5`)}"
                                 android:text="@string/hl705" />
 
@@ -1073,6 +1074,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.hl12.equals(`9`)}"
+                                android:enabled="@{familymember.hl4.equals(`2`)}"
                                 android:onClick="@{()->familymember.setHl12(`9`)}"
                                 android:text="@string/hl1209" />
 
