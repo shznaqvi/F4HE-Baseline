@@ -225,7 +225,9 @@
     <string name="as1q1037"> Farsi </string>
     <string name="as1q1038"> Hazargi </string>
     <string name="as1q1039"> English </string>
-    <string name="as1q1040"> English </string>
+    <string name="as1q1040"> Russian </string>
+    <string name="as1q1041"> Kyrgyz </string>
+    <string name="as1q1042"> Uzbek </string>
     <string name="as1q11"> Questionnaire Number </string>
     <string name="as1q12"> Interviewer ID </string>
     <string name="as1q13"> Supervisor ID </string>
