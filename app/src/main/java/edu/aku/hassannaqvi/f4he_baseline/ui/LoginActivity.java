@@ -327,6 +327,7 @@ public class LoginActivity extends AppCompatActivity {
         // Reset errors.
         bi.username.setError(null);
         bi.password.setError(null);
+        bi.as1q01.setError(null);
         Toast.makeText(this, String.valueOf(attemptCounter), Toast.LENGTH_SHORT).show();
         if (attemptCounter == 7) {
             Intent iLogin = new Intent(edu.aku.hassannaqvi.f4he_baseline.ui.LoginActivity.this, MainActivity.class);
@@ -351,6 +352,12 @@ public class LoginActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(username)) {
                 bi.username.setError(getString(R.string.username_required));
                 focusView = bi.username;
+                return;
+            }
+
+            //if(!Validator.emptySpinner(this, bi.countrySwitch)) return;
+            if (bi.countrySwitch.getSelectedItemPosition() == 0) {
+                bi.as1q01.setError(getString(R.string.as1q01));
                 return;
             }
 

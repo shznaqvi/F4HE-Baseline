@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,16 +14,13 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionAs1Binding;
-import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FamilyMembersListActivity;
 
 public class SectionAS1Activity extends AppCompatActivity {
     private static final String TAG = "SectionAS1Activity";
@@ -43,6 +39,7 @@ public class SectionAS1Activity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         //populateSpinner(this);
+        formType();
 
     }
 
@@ -118,6 +115,14 @@ public class SectionAS1Activity extends AppCompatActivity {
         finish();
         //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
         //startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public void formType() {
+        if (MainApp.idType == 1) {
+            bi.Grp1.setVisibility(View.GONE);
+            bi.fldGrpCVas1q17.setVisibility(View.GONE);
+            bi.Grp2.setVisibility(View.GONE);
+        }
     }
 
 
