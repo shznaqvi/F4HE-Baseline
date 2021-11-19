@@ -28,10 +28,10 @@ public class EndingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
         bi.setForm(form);
-        setSupportActionBar(bi.toolbar);
+
         setSupportActionBar(bi.toolbar);
         //setTitle(R.string.section1_mainheading);
 

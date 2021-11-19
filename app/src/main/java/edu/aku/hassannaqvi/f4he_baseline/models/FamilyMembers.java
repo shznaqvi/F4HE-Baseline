@@ -5,7 +5,9 @@ import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
 import android.util.Log;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
@@ -78,6 +80,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private boolean mwra;
     private long ageInMonths;
     private String indexed = _EMPTY_;
+    private String memCate;
 
     public FamilyMembers() {
 
@@ -316,7 +319,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl5d(String hl5d) {
         this.hl5d = hl5d;
-        //CaluculateAge();
+        CaluculateAge();
         notifyPropertyChanged(BR.hl5d);
     }
 
@@ -327,7 +330,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl5m(String hl5m) {
         this.hl5m = hl5m;
-        //CaluculateAge();
+        if (hl5m.equals("98")) {
+            setHl5d("98");
+        }
+        CaluculateAge();
         notifyPropertyChanged(BR.hl5m);
     }
 
@@ -338,7 +344,13 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl5y(String hl5y) {
         this.hl5y = hl5y;
-        //CaluculateAge();
+        if (hl5y.equals("9998")) {
+            setHl5m("98");
+            setHl6m("");
+            setHl6y("");
+        }
+        // Calculate age
+        CaluculateAge();
         notifyPropertyChanged(BR.hl5y);
     }
 
@@ -347,7 +359,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         return hl6y;
     }
 
-    public void setHl6y(String hl6y) {
+    public void setHl6y(@NonNull String hl6y) {
         this.hl6y = hl6y;
         setHl7(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 13 ? "" : this.hl7 : this.hl7);
         setHl11(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 3 ? "" : this.hl11 : this.hl11);
@@ -455,6 +467,15 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.mwra = mwra;
 
         notifyPropertyChanged(BR.mwra);
+    }
+
+    public String getMemCate() {
+        return memCate;
+    }
+
+    public void setMemCate(String memCate) {
+        this.memCate = memCate;
+        // notifyPropertyChanged(BR.memCate);
     }
 
     @Bindable
@@ -580,13 +601,18 @@ public class FamilyMembers extends BaseObservable implements Observable {
             Calendar cal = Calendar.getInstance();
 
             SimpleDateFormat df = new SimpleDateFormat("yyyy MM dd", Locale.ENGLISH);
-            /* String todayDate = df.format(Calendar.getInstance().getTime());*/
+//             String todayDate = df.format(Calendar.getInstance().getTime());
 
 
             try {
                 cal.setTime(df.parse(year + " " + month + " " + day));
-                cur.setTime(df.parse(curYear + " " + curMonth + " " + curDay));
-                //long millis = System.currentTimeMillis() - cal.getTimeInMillis();
+               cur.setTime(df.parse(curYear + " " + curMonth + " " + curDay));
+
+/*                System.out.println(df.format("Current: " + cur.getTime()));
+                System.out.println(df.format("DOB: " + cal.getTime()));*/
+
+
+               //long millis = System.currentTimeMillis() - cal.getTimeInMillis();
                 long millis = cur.getTimeInMillis() - cal.getTimeInMillis();
                 cal.setTimeInMillis(millis);
 
@@ -606,6 +632,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 setH231m(String.valueOf(tMonth));*/
 
                 setHl6y(String.valueOf(tYear));
+                setHl6m(String.valueOf(tMonth));
                 if (tYear < 0)
                     setHl6y("");
                 //setAge(String.valueOf(((tYear) * 12) + tMonth));
@@ -618,9 +645,43 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 );*/
 
             } catch (ParseException e) {
+                Log.d(TAG, "CaluculateAge: "+e.getMessage());
                 e.printStackTrace();
-            }
 
+        }}
+    }
+
+    /**
+     * Memeber Categories:
+     * 1 = MWRA
+     * 2 = Adolescent
+     * 3 = Male > 19y7  // not used in this project
+     */
+    private void updateMemCategory() {
+        if(hl4.equals("")|| hl6y.equals("")|| hl7.equals("")|| !hl10.equals("1")) return;
+        String memGender = getHl4();
+        String memMaritalStatus = getHl7();
+        int memAge = Integer.parseInt(getHl6y());
+
+        // MWRA
+        if (memGender.equals("2")                // Female
+                && memAge >= 15 && memAge <= 49   // 15 to 49 year old
+                && !memMaritalStatus.equals("5")
+        ) {
+            setMemCate("1");
+        }
+
+        // Adolescent
+        if (
+                memAge >= 10 && memAge <= 19   // 15 to 49 year old
+                        && memMaritalStatus.equals("5")
+        ) {
+            setMemCate("2");
+        }
+
+
+        if (memGender.equals("1") && memAge > 19) {
+            setMemCate("3");
         }
     }
 }

@@ -16,6 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
 
 
@@ -60,13 +61,17 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/textView"
+                            style="@style/TextAppearance.Compat.Notification.Media"
+                            android:background="@color/white"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:lineSpacingExtra="@dimen/cardview_default_radius"
                             android:text="@string/aq1q22contitle"
                             android:textSize="18sp"
-                            android:textStyle="italic" />
+                            android:textStyle="normal"
+                            android:letterSpacing="0.08"
+                            android:justificationMode="inter_word"
+                            />
 
                     </LinearLayout>
 

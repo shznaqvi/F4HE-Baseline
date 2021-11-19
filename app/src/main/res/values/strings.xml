@@ -8,7 +8,8 @@
     <string name="action_sign_in_short">Sign in</string>
     <string name="splashText"> </string>
     <string name="check_pending_forms">CHECK PENDING FORMS</string>
-    <string name="open_household_form" translatable="false">OPEN HOUSEHOLD FORM</string>
+    <string name="start_interview" translatable="false">START INTERVIEW</string>
+    <string name="start_data_entry" translatable="false">START DATA ENTRY</string>
     <string name="open_anthro_form" translatable="false">UPDATE ANTHRO FORM</string>
     <string name="open_blood_form" translatable="false">UPDATE BLOOD INFORMANTION</string>
     <string name="open_stool_form" translatable="false">UPDATE STOOL INFORMANTION</string>
@@ -244,7 +245,18 @@
     <string name="as1q20"> Quality Check Name &amp; Signature </string>
     <string name="as1q21"> Data entry ID </string>
     <string name="as1q22"> Data entry Check </string>
-    <string name="aq1q22contitle">Hello! We are working with the Aga Khan Foundation to collect information in different communities to improve development programming. Specifically, we would like to understand more about the health status of women, young boys, and girls. Further, we would like to ask you some questions about your children who are under 5 in the house, so we can know about their abilities and physical development. Thus, we would like to interview the young girls and boys, and mothers of under 5 children in your household.  In addition, please let us also inform that this interview and survey will not bring any financial benefit for you and your family. However, we assure you that names of participants will not be included in any reports and  information about a person’s household will also not be shared with anyone else. Your participation is voluntary. If for any reason you do not wish to participate, you can choose not to.  If you do agree to take part now, you can change your mind at any time during the interview, without any implications. And in case, if you would like to skip a question, you are also free to do so, and you can object to answering any specific question in the questionnaire which you do not feel comfortable to answer. Your identity, personal information, and responses will remain confidential. There are no consequences or disadvantages to deciding not to participate or not to answer certain questions. However, your cooperation is greatly appreciated.  The interview with all target interviewees in your household should take approximately 120 minutes, but with every individual it should not exceed 30 minutes. If you have any doubts or questions about this study, you can contact AKF study team leader and or relevant board in the Ministry of Health at below mentioned phone numbers and email addresses: AKF:             XXXXXX IRB MoPH:   XXXXXXX</string>
+    <string name="aq1q22contitle">Hello! We are working with the Aga Khan Foundation to collect information in different communities to improve development programming.
+        \n Specifically, we would like to understand more about the health status of women, young boys, and girls.
+        \n Further, we would like to ask you some questions about your children who are under 5 in the house, so we can know about their abilities and physical development.
+        \n Thus, we would like to interview the young girls and boys, and mothers of under 5 children in your household.
+        \n In addition, please let us also inform that this interview and survey will not bring any financial benefit for you and your family.
+        \n However, we assure you that names of participants will not be included in any reports and information about a person’s household will also not be shared with anyone else.
+        \n Your participation is voluntary. If for any reason you do not wish to participate, you can choose not to.
+        \n If you do agree to take part now, you can change your mind at any time during the interview, without any implications.
+        \n And in case, if you would like to skip a question, you are also free to do so, and you can object to answering any specific question in the questionnaire which you do not feel comfortable to answer.
+        \n Your identity, personal information, and responses will remain confidential. There are no consequences or disadvantages to deciding not to participate or not to answer certain questions. However, your cooperation is greatly appreciated.
+        \n The interview with all target interviewees in your household should take approximately 120 minutes, but with every individual it should not exceed 30 minutes.
+        \n If you have any doubts or questions about this study, you can contact AKF study team leader and or relevant board in the Ministry of Health at below mentioned phone numbers and email addresses: AKF:             XXXXXX IRB MoPH:   XXXXXXX</string>
     <string name="as1q23">Informed Consent provided by respondent?</string>
     <string name="as1q2301">Yes</string>
     <string name="as1q2302">No</string>
@@ -2144,5 +2156,9 @@ For adolescents less than 18 years of age, an assent will be taken from the resp
     <string name='Q_hl9'>hl9</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mother_List">Mothers</string>
+    <string name="child_List">Children</string>
+    <string name="adol_male_List">Adol Male</string>
+    <string name="adol_female_List">Adol Female</string>
 
 </resources>

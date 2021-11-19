@@ -463,7 +463,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = FamilyMembersTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.familyMembers.getId())};
+        String[] selectionArgs = {String.valueOf(MainApp.familyMember.getId())};
 
         return db.update(FamilyMembersTable.TABLE_NAME,
                 values,

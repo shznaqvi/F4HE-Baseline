@@ -62,14 +62,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void sectionPress(View view) {
 
+
+
         switch (view.getId()) {
-            case R.id.openForm:
+            case R.id.startInterview:
                 MainApp.idType = 1;
                 break;
-        /*    case R.id.openAnthro:
+            case R.id.startDataEntry:
                 MainApp.idType = 2;
                 break;
-
+/*
             case R.id.updateBlood:
                 MainApp.idType = 3;
                 break;
@@ -85,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()) {
 
-            case R.id.openForm:
+            case R.id.startInterview:
+            case R.id.startDataEntry:
 
                 MainApp.form = new Form();
                 startActivity(new Intent(this, IdentificationActivity.class));
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionAS1Activity.class));
                 break;
             case R.id.seca2:
-                MainApp.familyMembers = new FamilyMembers();
+                MainApp.familyMember = new FamilyMembers();
                 startActivity(new Intent(this, SectionAS2Activity.class));
                 break;
 

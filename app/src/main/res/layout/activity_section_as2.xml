@@ -125,6 +125,7 @@
                 <!-- hl2t  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhl2t"
+                    android:visibility="gone"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -723,29 +724,13 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/hl8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/hl897"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:checked="@{familymember.hl8.equals(`97`)}"
-                                android:onClick="@{()->familymember.setHl8(familymember.hl8.equals(`97`)?``:`97`)}"
-                                android:text="@string/hl897" />
-
-                            <TextView
-                                android:id="@+id/hl8"
-                                style="@style/textView"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@={familymember.hl8}" />
-
-                        </LinearLayout>
-
+                            android:hint="@string/hl8" />
                     </LinearLayout>
+
 
                 </androidx.cardview.widget.CardView>
 
@@ -779,29 +764,14 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/hl9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/hl997"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:checked="@{familymember.hl9.equals(`97`)}"
-                                android:onClick="@{()->familymember.setHl9(familymember.hl9.equals(`97`)?``:`97`)}"
-                                android:text="@string/hl997" />
-
-                            <TextView
-                                android:id="@+id/hl9"
-                                style="@style/textView"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@={familymember.hl9}" />
-
-                        </LinearLayout>
-
+                            android:hint="@string/hl9" />
                     </LinearLayout>
+
 
                 </androidx.cardview.widget.CardView>
 

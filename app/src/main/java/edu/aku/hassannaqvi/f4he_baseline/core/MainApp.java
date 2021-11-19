@@ -10,6 +10,7 @@ import android.view.View;
 import org.json.JSONArray;
 
 import java.io.File;
+import java.util.AbstractCollection;
 import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.models.Child;
@@ -48,7 +49,6 @@ public class MainApp extends Application {
     public static Pregnancy pregnancy;
     public static Child child;
     public static ECDInfo ecd;
-    public static FamilyMembers familyMembers;
     public static FormB formB;
     public static FamilyMembers familyMember;
     public static int preg_count = 0;
@@ -74,6 +74,8 @@ public class MainApp extends Application {
     public static List<String> subjectNames;
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;
+    public static List<Integer> adolListMale;
+    public static List<Integer> adolListFemale;
     public static List<Integer> childOfSelectedMWRAList;
     public static List<FamilyMembers> fatherList;
     public static List<FamilyMembers> motherList;
@@ -81,6 +83,8 @@ public class MainApp extends Application {
     public static int memberCount = 0;
     public static String selectedMWRA;
     public static String selectedChild;
+    public static String selectedAdolMale;
+    public static String selectedAdolFemale;
     public static int memberCountComplete;
     public static boolean memberComplete;
     //public static int mwraCount;

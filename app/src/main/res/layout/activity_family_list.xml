@@ -54,35 +54,44 @@
                     android:layout_height="2dp"
                     android:background="@color/grayLight" />
 
-                <!-- <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                     <TextView
-                         android:id="@+id/totalmember"
-                         android:layout_width="0dp"
-                         android:layout_height="wrap_content"
-                         android:layout_weight="1"
-                         android:drawableStart="@drawable/ic_members"
-                         android:drawablePadding="8dp"
-                         android:gravity="center_vertical"
-                         android:padding="8dp"
-                         android:text="TEXT"
-                         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+                    <CheckBox
+                        android:id="@+id/familyComplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:minHeight="56dp"
+                        android:onClick="finalizeFamily"
+                        android:text="Family Complete" />
+                    <!--  <TextView
+                          android:id="@+id/totalmember"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:drawableStart="@drawable/ic_members"
+                          android:drawablePadding="8dp"
+                          android:gravity="center_vertical"
+                          android:padding="8dp"
+                          android:text="TEXT"
+                          android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
 
-                     <TextView
-                         android:id="@+id/completedmember"
-                         android:layout_width="0dp"
-                         android:layout_height="wrap_content"
-                         android:layout_weight="1"
-                         android:drawableStart="@drawable/ic_members_done"
-                         android:drawablePadding="8dp"
-                         android:gravity="center_vertical"
-                         android:padding="8dp"
-                         android:text="TEXT"
-                         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
-                 </LinearLayout>-->
+                      <TextView
+                          android:id="@+id/completedmember"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:drawableStart="@drawable/ic_members_done"
+                          android:drawablePadding="8dp"
+                          android:gravity="center_vertical"
+                          android:padding="8dp"
+                          android:text="TEXT"
+                          android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+     -->
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -90,6 +99,113 @@
                     android:background="@color/grayLight"
 
                     android:padding="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/membersDropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/selectionLists"
+                        android:visibility="gone"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/motherDD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="168dp"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/mother_List" />
+
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/mwraList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/childDD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="168dp"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/child_List" />
+
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/childList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/adolMaleDD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="168dp"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/adol_male_List" />
+
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/adolMaleList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/adolFemaleDD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="168dp"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/adol_female_List" />
+
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/adolFemaleList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_mwra"

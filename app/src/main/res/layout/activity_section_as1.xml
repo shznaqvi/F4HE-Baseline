@@ -317,10 +317,10 @@
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="2"
+                                android:maxLength="4"
                                 android:text="@={form.as1q15y}"
-                                app:maxValue="50"
-                                app:minValue="0"
+                                app:maxValue="2022"
+                                app:minValue="2021"
                                 app:type="range" />
 
                         </LinearLayout>

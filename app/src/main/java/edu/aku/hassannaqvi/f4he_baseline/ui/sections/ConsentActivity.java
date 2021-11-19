@@ -20,6 +20,8 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityConsentBinding;
+import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FamilyMembersListActivity;
 
 
 public class ConsentActivity extends AppCompatActivity {
@@ -39,33 +41,10 @@ public class ConsentActivity extends AppCompatActivity {
     }
 
 
-    private boolean insertNewRecord() {
-        if (!form.getUid().equals("")) return true;
-        long rowId = 0;
-        try {
-            rowId = db.addForm(form);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        form.setId(String.valueOf(rowId));
-        if (rowId > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
-            return true;
-        } else {
-            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
-
-
     private boolean updateDB() {
-        DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, form.sA1toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, MainApp.form.sA1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -78,31 +57,36 @@ public class ConsentActivity extends AppCompatActivity {
     }
 
 
+    public void btnContinue(View view) {
+        if (!formValidation()) return;
+        // saveDraft();
+        if (updateDB()) {
+            Intent i;
+
+
+            // Check Consent = Yes
+            if (bi.as1q2301.isChecked()) {
+                i = new Intent(this, FamilyMembersListActivity.class).putExtra("complete", true);
+            } else {
+                i = new Intent(this, EndingActivity.class).putExtra("complete", false);
+            }
+
+            finish();
+            startActivity(i);
+        } else {
+            Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 
-    private void saveDraft() {
-    }
-
-
-    public void btnContinue(View view) {
-        if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        saveDraft();
-        if (updateDB()) {
-            finish();
-            //startActivity(new Intent(this, SectionAS2Activity.class).putExtra("complete", true));
-            startActivity(new Intent(this, MainActivity.class));
-        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-    }
-
-
     public void btnEnd(View view) {
         finish();
-        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        //startActivity(new Intent(this, MainActivity.class));
     }
 
 

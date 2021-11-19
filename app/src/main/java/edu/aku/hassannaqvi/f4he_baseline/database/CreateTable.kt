@@ -63,6 +63,7 @@ object CreateTable {
             + FamilyMembersTable.COLUMN_SNO + " TEXT,"
             + FamilyMembersTable.COLUMN_USERNAME + " TEXT,"
             + FamilyMembersTable.COLUMN_SYSDATE + " TEXT,"
+            + FamilyMembersTable.COLUMN_INDEXED + " TEXT,"
             + FamilyMembersTable.COLUMN_ISTATUS + " TEXT,"
             + FamilyMembersTable.COLUMN_DEVICEID + " TEXT,"
             + FamilyMembersTable.COLUMN_DEVICETAGID + " TEXT,"
