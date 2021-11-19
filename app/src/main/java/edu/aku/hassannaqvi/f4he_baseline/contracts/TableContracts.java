@@ -17,14 +17,6 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SA1 = "sA1";
-        public static final String COLUMN_SB1 = "sB1";
-        public static final String COLUMN_SB2 = "sB2";
-        public static final String COLUMN_SB3 = "sB3";
-        public static final String COLUMN_SB41 = "sB41";
-        public static final String COLUMN_SB42 = "sB42";
-        public static final String COLUMN_SB5 = "sB5";
-        public static final String COLUMN_SB6 = "sB6";
-        public static final String COLUMN_SB7 = "sB7";
         public static final String COLUMN_SC1 = "sC1";
         public static final String COLUMN_SC2 = "sC2";
         public static final String COLUMN_SC31 = "sC31";
@@ -34,11 +26,6 @@ public class TableContracts {
         public static final String COLUMN_SD1 = "sD1";
         public static final String COLUMN_SD2 = "sD2";
         public static final String COLUMN_SD3 = "sD3";
-        public static final String COLUMN_SE1 = "sE1";
-        public static final String COLUMN_SE2 = "sE2";
-        public static final String COLUMN_SE3 = "sE3";
-        public static final String COLUMN_SE4 = "sE4";
-
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
@@ -235,8 +222,9 @@ public class TableContracts {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
-        public static final String COLUMN_EB_CODE = "psuCode";
+        public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";

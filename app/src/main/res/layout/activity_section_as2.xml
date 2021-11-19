@@ -188,6 +188,7 @@
                                 android:id="@+id/hl301"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`1`)}"
                                 android:onClick="@{()->familymember.setHl3(`1`)}"
                                 android:text="@string/hl301" />

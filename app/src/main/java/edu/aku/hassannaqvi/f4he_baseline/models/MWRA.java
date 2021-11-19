@@ -63,7 +63,6 @@ public class MWRA extends BaseObservable implements Observable {
 
 
     // Field Variables bs1
-
     private String bs1resp = _EMPTY_;
     private String bs1respline = _EMPTY_;
     private String bs1con = _EMPTY_;
@@ -73,54 +72,54 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs1q4 = _EMPTY_;
     private String bs1q5 = _EMPTY_;
     private String bs1q6 = _EMPTY_;
-
-    //Field Variables bs2
-
-    private String bs1q7p2g= _EMPTY_;
-    private String bs1q7p2d= _EMPTY_;
-    private String bs1q7p2d96x= _EMPTY_;
-    private String bs1q7p2b= _EMPTY_;
-    private String bs1q7p3g= _EMPTY_;
-    private String bs1q7p3d= _EMPTY_;
-    private String bs1q7p3d96x= _EMPTY_;
-    private String bs1q7p3b= _EMPTY_;
-    private String bs1q7p4g= _EMPTY_;
-    private String bs1q7p4d= _EMPTY_;
-    private String bs1q7p4d96x= _EMPTY_;
-    private String bs1q7p4b= _EMPTY_;
-    private String bs1q7p5g= _EMPTY_;
-    private String bs1q7p5d= _EMPTY_;
-    private String bs1q7p5d96x= _EMPTY_;
-    private String bs1q7p5b= _EMPTY_;
-    private String bs1q08= _EMPTY_;
-    private String bs1q09= _EMPTY_;
-    private String bs1q0901= _EMPTY_;
-    private String bs1q0902= _EMPTY_;
-    private String bs1q0903= _EMPTY_;
-    private String bs1q0904= _EMPTY_;
-    private String bs1q0905= _EMPTY_;
-    private String bs1q0906= _EMPTY_;
-    private String bs1q0907= _EMPTY_;
-    private String bs1q0908= _EMPTY_;
-    private String bs1q09t296= _EMPTY_;
-    private String bs1q09t296x= _EMPTY_;
-    private String bs1q1001= _EMPTY_;
-    private String bs1q1002= _EMPTY_;
-    private String bs1q1098= _EMPTY_;
-    private String bs1q11= _EMPTY_;
-    private String bs1q12= _EMPTY_;
-    private String bs1q13= _EMPTY_;
-    private String bs1q1301= _EMPTY_;
-    private String bs1q1302= _EMPTY_;
-    private String bs1q1303= _EMPTY_;
-    private String bs1q1304= _EMPTY_;
-    private String bs1q1305= _EMPTY_;
-    private String bs1q1306= _EMPTY_;
-    private String bs1q1307= _EMPTY_;
-    private String bs1q1308= _EMPTY_;
-    private String bs1q1396= _EMPTY_;
-    private String bs1q1396x= _EMPTY_;
-
+    private String bs1q7p1g = _EMPTY_;
+    private String bs1q7p1d = _EMPTY_;
+    private String bs1q7p1d96x = _EMPTY_;
+    private String bs1q7p1b = _EMPTY_;
+    private String bs1q7p2g = _EMPTY_;
+    private String bs1q7p2d = _EMPTY_;
+    private String bs1q7p2d96x = _EMPTY_;
+    private String bs1q7p2b = _EMPTY_;
+    private String bs1q7p3g = _EMPTY_;
+    private String bs1q7p3d = _EMPTY_;
+    private String bs1q7p3d96x = _EMPTY_;
+    private String bs1q7p3b = _EMPTY_;
+    private String bs1q7p4g = _EMPTY_;
+    private String bs1q7p4d = _EMPTY_;
+    private String bs1q7p4d96x = _EMPTY_;
+    private String bs1q7p4b = _EMPTY_;
+    private String bs1q7p5g = _EMPTY_;
+    private String bs1q7p5d = _EMPTY_;
+    private String bs1q7p5d96x = _EMPTY_;
+    private String bs1q7p5b = _EMPTY_;
+    private String bs1q08 = _EMPTY_;
+    private String bs1q09 = _EMPTY_;
+    private String bs1q0901 = _EMPTY_;
+    private String bs1q0902 = _EMPTY_;
+    private String bs1q0903 = _EMPTY_;
+    private String bs1q0904 = _EMPTY_;
+    private String bs1q0905 = _EMPTY_;
+    private String bs1q0906 = _EMPTY_;
+    private String bs1q0907 = _EMPTY_;
+    private String bs1q0908 = _EMPTY_;
+    private String bs1q09t296 = _EMPTY_;
+    private String bs1q09t296x = _EMPTY_;
+    private String bs1q1001 = _EMPTY_;
+    private String bs1q1002 = _EMPTY_;
+    private String bs1q1098 = _EMPTY_;
+    private String bs1q11 = _EMPTY_;
+    private String bs1q12 = _EMPTY_;
+    private String bs1q13 = _EMPTY_;
+    private String bs1q1301 = _EMPTY_;
+    private String bs1q1302 = _EMPTY_;
+    private String bs1q1303 = _EMPTY_;
+    private String bs1q1304 = _EMPTY_;
+    private String bs1q1305 = _EMPTY_;
+    private String bs1q1306 = _EMPTY_;
+    private String bs1q1307 = _EMPTY_;
+    private String bs1q1308 = _EMPTY_;
+    private String bs1q1396 = _EMPTY_;
+    private String bs1q1396x = _EMPTY_;
     private String bs2q1 = _EMPTY_;
     private String bs2q2 = _EMPTY_;
     private String bs2q201 = _EMPTY_;
@@ -163,6 +162,7 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs2q416 = _EMPTY_;
     private String bs2q417 = _EMPTY_;
     private String bs2q418 = _EMPTY_;
+    private String bs2q466 = _EMPTY_;
     private String bs2q4096 = _EMPTY_;
     private String bs2q4096x = _EMPTY_;
     private String bs2q5 = _EMPTY_;
@@ -197,12 +197,6 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs2q898 = _EMPTY_;
     private String bs2q896 = _EMPTY_;
     private String bs2q896x = _EMPTY_;
-
-
-
-    // Field variables of Section bs3
-
-
     private String bs3q1 = _EMPTY_;
     private String bs3q101 = _EMPTY_;
     private String bs3q102 = _EMPTY_;
@@ -217,9 +211,12 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs3q196x = _EMPTY_;
     private String bs3q2a = _EMPTY_;
     private String bs3q2a96x = _EMPTY_;
-    private String bs3q2b96 = _EMPTY_;
-    private String bs3q2c96 = _EMPTY_;
-    private String bs3q2d96 = _EMPTY_;
+    private String bs3q2b = _EMPTY_;
+    private String bs3q2b96x = _EMPTY_;
+    private String bs3q2c = _EMPTY_;
+    private String bs3q2c96x = _EMPTY_;
+    private String bs3q2d = _EMPTY_;
+    private String bs3q2d96x = _EMPTY_;
     private String bs3q3 = _EMPTY_;
     private String bs3q4 = _EMPTY_;
     private String bs3q401 = _EMPTY_;
@@ -308,8 +305,6 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs3q13 = _EMPTY_;
     private String bs3q14 = _EMPTY_;
     private String bs3q15 = _EMPTY_;
-
-    // Field variables of bs4a
     private String bs4aq1 = _EMPTY_;
     private String bs4aq2 = _EMPTY_;
     private String bs4aq201 = _EMPTY_;
@@ -333,9 +328,6 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs4aq896x = _EMPTY_;
     private String bs4aq9 = _EMPTY_;
     private String bs4aq10 = _EMPTY_;
-
-    // Field variables of bs4b
-
     private String bs4bq1 = _EMPTY_;
     private String bs4bq2 = _EMPTY_;
     private String bs4bq21 = _EMPTY_;
@@ -377,8 +369,6 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs4bq898 = _EMPTY_;
     private String bs4bq896 = _EMPTY_;
     private String bs4bq896x = _EMPTY_;
-
-    // Field Variables of bs5
     private String bs5q1 = _EMPTY_;
     private String bs5q2 = _EMPTY_;
     private String bs5q201 = _EMPTY_;
@@ -429,9 +419,6 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs5q1096x = _EMPTY_;
     private String bs5q11 = _EMPTY_;
     private String bs5q12 = _EMPTY_;
-
-
-    // Field variables of bs6
     private String bs6q1 = _EMPTY_;
     private String bs6q1mx = _EMPTY_;
     private String bs6q2 = _EMPTY_;
@@ -499,37 +486,7 @@ public class MWRA extends BaseObservable implements Observable {
         setHhid(MainApp.selectedHHID);
 
     }
-    public String getsB1() {
-        return sB1;
-    }
 
-    public String getsB2() {
-        return sB2;
-    }
-
-    public String getsB3() {
-        return sB3;
-    }
-
-    public String getsB41() {
-        return sB41;
-    }
-
-    public String getsB42() {
-        return sB42;
-    }
-
-    public String getsB5() {
-        return sB5;
-    }
-
-    public String getsB6() {
-        return sB6;
-    }
-
-    public String getsB7() {
-        return sB7;
-    }
 
     public String getProjectName() {
         return projectName;
@@ -599,37 +556,6 @@ public class MWRA extends BaseObservable implements Observable {
         return syncDate;
     }
 
-    public void setsB1(String sB1) {
-        this.sB1 = sB1;
-    }
-
-    public void setsB2(String sB2) {
-        this.sB2 = sB2;
-    }
-
-    public void setsB3(String sB3) {
-        this.sB3 = sB3;
-    }
-
-    public void setsB41(String sB41) {
-        this.sB41 = sB41;
-    }
-
-    public void setsB42(String sB42) {
-        this.sB42 = sB42;
-    }
-
-    public void setsB5(String sB5) {
-        this.sB5 = sB5;
-    }
-
-    public void setsB6(String sB6) {
-        this.sB6 = sB6;
-    }
-
-    public void setsB7(String sB7) {
-        this.sB7 = sB7;
-    }
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
@@ -707,6 +633,254 @@ public class MWRA extends BaseObservable implements Observable {
         this.psuCode = psuCode;
     }
 
+
+    public String getsB1() {
+        return sB1;
+    }
+
+    public void setsB1(String sB1) {
+        this.sB1 = sB1;
+    }
+
+
+    public String getsB2() {
+        return sB2;
+    }
+
+    public void setsB2(String sB2) {
+        this.sB2 = sB2;
+    }
+
+
+    public String getsB3() {
+        return sB3;
+    }
+
+    public void setsB3(String sB3) {
+        this.sB3 = sB3;
+    }
+
+
+    public String getsB41() {
+        return sB41;
+    }
+
+    public void setsB41(String sB41) {
+        this.sB41 = sB41;
+    }
+
+
+    public String getsB42() {
+        return sB42;
+    }
+
+    public void setsB42(String sB42) {
+        this.sB42 = sB42;
+    }
+
+
+    public String getsB5() {
+        return sB5;
+    }
+
+    public void setsB5(String sB5) {
+        this.sB5 = sB5;
+    }
+
+
+    public String getsB6() {
+        return sB6;
+    }
+
+    public void setsB6(String sB6) {
+        this.sB6 = sB6;
+    }
+
+
+    public String getsB7() {
+        return sB7;
+    }
+
+    public void setsB7(String sB7) {
+        this.sB7 = sB7;
+    }
+
+
+    @Bindable
+    public String getBs1resp() {
+        return bs1resp;
+    }
+
+    public void setBs1resp(String bs1resp) {
+        this.bs1resp = bs1resp;
+        notifyPropertyChanged(BR.bs1resp);
+    }
+
+    @Bindable
+    public String getBs1respline() {
+        return bs1respline;
+    }
+
+    public void setBs1respline(String bs1respline) {
+        this.bs1respline = bs1respline;
+        notifyPropertyChanged(BR.bs1respline);
+    }
+
+    @Bindable
+    public String getBs1con() {
+        return bs1con;
+    }
+
+    public void setBs1con(String bs1con) {
+        this.bs1con = bs1con;
+        setBs1q1(bs1con.equals("2") ? "" : this.bs1q1);
+        setBs1q2(bs1con.equals("2") ? "" : this.bs1q2);
+        setBs1q3(bs1con.equals("2") ? "" : this.bs1q3);
+        setBs1q4(bs1con.equals("2") ? "" : this.bs1q4);
+        setBs1q5(bs1con.equals("2") ? "" : this.bs1q5);
+        setBs1q6(bs1con.equals("2") ? "" : this.bs1q6);
+        setBs1q7p1d(bs1con.equals("2") ? "" : this.bs1q7p1d);
+        setBs1q7p1g(bs1con.equals("2") ? "" : this.bs1q7p1g);
+        setBs1q7p1b(bs1con.equals("2") ? "" : this.bs1q7p1b);
+        setBs1q7p2d(bs1con.equals("2") ? "" : this.bs1q7p2d);
+        setBs1q7p2g(bs1con.equals("2") ? "" : this.bs1q7p2g);
+        setBs1q7p2b(bs1con.equals("2") ? "" : this.bs1q7p2b);
+        setBs1q7p3d(bs1con.equals("2") ? "" : this.bs1q7p3d);
+        setBs1q7p3g(bs1con.equals("2") ? "" : this.bs1q7p3g);
+        setBs1q7p3b(bs1con.equals("2") ? "" : this.bs1q7p3b);
+        setBs1q7p4d(bs1con.equals("2") ? "" : this.bs1q7p4d);
+        setBs1q7p4g(bs1con.equals("2") ? "" : this.bs1q7p4g);
+        setBs1q7p4b(bs1con.equals("2") ? "" : this.bs1q7p4b);
+        setBs1q7p5d(bs1con.equals("2") ? "" : this.bs1q7p5d);
+        setBs1q7p5g(bs1con.equals("2") ? "" : this.bs1q7p5g);
+        setBs1q7p5b(bs1con.equals("2") ? "" : this.bs1q7p5b);
+        setBs1q08(bs1con.equals("2") ? "" : this.bs1q08);
+        setBs1q0901(bs1con.equals("2") ? "" : this.bs1q0901);
+        setBs1q0902(bs1con.equals("2") ? "" : this.bs1q0902);
+        setBs1q0903(bs1con.equals("2") ? "" : this.bs1q0903);
+        setBs1q0904(bs1con.equals("2") ? "" : this.bs1q0904);
+        setBs1q0905(bs1con.equals("2") ? "" : this.bs1q0905);
+        setBs1q0906(bs1con.equals("2") ? "" : this.bs1q0906);
+        setBs1q0907(bs1con.equals("2") ? "" : this.bs1q0907);
+        setBs1q0908(bs1con.equals("2") ? "" : this.bs1q0908);
+        setBs1q09t296(bs1con.equals("2") ? "" : this.bs1q09t296);
+        setBs1q1001(bs1con.equals("2") ? "" : this.bs1q1001);
+        setBs1q1002(bs1con.equals("2") ? "" : this.bs1q1002);
+        setBs1q1098(bs1con.equals("2") ? "" : this.bs1q1098);
+        setBs1q11(bs1con.equals("2") ? "" : this.bs1q11);
+        setBs1q12(bs1con.equals("2") ? "" : this.bs1q12);
+        setBs1q1301(bs1con.equals("2") ? "" : this.bs1q1301);
+        setBs1q1302(bs1con.equals("2") ? "" : this.bs1q1302);
+        setBs1q1303(bs1con.equals("2") ? "" : this.bs1q1303);
+        setBs1q1304(bs1con.equals("2") ? "" : this.bs1q1304);
+        setBs1q1305(bs1con.equals("2") ? "" : this.bs1q1305);
+        setBs1q1306(bs1con.equals("2") ? "" : this.bs1q1306);
+        setBs1q1307(bs1con.equals("2") ? "" : this.bs1q1307);
+        setBs1q1308(bs1con.equals("2") ? "" : this.bs1q1308);
+        setBs1q1396(bs1con.equals("2") ? "" : this.bs1q1396);
+        notifyPropertyChanged(BR.bs1con);
+    }
+
+    @Bindable
+    public String getBs1q1() {
+        return bs1q1;
+    }
+
+    public void setBs1q1(String bs1q1) {
+        this.bs1q1 = bs1q1;
+        notifyPropertyChanged(BR.bs1q1);
+    }
+
+    @Bindable
+    public String getBs1q2() {
+        return bs1q2;
+    }
+
+    public void setBs1q2(String bs1q2) {
+        this.bs1q2 = bs1q2;
+        notifyPropertyChanged(BR.bs1q2);
+    }
+
+    @Bindable
+    public String getBs1q3() {
+        return bs1q3;
+    }
+
+    public void setBs1q3(String bs1q3) {
+        this.bs1q3 = bs1q3;
+        notifyPropertyChanged(BR.bs1q3);
+    }
+
+    @Bindable
+    public String getBs1q4() {
+        return bs1q4;
+    }
+
+    public void setBs1q4(String bs1q4) {
+        this.bs1q4 = bs1q4;
+        notifyPropertyChanged(BR.bs1q4);
+    }
+
+    @Bindable
+    public String getBs1q5() {
+        return bs1q5;
+    }
+
+    public void setBs1q5(String bs1q5) {
+        this.bs1q5 = bs1q5;
+        notifyPropertyChanged(BR.bs1q5);
+    }
+
+    @Bindable
+    public String getBs1q6() {
+        return bs1q6;
+    }
+
+    public void setBs1q6(String bs1q6) {
+        this.bs1q6 = bs1q6;
+        notifyPropertyChanged(BR.bs1q6);
+    }
+
+    @Bindable
+    public String getBs1q7p1g() {
+        return bs1q7p1g;
+    }
+
+    public void setBs1q7p1g(String bs1q7p1g) {
+        this.bs1q7p1g = bs1q7p1g;
+        notifyPropertyChanged(BR.bs1q7p1g);
+    }
+
+    @Bindable
+    public String getBs1q7p1d() {
+        return bs1q7p1d;
+    }
+
+    public void setBs1q7p1d(String bs1q7p1d) {
+        this.bs1q7p1d = bs1q7p1d;
+        setBs1q7p1d96x(bs1q7p1d.equals("96") ? this.bs1q7p1d96x : "");
+        notifyPropertyChanged(BR.bs1q7p1d);
+    }
+
+    @Bindable
+    public String getBs1q7p1d96x() {
+        return bs1q7p1d96x;
+    }
+
+    public void setBs1q7p1d96x(String bs1q7p1d96x) {
+        this.bs1q7p1d96x = bs1q7p1d96x;
+        notifyPropertyChanged(BR.bs1q7p1d96x);
+    }
+
+    @Bindable
+    public String getBs1q7p1b() {
+        return bs1q7p1b;
+    }
+
+    public void setBs1q7p1b(String bs1q7p1b) {
+        this.bs1q7p1b = bs1q7p1b;
+        notifyPropertyChanged(BR.bs1q7p1b);
+    }
 
     @Bindable
     public String getBs1q7p2g() {
@@ -1190,127 +1364,6 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getBs1resp() {
-        return bs1resp;
-    }
-
-    public void setBs1resp(String bs1resp) {
-        this.bs1resp = bs1resp;
-        notifyPropertyChanged(BR.bs1resp);
-    }
-
-    @Bindable
-    public String getBs1respline() {
-        return bs1respline;
-    }
-
-    public void setBs1respline(String bs1respline) {
-        this.bs1respline = bs1respline;
-        notifyPropertyChanged(BR.bs1respline);
-    }
-
-    @Bindable
-    public String getBs1con() {
-        return bs1con;
-    }
-
-    public void setBs1con(String bs1con) {
-        this.bs1con = bs1con;
-        setBs1q1(bs1con.equals("2") ? "" : this.bs1q1);
-        setBs1q2(bs1con.equals("2") ? "" : this.bs1q2);
-        setBs1q3(bs1con.equals("2") ? "" : this.bs1q3);
-        setBs1q4(bs1con.equals("2") ? "" : this.bs1q4);
-        setBs1q5(bs1con.equals("2") ? "" : this.bs1q5);
-        setBs1q6(bs1con.equals("2") ? "" : this.bs1q6);
-        setBs1q08(bs1con.equals("2") ? "" : this.bs1q08);
-        setBs1q0901(bs1con.equals("2") ? "" : this.bs1q0901);
-        setBs1q0902(bs1con.equals("2") ? "" : this.bs1q0902);
-        setBs1q0903(bs1con.equals("2") ? "" : this.bs1q0903);
-        setBs1q0904(bs1con.equals("2") ? "" : this.bs1q0904);
-        setBs1q0905(bs1con.equals("2") ? "" : this.bs1q0905);
-        setBs1q0906(bs1con.equals("2") ? "" : this.bs1q0906);
-        setBs1q0907(bs1con.equals("2") ? "" : this.bs1q0907);
-        setBs1q0908(bs1con.equals("2") ? "" : this.bs1q0908);
-        setBs1q09t296(bs1con.equals("2") ? "" : this.bs1q09t296);
-        setBs1q1001(bs1con.equals("2") ? "" : this.bs1q1001);
-        setBs1q1002(bs1con.equals("2") ? "" : this.bs1q1002);
-        setBs1q1098(bs1con.equals("2") ? "" : this.bs1q1098);
-        setBs1q11(bs1con.equals("2") ? "" : this.bs1q11);
-        setBs1q12(bs1con.equals("2") ? "" : this.bs1q12);
-        setBs1q1301(bs1con.equals("2") ? "" : this.bs1q1301);
-        setBs1q1302(bs1con.equals("2") ? "" : this.bs1q1302);
-        setBs1q1303(bs1con.equals("2") ? "" : this.bs1q1303);
-        setBs1q1304(bs1con.equals("2") ? "" : this.bs1q1304);
-        setBs1q1305(bs1con.equals("2") ? "" : this.bs1q1305);
-        setBs1q1306(bs1con.equals("2") ? "" : this.bs1q1306);
-        setBs1q1307(bs1con.equals("2") ? "" : this.bs1q1307);
-        setBs1q1308(bs1con.equals("2") ? "" : this.bs1q1308);
-        setBs1q1396(bs1con.equals("2") ? "" : this.bs1q1396);
-
-        notifyPropertyChanged(BR.bs1con);
-    }
-
-    @Bindable
-    public String getBs1q1() {
-        return bs1q1;
-    }
-
-    public void setBs1q1(String bs1q1) {
-        this.bs1q1 = bs1q1;
-        notifyPropertyChanged(BR.bs1q1);
-    }
-
-    @Bindable
-    public String getBs1q2() {
-        return bs1q2;
-    }
-
-    public void setBs1q2(String bs1q2) {
-        this.bs1q2 = bs1q2;
-        notifyPropertyChanged(BR.bs1q2);
-    }
-
-    @Bindable
-    public String getBs1q3() {
-        return bs1q3;
-    }
-
-    public void setBs1q3(String bs1q3) {
-        this.bs1q3 = bs1q3;
-        notifyPropertyChanged(BR.bs1q3);
-    }
-
-    @Bindable
-    public String getBs1q4() {
-        return bs1q4;
-    }
-
-    public void setBs1q4(String bs1q4) {
-        this.bs1q4 = bs1q4;
-        notifyPropertyChanged(BR.bs1q4);
-    }
-
-    @Bindable
-    public String getBs1q5() {
-        return bs1q5;
-    }
-
-    public void setBs1q5(String bs1q5) {
-        this.bs1q5 = bs1q5;
-        notifyPropertyChanged(BR.bs1q5);
-    }
-
-    @Bindable
-    public String getBs1q6() {
-        return bs1q6;
-    }
-
-    public void setBs1q6(String bs1q6) {
-        this.bs1q6 = bs1q6;
-        notifyPropertyChanged(BR.bs1q6);
-    }
-
-    @Bindable
     public String getBs2q1() {
         return bs2q1;
     }
@@ -1336,6 +1389,51 @@ public class MWRA extends BaseObservable implements Observable {
         setBs2q217(bs2q1.equals("2") ? "" : this.bs2q217);
         setBs2q218(bs2q1.equals("2") ? "" : this.bs2q218);
         setBs2q296(bs2q1.equals("2") ? "" : this.bs2q296);
+        setBs2q3(bs2q1.equals("2") ? "" : this.bs2q3);
+        setBs2q401(bs2q1.equals("2") ? "" : this.bs2q401);
+        setBs2q402(bs2q1.equals("2") ? "" : this.bs2q402);
+        setBs2q403(bs2q1.equals("2") ? "" : this.bs2q403);
+        setBs2q404(bs2q1.equals("2") ? "" : this.bs2q404);
+        setBs2q405(bs2q1.equals("2") ? "" : this.bs2q405);
+        setBs2q406(bs2q1.equals("2") ? "" : this.bs2q406);
+        setBs2q407(bs2q1.equals("2") ? "" : this.bs2q407);
+        setBs2q408(bs2q1.equals("2") ? "" : this.bs2q408);
+        setBs2q409(bs2q1.equals("2") ? "" : this.bs2q409);
+        setBs2q410(bs2q1.equals("2") ? "" : this.bs2q410);
+        setBs2q411(bs2q1.equals("2") ? "" : this.bs2q411);
+        setBs2q412(bs2q1.equals("2") ? "" : this.bs2q412);
+        setBs2q413(bs2q1.equals("2") ? "" : this.bs2q413);
+        setBs2q414(bs2q1.equals("2") ? "" : this.bs2q414);
+        setBs2q415(bs2q1.equals("2") ? "" : this.bs2q415);
+        setBs2q416(bs2q1.equals("2") ? "" : this.bs2q416);
+        setBs2q417(bs2q1.equals("2") ? "" : this.bs2q417);
+        setBs2q418(bs2q1.equals("2") ? "" : this.bs2q418);
+        setBs2q466(bs2q1.equals("2") ? "" : this.bs2q466);
+        setBs2q4096(bs2q1.equals("2") ? "" : this.bs2q4096);
+        setBs2q5(bs2q1.equals("2") ? "" : this.bs2q5);
+        setBs2q601(bs2q1.equals("2") ? "" : this.bs2q601);
+        setBs2q602(bs2q1.equals("2") ? "" : this.bs2q602);
+        setBs2q603(bs2q1.equals("2") ? "" : this.bs2q603);
+        setBs2q604(bs2q1.equals("2") ? "" : this.bs2q604);
+        setBs2q605(bs2q1.equals("2") ? "" : this.bs2q605);
+        setBs2q606(bs2q1.equals("2") ? "" : this.bs2q606);
+        setBs2q607(bs2q1.equals("2") ? "" : this.bs2q607);
+        setBs2q608(bs2q1.equals("2") ? "" : this.bs2q608);
+        setBs2q609(bs2q1.equals("2") ? "" : this.bs2q609);
+        setBs2q6010(bs2q1.equals("2") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q1.equals("2") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q1.equals("2") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q1.equals("2") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q1.equals("2") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q1.equals("2") ? "" : this.bs2q6015);
+        setBs2q696(bs2q1.equals("2") ? "" : this.bs2q696);
+        setBs2q7(bs2q1.equals("2") ? "" : this.bs2q7);
+        setBs2q801(bs2q1.equals("2") ? "" : this.bs2q801);
+        setBs2q802(bs2q1.equals("2") ? "" : this.bs2q802);
+        setBs2q803(bs2q1.equals("2") ? "" : this.bs2q803);
+        setBs2q804(bs2q1.equals("2") ? "" : this.bs2q804);
+        setBs2q898(bs2q1.equals("2") ? "" : this.bs2q898);
+        setBs2q896(bs2q1.equals("2") ? "" : this.bs2q896);
         notifyPropertyChanged(BR.bs2q1);
     }
 
@@ -1943,6 +2041,53 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getBs2q466() {
+        return bs2q466;
+    }
+
+    public void setBs2q466(String bs2q466) {
+        if (this.bs2q466.equals(bs2q466)) return;
+        this.bs2q466 = bs2q466;
+        setBs2q401(bs2q466.equals("66") ? "" : this.bs2q401);
+        setBs2q402(bs2q466.equals("66") ? "" : this.bs2q402);
+        setBs2q403(bs2q466.equals("66") ? "" : this.bs2q403);
+        setBs2q404(bs2q466.equals("66") ? "" : this.bs2q404);
+        setBs2q405(bs2q466.equals("66") ? "" : this.bs2q405);
+        setBs2q406(bs2q466.equals("66") ? "" : this.bs2q406);
+        setBs2q407(bs2q466.equals("66") ? "" : this.bs2q407);
+        setBs2q408(bs2q466.equals("66") ? "" : this.bs2q408);
+        setBs2q409(bs2q466.equals("66") ? "" : this.bs2q409);
+        setBs2q410(bs2q466.equals("66") ? "" : this.bs2q410);
+        setBs2q411(bs2q466.equals("66") ? "" : this.bs2q411);
+        setBs2q412(bs2q466.equals("66") ? "" : this.bs2q412);
+        setBs2q413(bs2q466.equals("66") ? "" : this.bs2q413);
+        setBs2q414(bs2q466.equals("66") ? "" : this.bs2q414);
+        setBs2q415(bs2q466.equals("66") ? "" : this.bs2q415);
+        setBs2q416(bs2q466.equals("66") ? "" : this.bs2q416);
+        setBs2q417(bs2q466.equals("66") ? "" : this.bs2q417);
+        setBs2q418(bs2q466.equals("66") ? "" : this.bs2q418);
+        setBs2q4096(bs2q466.equals("66") ? "" : this.bs2q4096);
+        setBs2q5(bs2q466.equals("66") ? "" : this.bs2q5);
+        setBs2q601(bs2q466.equals("66") ? "" : this.bs2q601);
+        setBs2q602(bs2q466.equals("66") ? "" : this.bs2q602);
+        setBs2q603(bs2q466.equals("66") ? "" : this.bs2q603);
+        setBs2q604(bs2q466.equals("66") ? "" : this.bs2q604);
+        setBs2q605(bs2q466.equals("66") ? "" : this.bs2q605);
+        setBs2q606(bs2q466.equals("66") ? "" : this.bs2q606);
+        setBs2q607(bs2q466.equals("66") ? "" : this.bs2q607);
+        setBs2q608(bs2q466.equals("66") ? "" : this.bs2q608);
+        setBs2q609(bs2q466.equals("66") ? "" : this.bs2q609);
+        setBs2q6010(bs2q466.equals("66") ? "" : this.bs2q6010);
+        setBs2q6011(bs2q466.equals("66") ? "" : this.bs2q6011);
+        setBs2q6012(bs2q466.equals("66") ? "" : this.bs2q6012);
+        setBs2q6013(bs2q466.equals("66") ? "" : this.bs2q6013);
+        setBs2q6014(bs2q466.equals("66") ? "" : this.bs2q6014);
+        setBs2q6015(bs2q466.equals("66") ? "" : this.bs2q6015);
+        setBs2q696(bs2q466.equals("66") ? "" : this.bs2q696);
+        notifyPropertyChanged(BR.bs2q466);
+    }
+
+    @Bindable
     public String getBs2q4096() {
         return bs2q4096;
     }
@@ -2488,33 +2633,66 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getBs3q2b96() {
-        return bs3q2b96;
+    public String getBs3q2b() {
+        return bs3q2b;
     }
 
-    public void setBs3q2b96(String bs3q2b96) {
-        this.bs3q2b96 = bs3q2b96;
-        notifyPropertyChanged(BR.bs3q2b96);
-    }
-
-    @Bindable
-    public String getBs3q2c96() {
-        return bs3q2c96;
-    }
-
-    public void setBs3q2c96(String bs3q2c96) {
-        this.bs3q2c96 = bs3q2c96;
-        notifyPropertyChanged(BR.bs3q2c96);
+    public void setBs3q2b(String bs3q2b) {
+        this.bs3q2b = bs3q2b;
+        setBs3q2b96x(bs3q2b.equals("96") ? this.bs3q2b96x : "");
+        notifyPropertyChanged(BR.bs3q2b);
     }
 
     @Bindable
-    public String getBs3q2d96() {
-        return bs3q2d96;
+    public String getBs3q2b96x() {
+        return bs3q2b96x;
     }
 
-    public void setBs3q2d96(String bs3q2d96) {
-        this.bs3q2d96 = bs3q2d96;
-        notifyPropertyChanged(BR.bs3q2d96);
+    public void setBs3q2b96x(String bs3q2b96x) {
+        this.bs3q2b96x = bs3q2b96x;
+        notifyPropertyChanged(BR.bs3q2b96x);
+    }
+
+    @Bindable
+    public String getBs3q2c() {
+        return bs3q2c;
+    }
+
+    public void setBs3q2c(String bs3q2c) {
+        this.bs3q2c = bs3q2c;
+        setBs3q2c96x(bs3q2c.equals("96") ? this.bs3q2c96x : "");
+        notifyPropertyChanged(BR.bs3q2c);
+    }
+
+    @Bindable
+    public String getBs3q2c96x() {
+        return bs3q2c96x;
+    }
+
+    public void setBs3q2c96x(String bs3q2c96x) {
+        this.bs3q2c96x = bs3q2c96x;
+        notifyPropertyChanged(BR.bs3q2c96x);
+    }
+
+    @Bindable
+    public String getBs3q2d() {
+        return bs3q2d;
+    }
+
+    public void setBs3q2d(String bs3q2d) {
+        this.bs3q2d = bs3q2d;
+        setBs3q2d96x(bs3q2d.equals("96") ? this.bs3q2d96x : "");
+        notifyPropertyChanged(BR.bs3q2d);
+    }
+
+    @Bindable
+    public String getBs3q2d96x() {
+        return bs3q2d96x;
+    }
+
+    public void setBs3q2d96x(String bs3q2d96x) {
+        this.bs3q2d96x = bs3q2d96x;
+        notifyPropertyChanged(BR.bs3q2d96x);
     }
 
     @Bindable
@@ -4462,6 +4640,7 @@ public class MWRA extends BaseObservable implements Observable {
         setBs5q404(bs5q3.equals("2") ? "" : this.bs5q404);
         setBs5q496(bs5q3.equals("2") ? "" : this.bs5q496);
         setBs5q497(bs5q3.equals("2") ? "" : this.bs5q497);
+        setBs5q5(bs5q3.equals("2") ? "" : this.bs5q5);
         notifyPropertyChanged(BR.bs5q3);
     }
 
@@ -5312,6 +5491,7 @@ public class MWRA extends BaseObservable implements Observable {
         return json;
     }
 
+
     public String sB1toString() throws JSONException {
         Log.d(TAG, "sB1toString: ");
         JSONObject json = new JSONObject();
@@ -5324,6 +5504,26 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("bs1q4", bs1q4)
                 .put("bs1q5", bs1q5)
                 .put("bs1q6", bs1q6)
+                .put("bs1q7p1g", bs1q7p1g)
+                .put("bs1q7p1d", bs1q7p1d)
+                .put("bs1q7p1d96x", bs1q7p1d96x)
+                .put("bs1q7p1b", bs1q7p1b)
+                .put("bs1q7p2g", bs1q7p2g)
+                .put("bs1q7p2d", bs1q7p2d)
+                .put("bs1q7p2d96x", bs1q7p2d96x)
+                .put("bs1q7p2b", bs1q7p2b)
+                .put("bs1q7p3g", bs1q7p3g)
+                .put("bs1q7p3d", bs1q7p3d)
+                .put("bs1q7p3d96x", bs1q7p3d96x)
+                .put("bs1q7p3b", bs1q7p3b)
+                .put("bs1q7p4g", bs1q7p4g)
+                .put("bs1q7p4d", bs1q7p4d)
+                .put("bs1q7p4d96x", bs1q7p4d96x)
+                .put("bs1q7p4b", bs1q7p4b)
+                .put("bs1q7p5g", bs1q7p5g)
+                .put("bs1q7p5d", bs1q7p5d)
+                .put("bs1q7p5d96x", bs1q7p5d96x)
+                .put("bs1q7p5b", bs1q7p5b)
                 .put("bs1q08", bs1q08)
                 .put("bs1q09", bs1q09)
                 .put("bs1q0901", bs1q0901)
@@ -5400,6 +5600,7 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("bs2q416", bs2q416)
                 .put("bs2q417", bs2q417)
                 .put("bs2q418", bs2q418)
+                .put("bs2q466", bs2q466)
                 .put("bs2q4096", bs2q4096)
                 .put("bs2q4096x", bs2q4096x)
                 .put("bs2q5", bs2q5)
@@ -5454,9 +5655,12 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("bs3q196x", bs3q196x)
                 .put("bs3q2a", bs3q2a)
                 .put("bs3q2a96x", bs3q2a96x)
-                .put("bs3q2b96", bs3q2b96)
-                .put("bs3q2c96", bs3q2c96)
-                .put("bs3q2d96", bs3q2d96)
+                .put("bs3q2b", bs3q2b)
+                .put("bs3q2b96x", bs3q2b96x)
+                .put("bs3q2c", bs3q2c)
+                .put("bs3q2c96x", bs3q2c96x)
+                .put("bs3q2d", bs3q2d)
+                .put("bs3q2d96x", bs3q2d96x)
                 .put("bs3q3", bs3q3)
                 .put("bs3q4", bs3q4)
                 .put("bs3q401", bs3q401)
@@ -5548,6 +5752,236 @@ public class MWRA extends BaseObservable implements Observable {
         return json.toString();
     }
 
+    public String sB41toString() throws JSONException {
+        Log.d(TAG, "sB41toString: ");
+        JSONObject json = new JSONObject();
+        json.put("bs4aq1", bs4aq1)
+                .put("bs4aq2", bs4aq2)
+                .put("bs4aq201", bs4aq201)
+                .put("bs4aq202", bs4aq202)
+                .put("bs4aq203", bs4aq203)
+                .put("bs4aq204", bs4aq204)
+                .put("bs4aq205", bs4aq205)
+                .put("bs4aq206", bs4aq206)
+                .put("bs4aq207", bs4aq207)
+                .put("bs4aq208", bs4aq208)
+                .put("bs4aq298", bs4aq298)
+                .put("bs4aq296", bs4aq296)
+                .put("bs4aq296x", bs4aq296x)
+                .put("bs4aq3", bs4aq3)
+                .put("bs4aq4", bs4aq4)
+                .put("bs4aq5", bs4aq5)
+                .put("bs4aq6", bs4aq6)
+                .put("bs4aq696x", bs4aq696x)
+                .put("bs4aq7", bs4aq7)
+                .put("bs4aq8", bs4aq8)
+                .put("bs4aq896x", bs4aq896x)
+                .put("bs4aq9", bs4aq9)
+                .put("bs4aq10", bs4aq10);
+        return json.toString();
+    }
+
+    public String sB42toString() throws JSONException {
+        Log.d(TAG, "sB42toString: ");
+        JSONObject json = new JSONObject();
+        json.put("bs4bq1", bs4bq1)
+                .put("bs4bq2", bs4bq2)
+                .put("bs4bq21", bs4bq21)
+                .put("bs4bq22", bs4bq22)
+                .put("bs4bq23", bs4bq23)
+                .put("bs4bq24", bs4bq24)
+                .put("bs4bq298", bs4bq298)
+                .put("bs4bq296", bs4bq296)
+                .put("bs4bq296x", bs4bq296x)
+                .put("bs4bq3", bs4bq3)
+                .put("bs4bq31", bs4bq31)
+                .put("bs4bq32", bs4bq32)
+                .put("bs4bq33", bs4bq33)
+                .put("bs4bq34", bs4bq34)
+                .put("bs4bq35", bs4bq35)
+                .put("bs4bq36", bs4bq36)
+                .put("bs4bq398", bs4bq398)
+                .put("bs4bq396", bs4bq396)
+                .put("bs4bq396x", bs4bq396x)
+                .put("bs4bq4", bs4bq4)
+                .put("bs4bq5", bs4bq5)
+                .put("bs4bq51", bs4bq51)
+                .put("bs4bq52", bs4bq52)
+                .put("bs4bq53", bs4bq53)
+                .put("bs4bq598", bs4bq598)
+                .put("bs4bq596", bs4bq596)
+                .put("bs4bq596x", bs4bq596x)
+                .put("bs4bq6", bs4bq6)
+                .put("bs4bq696x", bs4bq696x)
+                .put("bs4bq7", bs4bq7)
+                .put("bs4bq8", bs4bq8)
+                .put("bs4bq81", bs4bq81)
+                .put("bs4bq82", bs4bq82)
+                .put("bs4bq83", bs4bq83)
+                .put("bs4bq84", bs4bq84)
+                .put("bs4bq85", bs4bq85)
+                .put("bs4bq86", bs4bq86)
+                .put("bs4bq87", bs4bq87)
+                .put("bs4bq898", bs4bq898)
+                .put("bs4bq896", bs4bq896)
+                .put("bs4bq896x", bs4bq896x);
+        return json.toString();
+    }
+
+    public String sB5toString() throws JSONException {
+        Log.d(TAG, "sB5toString: ");
+        JSONObject json = new JSONObject();
+        json.put("bs5q1", bs5q1)
+                .put("bs5q2", bs5q2)
+                .put("bs5q201", bs5q201)
+                .put("bs5q202", bs5q202)
+                .put("bs5q203", bs5q203)
+                .put("bs5q204", bs5q204)
+                .put("bs5q205", bs5q205)
+                .put("bs5q296", bs5q296)
+                .put("bs5q296x", bs5q296x)
+                .put("bs5q297", bs5q297)
+                .put("bs5q3", bs5q3)
+                .put("bs5q4", bs5q4)
+                .put("bs5q401", bs5q401)
+                .put("bs5q402", bs5q402)
+                .put("bs5q403", bs5q403)
+                .put("bs5q404", bs5q404)
+                .put("bs5q496", bs5q496)
+                .put("bs5q496x", bs5q496x)
+                .put("bs5q497", bs5q497)
+                .put("bs5q5", bs5q5)
+                .put("bs5q6", bs5q6)
+                .put("bs5q7", bs5q7)
+                .put("bs5q8", bs5q8)
+                .put("bs5q801", bs5q801)
+                .put("bs5q802", bs5q802)
+                .put("bs5q803", bs5q803)
+                .put("bs5q804", bs5q804)
+                .put("bs5q805", bs5q805)
+                .put("bs5q806", bs5q806)
+                .put("bs5q807", bs5q807)
+                .put("bs5q808", bs5q808)
+                .put("bs5q896", bs5q896)
+                .put("bs5q896x", bs5q896x)
+                .put("bs5q898", bs5q898)
+                .put("bs5q9", bs5q9)
+                .put("bs5q901", bs5q901)
+                .put("bs5q902", bs5q902)
+                .put("bs5q903", bs5q903)
+                .put("bs5q904", bs5q904)
+                .put("bs5q905", bs5q905)
+                .put("bs5q906", bs5q906)
+                .put("bs5q907", bs5q907)
+                .put("bs5q908", bs5q908)
+                .put("bs5q996", bs5q996)
+                .put("bs5q996x", bs5q996x)
+                .put("bs5q998", bs5q998)
+                .put("bs5q10", bs5q10)
+                .put("bs5q1096x", bs5q1096x)
+                .put("bs5q11", bs5q11)
+                .put("bs5q12", bs5q12);
+        return json.toString();
+    }
+
+    public String sB6toString() throws JSONException {
+        Log.d(TAG, "sB6toString: ");
+        JSONObject json = new JSONObject();
+        json.put("bs6q1", bs6q1)
+                .put("bs6q1mx", bs6q1mx)
+                .put("bs6q2", bs6q2)
+                .put("bs6q3", bs6q3)
+                .put("bs6q3mx", bs6q3mx);
+        return json.toString();
+    }
+
+    public String sB7toString() throws JSONException {
+        Log.d(TAG, "sB7toString: ");
+        JSONObject json = new JSONObject();
+        json.put("bs7q1", bs7q1)
+                .put("bs7q2line", bs7q2line)
+                .put("bs7q3", bs7q3)
+                .put("bs7q4a", bs7q4a)
+                .put("bs7q4b", bs7q4b)
+                .put("bs7q4c", bs7q4c)
+                .put("bs7q4d", bs7q4d)
+                .put("bs7q4e", bs7q4e)
+                .put("bs7q4f", bs7q4f)
+                .put("bs7q4g", bs7q4g)
+                .put("bs7q4h", bs7q4h);
+        return json.toString();
+    }
+
+    public String sD1toString() throws JSONException {
+        Log.d(TAG, "sD1toString: ");
+        JSONObject json = new JSONObject();
+        json.put("ds1q01", ds1q01)
+                .put("ds1q02", ds1q02)
+                .put("ds1q03a", ds1q03a)
+                .put("ds1q03b", ds1q03b)
+                .put("ds1q03c", ds1q03c)
+                .put("ds1q03d", ds1q03d)
+                .put("ds1q03e", ds1q03e)
+                .put("ds1q03f", ds1q03f)
+                .put("ds1q04", ds1q04);
+        return json.toString();
+    }
+
+    public String sD2toString() throws JSONException {
+        Log.d(TAG, "sD2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("ds2q01a", ds2q01a)
+                .put("ds2q01b", ds2q01b)
+                .put("ds2q01c", ds2q01c);
+        return json.toString();
+    }
+
+    public String sD3toString() throws JSONException {
+        Log.d(TAG, "sD3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("ds3q01", ds3q01)
+                .put("ds3q02", ds3q02)
+                .put("ds3q03a", ds3q03a)
+                .put("ds3q03b", ds3q03b)
+                .put("ds3q03c", ds3q03c)
+                .put("ds3q03d", ds3q03d)
+                .put("ds3q03e", ds3q03e)
+                .put("ds3q03f", ds3q03f)
+                .put("ds3q03g", ds3q03g);
+        return json.toString();
+    }
+
+
+    public MWRA Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UID));
+        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PSU_CODE));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_HHID));
+        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SNO));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYNCED_DATE));
+
+
+        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB1)));
+        sB2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB2)));
+        sB3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB3)));
+        sB41Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB41)));
+        sB42Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB42)));
+        sB5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB5)));
+        sB6Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB6)));
+        sB7Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB7)));
+        sD1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SD1)));
+        sD2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SD2)));
+        sD3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SD3)));
+        return this;
+    }
+
     public void sB1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sB1Hydrate: " + string);
         if (string != null) {
@@ -5562,6 +5996,26 @@ public class MWRA extends BaseObservable implements Observable {
             this.bs1q4 = json.getString("bs1q4");
             this.bs1q5 = json.getString("bs1q5");
             this.bs1q6 = json.getString("bs1q6");
+            this.bs1q7p1g = json.getString("bs1q7p1g");
+            this.bs1q7p1d = json.getString("bs1q7p1d");
+            this.bs1q7p1d96x = json.getString("bs1q7p1d96x");
+            this.bs1q7p1b = json.getString("bs1q7p1b");
+            this.bs1q7p2g = json.getString("bs1q7p2g");
+            this.bs1q7p2d = json.getString("bs1q7p2d");
+            this.bs1q7p2d96x = json.getString("bs1q7p2d96x");
+            this.bs1q7p2b = json.getString("bs1q7p2b");
+            this.bs1q7p3g = json.getString("bs1q7p3g");
+            this.bs1q7p3d = json.getString("bs1q7p3d");
+            this.bs1q7p3d96x = json.getString("bs1q7p3d96x");
+            this.bs1q7p3b = json.getString("bs1q7p3b");
+            this.bs1q7p4g = json.getString("bs1q7p4g");
+            this.bs1q7p4d = json.getString("bs1q7p4d");
+            this.bs1q7p4d96x = json.getString("bs1q7p4d96x");
+            this.bs1q7p4b = json.getString("bs1q7p4b");
+            this.bs1q7p5g = json.getString("bs1q7p5g");
+            this.bs1q7p5d = json.getString("bs1q7p5d");
+            this.bs1q7p5d96x = json.getString("bs1q7p5d96x");
+            this.bs1q7p5b = json.getString("bs1q7p5b");
             this.bs1q08 = json.getString("bs1q08");
             this.bs1q09 = json.getString("bs1q09");
             this.bs1q0901 = json.getString("bs1q0901");
@@ -5590,7 +6044,6 @@ public class MWRA extends BaseObservable implements Observable {
             this.bs1q1308 = json.getString("bs1q1308");
             this.bs1q1396 = json.getString("bs1q1396");
             this.bs1q1396x = json.getString("bs1q1396x");
-
         }
     }
 
@@ -5641,6 +6094,7 @@ public class MWRA extends BaseObservable implements Observable {
             this.bs2q416 = json.getString("bs2q416");
             this.bs2q417 = json.getString("bs2q417");
             this.bs2q418 = json.getString("bs2q418");
+            this.bs2q466 = json.getString("bs2q466");
             this.bs2q4096 = json.getString("bs2q4096");
             this.bs2q4096x = json.getString("bs2q4096x");
             this.bs2q5 = json.getString("bs2q5");
@@ -5697,9 +6151,12 @@ public class MWRA extends BaseObservable implements Observable {
             this.bs3q196x = json.getString("bs3q196x");
             this.bs3q2a = json.getString("bs3q2a");
             this.bs3q2a96x = json.getString("bs3q2a96x");
-            this.bs3q2b96 = json.getString("bs3q2b96");
-            this.bs3q2c96 = json.getString("bs3q2c96");
-            this.bs3q2d96 = json.getString("bs3q2d96");
+            this.bs3q2b = json.getString("bs3q2b");
+            this.bs3q2b96x = json.getString("bs3q2b96x");
+            this.bs3q2c = json.getString("bs3q2c");
+            this.bs3q2c96x = json.getString("bs3q2c96x");
+            this.bs3q2d = json.getString("bs3q2d");
+            this.bs3q2d96x = json.getString("bs3q2d96x");
             this.bs3q3 = json.getString("bs3q3");
             this.bs3q4 = json.getString("bs3q4");
             this.bs3q401 = json.getString("bs3q401");
@@ -5961,167 +6418,6 @@ public class MWRA extends BaseObservable implements Observable {
         }
     }
 
-
-    public String sB41toString() throws JSONException {
-        Log.d(TAG, "sB41toString: ");
-        JSONObject json = new JSONObject();
-        json.put("bs4aq1", bs4aq1)
-                .put("bs4aq2", bs4aq2)
-                .put("bs4aq201", bs4aq201)
-                .put("bs4aq202", bs4aq202)
-                .put("bs4aq203", bs4aq203)
-                .put("bs4aq204", bs4aq204)
-                .put("bs4aq205", bs4aq205)
-                .put("bs4aq206", bs4aq206)
-                .put("bs4aq207", bs4aq207)
-                .put("bs4aq208", bs4aq208)
-                .put("bs4aq298", bs4aq298)
-                .put("bs4aq296", bs4aq296)
-                .put("bs4aq296x", bs4aq296x)
-                .put("bs4aq3", bs4aq3)
-                .put("bs4aq4", bs4aq4)
-                .put("bs4aq5", bs4aq5)
-                .put("bs4aq6", bs4aq6)
-                .put("bs4aq696x", bs4aq696x)
-                .put("bs4aq7", bs4aq7)
-                .put("bs4aq8", bs4aq8)
-                .put("bs4aq896x", bs4aq896x)
-                .put("bs4aq9", bs4aq9)
-                .put("bs4aq10", bs4aq10);
-        return json.toString();
-    }
-
-    public String sB42toString() throws JSONException {
-        Log.d(TAG, "sB42toString: ");
-        JSONObject json = new JSONObject();
-        json.put("bs4bq1", bs4bq1)
-                .put("bs4bq2", bs4bq2)
-                .put("bs4bq21", bs4bq21)
-                .put("bs4bq22", bs4bq22)
-                .put("bs4bq23", bs4bq23)
-                .put("bs4bq24", bs4bq24)
-                .put("bs4bq298", bs4bq298)
-                .put("bs4bq296", bs4bq296)
-                .put("bs4bq296x", bs4bq296x)
-                .put("bs4bq3", bs4bq3)
-                .put("bs4bq31", bs4bq31)
-                .put("bs4bq32", bs4bq32)
-                .put("bs4bq33", bs4bq33)
-                .put("bs4bq34", bs4bq34)
-                .put("bs4bq35", bs4bq35)
-                .put("bs4bq36", bs4bq36)
-                .put("bs4bq398", bs4bq398)
-                .put("bs4bq396", bs4bq396)
-                .put("bs4bq396x", bs4bq396x)
-                .put("bs4bq4", bs4bq4)
-                .put("bs4bq5", bs4bq5)
-                .put("bs4bq51", bs4bq51)
-                .put("bs4bq52", bs4bq52)
-                .put("bs4bq53", bs4bq53)
-                .put("bs4bq598", bs4bq598)
-                .put("bs4bq596", bs4bq596)
-                .put("bs4bq596x", bs4bq596x)
-                .put("bs4bq6", bs4bq6)
-                .put("bs4bq696x", bs4bq696x)
-                .put("bs4bq7", bs4bq7)
-                .put("bs4bq8", bs4bq8)
-                .put("bs4bq81", bs4bq81)
-                .put("bs4bq82", bs4bq82)
-                .put("bs4bq83", bs4bq83)
-                .put("bs4bq84", bs4bq84)
-                .put("bs4bq85", bs4bq85)
-                .put("bs4bq86", bs4bq86)
-                .put("bs4bq87", bs4bq87)
-                .put("bs4bq898", bs4bq898)
-                .put("bs4bq896", bs4bq896)
-                .put("bs4bq896x", bs4bq896x);
-        return json.toString();
-    }
-
-    public String sB5toString() throws JSONException {
-        Log.d(TAG, "sB5toString: ");
-        JSONObject json = new JSONObject();
-        json.put("bs5q1", bs5q1)
-                .put("bs5q2", bs5q2)
-                .put("bs5q201", bs5q201)
-                .put("bs5q202", bs5q202)
-                .put("bs5q203", bs5q203)
-                .put("bs5q204", bs5q204)
-                .put("bs5q205", bs5q205)
-                .put("bs5q296", bs5q296)
-                .put("bs5q296x", bs5q296x)
-                .put("bs5q297", bs5q297)
-                .put("bs5q3", bs5q3)
-                .put("bs5q4", bs5q4)
-                .put("bs5q401", bs5q401)
-                .put("bs5q402", bs5q402)
-                .put("bs5q403", bs5q403)
-                .put("bs5q404", bs5q404)
-                .put("bs5q496", bs5q496)
-                .put("bs5q496x", bs5q496x)
-                .put("bs5q497", bs5q497)
-                .put("bs5q5", bs5q5)
-                .put("bs5q6", bs5q6)
-                .put("bs5q7", bs5q7)
-                .put("bs5q8", bs5q8)
-                .put("bs5q801", bs5q801)
-                .put("bs5q802", bs5q802)
-                .put("bs5q803", bs5q803)
-                .put("bs5q804", bs5q804)
-                .put("bs5q805", bs5q805)
-                .put("bs5q806", bs5q806)
-                .put("bs5q807", bs5q807)
-                .put("bs5q808", bs5q808)
-                .put("bs5q896", bs5q896)
-                .put("bs5q896x", bs5q896x)
-                .put("bs5q898", bs5q898)
-                .put("bs5q9", bs5q9)
-                .put("bs5q901", bs5q901)
-                .put("bs5q902", bs5q902)
-                .put("bs5q903", bs5q903)
-                .put("bs5q904", bs5q904)
-                .put("bs5q905", bs5q905)
-                .put("bs5q906", bs5q906)
-                .put("bs5q907", bs5q907)
-                .put("bs5q908", bs5q908)
-                .put("bs5q996", bs5q996)
-                .put("bs5q996x", bs5q996x)
-                .put("bs5q998", bs5q998)
-                .put("bs5q10", bs5q10)
-                .put("bs5q1096x", bs5q1096x)
-                .put("bs5q11", bs5q11)
-                .put("bs5q12", bs5q12);
-        return json.toString();
-    }
-
-    public String sB6toString() throws JSONException {
-        Log.d(TAG, "sB6toString: ");
-        JSONObject json = new JSONObject();
-        json.put("bs6q1", bs6q1)
-                .put("bs6q1mx", bs6q1mx)
-                .put("bs6q2", bs6q2)
-                .put("bs6q3", bs6q3)
-                .put("bs6q3mx", bs6q3mx);
-        return json.toString();
-    }
-
-    public String sB7toString() throws JSONException {
-        Log.d(TAG, "sB7toString: ");
-        JSONObject json = new JSONObject();
-        json.put("bs7q1", bs7q1)
-                .put("bs7q2line", bs7q2line)
-                .put("bs7q3", bs7q3)
-                .put("bs7q4a", bs7q4a)
-                .put("bs7q4b", bs7q4b)
-                .put("bs7q4c", bs7q4c)
-                .put("bs7q4d", bs7q4d)
-                .put("bs7q4e", bs7q4e)
-                .put("bs7q4f", bs7q4f)
-                .put("bs7q4g", bs7q4g)
-                .put("bs7q4h", bs7q4h);
-        return json.toString();
-    }
-
     public void sD1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sD1Hydrate: " + string);
         if (string != null) {
@@ -6165,76 +6461,6 @@ public class MWRA extends BaseObservable implements Observable {
             this.ds3q03f = json.getString("ds3q03f");
             this.ds3q03g = json.getString("ds3q03g");
         }
-    }
-
-    public String sD1toString() throws JSONException {
-        Log.d(TAG, "sD1toString: ");
-        JSONObject json = new JSONObject();
-        json.put("ds1q01", ds1q01)
-                .put("ds1q02", ds1q02)
-                .put("ds1q03a", ds1q03a)
-                .put("ds1q03b", ds1q03b)
-                .put("ds1q03c", ds1q03c)
-                .put("ds1q03d", ds1q03d)
-                .put("ds1q03e", ds1q03e)
-                .put("ds1q03f", ds1q03f)
-                .put("ds1q04", ds1q04);
-        return json.toString();
-    }
-
-    public String sD2toString() throws JSONException {
-        Log.d(TAG, "sD2toString: ");
-        JSONObject json = new JSONObject();
-        json.put("ds2q01a", ds2q01a)
-                .put("ds2q01b", ds2q01b)
-                .put("ds2q01c", ds2q01c);
-        return json.toString();
-    }
-
-    public String sD3toString() throws JSONException {
-        Log.d(TAG, "sD3toString: ");
-        JSONObject json = new JSONObject();
-        json.put("ds3q01", ds3q01)
-                .put("ds3q02", ds3q02)
-                .put("ds3q03a", ds3q03a)
-                .put("ds3q03b", ds3q03b)
-                .put("ds3q03c", ds3q03c)
-                .put("ds3q03d", ds3q03d)
-                .put("ds3q03e", ds3q03e)
-                .put("ds3q03f", ds3q03f)
-                .put("ds3q03g", ds3q03g);
-        return json.toString();
-    }
-
-
-    public MWRA Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UID));
-        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PSU_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_HHID));
-        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SNO));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYNCED_DATE));
-
-
-        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB1)));
-        sB2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB2)));
-        sB3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB3)));
-        sB41Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB41)));
-        sB42Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB42)));
-        sB5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB5)));
-        sB6Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB6)));
-        sB7Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB7)));
-        sD1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SD1)));
-        sD2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SD2)));
-        sD3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SD3)));
-        return this;
     }
 
 
