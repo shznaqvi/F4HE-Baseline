@@ -6844,7 +6844,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setCs3bq04(String cs3bq04) {
         this.cs3bq04 = cs3bq04;
-        setCs3bq05(cs3bq04.equals("1") ? "" : this.cs3bq05);
+//        setCs3bq05(cs3bq04.equals("1") ? "" : this.cs3bq05);
         setCs3bq05aa(cs3bq04.equals("1") ? "" : this.cs3bq05aa);
         setCs3bq05ab(cs3bq04.equals("1") ? "" : this.cs3bq05ab);
         setCs3bq05ax(cs3bq04.equals("1") ? "" : this.cs3bq05ax);
@@ -10433,7 +10433,7 @@ public class Form extends BaseObservable implements Observable {
             this.cs3bq03b = json.getString("cs3bq03b");
             this.cs3bq03bdx = json.getString("cs3bq03bdx");
             this.cs3bq04 = json.getString("cs3bq04");
-            this.cs3bq05 = json.getString("cs3bq05");
+//            this.cs3bq05 = json.getString("cs3bq05");
             this.cs3bq05a = json.getString("cs3bq05a");
             this.cs3bq05aa = json.getString("cs3bq05aa");
             this.cs3bq05ab = json.getString("cs3bq05ab");
@@ -11318,7 +11318,7 @@ public class Form extends BaseObservable implements Observable {
                 .put("cs3bq03b", cs3bq03b)
                 .put("cs3bq03bdx", cs3bq03bdx)
                 .put("cs3bq04", cs3bq04)
-                .put("cs3bq05", cs3bq05)
+//                .put("cs3bq05", cs3bq05)
                 .put("cs3bq05a", cs3bq05a)
                 .put("cs3bq05aa", cs3bq05aa)
                 .put("cs3bq05ab", cs3bq05ab)
