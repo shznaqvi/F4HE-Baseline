@@ -48,24 +48,14 @@
                 android:orientation="vertical">
 
 
-                <!-- es1title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVes1title"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/es1title" />
 
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- es1resp  Input   -->
@@ -97,12 +87,14 @@
 
                         </LinearLayout>
 
-                        <EditText
+
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/es1resp"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/es1resp"
-                            android:text="@={ladol.es1resp}" />
+                            android:layout_height="match_parent"
+                            android:minHeight="56dp"
+                            android:prompt="@string/es1resp"
+                            android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 
@@ -110,49 +102,49 @@
 
 
                 <!-- es1respline  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVes1respline"
-                    style="@style/cardView">
+                <!--                 <androidx.cardview.widget.CardView
+                      android:id="@+id/fldGrpCVes1respline"
+                      style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:background="@drawable/bottom"
+                              android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_es1respline" />
+                  <TextView
+                                  style="@style/quesNum"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="match_parent"
+                                  android:text="@string/Q_es1respline" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/es1respline" />
+                              <TextView
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:text="@string/es1respline" />
 
-                        </LinearLayout>
+                          </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/es1respline"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/es1respline"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            app:maxValue="99"
-                            app:minValue="0"
-                            android:text="@={ladol.es1respline}"
-                            app:type="range" />
+                          <com.edittextpicker.aliazaz.EditTextPicker
+                              android:id="@+id/es1respline"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:hint="@string/es1respline"
+                              android:inputType="number"
+                              android:maxLength="2"
+                              app:maxValue="99"
+                              app:minValue="0"
+                              android:text="@={ladol.es1respline}"
+                              app:type="range" />
 
-                    </LinearLayout>
+                      </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                  </androidx.cardview.widget.CardView>-->
 
 
                 <!-- es1cons  Radio   -->

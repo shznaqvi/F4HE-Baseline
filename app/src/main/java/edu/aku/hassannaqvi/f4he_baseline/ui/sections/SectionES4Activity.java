@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListAll;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,7 +61,11 @@ public class SectionES4Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            if (adolListAll.size() > 0) {
+                startActivity(new Intent(this, SectionES1Activity.class));
+            } else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

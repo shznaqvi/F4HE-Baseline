@@ -214,13 +214,7 @@ public class LateAdolescent extends BaseObservable {
 
     public void LateAdolescent() {
 
-        setSysDate(MainApp.form.getSysDate());
-        setUserName(MainApp.form.getUserName());
-        setDeviceId(MainApp.form.getDeviceId());
-        setUuid(MainApp.form.getUid());
-        setAppver(MainApp.form.getAppver());
-        setpsuCode(MainApp.form.getPsuCode());
-        setHhid(MainApp.form.getHhid());
+
     }
 
     public void populateMeta() {

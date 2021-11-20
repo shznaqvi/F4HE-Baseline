@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListAll;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListFemale;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListMale;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.familyMember;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.mwra;
 
@@ -48,7 +51,8 @@ public class SectionBS1AActivity extends AppCompatActivity {
         mwra.setBs1resp(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getHl2());
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-
+        adolListAll.addAll(adolListFemale);
+        adolListAll.addAll(adolListMale);
     }
 
 

@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.models;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
@@ -443,7 +444,18 @@ public class MotherKAP extends BaseObservable implements Observable {
     public MotherKAP() {
     }
 
+    public void populateMeta() {
 
+        setSysDate(MainApp.form.getSysDate());
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        //   setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setAppver(MainApp.appInfo.getAppVersion());
+        setProjectName(PROJECT_NAME);
+        setpsuCode(MainApp.selectedPSU);
+        setHhid(MainApp.selectedHHID);
+
+    }
     public String getProjectName() {
         return projectName;
     }

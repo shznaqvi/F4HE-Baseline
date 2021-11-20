@@ -43,8 +43,10 @@ public class SectionCS1AActivity extends AppCompatActivity {
 //        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
-        bi.cs1q0101.setText(MainApp.child.getCs1q0101());
-        bi.cs1q0102.setText(MainApp.child.getCs1q0102());
+
+        // Mother's Name as Respondent
+        bi.cs1q0101.setText(MainApp.mwra.getBs1resp());
+        bi.cs1q0102.setText(MainApp.mwra.getBs1respline());
         //   child = new Child();
     }
 

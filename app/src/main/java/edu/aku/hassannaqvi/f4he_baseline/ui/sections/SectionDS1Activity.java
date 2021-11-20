@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.motherKAP;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +34,8 @@ public class SectionDS1Activity extends AppCompatActivity {
         bi.setMKap(MainApp.motherKAP);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        motherKAP.setDs1q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
+        motherKAP.setDs1q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
     }
 
 
