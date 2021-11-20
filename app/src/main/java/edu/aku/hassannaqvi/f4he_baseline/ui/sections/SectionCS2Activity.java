@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,7 +31,7 @@ public class SectionCS2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs2);
-        bi.setForm(form);
+        bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
     }

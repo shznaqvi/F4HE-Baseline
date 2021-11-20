@@ -22,9 +22,9 @@ import java.util.List;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMembersTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormBTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescentTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.MotherKAPTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.MwraTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.PregnancyTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
@@ -35,9 +35,9 @@ import edu.aku.hassannaqvi.f4he_baseline.models.Child;
 import edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
-import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
 import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.f4he_baseline.models.MWRA;
+import edu.aku.hassannaqvi.f4he_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 import edu.aku.hassannaqvi.f4he_baseline.models.VersionApp;
@@ -72,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_ECDINFO);
 
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
-        db.execSQL(CreateTable.SQL_CREATE_FORMB);
+        db.execSQL(CreateTable.SQL_CREATE_MOTHER_KAP);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
     }
@@ -139,9 +139,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MwraTable.COLUMN_SB5, mwra.sB5toString());
         values.put(MwraTable.COLUMN_SB6, mwra.sB6toString());
         values.put(MwraTable.COLUMN_SB7, mwra.sB7toString());
-        values.put(MwraTable.COLUMN_SD1, mwra.sD1toString());
-        values.put(MwraTable.COLUMN_SD2, mwra.sD2toString());
-        values.put(MwraTable.COLUMN_SD3, mwra.sD3toString());
         values.put(MwraTable.COLUMN_ISTATUS, mwra.getiStatus());
         values.put(MwraTable.COLUMN_DEVICETAGID, mwra.getDeviceTag());
         values.put(MwraTable.COLUMN_DEVICEID, mwra.getDeviceId());
@@ -163,16 +160,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_UID, child.getUid());
         values.put(ChildTable.COLUMN_UUID, child.getUuid());
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
-        values.put(TableContracts.ChildTable.COLUMN_USERNAME, child.getUserName());
+        values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
         values.put(ChildTable.COLUMN_SC1, child.sC1toString());
         values.put(ChildTable.COLUMN_SC2, child.sC2toString());
         values.put(ChildTable.COLUMN_SC31, child.sC31toString());
         values.put(ChildTable.COLUMN_SC32, child.sC32toString());
         values.put(ChildTable.COLUMN_SC4, child.sC4toString());
-        values.put(TableContracts.ChildTable.COLUMN_SC5, child.sC5toString());
+        values.put(ChildTable.COLUMN_SC5, child.sC5toString());
         values.put(ChildTable.COLUMN_ISTATUS, child.getiStatus());
-        values.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
+        values.put(ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
         values.put(ChildTable.COLUMN_DEVICEID, child.getDeviceId());
         values.put(ChildTable.COLUMN_APPVERSION, child.getAppver());
 
@@ -286,34 +283,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addFormB(FormB b) throws JSONException {
+    public Long addMotherKap(MotherKAP motherKAP) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(FormBTable.COLUMN_PROJECT_NAME, b.getProjectName());
-        values.put(FormBTable.COLUMN_UID, b.getUid());
-        values.put(FormBTable.COLUMN_UUID, b.getUuid());
-        values.put(FormBTable.COLUMN_PSU_CODE, b.getpsuCode());
-        values.put(FormBTable.COLUMN_HHID, b.getHhid());
-        values.put(FormBTable.COLUMN_SNO, b.getSno());
-        values.put(FormBTable.COLUMN_USERNAME, b.getUserName());
-        values.put(FormBTable.COLUMN_SYSDATE, b.getSysDate());
-        values.put(FormBTable.COLUMN_SB1, b.sB1toString());
-        values.put(FormBTable.COLUMN_SB2, b.sB2toString());
-        values.put(FormBTable.COLUMN_SB3, b.sB3toString());
-        values.put(FormBTable.COLUMN_SB41, b.sB41toString());
-        values.put(FormBTable.COLUMN_SB42, b.sB42toString());
-        values.put(FormBTable.COLUMN_SB5, b.sB5toString());
-        values.put(FormBTable.COLUMN_SB6, b.sB6toString());
-        values.put(FormBTable.COLUMN_SB7, b.sB7toString());
-        values.put(FormBTable.COLUMN_ISTATUS, b.getiStatus());
-        values.put(FormBTable.COLUMN_DEVICETAGID, b.getDeviceTag());
-        values.put(FormBTable.COLUMN_DEVICEID, b.getDeviceId());
-        values.put(FormBTable.COLUMN_APPVERSION, b.getAppver());
+        values.put(MotherKAPTable.COLUMN_PROJECT_NAME, motherKAP.getProjectName());
+        values.put(MotherKAPTable.COLUMN_UID, motherKAP.getUid());
+        values.put(MotherKAPTable.COLUMN_UUID, motherKAP.getUuid());
+        values.put(MotherKAPTable.COLUMN_PSU_CODE, motherKAP.getpsuCode());
+        values.put(MotherKAPTable.COLUMN_HHID, motherKAP.getHhid());
+        values.put(MotherKAPTable.COLUMN_SNO, motherKAP.getSno());
+        values.put(MotherKAPTable.COLUMN_USERNAME, motherKAP.getUserName());
+        values.put(MotherKAPTable.COLUMN_SYSDATE, motherKAP.getSysDate());
+        values.put(MotherKAPTable.COLUMN_SD1, motherKAP.sD1toString());
+        values.put(MotherKAPTable.COLUMN_SD2, motherKAP.sD2toString());
+        values.put(MotherKAPTable.COLUMN_SD3, motherKAP.sD3toString());
+        values.put(MotherKAPTable.COLUMN_ISTATUS, motherKAP.getiStatus());
+        values.put(MotherKAPTable.COLUMN_DEVICETAGID, motherKAP.getDeviceTag());
+        values.put(MotherKAPTable.COLUMN_DEVICEID, motherKAP.getDeviceId());
+        values.put(MotherKAPTable.COLUMN_APPVERSION, motherKAP.getAppver());
 
         long newRowId;
         newRowId = db.insert(
-                FormBTable.TABLE_NAME,
-                FormBTable.COLUMN_NAME_NULLABLE,
+                MotherKAPTable.TABLE_NAME,
+                MotherKAPTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -447,16 +439,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public int updatesFormBColumn(String column, String value) {
+    public int updatesMotherKAPColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = FormBTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.formB.getId())};
+        String selection = MotherKAPTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.motherKAP.getId())};
 
-        return db.update(FormBTable.TABLE_NAME,
+        return db.update(MotherKAPTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

@@ -16,9 +16,9 @@ import edu.aku.hassannaqvi.f4he_baseline.models.Child;
 import edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
-import edu.aku.hassannaqvi.f4he_baseline.models.FormB;
 import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.f4he_baseline.models.MWRA;
+import edu.aku.hassannaqvi.f4he_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.f4he_baseline.models.Users;
 
@@ -50,7 +50,7 @@ public class MainApp extends Application {
     public static Pregnancy pregnancy;
     public static Child child;
     public static ECDInfo ecdInfo;
-    public static FormB formB;
+    public static MotherKAP motherKAP;
     public static LateAdolescent ladol;
     public static FamilyMembers familyMember;
     public static int preg_count = 0;

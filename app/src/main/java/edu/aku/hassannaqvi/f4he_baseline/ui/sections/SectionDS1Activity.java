@@ -29,7 +29,7 @@ public class SectionDS1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ds1);
-        bi.setForm(MainApp.form);
+        bi.setMKap(MainApp.motherKAP);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
     }
@@ -40,7 +40,7 @@ public class SectionDS1Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SD1, MainApp.mwra.sD1toString());
+            updcount = db.updatesMotherKAPColumn(TableContracts.MotherKAPTable.COLUMN_SD1, MainApp.motherKAP.sD1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
