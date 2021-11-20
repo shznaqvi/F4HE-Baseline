@@ -6,8 +6,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
+            name="mKap"
+            type="edu.aku.hassannaqvi.f4he_baseline.models.MotherKAP" />
 
     </data>
 
@@ -117,8 +117,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q01.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q01(`1`)}"
+                                android:checked="@{mKap.ds3q01.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q01(`1`)}"
                                 android:text="@string/ds3q0101" />
 
                             <RadioButton
@@ -126,8 +126,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q01.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q01(`2`)}"
+                                android:checked="@{mKap.ds3q01.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q01(`2`)}"
                                 android:text="@string/ds3q0102" />
                         </RadioGroup>
                     </LinearLayout>
@@ -173,8 +173,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q02.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q02(`1`)}"
+                                android:checked="@{mKap.ds3q02.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q02(`1`)}"
                                 android:text="@string/ds3q0201" />
 
                             <RadioButton
@@ -182,8 +182,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q02.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q02(`2`)}"
+                                android:checked="@{mKap.ds3q02.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q02(`2`)}"
                                 android:text="@string/ds3q0202" />
                         </RadioGroup>
                     </LinearLayout>
@@ -247,8 +247,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03a.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q03a(`1`)}"
+                                android:checked="@{mKap.ds3q03a.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q03a(`1`)}"
                                 android:text="@string/ds3q03a01" />
 
                             <RadioButton
@@ -256,8 +256,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03a.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q03a(`2`)}"
+                                android:checked="@{mKap.ds3q03a.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q03a(`2`)}"
                                 android:text="@string/ds3q03a02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -303,8 +303,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03b.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q03b(`1`)}"
+                                android:checked="@{mKap.ds3q03b.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q03b(`1`)}"
                                 android:text="@string/ds3q03b01" />
 
                             <RadioButton
@@ -312,8 +312,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03b.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q03b(`2`)}"
+                                android:checked="@{mKap.ds3q03b.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q03b(`2`)}"
                                 android:text="@string/ds3q03b02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -359,8 +359,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03c.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q03c(`1`)}"
+                                android:checked="@{mKap.ds3q03c.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q03c(`1`)}"
                                 android:text="@string/ds3q03c01" />
 
                             <RadioButton
@@ -368,8 +368,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03c.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q03c(`2`)}"
+                                android:checked="@{mKap.ds3q03c.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q03c(`2`)}"
                                 android:text="@string/ds3q03c02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -415,8 +415,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03d.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q03d(`1`)}"
+                                android:checked="@{mKap.ds3q03d.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q03d(`1`)}"
                                 android:text="@string/ds3q03d01" />
 
                             <RadioButton
@@ -424,8 +424,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03d.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q03d(`2`)}"
+                                android:checked="@{mKap.ds3q03d.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q03d(`2`)}"
                                 android:text="@string/ds3q03d02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -471,8 +471,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03e.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q03e(`1`)}"
+                                android:checked="@{mKap.ds3q03e.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q03e(`1`)}"
                                 android:text="@string/ds3q03e01" />
 
                             <RadioButton
@@ -480,8 +480,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03e.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q03e(`2`)}"
+                                android:checked="@{mKap.ds3q03e.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q03e(`2`)}"
                                 android:text="@string/ds3q03e02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -527,8 +527,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03f.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q03f(`1`)}"
+                                android:checked="@{mKap.ds3q03f.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q03f(`1`)}"
                                 android:text="@string/ds3q03f01" />
 
                             <RadioButton
@@ -536,8 +536,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03f.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q03f(`2`)}"
+                                android:checked="@{mKap.ds3q03f.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q03f(`2`)}"
                                 android:text="@string/ds3q03f02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -583,8 +583,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03g.equals(`1`)}"
-                                android:onClick="@{()->form.setDs3q03g(`1`)}"
+                                android:checked="@{mKap.ds3q03g.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs3q03g(`1`)}"
                                 android:text="@string/ds3q03g01" />
 
                             <RadioButton
@@ -592,8 +592,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds3q03g.equals(`2`)}"
-                                android:onClick="@{()->form.setDs3q03g(`2`)}"
+                                android:checked="@{mKap.ds3q03g.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs3q03g(`2`)}"
                                 android:text="@string/ds3q03g02" />
                         </RadioGroup>
                     </LinearLayout>

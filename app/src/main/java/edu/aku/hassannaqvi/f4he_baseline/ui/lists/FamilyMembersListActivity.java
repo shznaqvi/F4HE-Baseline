@@ -163,6 +163,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.mwraList = new ArrayList<Integer>();
         MainApp.adolListFemale = new ArrayList<Integer>();
         MainApp.adolListMale = new ArrayList<Integer>();
+        MainApp.adolListAll = new ArrayList<>();
         MainApp.fatherList = new ArrayList<>();
         MainApp.motherList = new ArrayList<>();
         Log.d(TAG, "onCreate: familyList " + MainApp.familyList.size());

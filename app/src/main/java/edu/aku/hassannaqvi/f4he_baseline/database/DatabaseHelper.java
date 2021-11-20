@@ -251,8 +251,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         long newRowId;
         newRowId = db.insert(
-                PregnancyTable.TABLE_NAME,
-                PregnancyTable.COLUMN_NAME_NULLABLE,
+                TableContracts.ECDInfoTable.TABLE_NAME,
+                TableContracts.ECDInfoTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -1703,7 +1703,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = TableContracts.ECDInfoTable.COLUMN_UUID + "=? AND" +
+        whereClause = TableContracts.ECDInfoTable.COLUMN_UUID + "=? AND " +
                 TableContracts.ECDInfoTable.COLUMN_UUID + " = ?";
 
         String[] whereArgs = {MainApp.form.getUid(), ecdNo};

@@ -47,6 +47,8 @@ public class SectionCS1BActivity extends AppCompatActivity {
 //        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
         bi.setEcdInfo(MainApp.ecdInfo);
         setSupportActionBar(bi.toolbar);
+
+        child_count++;
     }
 
 
@@ -97,7 +99,6 @@ public class SectionCS1BActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             if (Integer.parseInt(MainApp.child.getCs1q02()) > child_count) {
-
                 startActivity(new Intent(this, SectionCS1BActivity.class).putExtra("ecdCount", child_count));
             } else {
                 startActivity(new Intent(this, SectionCS1CActivity.class));

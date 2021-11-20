@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ladol;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,7 +45,7 @@ public class SectionES3Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.LateAdolescentTable.COLUMN_SE3, MainApp.ladol.sE3toString());
+            updcount = db.updatesAdolColumn(TableContracts.LateAdolescentTable.COLUMN_SE3, ladol.sE3toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());

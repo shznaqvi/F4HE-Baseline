@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
+            name="mKap"
+            type="edu.aku.hassannaqvi.f4he_baseline.models.MotherKAP" />
 
     </data>
 
@@ -136,8 +136,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds2q01a.equals(`1`)}"
-                                android:onClick="@{()->form.setDs2q01a(`1`)}"
+                                android:checked="@{mKap.ds2q01a.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs2q01a(`1`)}"
                                 android:text="@string/ds2q01a01" />
 
                             <RadioButton
@@ -145,8 +145,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds2q01a.equals(`2`)}"
-                                android:onClick="@{()->form.setDs2q01a(`2`)}"
+                                android:checked="@{mKap.ds2q01a.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs2q01a(`2`)}"
                                 android:text="@string/ds2q01a02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -192,8 +192,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds2q01b.equals(`1`)}"
-                                android:onClick="@{()->form.setDs2q01b(`1`)}"
+                                android:checked="@{mKap.ds2q01b.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs2q01b(`1`)}"
                                 android:text="@string/ds2q01b01" />
 
                             <RadioButton
@@ -201,8 +201,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds2q01b.equals(`2`)}"
-                                android:onClick="@{()->form.setDs2q01b(`2`)}"
+                                android:checked="@{mKap.ds2q01b.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs2q01b(`2`)}"
                                 android:text="@string/ds2q01b02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -266,8 +266,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds2q01c.equals(`1`)}"
-                                android:onClick="@{()->form.setDs2q01c(`1`)}"
+                                android:checked="@{mKap.ds2q01c.equals(`1`)}"
+                                android:onClick="@{()->mKap.setDs2q01c(`1`)}"
                                 android:text="@string/ds2q01c01" />
 
                             <RadioButton
@@ -275,8 +275,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ds2q01c.equals(`2`)}"
-                                android:onClick="@{()->form.setDs2q01c(`2`)}"
+                                android:checked="@{mKap.ds2q01c.equals(`2`)}"
+                                android:onClick="@{()->mKap.setDs2q01c(`2`)}"
                                 android:text="@string/ds2q01c02" />
                         </RadioGroup>
                     </LinearLayout>

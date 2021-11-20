@@ -90,8 +90,10 @@
                                 android:text="@string/cs1q0101" />
 
                             <EditText
+                                android:enabled="false"
                                 android:id="@+id/cs1q0101"
                                 android:layout_width="match_parent"
+                                android:gravity="center"
                                 android:layout_height="match_parent"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                                 android:hint="@string/cs1q0101"
@@ -132,6 +134,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:hint="##"
+                                android:enabled="false"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={child.cs1q0102}"

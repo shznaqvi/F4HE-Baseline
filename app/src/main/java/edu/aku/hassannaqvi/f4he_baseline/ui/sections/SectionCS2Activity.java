@@ -31,11 +31,13 @@ public class SectionCS2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs2);
+
+        child.setCs2q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
+        child.setCs2q02(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
+
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        child.setCs2q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
-        child.setCs2q02(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
     }
 
 

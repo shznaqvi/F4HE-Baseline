@@ -383,7 +383,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl7(String hl7) {
         this.hl7 = hl7;
-        setHl7(hl7.equals("") ? "99" : this.hl7);
+//        setHl7(hl7.equals("") ? "99" : this.hl7);
         notifyPropertyChanged(BR.hl7);
     }
 

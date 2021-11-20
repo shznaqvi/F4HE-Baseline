@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ladol;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.motherKAP;
 
 import android.content.Intent;
@@ -20,6 +21,8 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionDs1Binding;
+import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
+import edu.aku.hassannaqvi.f4he_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionDS1Activity extends AppCompatActivity {
@@ -31,13 +34,39 @@ public class SectionDS1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ds1);
+
+        motherKAP = new MotherKAP();
+        ladol = new LateAdolescent();
+
+        motherKAP.setDs1q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
+        motherKAP.setDs1q02(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
         bi.setMKap(MainApp.motherKAP);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        motherKAP.setDs1q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
-        motherKAP.setDs1q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
     }
 
+
+    private boolean insertNewRecord() {
+        if (!motherKAP.getUid().equals("")) return true;
+        motherKAP.populateMeta();
+        long rowId = 0;
+        try {
+            rowId = db.addMotherKap(motherKAP);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        motherKAP.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            motherKAP.setUid(motherKAP.getDeviceId() + motherKAP.getId());
+            db.updatesAdolColumn(TableContracts.LateAdolescentTable.COLUMN_UID, motherKAP.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 
 
     private boolean updateDB() {
@@ -60,6 +89,7 @@ public class SectionDS1Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionDS2Activity.class));

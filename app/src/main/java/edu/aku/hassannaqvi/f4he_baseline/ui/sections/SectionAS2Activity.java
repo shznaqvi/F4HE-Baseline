@@ -3,9 +3,7 @@ package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.familyMember;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,7 +19,6 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
@@ -116,6 +113,8 @@ public class SectionAS2Activity extends AppCompatActivity {
 
 
     }
+
+
     private boolean insertNewRecord() {
         if (!familyMember.getUid().equals("")) return true;
         MainApp.familyMember.populateMeta();
@@ -158,6 +157,12 @@ public class SectionAS2Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         // saveDraft();
+
+        //TODO: fix it in future
+        if (Integer.parseInt(bi.hl6y.getText().toString().trim()) < 13) {
+            familyMember.setHl7("99");
+        }
+
         if (updateDB()) {
             setResult(RESULT_OK);
             finish();
@@ -165,8 +170,6 @@ public class SectionAS2Activity extends AppCompatActivity {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
-
-
 
 
 

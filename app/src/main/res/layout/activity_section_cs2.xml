@@ -96,6 +96,8 @@
                         </LinearLayout>
 
                         <EditText
+                            android:enabled="false"
+                            android:gravity="center"
                             android:id="@+id/cs2q01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -136,6 +138,15 @@
                                 android:text="@string/cs2q02" />
 
                         </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/cs2q02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:gravity="center"
+                            android:hint="@string/cs2q02"
+                            android:text="@={child.cs2q02}" />
 
                     </LinearLayout>
 
