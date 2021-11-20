@@ -144,6 +144,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cs3bq02t1" />
@@ -152,25 +153,11 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-                <!-- cs3bq02t2  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcs3bq02t2"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cs3bq02t2" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                <TextView
+                    style="@style/sub_labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cs3bq02t2" />
 
 
                 <!-- cs3bq02a  Radio   -->
@@ -379,45 +366,11 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-                <!-- cs3bq03t1  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcs3bq03t1"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cs3bq03t1" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- cs3bq03t2  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcs3bq03t2"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cs3bq03t2" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cs3bq03t1" />
 
 
                 <!-- cs3bq03  Radio   -->
@@ -697,7 +650,7 @@
                             android:id="@+id/cs3bq04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:onCheckedChanged="@{()->cs3bq05.clearCheck() + cs3bq06.clearCheck() + cs3bq07.clearCheck() + cs3bq08.clearCheck() + cs3bq09.clearCheck() + cs3bq10.clearCheck() + cs3bq11.clearCheck() + cs3bq12.clearCheck() + cs3bq13.clearCheck() + cs3bq14.clearCheck() + cs3bq15.clearCheck() + cs3bq16.clearCheck()}"
+                            android:onCheckedChanged="@{()->cs3bq06.clearCheck() + cs3bq07.clearCheck() + cs3bq08.clearCheck() + cs3bq09.clearCheck() + cs3bq10.clearCheck() + cs3bq11.clearCheck() + cs3bq12.clearCheck() + cs3bq13.clearCheck() + cs3bq14.clearCheck() + cs3bq15.clearCheck() + cs3bq16.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -733,7 +686,7 @@
 
 
                     <!-- cs3bq05  Radio   -->
-                    <androidx.cardview.widget.CardView
+                    <!--<androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVcs3bq05"
                         style="@style/cardView">
 
@@ -789,67 +742,25 @@
 
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>-->
 
+                    <TextView
+                        style="@style/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cs3bq05t1" />
 
-                    <!-- cs3bq05t1  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs3bq05t1"
-                        style="@style/cardView">
+                    <TextView
+                        style="@style/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cs3bq05t2" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cs3bq05t1" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <!-- cs3bq05t2  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs3bq05t2"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cs3bq05t2" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <!-- cs3bq05t3  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs3bq05t3"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cs3bq05t3" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        style="@style/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cs3bq05t3" />
 
 
                     <!-- cs3bq05a  CheckBox   -->

@@ -4,6 +4,7 @@ import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.pregnancy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,12 +13,15 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.f4he_baseline.R;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1bBinding;
 import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
+import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionBS1BActivity extends AppCompatActivity {
 
@@ -48,7 +52,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
 
 
     private boolean insertNewRecord() {
-        /*if (!pregnancy.getUid().equals("")) return true;
+        if (!pregnancy.getUid().equals("")) return true;
         long rowId = 0;
         try {
             rowId = db.addPregnancy(pregnancy);
@@ -65,12 +69,11 @@ public class SectionBS1BActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
 
     private boolean updateDB() {
-        /*db = MainApp.appInfo.getDbHelper();
+        db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
             updcount = db.updatesPregnancyColumn(TableContracts.Pregnancy_Table.COLUMN_SB1, pregnancy.sB1toString());
@@ -83,8 +86,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
 
     public void btnContinue(View view) {
@@ -119,8 +121,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 

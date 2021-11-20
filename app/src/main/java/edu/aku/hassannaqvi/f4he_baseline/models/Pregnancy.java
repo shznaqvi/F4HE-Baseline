@@ -889,17 +889,17 @@ public class Pregnancy extends BaseObservable implements Observable {
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
-        json.put(TableContracts.FormsTable.COLUMN_ID, this.id);
-        json.put(TableContracts.FormsTable.COLUMN_UID, this.uid);
-        json.put(TableContracts.FormsTable.COLUMN_PSU_CODE, this.psuCode);
-        json.put(TableContracts.FormsTable.COLUMN_HHID, this.hhid);
-        json.put(TableContracts.FormsTable.COLUMN_SNO, this.sno);
-        json.put(TableContracts.FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(TableContracts.FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(TableContracts.FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(TableContracts.FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(TableContracts.FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(TableContracts.FormsTable.COLUMN_SB1, new JSONObject(sB1toString()));
+        json.put(TableContracts.Pregnancy_Table.COLUMN_ID, this.id);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_UID, this.uid);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_PSU_CODE, this.psuCode);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_HHID, this.hhid);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_SNO, this.sno);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_USERNAME, this.userName);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_SYSDATE, this.sysDate);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_DEVICEID, this.deviceId);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_ISTATUS, this.iStatus);
+        json.put(TableContracts.Pregnancy_Table.COLUMN_SB1, new JSONObject(sB1toString()));
         return json;
     }
 
@@ -907,9 +907,9 @@ public class Pregnancy extends BaseObservable implements Observable {
     public Pregnancy Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_UID));
-        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_PSU_CODE));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_HHID));
-        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SNO));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_DEVICEID));

@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
+            name="ladol"
+            type="edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent" />
 
     </data>
 
@@ -100,8 +100,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q1.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q1(`1`)}"
+                                android:checked="@{ladol.es2q1.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q1(`1`)}"
                                 android:text="@string/es2q101" />
 
                             <RadioButton
@@ -109,8 +109,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q1.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q1(`2`)}"
+                                android:checked="@{ladol.es2q1.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q1(`2`)}"
                                 android:text="@string/es2q102" />
                         </RadioGroup>
                     </LinearLayout>
@@ -156,8 +156,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q2.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q2(`1`)}"
+                                android:checked="@{ladol.es2q2.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q2(`1`)}"
                                 android:text="@string/es2q201" />
 
                             <RadioButton
@@ -165,8 +165,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q2.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q2(`2`)}"
+                                android:checked="@{ladol.es2q2.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q2(`2`)}"
                                 android:text="@string/es2q202" />
                         </RadioGroup>
                     </LinearLayout>
@@ -212,8 +212,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q3.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q3(`1`)}"
+                                android:checked="@{ladol.es2q3.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q3(`1`)}"
                                 android:text="@string/es2q301" />
 
                             <RadioButton
@@ -221,8 +221,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q3.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q3(`2`)}"
+                                android:checked="@{ladol.es2q3.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q3(`2`)}"
                                 android:text="@string/es2q302" />
                         </RadioGroup>
                     </LinearLayout>
@@ -268,8 +268,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q4.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q4(`1`)}"
+                                android:checked="@{ladol.es2q4.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q4(`1`)}"
                                 android:text="@string/es2q401" />
 
                             <RadioButton
@@ -277,8 +277,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q4.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q4(`2`)}"
+                                android:checked="@{ladol.es2q4.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q4(`2`)}"
                                 android:text="@string/es2q402" />
                         </RadioGroup>
                     </LinearLayout>
@@ -324,8 +324,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q5.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q5(`1`)}"
+                                android:checked="@{ladol.es2q5.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q5(`1`)}"
                                 android:text="@string/es2q501" />
 
                             <RadioButton
@@ -333,8 +333,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q5.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q5(`2`)}"
+                                android:checked="@{ladol.es2q5.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q5(`2`)}"
                                 android:text="@string/es2q502" />
                         </RadioGroup>
                     </LinearLayout>
@@ -380,8 +380,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q6.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q6(`1`)}"
+                                android:checked="@{ladol.es2q6.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q6(`1`)}"
                                 android:text="@string/es2q601" />
 
                             <RadioButton
@@ -389,8 +389,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q6.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q6(`2`)}"
+                                android:checked="@{ladol.es2q6.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q6(`2`)}"
                                 android:text="@string/es2q602" />
                         </RadioGroup>
                     </LinearLayout>
@@ -436,8 +436,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q7.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q7(`1`)}"
+                                android:checked="@{ladol.es2q7.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q7(`1`)}"
                                 android:text="@string/es2q701" />
 
                             <RadioButton
@@ -445,8 +445,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q7.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q7(`2`)}"
+                                android:checked="@{ladol.es2q7.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q7(`2`)}"
                                 android:text="@string/es2q702" />
                         </RadioGroup>
                     </LinearLayout>
@@ -456,7 +456,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes2q8"
                     style="@style/cardView"
-                    android:visibility="@{form.es2q7.equals(`1`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{ladol.es2q7.equals(`1`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -487,7 +487,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/es2q8"
-                            android:text="@={form.es2q8}" />
+                            android:text="@={ladol.es2q8}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -529,40 +529,40 @@
                                 android:id="@+id/es2q901"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q9.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q9(`1`)}"
+                                android:checked="@{ladol.es2q9.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q9(`1`)}"
                                 android:text="@string/es2q901" />
 
                             <RadioButton
                                 android:id="@+id/es2q902"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q9.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q9(`2`)}"
+                                android:checked="@{ladol.es2q9.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q9(`2`)}"
                                 android:text="@string/es2q902" />
 
                             <RadioButton
                                 android:id="@+id/es2q903"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q9.equals(`3`)}"
-                                android:onClick="@{()->form.setEs2q9(`3`)}"
+                                android:checked="@{ladol.es2q9.equals(`3`)}"
+                                android:onClick="@{()->ladol.setEs2q9(`3`)}"
                                 android:text="@string/es2q903" />
 
                             <RadioButton
                                 android:id="@+id/es2q904"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q9.equals(`4`)}"
-                                android:onClick="@{()->form.setEs2q9(`4`)}"
+                                android:checked="@{ladol.es2q9.equals(`4`)}"
+                                android:onClick="@{()->ladol.setEs2q9(`4`)}"
                                 android:text="@string/es2q904" />
 
                             <RadioButton
                                 android:id="@+id/es2q905"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q9.equals(`5`)}"
-                                android:onClick="@{()->form.setEs2q9(`5`)}"
+                                android:checked="@{ladol.es2q9.equals(`5`)}"
+                                android:onClick="@{()->ladol.setEs2q9(`5`)}"
                                 android:text="@string/es2q905" />
                         </RadioGroup>
                     </LinearLayout>
@@ -606,32 +606,32 @@
                                 android:id="@+id/es2q1001"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q10.equals(`1`)}"
-                                android:onClick="@{()->form.setEs2q10(`1`)}"
+                                android:checked="@{ladol.es2q10.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs2q10(`1`)}"
                                 android:text="@string/es2q1001" />
 
                             <RadioButton
                                 android:id="@+id/es2q1002"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q10.equals(`2`)}"
-                                android:onClick="@{()->form.setEs2q10(`2`)}"
+                                android:checked="@{ladol.es2q10.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs2q10(`2`)}"
                                 android:text="@string/es2q1002" />
 
                             <RadioButton
                                 android:id="@+id/es2q1003"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q10.equals(`3`)}"
-                                android:onClick="@{()->form.setEs2q10(`3`)}"
+                                android:checked="@{ladol.es2q10.equals(`3`)}"
+                                android:onClick="@{()->ladol.setEs2q10(`3`)}"
                                 android:text="@string/es2q1003" />
 
                             <RadioButton
                                 android:id="@+id/es2q196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.es2q10.equals(`96`)}"
-                                android:onClick="@{()->form.setEs2q10(`96`)}"
+                                android:checked="@{ladol.es2q10.equals(`96`)}"
+                                android:onClick="@{()->ladol.setEs2q10(`96`)}"
                                 android:text="@string/es2q196" />
 
                             <EditText
@@ -641,8 +641,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/es2q196"
                                 android:tag="es2q196"
-                                android:text="@={form.es2q196x}"
-                                android:visibility="@{form.es2q10.equals(`96`)? View.VISIBLE : View.GONE}" />
+                                android:text="@={ladol.es2q196x}"
+                                android:visibility="@{ladol.es2q10.equals(`96`)? View.VISIBLE : View.GONE}" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

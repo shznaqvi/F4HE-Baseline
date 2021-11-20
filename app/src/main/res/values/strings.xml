@@ -225,7 +225,9 @@
     <string name="as1q1037"> Farsi </string>
     <string name="as1q1038"> Hazargi </string>
     <string name="as1q1039"> English </string>
-    <string name="as1q1040"> English </string>
+    <string name="as1q1040"> Russian </string>
+    <string name="as1q1041"> Kyrgyz </string>
+    <string name="as1q1042"> Uzbek </string>
     <string name="as1q11"> Questionnaire Number </string>
     <string name="as1q12"> Interviewer ID </string>
     <string name="as1q13"> Supervisor ID </string>
@@ -1206,11 +1208,11 @@ For example, some start talking earlier than others, or they might already say s
     <string name="cs3bq0398"> Don’t Know </string>
     <string name="cs3bq0397">None</string>
     <string name="cs3bq03a">[A] Left alone for more than an hour?</string>
-    <string name="cs3bq03ad">Number Of Days Left Alone For More Than An Hour</string>
+    <string name="cs3bq03ad">Number Of Days</string>
     <string name="cs3bq03a97">None</string>
     <string name="cs3bq03a98"> Don’t Know </string>
     <string name="cs3bq03b">[B] Left in the care of another child, that is,  someone less than 10 years old, for more  than an hour?</string>
-    <string name="cs3bq03bd">Number Of Days Left With Another Child For More Than An Hour</string>
+    <string name="cs3bq03bd">Number Of Days</string>
     <string name="cs3bq03b97">None</string>
     <string name="cs3bq03b98"> Don’t Know </string>
     <string name="cs3bq04">Child’s age?</string>
@@ -1436,7 +1438,7 @@ For example, some start talking earlier than others, or they might already say s
     <string name="ds1q01">Name of the selected child?</string>
     <string name="ds1q02">Line number of the selected child</string>
     <string name="ds1inst">Instructions : I would like to know about your child’s gestures and responsivesness towards your caring attitude. </string>
-    <string name="ds1q03">Ask the parent to have the selected child with them. Then observe does she/he:</string>
+    <string name="ds1q03">Ask the parent to have the selected child with her</string>
     <string name="ds1q03a">i. Make eye contact with the child</string>
     <string name="ds1q03a01">Yes</string>
     <string name="ds1q03a02">No</string>

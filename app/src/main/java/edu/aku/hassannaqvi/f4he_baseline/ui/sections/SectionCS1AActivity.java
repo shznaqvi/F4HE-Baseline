@@ -16,12 +16,13 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.f4he_baseline.MainActivity;
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionCs1ABinding;
+import edu.aku.hassannaqvi.f4he_baseline.models.Child;
+import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 
 public class SectionCS1AActivity extends AppCompatActivity {
@@ -36,15 +37,14 @@ public class SectionCS1AActivity extends AppCompatActivity {
         bi.setForm(form);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        setupSkips();
+        child = new Child();
     }
 
 
-    private void setupSkips() {
-    }
+
 
     private boolean insertNewRecord() {
-        /*if (!child.getUid().equals("")) return true;
+        if (!child.getUid().equals("")) return true;
         child.populateMeta();
 
         long rowId = 0;
@@ -63,14 +63,12 @@ public class SectionCS1AActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
 
     private boolean updateDB() {
-        /*db = MainApp.appInfo.getDbHelper();
+        db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
             updcount = db.updatesChildColumn(TableContracts.Child_Table.COLUMN_SC1, child.sC1toString());
@@ -83,16 +81,13 @@ public class SectionCS1AActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
 
@@ -108,14 +103,9 @@ public class SectionCS1AActivity extends AppCompatActivity {
     }
 
 
-    private void saveDraft() {
-    }
-
-
     public void btnEnd(View view) {
         finish();
-        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 

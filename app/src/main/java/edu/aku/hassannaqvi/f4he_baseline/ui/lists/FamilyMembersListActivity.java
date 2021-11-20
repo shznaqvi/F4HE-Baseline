@@ -355,26 +355,30 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             Toast.makeText(this, "Adolescent female not selected", Toast.LENGTH_SHORT).show();
             return;
         }
-        // Updating database to mark indexed mother
-        MainApp.selectedMWRA = String.valueOf(motherSno.get(bi.mwraList.getSelectedItemPosition()));
-        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
-        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
+
+        if (MainApp.idType == 2) {
+            // Updating database to mark indexed mother
+            MainApp.selectedMWRA = String.valueOf(motherSno.get(bi.mwraList.getSelectedItemPosition()));
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
 
 
-        // Updating database to mark selected Child
-        MainApp.selectedChild = String.valueOf(childSno.get(bi.childList.getSelectedItemPosition()));
-        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
-        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
+            // Updating database to mark selected Child
+            MainApp.selectedChild = String.valueOf(childSno.get(bi.childList.getSelectedItemPosition()));
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 
-        // Updating database to mark selected adolmale
-        MainApp.selectedAdolMale = String.valueOf(adolMaleSno.get(bi.adolMaleList.getSelectedItemPosition()));
-        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale));
-        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
+            // Updating database to mark selected adolmale
+            MainApp.selectedAdolMale = String.valueOf(adolMaleSno.get(bi.adolMaleList.getSelectedItemPosition()));
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
 
-        // Updating database to mark selected adolFemale
-        MainApp.selectedAdolFemale = String.valueOf(adolFemaleSno.get(bi.adolFemaleList.getSelectedItemPosition()));
-        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale));
-        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
+            // Updating database to mark selected adolFemale
+            MainApp.selectedAdolFemale = String.valueOf(adolFemaleSno.get(bi.adolFemaleList.getSelectedItemPosition()));
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
+
+        }
 
         try {
             MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid());

@@ -98,14 +98,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SA1, form.sA1toString());
-        values.put(FormsTable.COLUMN_SB1, form.sB1toString());
-        values.put(FormsTable.COLUMN_SB2, form.sB2toString());
-        values.put(FormsTable.COLUMN_SB3, form.sB3toString());
-        values.put(FormsTable.COLUMN_SB41, form.sB41toString());
-        values.put(FormsTable.COLUMN_SB42, form.sB42toString());
-        values.put(FormsTable.COLUMN_SB5, form.sB5toString());
-        values.put(FormsTable.COLUMN_SB6, form.sB6toString());
-        values.put(FormsTable.COLUMN_SB7, form.sB7toString());
         values.put(FormsTable.COLUMN_SC1, form.sC1toString());
         values.put(FormsTable.COLUMN_SC2, form.sC2toString());
         values.put(FormsTable.COLUMN_SC31, form.sC31toString());
@@ -115,10 +107,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SD1, form.sD1toString());
         values.put(FormsTable.COLUMN_SD2, form.sD2toString());
         values.put(FormsTable.COLUMN_SD3, form.sD3toString());
-        values.put(FormsTable.COLUMN_SE1, form.sE1toString());
-        values.put(FormsTable.COLUMN_SE2, form.sE2toString());
-        values.put(FormsTable.COLUMN_SE3, form.sE3toString());
-        values.put(FormsTable.COLUMN_SE4, form.sE4toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
@@ -198,11 +186,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addAdolescent(LateAdolescent adol) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(TableContracts.LateAdolescent_Table.COLUMN_PROJECT_NAME, adol.getProjectName());
-        values.put(TableContracts.LateAdolescent_Table.COLUMN_UID, adol.getUid());
-        values.put(TableContracts.LateAdolescent_Table.COLUMN_UUID, adol.getUuid());
-        values.put(TableContracts.LateAdolescent_Table.COLUMN_HHID, adol.getHhid());
-        values.put(TableContracts.LateAdolescent_Table.COLUMN_USERNAME, adol.getUserName());
+        values.put(LateAdolescent_Table.COLUMN_PROJECT_NAME, adol.getProjectName());
+        values.put(LateAdolescent_Table.COLUMN_UID, adol.getUid());
+        values.put(LateAdolescent_Table.COLUMN_UUID, adol.getUuid());
+        values.put(LateAdolescent_Table.COLUMN_HHID, adol.getHhid());
+        values.put(LateAdolescent_Table.COLUMN_USERNAME, adol.getUserName());
         values.put(LateAdolescent_Table.COLUMN_SYSDATE, adol.getSysDate());
         values.put(LateAdolescent_Table.COLUMN_SE1, adol.sE1toString());
         values.put(LateAdolescent_Table.COLUMN_SE2, adol.sE2toString());
@@ -228,6 +216,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TableContracts.Pregnancy_Table.COLUMN_UID, preg.getUid());
         values.put(TableContracts.Pregnancy_Table.COLUMN_UUID, preg.getUuid());
         values.put(TableContracts.Pregnancy_Table.COLUMN_HHID, preg.getHhid());
+        values.put(Pregnancy_Table.COLUMN_PSU_CODE, preg.getpsuCode());
+        values.put(Pregnancy_Table.COLUMN_SNO, preg.getSno());
         values.put(TableContracts.Pregnancy_Table.COLUMN_USERNAME, preg.getUserName());
         values.put(Pregnancy_Table.COLUMN_SYSDATE, preg.getSysDate());
         values.put(Pregnancy_Table.COLUMN_SB1, preg.sB1toString());
@@ -438,6 +428,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
+    public int updatesAdolColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = LateAdolescent_Table._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.ladol.getId())};
+
+        return db.update(LateAdolescent_Table.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
 
 
     public int updatesFormBColumn(String column, String value) {

@@ -47,10 +47,17 @@
                 android:orientation="vertical">
 
 
-                <!-- as1q11  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q11"
-                    style="@style/cardView">
+                <LinearLayout
+                    android:id="@+id/Grp1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <!-- as1q11  Input-Numeric   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVas1q11"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -87,13 +94,13 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q12  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q12"
-                    style="@style/cardView">
+                    <!-- as1q12  Input-Numeric   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVas1q12"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -130,13 +137,13 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q13  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q13"
-                    style="@style/cardView">
+                    <!-- as1q13  Input-Numeric   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVas1q13"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -173,13 +180,13 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q14  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q14"
-                    style="@style/cardView">
+                    <!-- as1q14  Input-Numeric   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVas1q14"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -216,7 +223,9 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
 
                 <!-- as1q15  Title   -->
@@ -291,8 +300,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.as1q15d}"
-                                app:maxValue="50"
-                                app:minValue="0"
+                                app:maxValue="31"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -305,8 +314,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.as1q15m}"
-                                app:maxValue="50"
-                                app:minValue="0"
+                                app:maxValue="12"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -315,7 +324,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="##"
+                                android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
                                 android:text="@={form.as1q15y}"
@@ -395,7 +404,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.as1q16h}"
-                                app:maxValue="50"
+                                app:maxValue="23"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -409,7 +418,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.as1q16m}"
-                                app:maxValue="50"
+                                app:maxValue="59"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -485,7 +494,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.as1q17h}"
-                                app:maxValue="50"
+                                app:maxValue="23"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -499,7 +508,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.as1q17m}"
-                                app:maxValue="50"
+                                app:maxValue="59"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -548,10 +557,17 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q19  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q19"
-                    style="@style/cardView">
+                <LinearLayout
+                    android:id="@+id/Grp2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <!-- as1q19  Input   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVas1q19"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -583,13 +599,13 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q20  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q20"
-                    style="@style/cardView">
+                    <!-- as1q20  Input   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVas1q20"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -621,13 +637,13 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q21  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q21"
-                    style="@style/cardView">
+                    <!-- as1q21  Input-Numeric   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVas1q21"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -664,13 +680,13 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                <!-- as1q22  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q22"
-                    style="@style/cardView">
+                    <!-- as1q22  Input   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVas1q22"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -702,7 +718,9 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
 
 

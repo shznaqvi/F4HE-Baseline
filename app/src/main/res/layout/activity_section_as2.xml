@@ -188,6 +188,7 @@
                                 android:id="@+id/hl301"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{familymember.hl1.equals(`1`)}"
                                 android:checked="@{familymember.hl3.equals(`1`)}"
                                 android:onClick="@{()->familymember.setHl3(`1`)}"
                                 android:text="@string/hl301" />
@@ -579,6 +580,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:enabled="@{familymember.hl5y.equals(`9998`)}"
                                 android:text="@={familymember.hl6y}"
                                 app:maxValue="95"
                                 app:minValue="0"
@@ -593,6 +595,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:enabled="@{familymember.hl5y.equals(`9998`)}"
                                 android:text="@={familymember.hl6m}"
                                 app:maxValue="11"
                                 app:minValue="0"
@@ -677,6 +680,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.hl7.equals(`5`)}"
+                                android:enabled="@{!familymember.hl3.equals(`2`)}"
                                 android:onClick="@{()->familymember.setHl7(`5`)}"
                                 android:text="@string/hl705" />
 
@@ -1070,6 +1074,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.hl12.equals(`9`)}"
+                                android:enabled="@{familymember.hl4.equals(`2`)}"
                                 android:onClick="@{()->familymember.setHl12(`9`)}"
                                 android:text="@string/hl1209" />
 
