@@ -647,6 +647,7 @@
                                 android:id="@+id/hl701"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl6y.equals(``)?(Integer.parseInt(familymember.hl6y)>=13):true}"
                                 android:checked="@{familymember.hl7.equals(`1`)}"
                                 android:onClick="@{()->familymember.setHl7(`1`)}"
                                 android:text="@string/hl701" />
@@ -655,7 +656,8 @@
                                 android:id="@+id/hl702"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{familymember.hl7.equals(`2`)}"
+                                android:enabled="@{!familymember.hl6y.equals(``)?(Integer.parseInt(familymember.hl6y)>=13):true}"
+                            android:checked="@{familymember.hl7.equals(`2`)}"
                                 android:onClick="@{()->familymember.setHl7(`2`)}"
                                 android:text="@string/hl702" />
 
@@ -663,6 +665,7 @@
                                 android:id="@+id/hl703"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl6y.equals(``)?(Integer.parseInt(familymember.hl6y)>=13):true}"
                                 android:checked="@{familymember.hl7.equals(`3`)}"
                                 android:onClick="@{()->familymember.setHl7(`3`)}"
                                 android:text="@string/hl703" />
@@ -671,6 +674,7 @@
                                 android:id="@+id/hl704"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl6y.equals(``)?(Integer.parseInt(familymember.hl6y)>=13):true}"
                                 android:checked="@{familymember.hl7.equals(`4`)}"
                                 android:onClick="@{()->familymember.setHl7(`4`)}"
                                 android:text="@string/hl704" />
@@ -679,8 +683,8 @@
                                 android:id="@+id/hl705"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl6y.equals(``)?(Integer.parseInt(familymember.hl6y)>=13):true}"
                                 android:checked="@{familymember.hl7.equals(`5`)}"
-                                android:enabled="@{!familymember.hl3.equals(`2`)}"
                                 android:onClick="@{()->familymember.setHl7(`5`)}"
                                 android:text="@string/hl705" />
 
@@ -688,6 +692,7 @@
                                 android:id="@+id/hl7099"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.hl6y.equals(``)?(Integer.parseInt(familymember.hl6y)&lt;13):true}"
                                 android:checked="@{familymember.hl7.equals(`99`)}"
                                 android:onClick="@{()->familymember.setHl7(`99`)}"
                                 android:text="@string/hl7099" />
