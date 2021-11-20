@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.lists;
 
+import static android.view.View.VISIBLE;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -284,6 +286,20 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         super.onResume();
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
+        // Family Complete criteria: MWRA must exist
+        if (MainApp.mwraList.size() > 0) {
+            bi.familyComplete.setVisibility(VISIBLE);
+
+        } else {
+            bi.familyComplete.setVisibility(View.GONE);
+
+        }
+
+        // Disable family complete check if MWRA indexed
+        if (!MainApp.selectedMWRA.equals("")) {
+            bi.familyComplete.setChecked(true);
+            bi.familyComplete.setEnabled(false);
+        }
         //MainApp.familyMember = new MWRA();
         //MainApp.child = new Child();
 /*        if (MainApp.mwraList.size() > 0 && MainApp.selectedMWRA.equals("")) {
@@ -335,16 +351,16 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
+        if (MainApp.idType == 2) {
+            if (MainApp.mwraList.size() > 0 && bi.mwraList.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Mother not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-        if (MainApp.mwraList.size() > 0 && bi.mwraList.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "Mother not selected", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (MainApp.childOfSelectedMWRAList.size() > 0 && bi.childList.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "Child not selected", Toast.LENGTH_SHORT).show();
-            return;
-        }
+            if (MainApp.childOfSelectedMWRAList.size() > 0 && bi.childList.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Child not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
         if (MainApp.adolListMale.size() > 0 && bi.adolMaleList.getSelectedItemPosition() == 0) {
             Toast.makeText(this, "Adolescent male not selected", Toast.LENGTH_SHORT).show();
@@ -356,7 +372,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             return;
         }
 
-        if (MainApp.idType == 2) {
+
             // Updating database to mark indexed mother
             MainApp.selectedMWRA = String.valueOf(motherSno.get(bi.mwraList.getSelectedItemPosition()));
             MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
@@ -387,7 +403,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             Toast.makeText(this, "JSONException(FamilyMembers): " + e.getMessage(), Toast.LENGTH_LONG).show();
 
         }
-        //MainApp.familyList = new ArrayList<>();
         finish();
         startActivity(new Intent(this, MainApp.selectedMWRA.equals("") ? EndingActivity.class : SectionBS1AActivity.class).putExtra("complete", true));
 
@@ -574,14 +589,14 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 showSelect();
             }
         } else {
-            bi.btnRand.setVisibility(View.VISIBLE);
+            bi.btnRand.setVisibility(VISIBLE);
         }
         /*       }*/
     }
 
     private void showSelect() {
 
-        bi.selectionLists.setVisibility(View.VISIBLE);
+        bi.selectionLists.setVisibility(VISIBLE);
 
         // Populate Mothers List
         if (MainApp.mwraList.size() > 0) {
@@ -732,7 +747,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     public void finalizeFamily(View view) {
         if (MainApp.mwraList.size() > 0 && MainApp.selectedMWRA.equals("")) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedMWRA))).setStatus("1");
-            bi.btnRand.setVisibility(View.VISIBLE);
+            bi.btnRand.setVisibility(VISIBLE);
             // bi.btnContinue.setVisibility(View.INVISIBLE);
             bi.btnContinue.setEnabled(false);
             bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_gray));

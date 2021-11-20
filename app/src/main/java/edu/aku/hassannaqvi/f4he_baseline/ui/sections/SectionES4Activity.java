@@ -40,7 +40,7 @@ public class SectionES4Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.LateAdolescent_Table.COLUMN_SE4, MainApp.ladol.sE4toString());
+            updcount = db.updatesFormColumn(TableContracts.LateAdolescentTable.COLUMN_SE4, MainApp.ladol.sE4toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());

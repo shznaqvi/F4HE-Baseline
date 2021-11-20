@@ -42,7 +42,7 @@ public class SectionCS4Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesChildColumn(TableContracts.Child_Table.COLUMN_SC4, child.sC4toString());
+            updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_SC4, child.sC4toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());

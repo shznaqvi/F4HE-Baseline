@@ -20,7 +20,6 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1bBinding;
-import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionBS1BActivity extends AppCompatActivity {
@@ -32,13 +31,24 @@ public class SectionBS1BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        MainApp.preg_count = getIntent().getExtras().getInt("count");
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1b);
-        if (pregnancy == null) pregnancy = new Pregnancy();
+        db = MainApp.appInfo.getDbHelper();
+        MainApp.preg_count++;
+        try {
+            MainApp.pregnancy = db.getPregByUUid(String.valueOf(MainApp.preg_count++));
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(Pregnancy): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+        // DB returning pregnancy object thus not required
+        // if (pregnancy == null) MainApp.pregnancy = new Pregnancy();
         bi.setPreg(MainApp.pregnancy);
+        bi.sno.setText("Pregnancy: " + MainApp.preg_count + " of " + MainApp.mwra.getBs1q6());
+        pregnancy.setSno(String.valueOf(MainApp.preg_count));
+        pregnancy.setMsno(MainApp.mwra.getBs1q1());
         setSupportActionBar(bi.toolbar);
-        db = MainApp.appInfo.dbHelper;
         setupSkips();
     }
 
@@ -50,9 +60,9 @@ public class SectionBS1BActivity extends AppCompatActivity {
     }
 
 
-
     private boolean insertNewRecord() {
         if (!pregnancy.getUid().equals("")) return true;
+        MainApp.pregnancy.populateMeta();
         long rowId = 0;
         try {
             rowId = db.addPregnancy(pregnancy);
@@ -64,7 +74,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
         pregnancy.setId(String.valueOf(rowId));
         if (rowId > 0) {
             pregnancy.setUid(pregnancy.getDeviceId() + pregnancy.getId());
-            db.updatesPregnancyColumn(TableContracts.Pregnancy_Table.COLUMN_UID, pregnancy.getUid());
+            db.updatesPregnancyColumn(TableContracts.PregnancyTable.COLUMN_UID, pregnancy.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -76,7 +86,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesPregnancyColumn(TableContracts.Pregnancy_Table.COLUMN_SB1, pregnancy.sB1toString());
+            updcount = db.updatesPregnancyColumn(TableContracts.PregnancyTable.COLUMN_SB1, pregnancy.sB1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -91,19 +101,16 @@ public class SectionBS1BActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        //updateMemCategory();
         if (!insertNewRecord()) return;
-        // saveDraft();
         if (updateDB()) {
             finish();
-            MainApp.preg_count --;
-            if (MainApp.preg_count > 0) {
+            if (Integer.parseInt(MainApp.mwra.getBs1q6()) > MainApp.preg_count) {
 
-                pregnancy.setBs1q7p1g(null);
+              /*  pregnancy.setBs1q7p1g(null);
                 pregnancy.setBs1q7p1d(null);
                 pregnancy.setBs1q7p1d96x(null);
-                pregnancy.setBs1q7p1b(null);
-                startActivity(new Intent(this, SectionBS1BActivity.class).putExtra("count", MainApp.preg_count));
+                pregnancy.setBs1q7p1b(null);*/
+                startActivity(new Intent(this, SectionBS1BActivity.class));
             } else {
                 startActivity(new Intent(this, SectionBS1CActivity.class));
             }
@@ -114,9 +121,6 @@ public class SectionBS1BActivity extends AppCompatActivity {
         }
     }
 
-
-    private void saveDraft() {
-    }
 
 
     public void btnEnd(View view) {

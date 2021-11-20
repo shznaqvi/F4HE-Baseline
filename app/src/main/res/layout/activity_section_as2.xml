@@ -179,7 +179,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/hl3t" />
@@ -539,7 +539,7 @@
                         </LinearLayout>
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/hl6info" />

@@ -14,10 +14,6 @@ import androidx.databinding.PropertyChangeRegistry;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.f4he_baseline.BR;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
@@ -62,18 +58,12 @@ public class ECDInfo extends BaseObservable implements Observable {
 
     public void ECD() {
 
-        setSysDate(MainApp.form.getSysDate());
-        setUserName(MainApp.form.getUserName());
-        setDeviceId(MainApp.form.getDeviceId());
-        setUuid(MainApp.form.getUid());
-        setAppver(MainApp.form.getAppver());
-        setpsuCode(MainApp.form.getPsuCode());
-        setHhid(MainApp.form.getHhid());
+
     }
 
     public void populateMeta() {
 
-        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setSysDate(MainApp.form.getSysDate());
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
@@ -303,20 +293,20 @@ public class ECDInfo extends BaseObservable implements Observable {
 
 
     public ECDInfo Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_UID));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_HHID));
-        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_SNO));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_UID));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_HHID));
+        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_SNO));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_SYNCED_DATE));
 
-        ecdInfoHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfo_Table.COLUMN_ECDINFO)));
+        ecdInfoHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_ECDINFO)));
 
         return this;
     }
@@ -353,17 +343,17 @@ public class ECDInfo extends BaseObservable implements Observable {
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
-        json.put(TableContracts.ECDInfo_Table.COLUMN_ID, this.id);
-        json.put(TableContracts.ECDInfo_Table.COLUMN_UID, this.uid);
-        json.put(TableContracts.ECDInfo_Table.COLUMN_UUID, this.uuid);
-        json.put(TableContracts.ECDInfo_Table.COLUMN_HHID, this.hhid);
+        json.put(TableContracts.ECDInfoTable.COLUMN_ID, this.id);
+        json.put(TableContracts.ECDInfoTable.COLUMN_UID, this.uid);
+        json.put(TableContracts.ECDInfoTable.COLUMN_UUID, this.uuid);
+        json.put(TableContracts.ECDInfoTable.COLUMN_HHID, this.hhid);
 
-        json.put(TableContracts.ECDInfo_Table.COLUMN_USERNAME, this.userName);
-        json.put(TableContracts.ECDInfo_Table.COLUMN_SYSDATE, this.sysDate);
-        json.put(TableContracts.ECDInfo_Table.COLUMN_DEVICEID, this.deviceId);
-        json.put(TableContracts.ECDInfo_Table.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(TableContracts.ECDInfo_Table.COLUMN_ISTATUS, this.iStatus);
-        json.put(TableContracts.ECDInfo_Table.COLUMN_ECDINFO, new JSONObject(ecdInfotoString()));
+        json.put(TableContracts.ECDInfoTable.COLUMN_USERNAME, this.userName);
+        json.put(TableContracts.ECDInfoTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(TableContracts.ECDInfoTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(TableContracts.ECDInfoTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(TableContracts.ECDInfoTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(TableContracts.ECDInfoTable.COLUMN_ECDINFO, new JSONObject(ecdInfotoString()));
 
         return json;
     }

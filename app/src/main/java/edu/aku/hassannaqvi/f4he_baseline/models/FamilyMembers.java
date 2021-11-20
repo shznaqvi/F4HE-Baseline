@@ -5,7 +5,6 @@ import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
@@ -80,7 +79,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private boolean mwra;
     private long ageInMonths;
     private String indexed = _EMPTY_;
-    private String memCate;
+    private String memCate = _EMPTY_;
 
     public FamilyMembers() {
 
@@ -384,6 +383,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl7(String hl7) {
         this.hl7 = hl7;
+        setHl7(hl7.equals("") ? "99" : this.hl7);
         notifyPropertyChanged(BR.hl7);
     }
 

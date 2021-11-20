@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
+            name="child"
+            type="edu.aku.hassannaqvi.f4he_baseline.models.Child" />
 
     </data>
 
@@ -133,48 +133,48 @@
                                 android:id="@+id/cs1q801"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q8.equals(`1`)}"
-                                android:onClick="@{()->form.setCs1q8(`1`)}"
+                                android:checked="@{child.cs1q8.equals(`1`)}"
+                                android:onClick="@{()->child.setCs1q8(`1`)}"
                                 android:text="@string/cs1q801" />
 
                             <RadioButton
                                 android:id="@+id/cs1q802"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q8.equals(`2`)}"
-                                android:onClick="@{()->form.setCs1q8(`2`)}"
+                                android:checked="@{child.cs1q8.equals(`2`)}"
+                                android:onClick="@{()->child.setCs1q8(`2`)}"
                                 android:text="@string/cs1q802" />
 
                             <RadioButton
                                 android:id="@+id/cs1q803"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q8.equals(`3`)}"
-                                android:onClick="@{()->form.setCs1q8(`3`)}"
+                                android:checked="@{child.cs1q8.equals(`3`)}"
+                                android:onClick="@{()->child.setCs1q8(`3`)}"
                                 android:text="@string/cs1q803" />
 
                             <RadioButton
                                 android:id="@+id/cs1q804"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q8.equals(`4`)}"
-                                android:onClick="@{()->form.setCs1q8(`4`)}"
+                                android:checked="@{child.cs1q8.equals(`4`)}"
+                                android:onClick="@{()->child.setCs1q8(`4`)}"
                                 android:text="@string/cs1q804" />
 
                             <RadioButton
                                 android:id="@+id/cs1q805"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q8.equals(`5`)}"
-                                android:onClick="@{()->form.setCs1q8(`5`)}"
+                                android:checked="@{child.cs1q8.equals(`5`)}"
+                                android:onClick="@{()->child.setCs1q8(`5`)}"
                                 android:text="@string/cs1q805" />
 
                             <RadioButton
                                 android:id="@+id/cs1q8096"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q8.equals(`96`)}"
-                                android:onClick="@{()->form.setCs1q8(`96`)}"
+                                android:checked="@{child.cs1q8.equals(`96`)}"
+                                android:onClick="@{()->child.setCs1q8(`96`)}"
                                 android:text="@string/cs1q8096" />
 
                             <EditText
@@ -184,8 +184,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs1q8096"
                                 android:tag="cs1q8096"
-                                android:text="@={form.cs1q8096x}"
-                                android:visibility="@{form.cs1q8.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={child.cs1q8096x}"
+                                android:visibility="@{child.cs1q8.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 
@@ -232,48 +232,48 @@
                                 android:id="@+id/cs1q901"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q9.equals(`1`)}"
-                                android:onClick="@{()->form.setCs1q9(`1`)}"
+                                android:checked="@{child.cs1q9.equals(`1`)}"
+                                android:onClick="@{()->child.setCs1q9(`1`)}"
                                 android:text="@string/cs1q901" />
 
                             <RadioButton
                                 android:id="@+id/cs1q902"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q9.equals(`2`)}"
-                                android:onClick="@{()->form.setCs1q9(`2`)}"
+                                android:checked="@{child.cs1q9.equals(`2`)}"
+                                android:onClick="@{()->child.setCs1q9(`2`)}"
                                 android:text="@string/cs1q902" />
 
                             <RadioButton
                                 android:id="@+id/cs1q903"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q9.equals(`3`)}"
-                                android:onClick="@{()->form.setCs1q9(`3`)}"
+                                android:checked="@{child.cs1q9.equals(`3`)}"
+                                android:onClick="@{()->child.setCs1q9(`3`)}"
                                 android:text="@string/cs1q903" />
 
                             <RadioButton
                                 android:id="@+id/cs1q904"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q9.equals(`4`)}"
-                                android:onClick="@{()->form.setCs1q9(`4`)}"
+                                android:checked="@{child.cs1q9.equals(`4`)}"
+                                android:onClick="@{()->child.setCs1q9(`4`)}"
                                 android:text="@string/cs1q904" />
 
                             <RadioButton
                                 android:id="@+id/cs1q905"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q9.equals(`5`)}"
-                                android:onClick="@{()->form.setCs1q9(`5`)}"
+                                android:checked="@{child.cs1q9.equals(`5`)}"
+                                android:onClick="@{()->child.setCs1q9(`5`)}"
                                 android:text="@string/cs1q905" />
 
                             <RadioButton
                                 android:id="@+id/cs1q9096"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q9.equals(`96`)}"
-                                android:onClick="@{()->form.setCs1q9(`96`)}"
+                                android:checked="@{child.cs1q9.equals(`96`)}"
+                                android:onClick="@{()->child.setCs1q9(`96`)}"
                                 android:text="@string/cs1q9096" />
 
                             <EditText
@@ -283,8 +283,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs1q9096"
                                 android:tag="cs1q9096"
-                                android:text="@={form.cs1q9096x}"
-                                android:visibility="@{form.cs1q9.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={child.cs1q9096x}"
+                                android:visibility="@{child.cs1q9.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 
@@ -333,8 +333,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.cs1q10.equals(`1`)}"
-                                android:onClick="@{()->form.setCs1q10(`1`)}"
+                                android:checked="@{child.cs1q10.equals(`1`)}"
+                                android:onClick="@{()->child.setCs1q10(`1`)}"
                                 android:text="@string/cs1q1001" />
 
                             <RadioButton
@@ -342,8 +342,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.cs1q10.equals(`2`)}"
-                                android:onClick="@{()->form.setCs1q10(`2`)}"
+                                android:checked="@{child.cs1q10.equals(`2`)}"
+                                android:onClick="@{()->child.setCs1q10(`2`)}"
                                 android:text="@string/cs1q1002" />
 
                         </RadioGroup>
@@ -357,7 +357,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs1q11"
                     style="@style/cardView"
-                    android:visibility="@{form.cs1q10.equals(`2`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{child.cs1q10.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -392,48 +392,48 @@
                                 android:id="@+id/cs1q1101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q11.equals(`1`)}"
-                                android:onClick="@{()->form.setCs1q11(`1`)}"
+                                android:checked="@{child.cs1q11.equals(`1`)}"
+                                android:onClick="@{()->child.setCs1q11(`1`)}"
                                 android:text="@string/cs1q1101" />
 
                             <RadioButton
                                 android:id="@+id/cs1q1102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q11.equals(`2`)}"
-                                android:onClick="@{()->form.setCs1q11(`2`)}"
+                                android:checked="@{child.cs1q11.equals(`2`)}"
+                                android:onClick="@{()->child.setCs1q11(`2`)}"
                                 android:text="@string/cs1q1102" />
 
                             <RadioButton
                                 android:id="@+id/cs1q1103"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q11.equals(`3`)}"
-                                android:onClick="@{()->form.setCs1q11(`3`)}"
+                                android:checked="@{child.cs1q11.equals(`3`)}"
+                                android:onClick="@{()->child.setCs1q11(`3`)}"
                                 android:text="@string/cs1q1103" />
 
                             <RadioButton
                                 android:id="@+id/cs1q1104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q11.equals(`4`)}"
-                                android:onClick="@{()->form.setCs1q11(`4`)}"
+                                android:checked="@{child.cs1q11.equals(`4`)}"
+                                android:onClick="@{()->child.setCs1q11(`4`)}"
                                 android:text="@string/cs1q1104" />
 
                             <RadioButton
                                 android:id="@+id/cs1q1105"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q11.equals(`5`)}"
-                                android:onClick="@{()->form.setCs1q11(`5`)}"
+                                android:checked="@{child.cs1q11.equals(`5`)}"
+                                android:onClick="@{()->child.setCs1q11(`5`)}"
                                 android:text="@string/cs1q1105" />
 
                             <RadioButton
                                 android:id="@+id/cs1q11096"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cs1q11.equals(`96`)}"
-                                android:onClick="@{()->form.setCs1q11(`96`)}"
+                                android:checked="@{child.cs1q11.equals(`96`)}"
+                                android:onClick="@{()->child.setCs1q11(`96`)}"
                                 android:text="@string/cs1q11096" />
 
                             <EditText
@@ -443,8 +443,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs1q11096"
                                 android:tag="cs1q11096"
-                                android:text="@={form.cs1q11096x}"
-                                android:visibility="@{form.cs1q11.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={child.cs1q11096x}"
+                                android:visibility="@{child.cs1q11.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 

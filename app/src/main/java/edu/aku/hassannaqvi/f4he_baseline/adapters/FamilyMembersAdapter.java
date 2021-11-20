@@ -63,19 +63,30 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         fName.setText(members.getHl2());
         fAge.setText(members.getHl6y() + "y ");
 
+
+    /*      <string name="hl701"> Married </string>
+            <string name="hl702"> Widowed </string>
+            <string name="hl703"> Divorced </string>
+            <string name="hl704"> Separated </string>
+            <string name="hl705"> Un-Married </string>
+            <string name="hl7099"> Not Applicable (for Age less 13 years old) </string>*/
         String marStatus = "";
         switch (members.getHl7()) {
             case "1":
                 marStatus = "Married";
                 break;
             case "2":
-                marStatus = "Unmarried";
-                break;
-            case "3":
                 marStatus = "Widowed";
                 break;
+            case "3":
+                marStatus = "Divorced";
+                break;
             case "4":
-                marStatus = "Divorced/Separated";
+                marStatus = "Separated";
+                break;
+            case "5":
+            case "99":
+                marStatus = "Un-Married";
                 break;
             default:
                 marStatus = "Value Unknown";
@@ -85,15 +96,16 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         fMaritalStatus.setText(marStatus);
 
 
-        cloaked.setVisibility(members.isMwra() ? View.GONE : View.VISIBLE);
+        cloaked.setVisibility(!members.getMemCate().equals("") ? View.GONE : View.VISIBLE);
         mainIcon.setImageResource((members.getHl4().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl));
-        // MainApp.selectedMWRA = members.getIndexed().equals("1") || members.getIndexed().equals("2") ? "-" : "";
+        //MainApp.selectedMWRA = members.getIndexed().equals("1") || members.getIndexed().equals("2") ? "-" : "";
         mainIcon.setBackgroundColor(members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getHl4().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink));
         //  mainIcon.setBackgroundColor(  ((ColorDrawable) mainIcon.getBackground()).getColor());
         if (!MainApp.selectedMWRA.equals("")) {
-            cloaked.setVisibility(members.getIndexed().equals("1") ? View.GONE : View.VISIBLE);
+            cloaked.setVisibility(members.getIndexed().equals("") ? View.VISIBLE : View.GONE);
+            indexedBar.setVisibility(members.getIndexed().equals("") ? View.GONE : View.VISIBLE);
         }
-        indexedBar.setVisibility(members.getIndexed().equals("") ? View.GONE : View.VISIBLE);
+
         //fMaritalStatus.setText("Children: " + familyMember.getH226m() + " boy(s), " + familyMember.getH226f() + " girl(s)");
       /*  viewHolder.itemView.setOnClickListener(v -> {
             // Get the current state of the item

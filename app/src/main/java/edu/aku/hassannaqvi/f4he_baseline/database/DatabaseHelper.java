@@ -20,13 +20,13 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.Child_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormBTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescent_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescentTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.MwraTable;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.Pregnancy_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.PregnancyTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VillagesTable;
@@ -111,6 +111,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(FormsTable.COLUMN_SYNCED, form.getSynced());
+        values.put(FormsTable.COLUMN_SYNCED_DATE, form.getSyncDate());
 
         long newRowId;
         newRowId = db.insert(
@@ -157,27 +159,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addChild(Child child) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(TableContracts.Child_Table.COLUMN_PROJECT_NAME, child.getProjectName());
-        values.put(TableContracts.Child_Table.COLUMN_UID, child.getUid());
-        values.put(TableContracts.Child_Table.COLUMN_UUID, child.getUuid());
-        values.put(TableContracts.Child_Table.COLUMN_HHID, child.getHhid());
-        values.put(TableContracts.Child_Table.COLUMN_USERNAME, child.getUserName());
-        values.put(Child_Table.COLUMN_SYSDATE, child.getSysDate());
-        values.put(Child_Table.COLUMN_SC1, child.sC1toString());
-        values.put(Child_Table.COLUMN_SC2, child.sC2toString());
-        values.put(Child_Table.COLUMN_SC31, child.sC31toString());
-        values.put(Child_Table.COLUMN_SC32, child.sC32toString());
-        values.put(Child_Table.COLUMN_SC4, child.sC4toString());
-        values.put(Child_Table.COLUMN_SC5, child.sC5toString());
-        values.put(Child_Table.COLUMN_ISTATUS, child.getiStatus());
-        values.put(Child_Table.COLUMN_DEVICETAGID, child.getDeviceTag());
-        values.put(Child_Table.COLUMN_DEVICEID, child.getDeviceId());
-        values.put(Child_Table.COLUMN_APPVERSION, child.getAppver());
+        values.put(ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
+        values.put(ChildTable.COLUMN_UID, child.getUid());
+        values.put(ChildTable.COLUMN_UUID, child.getUuid());
+        values.put(ChildTable.COLUMN_HHID, child.getHhid());
+        values.put(TableContracts.ChildTable.COLUMN_USERNAME, child.getUserName());
+        values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
+        values.put(ChildTable.COLUMN_SC1, child.sC1toString());
+        values.put(ChildTable.COLUMN_SC2, child.sC2toString());
+        values.put(ChildTable.COLUMN_SC31, child.sC31toString());
+        values.put(ChildTable.COLUMN_SC32, child.sC32toString());
+        values.put(ChildTable.COLUMN_SC4, child.sC4toString());
+        values.put(TableContracts.ChildTable.COLUMN_SC5, child.sC5toString());
+        values.put(ChildTable.COLUMN_ISTATUS, child.getiStatus());
+        values.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
+        values.put(ChildTable.COLUMN_DEVICEID, child.getDeviceId());
+        values.put(ChildTable.COLUMN_APPVERSION, child.getAppver());
 
         long newRowId;
         newRowId = db.insert(
-                Child_Table.TABLE_NAME,
-                Child_Table.COLUMN_NAME_NULLABLE,
+                ChildTable.TABLE_NAME,
+                TableContracts.ChildTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -186,25 +188,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addAdolescent(LateAdolescent adol) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(LateAdolescent_Table.COLUMN_PROJECT_NAME, adol.getProjectName());
-        values.put(LateAdolescent_Table.COLUMN_UID, adol.getUid());
-        values.put(LateAdolescent_Table.COLUMN_UUID, adol.getUuid());
-        values.put(LateAdolescent_Table.COLUMN_HHID, adol.getHhid());
-        values.put(LateAdolescent_Table.COLUMN_USERNAME, adol.getUserName());
-        values.put(LateAdolescent_Table.COLUMN_SYSDATE, adol.getSysDate());
-        values.put(LateAdolescent_Table.COLUMN_SE1, adol.sE1toString());
-        values.put(LateAdolescent_Table.COLUMN_SE2, adol.sE2toString());
-        values.put(LateAdolescent_Table.COLUMN_SE3, adol.sE3toString());
-        values.put(LateAdolescent_Table.COLUMN_SE4, adol.sE4toString());
-        values.put(LateAdolescent_Table.COLUMN_ISTATUS, adol.getiStatus());
-        values.put(LateAdolescent_Table.COLUMN_DEVICETAGID, adol.getDeviceTag());
-        values.put(LateAdolescent_Table.COLUMN_DEVICEID, adol.getDeviceId());
-        values.put(LateAdolescent_Table.COLUMN_APPVERSION, adol.getAppver());
+        values.put(LateAdolescentTable.COLUMN_PROJECT_NAME, adol.getProjectName());
+        values.put(LateAdolescentTable.COLUMN_UID, adol.getUid());
+        values.put(LateAdolescentTable.COLUMN_UUID, adol.getUuid());
+        values.put(TableContracts.LateAdolescentTable.COLUMN_HHID, adol.getHhid());
+        values.put(LateAdolescentTable.COLUMN_USERNAME, adol.getUserName());
+        values.put(LateAdolescentTable.COLUMN_SYSDATE, adol.getSysDate());
+        values.put(LateAdolescentTable.COLUMN_SE1, adol.sE1toString());
+        values.put(LateAdolescentTable.COLUMN_SE2, adol.sE2toString());
+        values.put(LateAdolescentTable.COLUMN_SE3, adol.sE3toString());
+        values.put(LateAdolescentTable.COLUMN_SE4, adol.sE4toString());
+        values.put(LateAdolescentTable.COLUMN_ISTATUS, adol.getiStatus());
+        values.put(LateAdolescentTable.COLUMN_DEVICETAGID, adol.getDeviceTag());
+        values.put(TableContracts.LateAdolescentTable.COLUMN_DEVICEID, adol.getDeviceId());
+        values.put(LateAdolescentTable.COLUMN_APPVERSION, adol.getAppver());
 
         long newRowId;
         newRowId = db.insert(
-                LateAdolescent_Table.TABLE_NAME,
-                LateAdolescent_Table.COLUMN_NAME_NULLABLE,
+                TableContracts.LateAdolescentTable.TABLE_NAME,
+                TableContracts.LateAdolescentTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -212,24 +214,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addPregnancy(Pregnancy preg) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(TableContracts.Pregnancy_Table.COLUMN_PROJECT_NAME, preg.getProjectName());
-        values.put(TableContracts.Pregnancy_Table.COLUMN_UID, preg.getUid());
-        values.put(TableContracts.Pregnancy_Table.COLUMN_UUID, preg.getUuid());
-        values.put(TableContracts.Pregnancy_Table.COLUMN_HHID, preg.getHhid());
-        values.put(Pregnancy_Table.COLUMN_PSU_CODE, preg.getpsuCode());
-        values.put(Pregnancy_Table.COLUMN_SNO, preg.getSno());
-        values.put(TableContracts.Pregnancy_Table.COLUMN_USERNAME, preg.getUserName());
-        values.put(Pregnancy_Table.COLUMN_SYSDATE, preg.getSysDate());
-        values.put(Pregnancy_Table.COLUMN_SB1, preg.sB1toString());
-        values.put(Pregnancy_Table.COLUMN_ISTATUS, preg.getiStatus());
-        values.put(Pregnancy_Table.COLUMN_DEVICETAGID, preg.getDeviceTag());
-        values.put(Pregnancy_Table.COLUMN_DEVICEID, preg.getDeviceId());
-        values.put(Pregnancy_Table.COLUMN_APPVERSION, preg.getAppver());
+        values.put(PregnancyTable.COLUMN_PROJECT_NAME, preg.getProjectName());
+        values.put(PregnancyTable.COLUMN_UID, preg.getUid());
+        values.put(PregnancyTable.COLUMN_UUID, preg.getUuid());
+        values.put(PregnancyTable.COLUMN_MUID, preg.getMuid());
+        values.put(PregnancyTable.COLUMN_HHID, preg.getHhid());
+        values.put(PregnancyTable.COLUMN_PSU_CODE, preg.getpsuCode());
+        values.put(PregnancyTable.COLUMN_SNO, preg.getSno());
+        values.put(PregnancyTable.COLUMN_USERNAME, preg.getUserName());
+        values.put(PregnancyTable.COLUMN_SYSDATE, preg.getSysDate());
+        values.put(PregnancyTable.COLUMN_SB1, preg.sB1toString());
+        values.put(PregnancyTable.COLUMN_ISTATUS, preg.getiStatus());
+        values.put(PregnancyTable.COLUMN_DEVICETAGID, preg.getDeviceTag());
+        values.put(PregnancyTable.COLUMN_DEVICEID, preg.getDeviceId());
+        values.put(PregnancyTable.COLUMN_APPVERSION, preg.getAppver());
 
         long newRowId;
         newRowId = db.insert(
-                Pregnancy_Table.TABLE_NAME,
-                Pregnancy_Table.COLUMN_NAME_NULLABLE,
+                PregnancyTable.TABLE_NAME,
+                PregnancyTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -237,22 +240,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addEcdInfo(ECDInfo ecd) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(TableContracts.ECDInfo_Table.COLUMN_PROJECT_NAME, ecd.getProjectName());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_UID, ecd.getUid());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_UUID, ecd.getUuid());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_HHID, ecd.getHhid());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_USERNAME, ecd.getUserName());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_SYSDATE, ecd.getSysDate());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_ECDINFO, ecd.ecdInfotoString());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_ISTATUS, ecd.getiStatus());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_DEVICETAGID, ecd.getDeviceTag());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_DEVICEID, ecd.getDeviceId());
-        values.put(TableContracts.ECDInfo_Table.COLUMN_APPVERSION, ecd.getAppver());
+        values.put(TableContracts.ECDInfoTable.COLUMN_PROJECT_NAME, ecd.getProjectName());
+        values.put(TableContracts.ECDInfoTable.COLUMN_UID, ecd.getUid());
+        values.put(TableContracts.ECDInfoTable.COLUMN_UUID, ecd.getUuid());
+        values.put(TableContracts.ECDInfoTable.COLUMN_HHID, ecd.getHhid());
+        values.put(TableContracts.ECDInfoTable.COLUMN_USERNAME, ecd.getUserName());
+        values.put(TableContracts.ECDInfoTable.COLUMN_SYSDATE, ecd.getSysDate());
+        values.put(TableContracts.ECDInfoTable.COLUMN_ECDINFO, ecd.ecdInfotoString());
+        values.put(TableContracts.ECDInfoTable.COLUMN_ISTATUS, ecd.getiStatus());
+        values.put(TableContracts.ECDInfoTable.COLUMN_DEVICETAGID, ecd.getDeviceTag());
+        values.put(TableContracts.ECDInfoTable.COLUMN_DEVICEID, ecd.getDeviceId());
+        values.put(TableContracts.ECDInfoTable.COLUMN_APPVERSION, ecd.getAppver());
 
         long newRowId;
         newRowId = db.insert(
-                Pregnancy_Table.TABLE_NAME,
-                Pregnancy_Table.COLUMN_NAME_NULLABLE,
+                PregnancyTable.TABLE_NAME,
+                PregnancyTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -373,10 +376,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = Child_Table._ID + " =? ";
+        String selection = ChildTable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.child.getId())};
 
-        return db.update(Child_Table.TABLE_NAME,
+        return db.update(ChildTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -389,10 +392,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = TableContracts.ECDInfo_Table._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.ecd.getId())};
+        String selection = TableContracts.ECDInfoTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.ecdInfo.getId())};
 
-        return db.update(TableContracts.ECDInfo_Table.TABLE_NAME,
+        return db.update(TableContracts.ECDInfoTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -404,10 +407,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = Pregnancy_Table._ID + " =? ";
+        String selection = PregnancyTable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.pregnancy.getId())};
 
-        return db.update(Pregnancy_Table.TABLE_NAME,
+        return db.update(PregnancyTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -434,10 +437,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = LateAdolescent_Table._ID + " =? ";
+        String selection = TableContracts.LateAdolescentTable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.ladol.getId())};
 
-        return db.update(LateAdolescent_Table.TABLE_NAME,
+        return db.update(LateAdolescentTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -1595,4 +1598,146 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public MWRA getMwraByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = MwraTable.COLUMN_UUID + "=? ";
+
+        String[] whereArgs = {MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = MwraTable.COLUMN_ID + " ASC";
+
+        MWRA mwra = null;
+
+        c = db.query(
+                MwraTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            mwra = new MWRA().Hydrate(c);
+        }
+
+        db.close();
+
+        return mwra;
+    }
+
+    public Pregnancy getPregByUUid(String pno) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = PregnancyTable.COLUMN_MUID + "=? AND " +
+                PregnancyTable.COLUMN_UUID + "=? ";
+
+        String[] whereArgs = {MainApp.mwra.getUid(), MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = PregnancyTable.COLUMN_ID + " ASC";
+
+        Pregnancy pregnancy = new Pregnancy();  // Pregnancies can never be null.
+
+        c = db.query(
+                PregnancyTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            pregnancy = new Pregnancy().Hydrate(c);
+        }
+
+        db.close();
+
+        return pregnancy;
+    }
+
+    public Child getChildByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildTable.COLUMN_UUID + "=? ";
+
+        String[] whereArgs = {MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildTable.COLUMN_ID + " ASC";
+
+        Child child = new Child();  // Pregnancies can never be null.
+
+        c = db.query(
+                ChildTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            child = new Child().Hydrate(c);
+        }
+
+        db.close();
+
+        return child;
+    }
+
+    public ECDInfo getECDataByUUid(String ecdNo) throws JSONException {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = TableContracts.ECDInfoTable.COLUMN_UUID + "=? AND" +
+                TableContracts.ECDInfoTable.COLUMN_UUID + " = ?";
+
+        String[] whereArgs = {MainApp.form.getUid(), ecdNo};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = TableContracts.ECDInfoTable.COLUMN_ID + " ASC";
+
+        ECDInfo ecdInfo = new ECDInfo();  // Pregnancies can never be null.
+
+        c = db.query(
+                TableContracts.ECDInfoTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }
+
+        db.close();
+
+        return ecdInfo;
+    }
 }

@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.f4he_baseline.models.Form" />
+            name="ecdInfo"
+            type="edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo" />
 
     </data>
 
@@ -80,7 +80,7 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={form.cs1q02c1}"
+                            android:text="@={ecdInfo.cs1q02c1}"
                             app:maxValue="99"
                             app:minValue="0"
                             app:type="range" />
@@ -120,7 +120,7 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/cs1q02c1n"
                             android:maxLength="20"
-                            android:text="@={form.cs1q02c1n}" />
+                            android:text="@={ecdInfo.cs1q02c1n}" />
 
                     </LinearLayout>
 
@@ -167,8 +167,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.cs1q02c1ecd.equals(`1`)}"
-                                android:onClick="@{()->form.setCs1q02c1ecd(`1`)}"
+                                android:checked="@{ecdInfo.cs1q02c1ecd.equals(`1`)}"
+                                android:onClick="@{()->ecdInfo.setCs1q02c1ecd(`1`)}"
                                 android:text="@string/cs1q02c101" />
 
                             <RadioButton
@@ -176,8 +176,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.cs1q02c1ecd.equals(`2`)}"
-                                android:onClick="@{()->form.setCs1q02c1ecd(`2`)}"
+                                android:checked="@{ecdInfo.cs1q02c1ecd.equals(`2`)}"
+                                android:onClick="@{()->ecdInfo.setCs1q02c1ecd(`2`)}"
                                 android:text="@string/cs1q02c102" />
 
                             <RadioButton
@@ -185,8 +185,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.cs1q02c1ecd.equals(`3`)}"
-                                android:onClick="@{()->form.setCs1q02c1ecd(`3`)}"
+                                android:checked="@{ecdInfo.cs1q02c1ecd.equals(`3`)}"
+                                android:onClick="@{()->ecdInfo.setCs1q02c1ecd(`3`)}"
                                 android:text="@string/cs1q02c103" />
 
                         </RadioGroup>
@@ -230,7 +230,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/cs1q02c1cent"
-                            android:text="@={form.cs1q02c1cent}" />
+                            android:text="@={ecdInfo.cs1q02c1cent}" />
 
                     </LinearLayout>
 

@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.models;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
@@ -26,12 +27,14 @@ public class Pregnancy extends BaseObservable implements Observable {
     // APP VARIABLES
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
-    private String Uuid = _EMPTY_;
+    private String uuid = _EMPTY_;
+    private String muid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
+    private String msno = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
@@ -116,7 +119,11 @@ public class Pregnancy extends BaseObservable implements Observable {
     }
 
     public String getUuid() {
-        return Uuid;
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getUserName() {
@@ -137,6 +144,10 @@ public class Pregnancy extends BaseObservable implements Observable {
 
     public String getSno() {
         return sno;
+    }
+
+    public String getMuid() {
+        return muid;
     }
 
     public String getDeviceId() {
@@ -183,8 +194,12 @@ public class Pregnancy extends BaseObservable implements Observable {
         this.uid = uid;
     }
 
-    public void setUuid(String uuid) {
-        Uuid = uuid;
+    public void setMuid(String muid) {
+        this.muid = muid;
+    }
+
+    public String getMsno() {
+        return msno;
     }
 
     public void setUserName(String userName) {
@@ -205,6 +220,10 @@ public class Pregnancy extends BaseObservable implements Observable {
 
     public void setSno(String sno) {
         this.sno = sno;
+    }
+
+    public void setMsno(String msno) {
+        this.msno = msno;
     }
 
     public void setDeviceId(String deviceId) {
@@ -242,16 +261,22 @@ public class Pregnancy extends BaseObservable implements Observable {
 
     public void Pregnancy() {
 
-        setSysDate(MainApp.form.getSysDate());
-        setUserName(MainApp.form.getUserName());
-        setDeviceId(MainApp.form.getDeviceId());
-        setUuid(MainApp.form.getUid());
-        setAppver(MainApp.form.getAppver());
-        setpsuCode(MainApp.form.getPsuCode());
-        setHhid(MainApp.form.getHhid());
+
     }
 
+    public void populateMeta() {
 
+        setSysDate(MainApp.form.getSysDate());
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setMuid(MainApp.mwra.getUid());  // not applicable in Form table
+        setAppver(MainApp.appInfo.getAppVersion());
+        setProjectName(PROJECT_NAME);
+        setpsuCode(MainApp.selectedPSU);
+        setHhid(MainApp.selectedHHID);
+
+    }
 
     @Bindable
     public String getBs1q7p1g() {
@@ -889,40 +914,46 @@ public class Pregnancy extends BaseObservable implements Observable {
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
-        json.put(TableContracts.Pregnancy_Table.COLUMN_ID, this.id);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_UID, this.uid);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_PSU_CODE, this.psuCode);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_HHID, this.hhid);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_SNO, this.sno);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_USERNAME, this.userName);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_SYSDATE, this.sysDate);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_DEVICEID, this.deviceId);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_ISTATUS, this.iStatus);
-        json.put(TableContracts.Pregnancy_Table.COLUMN_SB1, new JSONObject(sB1toString()));
+        json.put(TableContracts.PregnancyTable.COLUMN_ID, this.id);
+        json.put(TableContracts.PregnancyTable.COLUMN_UID, this.uid);
+        json.put(TableContracts.PregnancyTable.COLUMN_UUID, this.uuid);
+        json.put(TableContracts.PregnancyTable.COLUMN_MUID, this.muid);
+        json.put(TableContracts.PregnancyTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(TableContracts.PregnancyTable.COLUMN_HHID, this.hhid);
+        json.put(TableContracts.PregnancyTable.COLUMN_SNO, this.sno);
+        json.put(TableContracts.PregnancyTable.COLUMN_M_SNO, this.msno);
+        json.put(TableContracts.PregnancyTable.COLUMN_USERNAME, this.userName);
+        json.put(TableContracts.PregnancyTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(TableContracts.PregnancyTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(TableContracts.PregnancyTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(TableContracts.PregnancyTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(TableContracts.PregnancyTable.COLUMN_SB1, new JSONObject(sB1toString()));
         return json;
     }
 
 
     public Pregnancy Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_UID));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_PSU_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_HHID));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SNO));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_UUID));
+        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_MUID));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_PSU_CODE));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_HHID));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SNO));
+        this.msno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_M_SNO));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SYNCED_DATE));
 
-        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Pregnancy_Table.COLUMN_SB1)));
+        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SB1)));
         return this;
     }
 
 
-
+  
 }

@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,8 +31,8 @@ public class SectionCS1CActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this,R.layout.activity_section_cs1_c);
-        bi.setForm(form);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_c);
+        bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         setupSkips();
@@ -46,7 +45,7 @@ public class SectionCS1CActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesChildColumn(TableContracts.Child_Table.COLUMN_SC1, child.sC1toString());
+            updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_SC1, child.sC1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());

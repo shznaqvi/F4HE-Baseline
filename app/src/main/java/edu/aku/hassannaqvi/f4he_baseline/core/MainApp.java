@@ -46,9 +46,10 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
+    public static MWRA mwra;
     public static Pregnancy pregnancy;
     public static Child child;
-    public static ECDInfo ecd;
+    public static ECDInfo ecdInfo;
     public static FormB formB;
     public static LateAdolescent ladol;
     public static FamilyMembers familyMember;
@@ -88,8 +89,8 @@ public class MainApp extends Application {
     public static String selectedAdolFemale;
     public static int memberCountComplete;
     public static boolean memberComplete;
+    public static int ecdCount;
     //public static int mwraCount;
-    public static MWRA mwra;
     /*public static RandomHH currentHousehold;
     public static List<FoodConsumption> foodConsumption;*/
     public static int foodIndex;

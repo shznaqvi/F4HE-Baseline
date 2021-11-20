@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +20,6 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionCs1ABinding;
-import edu.aku.hassannaqvi.f4he_baseline.models.Child;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 
@@ -34,13 +32,21 @@ public class SectionCS1AActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_a);
-        bi.setForm(form);
-        setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        child = new Child();
+        try {
+            MainApp.child = db.getChildByUUid();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(Child): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+//        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
+        bi.setChild(child);
+        setSupportActionBar(bi.toolbar);
+        bi.cs1q0101.setText(MainApp.child.getCs1q0101());
+        bi.cs1q0102.setText(MainApp.child.getCs1q0102());
+        //   child = new Child();
     }
-
-
 
 
     private boolean insertNewRecord() {
@@ -58,7 +64,7 @@ public class SectionCS1AActivity extends AppCompatActivity {
         child.setId(String.valueOf(rowId));
         if (rowId > 0) {
             child.setUid(child.getDeviceId() + child.getId());
-            db.updatesChildColumn(TableContracts.Child_Table.COLUMN_UID, child.getUid());
+            db.updatesChildColumn(TableContracts.ChildTable.COLUMN_UID, child.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -71,7 +77,7 @@ public class SectionCS1AActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesChildColumn(TableContracts.Child_Table.COLUMN_SC1, child.sC1toString());
+            updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_SC1, child.sC1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -90,15 +96,9 @@ public class SectionCS1AActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
+            //startActivity(new Intent(this, SectionCS2Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionCS1BActivity.class));
 
-            if (Integer.valueOf(form.getCs1q02()) > 0) {
-
-                //startActivity(new Intent(this, SectionCS2Activity.class).putExtra("complete", true));
-                startActivity(new Intent(this, SectionCS1BActivity.class).putExtra("ecdCount", Integer.valueOf(form.getCs1q02())));
-            }
-            else{
-                startActivity(new Intent(this, SectionCS1CActivity.class).putExtra("ecdCount", Integer.valueOf(form.getCs1q02())));
-            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

@@ -132,7 +132,7 @@ public class TableContracts {
         public static final String COLUMN_PSUCODE = "psucode";
 
 
-        public static abstract class MWRAListTable implements BaseColumns {
+/*        public static abstract class MWRAListTable implements BaseColumns {
 
             public static final String TABLE_NAME = "MWRAList";
             public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
@@ -161,7 +161,7 @@ public class TableContracts {
             public static final String COLUMN_APPVERSION = "appversion";
             public static final String COLUMN_ISTATUS = "istatus";
 
-        }
+        }*/
     }
 
     public static abstract class VersionTable implements BaseColumns {
@@ -215,16 +215,18 @@ public class TableContracts {
     }
 
 
-    public static abstract class Pregnancy_Table implements BaseColumns {
+    public static abstract class PregnancyTable implements BaseColumns {
         public static final String TABLE_NAME = "Pregnancy";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_MUID = "_muid";
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_SNO = "sno";
+        public static final String COLUMN_M_SNO = "msno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";
@@ -238,7 +240,7 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
-    public static abstract class Child_Table implements BaseColumns {
+    public static abstract class ChildTable implements BaseColumns {
         public static final String TABLE_NAME = "Child";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
@@ -265,7 +267,7 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
-    public static abstract class LateAdolescent_Table implements BaseColumns {
+    public static abstract class LateAdolescentTable implements BaseColumns {
         public static final String TABLE_NAME = "LateAdolescent";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
@@ -292,7 +294,7 @@ public class TableContracts {
     }
 
 
-    public static abstract class ECDInfo_Table implements BaseColumns {
+    public static abstract class ECDInfoTable implements BaseColumns {
         public static final String TABLE_NAME = "EcdInfo";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";

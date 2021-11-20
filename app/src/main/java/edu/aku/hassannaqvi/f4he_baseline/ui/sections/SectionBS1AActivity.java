@@ -33,11 +33,22 @@ public class SectionBS1AActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1a);
-        bi.setMwra(mwra);
-        //form.setBs1respline(String.valueOf(MainApp.memberCount + 1));
+        db = MainApp.appInfo.getDbHelper();
+
+        try {
+            MainApp.mwra = db.getMwraByUUid();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(MWRA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
+        bi.setMwra(MainApp.mwra);
+        mwra.setBs1respline(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getHl1());
+        mwra.setBs1resp(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getHl2());
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        if (mwra == null) mwra = new MWRA();
+
     }
 
 
@@ -66,7 +77,6 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
             updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SB1, mwra.sB1toString());
@@ -88,15 +98,12 @@ public class SectionBS1AActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            if (Integer.valueOf(mwra.getBs1q6()) > 0 || Integer.valueOf(mwra.getBs1q3()) > 0) {
-                //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
-                startActivity(new Intent(this, SectionBS1BActivity.class).putExtra("count", Integer.valueOf(mwra.getBs1q6())));
-            } else {
-                startActivity(new Intent(this, SectionBS2Activity.class));
-            }
+
+            //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionBS1BActivity.class));
+
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
-
 
 
     public void btnEnd(View view) {

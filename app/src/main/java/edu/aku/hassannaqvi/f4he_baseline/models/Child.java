@@ -14,10 +14,6 @@ import androidx.databinding.PropertyChangeRegistry;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.f4he_baseline.BR;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
@@ -213,20 +209,14 @@ public class Child extends BaseObservable implements Observable {
 
     public void Child() {
 
-        setSysDate(MainApp.form.getSysDate());
-        setUserName(MainApp.form.getUserName());
-        setDeviceId(MainApp.form.getDeviceId());
-        setUuid(MainApp.form.getUid());
-        setAppver(MainApp.form.getAppver());
-        setpsuCode(MainApp.form.getPsuCode());
-        setHhid(MainApp.form.getHhid());
+
     }
 
 
 
     public void populateMeta() {
 
-        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setSysDate(MainApp.form.getSysDate());
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
@@ -2114,26 +2104,26 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public Child Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_UID));
-        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_PSU_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_HHID));
-        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SNO));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UID));
+        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PSU_CODE));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_HHID));
+        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNCED_DATE));
 
-        sC1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SC1)));
-        sC2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SC2)));
-        sC31Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SC31)));
-        sC32Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SC32)));
-        sC4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SC4)));
-        sC5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.Child_Table.COLUMN_SC5)));
+        sC1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC1)));
+        sC2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC2)));
+        sC31Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC31)));
+        sC32Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC32)));
+        sC4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC4)));
+        sC5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC5)));
 
         return this;
     }
@@ -2534,16 +2524,16 @@ public class Child extends BaseObservable implements Observable {
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
-        json.put(TableContracts.Child_Table.COLUMN_ID, this.id);
-        json.put(TableContracts.Child_Table.COLUMN_UID, this.uid);
-        //json.put(TableContracts.Child_Table.COLUMN_PSU_CODE, this.psuCode);
-        json.put(TableContracts.Child_Table.COLUMN_HHID, this.hhid);
-        //json.put(TableContracts.Child_Table.COLUMN_SNO, this.sno);
-        json.put(TableContracts.Child_Table.COLUMN_USERNAME, this.userName);
-        json.put(TableContracts.Child_Table.COLUMN_SYSDATE, this.sysDate);
-        json.put(TableContracts.Child_Table.COLUMN_DEVICEID, this.deviceId);
-        json.put(TableContracts.Child_Table.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(TableContracts.Child_Table.COLUMN_ISTATUS, this.iStatus);
+        json.put(TableContracts.ChildTable.COLUMN_ID, this.id);
+        json.put(TableContracts.ChildTable.COLUMN_UID, this.uid);
+        //json.put(TableContracts.ChildTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(TableContracts.ChildTable.COLUMN_HHID, this.hhid);
+        //json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
+        json.put(TableContracts.ChildTable.COLUMN_USERNAME, this.userName);
+        json.put(TableContracts.ChildTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(TableContracts.ChildTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(TableContracts.ChildTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.FormsTable.COLUMN_SC1, new JSONObject(sC1toString()));
         json.put(TableContracts.FormsTable.COLUMN_SC2, new JSONObject(sC2toString()));
         json.put(TableContracts.FormsTable.COLUMN_SC31, new JSONObject(sC31toString()));

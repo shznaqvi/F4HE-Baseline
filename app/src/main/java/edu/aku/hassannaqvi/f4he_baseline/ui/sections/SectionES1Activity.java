@@ -17,7 +17,8 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import edu.aku.hassannaqvi.f4he_baseline.R;
-import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescent_Table;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescentTable;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionEs1Binding;
@@ -53,7 +54,7 @@ public class SectionES1Activity extends AppCompatActivity {
         ladol.setId(String.valueOf(rowId));
         if (rowId > 0) {
             ladol.setUid(ladol.getDeviceId() + ladol.getId());
-            db.updatesAdolColumn(LateAdolescent_Table.COLUMN_UID, ladol.getUid());
+            db.updatesAdolColumn(LateAdolescentTable.COLUMN_UID, ladol.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -66,7 +67,7 @@ public class SectionES1Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesAdolColumn(LateAdolescent_Table.COLUMN_SE1, ladol.sE1toString());
+            updcount = db.updatesAdolColumn(TableContracts.LateAdolescentTable.COLUMN_SE1, ladol.sE1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());

@@ -14,10 +14,7 @@ import androidx.databinding.PropertyChangeRegistry;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
 
 import edu.aku.hassannaqvi.f4he_baseline.BR;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
@@ -464,19 +461,13 @@ public class MWRA extends BaseObservable implements Observable {
     // Constructor
     public void Mwra() {
 
-        setSysDate(MainApp.form.getSysDate());
-        setUserName(MainApp.form.getUserName());
-        setDeviceId(MainApp.form.getDeviceId());
-        setUuid(MainApp.form.getUid());
-        setAppver(MainApp.form.getAppver());
-        setpsuCode(MainApp.form.getPsuCode());
-        setHhid(MainApp.form.getHhid());
+
     }
 
 
     public void populateMeta() {
 
-        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setSysDate(MainApp.form.getSysDate());
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
