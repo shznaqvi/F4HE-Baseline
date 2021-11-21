@@ -89,20 +89,22 @@
                                 android:text="@string/Q_cs2q01" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/cs2q01" />
 
-                        </LinearLayout>
+                            <EditText
+                                android:id="@+id/cs2q01"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="@string/cs2q01"
+                                android:text="@={child.cs2q01}" />
 
-                        <EditText
-                            android:enabled="false"
-                            android:gravity="center"
-                            android:id="@+id/cs2q01"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/cs2q01"
-                            android:text="@={child.cs2q01}" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -137,16 +139,17 @@
                                 android:layout_weight="1"
                                 android:text="@string/cs2q02" />
 
-                        </LinearLayout>
+                            <EditText
+                                android:id="@+id/cs2q02"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="@string/cs2q02"
+                                android:text="@={child.cs2q02}" />
 
-                        <EditText
-                            android:id="@+id/cs2q02"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:enabled="false"
-                            android:gravity="center"
-                            android:hint="@string/cs2q02"
-                            android:text="@={child.cs2q02}" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -494,24 +497,11 @@
                     android:visibility="@{child.cs2q07.equals(`2`) ? View.GONE : View.VISIBLE}">
 
 
-                    <!-- cs2q08  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs2q08"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
                             <TextView
+                                style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cs2q08" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
 
 
                     <!-- cs2q0801  Radio   -->
@@ -594,25 +584,11 @@
 
                     </androidx.cardview.widget.CardView>
 
-
-                    <!-- cs2q0802  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs2q0802"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cs2q0802" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        style="@style/sub_labels"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cs2q0802" />
 
 
                     <!-- cs2q08021  Radio   -->
@@ -1318,23 +1294,11 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
-
-                    <!-- cs2q0808  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs2q0808"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cs2q0808" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        style="@style/sub_labels"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cs2q0808" />
 
 
                     <!-- cs2q08081  Radio   -->

@@ -43,23 +43,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- ds3  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVds3"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ds3" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
                 <!-- ds3inst  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVds3inst"
@@ -71,6 +54,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ds3inst" />

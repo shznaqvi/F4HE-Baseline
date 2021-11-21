@@ -67,7 +67,8 @@ public class SectionAS2Activity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                bi.hl3name.setText("What is the relationship of " + familyMember.getHl2() + " to (name of the head of household)");
+                bi.hl3name.setVisibility(View.VISIBLE);
+                bi.hl3name.setText("What is the relationship of " + familyMember.getHl2() + " with the head of household");
             }
         });
     }

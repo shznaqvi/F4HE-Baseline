@@ -867,6 +867,7 @@
                             android:tag="0">
 
                             <TextView
+                                android:gravity="start"
                                 style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -973,6 +974,7 @@
 
                             <TextView
                                 style="@style/textView"
+                                android:gravity="start"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/es4q8t2" />
