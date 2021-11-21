@@ -71,6 +71,11 @@
                     android:id="@+id/fldGrpCVcs1q0101"
                     style="@style/cardView">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -79,7 +84,80 @@
 
                             <TextView
                                 style="@style/quesNum"
-                                android:layout_width="wrap_content"
+                                android:layout_width="205dp"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cs1q0102" />
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cs1q0101" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="205dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/cs1q0102" />
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/cs1q0101" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cs1q0102"
+                                android:layout_width="205dp"
+                                android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={child.cs1q0102}"
+                                app:maxValue="99"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <EditText
+                                android:id="@+id/cs1q0101"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="@string/cs1q0101"
+                                android:maxLength="20"
+                                android:text="@={child.cs1q0101}" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--<LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="@string/Q_cs1q0101" />
 
@@ -100,13 +178,13 @@
                                 android:maxLength="20"
                                 android:text="@={child.cs1q0101}" />
 
-                        </LinearLayout>
+                        </LinearLayout>-->
 
                 </androidx.cardview.widget.CardView>
 
 
                 <!-- cs1q0102  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs1q0102"
                     style="@style/cardView">
 
@@ -144,7 +222,7 @@
 
                         </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
                 <!-- cs1q02  Input   -->

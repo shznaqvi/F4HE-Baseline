@@ -234,7 +234,8 @@
                             android:orientation="vertical">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
+                                android:gravity="start"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="@string/bs3q2a" />
@@ -314,7 +315,8 @@
                             android:orientation="vertical">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
+                                android:gravity="start"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="@string/bs3q2b" />
@@ -394,7 +396,8 @@
                             android:orientation="vertical">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
+                                android:gravity="start"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="@string/bs3q2c" />
@@ -474,7 +477,8 @@
                             android:orientation="vertical">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
+                                android:gravity="start"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="@string/bs3q2d" />
