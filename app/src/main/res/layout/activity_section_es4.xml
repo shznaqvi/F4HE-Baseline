@@ -45,25 +45,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
-                <!-- es4title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVes4title"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/es4title" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/es4title" />
 
 
                 <!-- es4q1  CheckBox   -->

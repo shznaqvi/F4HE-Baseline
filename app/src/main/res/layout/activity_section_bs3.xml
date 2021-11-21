@@ -253,40 +253,52 @@
                                 android:id="@+id/bs3q2a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:orientation="vertical">
 
                                 <RadioButton
                                     android:id="@+id/bs3q2a01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1.2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2a.equals(`1`)}"
                                     android:onClick="@{()->mwra.setBs3q2a(`1`)}"
                                     android:text="@string/bs3q2a01" />
 
                                 <RadioButton
                                     android:id="@+id/bs3q2a2"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2a.equals(`2`)}"
                                     android:onClick="@{()->mwra.setBs3q2a(`2`)}"
                                     android:text="@string/bs3q2a2" />
 
                                 <RadioButton
                                     android:id="@+id/bs3q2a3"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2.5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2a.equals(`3`)}"
                                     android:onClick="@{()->mwra.setBs3q2a(`3`)}"
                                     android:text="@string/bs3q2a3" />
 
                                 <RadioButton
+                                    android:id="@+id/bs3q2a4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.bs3q2a.equals(`4`)}"
+                                    android:onClick="@{()->mwra.setBs3q2a(`4`)}"
+                                    android:text="@string/bs3q2a4" />
+
+                                <RadioButton
+                                    android:id="@+id/bs3q2a5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.bs3q2a.equals(`5`)}"
+                                    android:onClick="@{()->mwra.setBs3q2a(`5`)}"
+                                    android:text="@string/bs3q2a5" />
+
+                                <RadioButton
                                     android:id="@+id/bs3q2a96"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2a.equals(`96`)}"
                                     android:onClick="@{()->mwra.setBs3q2a(`96`)}"
                                     android:text="@string/bs3q2a96" />
@@ -321,40 +333,52 @@
                                 android:id="@+id/bs3q2b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:orientation="vertical">
 
                                 <RadioButton
                                     android:id="@+id/bs3q2b01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1.2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2b.equals(`1`)}"
                                     android:onClick="@{()->mwra.setBs3q2b(`1`)}"
                                     android:text="@string/bs3q2b01" />
 
                                 <RadioButton
                                     android:id="@+id/bs3q2b02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2b.equals(`2`)}"
                                     android:onClick="@{()->mwra.setBs3q2b(`2`)}"
                                     android:text="@string/bs3q2b02" />
 
                                 <RadioButton
                                     android:id="@+id/bs3q2b03"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2.5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2b.equals(`3`)}"
                                     android:onClick="@{()->mwra.setBs3q2b(`3`)}"
                                     android:text="@string/bs3q2b03" />
 
                                 <RadioButton
+                                    android:id="@+id/bs3q2b04"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.bs3q2b.equals(`4`)}"
+                                    android:onClick="@{()->mwra.setBs3q2b(`4`)}"
+                                    android:text="@string/bs3q2b04" />
+
+                                <RadioButton
+                                    android:id="@+id/bs3q2b05"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.bs3q2b.equals(`5`)}"
+                                    android:onClick="@{()->mwra.setBs3q2b(`5`)}"
+                                    android:text="@string/bs3q2b05" />
+
+                                <RadioButton
                                     android:id="@+id/bs3q2b96"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2b.equals(`96`)}"
                                     android:onClick="@{()->mwra.setBs3q2b(`96`)}"
                                     android:text="@string/bs3q2b96" />
@@ -389,40 +413,52 @@
                                 android:id="@+id/bs3q2c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:orientation="vertical">
 
                                 <RadioButton
                                     android:id="@+id/bs3q2c01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1.2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2c.equals(`1`)}"
                                     android:onClick="@{()->mwra.setBs3q2c(`1`)}"
                                     android:text="@string/bs3q2c01" />
 
                                 <RadioButton
                                     android:id="@+id/bs3q2c02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2c.equals(`2`)}"
                                     android:onClick="@{()->mwra.setBs3q2c(`2`)}"
                                     android:text="@string/bs3q2c02" />
 
                                 <RadioButton
                                     android:id="@+id/bs3q2c03"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2.5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2c.equals(`3`)}"
                                     android:onClick="@{()->mwra.setBs3q2c(`3`)}"
                                     android:text="@string/bs3q2c03" />
 
                                 <RadioButton
+                                    android:id="@+id/bs3q2c04"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.bs3q2c.equals(`4`)}"
+                                    android:onClick="@{()->mwra.setBs3q2c(`4`)}"
+                                    android:text="@string/bs3q2c04" />
+
+                                <RadioButton
+                                    android:id="@+id/bs3q2c05"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.bs3q2c.equals(`5`)}"
+                                    android:onClick="@{()->mwra.setBs3q2c(`5`)}"
+                                    android:text="@string/bs3q2c05" />
+
+                                <RadioButton
                                     android:id="@+id/bs3q2c96"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2c.equals(`96`)}"
                                     android:onClick="@{()->mwra.setBs3q2c(`96`)}"
                                     android:text="@string/bs3q2c96" />
@@ -457,40 +493,52 @@
                                 android:id="@+id/bs3q2d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:orientation="vertical">
 
                                 <RadioButton
                                     android:id="@+id/bs3q2d01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1.2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2d.equals(`1`)}"
                                     android:onClick="@{()->mwra.setBs3q2d(`1`)}"
                                     android:text="@string/bs3q2d01" />
 
                                 <RadioButton
                                     android:id="@+id/bs3q2d02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2d.equals(`2`)}"
                                     android:onClick="@{()->mwra.setBs3q2d(`2`)}"
                                     android:text="@string/bs3q2d02" />
 
                                 <RadioButton
                                     android:id="@+id/bs3q2d03"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2.5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2d.equals(`3`)}"
                                     android:onClick="@{()->mwra.setBs3q2d(`3`)}"
                                     android:text="@string/bs3q2d03" />
 
                                 <RadioButton
+                                    android:id="@+id/bs3q2d04"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.bs3q2d.equals(`4`)}"
+                                    android:onClick="@{()->mwra.setBs3q2d(`4`)}"
+                                    android:text="@string/bs3q2d04" />
+
+                                <RadioButton
+                                    android:id="@+id/bs3q2d05"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.bs3q2d.equals(`5`)}"
+                                    android:onClick="@{()->mwra.setBs3q2d(`5`)}"
+                                    android:text="@string/bs3q2d05" />
+
+                                <RadioButton
                                     android:id="@+id/bs3q2d96"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs3q2d.equals(`96`)}"
                                     android:onClick="@{()->mwra.setBs3q2d(`96`)}"
                                     android:text="@string/bs3q2d96" />
