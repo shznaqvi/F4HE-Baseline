@@ -1085,6 +1085,14 @@
                                 android:text="@string/hl1209" />
 
                             <RadioButton
+                                android:id="@+id/hl1299"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{familymember.hl12.equals(`99`)}"
+                                android:onClick="@{()->familymember.setHl12(`99`)}"
+                                android:text="@string/hl1299" />
+
+                            <RadioButton
                                 android:id="@+id/hl1210"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
