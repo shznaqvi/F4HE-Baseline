@@ -964,7 +964,7 @@
                                 android:id="@+id/hl1199"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!familymember.hl6y.equals(``)?(Integer.parseInt(familymember.hl6y)&gt;4):true}"
+                                android:enabled="@{!familymember.hl6y.equals(``)?(Integer.parseInt(familymember.hl6y)&lt;5):true}"
                                 android:checked="@{familymember.hl11.equals(`99`)}"
                                 android:onClick="@{()->familymember.setHl11(`99`)}"
                                 android:text="@string/hl1199" />
