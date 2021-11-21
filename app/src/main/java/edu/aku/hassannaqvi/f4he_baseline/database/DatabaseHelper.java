@@ -392,6 +392,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs);
     }
+
     //UPDATE in DB
     public int updatesPregnancyColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1696,7 +1697,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return child;
     }
 
-    public ECDInfo getECDataByUUid(String ecdNo) throws JSONException {
+    public ECDInfo getECDataByUUid(int ecdNo) throws JSONException {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c;
@@ -1704,9 +1705,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String whereClause;
         whereClause = TableContracts.ECDInfoTable.COLUMN_UUID + "=? AND " +
-                TableContracts.ECDInfoTable.COLUMN_UUID + " = ?";
+                TableContracts.ECDInfoTable.COLUMN_ECDINFO + " = ?";
 
-        String[] whereArgs = {MainApp.form.getUid(), ecdNo};
+        String[] whereArgs = {MainApp.form.getUid()};
 
         String groupBy = null;
         String having = null;
@@ -1722,11 +1723,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs,                 // The values for the WHERE clause
                 groupBy,                   // don't group the rows
                 having,                    // don't filter by row groups
-                orderBy                    // The sort order
+                orderBy                   // The sort order
         );
-        while (c.moveToNext()) {
+        if (c.getCount() >= ecdNo) {
+            c.moveToPosition(ecdNo);
             ecdInfo = new ECDInfo().Hydrate(c);
         }
+      /*  while (c.moveToNext()) {
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }*/
 
         db.close();
 

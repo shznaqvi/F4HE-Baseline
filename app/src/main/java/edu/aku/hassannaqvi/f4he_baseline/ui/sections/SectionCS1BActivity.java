@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child_count;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.childOfSelectedMWRAList;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ecdCount;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ecdInfo;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
@@ -17,11 +18,14 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
+
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionCs1BBinding;
+import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionCS1BActivity extends AppCompatActivity {
@@ -29,16 +33,17 @@ public class SectionCS1BActivity extends AppCompatActivity {
     private static final String TAG = "SectionCS1Bctivity";
     ActivitySectionCs1BBinding bi;
     private DatabaseHelper db;
+    private ArrayList<String> childNames, ChildSno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        child_count = getIntent().getExtras().getInt("ecdCount");
-        MainApp.ecdCount++;
+        // MainApp.ecdCount++;
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_b);
         db = MainApp.appInfo.dbHelper;
         try {
-            ecdInfo = db.getECDataByUUid(String.valueOf(MainApp.ecdCount++));
+            ecdInfo = db.getECDataByUUid(++MainApp.ecdCount);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ECDInfo): " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -48,9 +53,71 @@ public class SectionCS1BActivity extends AppCompatActivity {
         bi.setEcdInfo(MainApp.ecdInfo);
         setSupportActionBar(bi.toolbar);
 
-        child_count++;
-    }
+        if (childOfSelectedMWRAList == null) {
+            childOfSelectedMWRAList = new ArrayList<>();
+            for (FamilyMembers child : MainApp.familyList) {
+                Log.d(TAG, "onCreate: childmsno " + child.getHl8() + " fmsno: " + (Integer.parseInt(MainApp.selectedMWRA) + 1));
 
+                int motherSno = Integer.parseInt(child.getHl8());
+                int selectedMwraSno = Integer.parseInt(MainApp.selectedMWRA) + 1;
+                if (motherSno == selectedMwraSno && Integer.parseInt(child.getHl6y()) < 5) {
+                    childOfSelectedMWRAList.add(Integer.valueOf(child.getHl1()));
+                }
+            }
+        }
+        Integer childSno = childOfSelectedMWRAList.get(ecdCount - 1);
+        String childName = MainApp.familyList.get(childSno - 1).getHl2();
+
+        ecdInfo.setCs1q02c1(String.valueOf(childSno));
+        ecdInfo.setCs1q02c1n(String.valueOf(childName));
+
+
+    }
+/*
+
+    private void populateSpinner() {
+
+        // Populate Children of selectedMWRA
+        childNames = new ArrayList<>();
+        ChildSno = new ArrayList<>();
+
+        childNames.add("...");
+        ChildSno.add("...");
+
+        for (FamilyMembers child : MainApp.familyList) {
+
+            if(child.getHl8().equals(MainApp.selectedMWRA)) {
+                childNames.add(child.getHl2());
+                ChildSno.add(child.getHl1());
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionCS1BActivity.this,
+                R.layout.custom_spinner, childNames);
+
+        bi.cs1q02c1n.setAdapter(adapter);
+
+        bi.cs1q02c1n.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.cs1q02c1.setText(null);
+
+                if (position == 0) return;
+
+                bi.cs1q02c1.setText(ChildSno.get(position-1));
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+*/
 
     private boolean insertNewRecord() {
         if (!ecdInfo.getUid().equals("")) return true;
@@ -66,7 +133,7 @@ public class SectionCS1BActivity extends AppCompatActivity {
         }
         ecdInfo.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            form.setUid(form.getDeviceId() + ecdInfo.getId());
+            ecdInfo.setUid(ecdInfo.getDeviceId() + ecdInfo.getId());
             db.updatesECDColumn(TableContracts.ECDInfoTable.COLUMN_UID, ecdInfo.getUid());
             return true;
         } else {
@@ -94,12 +161,13 @@ public class SectionCS1BActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if(!insertNewRecord()) return;
+        if (!insertNewRecord()) return;
         saveDraft();
         if (updateDB()) {
+            childOfSelectedMWRAList.remove(ecdCount - 1);
             finish();
-            if (Integer.parseInt(MainApp.child.getCs1q02()) > child_count) {
-                startActivity(new Intent(this, SectionCS1BActivity.class).putExtra("ecdCount", child_count));
+            if (childOfSelectedMWRAList.size() > 0) {
+                startActivity(new Intent(this, SectionCS1BActivity.class));
             } else {
                 startActivity(new Intent(this, SectionCS1CActivity.class));
             }

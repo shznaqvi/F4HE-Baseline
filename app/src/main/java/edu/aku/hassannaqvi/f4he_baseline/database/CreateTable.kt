@@ -219,6 +219,7 @@ object CreateTable {
             + ECDInfoTable.COLUMN_PROJECT_NAME + " TEXT,"
             + ECDInfoTable.COLUMN_UID + " TEXT,"
             + ECDInfoTable.COLUMN_UUID + " TEXT,"
+            + ECDInfoTable.COLUMN_PSU_CODE + " TEXT,"
             + ECDInfoTable.COLUMN_HHID + " TEXT,"
             + ECDInfoTable.COLUMN_USERNAME + " TEXT,"
             + ECDInfoTable.COLUMN_SYSDATE + " TEXT,"

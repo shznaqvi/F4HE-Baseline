@@ -270,7 +270,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 if (MainApp.superuser) {
                     Toast.makeText(FamilyMembersListActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
 
-                } else if (!MainApp.form.getiStatus().equals("1") || MainApp.selectedMWRA.equals("")) {
+                } else if ( MainApp.selectedMWRA.equals("")) {
                     //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
                     MainApp.familyMember = new FamilyMembers();
                     addFemale();
@@ -454,10 +454,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         String hhno = MainApp.form.getSno().substring(MainApp.form.getSno().length() - 1);
         // Select Index Mother using KishGrid
         String kishGridMWRA = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.mwraList.size());
-        int indx = MainApp.mwraList.get(Integer.parseInt(kishGridMWRA));
+        int sno = MainApp.mwraList.get(Integer.parseInt(kishGridMWRA));
 
         // Updating database to mark indexed mother
-        MainApp.selectedMWRA = String.valueOf(indx - 1);
+        MainApp.selectedMWRA = String.valueOf(sno - 1);
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
         db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
 
@@ -475,9 +475,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
 
         String kishGridChild = MainApp.kishGrid(Integer.parseInt(MainApp.form.getSno()), MainApp.childOfSelectedMWRAList.size());
-        indx = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
+        sno = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
 
-        MainApp.selectedChild = String.valueOf((indx -1));
+        MainApp.selectedChild = String.valueOf((sno -1));
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
         db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 
@@ -489,15 +489,15 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         // Select AdolMale using KishGrid
         if (MainApp.adolListMale.size() > 0) {
             String kishGridAdolMale = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.adolListMale.size());
-            indx = MainApp.adolListMale.get(Integer.parseInt(kishGridAdolMale));
+            sno = MainApp.adolListMale.get(Integer.parseInt(kishGridAdolMale));
 
             // Updating database to mark selected adolmale
-            MainApp.selectedAdolMale = String.valueOf(indx - 1);
+            MainApp.selectedAdolMale = String.valueOf(sno - 1);
             MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
 
             // Updating adapter
-            MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale)).setIndexed("4");
+            MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale)).setIndexed("3");
 
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolMale));
         }
@@ -505,10 +505,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         if (MainApp.adolListFemale.size() > 0) {
             // Select AdolFemale using KishGrid
             String kishGridAdolFemale = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.adolListFemale.size());
-            indx = MainApp.adolListFemale.get(Integer.parseInt(kishGridAdolFemale));
+            sno = MainApp.adolListFemale.get(Integer.parseInt(kishGridAdolFemale));
 
             // Updating database to mark selected adolfemale
-            MainApp.selectedAdolFemale = String.valueOf(indx - 1);
+            MainApp.selectedAdolFemale = String.valueOf(sno - 1);
             MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale));
             db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
 

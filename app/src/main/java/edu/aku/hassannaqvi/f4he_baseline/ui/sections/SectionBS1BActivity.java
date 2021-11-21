@@ -20,6 +20,7 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1bBinding;
+import edu.aku.hassannaqvi.f4he_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionBS1BActivity extends AppCompatActivity {
@@ -103,6 +104,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
+
             finish();
             if (Integer.parseInt(MainApp.mwra.getBs1q6()) > MainApp.preg_count) {
 

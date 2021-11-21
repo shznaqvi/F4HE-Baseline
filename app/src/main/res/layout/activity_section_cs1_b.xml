@@ -78,6 +78,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:hint="##"
+                            android:enabled="false"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={ecdInfo.cs1q02c1}"
@@ -120,6 +121,7 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/cs1q02c1n"
                             android:maxLength="20"
+                            android:enabled="false"
                             android:text="@={ecdInfo.cs1q02c1n}" />
 
                     </LinearLayout>
