@@ -127,7 +127,7 @@ public class SectionBS1AActivity extends AppCompatActivity {
         }
 
         if (mwra.getBs1q1().length() > 0 && mwra.getBs1q5().length() > 0) {
-            if (Integer.parseInt(mwra.getBs1q1()) >= Integer.parseInt(mwra.getBs1q5())) {
+            if (Integer.parseInt(mwra.getBs1q1()) > Integer.parseInt(mwra.getBs1q5())) {
                 return Validator.emptyCustomTextBox(this, bi.bs1q5, "Must Be Greater Than BS1Q1");
             }
         }

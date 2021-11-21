@@ -223,7 +223,8 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/textView"
+                            android:gravity="start"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/bs1q7p1dt1" />
@@ -260,11 +261,12 @@
                         android:onClick="@{()->preg.setBs1q7p1d(`4`)}"
                         android:text="@string/bs1q7p1d04" />
 
-                    <TextView
-                        style="@style/sub_labels"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/bs1q7p1dt2" />
+                        <TextView
+                            style="@style/textView"
+                            android:gravity="start"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bs1q7p1dt2" />
 
                     <RadioButton
                         android:id="@+id/bs1q7p1d05"

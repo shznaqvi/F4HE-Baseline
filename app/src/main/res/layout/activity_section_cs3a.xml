@@ -59,7 +59,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/labelsHead"
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cs3ainst" />
@@ -306,6 +306,7 @@
                         </LinearLayout>
 
                         <TextView
+                            android:gravity="start"
                             style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

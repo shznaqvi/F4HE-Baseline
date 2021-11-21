@@ -69,6 +69,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
                             <TextView
+                                android:visibility="gone"
                                 style="@style/quesNum"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -97,6 +98,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:visibility="gone"
                                 style="@style/quesNum"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -107,8 +109,7 @@
                                 android:gravity="center"
                                 android:text="@string/bs7q1" />
                             <TextView
-
-android:enabled="false"
+                                android:enabled="false"
                                 style="@style/sub_labels"
                                 android:id="@+id/bs7q1"
                                 android:layout_width="match_parent"

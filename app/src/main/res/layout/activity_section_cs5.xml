@@ -125,7 +125,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cs5inst1" />
@@ -314,45 +314,17 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <TextView
+                        style="@style/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cs5inst2" />
 
-                    <!-- cs5inst2  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs5inst2"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cs5inst2" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <!-- cs5inst3  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs5inst3"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cs5inst3" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        style="@style/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cs5inst3" />
 
 
                     <!-- cs5q05  Radio   -->
@@ -1422,26 +1394,11 @@
 
                     </androidx.cardview.widget.CardView>
 
-
-                    <!-- cs5q18inst  Title   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVcs5q18inst"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cs5q18inst" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        style="@style/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cs5q18inst" />
 
 
                     <!-- cs5q18  Radio   -->

@@ -160,7 +160,8 @@
                                 android:tag="0">
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/textView"
+                                    android:gravity="start"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bs2q2t" />
@@ -254,7 +255,8 @@
                                     android:text="@string/bs2q211" />
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/textView"
+                                    android:gravity="start"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bs2q20" />
@@ -438,7 +440,8 @@
                                 android:tag="0">
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/textView"
+                                    android:gravity="start"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bs2q4t" />
@@ -543,7 +546,8 @@
                                     android:text="@string/bs2q411" />
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/textView"
+                                    android:gravity="start"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bs2q40" />
@@ -773,7 +777,8 @@
                                 android:tag="0">
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/textView"
+                                    android:gravity="start"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bs2q6t1" />
@@ -837,7 +842,8 @@
                                     android:visibility="@{mwra.bs2q606.equals(`6`) ? View.VISIBLE : View.GONE}" />
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/textView"
+                                    android:gravity="start"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bs2q60t2" />
@@ -885,7 +891,8 @@
                                     android:visibility="@{mwra.bs2q6010.equals(`10`) ? View.VISIBLE : View.GONE}" />
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/textView"
+                                    android:gravity="start"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bs2q6t3" />

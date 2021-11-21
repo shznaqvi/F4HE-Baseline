@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = null;
         switch (item.getItemId()) {
             case R.id.action_database:
-                //intent = new Intent(MainActivity.this, AndroidDatabaseManager.class);
+                intent = new Intent(MainActivity.this, AndroidManager.class);
                 startActivity(intent);
                 break;
             case R.id.onSync:
