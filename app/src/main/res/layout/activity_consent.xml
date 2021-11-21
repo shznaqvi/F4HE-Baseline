@@ -111,7 +111,6 @@
                             android:id="@+id/as1q23"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:onCheckedChanged="@{()->as1q10.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -129,7 +128,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.as1q23.equals(`2`)}"
-                                android:onClick="@{()->form.setAs1q23(`2`)}"
+                                android:onClick="@{()->form.setAs1q23(`2`) + as1q10.clearCheck()}"
                                 android:text="@string/as1q2302" />
 
                         </RadioGroup>

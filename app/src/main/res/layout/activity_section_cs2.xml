@@ -460,7 +460,6 @@
                             android:id="@+id/cs2q07"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:onCheckedChanged="@{()->cs2q0801.clearCheck() + cs2q08021.clearCheck() + cs2q08022.clearCheck() + cs2q08023.clearCheck() + cs2q08024.clearCheck() + cs2q0803.clearCheck() + cs2q0804.clearCheck() + cs2q0805.clearCheck() + cs2q0806.clearCheck() + cs2q0807.clearCheck() + cs2q08081.clearCheck() + cs2q08082.clearCheck() + cs2q08083.clearCheck() + cs2q0809.clearCheck() + cs2q0810.clearCheck() + cs2q0811.clearCheck() + cs2q0812.clearCheck() + cs2q0813.clearCheck() + cs2q0814.clearCheck() + cs2q0815.clearCheck() + cs2q0816.clearCheck() + cs2q0817.clearCheck() + cs2q0818.clearCheck() + cs2q0819.clearCheck() + cs2q0820.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -478,7 +477,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{child.cs2q07.equals(`2`)}"
-                                android:onClick="@{()->child.setCs2q07(`2`)}"
+                                android:onClick="@{()->child.setCs2q07(`2`) + cs2q0801.clearCheck() + cs2q08021.clearCheck() + cs2q08022.clearCheck() + cs2q08023.clearCheck() + cs2q08024.clearCheck() + cs2q0803.clearCheck() + cs2q0804.clearCheck() + cs2q0805.clearCheck() + cs2q0806.clearCheck() + cs2q0807.clearCheck() + cs2q08081.clearCheck() + cs2q08082.clearCheck() + cs2q08083.clearCheck() + cs2q0809.clearCheck() + cs2q0810.clearCheck() + cs2q0811.clearCheck() + cs2q0812.clearCheck() + cs2q0813.clearCheck() + cs2q0814.clearCheck() + cs2q0815.clearCheck() + cs2q0816.clearCheck() + cs2q0817.clearCheck() + cs2q0818.clearCheck() + cs2q0819.clearCheck() + cs2q0820.clearCheck()}"
                                 android:text="@string/cs2q0702" />
 
                         </RadioGroup>

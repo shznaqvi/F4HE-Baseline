@@ -79,7 +79,6 @@
                             android:id="@+id/bs4bq1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:onCheckedChanged="@{()->bs4bq4.clearCheck() + bs4bq6.clearCheck() + bs4bq7.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -97,7 +96,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.bs4bq1.equals(`2`)}"
-                                android:onClick="@{()->mwra.setBs4bq1(`2`)}"
+                                android:onClick="@{()->mwra.setBs4bq1(`2`) + bs4bq4.clearCheck() + bs4bq6.clearCheck() + bs4bq7.clearCheck()}"
                                 android:text="@string/bs4bq12" />
 
                         </RadioGroup>
@@ -377,7 +376,6 @@
                                 android:id="@+id/bs4bq4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:onCheckedChanged="@{()->bs4bq6.clearCheck()}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -395,7 +393,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.bs4bq4.equals(`2`)}"
-                                    android:onClick="@{()->mwra.setBs4bq4(`2`)}"
+                                    android:onClick="@{()->mwra.setBs4bq4(`2`) + bs4bq6.clearCheck()}"
                                     android:text="@string/bs4bq42" />
 
                                 <RadioButton
@@ -404,7 +402,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.bs4bq4.equals(`98`)}"
-                                    android:onClick="@{()->mwra.setBs4bq4(`98`)}"
+                                    android:onClick="@{()->mwra.setBs4bq4(`98`) + bs4bq6.clearCheck()}"
                                     android:text="@string/bs4bq498" />
 
                             </RadioGroup>
