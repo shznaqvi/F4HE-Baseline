@@ -60,9 +60,9 @@ public class SectionES1Activity extends AppCompatActivity {
 
         for (Integer a : adolListAll) {
 
-            adolNames.add(MainApp.familyList.get(a).getHl1());
-            adolCodes.add(String.valueOf(a));
-            adolAges.add(MainApp.familyList.get(a).getHl1());
+            adolNames.add(MainApp.familyList.get(a-1).getHl2());
+            adolCodes.add(MainApp.familyList.get(a-1).getHl1());
+            adolAges.add(MainApp.familyList.get(a-1).getHl6y());
 
         }
 
@@ -100,7 +100,6 @@ public class SectionES1Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            adolListAll.remove(bi.es1resp.getSelectedItemPosition() - 1);
             updcount = db.updatesAdolColumn(TableContracts.LateAdolescentTable.COLUMN_SE1, ladol.sE1toString());
         } catch (JSONException e) {
             e.printStackTrace();
@@ -119,6 +118,8 @@ public class SectionES1Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
+            adolListAll.remove(bi.es1resp.getSelectedItemPosition() - 1);
+
             finish();
             startActivity(new Intent(this, SectionES2Activity.class));
 
