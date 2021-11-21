@@ -4,6 +4,8 @@ import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.familyMember;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -47,9 +49,28 @@ public class SectionAS2Activity extends AppCompatActivity {
         bi.hl5y.setMaxvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))));
         bi.hl5y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))) - 120);
 
+        setupListener();
         populateSpinner();
     }
 
+    private void setupListener() {
+        bi.hl2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                bi.hl3name.setText("What is the relationship of " + familyMember.getHl2() + " to (name of the head of household)");
+            }
+        });
+    }
 
     private void populateSpinner() {
 

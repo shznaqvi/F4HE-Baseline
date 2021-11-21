@@ -179,6 +179,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/hl3name"
                                 style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
