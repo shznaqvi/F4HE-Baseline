@@ -248,17 +248,17 @@
     <string name="as1q21"> Data entry ID </string>
     <string name="as1q22"> Data entry Check </string>
     <string name="aq1q22contitle">Hello! We are working with the Aga Khan Foundation to collect information in different communities to improve development programming.
-        \n Specifically, we would like to understand more about the health status of women, young boys, and girls.
-        \n Further, we would like to ask you some questions about your children who are under 5 in the house, so we can know about their abilities and physical development.
-        \n Thus, we would like to interview the young girls and boys, and mothers of under 5 children in your household.
-        \n In addition, please let us also inform that this interview and survey will not bring any financial benefit for you and your family.
-        \n However, we assure you that names of participants will not be included in any reports and information about a person’s household will also not be shared with anyone else.
-        \n Your participation is voluntary. If for any reason you do not wish to participate, you can choose not to.
-        \n If you do agree to take part now, you can change your mind at any time during the interview, without any implications.
-        \n And in case, if you would like to skip a question, you are also free to do so, and you can object to answering any specific question in the questionnaire which you do not feel comfortable to answer.
-        \n Your identity, personal information, and responses will remain confidential. There are no consequences or disadvantages to deciding not to participate or not to answer certain questions. However, your cooperation is greatly appreciated.
-        \n The interview with all target interviewees in your household should take approximately 120 minutes, but with every individual it should not exceed 30 minutes.
-        \n If you have any doubts or questions about this study, you can contact AKF study team leader and or relevant board in the Ministry of Health at below mentioned phone numbers and email addresses: AKF:             XXXXXX IRB MoPH:   XXXXXXX</string>
+        \n\nSpecifically, we would like to understand more about the health status of women, young boys, and girls.
+        \n\nFurther, we would like to ask you some questions about your children who are under 5 in the house, so we can know about their abilities and physical development.
+        \n\nThus, we would like to interview the young girls and boys, and mothers of under 5 children in your household.
+        \n\nIn addition, please let us also inform that this interview and survey will not bring any financial benefit for you and your family.
+        \n\nHowever, we assure you that names of participants will not be included in any reports and information about a person’s household will also not be shared with anyone else.
+        \n\nYour participation is voluntary. If for any reason you do not wish to participate, you can choose not to.
+        \n\nIf you do agree to take part now, you can change your mind at any time during the interview, without any implications.
+        \n\nAnd in case, if you would like to skip a question, you are also free to do so, and you can object to answering any specific question in the questionnaire which you do not feel comfortable to answer.
+        \n\nYour identity, personal information, and responses will remain confidential. There are no consequences or disadvantages to deciding not to participate or not to answer certain questions. However, your cooperation is greatly appreciated.
+        \n\nThe interview with all target interviewees in your household should take approximately 120 minutes, but with every individual it should not exceed 30 minutes.
+        \n\nIf you have any doubts or questions about this study, you can contact AKF study team leader and or relevant board in the Ministry of Health at below mentioned phone numbers and email addresses: AKF:             XXXXXX IRB MoPH:   XXXXXXX</string>
     <string name="as1q23">Informed Consent provided by respondent?</string>
     <string name="as1q2301">Yes</string>
     <string name="as1q2302">No</string>
@@ -879,7 +879,7 @@
     <string name="bs7q3">Is the father adult or adolescent?</string>
     <string name="bs4bq301">Adult Father </string>
     <string name="bs4bq302">Adolescent Father </string>
-    <string name="bs7q4title">Does (name of adult father from the household roster) engage in:</string>
+    <string name="bs7q4title">Does %s engage in:</string>
     <string name="bs7q4a">Supporting spouse/partner on exclusive breastfeeding and complementary feeding</string>
     <string name="bs7q4a1">Yes</string>
     <string name="bs7q4a2">Yes, Partially</string>

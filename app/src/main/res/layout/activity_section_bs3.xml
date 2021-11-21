@@ -45,24 +45,14 @@
                 android:orientation="vertical">
 
 
-                <!-- bs3title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVbs3title"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/bs3title" />
 
-                    </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- bs3q1  CheckBox   -->
@@ -545,7 +535,7 @@
                         </LinearLayout>
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/bs3q3t" />

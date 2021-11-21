@@ -34,9 +34,9 @@ public class SectionBS1BActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1b);
         db = MainApp.appInfo.getDbHelper();
-        MainApp.preg_count++;
+        //MainApp.preg_count++;
         try {
-            MainApp.pregnancy = db.getPregByUUid(String.valueOf(MainApp.preg_count++));
+            MainApp.pregnancy = db.getPregByUUid(String.valueOf(++MainApp.preg_count));
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(Pregnancy): " + e.getMessage(), Toast.LENGTH_SHORT).show();

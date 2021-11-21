@@ -34,6 +34,17 @@ public class SectionBS7Activity extends AppCompatActivity {
         bi.setMwra(mwra);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+
+        String fatherSno = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl9();
+        String fatherName = "Not Available/Died";
+        if(!fatherSno.equals("97")){
+            fatherName = MainApp.familyList.get(Integer.parseInt(fatherSno)-1).getHl2();
+        }
+
+        mwra.setBs7q2line(fatherSno);
+        mwra.setBs7q1(fatherName);
+
+        bi.bs7q4title.setText(String.format(getResources().getString(R.string.bs7q4title), fatherName));
         setupSkips();
     }
 

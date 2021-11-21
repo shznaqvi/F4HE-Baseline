@@ -47,25 +47,15 @@
                 android:orientation="vertical">
 
 
-                <!-- bs5title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVbs5title"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <TextView
-                            style="@style/labelsHead"
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/bs5title" />
 
-                    </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- bs5q1  Radio   -->

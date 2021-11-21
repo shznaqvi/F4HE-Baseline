@@ -338,6 +338,32 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         //  } else {
         //       Toast.makeText(this, "Form has been completed or locked", Toast.LENGTH_LONG).show();
         //   }
+
+        /*MainApp.childOfSelectedMWRAList = new ArrayList<>();
+        for (FamilyMembers fm : MainApp.familyList) {
+            if (fm.getHl8().equals("2")) {
+                MainApp.childOfSelectedMWRAList.add(Integer.parseInt(fm.getHl1()));
+            }
+        }
+
+        String kishGridChild = MainApp.kishGrid(Integer.parseInt(MainApp.form.getSno()), MainApp.childOfSelectedMWRAList.size());
+        int indx = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
+        MainApp.selectedMWRA = String.valueOf(indx - 1);
+        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
+        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
+
+        // Updating adapter
+        MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).setIndexed("1");
+
+        familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
+
+        // Select Child using KishGrid
+        MainApp.childOfSelectedMWRAList = new ArrayList<>();
+        for (FamilyMembers fm : MainApp.familyList) {
+            if (fm.getHl8().equals(MainApp.familyMember.getHl1())) {
+                MainApp.childOfSelectedMWRAList.add(Integer.parseInt(fm.getHl1()));
+            }
+        }*/
     }
 
     public void addFemale() {
@@ -440,6 +466,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
 
+        // Select Child using KishGrid
         MainApp.childOfSelectedMWRAList = new ArrayList<>();
         for (FamilyMembers fm : MainApp.familyList) {
             if (fm.getHl8().equals(MainApp.familyMember.getHl1())) {
@@ -447,22 +474,17 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
         }
 
+        String kishGridChild = MainApp.kishGrid(Integer.parseInt(MainApp.form.getSno()), MainApp.childOfSelectedMWRAList.size());
+        indx = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
 
-        // Select Child of Selected Mother
-        if (MainApp.childOfSelectedMWRAList.size() > 0) {
-            String kishGridChild = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.childOfSelectedMWRAList.size());
-            indx = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
+        MainApp.selectedChild = String.valueOf((indx -1));
+        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
+        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 
-            // Updating database to mark selected Child
-            MainApp.selectedChild = String.valueOf((indx - 1));
-            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
+        // Updating adapter
+        MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).setIndexed("2");
 
-            // Updating adapter
-            MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).setIndexed("2");
-
-            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedChild));
-        }
+        familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedChild));
 
         // Select AdolMale using KishGrid
         if (MainApp.adolListMale.size() > 0) {
