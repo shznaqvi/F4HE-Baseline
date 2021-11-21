@@ -1162,7 +1162,6 @@
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/hl13"
-                            android:maxLength="20"
                             android:text="@={familymember.hl13}" />
 
                     </LinearLayout>

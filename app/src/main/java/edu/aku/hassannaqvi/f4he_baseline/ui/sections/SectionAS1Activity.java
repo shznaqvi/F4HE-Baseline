@@ -129,7 +129,7 @@ public class SectionAS1Activity extends AppCompatActivity {
         bi.as1q16m.setEnabled(false);
         bi.as1q18.setEnabled(false);
         MainApp.form.setAs1q15y(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
-        MainApp.form.setAs1q15m(String.valueOf(Calendar.getInstance().get(Calendar.MONTH)));
+        MainApp.form.setAs1q15m(String.valueOf(Calendar.getInstance().get(Calendar.MONTH) + 1));
         MainApp.form.setAs1q15d(String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)));
         MainApp.form.setAs1q16h(String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)));
         MainApp.form.setAs1q16m(String.valueOf(Calendar.getInstance().get(Calendar.MINUTE)));
