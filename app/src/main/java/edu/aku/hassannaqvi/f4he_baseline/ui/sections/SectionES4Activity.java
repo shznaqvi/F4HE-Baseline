@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionEs4Binding;
+import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionES4Activity extends AppCompatActivity {
@@ -59,8 +60,8 @@ public class SectionES4Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
+            MainApp.ladol = new LateAdolescent();
             finish();
             if (adolListAll.size() > 0) {
                 startActivity(new Intent(this, SectionES1Activity.class));

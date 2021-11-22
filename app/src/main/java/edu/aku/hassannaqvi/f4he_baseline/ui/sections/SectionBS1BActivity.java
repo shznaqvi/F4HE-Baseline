@@ -104,7 +104,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
-
+            MainApp.pregnancy = new Pregnancy();
             finish();
             if (Integer.parseInt(MainApp.mwra.getBs1q6()) > MainApp.preg_count) {
 

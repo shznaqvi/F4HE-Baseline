@@ -65,7 +65,7 @@ public class SectionCS1BActivity extends AppCompatActivity {
                 }
             }
         }
-        Integer childSno = childOfSelectedMWRAList.get(ecdCount - 1);
+        Integer childSno = childOfSelectedMWRAList.get(0);
         String childName = MainApp.familyList.get(childSno - 1).getHl2();
 
         ecdInfo.setCs1q02c1(String.valueOf(childSno));
@@ -164,8 +164,9 @@ public class SectionCS1BActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         saveDraft();
         if (updateDB()) {
-            childOfSelectedMWRAList.remove(ecdCount - 1);
+            childOfSelectedMWRAList.remove(0);
             finish();
+            Log.d(TAG, "btnContinue: "+ childOfSelectedMWRAList.size());
             if (childOfSelectedMWRAList.size() > 0) {
                 startActivity(new Intent(this, SectionCS1BActivity.class));
             } else {
