@@ -294,7 +294,7 @@
                                     android:maxLength="2"
                                     android:text="@={mwra.bs1q1001}"
                                     app:maxValue="36"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <TextView
@@ -316,7 +316,7 @@
                                     android:maxLength="1"
                                     android:text="@={mwra.bs1q1002}"
                                     app:maxValue="9"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <CheckBox
@@ -328,8 +328,7 @@
                                     android:checked="@{mwra.bs1q1098.equals(`98`)}"
                                     android:onClick="@{()->mwra.setBs1q1098(mwra.bs1q1098.equals(`98`)?``:`98`)}"
                                     android:tag="-1"
-                                    android:text="@string/bs1q1098"
-                                     />
+                                    android:text="@string/bs1q1098" />
 
                             </LinearLayout>
 

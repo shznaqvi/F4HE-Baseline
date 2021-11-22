@@ -82,6 +82,13 @@ public class SectionBS1CActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+
+        if (mwra.getBs1q1001().length() > 0 && mwra.getBs1q1002().length() > 0) {
+            if (Integer.parseInt(mwra.getBs1q1001()) + Integer.parseInt(mwra.getBs1q1002()) == 0) {
+                return Validator.emptyCustomTextBox(this, bi.bs1q1001, "Both Value Can't be ZERO");
+            }
+        }
+        return true;
     }
 }
