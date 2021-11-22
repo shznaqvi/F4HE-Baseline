@@ -97,7 +97,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         }
 
                         if (
-                                Integer.parseInt(MainApp.familyMember.getHl6y()) >= 10 && Integer.parseInt(MainApp.familyMember.getHl6y()) <= 19   // 10 - 19 year old
+                                Integer.parseInt(MainApp.familyMember.getHl6y()) >= 15 && Integer.parseInt(MainApp.familyMember.getHl6y()) <= 19   // 10 - 19 year old
                                         && MainApp.familyMember.getHl7().equals("5")
 
                         ) {
@@ -270,7 +270,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 if (MainApp.superuser) {
                     Toast.makeText(FamilyMembersListActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
 
-                } else if ( MainApp.selectedMWRA.equals("")) {
+                } else if (MainApp.selectedMWRA.equals("")) {
                     //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
                     MainApp.familyMember = new FamilyMembers();
                     addFemale();
@@ -389,15 +389,15 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 return;
             }
 
-        if (MainApp.adolListMale.size() > 0 && bi.adolMaleList.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "Adolescent male not selected", Toast.LENGTH_SHORT).show();
-            return;
-        }
+            if (MainApp.adolListMale.size() > 0 && bi.adolMaleList.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Adolescent male not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-        if (MainApp.adolListFemale.size() > 0 && bi.adolFemaleList.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "Adolescent female not selected", Toast.LENGTH_SHORT).show();
-            return;
-        }
+            if (MainApp.adolListFemale.size() > 0 && bi.adolFemaleList.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Adolescent female not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
 
             // Updating database to mark indexed mother
@@ -474,10 +474,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
         }
 
-        String kishGridChild = MainApp.kishGrid(Integer.parseInt(MainApp.form.getSno()), MainApp.childOfSelectedMWRAList.size());
+        String kishGridChild = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.childOfSelectedMWRAList.size());
         sno = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
 
-        MainApp.selectedChild = String.valueOf((sno -1));
+        // Updating database to mark indexed mother
+        MainApp.selectedChild = String.valueOf(sno - 1);
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
         db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 

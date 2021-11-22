@@ -58,7 +58,13 @@ public class SectionDS3Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionES1Activity.class));
+            if(MainApp.adolListFemale.size() > 0 || MainApp.adolListMale.size()>0){
+
+                startActivity(new Intent(this, SectionES1Activity.class));
+            } else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+
+            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
