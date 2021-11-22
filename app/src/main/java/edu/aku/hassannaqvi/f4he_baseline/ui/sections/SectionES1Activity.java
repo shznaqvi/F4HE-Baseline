@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -47,29 +48,38 @@ public class SectionES1Activity extends AppCompatActivity {
 
 
     private void populateSpinner() {
-
-        // Populate Provinces
-
         adolNames = new ArrayList<>();
         adolCodes = new ArrayList<>();
         adolAges = new ArrayList<>();
-
         adolNames.add("...");
         adolCodes.add("...");
         adolAges.add("...");
-
         for (Integer a : adolListAll) {
-
-            adolNames.add(MainApp.familyList.get(a-1).getHl2());
-            adolCodes.add(MainApp.familyList.get(a-1).getHl1());
-            adolAges.add(MainApp.familyList.get(a-1).getHl6y());
-
+            adolNames.add(MainApp.familyList.get(a - 1).getHl2());
+            adolCodes.add(MainApp.familyList.get(a - 1).getHl1());
+            adolAges.add(MainApp.familyList.get(a - 1).getHl6y());
         }
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionES1Activity.this,
                 R.layout.custom_spinner, adolNames);
 
         bi.es1resp.setAdapter(adapter);
+        bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) return;
+                ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+                bi.age.setText(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+                if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {
+                    bi.fldGrpCVes1cons.setVisibility(View.GONE);
+                    ladol.setEs1cons("99");
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 
