@@ -5254,6 +5254,7 @@ public class MWRA extends BaseObservable implements Observable {
 
         json.put(TableContracts.MwraTable.COLUMN_UUID, this.uid);
         json.put(TableContracts.MwraTable.COLUMN_HHID, this.hhid);
+        json.put(TableContracts.MwraTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.MwraTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.MwraTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.MwraTable.COLUMN_DEVICEID, this.deviceId);
@@ -5695,7 +5696,7 @@ public class MWRA extends BaseObservable implements Observable {
     public MWRA Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UID));
-        //this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PSU_CODE));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_HHID));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_USERNAME));

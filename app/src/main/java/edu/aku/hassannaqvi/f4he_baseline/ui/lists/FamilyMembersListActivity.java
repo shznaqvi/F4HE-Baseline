@@ -69,7 +69,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         MainApp.hhheadSelected = MainApp.familyMember.getHl3().equals("1");
                         //  memGender = MainApp.familyMember.getA204();
                         // boolean memAgeCheck = Integer.parseInt(MainApp.familyMember.getA206()) > 18;
-                        if (!MainApp.familyMember.getHl7().equals("5")) {
+                        if (!MainApp.familyMember.getHl7().equals("5") && !MainApp.familyMember.getHl7().equals("99")) {
                             switch (MainApp.familyMember.getHl4()) {
                                 case "1":
                                     MainApp.fatherList.add(MainApp.familyMember);
@@ -172,7 +172,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             int fmCount = 0;
             for (FamilyMembers fm : MainApp.familyList) {
                 fmCount++;
-                if (!fm.getHl7().equals("5")) {
+                if (!fm.getHl7().equals("5") && !fm.getHl7().equals("99")) {
 
                     switch (fm.getHl4()) {
                         case "1":
