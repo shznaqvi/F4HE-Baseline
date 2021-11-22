@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -63,11 +62,11 @@ public class SectionES1Activity extends AppCompatActivity {
                 R.layout.custom_spinner, adolNames);
 
         bi.es1resp.setAdapter(adapter);
-        bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) return;
-                ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+                //ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
                 bi.age.setText(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
                 if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {
                     bi.fldGrpCVes1cons.setVisibility(View.GONE);
@@ -79,7 +78,7 @@ public class SectionES1Activity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
 
     }
 
@@ -131,7 +130,9 @@ public class SectionES1Activity extends AppCompatActivity {
             adolListAll.remove(bi.es1resp.getSelectedItemPosition() - 1);
 
             finish();
-            startActivity(new Intent(this, SectionES2Activity.class));
+            if (ladol.getEs1cons().equals("2"))
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            else startActivity(new Intent(this, SectionES2Activity.class));
 
 
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui;
 
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.sharedPref;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,7 +48,8 @@ public class IdentificationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+        //setTheme(sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
         populateSpinner();

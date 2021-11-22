@@ -91,13 +91,13 @@
                                 android:text="@string/es1resp" />
 
                             <TextView
-                                android:layout_width="120dp"
+                                android:layout_width="115dp"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:text="Line Number" />
 
                             <TextView
-                                android:layout_width="100dp"
+                                android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:text="Age" />
@@ -124,13 +124,12 @@
                                 style="@style/textView"
                                 android:layout_width="100dp"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="@={ladol.es1respline}" />
+                                android:gravity="center" />
 
                             <TextView
                                 android:id="@+id/age"
                                 style="@style/textView"
-                                android:layout_width="80dp"
+                                android:layout_width="70dp"
                                 android:layout_height="match_parent" />
 
                         </LinearLayout>
