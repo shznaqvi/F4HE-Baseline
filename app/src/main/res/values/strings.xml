@@ -1523,7 +1523,9 @@ For adolescents less than 18 years of age, an assent will be taken from the resp
     <string name="es1cons">Assent provided by respondent (if less than 18 years of age)</string>
     <string name="es1cons01">Yes</string>
     <string name="es1cons02">No</string>
-    <string name="es1cons1">Consent provided by respondent (if 18 or above years of age)</string>
+    <string name="es1cons1">Consent provided by respondent’s parents/guardian (if less than18 years of age)</string>
+    <string name="es1cons01a">Yes</string>
+    <string name="es1cons02b">No</string>
     <string name="es1q1">What is your highest level of completed education?</string>
     <string name="es1q101">Pre-primary</string>
     <string name="es1q102">Primary</string>
@@ -2100,6 +2102,7 @@ For adolescents less than 18 years of age, an assent will be taken from the resp
     <string name='Q_ds3q03g'>ds3q03g</string>
     <string name='Q_dtitle'>dtitle</string>
     <string name='Q_es1cons'>es1cons</string>
+    <string name='Q_es1cons1'>es1cons1</string>
     <string name='Q_es1q1'>es1q1</string>
     <string name='Q_es1q10'>es1q10</string>
     <string name='Q_es1q11'>es1q11</string>
