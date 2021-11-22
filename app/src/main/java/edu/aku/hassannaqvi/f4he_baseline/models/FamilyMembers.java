@@ -673,7 +673,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
         // Adolescent
         if (
-                memAge >= 10 && memAge <= 19   // 15 to 49 year old
+                memAge >= 15 && memAge <= 19   // 15 to 49 year old
                         && memMaritalStatus.equals("5")
         ) {
             setMemCate("2");
