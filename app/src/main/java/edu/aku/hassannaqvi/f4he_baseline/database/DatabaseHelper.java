@@ -104,9 +104,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SC32, form.sC32toString());
         values.put(FormsTable.COLUMN_SC4, form.sC4toString());
         values.put(FormsTable.COLUMN_SC5, form.sC5toString());
-        values.put(FormsTable.COLUMN_SD1, form.sD1toString());
-        values.put(FormsTable.COLUMN_SD2, form.sD2toString());
-        values.put(FormsTable.COLUMN_SD3, form.sD3toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
@@ -125,10 +122,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addMWRA(MWRA mwra) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(TableContracts.MwraTable.COLUMN_PROJECT_NAME, mwra.getProjectName());
-        values.put(TableContracts.MwraTable.COLUMN_UID, mwra.getUid());
-        values.put(TableContracts.MwraTable.COLUMN_UUID, mwra.getUuid());
-        values.put(TableContracts.MwraTable.COLUMN_HHID, mwra.getHhid());
+        values.put(MwraTable.COLUMN_PROJECT_NAME, mwra.getProjectName());
+        values.put(MwraTable.COLUMN_UID, mwra.getUid());
+        values.put(MwraTable.COLUMN_UUID, mwra.getUuid());
+        values.put(MwraTable.COLUMN_PSU_CODE, mwra.getpsuCode());
+        values.put(MwraTable.COLUMN_HHID, mwra.getHhid());
         values.put(MwraTable.COLUMN_USERNAME, mwra.getUserName());
         values.put(MwraTable.COLUMN_SYSDATE, mwra.getSysDate());
         values.put(MwraTable.COLUMN_SB1, mwra.sB1toString());
@@ -159,6 +157,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
         values.put(ChildTable.COLUMN_UID, child.getUid());
         values.put(ChildTable.COLUMN_UUID, child.getUuid());
+        values.put(ChildTable.COLUMN_PSU_CODE, child.getpsuCode());
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
@@ -188,6 +187,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(LateAdolescentTable.COLUMN_PROJECT_NAME, adol.getProjectName());
         values.put(LateAdolescentTable.COLUMN_UID, adol.getUid());
         values.put(LateAdolescentTable.COLUMN_UUID, adol.getUuid());
+        values.put(LateAdolescentTable.COLUMN_PSU_CODE, adol.getpsuCode());
         values.put(TableContracts.LateAdolescentTable.COLUMN_HHID, adol.getHhid());
         values.put(LateAdolescentTable.COLUMN_USERNAME, adol.getUserName());
         values.put(LateAdolescentTable.COLUMN_SYSDATE, adol.getSysDate());
@@ -215,8 +215,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_UID, preg.getUid());
         values.put(PregnancyTable.COLUMN_UUID, preg.getUuid());
         values.put(PregnancyTable.COLUMN_MUID, preg.getMuid());
-        values.put(PregnancyTable.COLUMN_HHID, preg.getHhid());
         values.put(PregnancyTable.COLUMN_PSU_CODE, preg.getpsuCode());
+        values.put(PregnancyTable.COLUMN_HHID, preg.getHhid());
         values.put(PregnancyTable.COLUMN_SNO, preg.getSno());
         values.put(PregnancyTable.COLUMN_USERNAME, preg.getUserName());
         values.put(PregnancyTable.COLUMN_SYSDATE, preg.getSysDate());
@@ -240,6 +240,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TableContracts.ECDInfoTable.COLUMN_PROJECT_NAME, ecd.getProjectName());
         values.put(TableContracts.ECDInfoTable.COLUMN_UID, ecd.getUid());
         values.put(TableContracts.ECDInfoTable.COLUMN_UUID, ecd.getUuid());
+        values.put(TableContracts.ECDInfoTable.COLUMN_PSU_CODE, ecd.getpsuCode());
         values.put(TableContracts.ECDInfoTable.COLUMN_HHID, ecd.getHhid());
         values.put(TableContracts.ECDInfoTable.COLUMN_USERNAME, ecd.getUserName());
         values.put(TableContracts.ECDInfoTable.COLUMN_SYSDATE, ecd.getSysDate());

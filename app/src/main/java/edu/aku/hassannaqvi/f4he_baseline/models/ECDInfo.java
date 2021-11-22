@@ -277,6 +277,7 @@ public class ECDInfo extends BaseObservable implements Observable {
 
     public void setCs1q02c1ecd(String cs1q02c1ecd) {
         this.cs1q02c1ecd = cs1q02c1ecd;
+        setCs1q02c1cent(cs1q02c1ecd.equals("1") ? "" : this.cs1q02c1cent);
         notifyPropertyChanged(BR.cs1q02c1ecd);
     }
 
@@ -295,6 +296,8 @@ public class ECDInfo extends BaseObservable implements Observable {
     public ECDInfo Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_UUID));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_HHID));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_USERNAME));
@@ -346,6 +349,7 @@ public class ECDInfo extends BaseObservable implements Observable {
         json.put(TableContracts.ECDInfoTable.COLUMN_ID, this.id);
         json.put(TableContracts.ECDInfoTable.COLUMN_UID, this.uid);
         json.put(TableContracts.ECDInfoTable.COLUMN_UUID, this.uuid);
+        json.put(TableContracts.ECDInfoTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.ECDInfoTable.COLUMN_HHID, this.hhid);
 
         json.put(TableContracts.ECDInfoTable.COLUMN_USERNAME, this.userName);
