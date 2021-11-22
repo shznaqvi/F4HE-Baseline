@@ -102,9 +102,10 @@ public class SectionBS1AActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-
-            //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
-            startActivity(new Intent(this, SectionBS1BActivity.class));
+            if (mwra.getBs1con().equals("2"))
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            else
+                startActivity(new Intent(this, SectionBS1BActivity.class));
 
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
