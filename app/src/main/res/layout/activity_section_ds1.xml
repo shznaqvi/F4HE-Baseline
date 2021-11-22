@@ -31,11 +31,14 @@
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/dtitle"
+            app:subtitle="@string/ds1"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -43,11 +46,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    style="@style/sub_labels"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ds1" />
+
 
                 <!-- dinst  Title   -->
                 <androidx.cardview.widget.CardView
@@ -64,18 +63,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/dinst" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q01  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVds1q01"
                     style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -93,29 +90,28 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/ds1q01" />
+
+                            <EditText
+                                android:id="@+id/ds1q01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="@string/ds1q01"
+                                android:text="@={mKap.ds1q01}" />
+
                         </LinearLayout>
 
-                        <EditText
-                            android:enabled="false"
-                            android:gravity="center"
-                            android:id="@+id/ds1q01"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/ds1q01"
-                            android:text="@={mKap.ds1q01}" />
-                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q02  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVds1q02"
                     style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -133,30 +129,35 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/ds1q02" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/ds1q02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="@string/ds1q02"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={mKap.ds1q02}"
+                                app:maxValue="99"
+                                app:minValue="0"
+                                app:type="range" />
+
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:enabled="false"
-                            android:gravity="center"
-                            android:id="@+id/ds1q02"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/ds1q02"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            app:maxValue="99"
-                            app:minValue="0"
-                            android:text="@={mKap.ds1q02}"
-                            app:type="range" />
-                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <TextView
                     style="@style/info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ds1inst" />
+
 
                 <!-- ds1q03  Title   -->
                 <androidx.cardview.widget.CardView
@@ -173,8 +174,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ds1q03" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q03a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -199,23 +203,23 @@
                                 android:text="@string/Q_ds1q03a" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/ds1q03a" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/ds1q03a"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ds1q03a01"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03a.equals(`1`)}"
                                 android:onClick="@{()->mKap.setDs1q03a(`1`)}"
                                 android:text="@string/ds1q03a01" />
@@ -223,14 +227,18 @@
                             <RadioButton
                                 android:id="@+id/ds1q03a02"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03a.equals(`2`)}"
                                 android:onClick="@{()->mKap.setDs1q03a(`2`)}"
                                 android:text="@string/ds1q03a02" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q03b  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -255,23 +263,23 @@
                                 android:text="@string/Q_ds1q03b" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/ds1q03b" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/ds1q03b"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ds1q03b01"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03b.equals(`1`)}"
                                 android:onClick="@{()->mKap.setDs1q03b(`1`)}"
                                 android:text="@string/ds1q03b01" />
@@ -279,14 +287,18 @@
                             <RadioButton
                                 android:id="@+id/ds1q03b02"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03b.equals(`2`)}"
                                 android:onClick="@{()->mKap.setDs1q03b(`2`)}"
                                 android:text="@string/ds1q03b02" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q03c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -311,23 +323,23 @@
                                 android:text="@string/Q_ds1q03c" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/ds1q03c" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/ds1q03c"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ds1q03c01"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03c.equals(`1`)}"
                                 android:onClick="@{()->mKap.setDs1q03c(`1`)}"
                                 android:text="@string/ds1q03c01" />
@@ -335,14 +347,18 @@
                             <RadioButton
                                 android:id="@+id/ds1q03c02"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03c.equals(`2`)}"
                                 android:onClick="@{()->mKap.setDs1q03c(`2`)}"
                                 android:text="@string/ds1q03c02" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q03d  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -367,23 +383,23 @@
                                 android:text="@string/Q_ds1q03d" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/ds1q03d" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/ds1q03d"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ds1q03d01"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03d.equals(`1`)}"
                                 android:onClick="@{()->mKap.setDs1q03d(`1`)}"
                                 android:text="@string/ds1q03d01" />
@@ -391,14 +407,18 @@
                             <RadioButton
                                 android:id="@+id/ds1q03d02"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03d.equals(`2`)}"
                                 android:onClick="@{()->mKap.setDs1q03d(`2`)}"
                                 android:text="@string/ds1q03d02" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q03e  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -423,23 +443,23 @@
                                 android:text="@string/Q_ds1q03e" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/ds1q03e" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/ds1q03e"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ds1q03e01"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03e.equals(`1`)}"
                                 android:onClick="@{()->mKap.setDs1q03e(`1`)}"
                                 android:text="@string/ds1q03e01" />
@@ -447,14 +467,18 @@
                             <RadioButton
                                 android:id="@+id/ds1q03e02"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03e.equals(`2`)}"
                                 android:onClick="@{()->mKap.setDs1q03e(`2`)}"
                                 android:text="@string/ds1q03e02" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q03f  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -479,23 +503,23 @@
                                 android:text="@string/Q_ds1q03f" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/ds1q03f" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/ds1q03f"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ds1q03f01"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03f.equals(`1`)}"
                                 android:onClick="@{()->mKap.setDs1q03f(`1`)}"
                                 android:text="@string/ds1q03f01" />
@@ -503,14 +527,18 @@
                             <RadioButton
                                 android:id="@+id/ds1q03f02"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q03f.equals(`2`)}"
                                 android:onClick="@{()->mKap.setDs1q03f(`2`)}"
                                 android:text="@string/ds1q03f02" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ds1q04  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -535,23 +563,23 @@
                                 android:text="@string/Q_ds1q04" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/ds1q04" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/ds1q04"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ds1q0401"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q04.equals(`1`)}"
                                 android:onClick="@{()->mKap.setDs1q04(`1`)}"
                                 android:text="@string/ds1q0401" />
@@ -559,14 +587,18 @@
                             <RadioButton
                                 android:id="@+id/ds1q0402"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{mKap.ds1q04.equals(`2`)}"
                                 android:onClick="@{()->mKap.setDs1q04(`2`)}"
                                 android:text="@string/ds1q0402" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
@@ -595,8 +627,18 @@
                         android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
+
         </ScrollView>
+
+
     </LinearLayout>
+
+
 </layout>
