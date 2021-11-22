@@ -474,10 +474,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
         }
 
-        String kishGridChild = MainApp.kishGrid(Integer.parseInt(MainApp.form.getSno()), MainApp.childOfSelectedMWRAList.size());
+        String kishGridChild = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.childOfSelectedMWRAList.size());
         sno = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
 
-        MainApp.selectedChild = String.valueOf((sno -1));
+        // Updating database to mark indexed mother
+        MainApp.selectedChild = String.valueOf(sno - 1);
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
         db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 
