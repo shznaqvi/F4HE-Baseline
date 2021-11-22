@@ -874,6 +874,7 @@ public class LateAdolescent extends BaseObservable {
         setEs3q507(es3q4.equals("2") ? "" : this.es3q507);
         setEs3q596(es3q4.equals("2") ? "" : this.es3q596);
         setEs3q596x(es3q4.equals("2") ? "" : this.es3q596x);
+        setEs3q6(es3q4.equals("2") ? "" : this.es3q6);
         notifyPropertyChanged(BR.es3q4);
     }
 

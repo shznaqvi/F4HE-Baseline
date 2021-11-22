@@ -51,6 +51,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/es3title" />
 
+
                 <!-- es3q1  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes3q1"
@@ -74,23 +75,23 @@
                                 android:text="@string/Q_es3q1" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es3q1" />
+
                         </LinearLayout>
 
                         <RadioGroup
-                            android:orientation="horizontal"
                             android:id="@+id/es3q1"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/es3q101"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q1.equals(`1`)}"
                                 android:onClick="@{()->ladol.setEs3q1(`1`)}"
                                 android:text="@string/es3q101" />
@@ -98,20 +99,24 @@
                             <RadioButton
                                 android:id="@+id/es3q102"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q1.equals(`2`)}"
-                                android:onClick="@{()->ladol.setEs3q1(`2`)}"
+                                android:onClick="@{()->ladol.setEs3q1(`2`) + es3q2.clearCheck()}"
                                 android:text="@string/es3q102" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es3q2  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes3q2"
                     style="@style/cardView"
-                    android:visibility="@{ladol.es3q1.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{ladol.es3q1.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -131,10 +136,10 @@
                                 android:text="@string/Q_es3q2" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es3q2" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -516,7 +521,7 @@
                                 android:hint="@string/es3q596"
                                 android:tag="es3q596"
                                 android:text="@={ladol.es3q596x}"
-                                android:visibility="@{ladol.es3q5.equals(`96`)? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{ladol.es3q596.equals(`96`)? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 
@@ -725,6 +730,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- es3q9  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes3q9"
@@ -748,10 +754,10 @@
                                 android:text="@string/Q_es3q9" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es3q9" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -766,7 +772,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q901.equals(`1`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q901"
                                 android:onClick="@{()->ladol.setEs3q901(ladol.es3q901.equals(`1`)?``:`1`)}" />
 
@@ -775,7 +781,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q902.equals(`2`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q902"
                                 android:onClick="@{()->ladol.setEs3q902(ladol.es3q902.equals(`2`)?``:`2`)}" />
 
@@ -784,7 +790,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q903.equals(`3`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q903"
                                 android:onClick="@{()->ladol.setEs3q903(ladol.es3q903.equals(`3`)?``:`3`)}" />
 
@@ -793,7 +799,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q904.equals(`4`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q904"
                                 android:onClick="@{()->ladol.setEs3q904(ladol.es3q904.equals(`4`)?``:`4`)}" />
 
@@ -802,7 +808,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q905.equals(`5`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q905"
                                 android:onClick="@{()->ladol.setEs3q905(ladol.es3q905.equals(`5`)?``:`5`)}" />
 
@@ -811,7 +817,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q906.equals(`6`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q906"
                                 android:onClick="@{()->ladol.setEs3q906(ladol.es3q906.equals(`6`)?``:`6`)}" />
 
@@ -820,7 +826,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q907.equals(`7`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q907"
                                 android:onClick="@{()->ladol.setEs3q907(ladol.es3q907.equals(`7`)?``:`7`)}" />
 
@@ -829,7 +835,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q908.equals(`8`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q908"
                                 android:onClick="@{()->ladol.setEs3q908(ladol.es3q908.equals(`8`)?``:`8`)}" />
 
@@ -838,7 +844,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{ladol.es3q996.equals(`96`)}"
-                                android:enabled="@{!ladol.es3q9.equals(`98`)}"
+                                android:enabled="@{!ladol.es3q998.equals(`98`)}"
                                 android:text="@string/es3q996"
                                 android:onClick="@{()->ladol.setEs3q996(ladol.es3q996.equals(`96`)?``:`96`)}" />
 
@@ -850,7 +856,7 @@
                                 android:hint="@string/es3q996"
                                 android:tag="es3q996"
                                 android:text="@={ladol.es3q996x}"
-                                android:visibility="@{ladol.es3q9.equals(`96`)? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{ladol.es3q996.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             <CheckBox
                                 android:id="@+id/es3q998"
@@ -859,9 +865,13 @@
                                 android:checked="@{ladol.es3q998.equals(`98`)}"
                                 android:onClick="@{()->ladol.setEs3q998(ladol.es3q998.equals(`98`)?``:`98`)}"
                                 android:text="@string/es3q998" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es3q10  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -886,10 +896,10 @@
                                 android:text="@string/Q_es3q10" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/es3q10" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -988,7 +998,7 @@
                                 android:hint="@string/es3q196"
                                 android:tag="es3q196"
                                 android:text="@={ladol.es3q196x}"
-                                android:visibility="@{ladol.es3q10.equals(`96`)? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{ladol.es3q196.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             <CheckBox
                                 android:id="@+id/es3q1098"
@@ -997,9 +1007,13 @@
                                 android:checked="@{ladol.es3q1098.equals(`98`)}"
                                 android:onClick="@{()->ladol.setEs3q1098(ladol.es3q1098.equals(`98`)?``:`98`)}"
                                 android:text="@string/es3q1098" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- es3q11  Radio   -->
                 <androidx.cardview.widget.CardView
