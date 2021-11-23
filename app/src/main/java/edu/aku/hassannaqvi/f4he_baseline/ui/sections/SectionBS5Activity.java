@@ -30,6 +30,7 @@ public class SectionBS5Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs5);
         bi.setMwra(mwra);
         setSupportActionBar(bi.toolbar);
