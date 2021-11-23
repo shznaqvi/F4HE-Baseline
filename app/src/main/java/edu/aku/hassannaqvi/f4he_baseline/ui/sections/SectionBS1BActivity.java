@@ -31,8 +31,8 @@ public class SectionBS1BActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1b);
         db = MainApp.appInfo.getDbHelper();
         //MainApp.preg_count++;
