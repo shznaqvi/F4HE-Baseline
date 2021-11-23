@@ -130,7 +130,7 @@ public class SectionES1Activity extends AppCompatActivity {
             adolListAll.remove(bi.es1resp.getSelectedItemPosition() - 1);
 
             finish();
-            if (ladol.getEs1cons().equals("2"))
+            if (ladol.getEs1cons().equals("2") || ladol.getEs1cons1().equals("2"))
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
             else startActivity(new Intent(this, SectionES2Activity.class));
 
