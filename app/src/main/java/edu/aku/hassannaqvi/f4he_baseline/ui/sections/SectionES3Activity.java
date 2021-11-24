@@ -36,6 +36,7 @@ public class SectionES3Activity extends AppCompatActivity {
         bi.setLadol(MainApp.ladol);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        //setupSkips();
     }
 
 
