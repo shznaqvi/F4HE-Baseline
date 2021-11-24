@@ -37,7 +37,6 @@ public class SectionCS1AActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_a);
         db = MainApp.appInfo.dbHelper;
         try {

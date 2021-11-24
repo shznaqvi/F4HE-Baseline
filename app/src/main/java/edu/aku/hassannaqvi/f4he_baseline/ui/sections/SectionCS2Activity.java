@@ -31,7 +31,6 @@ public class SectionCS2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs2);
 
         child.setCs2q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());

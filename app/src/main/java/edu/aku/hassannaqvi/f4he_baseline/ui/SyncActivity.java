@@ -47,7 +47,14 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.adapters.SyncListAdapter;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.ChildTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.ECDInfoTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescentTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.MotherKAPTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.MwraTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.PregnancyTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VillagesTable;
@@ -138,9 +145,37 @@ public class SyncActivity extends AppCompatActivity {
                 uploadTables.clear();
                 MainApp.uploadData.clear();
 
-                // Forms
+                //Forms
                 uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedForms());
+                MainApp.uploadData.add(db.getUnsyncedFormHH());
+
+                //FamilyMembers
+                uploadTables.add(new SyncModel(FamilyMembersTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedFamilyMembers());
+
+                //MWRA
+                uploadTables.add(new SyncModel(MwraTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedMWRA());
+
+                //Pregnancy
+                uploadTables.add(new SyncModel(PregnancyTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedPregnancy());
+
+                //Child
+                uploadTables.add(new SyncModel(ChildTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedChild());
+
+                //MotherKAP
+                uploadTables.add(new SyncModel(MotherKAPTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedmotherKAP());
+
+                //ECDinfo
+                uploadTables.add(new SyncModel(ECDInfoTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedEcdInfo());
+
+                //LateAdol
+                uploadTables.add(new SyncModel(LateAdolescentTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedLateAdolescent());
 
 
                 MainApp.downloadData = new String[uploadData.size()];

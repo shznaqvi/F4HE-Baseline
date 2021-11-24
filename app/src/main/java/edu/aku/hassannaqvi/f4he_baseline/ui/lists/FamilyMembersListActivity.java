@@ -421,8 +421,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         // Updating adapter
         MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).setIndexed("1");
-
         familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
+
 
         // Select Child using KishGrid
         MainApp.childOfSelectedMWRAList = new ArrayList<>();
@@ -442,8 +442,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         // Updating adapter
         MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).setIndexed("2");
-
         familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedChild));
+
 
         // Select AdolMale using KishGrid
         if (MainApp.adolListMale.size() > 0) {
@@ -457,7 +457,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
             // Updating adapter
             MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale)).setIndexed("3");
-
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolMale));
         }
 
@@ -473,7 +472,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
             // Updating adapter
             MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale)).setIndexed("4");
-
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolFemale));
         }
 

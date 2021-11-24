@@ -45,15 +45,10 @@ public class LateAdolescent extends BaseObservable {
     private String syncDate = _EMPTY_;
 
     // Section Variables
-    private String sE1 = _EMPTY_;
-    private String sE2 = _EMPTY_;
-    private String sE3 = _EMPTY_;
-    private String sE4 = _EMPTY_;
-
-
     private String es1resp = _EMPTY_;
     private String es1respline = _EMPTY_;
     private String es1cons = _EMPTY_;
+    private String es1cons1 = _EMPTY_;
     private String es1q1 = _EMPTY_;
     private String es1q196x = _EMPTY_;
     private String es1q2 = _EMPTY_;
@@ -379,37 +374,6 @@ public class LateAdolescent extends BaseObservable {
     }
 
 
-    public String getsE1() {
-        return sE1;
-    }
-
-    public String getsE2() {
-        return sE2;
-    }
-
-    public String getsE3() {
-        return sE3;
-    }
-
-    public String getsE4() {
-        return sE4;
-    }
-
-    public void setsE1(String sE1) {
-        this.sE1 = sE1;
-    }
-
-    public void setsE2(String sE2) {
-        this.sE2 = sE2;
-    }
-
-    public void setsE3(String sE3) {
-        this.sE3 = sE3;
-    }
-
-    public void setsE4(String sE4) {
-        this.sE4 = sE4;
-    }
 
     @Bindable
     public String getEs1resp() {
@@ -438,6 +402,7 @@ public class LateAdolescent extends BaseObservable {
 
     public void setEs1cons(String es1cons) {
         this.es1cons = es1cons;
+        setEs1cons1(es1cons.equals("2") ? "" : this.es1cons1);
         setEs1q1(es1cons.equals("2") ? "" : this.es1q1);
         setEs1q2(es1cons.equals("2") ? "" : this.es1q2);
         setEs1q3(es1cons.equals("2") ? "" : this.es1q3);
@@ -458,6 +423,35 @@ public class LateAdolescent extends BaseObservable {
         setEs1q10(es1cons.equals("2") ? "" : this.es1q10);
         setEs1q11(es1cons.equals("2") ? "" : this.es1q11);
         notifyPropertyChanged(BR.es1cons);
+    }
+
+    @Bindable
+    public String getEs1cons1() {
+        return es1cons1;
+    }
+
+    public void setEs1cons1(String es1cons1) {
+        this.es1cons1 = es1cons1;
+        setEs1q1(es1cons1.equals("2") ? "" : this.es1q1);
+        setEs1q2(es1cons1.equals("2") ? "" : this.es1q2);
+        setEs1q3(es1cons1.equals("2") ? "" : this.es1q3);
+        setEs1q405(es1cons1.equals("2") ? "" : this.es1q405);
+        setEs1q406(es1cons1.equals("2") ? "" : this.es1q406);
+        setEs1q407(es1cons1.equals("2") ? "" : this.es1q407);
+        setEs1q408(es1cons1.equals("2") ? "" : this.es1q408);
+        setEs1q409(es1cons1.equals("2") ? "" : this.es1q409);
+        setEs1q496(es1cons1.equals("2") ? "" : this.es1q496);
+        setEs1q496x(es1cons1.equals("2") ? "" : this.es1q496x);
+        setEs1q5(es1cons1.equals("2") ? "" : this.es1q5);
+        setEs1q6(es1cons1.equals("2") ? "" : this.es1q6);
+        setEs1q7(es1cons1.equals("2") ? "" : this.es1q7);
+        setEs1q8a(es1cons1.equals("2") ? "" : this.es1q8a);
+        setEs1q8b(es1cons1.equals("2") ? "" : this.es1q8b);
+        setEs1q8c(es1cons1.equals("2") ? "" : this.es1q8c);
+        setEs1q9(es1cons1.equals("2") ? "" : this.es1q9);
+        setEs1q10(es1cons1.equals("2") ? "" : this.es1q10);
+        setEs1q11(es1cons1.equals("2") ? "" : this.es1q11);
+        notifyPropertyChanged(BR.es1cons1);
     }
 
     @Bindable
@@ -626,10 +620,9 @@ public class LateAdolescent extends BaseObservable {
 
     public void setEs1q7(String es1q7) {
         this.es1q7 = es1q7;
-        setEs1q8a(es1q7.equals("1") ? this.es1q8a : "" );
-        setEs1q8b(es1q7.equals("1") ? this.es1q8b : "" );
-        setEs1q8c(es1q7.equals("1") ? this.es1q8c : "" );
-
+        setEs1q8a(es1q7.equals("2") ? "" : this.es1q8a);
+        setEs1q8b(es1q7.equals("2") ? "" : this.es1q8b);
+        setEs1q8c(es1q7.equals("2") ? "" : this.es1q8c);
         notifyPropertyChanged(BR.es1q7);
     }
 
@@ -2300,6 +2293,7 @@ public class LateAdolescent extends BaseObservable {
             this.es1resp = json.getString("es1resp");
             this.es1respline = json.getString("es1respline");
             this.es1cons = json.getString("es1cons");
+            this.es1cons1 = json.getString("es1cons1");
             this.es1q1 = json.getString("es1q1");
             this.es1q196x = json.getString("es1q196x");
             this.es1q2 = json.getString("es1q2");
@@ -2491,6 +2485,7 @@ public class LateAdolescent extends BaseObservable {
         json.put("es1resp", es1resp)
                 .put("es1respline", es1respline)
                 .put("es1cons", es1cons)
+                .put("es1cons1", es1cons1)
                 .put("es1q1", es1q1)
                 .put("es1q196x", es1q196x)
                 .put("es1q2", es1q2)

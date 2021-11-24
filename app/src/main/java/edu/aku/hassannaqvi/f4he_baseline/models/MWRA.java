@@ -69,26 +69,6 @@ public class MWRA extends BaseObservable implements Observable {
     private String bs1q4 = _EMPTY_;
     private String bs1q5 = _EMPTY_;
     private String bs1q6 = _EMPTY_;
-    private String bs1q7p1g = _EMPTY_;
-    private String bs1q7p1d = _EMPTY_;
-    private String bs1q7p1d96x = _EMPTY_;
-    private String bs1q7p1b = _EMPTY_;
-    private String bs1q7p2g = _EMPTY_;
-    private String bs1q7p2d = _EMPTY_;
-    private String bs1q7p2d96x = _EMPTY_;
-    private String bs1q7p2b = _EMPTY_;
-    private String bs1q7p3g = _EMPTY_;
-    private String bs1q7p3d = _EMPTY_;
-    private String bs1q7p3d96x = _EMPTY_;
-    private String bs1q7p3b = _EMPTY_;
-    private String bs1q7p4g = _EMPTY_;
-    private String bs1q7p4d = _EMPTY_;
-    private String bs1q7p4d96x = _EMPTY_;
-    private String bs1q7p4b = _EMPTY_;
-    private String bs1q7p5g = _EMPTY_;
-    private String bs1q7p5d = _EMPTY_;
-    private String bs1q7p5d96x = _EMPTY_;
-    private String bs1q7p5b = _EMPTY_;
     private String bs1q08 = _EMPTY_;
     private String bs1q09 = _EMPTY_;
     private String bs1q0901 = _EMPTY_;
@@ -730,21 +710,6 @@ public class MWRA extends BaseObservable implements Observable {
         setBs1q4(bs1con.equals("2") ? "" : this.bs1q4);
         setBs1q5(bs1con.equals("2") ? "" : this.bs1q5);
         setBs1q6(bs1con.equals("2") ? "" : this.bs1q6);
-        setBs1q7p1d(bs1con.equals("2") ? "" : this.bs1q7p1d);
-        setBs1q7p1g(bs1con.equals("2") ? "" : this.bs1q7p1g);
-        setBs1q7p1b(bs1con.equals("2") ? "" : this.bs1q7p1b);
-        setBs1q7p2d(bs1con.equals("2") ? "" : this.bs1q7p2d);
-        setBs1q7p2g(bs1con.equals("2") ? "" : this.bs1q7p2g);
-        setBs1q7p2b(bs1con.equals("2") ? "" : this.bs1q7p2b);
-        setBs1q7p3d(bs1con.equals("2") ? "" : this.bs1q7p3d);
-        setBs1q7p3g(bs1con.equals("2") ? "" : this.bs1q7p3g);
-        setBs1q7p3b(bs1con.equals("2") ? "" : this.bs1q7p3b);
-        setBs1q7p4d(bs1con.equals("2") ? "" : this.bs1q7p4d);
-        setBs1q7p4g(bs1con.equals("2") ? "" : this.bs1q7p4g);
-        setBs1q7p4b(bs1con.equals("2") ? "" : this.bs1q7p4b);
-        setBs1q7p5d(bs1con.equals("2") ? "" : this.bs1q7p5d);
-        setBs1q7p5g(bs1con.equals("2") ? "" : this.bs1q7p5g);
-        setBs1q7p5b(bs1con.equals("2") ? "" : this.bs1q7p5b);
         setBs1q08(bs1con.equals("2") ? "" : this.bs1q08);
         setBs1q0901(bs1con.equals("2") ? "" : this.bs1q0901);
         setBs1q0902(bs1con.equals("2") ? "" : this.bs1q0902);
@@ -832,210 +797,7 @@ public class MWRA extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.bs1q6);
     }
 
-    @Bindable
-    public String getBs1q7p1g() {
-        return bs1q7p1g;
-    }
 
-    public void setBs1q7p1g(String bs1q7p1g) {
-        this.bs1q7p1g = bs1q7p1g;
-        notifyPropertyChanged(BR.bs1q7p1g);
-    }
-
-    @Bindable
-    public String getBs1q7p1d() {
-        return bs1q7p1d;
-    }
-
-    public void setBs1q7p1d(String bs1q7p1d) {
-        this.bs1q7p1d = bs1q7p1d;
-        setBs1q7p1d96x(bs1q7p1d.equals("96") ? this.bs1q7p1d96x : "");
-        notifyPropertyChanged(BR.bs1q7p1d);
-    }
-
-    @Bindable
-    public String getBs1q7p1d96x() {
-        return bs1q7p1d96x;
-    }
-
-    public void setBs1q7p1d96x(String bs1q7p1d96x) {
-        this.bs1q7p1d96x = bs1q7p1d96x;
-        notifyPropertyChanged(BR.bs1q7p1d96x);
-    }
-
-    @Bindable
-    public String getBs1q7p1b() {
-        return bs1q7p1b;
-    }
-
-    public void setBs1q7p1b(String bs1q7p1b) {
-        this.bs1q7p1b = bs1q7p1b;
-        notifyPropertyChanged(BR.bs1q7p1b);
-    }
-
-    @Bindable
-    public String getBs1q7p2g() {
-        return bs1q7p2g;
-    }
-
-    public void setBs1q7p2g(String bs1q7p2g) {
-        this.bs1q7p2g = bs1q7p2g;
-        notifyPropertyChanged(BR.bs1q7p2g);
-    }
-
-    @Bindable
-    public String getBs1q7p2d() {
-        return bs1q7p2d;
-    }
-
-    public void setBs1q7p2d(String bs1q7p2d) {
-        this.bs1q7p2d = bs1q7p2d;
-        setBs1q7p2d96x(bs1q7p2d.equals("96") ? this.bs1q7p2d96x : "");
-        notifyPropertyChanged(BR.bs1q7p2d);
-    }
-
-    @Bindable
-    public String getBs1q7p2d96x() {
-        return bs1q7p2d96x;
-    }
-
-    public void setBs1q7p2d96x(String bs1q7p2d96x) {
-        this.bs1q7p2d96x = bs1q7p2d96x;
-        notifyPropertyChanged(BR.bs1q7p2d96x);
-    }
-
-    @Bindable
-    public String getBs1q7p2b() {
-        return bs1q7p2b;
-    }
-
-    public void setBs1q7p2b(String bs1q7p2b) {
-        this.bs1q7p2b = bs1q7p2b;
-        notifyPropertyChanged(BR.bs1q7p2b);
-    }
-
-    @Bindable
-    public String getBs1q7p3g() {
-        return bs1q7p3g;
-    }
-
-    public void setBs1q7p3g(String bs1q7p3g) {
-        this.bs1q7p3g = bs1q7p3g;
-        notifyPropertyChanged(BR.bs1q7p3g);
-    }
-
-    @Bindable
-    public String getBs1q7p3d() {
-        return bs1q7p3d;
-    }
-
-    public void setBs1q7p3d(String bs1q7p3d) {
-        this.bs1q7p3d = bs1q7p3d;
-        setBs1q7p3d96x(bs1q7p5d.equals("96") ? this.bs1q7p3d96x : "");
-        notifyPropertyChanged(BR.bs1q7p3d);
-    }
-
-    @Bindable
-    public String getBs1q7p3d96x() {
-        return bs1q7p3d96x;
-    }
-
-    public void setBs1q7p3d96x(String bs1q7p3d96x) {
-        this.bs1q7p3d96x = bs1q7p3d96x;
-        notifyPropertyChanged(BR.bs1q7p3d96x);
-    }
-
-    @Bindable
-    public String getBs1q7p3b() {
-        return bs1q7p3b;
-    }
-
-    public void setBs1q7p3b(String bs1q7p3b) {
-        this.bs1q7p3b = bs1q7p3b;
-        notifyPropertyChanged(BR.bs1q7p3b);
-    }
-
-    @Bindable
-    public String getBs1q7p4g() {
-        return bs1q7p4g;
-    }
-
-    public void setBs1q7p4g(String bs1q7p4g) {
-        this.bs1q7p4g = bs1q7p4g;
-        notifyPropertyChanged(BR.bs1q7p4g);
-    }
-
-    @Bindable
-    public String getBs1q7p4d() {
-        return bs1q7p4d;
-    }
-
-    public void setBs1q7p4d(String bs1q7p4d) {
-        this.bs1q7p4d = bs1q7p4d;
-        setBs1q7p4d96x(bs1q7p4d.equals("96") ? this.bs1q7p4d96x : "");
-        notifyPropertyChanged(BR.bs1q7p4d);
-    }
-
-    @Bindable
-    public String getBs1q7p4d96x() {
-        return bs1q7p4d96x;
-    }
-
-    public void setBs1q7p4d96x(String bs1q7p4d96x) {
-        this.bs1q7p4d96x = bs1q7p4d96x;
-        notifyPropertyChanged(BR.bs1q7p4d96x);
-    }
-
-    @Bindable
-    public String getBs1q7p4b() {
-        return bs1q7p4b;
-    }
-
-    public void setBs1q7p4b(String bs1q7p4b) {
-        this.bs1q7p4b = bs1q7p4b;
-        notifyPropertyChanged(BR.bs1q7p4b);
-    }
-
-    @Bindable
-    public String getBs1q7p5g() {
-        return bs1q7p5g;
-    }
-
-    public void setBs1q7p5g(String bs1q7p5g) {
-        this.bs1q7p5g = bs1q7p5g;
-        notifyPropertyChanged(BR.bs1q7p5g);
-    }
-
-    @Bindable
-    public String getBs1q7p5d() {
-        return bs1q7p5d;
-    }
-
-    public void setBs1q7p5d(String bs1q7p5d) {
-        this.bs1q7p5d = bs1q7p5d;
-        setBs1q7p5d96x(bs1q7p5d.equals("96") ? this.bs1q7p5d96x : "");
-        notifyPropertyChanged(BR.bs1q7p5d);
-    }
-
-    @Bindable
-    public String getBs1q7p5d96x() {
-        return bs1q7p5d96x;
-    }
-
-    public void setBs1q7p5d96x(String bs1q7p5d96x) {
-        this.bs1q7p5d96x = bs1q7p5d96x;
-        notifyPropertyChanged(BR.bs1q7p5d96x);
-    }
-
-    @Bindable
-    public String getBs1q7p5b() {
-        return bs1q7p5b;
-    }
-
-    public void setBs1q7p5b(String bs1q7p5b) {
-        this.bs1q7p5b = bs1q7p5b;
-        notifyPropertyChanged(BR.bs1q7p5b);
-    }
 
     @Bindable
     public String getBs1q08() {
@@ -5285,26 +5047,6 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("bs1q4", bs1q4)
                 .put("bs1q5", bs1q5)
                 .put("bs1q6", bs1q6)
-                .put("bs1q7p1g", bs1q7p1g)
-                .put("bs1q7p1d", bs1q7p1d)
-                .put("bs1q7p1d96x", bs1q7p1d96x)
-                .put("bs1q7p1b", bs1q7p1b)
-                .put("bs1q7p2g", bs1q7p2g)
-                .put("bs1q7p2d", bs1q7p2d)
-                .put("bs1q7p2d96x", bs1q7p2d96x)
-                .put("bs1q7p2b", bs1q7p2b)
-                .put("bs1q7p3g", bs1q7p3g)
-                .put("bs1q7p3d", bs1q7p3d)
-                .put("bs1q7p3d96x", bs1q7p3d96x)
-                .put("bs1q7p3b", bs1q7p3b)
-                .put("bs1q7p4g", bs1q7p4g)
-                .put("bs1q7p4d", bs1q7p4d)
-                .put("bs1q7p4d96x", bs1q7p4d96x)
-                .put("bs1q7p4b", bs1q7p4b)
-                .put("bs1q7p5g", bs1q7p5g)
-                .put("bs1q7p5d", bs1q7p5d)
-                .put("bs1q7p5d96x", bs1q7p5d96x)
-                .put("bs1q7p5b", bs1q7p5b)
                 .put("bs1q08", bs1q08)
                 .put("bs1q09", bs1q09)
                 .put("bs1q0901", bs1q0901)
@@ -5735,26 +5477,6 @@ public class MWRA extends BaseObservable implements Observable {
             this.bs1q4 = json.getString("bs1q4");
             this.bs1q5 = json.getString("bs1q5");
             this.bs1q6 = json.getString("bs1q6");
-            this.bs1q7p1g = json.getString("bs1q7p1g");
-            this.bs1q7p1d = json.getString("bs1q7p1d");
-            this.bs1q7p1d96x = json.getString("bs1q7p1d96x");
-            this.bs1q7p1b = json.getString("bs1q7p1b");
-            this.bs1q7p2g = json.getString("bs1q7p2g");
-            this.bs1q7p2d = json.getString("bs1q7p2d");
-            this.bs1q7p2d96x = json.getString("bs1q7p2d96x");
-            this.bs1q7p2b = json.getString("bs1q7p2b");
-            this.bs1q7p3g = json.getString("bs1q7p3g");
-            this.bs1q7p3d = json.getString("bs1q7p3d");
-            this.bs1q7p3d96x = json.getString("bs1q7p3d96x");
-            this.bs1q7p3b = json.getString("bs1q7p3b");
-            this.bs1q7p4g = json.getString("bs1q7p4g");
-            this.bs1q7p4d = json.getString("bs1q7p4d");
-            this.bs1q7p4d96x = json.getString("bs1q7p4d96x");
-            this.bs1q7p4b = json.getString("bs1q7p4b");
-            this.bs1q7p5g = json.getString("bs1q7p5g");
-            this.bs1q7p5d = json.getString("bs1q7p5d");
-            this.bs1q7p5d96x = json.getString("bs1q7p5d96x");
-            this.bs1q7p5b = json.getString("bs1q7p5b");
             this.bs1q08 = json.getString("bs1q08");
             this.bs1q09 = json.getString("bs1q09");
             this.bs1q0901 = json.getString("bs1q0901");

@@ -42,41 +42,12 @@ public class Child extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
 
-    // SECTION VARIABLES
-    private String sC1 = _EMPTY_;
-    private String sC2 = _EMPTY_;
-    private String sC31 = _EMPTY_;
-    private String sC32 = _EMPTY_;
-    private String sC4 = _EMPTY_;
-    private String sC5 = _EMPTY_;
-
 
     // Field Variables
-
     private String cs1q0101 = _EMPTY_;
     private String cs1q0102 = _EMPTY_;
     private String cs1q02 = _EMPTY_;
-    private String cs1q02c1 = _EMPTY_;
-    /*private String cs1q02c1n = _EMPTY_;
-    private String cs1q02c1ecd = _EMPTY_;
-    private String cs1q02c1cent = _EMPTY_;
-    private String cs1q02c2 = _EMPTY_;
-    private String cs1q02c2n = _EMPTY_;
-    private String cs1q02c2ecd = _EMPTY_;
-    private String cs1q02c2cent = _EMPTY_;
-    private String cs1q02c3 = _EMPTY_;
-    private String cs1q02c3n = _EMPTY_;
-    private String cs1q02c3ecd = _EMPTY_;
-    private String cs1q02c3cent = _EMPTY_;
-    private String cs1q02c4 = _EMPTY_;
-    private String cs1q02c4n = _EMPTY_;
-    private String cs1q02c4ecd = _EMPTY_;
-    private String cs1q02c4cent = _EMPTY_;
-    private String cs1q02c5 = _EMPTY_;
-    private String cs1q02c5n = _EMPTY_;
-    private String cs1q02c5ecd = _EMPTY_;
-    private String cs1q02c5cent = _EMPTY_;
-    */private String cs1q8 = _EMPTY_;
+    private String cs1q8 = _EMPTY_;
     private String cs1q8096x = _EMPTY_;
     private String cs1q9 = _EMPTY_;
     private String cs1q9096x = _EMPTY_;
@@ -299,29 +270,7 @@ public class Child extends BaseObservable implements Observable {
         return syncDate;
     }
 
-    public String getsC1() {
-        return sC1;
-    }
 
-    public String getsC2() {
-        return sC2;
-    }
-
-    public String getsC31() {
-        return sC31;
-    }
-
-    public String getsC32() {
-        return sC32;
-    }
-
-    public String getsC4() {
-        return sC4;
-    }
-
-    public String getsC5() {
-        return sC5;
-    }
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
@@ -387,29 +336,7 @@ public class Child extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public void setsC1(String sC1) {
-        this.sC1 = sC1;
-    }
 
-    public void setsC2(String sC2) {
-        this.sC2 = sC2;
-    }
-
-    public void setsC31(String sC31) {
-        this.sC31 = sC31;
-    }
-
-    public void setsC32(String sC32) {
-        this.sC32 = sC32;
-    }
-
-    public void setsC4(String sC4) {
-        this.sC4 = sC4;
-    }
-
-    public void setsC5(String sC5) {
-        this.sC5 = sC5;
-    }
 
     @Bindable
     public String getCs1q0101() {
@@ -441,206 +368,7 @@ public class Child extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.cs1q02);
     }
 
-    @Bindable
-    public String getCs1q02c1() {
-        return cs1q02c1;
-    }
 
-    public void setCs1q02c1(String cs1q02c1) {
-        this.cs1q02c1 = cs1q02c1;
-        notifyPropertyChanged(BR.cs1q02c1);
-    }
-
-    /*@Bindable
-    public String getCs1q02c1n() {
-        return cs1q02c1n;
-    }
-
-    public void setCs1q02c1n(String cs1q02c1n) {
-        this.cs1q02c1n = cs1q02c1n;
-        notifyPropertyChanged(BR.cs1q02c1n);
-    }
-
-    @Bindable
-    public String getCs1q02c1ecd() {
-        return cs1q02c1ecd;
-    }
-
-    public void setCs1q02c1ecd(String cs1q02c1ecd) {
-        this.cs1q02c1ecd = cs1q02c1ecd;
-        notifyPropertyChanged(BR.cs1q02c1ecd);
-    }
-
-    @Bindable
-    public String getCs1q02c1cent() {
-        return cs1q02c1cent;
-    }
-
-    public void setCs1q02c1cent(String cs1q02c1cent) {
-        this.cs1q02c1cent = cs1q02c1cent;
-        notifyPropertyChanged(BR.cs1q02c1cent);
-    }
-
-    @Bindable
-    public String getCs1q02c2() {
-        return cs1q02c2;
-    }
-
-    public void setCs1q02c2(String cs1q02c2) {
-        this.cs1q02c2 = cs1q02c2;
-        notifyPropertyChanged(BR.cs1q02c2);
-    }
-
-    @Bindable
-    public String getCs1q02c2n() {
-        return cs1q02c2n;
-    }
-
-    public void setCs1q02c2n(String cs1q02c2n) {
-        this.cs1q02c2n = cs1q02c2n;
-        notifyPropertyChanged(BR.cs1q02c2n);
-    }
-
-    @Bindable
-    public String getCs1q02c2ecd() {
-        return cs1q02c2ecd;
-    }
-
-    public void setCs1q02c2ecd(String cs1q02c2ecd) {
-        this.cs1q02c2ecd = cs1q02c2ecd;
-        notifyPropertyChanged(BR.cs1q02c2ecd);
-    }
-
-    @Bindable
-    public String getCs1q02c2cent() {
-        return cs1q02c2cent;
-    }
-
-    public void setCs1q02c2cent(String cs1q02c2cent) {
-        this.cs1q02c2cent = cs1q02c2cent;
-        notifyPropertyChanged(BR.cs1q02c2cent);
-    }
-
-    @Bindable
-    public String getCs1q02c3() {
-        return cs1q02c3;
-    }
-
-    public void setCs1q02c3(String cs1q02c3) {
-        this.cs1q02c3 = cs1q02c3;
-        notifyPropertyChanged(BR.cs1q02c3);
-    }
-
-    @Bindable
-    public String getCs1q02c3n() {
-        return cs1q02c3n;
-    }
-
-    public void setCs1q02c3n(String cs1q02c3n) {
-        this.cs1q02c3n = cs1q02c3n;
-        notifyPropertyChanged(BR.cs1q02c3n);
-    }
-
-    @Bindable
-    public String getCs1q02c3ecd() {
-        return cs1q02c3ecd;
-    }
-
-    public void setCs1q02c3ecd(String cs1q02c3ecd) {
-        this.cs1q02c3ecd = cs1q02c3ecd;
-        notifyPropertyChanged(BR.cs1q02c3ecd);
-    }
-
-    @Bindable
-    public String getCs1q02c3cent() {
-        return cs1q02c3cent;
-    }
-
-    public void setCs1q02c3cent(String cs1q02c3cent) {
-        this.cs1q02c3cent = cs1q02c3cent;
-        notifyPropertyChanged(BR.cs1q02c3cent);
-    }
-
-    @Bindable
-    public String getCs1q02c4() {
-        return cs1q02c4;
-    }
-
-    public void setCs1q02c4(String cs1q02c4) {
-        this.cs1q02c4 = cs1q02c4;
-        notifyPropertyChanged(BR.cs1q02c4);
-    }
-
-    @Bindable
-    public String getCs1q02c4n() {
-        return cs1q02c4n;
-    }
-
-    public void setCs1q02c4n(String cs1q02c4n) {
-        this.cs1q02c4n = cs1q02c4n;
-        notifyPropertyChanged(BR.cs1q02c4n);
-    }
-
-    @Bindable
-    public String getCs1q02c4ecd() {
-        return cs1q02c4ecd;
-    }
-
-    public void setCs1q02c4ecd(String cs1q02c4ecd) {
-        this.cs1q02c4ecd = cs1q02c4ecd;
-        notifyPropertyChanged(BR.cs1q02c4ecd);
-    }
-
-    @Bindable
-    public String getCs1q02c4cent() {
-        return cs1q02c4cent;
-    }
-
-    public void setCs1q02c4cent(String cs1q02c4cent) {
-        this.cs1q02c4cent = cs1q02c4cent;
-        notifyPropertyChanged(BR.cs1q02c4cent);
-    }
-
-    @Bindable
-    public String getCs1q02c5() {
-        return cs1q02c5;
-    }
-
-    public void setCs1q02c5(String cs1q02c5) {
-        this.cs1q02c5 = cs1q02c5;
-        notifyPropertyChanged(BR.cs1q02c5);
-    }
-
-    @Bindable
-    public String getCs1q02c5n() {
-        return cs1q02c5n;
-    }
-
-    public void setCs1q02c5n(String cs1q02c5n) {
-        this.cs1q02c5n = cs1q02c5n;
-        notifyPropertyChanged(BR.cs1q02c5n);
-    }
-
-    @Bindable
-    public String getCs1q02c5ecd() {
-        return cs1q02c5ecd;
-    }
-
-    public void setCs1q02c5ecd(String cs1q02c5ecd) {
-        this.cs1q02c5ecd = cs1q02c5ecd;
-        notifyPropertyChanged(BR.cs1q02c5ecd);
-    }
-
-    @Bindable
-    public String getCs1q02c5cent() {
-        return cs1q02c5cent;
-    }
-
-    public void setCs1q02c5cent(String cs1q02c5cent) {
-        this.cs1q02c5cent = cs1q02c5cent;
-        notifyPropertyChanged(BR.cs1q02c5cent);
-    }
-*/
     @Bindable
     public String getCs1q8() {
         return cs1q8;
@@ -2137,27 +1865,7 @@ public class Child extends BaseObservable implements Observable {
             this.cs1q0101 = json.getString("cs1q0101");
             this.cs1q0102 = json.getString("cs1q0102");
             this.cs1q02 = json.getString("cs1q02");
-            this.cs1q02c1 = json.getString("cs1q02c1");
-          /*  this.cs1q02c1n = json.getString("cs1q02c1n");
-            this.cs1q02c1ecd = json.getString("cs1q02c1ecd");
-            this.cs1q02c1cent = json.getString("cs1q02c1cent");
-            this.cs1q02c2 = json.getString("cs1q02c2");
-            this.cs1q02c2n = json.getString("cs1q02c2n");
-            this.cs1q02c2ecd = json.getString("cs1q02c2ecd");
-            this.cs1q02c2cent = json.getString("cs1q02c2cent");
-            this.cs1q02c3 = json.getString("cs1q02c3");
-            this.cs1q02c3n = json.getString("cs1q02c3n");
-            this.cs1q02c3ecd = json.getString("cs1q02c3ecd");
-            this.cs1q02c3cent = json.getString("cs1q02c3cent");
-            this.cs1q02c4 = json.getString("cs1q02c4");
-            this.cs1q02c4n = json.getString("cs1q02c4n");
-            this.cs1q02c4ecd = json.getString("cs1q02c4ecd");
-            this.cs1q02c4cent = json.getString("cs1q02c4cent");
-            this.cs1q02c5 = json.getString("cs1q02c5");
-            this.cs1q02c5n = json.getString("cs1q02c5n");
-            this.cs1q02c5ecd = json.getString("cs1q02c5ecd");
-            this.cs1q02c5cent = json.getString("cs1q02c5cent");
-          */  this.cs1q8 = json.getString("cs1q8");
+            this.cs1q8 = json.getString("cs1q8");
             this.cs1q8096x = json.getString("cs1q8096x");
             this.cs1q9 = json.getString("cs1q9");
             this.cs1q9096x = json.getString("cs1q9096x");
@@ -2337,26 +2045,6 @@ public class Child extends BaseObservable implements Observable {
         json.put("cs1q0101", cs1q0101)
                 .put("cs1q0102", cs1q0102)
                 .put("cs1q02", cs1q02)
-                .put("cs1q02c1", cs1q02c1)
-                /*.put("cs1q02c1n", cs1q02c1n)
-                .put("cs1q02c1ecd", cs1q02c1ecd)
-                .put("cs1q02c1cent", cs1q02c1cent)
-                .put("cs1q02c2", cs1q02c2)
-                .put("cs1q02c2n", cs1q02c2n)
-                .put("cs1q02c2ecd", cs1q02c2ecd)
-                .put("cs1q02c2cent", cs1q02c2cent)
-                .put("cs1q02c3", cs1q02c3)
-                .put("cs1q02c3n", cs1q02c3n)
-                .put("cs1q02c3ecd", cs1q02c3ecd)
-                .put("cs1q02c3cent", cs1q02c3cent)
-                .put("cs1q02c4", cs1q02c4)
-                .put("cs1q02c4n", cs1q02c4n)
-                .put("cs1q02c4ecd", cs1q02c4ecd)
-                .put("cs1q02c4cent", cs1q02c4cent)
-                .put("cs1q02c5", cs1q02c5)
-                .put("cs1q02c5n", cs1q02c5n)
-                .put("cs1q02c5ecd", cs1q02c5ecd)
-                .put("cs1q02c5cent", cs1q02c5cent)*/
                 .put("cs1q8", cs1q8)
                 .put("cs1q8096x", cs1q8096x)
                 .put("cs1q9", cs1q9)

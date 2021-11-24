@@ -32,7 +32,6 @@ public class SectionES3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_es3);
         bi.setLadol(MainApp.ladol);
         setSupportActionBar(bi.toolbar);

@@ -1,9 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.childOfSelectedMWRAList;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ecdCount;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ecdInfo;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,7 +37,6 @@ public class SectionCS1BActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-
 //        child_count = getIntent().getExtras().getInt("ecdCount");
         // MainApp.ecdCount++;
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_b);

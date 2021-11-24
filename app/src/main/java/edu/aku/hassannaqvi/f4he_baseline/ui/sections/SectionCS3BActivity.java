@@ -31,7 +31,6 @@ public class SectionCS3BActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs3b);
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
