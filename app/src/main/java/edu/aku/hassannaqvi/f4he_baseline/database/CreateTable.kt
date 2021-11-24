@@ -27,13 +27,7 @@ object CreateTable {
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
-            + FormsTable.COLUMN_SA1 + " TEXT,"
-            + FormsTable.COLUMN_SC1 + " TEXT,"
-            + FormsTable.COLUMN_SC2 + " TEXT,"
-            + FormsTable.COLUMN_SC31 + " TEXT,"
-            + FormsTable.COLUMN_SC32 + " TEXT,"
-            + FormsTable.COLUMN_SC4 + " TEXT,"
-            + FormsTable.COLUMN_SC5 + " TEXT"
+            + FormsTable.COLUMN_SA1 + " TEXT"
             + " );"
             )
 

@@ -45,12 +45,6 @@ public class LateAdolescent extends BaseObservable {
     private String syncDate = _EMPTY_;
 
     // Section Variables
-    private String sE1 = _EMPTY_;
-    private String sE2 = _EMPTY_;
-    private String sE3 = _EMPTY_;
-    private String sE4 = _EMPTY_;
-
-
     private String es1resp = _EMPTY_;
     private String es1respline = _EMPTY_;
     private String es1cons = _EMPTY_;
@@ -380,37 +374,6 @@ public class LateAdolescent extends BaseObservable {
     }
 
 
-    public String getsE1() {
-        return sE1;
-    }
-
-    public String getsE2() {
-        return sE2;
-    }
-
-    public String getsE3() {
-        return sE3;
-    }
-
-    public String getsE4() {
-        return sE4;
-    }
-
-    public void setsE1(String sE1) {
-        this.sE1 = sE1;
-    }
-
-    public void setsE2(String sE2) {
-        this.sE2 = sE2;
-    }
-
-    public void setsE3(String sE3) {
-        this.sE3 = sE3;
-    }
-
-    public void setsE4(String sE4) {
-        this.sE4 = sE4;
-    }
 
     @Bindable
     public String getEs1resp() {
@@ -657,10 +620,9 @@ public class LateAdolescent extends BaseObservable {
 
     public void setEs1q7(String es1q7) {
         this.es1q7 = es1q7;
-        setEs1q8a(es1q7.equals("1") ? this.es1q8a : "" );
-        setEs1q8b(es1q7.equals("1") ? this.es1q8b : "" );
-        setEs1q8c(es1q7.equals("1") ? this.es1q8c : "" );
-
+        setEs1q8a(es1q7.equals("2") ? "" : this.es1q8a);
+        setEs1q8b(es1q7.equals("2") ? "" : this.es1q8b);
+        setEs1q8c(es1q7.equals("2") ? "" : this.es1q8c);
         notifyPropertyChanged(BR.es1q7);
     }
 

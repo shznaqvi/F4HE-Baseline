@@ -6,7 +6,7 @@ public class TableContracts {
 
 
     public static abstract class FormsTable implements BaseColumns {
-        public static final String TABLE_NAME = "formHH";
+        public static final String TABLE_NAME = "FormHH";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
@@ -17,12 +17,6 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SA1 = "sA1";
-        public static final String COLUMN_SC1 = "sC1";
-        public static final String COLUMN_SC2 = "sC2";
-        public static final String COLUMN_SC31 = "sC31";
-        public static final String COLUMN_SC32 = "sC32";
-        public static final String COLUMN_SC4 = "sC4";
-        public static final String COLUMN_SC5 = "sC5";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
@@ -54,26 +48,6 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
-/*    public static abstract class FamilyMembersListTable implements BaseColumns {
-        public static final String TABLE_NAME = "FamilyMembersList";
-        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String COLUMN_PROJECT_NAME = "projectName";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_UID = "_uid";
-        public static final String COLUMN_UUID = "_uuid";
-        public static final String COLUMN_EB_CODE = "psuCode";
-        public static final String COLUMN_HHID = "hhid";
-        public static final String COLUMN_USERNAME = "username";
-        public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_INDEXED = "indexed";
-        public static final String COLUMN_SA2 = "sA2";
-        public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_DEVICETAGID = "devicetagid";
-        public static final String COLUMN_SYNCED = "synced";
-        public static final String COLUMN_SYNCED_DATE = "synced_date";
-        public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_ISTATUS = "istatus";
-    }*/
 
     public static abstract class MotherKAPTable implements BaseColumns {
         public static final String TABLE_NAME = "motherKAP";
@@ -122,39 +96,8 @@ public class TableContracts {
         public static final String COLUMN_VILLAGE = "village";
         public static final String COLUMN_VCODE = "vcode";
         public static final String COLUMN_PSUCODE = "psucode";
-
-
-/*        public static abstract class MWRAListTable implements BaseColumns {
-
-            public static final String TABLE_NAME = "MWRAList";
-            public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-            public static final String COLUMN_PROJECT_NAME = "projectName";
-            public static final String COLUMN_ID = "_id";
-            public static final String COLUMN_UID = "_uid";
-            public static final String COLUMN_UUID = "_uid";
-            public static final String COLUMN_PSU_CODE = "psuCode";
-            public static final String COLUMN_HHID = "hhid";
-            public static final String COLUMN_SNO = "sno";
-            public static final String COLUMN_USERNAME = "username";
-            public static final String COLUMN_SYSDATE = "sysdate";
-            public static final String COLUMN_SB1 = "sB1";
-            public static final String COLUMN_SB2 = "sB2";
-            public static final String COLUMN_SB3 = "sB3";
-            public static final String COLUMN_SB41 = "sB41";
-            public static final String COLUMN_SB42 = "sB42";
-            public static final String COLUMN_SB5 = "sB5";
-            public static final String COLUMN_SB6 = "sB6";
-            public static final String COLUMN_SB7 = "sB7";
-
-            public static final String COLUMN_DEVICEID = "deviceid";
-            public static final String COLUMN_DEVICETAGID = "devicetagid";
-            public static final String COLUMN_SYNCED = "synced";
-            public static final String COLUMN_SYNCED_DATE = "synced_date";
-            public static final String COLUMN_APPVERSION = "appversion";
-            public static final String COLUMN_ISTATUS = "istatus";
-
-        }*/
     }
+
 
     public static abstract class VersionTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
