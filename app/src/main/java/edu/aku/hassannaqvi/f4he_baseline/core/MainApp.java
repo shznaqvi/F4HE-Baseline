@@ -161,7 +161,7 @@ public class MainApp extends Application {
                 {1, 1, 1, 3, 2, 1, 7, 7},
                 {1, 2, 2, 4, 3, 2, 1, 8},
                 {1, 1, 3, 1, 4, 3, 2, 1},
-                {1, 2, 1, 2, 5, 4, 3, 2}
+                {1, 2, 1, 2, 5, 4, 3, 2},
         };
 
         // System.out.println(household+"-"+eligibles);
