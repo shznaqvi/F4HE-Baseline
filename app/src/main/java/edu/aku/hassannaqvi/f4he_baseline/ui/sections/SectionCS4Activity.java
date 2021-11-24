@@ -30,10 +30,14 @@ public class SectionCS4Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs4);
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        bi.cs4q01.check(MainApp.ageOfIndexChild<1?R.id.cs4q0101:R.id.cs4q0102);
+
     }
 
 

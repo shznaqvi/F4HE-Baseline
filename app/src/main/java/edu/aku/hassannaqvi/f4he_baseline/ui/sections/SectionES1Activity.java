@@ -37,6 +37,8 @@ public class SectionES1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_es1);
         bi.setLadol(MainApp.ladol);
         setSupportActionBar(bi.toolbar);
@@ -60,9 +62,10 @@ public class SectionES1Activity extends AppCompatActivity {
 
         for (Integer a : adolListAll) {
 
-            adolNames.add(MainApp.familyList.get(a-1).getHl2());
-            adolCodes.add(MainApp.familyList.get(a-1).getHl1());
-            adolAges.add(MainApp.familyList.get(a-1).getHl6y());
+                adolNames.add(MainApp.familyList.get(a - 1).getHl2());
+                adolCodes.add(MainApp.familyList.get(a - 1).getHl1());
+                adolAges.add(MainApp.familyList.get(a - 1).getHl6y());
+
 
         }
 

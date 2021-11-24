@@ -37,6 +37,7 @@ public class SectionAS1Activity extends AppCompatActivity {
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_as1);
         bi.setForm(form);
+        bi.as1q18.setText(MainApp.user.getFullname());
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         //populateSpinner(this);

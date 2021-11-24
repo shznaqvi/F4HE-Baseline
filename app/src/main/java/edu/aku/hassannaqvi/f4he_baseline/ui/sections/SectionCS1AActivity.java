@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.childOfSelectedMWRAList;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ecdInfo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,11 +17,14 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
+
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionCs1ABinding;
+import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 
@@ -31,6 +36,8 @@ public class SectionCS1AActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_a);
         db = MainApp.appInfo.dbHelper;
         try {
@@ -47,6 +54,21 @@ public class SectionCS1AActivity extends AppCompatActivity {
 
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
+
+        if (childOfSelectedMWRAList == null) {
+            childOfSelectedMWRAList = new ArrayList<>();
+            for (FamilyMembers child : MainApp.familyList) {
+                Log.d(TAG, "onCreate: childmsno " + child.getHl8() + " fmsno: " + (Integer.parseInt(MainApp.selectedMWRA) + 1));
+
+                int motherSno = Integer.parseInt(child.getHl8());
+                int selectedMwraSno = Integer.parseInt(MainApp.selectedMWRA) + 1;
+                if (motherSno == selectedMwraSno && Integer.parseInt(child.getHl6y()) < 5 && child.getHl10().equals("1")) {
+                    childOfSelectedMWRAList.add(Integer.valueOf(child.getHl1()));
+                    MainApp.ageOfIndexChild = Integer.parseInt(child.getHl6y());
+                }
+            }
+        }
+        child.setCs1q02(String.valueOf(childOfSelectedMWRAList.size()));
 
         // Mother's Name as Respondent
         /*bi.cs1q0101.setText(MainApp.mwra.getBs1resp());

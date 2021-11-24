@@ -21,6 +21,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
@@ -69,7 +70,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         MainApp.hhheadSelected = MainApp.familyMember.getHl3().equals("1");
                         //  memGender = MainApp.familyMember.getA204();
                         // boolean memAgeCheck = Integer.parseInt(MainApp.familyMember.getA206()) > 18;
-                        if (!MainApp.familyMember.getHl7().equals("5") && !MainApp.familyMember.getHl7().equals("99")) {
+                        if (!MainApp.familyMember.getHl7().equals("") && !MainApp.familyMember.getHl7().equals("5") && !MainApp.familyMember.getHl7().equals("99")) {
                             switch (MainApp.familyMember.getHl4()) {
                                 case "1":
                                     MainApp.fatherList.add(MainApp.familyMember);
@@ -98,7 +99,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                         if (
                                 Integer.parseInt(MainApp.familyMember.getHl6y()) >= 15 && Integer.parseInt(MainApp.familyMember.getHl6y()) <= 19   // 10 - 19 year old
-                                        && MainApp.familyMember.getHl7().equals("5")
+                                        && MainApp.familyMember.getHl7().equals("5") && MainApp.familyMember.getHl10().equals("1")
 
                         ) {
                             if (MainApp.familyMember.getHl4().equals("1"))
@@ -148,6 +149,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             });
     private ArrayList<String> motherNames, childNames, adolMaleNames, adolFemaleNames;
     private ArrayList<String> motherSno, childSno, adolMaleSno, adolFemaleSno;
+    private boolean selectionCheck = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,7 +192,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 // Populate mothers' list
                 String motherSno = fm.getHl8(); // mother's line number from child
                 if (!motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
-                    MainApp.mwraList.add(Integer.parseInt(motherSno));
+                    // MainApp.mwraList.add(Integer.parseInt(motherSno));
                     FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
 
                     if (mother.getHl10().equals("1")) {
@@ -378,50 +380,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
-        if (MainApp.idType == 2) {
-            if (MainApp.mwraList.size() > 0 && bi.mwraList.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "Mother not selected", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (MainApp.childOfSelectedMWRAList.size() > 0 && bi.childList.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "Child not selected", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (MainApp.adolListMale.size() > 0 && bi.adolMaleList.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "Adolescent male not selected", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (MainApp.adolListFemale.size() > 0 && bi.adolFemaleList.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "Adolescent female not selected", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-
-            // Updating database to mark indexed mother
-            MainApp.selectedMWRA = String.valueOf(motherSno.get(bi.mwraList.getSelectedItemPosition()));
-            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
-
-
-            // Updating database to mark selected Child
-            MainApp.selectedChild = String.valueOf(childSno.get(bi.childList.getSelectedItemPosition()));
-            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
-
-            // Updating database to mark selected adolmale
-            MainApp.selectedAdolMale = String.valueOf(adolMaleSno.get(bi.adolMaleList.getSelectedItemPosition()));
-            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
-
-            // Updating database to mark selected adolFemale
-            MainApp.selectedAdolFemale = String.valueOf(adolFemaleSno.get(bi.adolFemaleList.getSelectedItemPosition()));
-            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
-
-        }
 
         try {
             MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid());
@@ -469,7 +427,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         // Select Child using KishGrid
         MainApp.childOfSelectedMWRAList = new ArrayList<>();
         for (FamilyMembers fm : MainApp.familyList) {
-            if (fm.getHl8().equals(MainApp.familyMember.getHl1())) {
+            if (fm.getHl8().equals(MainApp.familyMember.getHl1()) & fm.getHl10().equals("1") && Integer.parseInt(fm.getHl6y())<5) {
                 MainApp.childOfSelectedMWRAList.add(Integer.parseInt(fm.getHl1()));
             }
         }
@@ -645,9 +603,13 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             bi.mwraList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                    bi.childList.setAdapter(null);
+                    if (position == 0) return;
+
                     MainApp.childOfSelectedMWRAList = new ArrayList<>();
                     for (FamilyMembers fm : MainApp.familyList) {
-                        if (fm.getHl8().equals(MainApp.mwraList.get(position))) {
+                        if (fm.getHl8().equals(motherSno.get(position)) && fm.getHl10().equals("1") && Integer.parseInt(fm.getHl6y()) < 5) {
                             MainApp.childOfSelectedMWRAList.add(Integer.parseInt(fm.getHl1()));
                         }
                     }
@@ -671,9 +633,12 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                                 R.layout.custom_spinner, childNames);
 
                         bi.childList.setAdapter(adapter);
+                        bi.childDD.setVisibility(View.VISIBLE);
+
                     } else {
                         bi.childDD.setVisibility(View.GONE);
                     }
+
                 }
 
                 @Override
@@ -769,6 +734,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     }
 
     public void finalizeFamily(View view) {
+        if(bi.familyComplete.isChecked()){
         if (MainApp.mwraList.size() > 0 && MainApp.selectedMWRA.equals("")) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedMWRA))).setStatus("1");
             bi.btnRand.setVisibility(VISIBLE);
@@ -781,7 +747,95 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             // bi.btnContinue.setVisibility(View.VISIBLE);
             bi.btnContinue.setEnabled(true);
             bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
+        }
+        } else{
+            bi.btnRand.setVisibility(View.INVISIBLE);
+            bi.btnContinue.setEnabled(false);
+            bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_gray));
 
+
+            bi.mwraList.setAdapter(null);
+            bi.childList.setAdapter(null);
+            bi.adolFemaleList.setAdapter(null);
+            bi.adolMaleList.setAdapter(null);
+            bi.selectionLists.setVisibility(View.GONE);
         }
     }
+
+    public void btnProceed(View view) {
+        if(formValidation()){
+/*            if (MainApp.mwraList.size() > 0 && bi.mwraList.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Mother not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (MainApp.childOfSelectedMWRAList.size() > 0 && bi.childList.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Child not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (MainApp.adolListMale.size() > 0 && bi.adolMaleList.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Adolescent male not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (MainApp.adolListFemale.size() > 0 && bi.adolFemaleList.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Adolescent female not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }*/
+
+// MWRA
+            // Updating database to mark indexed mother
+            MainApp.selectedMWRA = String.valueOf(Integer.parseInt(motherSno.get(bi.mwraList.getSelectedItemPosition()))-1);
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
+
+            // Updating adapter and notify MWRA selection
+            MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).setIndexed("1");
+            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
+
+// CHILD
+            // Updating database to mark selected Child
+            MainApp.selectedChild = String.valueOf(Integer.parseInt(childSno.get(bi.childList.getSelectedItemPosition()))-1);
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
+
+            // Updating adapter and notify Child selection
+            MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).setIndexed("2");
+            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedChild));
+
+// ADOLESCENT MALE
+            // Updating database to mark selected adolmale
+            MainApp.selectedAdolMale = String.valueOf(Integer.parseInt(adolMaleSno.get(bi.adolMaleList.getSelectedItemPosition()))-1);
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
+
+            // Updating adapter and notify Adolescent Male selection
+            MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale)).setIndexed("3");
+            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolMale));
+
+// ADOLESCENT FEMALE
+            // Updating database to mark selected adolFemale
+            MainApp.selectedAdolFemale = String.valueOf(Integer.parseInt(adolFemaleSno.get(bi.adolFemaleList.getSelectedItemPosition()))-1);
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
+
+            // Updating adapter and notify Adolescent Female selection
+            MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale)).setIndexed("4");
+            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolFemale));
+
+            bi.selectionLists.setVisibility(View.GONE);
+            bi.familyComplete.setEnabled(false);
+            bi.btnContinue.setEnabled(true);
+            bi.btnRand.setVisibility(View.INVISIBLE);
+
+        }
+
+    }
+
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.selectionLists);
+    }
+
+
 }

@@ -24,6 +24,7 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1aBinding;
+import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.MWRA;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
@@ -35,6 +36,7 @@ public class SectionBS1AActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1a);
         db = MainApp.appInfo.getDbHelper();
 
@@ -51,8 +53,22 @@ public class SectionBS1AActivity extends AppCompatActivity {
         mwra.setBs1resp(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getHl2());
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        adolListAll.addAll(adolListFemale);
-        adolListAll.addAll(adolListMale);
+
+
+        for (Integer a : adolListMale) {
+
+            if(!MainApp.familyList.get(a-1).getIndexed().equals("")) {
+                adolListAll.add(a);
+            }
+
+        }
+        for (Integer a : adolListFemale) {
+
+            if(!MainApp.familyList.get(a-1).getIndexed().equals("")) {
+                adolListAll.add(a);
+            }
+
+        }
     }
 
 
@@ -102,10 +118,13 @@ public class SectionBS1AActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-
+            MainApp.preg_count=0;
             //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
-            startActivity(new Intent(this, SectionBS1BActivity.class));
-
+            if(bi.bs1con1.isChecked()) {
+                startActivity(new Intent(this, SectionBS1BActivity.class));
+            }else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

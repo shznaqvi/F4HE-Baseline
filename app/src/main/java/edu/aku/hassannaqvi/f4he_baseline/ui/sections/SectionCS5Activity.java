@@ -30,10 +30,14 @@ public class SectionCS5Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs5);
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        bi.cs5q01.check(MainApp.ageOfIndexChild<2?R.id.cs5q0101:R.id.cs5q0102);
+
     }
 
 

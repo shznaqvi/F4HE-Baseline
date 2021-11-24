@@ -650,6 +650,7 @@
                             android:id="@+id/cs3bq04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:clickable="false"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -1263,6 +1264,7 @@
                                 android:id="@+id/cs3bq06"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:clickable="false"
                                 android:orientation="horizontal">
 
                                 <RadioButton

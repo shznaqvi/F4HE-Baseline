@@ -190,7 +190,7 @@
     <string name="as1q05"> District ID </string>
     <string name="as1q06"> Village Name </string>
     <string name="as1q07"> Village ID </string>
-    <string name="as1q08"> Household ID </string>
+    <string name="as1q11"> Household ID </string>
     <string name="as1q09"> Name of head of household </string>
     <string name="as1q10"> What language is usually spoken at household ? </string>
     <string name="as1q10t1"> Languages will be added as per the country context </string>
@@ -228,7 +228,7 @@
     <string name="as1q1040"> Russian </string>
     <string name="as1q1041"> Kyrgyz </string>
     <string name="as1q1042"> Uzbek </string>
-    <string name="as1q11"> Questionnaire Number </string>
+    <string name="as1q08"> Questionnaire Number </string>
     <string name="as1q12"> Interviewer ID </string>
     <string name="as1q13"> Supervisor ID </string>
     <string name="as1q14"> Quality Check ID </string>

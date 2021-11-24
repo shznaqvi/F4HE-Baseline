@@ -1627,16 +1627,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return mwra;
     }
 
-    public Pregnancy getPregByUUid(String pno) throws JSONException {
+    public Pregnancy getPregByUUid(String pSNo) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c;
         String[] columns = null;
 
         String whereClause;
         whereClause = PregnancyTable.COLUMN_MUID + "=? AND " +
-                PregnancyTable.COLUMN_UUID + "=? ";
+                PregnancyTable.COLUMN_UUID + "=? AND " +
+                PregnancyTable.COLUMN_SNO + "=? "
+        ;
 
-        String[] whereArgs = {MainApp.mwra.getUid(), MainApp.form.getUid()};
+        String[] whereArgs = {MainApp.mwra.getUid(), MainApp.form.getUid(), pSNo};
 
         String groupBy = null;
         String having = null;

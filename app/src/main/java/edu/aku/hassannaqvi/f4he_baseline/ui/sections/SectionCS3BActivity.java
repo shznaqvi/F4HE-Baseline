@@ -30,10 +30,15 @@ public class SectionCS3BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs3b);
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        bi.cs3bq04.check(MainApp.ageOfIndexChild<2?R.id.cs3bq0401:R.id.cs3bq0402);
+        bi.cs3bq06.check(MainApp.ageOfIndexChild<3?R.id.cs3bq0601:R.id.cs3bq0602);
+
     }
 
 

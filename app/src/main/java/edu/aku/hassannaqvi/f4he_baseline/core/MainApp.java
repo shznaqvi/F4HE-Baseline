@@ -105,6 +105,7 @@ public class MainApp extends Application {
     public static String selectedPSU = "";
     public static String selectedHHID = "";
     public static boolean langRTL = false;
+    public static int ageOfIndexChild;
 
 
     public static void hideSystemUI(View decorView) {
@@ -168,7 +169,7 @@ public class MainApp extends Application {
         // System.out.println(grid[household-1][eligibles-1]);
 
         // return Index of MWRAList (total-1)
-        return String.valueOf((grid[household - 1][eligibles - 1]) - 1);
+        return String.valueOf((grid[household][eligibles - 1])-1);
     }
 
     @Override

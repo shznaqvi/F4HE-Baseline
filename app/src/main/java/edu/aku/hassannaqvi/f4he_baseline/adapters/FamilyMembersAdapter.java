@@ -89,11 +89,41 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
                 marStatus = "Un-Married";
                 break;
             default:
-                marStatus = "Value Unknown";
+                marStatus = "Unknown";
+                break;
+        }
+
+        String idxStatus = "";
+
+        int idxColor;
+        switch (members.getIndexed()) {
+            case "1":
+                idxStatus = " Mother  ";
+                idxColor = mContext.getResources().getColor(R.color.motherBg);
+                break;
+            case "2":
+                idxStatus = "  Child  ";
+                idxColor = mContext.getResources().getColor(R.color.childBg);
+                break;
+            case "3":
+                idxStatus = " Adol. M ";
+                idxColor = mContext.getResources().getColor(R.color.adolMaleBg);
+                break;
+            case "4":
+                idxStatus = " Adol. F ";
+                idxColor = mContext.getResources().getColor(R.color.adolFemaleBg);
+                break;
+
+            default:
+                idxStatus = "         ";
+                idxColor = mContext.getResources().getColor(R.color.white);
+
                 break;
         }
 
         fMaritalStatus.setText(marStatus);
+        secStatus.setText(idxStatus);
+        secStatus.setBackgroundColor(idxColor);
 
 
         cloaked.setVisibility(!members.getMemCate().equals("") ? View.GONE : View.VISIBLE);

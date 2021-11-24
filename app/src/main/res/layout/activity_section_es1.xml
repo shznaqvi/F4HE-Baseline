@@ -89,8 +89,6 @@
                                 android:text="@string/es1resp" />
 
                         </LinearLayout>
-
-
                         <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/es1resp"
                             android:layout_width="match_parent"

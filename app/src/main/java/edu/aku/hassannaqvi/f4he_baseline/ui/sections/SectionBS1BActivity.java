@@ -1,11 +1,13 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
+import static android.widget.RadioGroup.*;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.pregnancy;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +35,8 @@ public class SectionBS1BActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_bs1b);
         db = MainApp.appInfo.getDbHelper();
         //MainApp.preg_count++;
@@ -54,9 +58,15 @@ public class SectionBS1BActivity extends AppCompatActivity {
     }
 
     private void setupSkips() {
-        bi.bs1q7p1g.setOnCheckedChangeListener((radioGroup, i) -> {
-            if (i == bi.bs1q7p1g02.getId()) bi.bs1q7p1b.setMaxvalue(1f);
-            else bi.bs1q7p1b.setMaxvalue(2f);
+
+        bi.bs1q7p1g.setOnCheckedChangeListener((group, checkedId) -> {
+            if(checkedId==R.id.bs1q7p1g01){
+                bi.bs1q7p1b.setMinvalue(2f);
+                bi.bs1q7p1b.setMaxvalue(8f);
+            } else if (checkedId==R.id.bs1q7p1g02){
+                bi.bs1q7p1b.setMinvalue(0f);
+                bi.bs1q7p1b.setMaxvalue(1f);
+            }
         });
     }
 

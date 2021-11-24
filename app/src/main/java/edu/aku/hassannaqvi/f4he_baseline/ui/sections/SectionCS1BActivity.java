@@ -38,6 +38,8 @@ public class SectionCS1BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+
 //        child_count = getIntent().getExtras().getInt("ecdCount");
         // MainApp.ecdCount++;
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_b);
@@ -53,24 +55,11 @@ public class SectionCS1BActivity extends AppCompatActivity {
         bi.setEcdInfo(MainApp.ecdInfo);
         setSupportActionBar(bi.toolbar);
 
-        if (childOfSelectedMWRAList == null) {
-            childOfSelectedMWRAList = new ArrayList<>();
-            for (FamilyMembers child : MainApp.familyList) {
-                Log.d(TAG, "onCreate: childmsno " + child.getHl8() + " fmsno: " + (Integer.parseInt(MainApp.selectedMWRA) + 1));
-
-                int motherSno = Integer.parseInt(child.getHl8());
-                int selectedMwraSno = Integer.parseInt(MainApp.selectedMWRA) + 1;
-                if (motherSno == selectedMwraSno && Integer.parseInt(child.getHl6y()) < 5) {
-                    childOfSelectedMWRAList.add(Integer.valueOf(child.getHl1()));
-                }
-            }
-        }
         Integer childSno = childOfSelectedMWRAList.get(0);
         String childName = MainApp.familyList.get(childSno - 1).getHl2();
 
         ecdInfo.setCs1q02c1(String.valueOf(childSno));
         ecdInfo.setCs1q02c1n(String.valueOf(childName));
-
 
     }
 /*
