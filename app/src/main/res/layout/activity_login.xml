@@ -202,7 +202,6 @@
                                         android:id="@+id/countrySwitch"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:minHeight="56dp"
                                         android:prompt="@string/as1q01"
                                         android:spinnerMode="dropdown" />
 
