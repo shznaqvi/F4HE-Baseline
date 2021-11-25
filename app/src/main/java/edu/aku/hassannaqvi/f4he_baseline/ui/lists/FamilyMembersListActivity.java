@@ -46,6 +46,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     ActivityFamilyListBinding bi;
     DatabaseHelper db;
     private FamilyMembersAdapter familyMembersAdapter;
+    private final boolean selectionCheck = false;
+    private ArrayList<String> motherNames, childNames, adolMaleNames, adolFemaleNames;
+    private ArrayList<String> motherSno, childSno, adolMaleSno, adolFemaleSno;
     ActivityResultLauncher<Intent> MemberInfoLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -99,7 +102,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                         if (
                                 Integer.parseInt(MainApp.familyMember.getHl6y()) >= 15 && Integer.parseInt(MainApp.familyMember.getHl6y()) <= 19   // 10 - 19 year old
-                                        && MainApp.familyMember.getHl7().equals("5") && MainApp.familyMember.getHl10().equals("1")
+                                        && (MainApp.familyMember.getHl7().equals("5") || MainApp.familyMember.getHl7().equals("99")) && MainApp.familyMember.getHl10().equals("1")
 
                         ) {
                             if (MainApp.familyMember.getHl4().equals("1"))
@@ -147,9 +150,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                 }
             });
-    private ArrayList<String> motherNames, childNames, adolMaleNames, adolFemaleNames;
-    private ArrayList<String> motherSno, childSno, adolMaleSno, adolFemaleSno;
-    private boolean selectionCheck = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,7 +203,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 // Populate Adolescent
                 if (
                         Integer.parseInt(fm.getHl6y()) >= 10 && Integer.parseInt(fm.getHl6y()) <= 19   // 10 - 19 year old
-                                && fm.getHl7().equals("5")
+                                && (fm.getHl7().equals("5") || fm.getHl7().equals("99"))
 
                 ) {
                     // Male
