@@ -61,9 +61,9 @@ public class SectionES1Activity extends AppCompatActivity {
 
         for (Integer a : adolListAll) {
 
-                adolNames.add(MainApp.familyList.get(a - 1).getHl2());
-                adolCodes.add(MainApp.familyList.get(a - 1).getHl1());
-                adolAges.add(MainApp.familyList.get(a - 1).getHl6y());
+            adolNames.add(MainApp.familyList.get(a - 1).getHl2());
+            adolCodes.add(MainApp.familyList.get(a - 1).getHl1());
+            adolAges.add(MainApp.familyList.get(a - 1).getHl6y());
 
 
         }
@@ -145,13 +145,16 @@ public class SectionES1Activity extends AppCompatActivity {
 
             finish();
             if (ladol.getEs1cons().equals("2") || ladol.getEs1cons1().equals("2"))
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                if (adolListAll.size() > 0) {
+                    startActivity(new Intent(this, SectionES1Activity.class));
+                } else {
+                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                }
             else startActivity(new Intent(this, SectionES2Activity.class));
 
 
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
-
 
 
     public void btnEnd(View view) {

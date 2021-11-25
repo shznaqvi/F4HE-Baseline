@@ -427,7 +427,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         // Select Child using KishGrid
         MainApp.childOfSelectedMWRAList = new ArrayList<>();
         for (FamilyMembers fm : MainApp.familyList) {
-            if (fm.getHl8().equals(MainApp.familyMember.getHl1()) & fm.getHl10().equals("1") && Integer.parseInt(fm.getHl6y())<5) {
+            if (fm.getHl8().equals(MainApp.familyMember.getHl1()) && fm.getHl10().equals("1") && Integer.parseInt(fm.getHl6y()) < 5) {
                 MainApp.childOfSelectedMWRAList.add(Integer.parseInt(fm.getHl1()));
             }
         }
