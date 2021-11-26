@@ -67,9 +67,9 @@ public class LateAdolescent extends BaseObservable {
     private String es1q8a = _EMPTY_;
     private String es1q8b = _EMPTY_;
     private String es1q8c = _EMPTY_;
-    private String es1q9 = _EMPTY_;
-    private String es1q10 = _EMPTY_;
-    private String es1q11 = _EMPTY_;
+    private String es1q9a = _EMPTY_;
+    private String es1q9b = _EMPTY_;
+    private String es1q9c = _EMPTY_;
     private String es2q1 = _EMPTY_;
     private String es2q2 = _EMPTY_;
     private String es2q3 = _EMPTY_;
@@ -419,9 +419,9 @@ public class LateAdolescent extends BaseObservable {
         setEs1q8a(es1cons.equals("2") ? "" : this.es1q8a);
         setEs1q8b(es1cons.equals("2") ? "" : this.es1q8b);
         setEs1q8c(es1cons.equals("2") ? "" : this.es1q8c);
-        setEs1q9(es1cons.equals("2") ? "" : this.es1q9);
-        setEs1q10(es1cons.equals("2") ? "" : this.es1q10);
-        setEs1q11(es1cons.equals("2") ? "" : this.es1q11);
+        setEs1q9a(es1cons.equals("2") ? "" : this.es1q9a);
+        setEs1q9b(es1cons.equals("2") ? "" : this.es1q9b);
+        setEs1q9c(es1cons.equals("2") ? "" : this.es1q9c);
         notifyPropertyChanged(BR.es1cons);
     }
 
@@ -448,9 +448,9 @@ public class LateAdolescent extends BaseObservable {
         setEs1q8a(es1cons1.equals("2") ? "" : this.es1q8a);
         setEs1q8b(es1cons1.equals("2") ? "" : this.es1q8b);
         setEs1q8c(es1cons1.equals("2") ? "" : this.es1q8c);
-        setEs1q9(es1cons1.equals("2") ? "" : this.es1q9);
-        setEs1q10(es1cons1.equals("2") ? "" : this.es1q10);
-        setEs1q11(es1cons1.equals("2") ? "" : this.es1q11);
+        setEs1q9a(es1cons1.equals("2") ? "" : this.es1q9a);
+        setEs1q9b(es1cons1.equals("2") ? "" : this.es1q9b);
+        setEs1q9c(es1cons1.equals("2") ? "" : this.es1q9c);
         notifyPropertyChanged(BR.es1cons1);
     }
 
@@ -657,33 +657,33 @@ public class LateAdolescent extends BaseObservable {
     }
 
     @Bindable
-    public String getEs1q9() {
-        return es1q9;
+    public String getEs1q9a() {
+        return es1q9a;
     }
 
-    public void setEs1q9(String es1q9) {
-        this.es1q9 = es1q9;
-        notifyPropertyChanged(BR.es1q9);
-    }
-
-    @Bindable
-    public String getEs1q10() {
-        return es1q10;
-    }
-
-    public void setEs1q10(String es1q10) {
-        this.es1q10 = es1q10;
-        notifyPropertyChanged(BR.es1q10);
+    public void setEs1q9a(String es1q9a) {
+        this.es1q9a = es1q9a;
+        notifyPropertyChanged(BR.es1q9a);
     }
 
     @Bindable
-    public String getEs1q11() {
-        return es1q11;
+    public String getEs1q9b() {
+        return es1q9b;
     }
 
-    public void setEs1q11(String es1q11) {
-        this.es1q11 = es1q11;
-        notifyPropertyChanged(BR.es1q11);
+    public void setEs1q9b(String es1q9b) {
+        this.es1q9b = es1q9b;
+        notifyPropertyChanged(BR.es1q9b);
+    }
+
+    @Bindable
+    public String getEs1q9c() {
+        return es1q9c;
+    }
+
+    public void setEs1q9c(String es1q9c) {
+        this.es1q9c = es1q9c;
+        notifyPropertyChanged(BR.es1q9c);
     }
 
     @Bindable
@@ -2312,9 +2312,9 @@ public class LateAdolescent extends BaseObservable {
             this.es1q8a = json.getString("es1q8a");
             this.es1q8b = json.getString("es1q8b");
             this.es1q8c = json.getString("es1q8c");
-            this.es1q9 = json.getString("es1q9");
-            this.es1q10 = json.getString("es1q10");
-            this.es1q11 = json.getString("es1q11");
+            this.es1q9a = json.getString("es1q9a");
+            this.es1q9b = json.getString("es1q9b");
+            this.es1q9c = json.getString("es1q9c");
         }
     }
 
@@ -2504,9 +2504,9 @@ public class LateAdolescent extends BaseObservable {
                 .put("es1q8a", es1q8a)
                 .put("es1q8b", es1q8b)
                 .put("es1q8c", es1q8c)
-                .put("es1q9", es1q9)
-                .put("es1q10", es1q10)
-                .put("es1q11", es1q11);
+                .put("es1q9a", es1q9a)
+                .put("es1q9b", es1q9b)
+                .put("es1q9c", es1q9c);
         return json.toString();
     }
 
