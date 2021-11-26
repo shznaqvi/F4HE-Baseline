@@ -149,7 +149,7 @@ public class MainApp extends Application {
         // int household  = 1 + (int)(Math.random() * ((10 - 1) + 1));
         // int eligibles = 1 + (int)(Math.random() * ((8 - 1) + 1));
 
-        int household = Math.min(Hh_Sno, 10);
+        int household = Math.min(Hh_Sno, 9);
         int eligibles = Math.min(totalMwra, 8);
 
         int[][] grid = {
@@ -171,8 +171,13 @@ public class MainApp extends Application {
         // System.out.println(household+"-"+eligibles);
         // System.out.println(grid[household-1][eligibles-1]);
 
-        // return Index of MWRAList (total-1)
-        return String.valueOf((grid[household][eligibles - 1])-1);
+        /**
+         *  0 household mean 0 index
+         *  1 eligibles means eligibles-1 index
+         *
+         *  return Index of MWRAList (SNO-1)
+         */
+        return String.valueOf((grid[household][eligibles - 1]) - 1);
     }
 
     @Override
