@@ -165,6 +165,7 @@ public class MainApp extends Application {
                 {1, 2, 1, 2, 5, 4, 3, 2},
         };
 
+
         // System.out.println(household+"-"+eligibles);
         // System.out.println(grid[household-1][eligibles-1]);
 

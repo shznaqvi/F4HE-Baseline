@@ -205,10 +205,10 @@
                             <Button
                                 android:id="@+id/btnProceed"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="36dp"
                                 android:layout_margin="12dp"
                                 android:layout_gravity="end"
-                                android:background="@drawable/button_shape_red"
+                                android:background="@drawable/button_shape_green"
                                 android:drawableTint="#ea0000"
                                 android:onClick="btnProceed"
                                 android:text="Proceed"
@@ -270,12 +270,11 @@
                     android:layout_alignEnd="@id/fmHeading"
                     android:layout_centerInParent="true"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/ic_girl"
                     android:backgroundTint="@color/colorPrimary"
                     android:elevation="6dp"
-                    android:padding="2dp"
                     android:src="@drawable/ic_person_add"
-                    app:borderWidth="0dp"
+                    app:borderWidth="5dp"
                     app:elevation="6dp" />
             </RelativeLayout>
 

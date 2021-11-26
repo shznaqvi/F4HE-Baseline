@@ -86,7 +86,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                             }
                         }
-                        // populateMothersList
+                        /** populateMothersList
+                         *      Familymember has a value in mothers Serial Number (HL8)
+                         *      Mother not already exists in the MWRA List
+                         */
                         String motherSno = MainApp.familyMember.getHl8();
                         if (!motherSno.equals("")
                                 && !motherSno.equals("97")
@@ -94,19 +97,34 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                         ) {
                             FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
-
-                            if (mother.getHl10().equals("1")) {
+                            /**
+                             * Mother is present
+                             * Mother's age is between 15 - 49
+                             */
+                            if (mother.getHl10().equals("1") && Integer.parseInt(mother.getHl6y()) >= 15 && Integer.parseInt(mother.getHl6y()) < 50) {
                                 MainApp.mwraList.add(Integer.parseInt(motherSno));
                             }
                         }
 
+                        /** Populate Adolescent:
+                         *                      Age:    15-19,
+                         *           Marital Status:    unmarried or 99,
+                         *      Availability Status:    Present
+                         */
                         if (
                                 Integer.parseInt(MainApp.familyMember.getHl6y()) >= 15 && Integer.parseInt(MainApp.familyMember.getHl6y()) <= 19   // 10 - 19 year old
                                         && (MainApp.familyMember.getHl7().equals("5") || MainApp.familyMember.getHl7().equals("99")) && MainApp.familyMember.getHl10().equals("1")
 
                         ) {
+                            /** Populate Adolescent Male
+                             *      Gender: Male
+                             */
                             if (MainApp.familyMember.getHl4().equals("1"))
                                 MainApp.adolListMale.add(Integer.valueOf(MainApp.familyMember.getHl1()));
+
+                            /** Populate Adolescent Female
+                             *      Gender: Female
+                             */
                             if (MainApp.familyMember.getHl4().equals("2"))
                                 MainApp.adolListFemale.add(Integer.valueOf(MainApp.familyMember.getHl1()));
                         }
@@ -195,7 +213,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                     // MainApp.mwraList.add(Integer.parseInt(motherSno));
                     FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
 
-                    if (mother.getHl10().equals("1")) {
+                    if (mother.getHl10().equals("1") && Integer.parseInt(mother.getHl6y()) < 50 && Integer.parseInt(mother.getHl6y()) >= 15) {
                         MainApp.mwraList.add(Integer.parseInt(motherSno));
                     }
                 }

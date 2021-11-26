@@ -23,6 +23,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
     private final List<FamilyMembers> member;
     private final int mExpandedPosition = -1;
     private final int completeCount;
+    private boolean motherPresent = false;
 
     /**
      * Initialize the dataset of the Adapter.
@@ -47,6 +48,8 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
         TextView fName = viewHolder.fName;
         TextView fAge = viewHolder.fAge;
+        TextView memCate = viewHolder.memCate;
+        TextView motherName = viewHolder.motherName;
         // LinearLayout subItem = viewHolder.subItem;
         ImageView fmRow = viewHolder.fmRow;
         ImageView mainIcon = viewHolder.mainIcon;
@@ -60,9 +63,28 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
         MainApp.memberComplete = completeCount == MainApp.memberCount;
 
+
         fName.setText(members.getHl2());
         fAge.setText(members.getHl6y() + "y ");
+        motherName.setText(null);
+        String motherRelation = "";
 
+/** Select mother IF
+ *  Mother is alive and present in house
+ */
+        if (!members.getHl8().equals("") && !members.getHl8().equals("97")
+        ) {
+            if (members.getHl4().equals("1")) {
+                motherRelation = " S/o ";
+            } else {
+                motherRelation = " D/o ";
+
+            }
+            motherName.setText(motherRelation + MainApp.familyList.get(Integer.parseInt(members.getHl8()) - 1).getHl2());
+            motherPresent = MainApp.familyList.get(Integer.parseInt(members.getHl8()) - 1).getHl10().equals("1");
+
+
+        }
 
     /*      <string name="hl701"> Married </string>
             <string name="hl702"> Widowed </string>
@@ -129,13 +151,37 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
 
         cloaked.setVisibility(!members.getMemCate().equals("") ? View.GONE : View.VISIBLE);
-        mainIcon.setImageResource((members.getHl4().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl));
+        mainIcon.setImageResource(members.getHl10().equals("1") ? (members.getHl4().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl) : R.drawable.ic_not_available);
         //MainApp.selectedMWRA = members.getIndexed().equals("1") || members.getIndexed().equals("2") ? "-" : "";
-        mainIcon.setBackgroundColor(members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getHl4().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink));
+        mainIcon.setBackgroundColor(members.getHl10().equals("1") ? (members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getHl4().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)) : mContext.getResources().getColor(R.color.gray));
         //  mainIcon.setBackgroundColor(  ((ColorDrawable) mainIcon.getBackground()).getColor());
+        if (members.getMemCate().equals("2"))
+            cloaked.setVisibility(motherPresent ? View.GONE : View.VISIBLE);
+
         if (!MainApp.selectedMWRA.equals("")) {
             cloaked.setVisibility(members.getIndexed().equals("") ? View.VISIBLE : View.GONE);
             indexedBar.setVisibility(members.getIndexed().equals("") ? View.GONE : View.VISIBLE);
+        }
+
+        switch (members.getMemCate()) {
+            case "1":
+                memCate.setText("Mother");
+                break;
+            case "2":
+                if (motherPresent) {
+                    memCate.setText("Child");
+                } else {
+                    memCate.setVisibility(View.GONE);
+                }
+                break;
+            case "3":
+                memCate.setText("Adol. M");
+                break;
+            case "4":
+                memCate.setText("Adol. F");
+                break;
+            default:
+                memCate.setVisibility(View.GONE);
         }
 
         //fMaritalStatus.setText("Children: " + familyMember.getH226m() + " boy(s), " + familyMember.getH226f() + " girl(s)");
@@ -177,8 +223,10 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
      */
     public class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView fName;
+        private final TextView memCate;
         private final TextView fAge;
         private final TextView fMatitalStatus;
+        private final TextView motherName;
         private final TextView secStatus;
         //private final TextView addSec;
         //private final LinearLayout subItem;
@@ -191,8 +239,10 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         public ViewHolder(View v) {
             super(v);
             fName = v.findViewById(R.id.chh02);
+            memCate = v.findViewById(R.id.memCate);
             fAge = v.findViewById(R.id.chh05);
             fMatitalStatus = v.findViewById(R.id.chh06);
+            motherName = v.findViewById(R.id.chh08);
             secStatus = v.findViewById(R.id.csecStatus);
             //  addSec = v.findViewById(R.id.cadd_section);
             //  subItem = v.findViewById(R.id.csubitem);

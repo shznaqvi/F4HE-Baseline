@@ -115,6 +115,7 @@
                                 android:layout_height="match_parent"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                                 android:hint="@string/hl2"
+                                android:inputType="textCapWords|textPersonName"
                                 android:maxLength="20"
                                 android:text="@={familymember.hl2}" />
 

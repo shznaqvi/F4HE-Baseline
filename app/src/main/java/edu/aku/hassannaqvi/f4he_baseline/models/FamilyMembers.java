@@ -308,6 +308,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl4(String hl4) {
         this.hl4 = hl4;
+        updateMemCategory();
         notifyPropertyChanged(BR.hl4);
     }
 
@@ -363,6 +364,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setHl7(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 13 ? "" : this.hl7 : this.hl7);
         setHl11(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 3 ? "" : this.hl11 : this.hl11);
         setHl12(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 10 ? "" : this.hl12 : this.hl12);
+        updateMemCategory();
+
         notifyPropertyChanged(BR.hl6y);
     }
 
@@ -384,6 +387,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setHl7(String hl7) {
         this.hl7 = hl7;
 //        setHl7(hl7.equals("") ? "99" : this.hl7);
+        updateMemCategory();
+
         notifyPropertyChanged(BR.hl7);
     }
 
@@ -394,6 +399,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl8(String hl8) {
         this.hl8 = hl8;
+        updateMemCategory();
         notifyPropertyChanged(BR.hl8);
     }
 
@@ -414,6 +420,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl10(String hl10) {
         this.hl10 = hl10;
+        updateMemCategory();
         notifyPropertyChanged(BR.hl10);
     }
 
@@ -505,6 +512,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNCED_DATE));
 
         sA2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SA2)));
+        updateMemCategory();
+
         return this;
     }
 
@@ -606,13 +615,13 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
             try {
                 cal.setTime(df.parse(year + " " + month + " " + day));
-               cur.setTime(df.parse(curYear + " " + curMonth + " " + curDay));
+                cur.setTime(df.parse(curYear + " " + curMonth + " " + curDay));
 
 /*                System.out.println(df.format("Current: " + cur.getTime()));
                 System.out.println(df.format("DOB: " + cal.getTime()));*/
 
 
-               //long millis = System.currentTimeMillis() - cal.getTimeInMillis();
+                //long millis = System.currentTimeMillis() - cal.getTimeInMillis();
                 long millis = cur.getTimeInMillis() - cal.getTimeInMillis();
                 cal.setTimeInMillis(millis);
 
@@ -645,20 +654,22 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 );*/
 
             } catch (ParseException e) {
-                Log.d(TAG, "CaluculateAge: "+e.getMessage());
+                Log.d(TAG, "CaluculateAge: " + e.getMessage());
                 e.printStackTrace();
 
-        }}
+            }
+        }
     }
 
     /**
      * Memeber Categories:
      * 1 = MWRA
-     * 2 = Adolescent
-     * 3 = Male > 19y7  // not used in this project
+     * 2 = Child
+     * 3 = Adol Male // not used in this project
+     * 4 = Adol Female
      */
     private void updateMemCategory() {
-        if(hl4.equals("")|| hl6y.equals("")|| hl7.equals("")|| !hl10.equals("1")) return;
+        if (hl4.equals("") || hl6y.equals("") || hl7.equals("") || !hl10.equals("1")) return;
         String memGender = getHl4();
         String memMaritalStatus = getHl7();
         int memAge = Integer.parseInt(getHl6y());
@@ -671,17 +682,28 @@ public class FamilyMembers extends BaseObservable implements Observable {
             setMemCate("1");
         }
 
-        // Adolescent
-        if (
-                memAge >= 15 && memAge <= 19   // 15 to 49 year old
-                        && memMaritalStatus.equals("5")
+        // Child
+        if (memAge < 5
+                && !hl8.equals("") && !hl8.equals("97")
         ) {
             setMemCate("2");
         }
 
-
-        if (memGender.equals("1") && memAge > 19) {
+        // Adolescent Male
+        if (memGender.equals("1")
+                && memAge >= 15 && memAge <= 19   // 15 to 49 year old
+                && (memMaritalStatus.equals("5") || memMaritalStatus.equals("97"))
+        ) {
             setMemCate("3");
+        }
+
+        // Adolescent Female
+
+        if (memGender.equals("2")
+                && memAge >= 15 && memAge <= 19   // 15 to 49 year old
+                && (memMaritalStatus.equals("5") || memMaritalStatus.equals("97"))
+        ) {
+            setMemCate("4");
         }
     }
 }
