@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.f4he_baseline.database;
 
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -137,6 +139,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MwraTable.COLUMN_DEVICETAGID, mwra.getDeviceTag());
         values.put(MwraTable.COLUMN_DEVICEID, mwra.getDeviceId());
         values.put(MwraTable.COLUMN_APPVERSION, mwra.getAppver());
+        values.put(MwraTable.COLUMN_SYNCED, mwra.getSynced());
+        values.put(MwraTable.COLUMN_SYNCED_DATE, mwra.getSyncDate());
 
         long newRowId;
         newRowId = db.insert(
@@ -166,7 +170,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
         values.put(ChildTable.COLUMN_DEVICEID, child.getDeviceId());
         values.put(ChildTable.COLUMN_APPVERSION, child.getAppver());
-
+        values.put(ChildTable.COLUMN_SYNCED, child.getSynced());
+        values.put(ChildTable.COLUMN_SYNCED_DATE, child.getSyncDate());
         long newRowId;
         newRowId = db.insert(
                 ChildTable.TABLE_NAME,
@@ -193,7 +198,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(LateAdolescentTable.COLUMN_DEVICETAGID, adol.getDeviceTag());
         values.put(LateAdolescentTable.COLUMN_DEVICEID, adol.getDeviceId());
         values.put(LateAdolescentTable.COLUMN_APPVERSION, adol.getAppver());
-
+        values.put(LateAdolescentTable.COLUMN_SYNCED, adol.getSynced());
+        values.put(LateAdolescentTable.COLUMN_SYNCED_DATE, adol.getSyncDate());
         long newRowId;
         newRowId = db.insert(
                 LateAdolescentTable.TABLE_NAME,
@@ -219,6 +225,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_DEVICETAGID, preg.getDeviceTag());
         values.put(PregnancyTable.COLUMN_DEVICEID, preg.getDeviceId());
         values.put(PregnancyTable.COLUMN_APPVERSION, preg.getAppver());
+        values.put(PregnancyTable.COLUMN_SYNCED, preg.getSynced());
+        values.put(PregnancyTable.COLUMN_SYNCED_DATE, preg.getSyncDate());
 
         long newRowId;
         newRowId = db.insert(
@@ -243,6 +251,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ECDInfoTable.COLUMN_DEVICETAGID, ecd.getDeviceTag());
         values.put(ECDInfoTable.COLUMN_DEVICEID, ecd.getDeviceId());
         values.put(ECDInfoTable.COLUMN_APPVERSION, ecd.getAppver());
+        values.put(ECDInfoTable.COLUMN_SYNCED, ecd.getSynced());
+        values.put(ECDInfoTable.COLUMN_SYNCED_DATE, ecd.getSyncDate());
 
         long newRowId;
         newRowId = db.insert(
@@ -268,6 +278,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
         values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
         values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
+
 
         long newRowId;
         newRowId = db.insert(
@@ -295,7 +306,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MotherKAPTable.COLUMN_DEVICETAGID, motherKAP.getDeviceTag());
         values.put(MotherKAPTable.COLUMN_DEVICEID, motherKAP.getDeviceId());
         values.put(MotherKAPTable.COLUMN_APPVERSION, motherKAP.getAppver());
-
+        values.put(MotherKAPTable.COLUMN_SYNCED, motherKAP.getSynced());
+        values.put(MotherKAPTable.COLUMN_SYNCED_DATE, motherKAP.getSyncDate());
         long newRowId;
         newRowId = db.insert(
                 MotherKAPTable.TABLE_NAME,
@@ -326,7 +338,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
         values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
         values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
-
+        values.put(FamilyMembersTable.COLUMN_SYNCED, members.getSynced());
+        values.put(FamilyMembersTable.COLUMN_SYNCED_DATE, members.getSyncDate());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -362,7 +375,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = ChildTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.child.getId())};
+        String[] selectionArgs = {String.valueOf(child.getId())};
 
         return db.update(ChildTable.TABLE_NAME,
                 values,

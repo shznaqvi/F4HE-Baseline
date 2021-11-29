@@ -193,7 +193,7 @@ public class IdentificationActivity extends AppCompatActivity {
         if (!hhExists()) {
             saveDraftForm();
         } else if (MainApp.entryType != Integer.parseInt(MainApp.form.getEntryType())) {
-            Toast.makeText(this, String.format("This form has been entered as $1%s", MainApp.form.getEntryType().equals("1") ? "interview." : "data-entry"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, String.format("This form has been entered as %s", MainApp.form.getEntryType().equals("1") ? "interview." : "data-entry"), Toast.LENGTH_SHORT).show();
 
         }
         if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited

@@ -20,7 +20,7 @@
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_login.xml" value="0.52125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_main.xml" value="0.52125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.42262602579132474" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.2171875" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.4875" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1a.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1b.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1c.xml" value="0.56328125" />
@@ -37,6 +37,7 @@
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_sync.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/famlily_member_row.xml" value="0.49625" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/fragment_blank.xml" value="0.21145833333333333" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/pendingform_layout.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/preg_row.xml" value="0.37552083333333336" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_identification.xml" value="0.7757009345794392" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_login.xml" value="0.38515625" />
