@@ -186,13 +186,16 @@ public class IdentificationActivity extends AppCompatActivity {
 
     }
 
-
     public void btnContinue(View view) {
         if (!formValidation()) return;
         MainApp.selectedHHID = bi.as1q08.getText().toString();
 
-        if (!hhExists())
+        if (!hhExists()) {
             saveDraftForm();
+        } else if (MainApp.entryType != Integer.parseInt(MainApp.form.getEntryType())) {
+            Toast.makeText(this, String.format("This form has been entered as $1%s", MainApp.form.getEntryType().equals("1") ? "interview." : "data-entry"), Toast.LENGTH_SHORT).show();
+
+        }
         if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
@@ -290,7 +293,6 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form = new Form();
         try {
             MainApp.form = db.getFormByPSUHHNo(MainApp.selectedPSU, MainApp.selectedHHID);
-            MainApp.entryType = Integer.parseInt(MainApp.form.getEntryType());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();

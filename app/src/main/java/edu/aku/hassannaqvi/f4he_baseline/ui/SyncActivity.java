@@ -147,23 +147,52 @@ public class SyncActivity extends AppCompatActivity {
 
                 //Forms
                 uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedFormHH());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedFormHH());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(Forms)" + e.getMessage(), Toast.LENGTH_LONG);
+                }
 
                 //FamilyMembers
                 uploadTables.add(new SyncModel(FamilyMembersTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedFamilyMembers());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedFamilyMembers());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(FamilyMembers)" + e.getMessage(), Toast.LENGTH_LONG);
+
+                }
 
                 //MWRA
                 uploadTables.add(new SyncModel(MwraTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedMWRA());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedMWRA());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(MWRA)" + e.getMessage(), Toast.LENGTH_LONG);
+
+                }
 
                 //Pregnancy
                 uploadTables.add(new SyncModel(PregnancyTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedPregnancy());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedPregnancy());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(Pregnancy)" + e.getMessage(), Toast.LENGTH_LONG);
+
+                }
 
                 //Child
                 uploadTables.add(new SyncModel(ChildTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedChild());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedChild());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(Child)" + e.getMessage(), Toast.LENGTH_LONG);
+
+                }
 
                 //MotherKAP
                 uploadTables.add(new SyncModel(MotherKAPTable.TABLE_NAME));

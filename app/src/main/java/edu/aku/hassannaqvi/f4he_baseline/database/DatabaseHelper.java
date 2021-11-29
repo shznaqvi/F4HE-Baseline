@@ -794,7 +794,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //get UnSyncedTables
-    public JSONArray getUnsyncedFormHH() {
+    public JSONArray getUnsyncedFormHH() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -812,7 +812,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = FormsTable.COLUMN_ID + " ASC";
 
         JSONArray allForms = new JSONArray();
-        try {
             c = db.query(
                     FormsTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -832,24 +831,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedFormHH: " + e.getMessage()
-            );
-        } finally {
-            if (c != null) {
+
                 c.close();
-            }
-            if (db != null) {
                 db.close();
-            }
-        }
+
         Log.d(TAG, "getUnsyncedFormHH: " + allForms.toString().length());
         Log.d(TAG, "getUnsyncedFormHH: " + allForms);
         return allForms;
     }
 
-    public JSONArray getUnsyncedFamilyMembers() {
+    public JSONArray getUnsyncedFamilyMembers() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -863,7 +854,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-        try {
             c = db.query(
                     FamilyMembersTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -878,24 +868,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FamilyMembers fm = new FamilyMembers();
                 all.put(fm.Hydrate(c).toJSONObject());
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedFamilyMembers: " + e.getMessage()
-            );
-        } finally {
-            if (c != null) {
+
                 c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
+
+        db.close();
+
         Log.d(TAG, "getUnsyncedFamilyMembers: " + all.toString().length());
         Log.d(TAG, "getUnsyncedFamilyMembers: " + all);
         return all;
     }
 
-    public JSONArray getUnsyncedMWRA() {
+    public JSONArray getUnsyncedMWRA() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -909,7 +892,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = MwraTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-        try {
             c = db.query(
                     MwraTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -924,24 +906,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MWRA mwra = new MWRA();
                 all.put(mwra.Hydrate(c).toJSONObject());
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedMWRA: " + e.getMessage()
-            );
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
+
+        c.close();
+
         Log.d(TAG, "getUnsyncedMWRA: " + all.toString().length());
         Log.d(TAG, "getUnsyncedMWRA: " + all);
         return all;
     }
 
-    public JSONArray getUnsyncedPregnancy() {
+    public JSONArray getUnsyncedPregnancy() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -955,7 +928,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = PregnancyTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-        try {
             c = db.query(
                     PregnancyTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -970,24 +942,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Pregnancy preg = new Pregnancy();
                 all.put(preg.Hydrate(c).toJSONObject());
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedPregnancy: " + e.getMessage()
-            );
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
+
+        c.close();
+
         Log.d(TAG, "getUnsyncedPregnancy: " + all.toString().length());
         Log.d(TAG, "getUnsyncedPregnancy: " + all);
         return all;
     }
 
-    public JSONArray getUnsyncedChild() {
+    public JSONArray getUnsyncedChild() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1001,7 +964,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = ChildTable.COLUMN_ID + " ASC";
 
         JSONArray allChild = new JSONArray();
-        try {
             c = db.query(
                     ChildTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -1016,18 +978,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Child ch = new Child();
                 allChild.put(ch.Hydrate(c).toJSONObject());
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedChild: " + e.getMessage()
-            );
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
+
         Log.d(TAG, "getUnsyncedChild: " + allChild.toString().length());
         Log.d(TAG, "getUnsyncedChild: " + allChild);
         return allChild;
