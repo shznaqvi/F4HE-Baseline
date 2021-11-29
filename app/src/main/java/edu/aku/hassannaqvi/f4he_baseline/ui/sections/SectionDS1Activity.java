@@ -44,11 +44,13 @@ public class SectionDS1Activity extends AppCompatActivity {
         bi.setMKap(MainApp.motherKAP);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
 
     private boolean insertNewRecord() {
-        if (!motherKAP.getUid().equals("")) return true;
+        if (!motherKAP.getUid().equals("") || MainApp.superuser) return true;
         motherKAP.populateMeta();
         long rowId = 0;
         try {
@@ -71,6 +73,8 @@ public class SectionDS1Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

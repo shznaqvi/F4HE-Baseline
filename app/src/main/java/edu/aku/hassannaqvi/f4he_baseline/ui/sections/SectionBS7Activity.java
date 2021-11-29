@@ -38,8 +38,8 @@ public class SectionBS7Activity extends AppCompatActivity {
 
         String fatherSno = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl9();
         String fatherName = "Not Available/Died";
-        if(!fatherSno.equals("97")){
-            fatherName = MainApp.familyList.get(Integer.parseInt(fatherSno)-1).getHl2();
+        if (!fatherSno.equals("97")) {
+            fatherName = MainApp.familyList.get(Integer.parseInt(fatherSno) - 1).getHl2();
         }
 
         mwra.setBs7q2line(fatherSno);
@@ -47,6 +47,8 @@ public class SectionBS7Activity extends AppCompatActivity {
 
         bi.bs7q4title.setText(String.format(getResources().getString(R.string.bs7q4title), fatherName));
         setupSkips();
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
 
@@ -55,6 +57,8 @@ public class SectionBS7Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

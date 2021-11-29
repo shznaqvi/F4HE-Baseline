@@ -101,6 +101,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SA1, form.sA1toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(FormsTable.COLUMN_ENTRY_TYPE, form.getEntryType());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
         values.put(FormsTable.COLUMN_SYNCED, form.getSynced());
@@ -486,6 +487,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 UsersTable.COLUMN_USERNAME,
                 UsersTable.COLUMN_PASSWORD,
                 UsersTable.COLUMN_FULLNAME,
+                UsersTable.COLUMN_DESIGNATION,
         };
         String whereClause = UsersTable.COLUMN_USERNAME + "=? AND " + UsersTable.COLUMN_PASSWORD + "=?";
         String[] whereArgs = {username, password};
@@ -709,6 +711,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
+                values.put(UsersTable.COLUMN_DESIGNATION, user.getDesignation());
                 long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }

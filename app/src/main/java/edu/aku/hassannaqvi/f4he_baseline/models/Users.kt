@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.f4he_baseline.models
 
 import android.database.Cursor
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.UsersTable
+import edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -10,9 +11,10 @@ import org.json.JSONObject
  */
 class Users {
     var userID: Long = 0
-    var userName: String = ""
-    var password: String = ""
-    var fullname: String = ""
+    var userName: String = _EMPTY_
+    var password: String = _EMPTY_
+    var fullname: String = _EMPTY_
+    var designation: String = _EMPTY_
 
     constructor() {
         // Default Constructor
@@ -28,6 +30,7 @@ class Users {
         userName = jsonObject.getString(UsersTable.COLUMN_USERNAME)
         password = jsonObject.getString(UsersTable.COLUMN_PASSWORD)
         fullname = jsonObject.getString(UsersTable.COLUMN_FULLNAME)
+        designation = jsonObject.getString(UsersTable.COLUMN_DESIGNATION)
         return this
     }
 
@@ -36,6 +39,7 @@ class Users {
         userName = cursor.getString(cursor.getColumnIndexOrThrow(UsersTable.COLUMN_USERNAME))
         password = cursor.getString(cursor.getColumnIndexOrThrow(UsersTable.COLUMN_PASSWORD))
         fullname = cursor.getString(cursor.getColumnIndexOrThrow(UsersTable.COLUMN_FULLNAME))
+        designation = cursor.getString(cursor.getColumnIndexOrThrow(UsersTable.COLUMN_DESIGNATION))
         return this
     }
 

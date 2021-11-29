@@ -51,6 +51,8 @@ public class SectionAS2Activity extends AppCompatActivity {
 
         setupListener();
         populateSpinner();
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
     private void setupListener() {
@@ -138,7 +140,7 @@ public class SectionAS2Activity extends AppCompatActivity {
 
 
     private boolean insertNewRecord() {
-        if (!familyMember.getUid().equals("")) return true;
+        if (!familyMember.getUid().equals("") || MainApp.superuser) return true;
         MainApp.familyMember.populateMeta();
 
         long rowId = 0;
@@ -161,6 +163,8 @@ public class SectionAS2Activity extends AppCompatActivity {
     }
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         int updcount = 0;
         try {
             updcount = db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_SA2, MainApp.familyMember.sA2toString());

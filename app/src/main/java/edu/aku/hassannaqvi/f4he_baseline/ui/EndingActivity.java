@@ -34,6 +34,8 @@ public class EndingActivity extends AppCompatActivity {
 
         setSupportActionBar(bi.toolbar);
         //setTitle(R.string.section1_mainheading);
+        if (MainApp.superuser)
+            bi.btnContinue.setText("End Review");
 
         db = MainApp.appInfo.dbHelper;
         boolean check = getIntent().getBooleanExtra("complete", false);
@@ -92,6 +94,8 @@ public class EndingActivity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
+        if (MainApp.superuser) return true;
+
         int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, form.getiStatus());
         return updcount > 0;
     }

@@ -1,13 +1,11 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
-import static android.widget.RadioGroup.*;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.pregnancy;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,6 +52,8 @@ public class SectionBS1BActivity extends AppCompatActivity {
         pregnancy.setMsno(MainApp.mwra.getBs1q1());
         setSupportActionBar(bi.toolbar);
         setupSkips();
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
     private void setupSkips() {
@@ -71,7 +71,7 @@ public class SectionBS1BActivity extends AppCompatActivity {
 
 
     private boolean insertNewRecord() {
-        if (!pregnancy.getUid().equals("")) return true;
+        if (!pregnancy.getUid().equals("") || MainApp.superuser) return true;
         MainApp.pregnancy.populateMeta();
         long rowId = 0;
         try {
@@ -94,6 +94,8 @@ public class SectionBS1BActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
+        if (MainApp.superuser) return true;
+
         long updcount = 0;
         try {
             updcount = db.updatesPregnancyColumn(TableContracts.PregnancyTable.COLUMN_SB1, pregnancy.sB1toString());

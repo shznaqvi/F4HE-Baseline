@@ -37,17 +37,24 @@ public class SectionAS1Activity extends AppCompatActivity {
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_as1);
         bi.setForm(form);
-        bi.as1q18.setText(MainApp.user.getFullname());
+        if (!MainApp.superuser) {
+            form.setAs1q18(MainApp.user.getFullname());
+        } else {
+            form.setAs1q19(MainApp.user.getFullname());
+            bi.btnContinue.setText("Review Next");
+        }
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         //populateSpinner(this);
-        if (MainApp.idType == 1) formType();
+        if (MainApp.entryType == 1) formType();
+
 
     }
 
 
     private boolean insertNewRecord() {
-        if (!MainApp.form.getUid().equals("")) return true;
+        if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
+
         MainApp.form.populateMeta();
 
         long rowId = 0;
@@ -70,6 +77,8 @@ public class SectionAS1Activity extends AppCompatActivity {
     }
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         int updcount = 0;
         try {
             updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, MainApp.form.sA1toString());

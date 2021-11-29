@@ -35,13 +35,16 @@ public class SectionCS3BActivity extends AppCompatActivity {
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        bi.cs3bq04.check(MainApp.ageOfIndexChild<2?R.id.cs3bq0401:R.id.cs3bq0402);
-        bi.cs3bq06.check(MainApp.ageOfIndexChild<3?R.id.cs3bq0601:R.id.cs3bq0602);
-
+        bi.cs3bq04.check(MainApp.ageOfIndexChild < 2 ? R.id.cs3bq0401 : R.id.cs3bq0402);
+        bi.cs3bq06.check(MainApp.ageOfIndexChild < 3 ? R.id.cs3bq0601 : R.id.cs3bq0602);
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

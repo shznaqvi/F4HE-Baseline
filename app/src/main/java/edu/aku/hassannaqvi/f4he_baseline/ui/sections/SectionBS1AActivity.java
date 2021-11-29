@@ -24,7 +24,6 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionBs1aBinding;
-import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.MWRA;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
@@ -53,11 +52,13 @@ public class SectionBS1AActivity extends AppCompatActivity {
         mwra.setBs1resp(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getHl2());
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
 
 
         for (Integer a : adolListMale) {
 
-            if(!MainApp.familyList.get(a-1).getIndexed().equals("")) {
+            if (!MainApp.familyList.get(a - 1).getIndexed().equals("")) {
                 adolListAll.add(a);
             }
 
@@ -73,7 +74,7 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     private boolean insertNewRecord() {
-        if (!mwra.getUid().equals("")) return true;
+        if (!mwra.getUid().equals("") || MainApp.superuser) return true;
         mwra.populateMeta();
 
         long rowId = 0;
@@ -97,6 +98,8 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         long updcount = 0;
         try {
             updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SB1, mwra.sB1toString());

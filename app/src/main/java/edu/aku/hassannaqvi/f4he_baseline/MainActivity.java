@@ -67,21 +67,21 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.startInterview:
-                MainApp.idType = 1;
+                MainApp.entryType = 1;
                 break;
             case R.id.startDataEntry:
-                MainApp.idType = 2;
+                MainApp.entryType = 2;
                 break;
 /*
             case R.id.updateBlood:
-                MainApp.idType = 3;
+                MainApp.entryType = 3;
                 break;
 
             case R.id.updateStool:
-                MainApp.idType = 4;
+                MainApp.entryType = 4;
                 break;*/
             default:
-                MainApp.idType = 0;
+                MainApp.entryType = 0;
 
         }
 

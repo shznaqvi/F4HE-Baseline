@@ -23,7 +23,6 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionCs1BBinding;
-import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionCS1BActivity extends AppCompatActivity {
@@ -57,7 +56,8 @@ public class SectionCS1BActivity extends AppCompatActivity {
 
         ecdInfo.setCs1q02c1(String.valueOf(childSno));
         ecdInfo.setCs1q02c1n(String.valueOf(childName));
-
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 /*
 
@@ -106,7 +106,7 @@ public class SectionCS1BActivity extends AppCompatActivity {
 */
 
     private boolean insertNewRecord() {
-        if (!ecdInfo.getUid().equals("")) return true;
+        if (!ecdInfo.getUid().equals("") || MainApp.superuser) return true;
         MainApp.ecdInfo.populateMeta();
 
         long rowId = 0;
@@ -129,6 +129,8 @@ public class SectionCS1BActivity extends AppCompatActivity {
     }
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

@@ -24,6 +24,7 @@ object CreateTable {
             + FormsTable.COLUMN_ISTATUS + " TEXT,"
             + FormsTable.COLUMN_DEVICEID + " TEXT,"
             + FormsTable.COLUMN_DEVICETAGID + " TEXT,"
+            + FormsTable.COLUMN_ENTRY_TYPE + " TEXT,"
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
@@ -231,7 +232,8 @@ object CreateTable {
             + UsersTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + UsersTable.COLUMN_USERNAME + " TEXT,"
             + UsersTable.COLUMN_PASSWORD + " TEXT,"
-            + UsersTable.COLUMN_FULLNAME + " TEXT"
+            + UsersTable.COLUMN_FULLNAME + " TEXT,"
+            + UsersTable.COLUMN_DESIGNATION + " TEXT"
             + " );"
             )
 

@@ -580,10 +580,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         } else {*/
         if (MainApp.mwraList.size() > 0 && MainApp.selectedMWRA.equals("")) {
 
-            if (MainApp.idType == 1) {
+            if (MainApp.entryType == 1) {
                 proceedSelect();
             }
-            if (MainApp.idType == 2) {
+            if (MainApp.entryType == 2) {
                 showSelect();
             }
         } else {

@@ -36,6 +36,8 @@ public class SectionBS3Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         setupSkips();
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
 
@@ -44,6 +46,8 @@ public class SectionBS3Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

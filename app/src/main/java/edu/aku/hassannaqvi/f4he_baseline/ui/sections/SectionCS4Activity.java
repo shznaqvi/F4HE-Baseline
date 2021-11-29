@@ -35,12 +35,15 @@ public class SectionCS4Activity extends AppCompatActivity {
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        bi.cs4q01.check(MainApp.ageOfIndexChild<1?R.id.cs4q0101:R.id.cs4q0102);
-
+        bi.cs4q01.check(MainApp.ageOfIndexChild < 1 ? R.id.cs4q0101 : R.id.cs4q0102);
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

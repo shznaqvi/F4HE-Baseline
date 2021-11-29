@@ -35,10 +35,14 @@ public class SectionCS3AActivity extends AppCompatActivity {
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

@@ -71,7 +71,7 @@ public class MainApp extends Application {
     public static int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 2;
     public static long TWO_MINUTES = 1000 * 60 * 2;
     public static boolean permissionCheck = false;
-    public static int idType = 0;
+    public static int entryType = 0;
 
     public static List<String> subjectNames;
     public static List<FamilyMembers> familyList;

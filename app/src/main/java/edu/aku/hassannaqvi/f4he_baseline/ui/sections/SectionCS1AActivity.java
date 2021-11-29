@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.childOfSelectedMWRAList;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ecdInfo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -73,11 +72,13 @@ public class SectionCS1AActivity extends AppCompatActivity {
         /*bi.cs1q0101.setText(MainApp.mwra.getBs1resp());
         bi.cs1q0102.setText(MainApp.mwra.getBs1respline());*/
         //   child = new Child();
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
 
     private boolean insertNewRecord() {
-        if (!child.getUid().equals("")) return true;
+        if (!child.getUid().equals("") || MainApp.superuser) return true;
         child.populateMeta();
 
         long rowId = 0;
@@ -101,6 +102,8 @@ public class SectionCS1AActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

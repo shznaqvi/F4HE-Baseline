@@ -22,6 +22,7 @@ public class TableContracts {
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_ENTRY_TYPE = "entry_type";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
     }
@@ -80,6 +81,7 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_PASSWORD = "password";
         public static final String COLUMN_FULLNAME = "full_name";
+        public static final String COLUMN_DESIGNATION = "designation";
 
     }
 

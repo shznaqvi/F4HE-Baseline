@@ -44,6 +44,8 @@ public class SectionES1Activity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
 
         populateSpinner();
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
     }
 
 
@@ -97,7 +99,8 @@ public class SectionES1Activity extends AppCompatActivity {
     }
 
     private boolean insertNewRecord() {
-        if (!ladol.getUid().equals("")) return true;
+
+        if (!ladol.getUid().equals("") || MainApp.superuser) return true;
         ladol.populateMeta();
         long rowId = 0;
         try {
@@ -120,6 +123,8 @@ public class SectionES1Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {

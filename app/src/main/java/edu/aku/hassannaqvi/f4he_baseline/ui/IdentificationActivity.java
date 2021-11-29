@@ -55,6 +55,8 @@ public class IdentificationActivity extends AppCompatActivity {
         populateSpinner();
 
         bi.btnContinue.setText(R.string.open_hh_form);
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Form");
         MainApp.form = new Form();
 
 
@@ -288,6 +290,7 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form = new Form();
         try {
             MainApp.form = db.getFormByPSUHHNo(MainApp.selectedPSU, MainApp.selectedHHID);
+            MainApp.entryType = Integer.parseInt(MainApp.form.getEntryType());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();

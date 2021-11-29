@@ -45,6 +45,7 @@ public class Form extends BaseObservable implements Observable {
     private String iStatus96x = _EMPTY_;
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
+    private String entryType = _EMPTY_;
 
     // FIELD VARIABLES
     private String as1q01 = _EMPTY_;
@@ -98,6 +99,7 @@ public class Form extends BaseObservable implements Observable {
         setProjectName(PROJECT_NAME);
         setPsuCode(MainApp.selectedPSU);
         setHhid(MainApp.selectedHHID);
+        setEntryType(String.valueOf(MainApp.entryType));
 
     }
 
@@ -186,6 +188,14 @@ public class Form extends BaseObservable implements Observable {
 
     public void setDeviceTag(String deviceTag) {
         this.deviceTag = deviceTag;
+    }
+
+    public String getEntryType() {
+        return entryType;
+    }
+
+    public void setEntryType(String entryType) {
+        this.entryType = entryType;
     }
 
     public String getAppver() {
@@ -532,6 +542,7 @@ public class Form extends BaseObservable implements Observable {
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
+        this.entryType = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ENTRY_TYPE));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
@@ -626,6 +637,7 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
         json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(FormsTable.COLUMN_ENTRY_TYPE, this.entryType);
         json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
         json.put(FormsTable.COLUMN_SA1, new JSONObject(sA1toString()));
         return json;
