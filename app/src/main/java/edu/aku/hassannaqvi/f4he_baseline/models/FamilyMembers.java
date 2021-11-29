@@ -498,6 +498,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public FamilyMembers Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UUID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_PROJECT_NAME));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SNO));
@@ -548,14 +550,21 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
         json.put(FamilyMembersTable.COLUMN_ID, this.id);
         json.put(FamilyMembersTable.COLUMN_UID, this.uid);
+        json.put(FamilyMembersTable.COLUMN_UUID, this.uuid);
+        json.put(FamilyMembersTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(FamilyMembersTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(FamilyMembersTable.COLUMN_HHID, this.hhid);
+        json.put(FamilyMembersTable.COLUMN_INDEXED, this.indexed);
         json.put(FamilyMembersTable.COLUMN_SNO, this.sno);
         json.put(FamilyMembersTable.COLUMN_USERNAME, this.userName);
         json.put(FamilyMembersTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FamilyMembersTable.COLUMN_DEVICEID, this.deviceId);
         json.put(FamilyMembersTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(FamilyMembersTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(FamilyMembersTable.COLUMN_SYNCED, this.synced);
+        json.put(FamilyMembersTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(FamilyMembersTable.COLUMN_APPVERSION, this.appver);
+
         json.put(FamilyMembersTable.COLUMN_SA2, new JSONObject(sA2toString()));
         return json;
     }

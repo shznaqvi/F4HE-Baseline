@@ -196,15 +196,31 @@ public class SyncActivity extends AppCompatActivity {
 
                 //MotherKAP
                 uploadTables.add(new SyncModel(MotherKAPTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedmotherKAP());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedmotherKAP());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(Child)" + e.getMessage(), Toast.LENGTH_LONG);
+                }
 
                 //ECDinfo
                 uploadTables.add(new SyncModel(ECDInfoTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedEcdInfo());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedEcdInfo());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(Child)" + e.getMessage(), Toast.LENGTH_LONG);
+                }
+
 
                 //LateAdol
                 uploadTables.add(new SyncModel(LateAdolescentTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedLateAdolescent());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedLateAdolescent());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(Child)" + e.getMessage(), Toast.LENGTH_LONG);
+                }
 
 
                 MainApp.downloadData = new String[uploadData.size()];

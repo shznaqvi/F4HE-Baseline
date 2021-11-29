@@ -984,7 +984,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allChild;
     }
 
-    public JSONArray getUnsyncedmotherKAP() {
+    public JSONArray getUnsyncedmotherKAP() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -998,7 +998,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = MotherKAPTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-        try {
             c = db.query(
                     MotherKAPTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -1013,24 +1012,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MotherKAP kap = new MotherKAP();
                 all.put(kap.Hydrate(c).toJSONObject());
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedmotherKAP: " + e.getMessage()
-            );
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
         Log.d(TAG, "getUnsyncedmotherKAP: " + all.toString().length());
         Log.d(TAG, "getUnsyncedmotherKAP: " + all);
         return all;
     }
 
-    public JSONArray getUnsyncedEcdInfo() {
+    public JSONArray getUnsyncedEcdInfo() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1044,7 +1031,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = ECDInfoTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-        try {
             c = db.query(
                     ECDInfoTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -1059,24 +1045,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ECDInfo ecdInfo = new ECDInfo();
                 all.put(ecdInfo.Hydrate(c).toJSONObject());
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedEcdInfo: " + e.getMessage()
-            );
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
         Log.d(TAG, "getUnsyncedEcdInfo: " + all.toString().length());
         Log.d(TAG, "getUnsyncedEcdInfo: " + all);
         return all;
     }
 
-    public JSONArray getUnsyncedLateAdolescent() {
+    public JSONArray getUnsyncedLateAdolescent() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1090,7 +1064,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = LateAdolescentTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-        try {
             c = db.query(
                     LateAdolescentTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -1105,18 +1078,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 LateAdolescent ldol = new LateAdolescent();
                 all.put(ldol.Hydrate(c).toJSONObject());
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedLateAdolescent: " + e.getMessage()
-            );
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
         Log.d(TAG, "getUnsyncedLateAdolescent: " + all.toString().length());
         Log.d(TAG, "getUnsyncedLateAdolescent: " + all);
         return all;

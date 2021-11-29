@@ -535,6 +535,7 @@ public class Form extends BaseObservable implements Observable {
     public Form Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PROJECT_NAME));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SNO));
@@ -630,6 +631,7 @@ public class Form extends BaseObservable implements Observable {
 
         json.put(FormsTable.COLUMN_ID, this.id);
         json.put(FormsTable.COLUMN_UID, this.uid);
+        json.put(FormsTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(FormsTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(FormsTable.COLUMN_HHID, this.hhid);
         json.put(FormsTable.COLUMN_SNO, this.sno);
@@ -639,6 +641,9 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(FormsTable.COLUMN_ENTRY_TYPE, this.entryType);
         json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(FormsTable.COLUMN_SYNCED, this.synced);
+        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(FormsTable.COLUMN_APPVERSION, this.appver);
         json.put(FormsTable.COLUMN_SA1, new JSONObject(sA1toString()));
         return json;
     }

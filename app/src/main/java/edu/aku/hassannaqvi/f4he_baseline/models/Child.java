@@ -30,6 +30,7 @@ public class Child extends BaseObservable implements Observable {
     private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
+    private String indexed = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
@@ -238,6 +239,10 @@ public class Child extends BaseObservable implements Observable {
         return sno;
     }
 
+    public String getIndexed() {
+        return indexed;
+    }
+
     public String getDeviceId() {
         return deviceId;
     }
@@ -302,6 +307,10 @@ public class Child extends BaseObservable implements Observable {
 
     public void setSno(String sno) {
         this.sno = sno;
+    }
+
+    public void setIndexed(String indexed) {
+        this.indexed = indexed;
     }
 
     public void setDeviceId(String deviceId) {
@@ -1834,8 +1843,11 @@ public class Child extends BaseObservable implements Observable {
     public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UUID));
+        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_INDEXED));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_HHID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PROJECT_NAME));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYSDATE));
@@ -2216,18 +2228,25 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_UID, this.uid);
         json.put(TableContracts.ChildTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.ChildTable.COLUMN_HHID, this.hhid);
+        json.put(TableContracts.ChildTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(TableContracts.ChildTable.COLUMN_UUID, this.uuid);
+        json.put(TableContracts.ChildTable.COLUMN_INDEXED, this.indexed);
         //json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
         json.put(TableContracts.ChildTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.ChildTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.ChildTable.COLUMN_DEVICEID, this.deviceId);
         json.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.ChildTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(TableContracts.ChildTable.COLUMN_SYNCED, this.synced);
+        json.put(TableContracts.ChildTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(TableContracts.ChildTable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.ChildTable.COLUMN_SC1, new JSONObject(sC1toString()));
         json.put(TableContracts.ChildTable.COLUMN_SC2, new JSONObject(sC2toString()));
         json.put(TableContracts.ChildTable.COLUMN_SC31, new JSONObject(sC31toString()));
         json.put(TableContracts.ChildTable.COLUMN_SC32, new JSONObject(sC32toString()));
         json.put(TableContracts.ChildTable.COLUMN_SC4, new JSONObject(sC4toString()));
         json.put(TableContracts.ChildTable.COLUMN_SC5, new JSONObject(sC5toString()));
+
         return json;
     }
 

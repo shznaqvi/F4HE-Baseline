@@ -445,6 +445,9 @@ public class MotherKAP extends BaseObservable implements Observable {
         json.put(MotherKAPTable.COLUMN_ID, this.id);
         json.put(MotherKAPTable.COLUMN_UID, this.uid);
         json.put(MotherKAPTable.COLUMN_UUID, this.uid);
+        json.put(MotherKAPTable.COLUMN_SNO, this.sno);
+        json.put(MotherKAPTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(MotherKAPTable.COLUMN_APPVERSION, this.appver);
         json.put(MotherKAPTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(MotherKAPTable.COLUMN_HHID, this.hhid);
         json.put(MotherKAPTable.COLUMN_USERNAME, this.userName);
@@ -452,6 +455,8 @@ public class MotherKAP extends BaseObservable implements Observable {
         json.put(MotherKAPTable.COLUMN_DEVICEID, this.deviceId);
         json.put(MotherKAPTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(MotherKAPTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(MotherKAPTable.COLUMN_SYNCED, this.synced);
+        json.put(MotherKAPTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(MotherKAPTable.COLUMN_SD1, new JSONObject(sD1toString()));
         json.put(MotherKAPTable.COLUMN_SD2, new JSONObject(sD2toString()));
         json.put(MotherKAPTable.COLUMN_SD3, new JSONObject(sD3toString()));
@@ -502,6 +507,9 @@ public class MotherKAP extends BaseObservable implements Observable {
     public MotherKAP Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_UUID));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SNO));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_PROJECT_NAME));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_HHID));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SNO));

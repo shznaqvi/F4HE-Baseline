@@ -35,6 +35,7 @@ public class Pregnancy extends BaseObservable implements Observable {
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String msno = _EMPTY_;
+    private String indexed = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
@@ -107,6 +108,10 @@ public class Pregnancy extends BaseObservable implements Observable {
         return sno;
     }
 
+    public String getIndexed() {
+        return indexed;
+    }
+
     public String getMuid() {
         return muid;
     }
@@ -149,6 +154,10 @@ public class Pregnancy extends BaseObservable implements Observable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void setIndexed(String indexed) {
+        this.indexed = indexed;
     }
 
     public void setUid(String uid) {
@@ -271,6 +280,8 @@ public class Pregnancy extends BaseObservable implements Observable {
         json.put(TableContracts.PregnancyTable.COLUMN_UID, this.uid);
         json.put(TableContracts.PregnancyTable.COLUMN_UUID, this.uuid);
         json.put(TableContracts.PregnancyTable.COLUMN_MUID, this.muid);
+        json.put(TableContracts.PregnancyTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(TableContracts.PregnancyTable.COLUMN_INDEXED, this.indexed);
         json.put(TableContracts.PregnancyTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.PregnancyTable.COLUMN_HHID, this.hhid);
         json.put(TableContracts.PregnancyTable.COLUMN_SNO, this.sno);
@@ -280,6 +291,9 @@ public class Pregnancy extends BaseObservable implements Observable {
         json.put(TableContracts.PregnancyTable.COLUMN_DEVICEID, this.deviceId);
         json.put(TableContracts.PregnancyTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.PregnancyTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(TableContracts.PregnancyTable.COLUMN_SYNCED, this.synced);
+        json.put(TableContracts.PregnancyTable.COLUMN_SYSDATE, this.syncDate);
+        json.put(TableContracts.PregnancyTable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.PregnancyTable.COLUMN_SB1, new JSONObject(sB1toString()));
         return json;
     }
@@ -300,6 +314,8 @@ public class Pregnancy extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_UUID));
         this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_MUID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_PROJECT_NAME));
+        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_INDEXED));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SNO));

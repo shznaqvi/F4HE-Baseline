@@ -32,6 +32,7 @@ public class ECDInfo extends BaseObservable implements Observable {
     private String sysDate = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
+    private String indexed = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
@@ -108,6 +109,10 @@ public class ECDInfo extends BaseObservable implements Observable {
 
     public void setSno(String sno) {
         this.sno = sno;
+    }
+
+    public String getIndexed() {
+        return indexed;
     }
 
     public void setDeviceId(String deviceId) {
@@ -202,6 +207,10 @@ public class ECDInfo extends BaseObservable implements Observable {
         return sno;
     }
 
+    public void setIndexed(String indexed) {
+        this.indexed = indexed;
+    }
+
     public String getDeviceId() {
         return deviceId;
     }
@@ -291,14 +300,14 @@ public class ECDInfo extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.cs1q02c1cent);
     }
 
-
-
     public ECDInfo Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_UUID));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_HHID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_PROJECT_NAME));
+        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_INDEXED));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ECDInfoTable.COLUMN_SYSDATE));
@@ -352,13 +361,18 @@ public class ECDInfo extends BaseObservable implements Observable {
         json.put(TableContracts.ECDInfoTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.ECDInfoTable.COLUMN_HHID, this.hhid);
 
+        json.put(TableContracts.ECDInfoTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(TableContracts.ECDInfoTable.COLUMN_INDEXED, this.indexed);
+        json.put(TableContracts.ECDInfoTable.COLUMN_APPVERSION, this.appver);
+
         json.put(TableContracts.ECDInfoTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.ECDInfoTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.ECDInfoTable.COLUMN_DEVICEID, this.deviceId);
         json.put(TableContracts.ECDInfoTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(TableContracts.ECDInfoTable.COLUMN_SYNCED, this.synced);
+        json.put(TableContracts.ECDInfoTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(TableContracts.ECDInfoTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.ECDInfoTable.COLUMN_ECDINFO, new JSONObject(ecdInfotoString()));
-
         return json;
     }
 

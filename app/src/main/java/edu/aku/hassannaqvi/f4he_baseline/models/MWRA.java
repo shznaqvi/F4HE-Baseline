@@ -5013,15 +5013,19 @@ public class MWRA extends BaseObservable implements Observable {
 
         json.put(TableContracts.MwraTable.COLUMN_ID, this.id);
         json.put(TableContracts.MwraTable.COLUMN_UID, this.uid);
+        json.put(TableContracts.MwraTable.COLUMN_PROJECT_NAME, this.projectName);
 
         json.put(TableContracts.MwraTable.COLUMN_UUID, this.uid);
         json.put(TableContracts.MwraTable.COLUMN_HHID, this.hhid);
+        json.put(TableContracts.MwraTable.COLUMN_INDEXED, this.indexed);
         json.put(TableContracts.MwraTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.MwraTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.MwraTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.MwraTable.COLUMN_DEVICEID, this.deviceId);
         json.put(TableContracts.MwraTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.MwraTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(TableContracts.MwraTable.COLUMN_SYNCED, this.synced);
+        json.put(TableContracts.MwraTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(TableContracts.MwraTable.COLUMN_SB1, new JSONObject(sB1toString()));
         json.put(TableContracts.MwraTable.COLUMN_SB2, new JSONObject(sB2toString()));
         json.put(TableContracts.MwraTable.COLUMN_SB3, new JSONObject(sB3toString()));
@@ -5438,8 +5442,11 @@ public class MWRA extends BaseObservable implements Observable {
     public MWRA Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UUID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PROJECT_NAME));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_HHID));
+        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_INDEXED));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYSDATE));

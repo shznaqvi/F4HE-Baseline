@@ -34,6 +34,7 @@ public class LateAdolescent extends BaseObservable {
     private String sysDate = _EMPTY_;
     private final String sno = _EMPTY_;
     private String hhid = _EMPTY_;
+    private String indexed = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
@@ -259,9 +260,9 @@ public class LateAdolescent extends BaseObservable {
         return sysDate;
     }
 
-    //public String getIndexed() {
-      //  return indexed;
-    //}
+    public String getIndexed() {
+        return indexed;
+    }
 
     public String getDeviceId() {
         return deviceId;
@@ -329,9 +330,9 @@ public class LateAdolescent extends BaseObservable {
         this.sysDate = sysDate;
     }
 
-    //public void setIndexed(String indexed) {
-      //  this.indexed = indexed;
-   // }
+    public void setIndexed(String indexed) {
+        this.indexed = indexed;
+    }
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
@@ -2676,6 +2677,12 @@ public class LateAdolescent extends BaseObservable {
         json.put(TableContracts.LateAdolescentTable.COLUMN_DEVICEID, this.deviceId);
         json.put(TableContracts.LateAdolescentTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.LateAdolescentTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(TableContracts.LateAdolescentTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(TableContracts.LateAdolescentTable.COLUMN_UUID, this.uuid);
+        json.put(TableContracts.LateAdolescentTable.COLUMN_INDEXED, this.indexed);
+        json.put(TableContracts.LateAdolescentTable.COLUMN_SYNCED, this.synced);
+        json.put(TableContracts.LateAdolescentTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(TableContracts.LateAdolescentTable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.LateAdolescentTable.COLUMN_SE1, new JSONObject(sE1toString()));
         json.put(TableContracts.LateAdolescentTable.COLUMN_SE2, new JSONObject(sE2toString()));
         json.put(TableContracts.LateAdolescentTable.COLUMN_SE3, new JSONObject(sE3toString()));
@@ -2686,8 +2693,11 @@ public class LateAdolescent extends BaseObservable {
     public LateAdolescent Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_UUID));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_HHID));
+        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_INDEXED));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_PROJECT_NAME));
         //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_SYSDATE));
