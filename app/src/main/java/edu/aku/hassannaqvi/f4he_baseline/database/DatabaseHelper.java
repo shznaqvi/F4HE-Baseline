@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.f4he_baseline.database;
 
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.IBAHC;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
 
 import android.content.ContentValues;
@@ -8,9 +10,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import net.sqlcipher.database.SQLiteDatabase;
+import net.sqlcipher.database.SQLiteOpenHelper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,9 +59,13 @@ import edu.aku.hassannaqvi.f4he_baseline.models.Villages;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
+    public static final String DATABASE_NAME = PROJECT_NAME + ".db";
+    public static final String DATABASE_COPY = PROJECT_NAME + "_copy.db";
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_PASSWORD = IBAHC;
 
     public DatabaseHelper(Context context) {
-        super(context, CreateTable.DATABASE_NAME, null, CreateTable.DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
@@ -88,10 +95,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
     //ADDITION in DB
     public Long addForm(Form form) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(FormsTable.COLUMN_UID, form.getUid());
@@ -118,7 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Long addMWRA(MWRA mwra) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(MwraTable.COLUMN_PROJECT_NAME, mwra.getProjectName());
         values.put(MwraTable.COLUMN_UID, mwra.getUid());
@@ -151,7 +157,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Long addChild(Child child) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
         values.put(ChildTable.COLUMN_UID, child.getUid());
@@ -181,7 +187,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Long addAdolescent(LateAdolescent adol) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(LateAdolescentTable.COLUMN_PROJECT_NAME, adol.getProjectName());
         values.put(LateAdolescentTable.COLUMN_UID, adol.getUid());
@@ -209,7 +215,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Long addPregnancy(Pregnancy preg) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(PregnancyTable.COLUMN_PROJECT_NAME, preg.getProjectName());
         values.put(PregnancyTable.COLUMN_UID, preg.getUid());
@@ -237,7 +243,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Long addEcdInfo(ECDInfo ecd) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ECDInfoTable.COLUMN_PROJECT_NAME, ecd.getProjectName());
         values.put(ECDInfoTable.COLUMN_UID, ecd.getUid());
@@ -263,7 +269,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Long addHHMembers(FamilyMembers members) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(FamilyMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
         values.put(FamilyMembersTable.COLUMN_UID, members.getUid());
@@ -289,7 +295,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Long addMotherKap(MotherKAP motherKAP) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(MotherKAPTable.COLUMN_PROJECT_NAME, motherKAP.getProjectName());
         values.put(MotherKAPTable.COLUMN_UID, motherKAP.getUid());
@@ -319,7 +325,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addFamilyMembers(FamilyMembers members) throws JSONException {
 
         // Gets the data repository in write mode
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
@@ -351,10 +357,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
     //UPDATE in DB
     public int updatesFormColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -369,7 +374,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updatesChildColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -384,7 +389,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updatesECDColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -399,7 +404,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updatesPregnancyColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -414,7 +419,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updatesMWRAColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -429,7 +434,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updatesAdolColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -444,7 +449,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updatesMotherKAPColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -459,7 +464,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updatesMemberColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -474,7 +479,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updateEnding() {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         // New value for one column
         ContentValues values = new ContentValues();
@@ -493,7 +498,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Functions that dealing with table data
     public boolean doLogin(String username, String password) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = {
                 UsersTable.COLUMN_ID,
@@ -536,7 +541,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ArrayList<Form> getFormsByDate(String sysdate) {
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = {
                 FormsTable._ID,
@@ -585,7 +590,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // istatus examples: (1) or (1,9) or (1,3,5)
     public Form getFormByAssessNo(String uid, String istatus) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -627,7 +632,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ArrayList<Cursor> getDatabaseManagerData(String Query) {
         //get writable database
-        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        SQLiteDatabase sqlDB = this.getWritableDatabase(DATABASE_PASSWORD);
         String[] columns = new String[]{"message"};
         //an array list of cursor to save two cursors one has results from the query
         //other cursor stores error message if any errors are triggered
@@ -683,7 +688,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public int syncVersionApp(JSONObject VersionList) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(VersionTable.TABLE_NAME, null, null);
         long count = 0;
         try {
@@ -709,7 +714,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int syncUser(JSONArray userList) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(UsersTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
@@ -739,7 +744,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int syncClusters(JSONArray clusterList) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(VillagesTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
@@ -808,7 +813,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //get UnSyncedTables
     public JSONArray getUnsyncedFormHH() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -825,28 +830,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = FormsTable.COLUMN_ID + " ASC";
 
         JSONArray allForms = new JSONArray();
-            c = db.query(
-                    FormsTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                /** WorkManager Upload
-                 /*Form fc = new Form();
-                 allFC.add(fc.Hydrate(c));*/
-                Log.d(TAG, "getUnsyncedFormHH: " + c.getCount());
-                Form form = new Form();
-                allForms.put(form.Hydrate(c).toJSONObject());
+        c = db.query(
+                FormsTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            /** WorkManager Upload
+             /*Form fc = new Form();
+             allFC.add(fc.Hydrate(c));*/
+            Log.d(TAG, "getUnsyncedFormHH: " + c.getCount());
+            Form form = new Form();
+            allForms.put(form.Hydrate(c).toJSONObject());
 
 
-            }
+        }
 
-                c.close();
-                db.close();
+        c.close();
+        db.close();
 
         Log.d(TAG, "getUnsyncedFormHH: " + allForms.toString().length());
         Log.d(TAG, "getUnsyncedFormHH: " + allForms);
@@ -854,7 +859,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public JSONArray getUnsyncedFamilyMembers() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause;
@@ -866,22 +871,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-            c = db.query(
-                    FamilyMembersTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedFamilyMembers: " + c.getCount());
-                FamilyMembers fm = new FamilyMembers();
-                all.put(fm.Hydrate(c).toJSONObject());
-            }
+        c = db.query(
+                FamilyMembersTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedFamilyMembers: " + c.getCount());
+            FamilyMembers fm = new FamilyMembers();
+            all.put(fm.Hydrate(c).toJSONObject());
+        }
 
-                c.close();
+        c.close();
 
         db.close();
 
@@ -891,7 +896,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public JSONArray getUnsyncedMWRA() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause;
@@ -903,20 +908,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = MwraTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-            c = db.query(
-                    MwraTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedMWRA: " + c.getCount());
-                MWRA mwra = new MWRA();
-                all.put(mwra.Hydrate(c).toJSONObject());
-            }
+        c = db.query(
+                MwraTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedMWRA: " + c.getCount());
+            MWRA mwra = new MWRA();
+            all.put(mwra.Hydrate(c).toJSONObject());
+        }
 
         c.close();
 
@@ -926,7 +931,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public JSONArray getUnsyncedPregnancy() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause;
@@ -938,20 +943,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = PregnancyTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-            c = db.query(
-                    PregnancyTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedPregnancy: " + c.getCount());
-                Pregnancy preg = new Pregnancy();
-                all.put(preg.Hydrate(c).toJSONObject());
-            }
+        c = db.query(
+                PregnancyTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedPregnancy: " + c.getCount());
+            Pregnancy preg = new Pregnancy();
+            all.put(preg.Hydrate(c).toJSONObject());
+        }
 
         c.close();
 
@@ -961,7 +966,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public JSONArray getUnsyncedChild() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause;
@@ -973,20 +978,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = ChildTable.COLUMN_ID + " ASC";
 
         JSONArray allChild = new JSONArray();
-            c = db.query(
-                    ChildTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedChild: " + c.getCount());
-                Child ch = new Child();
-                allChild.put(ch.Hydrate(c).toJSONObject());
-            }
+        c = db.query(
+                ChildTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedChild: " + c.getCount());
+            Child ch = new Child();
+            allChild.put(ch.Hydrate(c).toJSONObject());
+        }
 
         Log.d(TAG, "getUnsyncedChild: " + allChild.toString().length());
         Log.d(TAG, "getUnsyncedChild: " + allChild);
@@ -994,7 +999,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public JSONArray getUnsyncedmotherKAP() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause;
@@ -1006,27 +1011,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = MotherKAPTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-            c = db.query(
-                    MotherKAPTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedmotherKAP: " + c.getCount());
-                MotherKAP kap = new MotherKAP();
-                all.put(kap.Hydrate(c).toJSONObject());
-            }
+        c = db.query(
+                MotherKAPTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedmotherKAP: " + c.getCount());
+            MotherKAP kap = new MotherKAP();
+            all.put(kap.Hydrate(c).toJSONObject());
+        }
         Log.d(TAG, "getUnsyncedmotherKAP: " + all.toString().length());
         Log.d(TAG, "getUnsyncedmotherKAP: " + all);
         return all;
     }
 
     public JSONArray getUnsyncedEcdInfo() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause;
@@ -1038,27 +1043,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = ECDInfoTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-            c = db.query(
-                    ECDInfoTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedEcdInfo: " + c.getCount());
-                ECDInfo ecdInfo = new ECDInfo();
-                all.put(ecdInfo.Hydrate(c).toJSONObject());
-            }
+        c = db.query(
+                ECDInfoTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedEcdInfo: " + c.getCount());
+            ECDInfo ecdInfo = new ECDInfo();
+            all.put(ecdInfo.Hydrate(c).toJSONObject());
+        }
         Log.d(TAG, "getUnsyncedEcdInfo: " + all.toString().length());
         Log.d(TAG, "getUnsyncedEcdInfo: " + all);
         return all;
     }
 
     public JSONArray getUnsyncedLateAdolescent() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause;
@@ -1070,20 +1075,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = LateAdolescentTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
-            c = db.query(
-                    LateAdolescentTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedLateAdolescent: " + c.getCount());
-                LateAdolescent ldol = new LateAdolescent();
-                all.put(ldol.Hydrate(c).toJSONObject());
-            }
+        c = db.query(
+                LateAdolescentTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedLateAdolescent: " + c.getCount());
+            LateAdolescent ldol = new LateAdolescent();
+            all.put(ldol.Hydrate(c).toJSONObject());
+        }
         Log.d(TAG, "getUnsyncedLateAdolescent: " + all.toString().length());
         Log.d(TAG, "getUnsyncedLateAdolescent: " + all);
         return all;
@@ -1092,7 +1097,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //update SyncedTables
     public void updateSyncedFormHH(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
 // New value for one column
         ContentValues values = new ContentValues();
@@ -1111,7 +1116,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateSyncedFamilyMembers(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(FamilyMembersTable.COLUMN_SYNCED, true);
         values.put(FamilyMembersTable.COLUMN_SYNCED_DATE, new Date().toString());
@@ -1125,7 +1130,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateSyncedMWRA(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(MwraTable.COLUMN_SYNCED, true);
         values.put(MwraTable.COLUMN_SYNCED_DATE, new Date().toString());
@@ -1139,7 +1144,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateSyncedPregnancy(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(PregnancyTable.COLUMN_SYNCED, true);
         values.put(PregnancyTable.COLUMN_SYNCED_DATE, new Date().toString());
@@ -1153,7 +1158,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateSyncedChild(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ChildTable.COLUMN_SYNCED, true);
         values.put(ChildTable.COLUMN_SYNCED_DATE, new Date().toString());
@@ -1167,7 +1172,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateSyncedmotherKAP(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(MotherKAPTable.COLUMN_SYNCED, true);
         values.put(MotherKAPTable.COLUMN_SYNCED_DATE, new Date().toString());
@@ -1181,7 +1186,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateSyncedEcdInfo(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ECDInfoTable.COLUMN_SYNCED, true);
         values.put(ECDInfoTable.COLUMN_SYNCED_DATE, new Date().toString());
@@ -1195,7 +1200,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateSyncedLateAdolescent(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(LateAdolescentTable.COLUMN_SYNCED, true);
         values.put(LateAdolescentTable.COLUMN_SYNCED_DATE, new Date().toString());
@@ -1211,7 +1216,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ArrayList<Cursor> getData(String Query) {
         //get writable database
-        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        SQLiteDatabase sqlDB = this.getWritableDatabase(DATABASE_PASSWORD);
         String[] columns = new String[]{"message"};
         //an array list of cursor to save two cursors one has results from the query
         //other cursor stores error message if any errors are triggered
@@ -1292,7 +1297,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }*/
 
     public Form getFormByPsuHHNo(String psuCode, String hhid) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -1336,7 +1341,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Collection<Form> getFormsByCluster(String cluster) {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause = FormsTable.COLUMN_PSU_CODE + " = ? ";
@@ -1385,7 +1390,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Collection<Form> getTodayForms(String sysdate) {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause = FormsTable.COLUMN_SYSDATE + " Like ? ";
@@ -1433,7 +1438,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Collection<Form> getPendingForms() {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause = FormsTable.COLUMN_ISTATUS + " = ?";
@@ -1480,7 +1485,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public Villages getVillagesByCode(String psucode) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -1564,7 +1569,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }*/
 
     public List<FamilyMembers> getMemberBYUID(String uid) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -1606,7 +1611,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public FamilyMembers getSelectedMemberBYUID(String uid) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -1687,7 +1692,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }*/
 
     public int updatesfamilyListColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -1704,7 +1709,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Collection<Villages> getAllCountries() {
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = true;
@@ -1747,7 +1752,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Collection<Villages> getProvinceByCountry(String cCode) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = true;
@@ -1790,7 +1795,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Collection<Villages> getDistrictsByProvince(String cCode, String provCode) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = true;
@@ -1835,7 +1840,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Collection<Villages> getVillagesByDistrict(String cCode, String provCode, String distCode) {
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = true;
@@ -1881,7 +1886,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Form getFormByPSUHHNo(String psuCode, String hhid) throws JSONException {
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = false;
@@ -1920,7 +1925,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public MWRA getMwraByUUid() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 
@@ -1955,7 +1960,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Pregnancy getPregByUUid(String pSNo) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 
@@ -1993,7 +1998,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Child getChildByUUid() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 
@@ -2029,7 +2034,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ECDInfo getECDataByUUid(int ecdNo) throws JSONException {
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 

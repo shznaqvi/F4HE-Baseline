@@ -17,22 +17,24 @@
 
     <application
         android:name=".core.MainApp"
+
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_icon"
         android:immersive="true"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
-        android:usesCleartextTraffic="true"
+        android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
         <activity
             android:name=".ui.sections.SectionCS1CActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"/>
+            android:theme="@style/AppThemeEnglish1" />
 
         <activity
             android:name=".ui.sections.SectionCS1BActivity"
@@ -210,10 +212,31 @@
             android:theme="@style/Theme.AppCompat.Light" />
 
         <activity
+            android:name=".ui.lists.FormsReportPending"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.lists.FormsReportCluster"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.lists.FormsReportDate"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
             android:name=".ui.lists.FamilyMembersListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize" />
+        <!--
+                <meta-data android:name="YEK_REVRES" android:value="V@ca#!0n$urvIv0r" />
+        -->
+        <meta-data
+            android:name="YEK_REVRES"
+            android:value="L]MZL7]%cX8;P8F8V@ca#!0nSurvIv0r-t*L$`1`|@DR)TFe+?@mX;(,7+g,Jl" />
+
     </application>
 
 </manifest>

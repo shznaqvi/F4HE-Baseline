@@ -471,6 +471,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={familymember.hl5d}"
+                                android:digits="0123456789"
                                 app:defaultValue="98"
                                 app:maxValue="31"
                                 app:minValue="1"
@@ -487,6 +488,8 @@
                                 android:maxLength="2"
                                 android:text="@={familymember.hl5m}"
                                 app:defaultValue="98"
+                                android:digits="0123456789"
+
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
@@ -502,6 +505,7 @@
                                 android:maxLength="4"
                                 android:text="@={familymember.hl5y}"
                                 app:defaultValue="9998"
+                                android:digits="0123456789"
                                 app:maxValue="0"
                                 app:minValue="0"
                                 app:type="range" />
@@ -583,6 +587,8 @@
                                 android:onTextChanged="@{()->hl7.clearCheck() + hl11.clearCheck() + hl12.clearCheck()}"
                                 android:hint="##"
                                 android:inputType="number"
+                                android:digits="0123456789"
+
                                 android:maxLength="2"
                                 android:enabled="@{familymember.hl5y.equals(`9998`)}"
                                 android:text="@={familymember.hl6y}"
@@ -598,6 +604,7 @@
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
+                                android:digits="0123456789"
                                 android:maxLength="2"
                                 android:enabled="@{familymember.hl5y.equals(`9998`)}"
                                 android:text="@={familymember.hl6m}"

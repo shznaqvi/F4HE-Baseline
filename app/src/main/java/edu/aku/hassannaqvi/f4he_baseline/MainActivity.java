@@ -17,6 +17,8 @@ import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.SyncActivity;
+import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportCluster;
+import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportPending;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.ConsentActivity;
 import edu.aku.hassannaqvi.f4he_baseline.ui.sections.SectionAS1Activity;
@@ -220,11 +222,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.formsReportDate:
-                //intent = new Intent(MainActivity.this, FormsReportDate.class);
+                intent = new Intent(MainActivity.this, FormsReportDate.class);
                 startActivity(intent);
                 break;
             case R.id.formsReportCluster:
-                //intent = new Intent(MainActivity.this, FormsReportCluster.class);
+                intent = new Intent(MainActivity.this, FormsReportCluster.class);
                 startActivity(intent);
                 break;
         }

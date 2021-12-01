@@ -3,13 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <data>
 
         <import type="android.view.View" />
 
-    </data>
+        <variable
+            name="custerReport"
+            type="edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportCluster" />
 
+        <variable
+            name="dtReport"
+            type="edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportDate" />
+
+        <variable
+            name="pendingReport"
+            type="edu.aku.hassannaqvi.f4he_baseline.ui.lists.FormsReportPending" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +36,7 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ToolbarTheme"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:subtitle="Please enter a psuCode to search forms"
+            app:subtitle="Please enter a ebCode to search forms"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="Forms By Cluster"
             app:titleTextAppearance="@style/Toolbar.TitleText" />

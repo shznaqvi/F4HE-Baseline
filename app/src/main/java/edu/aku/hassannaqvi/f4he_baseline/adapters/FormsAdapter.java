@@ -128,16 +128,15 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         holder.hhno.setText(fc.get(position).getHhid());
         holder.psuCode.setText(fc.get(position).getPsuCode());
-        holder.psuCode.setText(fc.get(position).getPsuCode());
-        holder.psuCode.setText(fc.get(position).getPsuCode());
+
         holder.istatus.setText(iStatus);
-      /*  holder.fatherName.setText(motherName + " / " + childName);
-        holder.secStatusAnthro.setText(anthroStatus == 2 ? "  Done   " : " Pending ");
-        holder.secStatusBlood.setText(bloodStatus == 2 ? "  Done   " : " Pending ");
-        holder.secStatusStool.setText(stoolStatus == 2 ? "  Done   " : " Pending ");
-        holder.secStatusAnthro.setTextColor(anthroStatus == 2 ? Color.GREEN : Color.RED);
-        holder.secStatusBlood.setTextColor(bloodStatus == 2 ? Color.GREEN : Color.RED);
-        holder.secStatusStool.setTextColor(stoolStatus == 2 ? Color.GREEN : Color.RED);*/
+        holder.fatherName.setText(fc.get(position).getAs1q09());
+      /*    holder.mwraCount.setText(anthroStatus == 2 ? "  Done   " : " Pending ");
+        holder.childCount.setText(bloodStatus == 2 ? "  Done   " : " Pending ");
+        holder.adolMaleCount.setText(stoolStatus == 2 ? "  Done   " : " Pending ");
+        holder.mwraCount.setTextColor(anthroStatus == 2 ? Color.GREEN : Color.RED);
+        holder.childCount.setTextColor(bloodStatus == 2 ? Color.GREEN : Color.RED);
+        holder.adolMaleCount.setTextColor(stoolStatus == 2 ? Color.GREEN : Color.RED);*/
 
         holder.sysdate.setText(fc.get(position).getSysDate());
         holder.istatus.setTextColor(iColor);
@@ -187,9 +186,10 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         public TextView psuCode;
         public TextView hhno;
         public TextView istatus;
-        public TextView secStatusAnthro;
-        public TextView secStatusBlood;
-        public TextView secStatusStool;
+        public TextView mwraCount;
+        public TextView childCount;
+        public TextView adolMaleCount;
+        public TextView adolFemaleCount;
         public TextView fatherName;
         // each data item is just a string in this case
 
@@ -201,9 +201,10 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
             hhno = v.findViewById(R.id.hhno);
             istatus = v.findViewById(R.id.istatus);
             fatherName = v.findViewById(R.id.fathername);
-            secStatusAnthro = v.findViewById(R.id.secStatusAnthro);
-            secStatusBlood = v.findViewById(R.id.secStatusBlood);
-            secStatusStool = v.findViewById(R.id.secStatusStool);
+            mwraCount = v.findViewById(R.id.mwraCount);
+            childCount = v.findViewById(R.id.childCount);
+            adolMaleCount = v.findViewById(R.id.adolMaleCount);
+            adolFemaleCount = v.findViewById(R.id.adolFemaleCount);
 
         }
 

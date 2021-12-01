@@ -2,14 +2,10 @@ package edu.aku.hassannaqvi.f4he_baseline.database
 
 
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.*
-import edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME
 
 
 object CreateTable {
 
-    const val DATABASE_NAME = "$PROJECT_NAME.db"
-    const val DATABASE_COPY = "${PROJECT_NAME}_copy.db"
-    const val DATABASE_VERSION = 1
 
     const val SQL_CREATE_FORMS = ("CREATE TABLE "
             + FormsTable.TABLE_NAME + "("

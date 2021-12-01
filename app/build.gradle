@@ -89,6 +89,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            resValue("string", "DB_PASSWORD_f4he_baseline", "V@ca#!0nSurvIv0r")
+        }
     }
     compileOptions {
 
@@ -131,5 +135,17 @@ dependencies {
 
     //Image Compressor
     implementation 'id.zelory:compressor:2.1.1'
+
+    // Sqlcipher
+    implementation "net.zetetic:android-database-sqlcipher:4.4.3"
+    implementation "androidx.sqlite:sqlite-ktx:2.1.0"
+    implementation "androidx.sqlite:sqlite:2.1.0"
+
+    //Rooted
+    implementation 'com.scottyab:rootbeer-lib:0.0.8'
+
+    // Android Database Browser
+    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
+
 
 }

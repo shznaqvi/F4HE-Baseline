@@ -3,9 +3,16 @@ package edu.aku.hassannaqvi.f4he_baseline.core;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+
+import com.scottyab.rootbeer.RootBeer;
+
+import net.sqlcipher.database.SQLiteDatabase;
 
 import org.json.JSONArray;
 
@@ -28,16 +35,17 @@ public class MainApp extends Application {
     public static final String PROJECT_NAME = "f4he_baseline";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
-    //    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    public static final String _IP = "http://cls-pae-fp51764";// .TEST server
+    //public static final String _IP = "http://cls-pae-fp51764";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/f4he/api/";// .TEST server;
-    public static final String _SERVER_URL = "sync.php";
-    public static final String _SERVER_GET_URL = "getData.php";
+    public static final String _SERVER_URL = "syncenc.php";
+    public static final String _SERVER_GET_URL = "getDataEnc.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/f4he/app/hhsurvey";
     public static final String _EMPTY_ = "";
+    public static String IBAHC = "";
 
     //COUNTRIES
     public static int PAKISTAN = 1;
@@ -184,12 +192,29 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        RootBeer rootBeer = new RootBeer(this);
+        if (rootBeer.isRooted()) {
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);
         sharedPref = getSharedPreferences(PROJECT_NAME, MODE_PRIVATE);
         editor = sharedPref.edit();
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        // Initialize SQLCipher library
+        SQLiteDatabase.loadLibs(this);
+
+        ApplicationInfo ai = null;
+        try {
+            ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            IBAHC = bundle.getString("YEK_REVRES").substring(16, 32);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 
