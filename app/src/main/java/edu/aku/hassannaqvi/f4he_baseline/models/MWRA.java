@@ -2,6 +2,8 @@ package edu.aku.hassannaqvi.f4he_baseline.models;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChild;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -33,8 +35,11 @@ public class MWRA extends BaseObservable implements Observable {
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
+    private String fmuid = _EMPTY_;
+    private String muid = _EMPTY_;
     private String cluster = _EMPTY_;
     private String hhid = _EMPTY_;
+    private String sno = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
@@ -451,6 +456,9 @@ public class MWRA extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getUid()); //// not applicable in Form table
+        setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
+        setSno(selectedMWRA);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -475,12 +483,34 @@ public class MWRA extends BaseObservable implements Observable {
         return uuid;
     }
 
+    public String getFmuid() {
+        return fmuid;
+    }
+
+    public void setFmuid(String fmuid) {
+        this.fmuid = fmuid;
+    }
+
+    public String getMuid() {
+        return muid;
+    }
+
+    public void setMuid(String muid) {
+        this.muid = muid;
+    }
+
+
     public String getCluster() {
         return cluster;
     }
 
     public String getHhid() {
         return hhid;
+    }
+
+
+    public String getSno() {
+        return sno;
     }
 
     public String getUserName() {
@@ -550,6 +580,10 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setHhid(String hhid) {
         this.hhid = hhid;
+    }
+
+    public void setSno(String sno) {
+        this.sno = sno;
     }
 
     public void setUserName(String userName) {
@@ -694,6 +728,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setBs1respline(String bs1respline) {
         this.bs1respline = bs1respline;
+        this.sno = bs1respline;
         notifyPropertyChanged(BR.bs1respline);
     }
 
@@ -5443,11 +5478,13 @@ public class MWRA extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UUID));
+        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_MUID));
+        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_FMUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PROJECT_NAME));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_HHID));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_INDEXED));
-        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SNO));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_DEVICEID));
