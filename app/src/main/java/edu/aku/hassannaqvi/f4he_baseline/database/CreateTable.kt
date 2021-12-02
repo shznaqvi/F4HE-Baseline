@@ -157,6 +157,7 @@ object CreateTable {
             + PregnancyTable.COLUMN_UID + " TEXT,"
             + PregnancyTable.COLUMN_UUID + " TEXT,"
             + PregnancyTable.COLUMN_MUID + " TEXT,"
+            + PregnancyTable.COLUMN_FMUID + " TEXT,"
             + PregnancyTable.COLUMN_PSU_CODE + " TEXT,"
             + PregnancyTable.COLUMN_SNO + " TEXT,"
             + PregnancyTable.COLUMN_M_SNO + " TEXT,"

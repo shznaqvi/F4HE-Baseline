@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.f4he_baseline.models;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -29,6 +30,7 @@ public class Pregnancy extends BaseObservable implements Observable {
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
     private String muid = _EMPTY_;
+    private String fmuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String psuCode = _EMPTY_;
@@ -61,6 +63,8 @@ public class Pregnancy extends BaseObservable implements Observable {
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
         setMuid(MainApp.mwra.getUid());  // not applicable in Form table
+        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid()); //// not applicable in Form table
+        setSno(selectedMWRA);  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -116,6 +120,10 @@ public class Pregnancy extends BaseObservable implements Observable {
         return muid;
     }
 
+    public String getFmuid() {
+        return fmuid;
+    }
+
     public String getDeviceId() {
         return deviceId;
     }
@@ -166,6 +174,10 @@ public class Pregnancy extends BaseObservable implements Observable {
 
     public void setMuid(String muid) {
         this.muid = muid;
+    }
+
+    public void setFmuid(String fmuid) {
+        this.fmuid = fmuid;
     }
 
     public String getMsno() {
@@ -280,6 +292,7 @@ public class Pregnancy extends BaseObservable implements Observable {
         json.put(TableContracts.PregnancyTable.COLUMN_UID, this.uid);
         json.put(TableContracts.PregnancyTable.COLUMN_UUID, this.uuid);
         json.put(TableContracts.PregnancyTable.COLUMN_MUID, this.muid);
+        json.put(TableContracts.PregnancyTable.COLUMN_FMUID, this.fmuid);
         json.put(TableContracts.PregnancyTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(TableContracts.PregnancyTable.COLUMN_INDEXED, this.indexed);
         json.put(TableContracts.PregnancyTable.COLUMN_PSU_CODE, this.psuCode);
@@ -314,6 +327,7 @@ public class Pregnancy extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_UUID));
         this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_MUID));
+        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_FMUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_PROJECT_NAME));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_INDEXED));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_PSU_CODE));

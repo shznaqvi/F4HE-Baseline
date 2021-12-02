@@ -257,6 +257,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_UID, preg.getUid());
         values.put(PregnancyTable.COLUMN_UUID, preg.getUuid());
         values.put(PregnancyTable.COLUMN_MUID, preg.getMuid());
+        values.put(PregnancyTable.COLUMN_FMUID, preg.getFmuid());
         values.put(PregnancyTable.COLUMN_PSU_CODE, preg.getpsuCode());
         values.put(PregnancyTable.COLUMN_HHID, preg.getHhid());
         values.put(PregnancyTable.COLUMN_SNO, preg.getSno());
