@@ -92,6 +92,7 @@ public class EndingActivity extends AppCompatActivity {
     private void recordEntry() {
 
         EntryLog entryLog = new EntryLog();
+        entryLog.populateMeta();
         entryLog.setId(String.valueOf(db.addEntryLog(entryLog)));
         entryLog.setUid(MainApp.form.getDeviceId() + entryLog.getId());
         db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
