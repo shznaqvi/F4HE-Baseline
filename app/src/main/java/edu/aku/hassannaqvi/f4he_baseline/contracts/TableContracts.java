@@ -27,6 +27,30 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
+    public static abstract class EntryLogTable implements BaseColumns {
+        public static final String TABLE_NAME = "entrylog";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_PSU_CODE = "psuCode";
+        public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_SNO = "sno";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_OPENTIME = "openTime";
+        public static final String COLUMN_CLOSETIME = "closeTime";
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_ENTRY_TYPE = "entry_type";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
     public static abstract class FamilyMembersTable implements BaseColumns {
         public static final String TABLE_NAME = "FamilyMembers";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
@@ -178,11 +202,14 @@ public class TableContracts {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_FMUID = "_fmuid";
+        public static final String COLUMN_MUID = "_muid";
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";
+        public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_SC1 = "sc1";
         public static final String COLUMN_SC2 = "sc2";
         public static final String COLUMN_SC31 = "sc31";

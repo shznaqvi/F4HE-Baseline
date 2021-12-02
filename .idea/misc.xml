@@ -29,7 +29,7 @@
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_a.xml" value="0.37552083333333336" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_b.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_c.xml" value="0.37552083333333336" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs2.xml" value="0.2796296296296296" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs2.xml" value="0.53625" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3a.xml" value="0.37552083333333336" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3b.xml" value="0.37552083333333336" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_ds1.xml" value="0.37552083333333336" />
@@ -80,7 +80,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

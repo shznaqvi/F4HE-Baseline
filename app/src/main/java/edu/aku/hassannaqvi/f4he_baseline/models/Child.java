@@ -2,6 +2,8 @@ package edu.aku.hassannaqvi.f4he_baseline.models;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChild;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -28,6 +30,8 @@ public class Child extends BaseObservable implements Observable {
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
+    private String fmuid = _EMPTY_;
+    private String muid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String indexed = _EMPTY_;
@@ -192,6 +196,9 @@ public class Child extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getUid()); //// not applicable in Form table
+        setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
+        setSno(selectedChild);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -213,6 +220,22 @@ public class Child extends BaseObservable implements Observable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public String getFmuid() {
+        return fmuid;
+    }
+
+    public void setFmuid(String fmuid) {
+        this.fmuid = fmuid;
+    }
+
+    public String getMuid() {
+        return muid;
+    }
+
+    public void setMuid(String muid) {
+        this.muid = muid;
     }
 
     public String getUid() {
@@ -469,6 +492,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCs2q02(String cs2q02) {
         this.cs2q02 = cs2q02;
+        this.sno = cs2q02;
         notifyPropertyChanged(BR.cs2q02);
     }
 
@@ -1844,11 +1868,13 @@ public class Child extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UUID));
+        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_FMUID));
+        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_MUID));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_INDEXED));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_HHID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PROJECT_NAME));
-        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_DEVICEID));
@@ -2230,8 +2256,10 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_HHID, this.hhid);
         json.put(TableContracts.ChildTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(TableContracts.ChildTable.COLUMN_UUID, this.uuid);
+        json.put(TableContracts.ChildTable.COLUMN_FMUID, this.fmuid);
+        json.put(TableContracts.ChildTable.COLUMN_MUID, this.muid);
         json.put(TableContracts.ChildTable.COLUMN_INDEXED, this.indexed);
-        //json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
+        json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
         json.put(TableContracts.ChildTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.ChildTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.ChildTable.COLUMN_DEVICEID, this.deviceId);

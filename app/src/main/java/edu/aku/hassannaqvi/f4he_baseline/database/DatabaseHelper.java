@@ -162,6 +162,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
         values.put(ChildTable.COLUMN_UID, child.getUid());
         values.put(ChildTable.COLUMN_UUID, child.getUuid());
+        values.put(ChildTable.COLUMN_FMUID, child.getUuid());
+        values.put(ChildTable.COLUMN_UUID, child.getUuid());
         values.put(ChildTable.COLUMN_PSU_CODE, child.getpsuCode());
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());

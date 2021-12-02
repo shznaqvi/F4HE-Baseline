@@ -1,0 +1,286 @@
+package edu.aku.hassannaqvi.f4he_baseline.models;
+
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
+
+import android.database.Cursor;
+
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+import androidx.databinding.Observable;
+import androidx.databinding.PropertyChangeRegistry;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import edu.aku.hassannaqvi.f4he_baseline.BR;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EntryLogTable;
+import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
+
+
+public class EntryLog extends BaseObservable implements Observable {
+
+    private final String TAG = "Form";
+    private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
+    // APP VARIABLES
+    private String projectName = PROJECT_NAME;
+    // APP VARIABLES
+    private String id = _EMPTY_;
+    private String uid = _EMPTY_;
+    private String uuid = _EMPTY_;
+    private String userName = _EMPTY_;
+    private String sysDate = _EMPTY_;
+    private String openTime = _EMPTY_;
+    private String closeTime = _EMPTY_;
+    private String psuCode = _EMPTY_;
+    private String hhid = _EMPTY_;
+    private String sno = _EMPTY_;
+    private String deviceId = _EMPTY_;
+    private String deviceTag = _EMPTY_;
+    private String appver = _EMPTY_;
+    private String iStatus = _EMPTY_;
+    private String iStatus96x = _EMPTY_;
+    private String synced = _EMPTY_;
+    private String syncDate = _EMPTY_;
+    private String entryType = _EMPTY_;
+
+
+    public EntryLog() {
+
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.appInfo.getAppVersion());
+        setAppver(MainApp.appInfo.getAppVersion());
+
+    }
+
+
+    public void populateMeta() {
+
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setAppver(MainApp.appInfo.getAppVersion());
+        setProjectName(PROJECT_NAME);
+        setPsuCode(MainApp.form.getPsuCode());
+        setHhid(MainApp.form.getHhid());
+        setEntryType(MainApp.form.getEntryType());
+
+    }
+
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    @Bindable
+    public String getPsuCode() {
+        return psuCode;
+    }
+
+    public void setPsuCode(String psuCode) {
+        this.psuCode = psuCode;
+        notifyPropertyChanged(BR.psuCode);
+    }
+
+    @Bindable
+    public String getHhid() {
+        return hhid;
+    }
+
+    public void setHhid(String hhid) {
+        this.hhid = hhid;
+        notifyPropertyChanged(BR.hhid);
+    }
+
+    @Bindable
+    public String getSno() {
+        return sno;
+    }
+
+    public void setSno(String sno) {
+        this.sno = sno;
+        notifyPropertyChanged(BR.sno);
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getSysDate() {
+        return sysDate;
+    }
+
+    public void setSysDate(String sysDate) {
+        this.sysDate = sysDate;
+    }
+
+    public String getCloseTime() {
+        return closeTime;
+    }
+
+    public void setCloseTime(String closeTime) {
+        this.closeTime = closeTime;
+    }
+
+    public String getOpenTime() {
+        return openTime;
+    }
+
+    public void setOpenTime(String openTime) {
+        this.openTime = openTime;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDeviceTag() {
+        return deviceTag;
+    }
+
+    public void setDeviceTag(String deviceTag) {
+        this.deviceTag = deviceTag;
+    }
+
+    public String getEntryType() {
+        return entryType;
+    }
+
+    public void setEntryType(String entryType) {
+        this.entryType = entryType;
+    }
+
+    public String getAppver() {
+        return appver;
+    }
+
+    public void setAppver(String appver) {
+        this.appver = appver;
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getSynced() {
+        return synced;
+    }
+
+    public void setSynced(String synced) {
+        this.synced = synced;
+    }
+
+    public String getSyncDate() {
+        return syncDate;
+    }
+
+    public void setSyncDate(String syncDate) {
+        this.syncDate = syncDate;
+    }
+
+
+    public EntryLog Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_UUID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_PROJECT_NAME));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_PSU_CODE));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_HHID));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SNO));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYSDATE));
+        this.openTime = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_OPENTIME));
+        this.closeTime = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_CLOSETIME));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_DEVICETAGID));
+        this.entryType = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ENTRY_TYPE));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYNCED_DATE));
+
+        return this;
+    }
+
+
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+
+        json.put(EntryLogTable.COLUMN_ID, this.id);
+        json.put(EntryLogTable.COLUMN_UID, this.uid);
+        json.put(EntryLogTable.COLUMN_UUID, this.uuid);
+        json.put(EntryLogTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(EntryLogTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(EntryLogTable.COLUMN_HHID, this.hhid);
+        json.put(EntryLogTable.COLUMN_SNO, this.sno);
+        json.put(EntryLogTable.COLUMN_USERNAME, this.userName);
+        json.put(EntryLogTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(EntryLogTable.COLUMN_OPENTIME, this.openTime);
+        json.put(EntryLogTable.COLUMN_CLOSETIME, this.closeTime);
+        json.put(EntryLogTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(EntryLogTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(EntryLogTable.COLUMN_ENTRY_TYPE, this.entryType);
+        json.put(EntryLogTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(EntryLogTable.COLUMN_SYNCED, this.synced);
+        json.put(EntryLogTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(EntryLogTable.COLUMN_APPVERSION, this.appver);
+        return json;
+    }
+
+
+}
