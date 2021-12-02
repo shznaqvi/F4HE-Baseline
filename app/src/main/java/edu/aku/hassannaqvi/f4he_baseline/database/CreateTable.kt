@@ -124,6 +124,8 @@ object CreateTable {
             + MwraTable.COLUMN_UID + " TEXT,"
             + MwraTable.COLUMN_UUID + " TEXT,"
             + MwraTable.COLUMN_FMUID + " TEXT,"
+            + MwraTable.COLUMN_SNO + " TEXT,"
+            + MwraTable.COLUMN_FMUID + " TEXT,"
             + MwraTable.COLUMN_MUID + " TEXT,"
             + MwraTable.COLUMN_SNO + " TEXT,"
             + MwraTable.COLUMN_PSU_CODE + " TEXT,"
