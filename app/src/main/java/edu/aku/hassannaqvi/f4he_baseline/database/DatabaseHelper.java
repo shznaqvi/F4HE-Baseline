@@ -156,7 +156,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MwraTable.COLUMN_UID, mwra.getUid());
         values.put(MwraTable.COLUMN_UUID, mwra.getUuid());
         values.put(MwraTable.COLUMN_FMUID, mwra.getFmuid());
-        values.put(MwraTable.COLUMN_MUID, mwra.getMuid());
+      //  values.put(MwraTable.COLUMN_MUID, mwra.getMuid());
         values.put(MwraTable.COLUMN_SNO, mwra.getSno());
         values.put(MwraTable.COLUMN_PSU_CODE, mwra.getpsuCode());
         values.put(MwraTable.COLUMN_HHID, mwra.getHhid());
