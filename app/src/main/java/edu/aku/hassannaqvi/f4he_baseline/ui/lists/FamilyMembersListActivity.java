@@ -91,7 +91,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                          *      Mother not already exists in the MWRA List
                          */
                         String motherSno = MainApp.familyMember.getHl8();
-                        if (!motherSno.equals("")
+                        if (Integer.parseInt(MainApp.familyMember.getHl6y()) < 5
+                                && !motherSno.equals("")
                                 && !motherSno.equals("97")
                                 && !MainApp.mwraList.contains(Integer.parseInt(motherSno))
 
@@ -212,7 +213,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                 // Populate mothers' list
                 String motherSno = fm.getHl8(); // mother's line number from child
-                if (!motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
+                if (Integer.parseInt(MainApp.familyMember.getHl6y()) < 5 &&
+                        !motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
                     // MainApp.mwraList.add(Integer.parseInt(motherSno));
                     FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
 

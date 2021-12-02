@@ -26,50 +26,43 @@ public class EntryLog extends BaseObservable implements Observable {
 
     private final String TAG = "Form";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    // APP VARIABLES
-    private String projectName = PROJECT_NAME;
-    // APP VARIABLES
+
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
+    // APP VARIABLES
+    private String projectName = PROJECT_NAME;
     private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String openTime = _EMPTY_;
-    private String closeTime = _EMPTY_;
+    private String entryDate = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
-    private String sno = _EMPTY_;
-    private String deviceId = _EMPTY_;
-    private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
     private String iStatus = _EMPTY_;
     private String iStatus96x = _EMPTY_;
-    private String synced = _EMPTY_;
-    private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
 
+    private String synced = _EMPTY_;
+    private String syncDate = _EMPTY_;
 
     public EntryLog() {
 
-        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setUserName(MainApp.user.getUserName());
-        setDeviceId(MainApp.deviceid);
-        setAppver(MainApp.appInfo.getAppVersion());
-        setAppver(MainApp.appInfo.getAppVersion());
 
     }
 
 
     public void populateMeta() {
 
-        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setUserName(MainApp.user.getUserName());
-        setDeviceId(MainApp.deviceid);
-        setUuid(MainApp.form.getUid());  // not applicable in Form table
-        setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
+        setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setUserName(MainApp.user.getUserName());
+        setSysDate(MainApp.form.getSysDate());
+        setEntryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setPsuCode(MainApp.form.getPsuCode());
         setHhid(MainApp.form.getHhid());
+        setiStatus(MainApp.form.getiStatus());
+        setiStatus96x(MainApp.form.getiStatus96x());
+        setAppver(MainApp.appInfo.getAppVersion());
         setEntryType(MainApp.form.getEntryType());
 
     }
@@ -127,15 +120,7 @@ public class EntryLog extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.hhid);
     }
 
-    @Bindable
-    public String getSno() {
-        return sno;
-    }
 
-    public void setSno(String sno) {
-        this.sno = sno;
-        notifyPropertyChanged(BR.sno);
-    }
 
     public String getUserName() {
         return userName;
@@ -152,6 +137,7 @@ public class EntryLog extends BaseObservable implements Observable {
     public void setSysDate(String sysDate) {
         this.sysDate = sysDate;
     }
+/*
 
     public String getCloseTime() {
         return closeTime;
@@ -160,29 +146,14 @@ public class EntryLog extends BaseObservable implements Observable {
     public void setCloseTime(String closeTime) {
         this.closeTime = closeTime;
     }
+*/
 
-    public String getOpenTime() {
-        return openTime;
+    public String getEntryDate() {
+        return entryDate;
     }
 
-    public void setOpenTime(String openTime) {
-        this.openTime = openTime;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceTag() {
-        return deviceTag;
-    }
-
-    public void setDeviceTag(String deviceTag) {
-        this.deviceTag = deviceTag;
+    public void setEntryDate(String entryDate) {
+        this.entryDate = entryDate;
     }
 
     public String getEntryType() {
@@ -241,13 +212,13 @@ public class EntryLog extends BaseObservable implements Observable {
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_PROJECT_NAME));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_HHID));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYSDATE));
-        this.openTime = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_OPENTIME));
+        this.entryDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ENTRY_DATE));
+/*
         this.closeTime = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_CLOSETIME));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_DEVICETAGID));
+*/
+
         this.entryType = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ENTRY_TYPE));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ISTATUS));
@@ -267,13 +238,9 @@ public class EntryLog extends BaseObservable implements Observable {
         json.put(EntryLogTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(EntryLogTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(EntryLogTable.COLUMN_HHID, this.hhid);
-        json.put(EntryLogTable.COLUMN_SNO, this.sno);
         json.put(EntryLogTable.COLUMN_USERNAME, this.userName);
         json.put(EntryLogTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(EntryLogTable.COLUMN_OPENTIME, this.openTime);
-        json.put(EntryLogTable.COLUMN_CLOSETIME, this.closeTime);
-        json.put(EntryLogTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(EntryLogTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(EntryLogTable.COLUMN_ENTRY_DATE, this.entryDate);
         json.put(EntryLogTable.COLUMN_ENTRY_TYPE, this.entryType);
         json.put(EntryLogTable.COLUMN_ISTATUS, this.iStatus);
         json.put(EntryLogTable.COLUMN_SYNCED, this.synced);

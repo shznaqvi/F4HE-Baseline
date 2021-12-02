@@ -16,6 +16,7 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivityEndingBinding;
+import edu.aku.hassannaqvi.f4he_baseline.models.EntryLog;
 
 
 public class EndingActivity extends AppCompatActivity {
@@ -74,7 +75,7 @@ public class EndingActivity extends AppCompatActivity {
         saveDraft();
         if (UpdateDB()) {
 
-            //    cleanupProcess();
+            recordEntry();
             finish();
             setResult(RESULT_OK);
            /* Intent i = new Intent(this, MainActivity.class);
@@ -88,8 +89,14 @@ public class EndingActivity extends AppCompatActivity {
     }
 
 
-    private void cleanupProcess() {
-        form = null;
+    private void recordEntry() {
+
+        EntryLog entryLog = new EntryLog();
+        entryLog.setId(String.valueOf(db.addEntryLog(entryLog)));
+        entryLog.setUid(MainApp.form.getDeviceId() + entryLog.getId());
+        db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+
+
     }
 
 

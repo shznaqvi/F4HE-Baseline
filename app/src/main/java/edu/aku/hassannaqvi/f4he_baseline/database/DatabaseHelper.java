@@ -26,6 +26,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.ECDInfoTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescentTable;
@@ -38,6 +39,7 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.VillagesTable;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.models.Child;
 import edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo;
+import edu.aku.hassannaqvi.f4he_baseline.models.EntryLog;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
@@ -74,6 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
         //db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
+        db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
         db.execSQL(CreateTable.SQL_CREATE_MWRA);
         db.execSQL(CreateTable.SQL_CREATE_PREGNANCY);
         db.execSQL(CreateTable.SQL_CREATE_ADOLESCENT);
@@ -119,6 +122,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 FormsTable.TABLE_NAME,
                 FormsTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addEntryLog(EntryLog entryLog) {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(EntryLogTable.COLUMN_PROJECT_NAME, entryLog.getProjectName());
+        values.put(EntryLogTable.COLUMN_UUID, entryLog.getUuid());
+        values.put(EntryLogTable.COLUMN_PSU_CODE, entryLog.getPsuCode());
+        values.put(EntryLogTable.COLUMN_HHID, entryLog.getHhid());
+        values.put(EntryLogTable.COLUMN_USERNAME, entryLog.getUserName());
+        values.put(EntryLogTable.COLUMN_SYSDATE, entryLog.getSysDate());
+        values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getiStatus());
+        values.put(EntryLogTable.COLUMN_ENTRY_TYPE, entryLog.getEntryType());
+        values.put(EntryLogTable.COLUMN_APPVERSION, entryLog.getAppver());
+        values.put(EntryLogTable.COLUMN_SYNCED, entryLog.getSynced());
+        values.put(EntryLogTable.COLUMN_SYNCED_DATE, entryLog.getSyncDate());
+
+        long newRowId;
+        newRowId = db.insert(
+                EntryLogTable.TABLE_NAME,
+                EntryLogTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -378,6 +404,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs);
     }
+
+    public int updatesEntryLogColumn(String column, String value, String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = EntryLogTable._ID + " =? ";
+        String[] selectionArgs = {id};
+
+        return db.update(EntryLogTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
 
     public int updatesChildColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
