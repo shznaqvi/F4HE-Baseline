@@ -117,15 +117,22 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
+
+        MainApp.preg_count = 0;
+        MainApp.totalPreg = Integer.parseInt(MainApp.mwra.getBs1q6());
+        if (MainApp.mwra.getBs1q2().equals("1")) {
+            bi.bs1q6.setMinvalue(2.0f);
+            MainApp.totalPreg--;
+        }
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            MainApp.preg_count=0;
+
             //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
-            if(bi.bs1con1.isChecked()) {
+            if (bi.bs1con1.isChecked()) {
                 startActivity(new Intent(this, SectionBS1BActivity.class));
-            }else {
+            } else {
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
             }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

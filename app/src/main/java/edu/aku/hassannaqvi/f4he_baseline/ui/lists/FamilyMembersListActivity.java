@@ -213,7 +213,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                 // Populate mothers' list
                 String motherSno = fm.getHl8(); // mother's line number from child
-                if (Integer.parseInt(MainApp.familyMember.getHl6y()) < 5 &&
+                if (Integer.parseInt(fm.getHl6y()) < 5 &&
                         !motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
                     // MainApp.mwraList.add(Integer.parseInt(motherSno));
                     FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);

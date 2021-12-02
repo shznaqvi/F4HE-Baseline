@@ -114,6 +114,7 @@ public class MainApp extends Application {
     public static String selectedHHID = "";
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
+    public static int totalPreg = 0;
 
 
     public static void hideSystemUI(View decorView) {

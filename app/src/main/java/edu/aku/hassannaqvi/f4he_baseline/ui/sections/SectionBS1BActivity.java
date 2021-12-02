@@ -117,7 +117,9 @@ public class SectionBS1BActivity extends AppCompatActivity {
         if (updateDB()) {
             MainApp.pregnancy = new Pregnancy();
             finish();
-            if (Integer.parseInt(MainApp.mwra.getBs1q6()) > MainApp.preg_count) {
+
+
+            if (MainApp.totalPreg > MainApp.preg_count) {
 
               /*  pregnancy.setBs1q7p1g(null);
                 pregnancy.setBs1q7p1d(null);

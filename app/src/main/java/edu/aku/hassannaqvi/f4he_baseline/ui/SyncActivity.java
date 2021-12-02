@@ -182,7 +182,6 @@ public class SyncActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(SyncActivity.this, "JSONException(Pregnancy)" + e.getMessage(), Toast.LENGTH_LONG);
-
                 }
 
                 //Child
