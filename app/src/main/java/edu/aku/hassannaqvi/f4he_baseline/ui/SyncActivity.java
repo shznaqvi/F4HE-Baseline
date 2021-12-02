@@ -49,6 +49,7 @@ import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.ECDInfoTable;
+import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescentTable;
@@ -220,6 +221,16 @@ public class SyncActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(SyncActivity.this, "JSONException(Child)" + e.getMessage(), Toast.LENGTH_LONG);
+                }
+
+
+                //Entry Log
+                uploadTables.add(new SyncModel(EntryLogTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedEntryLog());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(EntryLog)" + e.getMessage(), Toast.LENGTH_LONG);
                 }
 
 
