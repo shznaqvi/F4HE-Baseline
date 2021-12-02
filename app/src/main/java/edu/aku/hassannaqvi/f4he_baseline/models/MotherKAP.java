@@ -2,6 +2,8 @@ package edu.aku.hassannaqvi.f4he_baseline.models;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChild;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -29,6 +31,8 @@ public class MotherKAP extends BaseObservable implements Observable {
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
+    private String fmuid = _EMPTY_;
+    private String muid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String psuCode = _EMPTY_;
@@ -80,6 +84,9 @@ public class MotherKAP extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         //   setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getUid()); //// not applicable in Form table
+        setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
+        setSno(selectedChild);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -136,6 +143,22 @@ public class MotherKAP extends BaseObservable implements Observable {
     public void setHhid(String hhid) {
         this.hhid = hhid;
         notifyPropertyChanged(BR.hhid);
+    }
+
+    public String getFmuid() {
+        return fmuid;
+    }
+
+    public void setFmuid(String fmuid) {
+        this.fmuid = fmuid;
+    }
+
+    public String getMuid() {
+        return muid;
+    }
+
+    public void setMuid(String muid) {
+        this.muid = muid;
     }
 
     @Bindable
@@ -246,6 +269,7 @@ public class MotherKAP extends BaseObservable implements Observable {
 
     public void setDs1q02(String ds1q02) {
         this.ds1q02 = ds1q02;
+        this.sno = ds1q02;
         notifyPropertyChanged(BR.ds1q02);
     }
 
@@ -445,6 +469,8 @@ public class MotherKAP extends BaseObservable implements Observable {
         json.put(MotherKAPTable.COLUMN_ID, this.id);
         json.put(MotherKAPTable.COLUMN_UID, this.uid);
         json.put(MotherKAPTable.COLUMN_UUID, this.uid);
+        json.put(MotherKAPTable.COLUMN_MUID, this.muid);
+        json.put(MotherKAPTable.COLUMN_FMUID, this.fmuid);
         json.put(MotherKAPTable.COLUMN_SNO, this.sno);
         json.put(MotherKAPTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(MotherKAPTable.COLUMN_APPVERSION, this.appver);
@@ -508,11 +534,12 @@ public class MotherKAP extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_UUID));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SNO));
+        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_FMUID));
+        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_MUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_PROJECT_NAME));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_HHID));
-        //this.sno = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SNO));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_DEVICEID));

@@ -191,7 +191,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
         values.put(ChildTable.COLUMN_UID, child.getUid());
         values.put(ChildTable.COLUMN_UUID, child.getUuid());
-        values.put(ChildTable.COLUMN_FMUID, child.getUuid());
+        values.put(ChildTable.COLUMN_FMUID, child.getFmuid());
         values.put(ChildTable.COLUMN_MUID, child.getMuid());
         values.put(ChildTable.COLUMN_SNO, child.getSno());
         values.put(ChildTable.COLUMN_PSU_CODE, child.getpsuCode());
@@ -332,6 +332,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MotherKAPTable.COLUMN_PROJECT_NAME, motherKAP.getProjectName());
         values.put(MotherKAPTable.COLUMN_UID, motherKAP.getUid());
         values.put(MotherKAPTable.COLUMN_UUID, motherKAP.getUuid());
+        values.put(MotherKAPTable.COLUMN_FMUID, motherKAP.getFmuid());
+        values.put(MotherKAPTable.COLUMN_MUID, motherKAP.getMuid());
         values.put(MotherKAPTable.COLUMN_PSU_CODE, motherKAP.getpsuCode());
         values.put(MotherKAPTable.COLUMN_HHID, motherKAP.getHhid());
         values.put(MotherKAPTable.COLUMN_SNO, motherKAP.getSno());
