@@ -137,6 +137,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(EntryLogTable.COLUMN_SYSDATE, entryLog.getSysDate());
         values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getiStatus());
         values.put(EntryLogTable.COLUMN_ENTRY_TYPE, entryLog.getEntryType());
+        values.put(EntryLogTable.COLUMN_DEVICEID, entryLog.getDeviceId());
         values.put(EntryLogTable.COLUMN_APPVERSION, entryLog.getAppver());
         values.put(EntryLogTable.COLUMN_SYNCED, entryLog.getSynced());
         values.put(EntryLogTable.COLUMN_SYNCED_DATE, entryLog.getSyncDate());
@@ -225,7 +226,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(LateAdolescentTable.COLUMN_UID, adol.getUid());
         values.put(LateAdolescentTable.COLUMN_UUID, adol.getUuid());
         values.put(LateAdolescentTable.COLUMN_FMUID, adol.getFmuid());
-        values.put(LateAdolescentTable.COLUMN_MUID, adol.getMuid());
         values.put(LateAdolescentTable.COLUMN_SNO_ADOL_FEM, adol.getSnoAdolFem());
         values.put(LateAdolescentTable.COLUMN_SNO_ADOL_MALE, adol.getSnoAdolMale());
         values.put(LateAdolescentTable.COLUMN_PSU_CODE, adol.getpsuCode());
@@ -285,6 +285,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ECDInfoTable.COLUMN_PROJECT_NAME, ecd.getProjectName());
         values.put(ECDInfoTable.COLUMN_UID, ecd.getUid());
         values.put(ECDInfoTable.COLUMN_UUID, ecd.getUuid());
+        values.put(ECDInfoTable.COLUMN_ECD_NO, ecd.getEcdNo());
         values.put(ECDInfoTable.COLUMN_PSU_CODE, ecd.getpsuCode());
         values.put(ECDInfoTable.COLUMN_HHID, ecd.getHhid());
         values.put(ECDInfoTable.COLUMN_USERNAME, ecd.getUserName());
@@ -848,7 +849,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ran.sync(json);
                 ContentValues values = new ContentValues();
                 values.put(RandomTable.COLUMN_ID, ran.getID());
-                values.put(RandomTable.COLUMN_SNO, ran.getSno());
+                values.put(RandomTable.COLUMN_SNO, ran.getEcdNo());
                 values.put(RandomTable.COLUMN_ENUM_BLOCK_CODE, ran.getpsuCode());
                 values.put(RandomTable.COLUMN_HH_NO, ran.getHhno());
                 values.put(RandomTable.COLUMN_HEAD_HH, ran.getHeadhh());
@@ -2127,9 +2128,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String whereClause;
         whereClause = ECDInfoTable.COLUMN_UUID + "=? AND " +
-                ECDInfoTable.COLUMN_ECDINFO + " = ?";
+                ECDInfoTable.COLUMN_ECD_NO + " = ?";
 
-        String[] whereArgs = {MainApp.form.getUid()};
+        String[] whereArgs = {MainApp.form.getUid(), String.valueOf(ecdNo)};
 
         String groupBy = null;
         String having = null;
@@ -2147,16 +2148,97 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 having,                    // don't filter by row groups
                 orderBy                   // The sort order
         );
-        if (c.getCount() >= ecdNo) {
+/*        if (c.getCount() >= ecdNo) {
             c.moveToPosition(ecdNo);
             ecdInfo = new ECDInfo().Hydrate(c);
-        }
-      /*  while (c.moveToNext()) {
-            ecdInfo = new ECDInfo().Hydrate(c);
         }*/
+        while (c.moveToNext()) {
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }
 
         db.close();
 
         return ecdInfo;
+    }
+
+    public MotherKAP getMotherKAPByUUid() throws JSONException {
+
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = MotherKAPTable.COLUMN_UUID + "=? ";
+
+        String[] whereArgs = {MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = MotherKAPTable.COLUMN_ID + " ASC";
+
+        MotherKAP motherKap = new MotherKAP();  // Pregnancies can never be null.
+
+        c = db.query(
+                MotherKAPTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                   // The sort order
+        );
+/*        if (c.getCount() >= ecdNo) {
+            c.moveToPosition(ecdNo);
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }*/
+        while (c.moveToNext()) {
+            motherKap = new MotherKAP().Hydrate(c);
+        }
+
+        db.close();
+
+        return motherKap;
+    }
+
+    public LateAdolescent getLateAdolByUUID(String fmuid) throws JSONException {
+
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = LateAdolescentTable.COLUMN_UUID + "=? AND " +
+                LateAdolescentTable.COLUMN_FMUID + "=?";
+
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = LateAdolescentTable.COLUMN_ID + " ASC";
+
+        LateAdolescent lateAdol = new LateAdolescent();  // Pregnancies can never be null.
+
+        c = db.query(
+                LateAdolescentTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                   // The sort order
+        );
+/*        if (c.getCount() >= ecdNo) {
+            c.moveToPosition(ecdNo);
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }*/
+        while (c.moveToNext()) {
+            lateAdol = new LateAdolescent().Hydrate(c);
+        }
+
+        db.close();
+
+        return lateAdol;
     }
 }

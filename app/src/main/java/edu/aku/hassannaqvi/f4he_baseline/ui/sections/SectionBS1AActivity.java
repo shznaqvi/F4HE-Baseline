@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListAll;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListFemale;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListMale;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.familyMember;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.mwra;
 
 import android.content.Intent;
@@ -70,6 +69,7 @@ public class SectionBS1AActivity extends AppCompatActivity {
             }
 
         }
+        bi.bs1q1.setMaxvalue(Float.parseFloat(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getHl6y()));
     }
 
 
@@ -117,11 +117,12 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
-
+        bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
+        bi.bs1q6.setMaxvalue(Float.parseFloat(bi.bs1q3.getText().toString()));
         MainApp.preg_count = 0;
         MainApp.totalPreg = Integer.parseInt(MainApp.mwra.getBs1q6());
         if (MainApp.mwra.getBs1q2().equals("1")) {
-            bi.bs1q6.setMinvalue(2.0f);
+            // bi.bs1q6.setMinvalue(2.0f);
             MainApp.totalPreg--;
         }
         if (!formValidation()) return;
@@ -146,27 +147,28 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
-
-        //TODO: Need to Identify MWRA by ID
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        /*        //TODO: Need to Identify MWRA by ID
         if (familyMember.getHl6y().length() > 0 && mwra.getBs1q1().length() > 0) {
             if (Integer.parseInt(mwra.getBs1q1()) >= Integer.parseInt(familyMember.getHl6y())) {
                 return Validator.emptyCustomTextBox(this, bi.bs1q1, "Age on marriage must be Less Than age given in Roster");
             }
-        }
+        }*/
+        // replaced by (onCreate): bi.bs1q1.setMaxvalue(Float.parseFloat(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)-1).getHl6y()));
 
-        if (mwra.getBs1q1().length() > 0 && mwra.getBs1q5().length() > 0) {
+
+      /*  if (mwra.getBs1q1().length() > 0 && mwra.getBs1q5().length() > 0) {
             if (Integer.parseInt(mwra.getBs1q1()) > Integer.parseInt(mwra.getBs1q5())) {
                 return Validator.emptyCustomTextBox(this, bi.bs1q5, "Must Be Greater Than BS1Q1");
             }
-        }
+        }*/
+        //replaced by (btnContinue): bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
 
-        if (mwra.getBs1q3().length() > 0 && mwra.getBs1q6().length() > 0) {
+/*        if (mwra.getBs1q3().length() > 0 && mwra.getBs1q6().length() > 0) {
             if (Integer.parseInt(mwra.getBs1q6()) > Integer.parseInt(mwra.getBs1q3())) {
                 return Validator.emptyCustomTextBox(this, bi.bs1q6, "Must be Less Than BS1Q3");
             }
-        }
-
-        return true;
+        }*/
+        // replaced by (btnContinue) :         bi.bs1q6.setMaxvalue(Float.parseFloat(bi.bs1q3.getText().toString()));
     }
 }

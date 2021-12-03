@@ -257,7 +257,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void checkHousehold(View view) {
         /*RandomHH testRand = new RandomHH();
-        testRand.setSno("1");
+        testRand.setEcdNo("1");
         testRand.setpsuCode("909090909");
         testRand.setHeadhh("Test Head");
         testRand.setHhno("999-99");

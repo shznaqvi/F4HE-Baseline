@@ -52,7 +52,7 @@ import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 
 public class DataUpWorkerALL extends Worker {
 
-    private final String TAG = "DataWorkerEN()";
+    private static final String TAG = "DataWorkerEN()";
 
     // to be initialised by workParams
     private final Context mContext;
@@ -148,6 +148,64 @@ public class DataUpWorkerALL extends Worker {
         return null;
     }
 
+    public static void longInfo(String str) {
+        if (str.length() > 4000) {
+            Log.i(TAG, str.substring(0, 4000));
+            longInfo(str.substring(4000));
+        } else
+            Log.i(TAG, str);
+    }
+
+    /*
+     * The method is doing nothing but only generating
+     * a simple notification
+     * If you are confused about it
+     * you should check the Android Notification Tutorial
+     * */
+    private void displayNotification(String title, String task) {
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
+                .setContentTitle(title)
+                .setContentText(task)
+                .setSmallIcon(R.mipmap.ic_launcher);
+
+        final int maxProgress = 100;
+        int curProgress = 0;
+        notification.setProgress(length, curProgress, false);
+
+        notificationManager.notify(1, notification.build());
+    }
+
+    private boolean certIsValid(Certificate[] certs, Certificate ca) {
+        for (Certificate cert : certs) {
+            System.out.println("Certificate is: " + cert);
+            if (cert instanceof X509Certificate) {
+
+                try {
+                    ((X509Certificate) cert).checkValidity();
+
+                    System.out.println("Certificate is active for current date");
+                    if (cert.equals(ca)) {
+
+                        return true;
+                    }
+                    //  Toast.makeText(mContext, "Certificate is active for current date", Toast.LENGTH_SHORT).show();
+                } catch (CertificateExpiredException | CertificateNotYetValidException e) {
+                    e.printStackTrace();
+                    return false;
+                }
+            }
+
+        }
+        return false;
+    }
+
     @NonNull
     @Override
     public Result doWork() {
@@ -232,8 +290,8 @@ public class DataUpWorkerALL extends Worker {
                 JSONArray jsonParam = new JSONArray();
 
                 jsonTable.put("table", uploadTable);
-                Log.d(TAG, "doWork: " + uploadData);
-                System.out.print("doWork: " + uploadData);
+                //Log.d(TAG, "doWork: " + uploadData);
+                //System.out.print("doWork: " + uploadData);
                 //jsonSync.put(uploadData);
                 jsonParam
                         .put(jsonTable)
@@ -241,10 +299,15 @@ public class DataUpWorkerALL extends Worker {
 
                 Log.d(TAG, "Upload Begins Length: " + jsonParam.length());
                 Log.d(TAG, "Upload Begins: " + jsonParam);
+                longInfo(String.valueOf(jsonParam));
 
 
                 //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
                 wr.writeBytes(CipherSecure.encrypt(jsonParam.toString()));
+
+                String writeEnc = CipherSecure.encrypt(jsonParam.toString());
+
+                longInfo(writeEnc);
 
                 //     wr.writeBytes(jsonParam.toString());
                 wr.flush();
@@ -354,55 +417,5 @@ public class DataUpWorkerALL extends Worker {
         }
 
 
-    }
-
-    /*
-     * The method is doing nothing but only generating
-     * a simple notification
-     * If you are confused about it
-     * you should check the Android Notification Tutorial
-     * */
-    private void displayNotification(String title, String task) {
-        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
-            notificationManager.createNotificationChannel(channel);
-        }
-
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
-                .setContentTitle(title)
-                .setContentText(task)
-                .setSmallIcon(R.mipmap.ic_launcher);
-
-        final int maxProgress = 100;
-        int curProgress = 0;
-        notification.setProgress(length, curProgress, false);
-
-        notificationManager.notify(1, notification.build());
-    }
-
-    private boolean certIsValid(Certificate[] certs, Certificate ca) {
-        for (Certificate cert : certs) {
-            System.out.println("Certificate is: " + cert);
-            if (cert instanceof X509Certificate) {
-
-                try {
-                    ((X509Certificate) cert).checkValidity();
-
-                    System.out.println("Certificate is active for current date");
-                    if (cert.equals(ca)) {
-
-                        return true;
-                    }
-                    //  Toast.makeText(mContext, "Certificate is active for current date", Toast.LENGTH_SHORT).show();
-                } catch (CertificateExpiredException | CertificateNotYetValidException e) {
-                    e.printStackTrace();
-                    return false;
-                }
-            }
-
-        }
-        return false;
     }
 }

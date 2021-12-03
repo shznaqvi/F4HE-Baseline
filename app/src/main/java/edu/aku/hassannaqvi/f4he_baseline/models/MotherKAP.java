@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.f4he_baseline.models;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChild;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
@@ -83,10 +82,9 @@ public class MotherKAP extends BaseObservable implements Observable {
         setSysDate(MainApp.form.getSysDate());
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
-        //   setUuid(MainApp.form.getUid());  // not applicable in Form table
-        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getUid()); //// not applicable in Form table
-        setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
-        setSno(selectedChild);
+        setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid()); //// not applicable in Form table
+        setMuid(MainApp.mwra.getUid());
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -508,6 +506,7 @@ public class MotherKAP extends BaseObservable implements Observable {
     public String sD2toString() throws JSONException {
         Log.d(TAG, "sD2toString: ");
         JSONObject json = new JSONObject();
+        //ds2q01a
         json.put("ds2q01a", ds2q01a)
                 .put("ds2q01b", ds2q01b)
                 .put("ds2q01c", ds2q01c);
@@ -552,6 +551,7 @@ public class MotherKAP extends BaseObservable implements Observable {
         sD1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SD1)));
         sD2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SD2)));
         sD3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(MotherKAPTable.COLUMN_SD3)));
+        notifyChange();
         return this;
     }
 

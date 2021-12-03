@@ -49,7 +49,6 @@ public class SectionBS1BActivity extends AppCompatActivity {
         bi.setPreg(MainApp.pregnancy);
         bi.sno.setText("Pregnancy: " + MainApp.preg_count + " of " + MainApp.mwra.getBs1q6());
         pregnancy.setSno(String.valueOf(MainApp.preg_count));
-        pregnancy.setMsno(MainApp.mwra.getBs1q1());
         setSupportActionBar(bi.toolbar);
         setupSkips();
         if (MainApp.superuser)

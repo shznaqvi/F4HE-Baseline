@@ -248,7 +248,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 /*
-    public void setSno(String sno) {
+    public void setEcdNo(String sno) {
         this.sno = sno;
     }
 
@@ -265,6 +265,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setHl1(String hl1) {
         this.hl1 = hl1;
+        this.sno = hl1;
         notifyPropertyChanged(BR.hl1);
     }
 

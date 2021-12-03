@@ -16,8 +16,6 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.util.ArrayList;
-
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
@@ -30,7 +28,6 @@ public class SectionCS1BActivity extends AppCompatActivity {
     private static final String TAG = "SectionCS1Bctivity";
     ActivitySectionCs1BBinding bi;
     private DatabaseHelper db;
-    private ArrayList<String> childNames, ChildSno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,22 +37,26 @@ public class SectionCS1BActivity extends AppCompatActivity {
         // MainApp.ecdCount++;
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_b);
         db = MainApp.appInfo.dbHelper;
+
+
+//        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
+        setSupportActionBar(bi.toolbar);
+
+        Integer childSno = childOfSelectedMWRAList.get(0);
+        String childName = MainApp.familyList.get(childSno - 1).getHl2();
         try {
-            ecdInfo = db.getECDataByUUid(++MainApp.ecdCount);
+            // ecdInfo = db.getECDataByUUid(++MainApp.ecdCount);
+            ecdInfo = db.getECDataByUUid(childSno);
+            ecdInfo.notifyChange();
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ECDInfo): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
-//        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
-        bi.setEcdInfo(MainApp.ecdInfo);
-        setSupportActionBar(bi.toolbar);
-
-        Integer childSno = childOfSelectedMWRAList.get(0);
-        String childName = MainApp.familyList.get(childSno - 1).getHl2();
-
         ecdInfo.setCs1q02c1(String.valueOf(childSno));
         ecdInfo.setCs1q02c1n(String.valueOf(childName));
+        bi.setEcdInfo(ecdInfo);
+
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
     }
@@ -154,7 +155,7 @@ public class SectionCS1BActivity extends AppCompatActivity {
         if (updateDB()) {
             childOfSelectedMWRAList.remove(0);
             finish();
-            Log.d(TAG, "btnContinue: "+ childOfSelectedMWRAList.size());
+            Log.d(TAG, "btnContinue: " + childOfSelectedMWRAList.size());
             if (childOfSelectedMWRAList.size() > 0) {
                 startActivity(new Intent(this, SectionCS1BActivity.class));
             } else {

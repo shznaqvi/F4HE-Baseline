@@ -46,7 +46,7 @@ public class SectionDS2Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesMotherKAPColumn(TableContracts.MotherKAPTable.COLUMN_SD2, MainApp.motherKAP.sD1toString());
+            updcount = db.updatesMotherKAPColumn(TableContracts.MotherKAPTable.COLUMN_SD2, MainApp.motherKAP.sD2toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());

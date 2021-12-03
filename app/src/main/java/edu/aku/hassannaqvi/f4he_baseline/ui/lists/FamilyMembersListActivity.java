@@ -371,7 +371,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
         }
 
-        String kishGridChild = MainApp.kishGrid(Integer.parseInt(MainApp.form.getSno()), MainApp.childOfSelectedMWRAList.size());
+        String kishGridChild = MainApp.kishGrid(Integer.parseInt(MainApp.form.getEcdNo()), MainApp.childOfSelectedMWRAList.size());
         int indx = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
         MainApp.selectedMWRA = String.valueOf(indx - 1);
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));

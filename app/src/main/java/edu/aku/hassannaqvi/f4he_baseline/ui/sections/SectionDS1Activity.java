@@ -35,15 +35,26 @@ public class SectionDS1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ds1);
+        db = MainApp.appInfo.dbHelper;
 
         motherKAP = new MotherKAP();
         ladol = new LateAdolescent();
 
-        motherKAP.setDs1q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
-        motherKAP.setDs1q02(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
+
+        try {
+            MainApp.motherKAP = db.getMotherKAPByUUid();
+            MainApp.motherKAP.notifyChange();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(MotherKAP): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+        if (MainApp.motherKAP.getUid().equals("")) {
+            motherKAP.setDs1q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
+            motherKAP.setDs1q02(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
+        }
         bi.setMKap(MainApp.motherKAP);
         setSupportActionBar(bi.toolbar);
-        db = MainApp.appInfo.dbHelper;
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
     }

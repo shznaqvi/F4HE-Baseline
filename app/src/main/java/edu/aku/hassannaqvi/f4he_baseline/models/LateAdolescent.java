@@ -4,8 +4,6 @@ import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp._EMPTY_;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedAdolFemale;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedAdolMale;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChild;
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -35,7 +33,6 @@ public class LateAdolescent extends BaseObservable {
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
     private String fmuid = _EMPTY_;
-    private String muid = _EMPTY_;
     private String snoAdolFem = _EMPTY_;
     private String snoAdolMale = _EMPTY_;
     private String userName = _EMPTY_;
@@ -225,11 +222,10 @@ public class LateAdolescent extends BaseObservable {
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
-        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getUid()); //// not applicable in Form table
-        setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
         setSnoAdolFem(selectedAdolFemale);
         setSnoAdolMale(selectedAdolMale);
-        //   setUuid(MainApp.form.getUid());  // not applicable in Form table
+        // setFmuid(); // set in Activity
+        setUuid(MainApp.form.getUid());  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -389,16 +385,8 @@ public class LateAdolescent extends BaseObservable {
         return fmuid;
     }
 
-    private void setFmuid(String fmuid) {
+    public void setFmuid(String fmuid) {
         this.fmuid = fmuid;
-    }
-
-    public String getMuid() {
-        return muid;
-    }
-
-    private void setMuid(String muid) {
-        this.muid = muid;
     }
 
     public String getSnoAdolFem() {
@@ -2715,7 +2703,6 @@ public class LateAdolescent extends BaseObservable {
         json.put(TableContracts.LateAdolescentTable.COLUMN_SNO_ADOL_FEM, this.snoAdolFem);
         json.put(TableContracts.LateAdolescentTable.COLUMN_SNO_ADOL_MALE, this.snoAdolMale);
         json.put(TableContracts.LateAdolescentTable.COLUMN_FMUID, this.fmuid);
-        json.put(TableContracts.LateAdolescentTable.COLUMN_MUID, this.muid);
         json.put(TableContracts.LateAdolescentTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.LateAdolescentTable.COLUMN_HHID, this.hhid);
         json.put(TableContracts.LateAdolescentTable.COLUMN_USERNAME, this.userName);
@@ -2747,7 +2734,6 @@ public class LateAdolescent extends BaseObservable {
         this.snoAdolFem = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_SNO_ADOL_FEM));
         this.snoAdolMale = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_SNO_ADOL_MALE));
         this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_FMUID));
-        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_MUID));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.LateAdolescentTable.COLUMN_DEVICEID));

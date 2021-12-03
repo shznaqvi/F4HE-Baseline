@@ -53,8 +53,8 @@ public class SectionCS1AActivity extends AppCompatActivity {
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
 
-        if (childOfSelectedMWRAList == null) {
-            childOfSelectedMWRAList = new ArrayList<>();
+
+        childOfSelectedMWRAList = new ArrayList<>();
             for (FamilyMembers child : MainApp.familyList) {
                 Log.d(TAG, "onCreate: childmsno " + child.getHl8() + " fmsno: " + (Integer.parseInt(MainApp.selectedMWRA) + 1));
 
@@ -65,7 +65,7 @@ public class SectionCS1AActivity extends AppCompatActivity {
                     MainApp.ageOfIndexChild = Integer.parseInt(child.getHl6y());
                 }
             }
-        }
+
         child.setCs1q02(String.valueOf(childOfSelectedMWRAList.size()));
 
         // Mother's Name as Respondent

@@ -33,7 +33,7 @@ public class SectionES1Activity extends AppCompatActivity {
     private static final String TAG = "SectionES1Activity";
     ActivitySectionEs1Binding bi;
     private DatabaseHelper db;
-    private ArrayList<String> adolNames, adolCodes, adolAges;
+    private ArrayList<String> adolNames, adolCodes, adolAges, adolFmUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,16 +56,19 @@ public class SectionES1Activity extends AppCompatActivity {
         adolNames = new ArrayList<>();
         adolCodes = new ArrayList<>();
         adolAges = new ArrayList<>();
+        adolFmUID = new ArrayList<>();
 
         adolNames.add("...");
         adolCodes.add("...");
         adolAges.add("...");
+        adolFmUID.add("...");
 
         for (Integer a : adolListAll) {
 
             adolNames.add(MainApp.familyList.get(a - 1).getHl2());
             adolCodes.add(MainApp.familyList.get(a - 1).getHl1());
             adolAges.add(MainApp.familyList.get(a - 1).getHl6y());
+            adolFmUID.add(MainApp.familyList.get(a - 1).getUid());
 
 
         }
@@ -77,11 +80,21 @@ public class SectionES1Activity extends AppCompatActivity {
         bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
-                bi.age.setText(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+/*                ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+                bi.age.setText(adolCodes.get(bi.es1resp.getSelectedItemPosition()));*/
                 if (position == 0) return;
+                try {
+                    MainApp.ladol = db.getLateAdolByUUID(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
+                    ladol.notifyChange();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SectionES1Activity.this, "JSONException(LateAdolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
                 ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+                ladol.setFmuid(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
+
                 bi.age.setText(adolAges.get(bi.es1resp.getSelectedItemPosition()));
+
                 if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {
                     bi.fldGrpCVes1cons.setVisibility(View.GONE);
                     ladol.setEs1cons("99");
@@ -101,7 +114,9 @@ public class SectionES1Activity extends AppCompatActivity {
     private boolean insertNewRecord() {
 
         if (!ladol.getUid().equals("") || MainApp.superuser) return true;
+
         ladol.populateMeta();
+
         long rowId = 0;
         try {
             rowId = db.addAdolescent(ladol);
