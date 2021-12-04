@@ -495,7 +495,7 @@ public class SyncActivity extends AppCompatActivity {
                                         // Log.d(TAG, "onChanged Compare: " + method1.getName().equals("updateSynced" + tableName));
                                         if (method1.getName().equals("updateSynced" + tableName)) {
                                             method = method1;
-                                            Toast.makeText(SyncActivity.this, "updateSynced not found: updateSynced" + tableName, Toast.LENGTH_SHORT).show();
+                                       //     Toast.makeText(SyncActivity.this, "updateSynced not found: updateSynced" + tableName, Toast.LENGTH_SHORT).show();
                                             break;
                                         }
                                     }

@@ -80,8 +80,7 @@ public class SectionES1Activity extends AppCompatActivity {
         bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-/*                ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
-                bi.age.setText(adolCodes.get(bi.es1resp.getSelectedItemPosition()));*/
+
                 if (position == 0) return;
                 try {
                     MainApp.ladol = db.getLateAdolByUUID(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
@@ -92,7 +91,7 @@ public class SectionES1Activity extends AppCompatActivity {
                 }
                 ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
                 ladol.setFmuid(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
-
+                ladol.notifyChange();
                 bi.age.setText(adolAges.get(bi.es1resp.getSelectedItemPosition()));
 
                 if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {

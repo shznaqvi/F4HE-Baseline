@@ -181,6 +181,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/as1q09"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:inputType="textPersonName|textCapWords"
                                 android:text="@={form.as1q09}" />
 
                         </LinearLayout>

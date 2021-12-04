@@ -60,7 +60,10 @@ public class SectionCS1AActivity extends AppCompatActivity {
 
                 int motherSno = Integer.parseInt(child.getHl8());
                 int selectedMwraSno = Integer.parseInt(MainApp.selectedMWRA) + 1;
-                if (motherSno == selectedMwraSno && Integer.parseInt(child.getHl6y()) < 5 && child.getHl10().equals("1")) {
+
+                // All children for EDC, Available or Not
+                // Removed Condition: && child.getHl10().equals("1")
+                if (motherSno == selectedMwraSno && Integer.parseInt(child.getHl6y()) < 5) {
                     childOfSelectedMWRAList.add(Integer.valueOf(child.getHl1()));
                     MainApp.ageOfIndexChild = Integer.parseInt(child.getHl6y());
                 }

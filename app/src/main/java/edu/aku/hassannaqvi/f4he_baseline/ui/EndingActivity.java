@@ -11,6 +11,8 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import net.sqlcipher.database.SQLiteException;
+
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
@@ -93,10 +95,20 @@ public class EndingActivity extends AppCompatActivity {
 
         EntryLog entryLog = new EntryLog();
         entryLog.populateMeta();
-        entryLog.setId(String.valueOf(db.addEntryLog(entryLog)));
-        entryLog.setUid(MainApp.form.getDeviceId() + entryLog.getId());
-        db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+        Long rowId = null;
+        try {
+            rowId = db.addEntryLog(entryLog);
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "SQLiteException(EntryLog)" + entryLog, Toast.LENGTH_SHORT).show();
+        }
+        if (rowId != -1) {
+            entryLog.setId(String.valueOf(rowId));
+            entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
+            db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
 
+        }
 
     }
 

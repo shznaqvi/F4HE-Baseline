@@ -37,7 +37,7 @@ object CreateTable {
             + EntryLogTable.COLUMN_HHID + " TEXT,"
             + EntryLogTable.COLUMN_USERNAME + " TEXT,"
             + EntryLogTable.COLUMN_SYSDATE + " TEXT,"
-            + EntryLogTable.COLUMN_CLOSETIME + " TEXT,"
+            + EntryLogTable.COLUMN_DEVICEID + " TEXT,"
             + EntryLogTable.COLUMN_ENTRY_DATE + " TEXT,"
             + EntryLogTable.COLUMN_ISTATUS + " TEXT,"
             + EntryLogTable.COLUMN_ENTRY_TYPE + " TEXT,"

@@ -13,6 +13,7 @@ import android.database.SQLException;
 import android.util.Log;
 
 import net.sqlcipher.database.SQLiteDatabase;
+import net.sqlcipher.database.SQLiteException;
 import net.sqlcipher.database.SQLiteOpenHelper;
 
 import org.json.JSONArray;
@@ -126,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addEntryLog(EntryLog entryLog) {
+    public Long addEntryLog(EntryLog entryLog) throws SQLiteException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(EntryLogTable.COLUMN_PROJECT_NAME, entryLog.getProjectName());
@@ -138,12 +139,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getiStatus());
         values.put(EntryLogTable.COLUMN_ENTRY_TYPE, entryLog.getEntryType());
         values.put(EntryLogTable.COLUMN_DEVICEID, entryLog.getDeviceId());
-        values.put(EntryLogTable.COLUMN_APPVERSION, entryLog.getAppver());
         values.put(EntryLogTable.COLUMN_SYNCED, entryLog.getSynced());
         values.put(EntryLogTable.COLUMN_SYNCED_DATE, entryLog.getSyncDate());
 
         long newRowId;
-        newRowId = db.insert(
+        newRowId = db.insertOrThrow(
                 EntryLogTable.TABLE_NAME,
                 EntryLogTable.COLUMN_NAME_NULLABLE,
                 values);
