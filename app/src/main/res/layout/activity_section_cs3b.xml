@@ -662,6 +662,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:checked="@{child.cs3bq04.equals(`1`)}"
                                 android:onClick="@{()->child.setCs3bq04(`1`) + cs3bq06.clearCheck() + cs3bq07.clearCheck() + cs3bq08.clearCheck() + cs3bq09.clearCheck() + cs3bq10.clearCheck() + cs3bq11.clearCheck() + cs3bq12.clearCheck() + cs3bq13.clearCheck() + cs3bq14.clearCheck() + cs3bq15.clearCheck() + cs3bq16.clearCheck()}"
                                 android:text="@string/cs3bq0401" />
@@ -671,6 +672,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:checked="@{child.cs3bq04.equals(`2`)}"
                                 android:onClick="@{()->child.setCs3bq04(`2`)}"
                                 android:text="@string/cs3bq0402" />
@@ -1285,6 +1287,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
+
                                     android:checked="@{child.cs3bq06.equals(`1`)}"
                                     android:onClick="@{()->child.setCs3bq06(`1`) + cs3bq07.clearCheck() + cs3bq08.clearCheck() + cs3bq09.clearCheck() + cs3bq10.clearCheck() + cs3bq11.clearCheck() + cs3bq12.clearCheck() + cs3bq13.clearCheck() + cs3bq14.clearCheck() + cs3bq15.clearCheck() + cs3bq16.clearCheck()}"
                                     android:text="@string/cs3bq0601" />
@@ -1294,6 +1298,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
+
                                     android:checked="@{child.cs3bq06.equals(`2`)}"
                                     android:onClick="@{()->child.setCs3bq06(`2`)}"
                                     android:text="@string/cs3bq0602" />

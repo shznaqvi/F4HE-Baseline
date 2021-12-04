@@ -10,8 +10,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 
-import com.scottyab.rootbeer.RootBeer;
-
 import net.sqlcipher.database.SQLiteDatabase;
 
 import org.json.JSONArray;
@@ -192,12 +190,12 @@ public class MainApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+/*
         RootBeer rootBeer = new RootBeer(this);
         if (rootBeer.isRooted()) {
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
-        }
+        }*/
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);

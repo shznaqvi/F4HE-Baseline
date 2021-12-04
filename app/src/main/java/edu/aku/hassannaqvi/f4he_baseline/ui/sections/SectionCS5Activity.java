@@ -35,7 +35,7 @@ public class SectionCS5Activity extends AppCompatActivity {
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        bi.cs5q01.check(MainApp.ageOfIndexChild < 2 ? R.id.cs5q0101 : R.id.cs5q0102);
+        child.setCs5q01(MainApp.ageOfIndexChild < 2 ? "1" : "2");
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
 

@@ -89,6 +89,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
+
                                 android:checked="@{child.cs5q01.equals(`1`)}"
                                 android:onClick="@{()->child.setCs5q01(`1`) + cs5q02.clearCheck() + cs5q03.clearCheck() + cs5q04.clearCheck() + cs5q05.clearCheck() + cs5q06a.clearCheck() + cs5q06b.clearCheck() + cs5q07.clearCheck() + cs5q08a.clearCheck() + cs5q08b.clearCheck() + cs5q09.clearCheck() + cs5q10.clearCheck() + cs5q11.clearCheck() + cs5q12.clearCheck() + cs5q13.clearCheck() + cs5q14.clearCheck() + cs5q15.clearCheck() + cs5q16.clearCheck() + cs5q17.clearCheck() + cs5q18.clearCheck()}"
                                 android:text="@string/cs5q0101" />
@@ -98,6 +100,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
+
                                 android:checked="@{child.cs5q01.equals(`2`)}"
                                 android:onClick="@{()->child.setCs5q01(`2`)}"
                                 android:text="@string/cs5q0102" />

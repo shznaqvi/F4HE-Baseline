@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListAll;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,7 +65,7 @@ public class SectionDS3Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            if(MainApp.adolListFemale.size() > 0 || MainApp.adolListMale.size()>0){
+            if (adolListAll.size() > 0) {
 
                 startActivity(new Intent(this, SectionES1Activity.class));
             } else {
