@@ -64,7 +64,7 @@ public class SectionBS1AActivity extends AppCompatActivity {
         }
         for (Integer a : adolListFemale) {
 
-            if(!MainApp.familyList.get(a-1).getIndexed().equals("")) {
+            if (!MainApp.familyList.get(a - 1).getIndexed().equals("")) {
                 adolListAll.add(a);
             }
 
@@ -117,21 +117,29 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
-        bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
-        bi.bs1q6.setMaxvalue(Float.parseFloat(bi.bs1q3.getText().toString()));
-        MainApp.preg_count = 0;
-        MainApp.totalPreg = Integer.parseInt(MainApp.mwra.getBs1q6());
-        if (MainApp.mwra.getBs1q2().equals("1")) {
-            // bi.bs1q6.setMinvalue(2.0f);
-            MainApp.totalPreg--;
-        }
+
+        // Before Validation: Set min Age at marriage
+        if (!bi.bs1q1.getText().equals(""))
+            bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
+
+        // Before Validation: Set max number of pregnancies in last 5 years
+        if (!bi.bs1q3.getText().equals(""))
+            bi.bs1q6.setMaxvalue(Float.parseFloat(bi.bs1q3.getText().toString()));
+
+
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
 
-            //startActivity(new Intent(this, SectionBS2Activity.class).putExtra("complete", true));
             if (bi.bs1con1.isChecked()) {
+
+                // Check if currently pregnant than pregnancy loop will be -1
+                MainApp.preg_count = 0;
+                MainApp.totalPreg = Integer.parseInt(MainApp.mwra.getBs1q6());
+                if (MainApp.mwra.getBs1q2().equals("1")) {
+                    MainApp.totalPreg--;
+                }
                 startActivity(new Intent(this, SectionBS1BActivity.class));
             } else {
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));

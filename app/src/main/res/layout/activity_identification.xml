@@ -473,10 +473,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:hint="#####"
+                            android:hint="##"
                             android:inputType="number"
-                            android:maxLength="5"
-                            app:maxValue="99999"
+                            android:maxLength="2"
+                            app:mask="##"
+                            app:maxValue="19"
+                            app:pattern="^(\\d{2,2})$"
                             app:minValue="1"
                             app:type="range" />
 
