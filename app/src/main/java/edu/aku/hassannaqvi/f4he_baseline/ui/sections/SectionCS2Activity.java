@@ -36,6 +36,11 @@ public class SectionCS2Activity extends AppCompatActivity {
         child.setCs2q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
         child.setCs2q02(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
 
+        String childName = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2();
+        bi.cs2q05info.setText(String.format(getResources().getString(R.string.cs2q05info), childName));
+        bi.cs2q06info.setText(String.format(getResources().getString(R.string.cs2q06info), childName));
+        bi.cs2q07info.setText(String.format(getResources().getString(R.string.cs2q07info), childName));
+
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;

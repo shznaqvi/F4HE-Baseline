@@ -38,6 +38,20 @@ public class SectionCS4Activity extends AppCompatActivity {
         bi.cs4q01.check(MainApp.ageOfIndexChild < 1 ? R.id.cs4q0101 : R.id.cs4q0102);
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
+
+        String childName = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2();
+        bi.cs4q02t1.setText(String.format(getResources().getString(R.string.cs4q02t1), childName));
+        bi.cs4q02ainfo.setText(String.format(getResources().getString(R.string.cs4q02ainfo), childName));
+        bi.cs4q02binfo.setText(String.format(getResources().getString(R.string.cs4q02binfo), childName));
+        bi.cs4q02cinfo.setText(String.format(getResources().getString(R.string.cs4q02cinfo), childName));
+        bi.cs4q02dinfo.setText(String.format(getResources().getString(R.string.cs4q02dinfo), childName));
+        bi.cs4q02einfo.setText(String.format(getResources().getString(R.string.cs4q02einfo), childName));
+        bi.cs4q02finfo.setText(String.format(getResources().getString(R.string.cs4q02finfo), childName));
+        bi.cs4q02ginfo.setText(String.format(getResources().getString(R.string.cs4q02ginfo), childName));
+        bi.cs4q02hinfo.setText(String.format(getResources().getString(R.string.cs4q02hinfo), childName));
+        bi.cs4q02iinfo.setText(String.format(getResources().getString(R.string.cs4q02iinfo), childName));
+        bi.cs4q02jinfo.setText(String.format(getResources().getString(R.string.cs4q02jinfo), childName));
+        bi.cs4q02kinfo.setText(String.format(getResources().getString(R.string.cs4q02kinfo), childName));
     }
 
 

@@ -127,6 +127,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/cs5inst1"
                                 style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -160,9 +161,10 @@
                                     android:text="@string/Q_cs5q02" />
 
                                 <TextView
+                                    android:id="@+id/cs5q02info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q02" />
+                                    android:text="@string/cs5q02info" />
 
                             </LinearLayout>
 
@@ -220,9 +222,10 @@
                                     android:text="@string/Q_cs5q03" />
 
                                 <TextView
+                                    android:id="@+id/cs5q03info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q03" />
+                                    android:text="@string/cs5q03info" />
 
                             </LinearLayout>
 
@@ -280,9 +283,10 @@
                                     android:text="@string/Q_cs5q04" />
 
                                 <TextView
+                                    android:id="@+id/cs5q04info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q04" />
+                                    android:text="@string/cs5q04info" />
 
                             </LinearLayout>
 
@@ -317,6 +321,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <TextView
+                        android:id="@+id/cs5inst2"
                         style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -413,9 +418,10 @@
                                     android:text="@string/Q_cs5q06a" />
 
                                 <TextView
+                                    android:id="@+id/cs5q06ainfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q06a" />
+                                    android:text="@string/cs5q06ainfo" />
 
                             </LinearLayout>
 
@@ -487,9 +493,10 @@
                                     android:text="@string/Q_cs5q06b" />
 
                                 <TextView
+                                    android:id="@+id/cs5q06binfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q06b" />
+                                    android:text="@string/cs5q06binfo" />
 
                             </LinearLayout>
 
@@ -621,9 +628,10 @@
                                     android:text="@string/Q_cs5q08a" />
 
                                 <TextView
+                                    android:id="@+id/cs5q08ainfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q08a" />
+                                    android:text="@string/cs5q08ainfo" />
 
                             </LinearLayout>
 
@@ -695,9 +703,10 @@
                                     android:text="@string/Q_cs5q08b" />
 
                                 <TextView
+                                    android:id="@+id/cs5q08binfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q08b" />
+                                    android:text="@string/cs5q08binfo" />
 
                             </LinearLayout>
 
@@ -834,9 +843,10 @@
                                         android:text="@string/Q_cs5q10" />
 
                                     <TextView
+                                        android:id="@+id/cs5q10info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs5q10" />
+                                        android:text="@string/cs5q10info" />
 
                                 </LinearLayout>
 
@@ -907,9 +917,10 @@
                                         android:text="@string/Q_cs5q11" />
 
                                     <TextView
+                                        android:id="@+id/cs5q11info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs5q11" />
+                                        android:text="@string/cs5q11info" />
 
                                 </LinearLayout>
 
@@ -980,9 +991,10 @@
                                         android:text="@string/Q_cs5q12" />
 
                                     <TextView
+                                        android:id="@+id/cs5q12info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs5q12" />
+                                        android:text="@string/cs5q12info" />
 
                                 </LinearLayout>
 
@@ -1055,9 +1067,10 @@
                                     android:text="@string/Q_cs5q13" />
 
                                 <TextView
+                                    android:id="@+id/cs5q13info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q13" />
+                                    android:text="@string/cs5q13info" />
 
                             </LinearLayout>
 
@@ -1128,9 +1141,10 @@
                                     android:text="@string/Q_cs5q14" />
 
                                 <TextView
+                                    android:id="@+id/cs5q14info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q14" />
+                                    android:text="@string/cs5q14info" />
 
                             </LinearLayout>
 
@@ -1201,9 +1215,10 @@
                                     android:text="@string/Q_cs5q15" />
 
                                 <TextView
+                                    android:id="@+id/cs5q15info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q15" />
+                                    android:text="@string/cs5q15info" />
 
                             </LinearLayout>
 
@@ -1274,9 +1289,10 @@
                                     android:text="@string/Q_cs5q16" />
 
                                 <TextView
+                                    android:id="@+id/cs5q16info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q16" />
+                                    android:text="@string/cs5q16info" />
 
                             </LinearLayout>
 
@@ -1347,9 +1363,10 @@
                                     android:text="@string/Q_cs5q17" />
 
                                 <TextView
+                                    android:id="@+id/cs5q17info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q17" />
+                                    android:text="@string/cs5q17info" />
 
                             </LinearLayout>
 
@@ -1426,9 +1443,10 @@
                                     android:text="@string/Q_cs5q18" />
 
                                 <TextView
+                                    android:id="@+id/cs5q18info"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs5q18" />
+                                    android:text="@string/cs5q18info" />
 
                             </LinearLayout>
 

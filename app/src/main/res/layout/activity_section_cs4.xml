@@ -116,6 +116,7 @@
                     android:visibility="@{child.cs4q01.equals(`1`) ? View.GONE : View.VISIBLE}">
 
                     <TextView
+                        android:id="@+id/cs4q02t1"
                         style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -144,9 +145,10 @@
                                     android:text="@string/Q_cs4q02a" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02ainfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02a" />
+                                    android:text="@string/cs4q02ainfo" />
 
                             </LinearLayout>
 
@@ -204,9 +206,10 @@
                                     android:text="@string/Q_cs4q02b" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02binfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02b" />
+                                    android:text="@string/cs4q02binfo" />
 
                             </LinearLayout>
 
@@ -264,9 +267,10 @@
                                     android:text="@string/Q_cs4q02c" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02cinfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02c" />
+                                    android:text="@string/cs4q02cinfo" />
 
                             </LinearLayout>
 
@@ -324,9 +328,10 @@
                                     android:text="@string/Q_cs4q02d" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02dinfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02d" />
+                                    android:text="@string/cs4q02dinfo" />
 
                             </LinearLayout>
 
@@ -384,9 +389,10 @@
                                     android:text="@string/Q_cs4q02e" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02einfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02e" />
+                                    android:text="@string/cs4q02einfo" />
 
                             </LinearLayout>
 
@@ -444,9 +450,10 @@
                                     android:text="@string/Q_cs4q02f" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02finfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02f" />
+                                    android:text="@string/cs4q02finfo" />
 
                             </LinearLayout>
 
@@ -504,9 +511,10 @@
                                     android:text="@string/Q_cs4q02g" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02ginfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02g" />
+                                    android:text="@string/cs4q02ginfo" />
 
                             </LinearLayout>
 
@@ -564,9 +572,10 @@
                                     android:text="@string/Q_cs4q02h" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02hinfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02h" />
+                                    android:text="@string/cs4q02hinfo" />
 
                             </LinearLayout>
 
@@ -624,9 +633,10 @@
                                     android:text="@string/Q_cs4q02i" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02iinfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02i" />
+                                    android:text="@string/cs4q02iinfo" />
 
                             </LinearLayout>
 
@@ -684,9 +694,10 @@
                                     android:text="@string/Q_cs4q02j" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02jinfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02j" />
+                                    android:text="@string/cs4q02jinfo" />
 
                             </LinearLayout>
 
@@ -744,9 +755,10 @@
                                     android:text="@string/Q_cs4q02k" />
 
                                 <TextView
+                                    android:id="@+id/cs4q02kinfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs4q02k" />
+                                    android:text="@string/cs4q02kinfo" />
 
                             </LinearLayout>
 

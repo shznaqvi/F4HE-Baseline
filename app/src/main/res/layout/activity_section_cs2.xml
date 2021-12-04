@@ -166,9 +166,10 @@
                                 android:text="@string/Q_cs2q05" />
 
                             <TextView
+                                android:id="@+id/cs2q05info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs2q05" />
+                                android:text="@string/cs2q05info" />
 
                         </LinearLayout>
 
@@ -303,9 +304,10 @@
                                 android:text="@string/Q_cs2q06" />
 
                             <TextView
+                                android:id="@+id/cs2q06info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs2q06" />
+                                android:text="@string/cs2q06info" />
 
                         </LinearLayout>
 
@@ -440,9 +442,10 @@
                                 android:text="@string/Q_cs2q07" />
 
                             <TextView
+                                android:id="@+id/cs2q07info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs2q07" />
+                                android:text="@string/cs2q07info" />
 
                         </LinearLayout>
 

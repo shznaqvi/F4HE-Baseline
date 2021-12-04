@@ -73,9 +73,10 @@
                                 android:text="@string/Q_cs3bq01" />
 
                             <TextView
+                                android:id="@+id/cs3bq01info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs3bq01" />
+                                android:text="@string/cs3bq01info" />
 
                         </LinearLayout>
 
@@ -145,6 +146,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/cs3bq02t1"
                             style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -397,9 +399,10 @@
                                 android:text="@string/Q_cs3bq03" />
 
                             <TextView
+                                android:id="@+id/cs3bq03info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs3bq03" />
+                                android:text="@string/cs3bq03info" />
 
                         </LinearLayout>
 
@@ -746,18 +749,21 @@
                     </androidx.cardview.widget.CardView>-->
 
                     <TextView
+                        android:id="@+id/cs3bq05t1"
                         style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/cs3bq05t1" />
 
                     <TextView
+                        android:id="@+id/cs3bq05t2"
                         style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/cs3bq05t2" />
 
                     <TextView
+                        android:id="@+id/cs3bq05t3"
                         style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -787,9 +793,10 @@
                                     android:text="@string/Q_cs3bq05a" />
 
                                 <TextView
+                                    android:id="@+id/cs3bq05ainfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs3bq05a" />
+                                    android:text="@string/cs3bq05ainfo" />
 
                             </LinearLayout>
 
@@ -865,9 +872,10 @@
                                     android:text="@string/Q_cs3bq05b" />
 
                                 <TextView
+                                    android:id="@+id/cs3bq05binfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs3bq05b" />
+                                    android:text="@string/cs3bq05binfo" />
 
                             </LinearLayout>
 
@@ -943,9 +951,10 @@
                                     android:text="@string/Q_cs3bq05c" />
 
                                 <TextView
+                                    android:id="@+id/cs3bq05cinfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs3bq05c" />
+                                    android:text="@string/cs3bq05cinfo" />
 
                             </LinearLayout>
 
@@ -1021,9 +1030,10 @@
                                     android:text="@string/Q_cs3bq05d" />
 
                                 <TextView
+                                    android:id="@+id/cs3bq05dinfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs3bq05d" />
+                                    android:text="@string/cs3bq05dinfo" />
 
                             </LinearLayout>
 
@@ -1099,9 +1109,10 @@
                                     android:text="@string/Q_cs3bq05e" />
 
                                 <TextView
+                                    android:id="@+id/cs3bq05einfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs3bq05e" />
+                                    android:text="@string/cs3bq05einfo" />
 
                             </LinearLayout>
 
@@ -1177,9 +1188,10 @@
                                     android:text="@string/Q_cs3bq05f" />
 
                                 <TextView
+                                    android:id="@+id/cs3bq05finfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/cs3bq05f" />
+                                    android:text="@string/cs3bq05finfo" />
 
                             </LinearLayout>
 
@@ -1311,6 +1323,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/cs3bq07t"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/cs3bq07t" />
@@ -1343,9 +1356,10 @@
                                         android:text="@string/Q_cs3bq07" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq07info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq07" />
+                                        android:text="@string/cs3bq07info" />
 
                                 </LinearLayout>
 
@@ -1412,9 +1426,10 @@
                                         android:text="@string/Q_cs3bq08" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq08info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq08" />
+                                        android:text="@string/cs3bq08info" />
 
                                 </LinearLayout>
 
@@ -1481,9 +1496,10 @@
                                         android:text="@string/Q_cs3bq09" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq09info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq09" />
+                                        android:text="@string/cs3bq09info" />
 
                                 </LinearLayout>
 
@@ -1550,9 +1566,10 @@
                                         android:text="@string/Q_cs3bq10" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq10info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq10" />
+                                        android:text="@string/cs3bq10info" />
 
                                 </LinearLayout>
 
@@ -1619,9 +1636,10 @@
                                         android:text="@string/Q_cs3bq11" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq11info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq11" />
+                                        android:text="@string/cs3bq11info" />
 
                                 </LinearLayout>
 
@@ -1688,9 +1706,10 @@
                                         android:text="@string/Q_cs3bq12" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq12info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq12" />
+                                        android:text="@string/cs3bq12info" />
 
                                 </LinearLayout>
 
@@ -1757,9 +1776,10 @@
                                         android:text="@string/Q_cs3bq13" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq13info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq13" />
+                                        android:text="@string/cs3bq13info" />
 
                                 </LinearLayout>
 
@@ -1826,9 +1846,10 @@
                                         android:text="@string/Q_cs3bq14" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq14info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq14" />
+                                        android:text="@string/cs3bq14info" />
 
                                 </LinearLayout>
 
@@ -1895,9 +1916,10 @@
                                         android:text="@string/Q_cs3bq15" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq15info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq15" />
+                                        android:text="@string/cs3bq15info" />
 
                                 </LinearLayout>
 
@@ -1964,9 +1986,10 @@
                                         android:text="@string/Q_cs3bq16" />
 
                                     <TextView
+                                        android:id="@+id/cs3bq16info"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:text="@string/cs3bq16" />
+                                        android:text="@string/cs3bq16info" />
 
                                 </LinearLayout>
 

@@ -93,9 +93,10 @@
                                 android:text="@string/Q_cs3aq01" />
 
                             <TextView
+                                android:id="@+id/cs3aq01info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs3aq01" />
+                                android:text="@string/cs3aq01info" />
 
                         </LinearLayout>
 
@@ -162,9 +163,10 @@
                                 android:text="@string/Q_cs3aq02" />
 
                             <TextView
+                                android:id="@+id/cs3aq02info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs3aq02" />
+                                android:text="@string/cs3aq02info" />
 
                         </LinearLayout>
 
@@ -231,9 +233,10 @@
                                 android:text="@string/Q_cs3aq03" />
 
                             <TextView
+                                android:id="@+id/cs3aq03info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs3aq03" />
+                                android:text="@string/cs3aq03info" />
 
                         </LinearLayout>
 
@@ -300,9 +303,10 @@
                                 android:text="@string/Q_cs3aq04" />
 
                             <TextView
+                                android:id="@+id/cs3aq04info"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/cs3aq04" />
+                                android:text="@string/cs3aq04info" />
 
                         </LinearLayout>
 

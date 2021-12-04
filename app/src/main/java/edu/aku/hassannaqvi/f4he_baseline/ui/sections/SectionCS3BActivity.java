@@ -39,6 +39,32 @@ public class SectionCS3BActivity extends AppCompatActivity {
         bi.cs3bq06.check(MainApp.ageOfIndexChild < 3 ? R.id.cs3bq0601 : R.id.cs3bq0602);
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
+
+        String childName = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2();
+        bi.cs3bq01info.setText(String.format(getResources().getString(R.string.cs3bq01info), childName));
+        bi.cs3bq02t1.setText(String.format(getResources().getString(R.string.cs3bq02t1), childName));
+        bi.cs3bq03info.setText(String.format(getResources().getString(R.string.cs3bq03info), childName));
+        bi.cs3bq05t1.setText(String.format(getResources().getString(R.string.cs3bq05t1), childName));
+        bi.cs3bq05t3.setText(String.format(getResources().getString(R.string.cs3bq05t3), childName));
+        bi.cs3bq05ainfo.setText(String.format(getResources().getString(R.string.cs3bq05ainfo), childName));
+        bi.cs3bq05ainfo.setText(String.format(getResources().getString(R.string.cs3bq05ainfo), childName));
+        bi.cs3bq05binfo.setText(String.format(getResources().getString(R.string.cs3bq05binfo), childName));
+        bi.cs3bq05cinfo.setText(String.format(getResources().getString(R.string.cs3bq05cinfo), childName));
+        bi.cs3bq05dinfo.setText(String.format(getResources().getString(R.string.cs3bq05dinfo), childName));
+        bi.cs3bq05einfo.setText(String.format(getResources().getString(R.string.cs3bq05einfo), childName));
+        bi.cs3bq05finfo.setText(String.format(getResources().getString(R.string.cs3bq05finfo), childName));
+        bi.cs3bq07t.setText(String.format(getResources().getString(R.string.cs3bq07t), childName));
+        bi.cs3bq07info.setText(String.format(getResources().getString(R.string.cs3bq07info), childName));
+        bi.cs3bq08info.setText(String.format(getResources().getString(R.string.cs3bq08info), childName));
+        bi.cs3bq09info.setText(String.format(getResources().getString(R.string.cs3bq09info), childName));
+        bi.cs3bq10info.setText(String.format(getResources().getString(R.string.cs3bq10info), childName));
+        bi.cs3bq11info.setText(String.format(getResources().getString(R.string.cs3bq11info), childName));
+        bi.cs3bq12info.setText(String.format(getResources().getString(R.string.cs3bq12info), childName));
+        bi.cs3bq13info.setText(String.format(getResources().getString(R.string.cs3bq13info), childName));
+        bi.cs3bq14info.setText(String.format(getResources().getString(R.string.cs3bq14info), childName));
+        bi.cs3bq15info.setText(String.format(getResources().getString(R.string.cs3bq15info), childName));
+        bi.cs3bq16info.setText(String.format(getResources().getString(R.string.cs3bq16info), childName));
+
     }
 
 

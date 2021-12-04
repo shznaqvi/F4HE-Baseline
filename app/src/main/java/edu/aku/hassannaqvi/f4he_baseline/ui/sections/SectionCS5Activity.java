@@ -38,6 +38,26 @@ public class SectionCS5Activity extends AppCompatActivity {
         bi.cs5q01.check(MainApp.ageOfIndexChild < 2 ? R.id.cs5q0101 : R.id.cs5q0102);
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
+
+        String childName = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2();
+        bi.cs5inst1.setText(String.format(getResources().getString(R.string.cs5inst1), childName));
+        bi.cs5q02info.setText(String.format(getResources().getString(R.string.cs5q02info), childName));
+        bi.cs5q03info.setText(String.format(getResources().getString(R.string.cs5q03info), childName));
+        bi.cs5q04info.setText(String.format(getResources().getString(R.string.cs5q04info), childName));
+        bi.cs5inst2.setText(String.format(getResources().getString(R.string.cs5inst2), childName));
+        bi.cs5q06ainfo.setText(String.format(getResources().getString(R.string.cs5q06ainfo), childName));
+        bi.cs5q06binfo.setText(String.format(getResources().getString(R.string.cs5q06binfo), childName));
+        bi.cs5q08ainfo.setText(String.format(getResources().getString(R.string.cs5q08ainfo), childName));
+        bi.cs5q08binfo.setText(String.format(getResources().getString(R.string.cs5q08binfo), childName));
+        bi.cs5q10info.setText(String.format(getResources().getString(R.string.cs5q10info), childName));
+        bi.cs5q11info.setText(String.format(getResources().getString(R.string.cs5q11info), childName));
+        bi.cs5q12info.setText(String.format(getResources().getString(R.string.cs5q12info), childName));
+        bi.cs5q13info.setText(String.format(getResources().getString(R.string.cs5q13info), childName));
+        bi.cs5q14info.setText(String.format(getResources().getString(R.string.cs5q14info), childName));
+        bi.cs5q15info.setText(String.format(getResources().getString(R.string.cs5q15info), childName));
+        bi.cs5q16info.setText(String.format(getResources().getString(R.string.cs5q16info), childName));
+        bi.cs5q17info.setText(String.format(getResources().getString(R.string.cs5q17info), childName));
+        bi.cs5q18info.setText(String.format(getResources().getString(R.string.cs5q18info), childName));
     }
 
 
