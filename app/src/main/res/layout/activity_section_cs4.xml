@@ -90,7 +90,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="false"
-
                                 android:checked="@{child.cs4q01.equals(`1`)}"
                                 android:onClick="@{()->child.setCs4q01(`1`) + cs4q02a.clearCheck() + cs4q02b.clearCheck() + cs4q02c.clearCheck() + cs4q02d.clearCheck() + cs4q02e.clearCheck() + cs4q02f.clearCheck() + cs4q02g.clearCheck() + cs4q02h.clearCheck() + cs4q02i.clearCheck() + cs4q02j.clearCheck() + cs4q02k.clearCheck() + cs4q03.clearCheck()}"
                                 android:text="@string/cs4q0101" />

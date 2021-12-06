@@ -164,12 +164,14 @@ public class SectionES1Activity extends AppCompatActivity {
 
             finish();
             if (ladol.getEs1cons().equals("2") || ladol.getEs1cons1().equals("2"))
-                if (adolListAll.size() > 0) {
-                    startActivity(new Intent(this, SectionES1Activity.class));
-                } else {
-                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-                }
-            else startActivity(new Intent(this, SectionES2Activity.class));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+            if (adolListAll.size() > 0) {
+                startActivity(new Intent(this, SectionES1Activity.class));
+            } else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            }
+//            else startActivity(new Intent(this, SectionES2Activity.class));
 
 
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
