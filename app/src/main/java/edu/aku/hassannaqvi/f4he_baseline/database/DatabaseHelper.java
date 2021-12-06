@@ -137,10 +137,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(EntryLogTable.COLUMN_USERNAME, entryLog.getUserName());
         values.put(EntryLogTable.COLUMN_SYSDATE, entryLog.getSysDate());
         values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getiStatus());
+        values.put(EntryLogTable.COLUMN_ISTATUS96x, entryLog.getiStatus96x());
         values.put(EntryLogTable.COLUMN_ENTRY_TYPE, entryLog.getEntryType());
+        values.put(EntryLogTable.COLUMN_ENTRY_DATE, entryLog.getEntryDate());
         values.put(EntryLogTable.COLUMN_DEVICEID, entryLog.getDeviceId());
         values.put(EntryLogTable.COLUMN_SYNCED, entryLog.getSynced());
         values.put(EntryLogTable.COLUMN_SYNCED_DATE, entryLog.getSyncDate());
+        values.put(EntryLogTable.COLUMN_APPVERSION, entryLog.getAppver());
 
         long newRowId;
         newRowId = db.insertOrThrow(
@@ -1301,6 +1304,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
+
+    public void updateSyncedEntryLog(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(LateAdolescentTable.COLUMN_SYNCED, true);
+        values.put(LateAdolescentTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = LateAdolescentTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                LateAdolescentTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
 
     public ArrayList<Cursor> getData(String Query) {
         //get writable database

@@ -40,6 +40,7 @@ object CreateTable {
             + EntryLogTable.COLUMN_DEVICEID + " TEXT,"
             + EntryLogTable.COLUMN_ENTRY_DATE + " TEXT,"
             + EntryLogTable.COLUMN_ISTATUS + " TEXT,"
+            + EntryLogTable.COLUMN_ISTATUS96x + " TEXT,"
             + EntryLogTable.COLUMN_ENTRY_TYPE + " TEXT,"
             + EntryLogTable.COLUMN_SYNCED + " TEXT,"
             + EntryLogTable.COLUMN_SYNCED_DATE + " TEXT,"

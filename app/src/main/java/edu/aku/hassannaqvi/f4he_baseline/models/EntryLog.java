@@ -34,12 +34,12 @@ public class EntryLog extends BaseObservable implements Observable {
     private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String entryDate = _EMPTY_;
+    private String entryDate = _EMPTY_;         //
     private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
-    private String appver = _EMPTY_;
+    private String appver = _EMPTY_;            //
     private String iStatus = _EMPTY_;
-    private String iStatus96x = _EMPTY_;
+    private String iStatus96x = _EMPTY_;        //
     private String entryType = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String synced = _EMPTY_;
@@ -224,14 +224,11 @@ public class EntryLog extends BaseObservable implements Observable {
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYSDATE));
         this.entryDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ENTRY_DATE));
-/*
-        this.closeTime = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_CLOSETIME));
-*/
-
         this.entryType = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ENTRY_TYPE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_DEVICEID));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ISTATUS));
+        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ISTATUS96x));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYNCED_DATE));
 
@@ -254,6 +251,7 @@ public class EntryLog extends BaseObservable implements Observable {
         json.put(EntryLogTable.COLUMN_ENTRY_TYPE, this.entryType);
         json.put(EntryLogTable.COLUMN_DEVICEID, this.deviceId);
         json.put(EntryLogTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(EntryLogTable.COLUMN_ISTATUS96x, this.iStatus96x);
         json.put(EntryLogTable.COLUMN_SYNCED, this.synced);
         json.put(EntryLogTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(EntryLogTable.COLUMN_APPVERSION, this.appver);

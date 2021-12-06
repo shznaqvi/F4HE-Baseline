@@ -28,7 +28,7 @@ public class TableContracts {
     }
 
     public static abstract class EntryLogTable implements BaseColumns {
-        public static final String TABLE_NAME = "entrylog";
+        public static final String TABLE_NAME = "EntryLog";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
@@ -36,19 +36,17 @@ public class TableContracts {
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
-        public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_ENTRY_DATE = "openTime";
-        public static final String COLUMN_CLOSETIME = "closeTime";
+        public static final String COLUMN_ENTRY_DATE = "entryDate";
 
         public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_ENTRY_TYPE = "entry_type";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
+        public static final String COLUMN_ISTATUS96x = "istatus96x";
     }
 
     public static abstract class FamilyMembersTable implements BaseColumns {
