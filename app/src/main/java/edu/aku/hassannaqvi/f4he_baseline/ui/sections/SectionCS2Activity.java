@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChildName;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,10 +37,10 @@ public class SectionCS2Activity extends AppCompatActivity {
         child.setCs2q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
         child.setCs2q02(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
 
-        String childName = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2();
-        bi.cs2q05info.setText(String.format(getResources().getString(R.string.cs2q05info), childName));
-        bi.cs2q06info.setText(String.format(getResources().getString(R.string.cs2q06info), childName));
-        bi.cs2q07info.setText(String.format(getResources().getString(R.string.cs2q07info), childName));
+
+        bi.cs2q05info.setText(String.format(getResources().getString(R.string.cs2q05info), selectedChildName));
+        bi.cs2q06info.setText(String.format(getResources().getString(R.string.cs2q06info), selectedChildName));
+        bi.cs2q07info.setText(String.format(getResources().getString(R.string.cs2q07info), selectedChildName));
 
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);

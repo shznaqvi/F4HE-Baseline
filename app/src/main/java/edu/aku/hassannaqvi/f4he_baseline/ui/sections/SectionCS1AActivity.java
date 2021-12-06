@@ -65,7 +65,6 @@ public class SectionCS1AActivity extends AppCompatActivity {
                 // Removed Condition: && child.getHl10().equals("1")
                 if (motherSno == selectedMwraSno && Integer.parseInt(child.getHl6y()) < 5) {
                     childOfSelectedMWRAList.add(Integer.valueOf(child.getHl1()));
-                    MainApp.ageOfIndexChild = Integer.parseInt(child.getHl6y());
                 }
             }
 

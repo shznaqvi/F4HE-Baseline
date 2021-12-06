@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.f4he_baseline.ui.lists;
 import static android.view.View.VISIBLE;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListFemale;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListMale;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChild;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChildName;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -265,6 +267,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             // Set Child
             if (MainApp.familyList.get(i).getIndexed().equals("2"))
                 MainApp.selectedChild = String.valueOf(i);
+            selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild)).getHl2();
+            MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild)).getHl6y());
             // Set AdolMale
             if (MainApp.familyList.get(i).getIndexed().equals("3"))
                 MainApp.selectedAdolMale = String.valueOf(i);
@@ -460,6 +464,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         // Updating database to mark indexed mother
         MainApp.selectedChild = String.valueOf(sno - 1);
+        selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild)).getHl2();
+        MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild)).getHl6y());
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
         db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 

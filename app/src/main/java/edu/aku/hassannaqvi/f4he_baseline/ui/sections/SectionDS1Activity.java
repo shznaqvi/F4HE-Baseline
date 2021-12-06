@@ -2,6 +2,8 @@ package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ladol;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.motherKAP;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChild;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChildName;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -50,8 +52,8 @@ public class SectionDS1Activity extends AppCompatActivity {
         }
 
         if (MainApp.motherKAP.getUid().equals("")) {
-            motherKAP.setDs1q01(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2());
-            motherKAP.setDs1q02(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl1());
+            motherKAP.setDs1q01(selectedChildName);
+            motherKAP.setDs1q02(selectedChild + 1);
         }
         bi.setMKap(MainApp.motherKAP);
         setSupportActionBar(bi.toolbar);

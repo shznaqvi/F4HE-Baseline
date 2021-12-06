@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChildName;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,11 +39,10 @@ public class SectionCS3AActivity extends AppCompatActivity {
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
 
-        String childName = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2();
-        bi.cs3aq01info.setText(String.format(getResources().getString(R.string.cs3aq01info), childName));
-        bi.cs3aq02info.setText(String.format(getResources().getString(R.string.cs3aq02info), childName));
-        bi.cs3aq03info.setText(String.format(getResources().getString(R.string.cs3aq03info), childName));
-        bi.cs3aq04info.setText(String.format(getResources().getString(R.string.cs3aq04info), childName));
+        bi.cs3aq01info.setText(String.format(getResources().getString(R.string.cs3aq01info), selectedChildName));
+        bi.cs3aq02info.setText(String.format(getResources().getString(R.string.cs3aq02info), selectedChildName));
+        bi.cs3aq03info.setText(String.format(getResources().getString(R.string.cs3aq03info), selectedChildName));
+        bi.cs3aq04info.setText(String.format(getResources().getString(R.string.cs3aq04info), selectedChildName));
     }
 
 

@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.child;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChildName;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,19 +40,18 @@ public class SectionCS4Activity extends AppCompatActivity {
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
 
-        String childName = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).getHl2();
-        bi.cs4q02t1.setText(String.format(getResources().getString(R.string.cs4q02t1), childName));
-        bi.cs4q02ainfo.setText(String.format(getResources().getString(R.string.cs4q02ainfo), childName));
-        bi.cs4q02binfo.setText(String.format(getResources().getString(R.string.cs4q02binfo), childName));
-        bi.cs4q02cinfo.setText(String.format(getResources().getString(R.string.cs4q02cinfo), childName));
-        bi.cs4q02dinfo.setText(String.format(getResources().getString(R.string.cs4q02dinfo), childName));
-        bi.cs4q02einfo.setText(String.format(getResources().getString(R.string.cs4q02einfo), childName));
-        bi.cs4q02finfo.setText(String.format(getResources().getString(R.string.cs4q02finfo), childName));
-        bi.cs4q02ginfo.setText(String.format(getResources().getString(R.string.cs4q02ginfo), childName));
-        bi.cs4q02hinfo.setText(String.format(getResources().getString(R.string.cs4q02hinfo), childName));
-        bi.cs4q02iinfo.setText(String.format(getResources().getString(R.string.cs4q02iinfo), childName));
-        bi.cs4q02jinfo.setText(String.format(getResources().getString(R.string.cs4q02jinfo), childName));
-        bi.cs4q02kinfo.setText(String.format(getResources().getString(R.string.cs4q02kinfo), childName));
+        bi.cs4q02t1.setText(String.format(getResources().getString(R.string.cs4q02t1), selectedChildName));
+        bi.cs4q02ainfo.setText(String.format(getResources().getString(R.string.cs4q02ainfo), selectedChildName));
+        bi.cs4q02binfo.setText(String.format(getResources().getString(R.string.cs4q02binfo), selectedChildName));
+        bi.cs4q02cinfo.setText(String.format(getResources().getString(R.string.cs4q02cinfo), selectedChildName));
+        bi.cs4q02dinfo.setText(String.format(getResources().getString(R.string.cs4q02dinfo), selectedChildName));
+        bi.cs4q02einfo.setText(String.format(getResources().getString(R.string.cs4q02einfo), selectedChildName));
+        bi.cs4q02finfo.setText(String.format(getResources().getString(R.string.cs4q02finfo), selectedChildName));
+        bi.cs4q02ginfo.setText(String.format(getResources().getString(R.string.cs4q02ginfo), selectedChildName));
+        bi.cs4q02hinfo.setText(String.format(getResources().getString(R.string.cs4q02hinfo), selectedChildName));
+        bi.cs4q02iinfo.setText(String.format(getResources().getString(R.string.cs4q02iinfo), selectedChildName));
+        bi.cs4q02jinfo.setText(String.format(getResources().getString(R.string.cs4q02jinfo), selectedChildName));
+        bi.cs4q02kinfo.setText(String.format(getResources().getString(R.string.cs4q02kinfo), selectedChildName));
     }
 
 

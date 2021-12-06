@@ -113,6 +113,7 @@ public class MainApp extends Application {
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
     public static int totalPreg = 0;
+    public static String selectedChildName = "";
 
 
     public static void hideSystemUI(View decorView) {
