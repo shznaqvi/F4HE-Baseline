@@ -248,6 +248,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
         MainApp.selectedMWRA = "";
         MainApp.selectedChild = "";
+        MainApp.selectedChildName = "";
         MainApp.selectedAdolMale = "";
         MainApp.selectedAdolFemale = "";
 
@@ -824,6 +825,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 // CHILD
             // Updating database to mark selected Child
             MainApp.selectedChild = String.valueOf(Integer.parseInt(childSno.get(bi.childList.getSelectedItemPosition())) - 1);
+            selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild)).getHl2();
+            MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild)).getHl6y());
             MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
             db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 
@@ -858,6 +861,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             bi.familyComplete.setEnabled(false);
             bi.btnContinue.setEnabled(true);
             bi.btnRand.setVisibility(View.INVISIBLE);
+
+            bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
+
 
         }
 

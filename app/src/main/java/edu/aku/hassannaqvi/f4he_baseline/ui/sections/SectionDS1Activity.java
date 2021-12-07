@@ -38,6 +38,7 @@ public class SectionDS1Activity extends AppCompatActivity {
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ds1);
         db = MainApp.appInfo.dbHelper;
+        bi.setMKap(MainApp.motherKAP);
 
         motherKAP = new MotherKAP();
         ladol = new LateAdolescent();
@@ -55,7 +56,6 @@ public class SectionDS1Activity extends AppCompatActivity {
             motherKAP.setDs1q01(selectedChildName);
             motherKAP.setDs1q02(selectedChild + 1);
         }
-        bi.setMKap(MainApp.motherKAP);
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
