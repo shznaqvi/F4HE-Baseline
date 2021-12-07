@@ -33,12 +33,13 @@ public class SectionCS1CActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_c);
-        bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         setupSkips();
-        if (MainApp.superuser)
+        if (MainApp.superuser) {
             bi.btnContinue.setText("Review Next");
+        }
+        bi.setChild(child);
     }
 
     private void setupSkips() {

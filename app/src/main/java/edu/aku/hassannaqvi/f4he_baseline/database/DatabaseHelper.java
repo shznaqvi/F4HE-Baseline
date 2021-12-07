@@ -236,9 +236,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(LateAdolescentTable.COLUMN_USERNAME, adol.getUserName());
         values.put(LateAdolescentTable.COLUMN_SYSDATE, adol.getSysDate());
         values.put(LateAdolescentTable.COLUMN_SE1, adol.sE1toString());
-        values.put(LateAdolescentTable.COLUMN_SE2, adol.sE2toString());
+/*        values.put(LateAdolescentTable.COLUMN_SE2, adol.sE2toString());
         values.put(LateAdolescentTable.COLUMN_SE3, adol.sE3toString());
-        values.put(LateAdolescentTable.COLUMN_SE4, adol.sE4toString());
+        values.put(LateAdolescentTable.COLUMN_SE4, adol.sE4toString());*/
         values.put(LateAdolescentTable.COLUMN_ISTATUS, adol.getiStatus());
         values.put(LateAdolescentTable.COLUMN_DEVICETAGID, adol.getDeviceTag());
         values.put(LateAdolescentTable.COLUMN_DEVICEID, adol.getDeviceId());
@@ -246,7 +246,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(LateAdolescentTable.COLUMN_SYNCED, adol.getSynced());
         values.put(LateAdolescentTable.COLUMN_SYNCED_DATE, adol.getSyncDate());
         long newRowId;
-        newRowId = db.insert(
+        newRowId = db.insertOrThrow(
                 LateAdolescentTable.TABLE_NAME,
                 LateAdolescentTable.COLUMN_NAME_NULLABLE,
                 values);
@@ -275,7 +275,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_SYNCED_DATE, preg.getSyncDate());
 
         long newRowId;
-        newRowId = db.insert(
+        newRowId = db.insertOrThrow(
                 PregnancyTable.TABLE_NAME,
                 PregnancyTable.COLUMN_NAME_NULLABLE,
                 values);

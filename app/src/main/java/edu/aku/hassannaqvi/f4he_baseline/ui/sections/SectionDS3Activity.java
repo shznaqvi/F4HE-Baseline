@@ -67,7 +67,7 @@ public class SectionDS3Activity extends AppCompatActivity {
             finish();
             if (adolListAll.size() > 0) {
 
-                startActivity(new Intent(this, SectionES1Activity.class));
+                startActivity(new Intent(this, AdolSelectionActivity.class));
             } else {
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
 

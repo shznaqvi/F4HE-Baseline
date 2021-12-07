@@ -35,10 +35,10 @@ public class SectionCS3BActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs3b);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        if (child.getUid().equals("")) {
-            child.setCs3bq04(MainApp.ageOfIndexChild < 2 ? "1" : "2");
+
+        child.setCs3bq04(MainApp.ageOfIndexChild < 2 ? "1" : "2");
             child.setCs3bq06(MainApp.ageOfIndexChild < 3 ? "1" : "2");
-        }
+
         bi.setChild(child);
         if (MainApp.superuser) {
             bi.btnContinue.setText("Review Next");

@@ -33,16 +33,17 @@ public class SectionCS3AActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs3a);
-        bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        if (MainApp.superuser)
+        if (MainApp.superuser) {
             bi.btnContinue.setText("Review Next");
+        }
 
         bi.cs3aq01info.setText(String.format(getResources().getString(R.string.cs3aq01info), selectedChildName));
         bi.cs3aq02info.setText(String.format(getResources().getString(R.string.cs3aq02info), selectedChildName));
         bi.cs3aq03info.setText(String.format(getResources().getString(R.string.cs3aq03info), selectedChildName));
         bi.cs3aq04info.setText(String.format(getResources().getString(R.string.cs3aq04info), selectedChildName));
+        bi.setChild(child);
     }
 
 

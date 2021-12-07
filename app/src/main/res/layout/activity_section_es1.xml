@@ -87,9 +87,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:text="@string/es1resp" />
-
+<!--
                             <TextView
                                 android:layout_width="115dp"
                                 android:layout_height="match_parent"
@@ -100,7 +99,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="Age" />
+                                android:text="Age" />-->
 
                         </LinearLayout>
 
@@ -110,26 +109,29 @@
                             android:orientation="horizontal">
 
 
-                            <androidx.appcompat.widget.AppCompatSpinner
+                            <EditText
                                 android:id="@+id/es1resp"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:minHeight="56dp"
+                                android:enabled="false"
                                 android:prompt="@string/es1resp"
+                                android:text="@{ladol.es1resp}"
                                 android:spinnerMode="dropdown" />
 
-                            <TextView
-                                android:id="@+id/es1respline"
-                                style="@style/textView"
-                                android:layout_width="100dp"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="@={ladol.es1respline}" />
-
+                            <!--     <TextView
+                                     android:id="@+id/es1respline"
+                                     style="@style/textView"
+                                     android:layout_width="100dp"
+                                     android:layout_height="match_parent"
+                                     android:gravity="center"
+                                     android:text="@={ladol.es1respline}" />
+     -->
                             <TextView
                                 android:id="@+id/age"
                                 style="@style/textView"
+                                android:enabled="false"
                                 android:layout_width="70dp"
                                 android:layout_height="match_parent" />
 

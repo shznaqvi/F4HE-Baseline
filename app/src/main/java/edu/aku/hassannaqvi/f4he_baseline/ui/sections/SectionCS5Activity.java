@@ -33,14 +33,14 @@ public class SectionCS5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs5);
-        bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        if (child.getUid().equals("")) {
-            child.setCs5q01(MainApp.ageOfIndexChild < 2 ? "1" : "2");
-        }
-        if (MainApp.superuser)
+        child.setCs5q01(MainApp.ageOfIndexChild < 2 ? "1" : "2");
+
+        if (MainApp.superuser) {
             bi.btnContinue.setText("Review Next");
+        }
+        bi.setChild(child);
 
         bi.cs5inst1.setText(String.format(getResources().getString(R.string.cs5inst1), selectedChildName));
         bi.cs5q02info.setText(String.format(getResources().getString(R.string.cs5q02info), selectedChildName));

@@ -42,11 +42,12 @@ public class SectionCS2Activity extends AppCompatActivity {
         bi.cs2q06info.setText(String.format(getResources().getString(R.string.cs2q06info), selectedChildName));
         bi.cs2q07info.setText(String.format(getResources().getString(R.string.cs2q07info), selectedChildName));
 
-        bi.setChild(child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        if (MainApp.superuser)
+        if (MainApp.superuser) {
             bi.btnContinue.setText("Review Next");
+        }
+        bi.setChild(child);
     }
 
 
