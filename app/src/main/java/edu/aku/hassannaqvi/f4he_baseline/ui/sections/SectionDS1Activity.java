@@ -72,7 +72,7 @@ public class SectionDS1Activity extends AppCompatActivity {
         motherKAP.setId(String.valueOf(rowId));
         if (rowId > 0) {
             motherKAP.setUid(motherKAP.getDeviceId() + motherKAP.getId());
-            db.updatesAdolColumn(TableContracts.LateAdolescentTable.COLUMN_UID, motherKAP.getUid());
+            db.updatesMotherKAPColumn(TableContracts.MotherKAPTable.COLUMN_UID, motherKAP.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
