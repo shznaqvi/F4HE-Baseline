@@ -266,10 +266,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
 
             // Set Child
-            if (MainApp.familyList.get(i).getIndexed().equals("2"))
+            if (MainApp.familyList.get(i).getIndexed().equals("2")) {
                 MainApp.selectedChild = String.valueOf(i);
-            selectedChildName = MainApp.familyList.get(i).getHl2();
-            MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(i).getHl6y());
+                selectedChildName = MainApp.familyList.get(i).getHl2();
+                MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(i).getHl6y());
+            }
             // Set AdolMale
             if (MainApp.familyList.get(i).getIndexed().equals("3"))
                 MainApp.selectedAdolMale = String.valueOf(i);

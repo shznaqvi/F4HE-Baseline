@@ -423,6 +423,7 @@ public class LateAdolescent extends BaseObservable {
 
     public void setEs1respline(String es1respline) {
         this.es1respline = es1respline;
+        setEs1cons("");
         notifyPropertyChanged(BR.es1respline);
     }
 

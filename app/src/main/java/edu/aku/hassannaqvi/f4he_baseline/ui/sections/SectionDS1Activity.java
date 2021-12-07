@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.ladol;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.motherKAP;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChild;
 import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.selectedChildName;
@@ -23,8 +22,6 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionDs1Binding;
-import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
-import edu.aku.hassannaqvi.f4he_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionDS1Activity extends AppCompatActivity {
@@ -35,14 +32,13 @@ public class SectionDS1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*motherKAP = new MotherKAP();
+        ladol = new LateAdolescent();*/
+
+        db = MainApp.appInfo.dbHelper;
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ds1);
-        db = MainApp.appInfo.dbHelper;
-        bi.setMKap(MainApp.motherKAP);
-
-        motherKAP = new MotherKAP();
-        ladol = new LateAdolescent();
-
+        setSupportActionBar(bi.toolbar);
 
         try {
             MainApp.motherKAP = db.getMotherKAPByUUid();
@@ -54,9 +50,9 @@ public class SectionDS1Activity extends AppCompatActivity {
 
         if (MainApp.motherKAP.getUid().equals("")) {
             motherKAP.setDs1q01(selectedChildName);
-            motherKAP.setDs1q02(selectedChild + 1);
+            motherKAP.setDs1q02("" + (Integer.parseInt(selectedChild) + 1));
         }
-        setSupportActionBar(bi.toolbar);
+        bi.setMKap(MainApp.motherKAP);
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
     }

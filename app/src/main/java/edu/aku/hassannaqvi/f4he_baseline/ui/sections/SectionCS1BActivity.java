@@ -36,11 +36,11 @@ public class SectionCS1BActivity extends AppCompatActivity {
 //        child_count = getIntent().getExtras().getInt("ecdCount");
         // MainApp.ecdCount++;
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cs1_b);
+        setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
 
 //        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
-        setSupportActionBar(bi.toolbar);
 
         Integer childSno = childOfSelectedMWRAList.get(0);
         String childName = MainApp.familyList.get(childSno - 1).getHl2();
@@ -53,8 +53,10 @@ public class SectionCS1BActivity extends AppCompatActivity {
             Toast.makeText(this, "JSONException(ECDInfo): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
-        ecdInfo.setCs1q02c1(String.valueOf(childSno));
-        ecdInfo.setCs1q02c1n(String.valueOf(childName));
+        if (ecdInfo.getUid().equals("")) {
+            ecdInfo.setCs1q02c1(String.valueOf(childSno));
+            ecdInfo.setCs1q02c1n(String.valueOf(childName));
+        }
         bi.setEcdInfo(ecdInfo);
 
         if (MainApp.superuser)

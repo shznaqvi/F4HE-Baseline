@@ -27,6 +27,7 @@ import edu.aku.hassannaqvi.f4he_baseline.contracts.TableContracts.LateAdolescent
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.f4he_baseline.databinding.ActivitySectionEs1Binding;
+import edu.aku.hassannaqvi.f4he_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.f4he_baseline.ui.EndingActivity;
 
 public class SectionES1Activity extends AppCompatActivity {
@@ -77,43 +78,13 @@ public class SectionES1Activity extends AppCompatActivity {
                 R.layout.custom_spinner, adolNames);
 
         bi.es1resp.setAdapter(adapter);
-        bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+ /*       bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
                 ladol.setFmuid(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
                 bi.age.setText(adolAges.get(bi.es1resp.getSelectedItemPosition()));
                 if (position == 0) return;
-                if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {
-                    bi.fldGrpCVes1cons.setVisibility(View.GONE);
-                    ladol.setEs1cons("99");
-                } else {
-                    bi.fldGrpCVes1cons.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        /*bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (position == 0) return;
-                try {
-                    MainApp.ladol = db.getLateAdolByUUID(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
-                    ladol.notifyChange();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(SectionES1Activity.this, "JSONException(LateAdolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
-                ladol.setFmuid(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
-                ladol.notifyChange();
-                bi.age.setText(adolAges.get(bi.es1resp.getSelectedItemPosition()));
-
                 if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {
                     bi.fldGrpCVes1cons.setVisibility(View.GONE);
                     ladol.setEs1cons("99");
@@ -127,6 +98,43 @@ public class SectionES1Activity extends AppCompatActivity {
 
             }
         });*/
+        bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                ladol = new LateAdolescent();
+                bi.age.setText("");
+
+                if (position == 0) return;
+                try {
+                    MainApp.ladol = db.getLateAdolByUUID(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
+                    ladol.notifyChange();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SectionES1Activity.this, "JSONException(LateAdolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                if (ladol.getUid().equals("")) {
+                    ladol.setEs1resp(adolNames.get(bi.es1resp.getSelectedItemPosition()));
+                    ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+                    ladol.setFmuid(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
+                    ladol.notifyChange();
+                }
+                bi.age.setText(adolAges.get(bi.es1resp.getSelectedItemPosition()));
+
+/*                if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {
+                    bi.fldGrpCVes1cons.setVisibility(View.GONE);
+                    ladol.setEs1cons("99");
+                } else {
+                    bi.fldGrpCVes1cons.setVisibility(View.VISIBLE);
+                }*/
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 

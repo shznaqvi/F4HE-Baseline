@@ -189,6 +189,7 @@
                 <!-- es1cons  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVes1cons"
+                    android:visibility="@{!age.text.toString().equals(``)?Integer.parseInt(age.text.toString()) &lt; 18 ? View.VISIBLE:View.GONE :View.VISIBLE}"
                     style="@style/cardView">
 
                     <LinearLayout
