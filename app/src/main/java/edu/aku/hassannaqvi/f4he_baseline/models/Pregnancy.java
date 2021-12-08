@@ -305,7 +305,7 @@ public class Pregnancy extends BaseObservable implements Observable {
         json.put(TableContracts.PregnancyTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.PregnancyTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.PregnancyTable.COLUMN_SYNCED, this.synced);
-        json.put(TableContracts.PregnancyTable.COLUMN_SYSDATE, this.syncDate);
+        json.put(TableContracts.PregnancyTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(TableContracts.PregnancyTable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.PregnancyTable.COLUMN_SB1, new JSONObject(sB1toString()));
         return json;

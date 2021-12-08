@@ -3,76 +3,62 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_consent.xml" value="0.2816666666666667" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_identification.xml" value="0.35625" />
         <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1a.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1b.xml" value="0.355" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_bs4b.xml" value="0.2816666666666667" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_bs5.xml" value="0.355" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_bs6.xml" value="0.355" />
         <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_bs7.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_a.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_b.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_c.xml" value="0.36083333333333334" />
         <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs2.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3a.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3b.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs4.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_cs5.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_ds1.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/F4HE-Baseline/app/src/main/res/layout/activity_section_es1.xml" value="0.36083333333333334" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/drawable-v24/button_shape_gray.xml" value="0.3824074074074074" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/drawable/ic_person_add.xml" value="0.4234375" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/drawable/ic_residential.xml" value="0.246875" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/drawable/sub_labels_separator.xml" value="0.38564102564102565" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_adol_select.xml" value="0.33684904416611733" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_consent.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_consent.xml" value="0.54125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_ending.xml" value="0.21145833333333333" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_family_list.xml" value="0.37552083333333336" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_forms_report.xml" value="0.21145833333333333" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_family_list.xml" value="0.49625" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_forms_report.xml" value="0.41125541125541126" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_identification.xml" value="0.54875" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_login.xml" value="0.36974358974358973" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_main.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.54875" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.28385826771653544" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1a.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_login.xml" value="0.52125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_main.xml" value="0.52125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.42262602579132474" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.4875" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1a.xml" value="0.3693467336683417" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1b.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs7.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs2.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3a.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3b.xml" value="0.5421875" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1c.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs7.xml" value="0.37552083333333336" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_a.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_b.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_c.xml" value="0.37552083333333336" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs2.xml" value="0.53625" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3a.xml" value="0.37552083333333336" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3b.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs4.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs5.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_ds1.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_ds2.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_ds3.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es1.xml" value="0.545" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es1.xml" value="0.49625" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es4.xml" value="0.21145833333333333" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_sync.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/famlily_member_row.xml" value="0.49625" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/fragment_blank.xml" value="0.21145833333333333" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/pendingform_layout.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/preg_row.xml" value="0.37552083333333336" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_consent.xml" value="0.2730275229357798" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_ending.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_family_list.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_identification.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_login.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_main.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.52" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1a.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1b.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1c.xml" value="0.5490774907749078" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs2.xml" value="0.1815519765739385" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs3.xml" value="0.12516823687752354" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs4a.xml" value="0.42758620689655175" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs4b.xml" value="0.3731193580742227" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs5.xml" value="0.2450592885375494" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs6.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_bs7.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_a.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_b.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_c.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_cs2.xml" value="0.1" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3a.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3b.xml" value="0.19666931007137192" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_cs4.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_cs5.xml" value="0.20840336134453782" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_ds1.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_ds2.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_ds3.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_es1.xml" value="0.3504474799811587" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_es2.xml" value="0.5696784073506891" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_es3.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_section_es4.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/activity_sync.xml" value="0.58125" />
-        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/F4HE-Baseline/app/src/main/res/layout/famlily_member_row.xml" value="0.58125" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_identification.xml" value="0.7757009345794392" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/sync_list_adapter.xml" value="0.22265625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_identification.xml" value="0.7313432835820896" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_login.xml" value="0.38515625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_main.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_pregnancy.xml" value="0.55859375" />
@@ -90,6 +76,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs6.xml" value="0.53875" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs7.xml" value="0.53875" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs1_c.xml" value="0.5458015267175572" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs2.xml" value="0.536" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3a.xml" value="0.53875" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3b.xml" value="0.6" />
@@ -101,7 +88,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es1.xml" value="0.37810682178741406" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es2.xml" value="0.53875" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es3.xml" value="0.536" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es4.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es4.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/activity_sync.xml" value="0.38515625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/famlily_member_row.xml" value="0.38515625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/F4HE-Baseline/app/src/main/res/layout/pendingform_layout.xml" value="0.38515625" />
@@ -112,7 +99,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -5063,7 +5063,8 @@ public class MWRA extends BaseObservable implements Observable {
         json.put(TableContracts.MwraTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.MwraTable.COLUMN_SYNCED, this.synced);
         json.put(TableContracts.MwraTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(TableContracts.MwraTable.COLUMN_SB1, new JSONObject(sB1toString()));
+     json.put(TableContracts.MwraTable.COLUMN_APPVERSION, this.appver);
+     json.put(TableContracts.MwraTable.COLUMN_SB1, new JSONObject(sB1toString()));
         json.put(TableContracts.MwraTable.COLUMN_SB2, new JSONObject(sB2toString()));
         json.put(TableContracts.MwraTable.COLUMN_SB3, new JSONObject(sB3toString()));
         json.put(TableContracts.MwraTable.COLUMN_SB41, new JSONObject(sB41toString()));
