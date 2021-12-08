@@ -229,8 +229,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(LateAdolescentTable.COLUMN_UID, adol.getUid());
         values.put(LateAdolescentTable.COLUMN_UUID, adol.getUuid());
         values.put(LateAdolescentTable.COLUMN_FMUID, adol.getFmuid());
-        values.put(LateAdolescentTable.COLUMN_SNO_ADOL_FEM, adol.getSnoAdolFem());
-        values.put(LateAdolescentTable.COLUMN_SNO_ADOL_MALE, adol.getSnoAdolMale());
+        values.put(LateAdolescentTable.COLUMN_SNO_ADOL, adol.getSnoAdol());
         values.put(LateAdolescentTable.COLUMN_PSU_CODE, adol.getpsuCode());
         values.put(LateAdolescentTable.COLUMN_HHID, adol.getHhid());
         values.put(LateAdolescentTable.COLUMN_USERNAME, adol.getUserName());

@@ -237,8 +237,7 @@ public class TableContracts {
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_FMUID = "_fmuid";
-        public static final String COLUMN_SNO_ADOL_FEM = "snoAdolFem";
-        public static final String COLUMN_SNO_ADOL_MALE = "snoAdolMale";
+        public static final String COLUMN_SNO_ADOL = "snoAdol";
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";

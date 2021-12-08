@@ -23,10 +23,16 @@
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.28385826771653544" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1a.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs1b.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_bs7.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs2.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3a.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs3b.xml" value="0.5421875" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs4.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_cs5.xml" value="0.56328125" />
-        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es1.xml" value="0.32097989949748745" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_ds1.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_ds2.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_ds3.xml" value="0.56328125" />
+        <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es1.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_section_es4.xml" value="0.21145833333333333" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/activity_sync.xml" value="0.56328125" />
         <entry key="..\:/Android/F4HE-Baseline/app/src/main/res/layout/fragment_blank.xml" value="0.21145833333333333" />
@@ -106,7 +112,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

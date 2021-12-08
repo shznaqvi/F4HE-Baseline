@@ -54,37 +54,9 @@
                     android:text="@string/btitle" />
 
 
-                <!-- bs1respline  Input-Numeric   -->
+                <!-- bs1respline  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbs1respline"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/bs1respline" />
-
-                        <TextView
-                            android:id="@+id/bs1respline"
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@={mwra.bs1respline}" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- bs1resp  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVbs1resp"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -98,21 +70,66 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/bs1resp" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/bs1resp"
-                                style="@style/sub_labels"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@={mwra.bs1resp}" />
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/Q_bs1respline"
+                                    android:visibility="gone" />
 
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/bs1respline" />
+
+
+                                <TextView
+                                    android:id="@+id/bs2line"
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="@={mwra.bs1respline}" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_bs1respline"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="@string/bs1respline" />
+
+                                <TextView
+                                    android:id="@+id/bs1respline"
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                    android:enabled="false"
+                                    android:text="@={mwra.bs1respline}" />
+
+                            </LinearLayout>
                         </LinearLayout>
-
-
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>

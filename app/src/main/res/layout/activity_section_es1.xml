@@ -94,12 +94,12 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:text="Line Number" />
-
+-->
                             <TextView
-                                android:layout_width="80dp"
+                                android:layout_width="84dp"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="Age" />-->
+                                android:text="Age" />
 
                         </LinearLayout>
 
@@ -110,6 +110,8 @@
 
 
                             <EditText
+                                style="@style/sub_labels"
+
                                 android:id="@+id/es1resp"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -130,9 +132,9 @@
      -->
                             <TextView
                                 android:id="@+id/age"
-                                style="@style/textView"
+                                style="@style/sub_labels"
                                 android:enabled="false"
-                                android:layout_width="70dp"
+                                android:layout_width="84dp"
                                 android:layout_height="match_parent" />
 
                         </LinearLayout>

@@ -143,6 +143,7 @@ public class SectionES1Activity extends AppCompatActivity {
 
         ladol.populateMeta();
 
+
         long rowId = 0;
         try {
             rowId = db.addAdolescent(ladol);
@@ -194,7 +195,7 @@ public class SectionES1Activity extends AppCompatActivity {
 //                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
 
                 if (adolListAll.size() > 0) {
-                    startActivity(new Intent(this, SectionES1Activity.class));
+                    startActivity(new Intent(this, AdolSelectionActivity.class));
                 } else {
                     startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
                 }

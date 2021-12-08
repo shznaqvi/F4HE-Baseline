@@ -103,6 +103,12 @@ public class AdolSelectionActivity extends AppCompatActivity {
                 //  if (position == 0) return;
                 try {
                     MainApp.ladol = db.getLateAdolByUUID(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
+                    if (MainApp.ladol.getUid().equals("")) {
+                        MainApp.ladol.setFmuid(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
+                        MainApp.ladol.setSnoAdol(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+                        MainApp.ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
+                        MainApp.ladol.setEs1resp(adolNames.get(bi.es1resp.getSelectedItemPosition()));
+                    }
                     bi.es1respline.setText(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
                     bi.age.setText(adolAges.get(bi.es1resp.getSelectedItemPosition()));
                 } catch (JSONException e) {

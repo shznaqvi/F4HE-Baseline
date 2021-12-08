@@ -36,7 +36,6 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         completeCount = 0;
         MainApp.memberComplete = false;
 
-
     }
 
 
@@ -58,11 +57,9 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         TextView secStatus = viewHolder.secStatus;
         View cloaked = viewHolder.cloak;
         View indexedBar = viewHolder.indexedBar;
-
         //String pregStatus = familyMember.getRb07().equals("1") ? "Pregnant" : "Not Pregnant";
 
         MainApp.memberComplete = completeCount == MainApp.memberCount;
-
 
         fName.setText(members.getHl2());
         fAge.setText(members.getHl6y() + "y ");
@@ -82,7 +79,6 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
             }
             motherName.setText(motherRelation + MainApp.familyList.get(Integer.parseInt(members.getHl8()) - 1).getHl2());
             motherPresent = MainApp.familyList.get(Integer.parseInt(members.getHl8()) - 1).getHl10().equals("1");
-
 
         }
 
@@ -141,7 +137,6 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
             default:
                 idxStatus = "         ";
                 idxColor = mContext.getResources().getColor(R.color.white);
-
                 break;
         }
 
