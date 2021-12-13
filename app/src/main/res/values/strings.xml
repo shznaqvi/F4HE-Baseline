@@ -888,6 +888,7 @@
     <string name="bs7q3">Is the father adult or adolescent?</string>
     <string name="bs4bq301">Adult Father </string>
     <string name="bs4bq302">Adolescent Father </string>
+    <string name="bs4bq303"> Father Died/Not Applicable </string>
     <string name="bs7q4title">Does %s engage in:</string>
     <string name="bs7q4a">Supporting spouse/partner on exclusive breastfeeding and complementary feeding</string>
     <string name="bs7q4a1">Yes</string>
