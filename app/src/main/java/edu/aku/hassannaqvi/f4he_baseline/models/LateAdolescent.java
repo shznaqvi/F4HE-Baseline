@@ -84,8 +84,17 @@ public class LateAdolescent extends BaseObservable {
     private String es2q10 = _EMPTY_;
     private String es2q196x = _EMPTY_;
     private String es3q1 = _EMPTY_;
-    private String es3q2 = _EMPTY_;
+    private String es3q201 = _EMPTY_;
+    private String es3q202 = _EMPTY_;
+    private String es3q203 = _EMPTY_;
+    private String es3q204 = _EMPTY_;
+    private String es3q205 = _EMPTY_;
+    private String es3q206 = _EMPTY_;
+    private String es3q207 = _EMPTY_;
+    private String es3q208 = _EMPTY_;
+    private String es3q296 = _EMPTY_;
     private String es3q296x = _EMPTY_;
+    private String es3q297 = _EMPTY_;
     private String es3q3 = _EMPTY_;
     private String es3q396x = _EMPTY_;
     private String es3q4 = _EMPTY_;
@@ -827,19 +836,117 @@ public class LateAdolescent extends BaseObservable {
 
     public void setEs3q1(String es3q1) {
         this.es3q1 = es3q1;
-        setEs3q2(es3q1.equals("2") ? "" : this.es3q2);
+        setEs3q201(es3q1.equals("2") ? "" : this.es3q201);
+        setEs3q202(es3q1.equals("2") ? "" : this.es3q202);
+        setEs3q203(es3q1.equals("2") ? "" : this.es3q203);
+        setEs3q204(es3q1.equals("2") ? "" : this.es3q204);
+        setEs3q205(es3q1.equals("2") ? "" : this.es3q205);
+        setEs3q206(es3q1.equals("2") ? "" : this.es3q206);
+        setEs3q207(es3q1.equals("2") ? "" : this.es3q207);
+        setEs3q208(es3q1.equals("2") ? "" : this.es3q208);
+        setEs3q296(es3q1.equals("2") ? "" : this.es3q296);
+        setEs3q297(es3q1.equals("2") ? "" : this.es3q297);
         notifyPropertyChanged(BR.es3q1);
     }
 
     @Bindable
-    public String getEs3q2() {
-        return es3q2;
+    public String getEs3q201() {
+        return es3q201;
     }
 
-    public void setEs3q2(String es3q2) {
-        this.es3q2 = es3q2;
-        setEs3q296x(es3q2.equals("96") ? this.es3q296x : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.es3q2);
+    public void setEs3q201(String es3q201) {
+        if (this.es3q201.equals(es3q201)) return; // for all checkboxes
+        this.es3q201 = es3q201;
+        notifyPropertyChanged(BR.es3q201);
+    }
+
+    @Bindable
+    public String getEs3q202() {
+        return es3q202;
+    }
+
+    public void setEs3q202(String es3q202) {
+        if (this.es3q202.equals(es3q202)) return; // for all checkboxes
+        this.es3q202 = es3q202;
+        notifyPropertyChanged(BR.es3q202);
+    }
+
+    @Bindable
+    public String getEs3q203() {
+        return es3q203;
+    }
+
+    public void setEs3q203(String es3q203) {
+        if (this.es3q203.equals(es3q203)) return; // for all checkboxes
+        this.es3q203 = es3q203;
+        notifyPropertyChanged(BR.es3q203);
+    }
+
+    @Bindable
+    public String getEs3q204() {
+        return es3q204;
+    }
+
+    public void setEs3q204(String es3q204) {
+        if (this.es3q204.equals(es3q204)) return; // for all checkboxes
+        this.es3q204 = es3q204;
+        notifyPropertyChanged(BR.es3q204);
+    }
+
+    @Bindable
+    public String getEs3q205() {
+        return es3q205;
+    }
+
+    public void setEs3q205(String es3q205) {
+        if (this.es3q205.equals(es3q205)) return; // for all checkboxes
+        this.es3q205 = es3q205;
+        notifyPropertyChanged(BR.es3q205);
+    }
+
+    @Bindable
+    public String getEs3q206() {
+        return es3q206;
+    }
+
+    public void setEs3q206(String es3q206) {
+        if (this.es3q206.equals(es3q206)) return; // for all checkboxes
+        this.es3q206 = es3q206;
+        notifyPropertyChanged(BR.es3q206);
+    }
+
+    @Bindable
+    public String getEs3q207() {
+        return es3q207;
+    }
+
+    public void setEs3q207(String es3q207) {
+        if (this.es3q207.equals(es3q207)) return; // for all checkboxes
+        this.es3q207 = es3q207;
+        notifyPropertyChanged(BR.es3q207);
+    }
+
+    @Bindable
+    public String getEs3q208() {
+        return es3q208;
+    }
+
+    public void setEs3q208(String es3q208) {
+        if (this.es3q208.equals(es3q208)) return; // for all checkboxes
+        this.es3q208 = es3q208;
+        notifyPropertyChanged(BR.es3q208);
+    }
+
+    @Bindable
+    public String getEs3q296() {
+        return es3q296;
+    }
+
+    public void setEs3q296(String es3q296) {
+        if (this.es3q296.equals(es3q296)) return; // for all checkboxes
+        this.es3q296 = es3q296;
+        setEs3q296x(es3q296.equals("96") ? this.es3q296x : ""); // for all skips, mention all skipped questions
+        notifyPropertyChanged(BR.es3q296);
     }
 
     @Bindable
@@ -850,6 +957,26 @@ public class LateAdolescent extends BaseObservable {
     public void setEs3q296x(String es3q296x) {
         this.es3q296x = es3q296x;
         notifyPropertyChanged(BR.es3q296x);
+    }
+
+    @Bindable
+    public String getEs3q297() {
+        return es3q297;
+    }
+
+    public void setEs3q297(String es3q297) {
+        if (this.es3q297.equals(es3q297)) return; // for all checkboxes
+        this.es3q297 = es3q297;
+        setEs3q201(es3q297.equals("97") ? "" : this.es3q201);
+        setEs3q202(es3q297.equals("97") ? "" : this.es3q202);
+        setEs3q203(es3q297.equals("97") ? "" : this.es3q203);
+        setEs3q204(es3q297.equals("97") ? "" : this.es3q204);
+        setEs3q205(es3q297.equals("97") ? "" : this.es3q205);
+        setEs3q206(es3q297.equals("97") ? "" : this.es3q206);
+        setEs3q207(es3q297.equals("97") ? "" : this.es3q207);
+        setEs3q208(es3q297.equals("97") ? "" : this.es3q208);
+        setEs3q296(es3q297.equals("97") ? "" : this.es3q296);
+        notifyPropertyChanged(BR.es3q297);
     }
 
     @Bindable
@@ -2365,8 +2492,17 @@ public class LateAdolescent extends BaseObservable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.es3q1 = json.getString("es3q1");
-            this.es3q2 = json.getString("es3q2");
+            this.es3q201 = json.getString("es3q201");
+            this.es3q202 = json.getString("es3q202");
+            this.es3q203 = json.getString("es3q203");
+            this.es3q204 = json.getString("es3q204");
+            this.es3q204 = json.getString("es3q204");
+            this.es3q206 = json.getString("es3q206");
+            this.es3q207 = json.getString("es3q207");
+            this.es3q208 = json.getString("es3q208");
+            this.es3q296 = json.getString("es3q296");
             this.es3q296x = json.getString("es3q296x");
+            this.es3q297 = json.getString("es3q297");
             this.es3q3 = json.getString("es3q3");
             this.es3q396x = json.getString("es3q396x");
             this.es3q4 = json.getString("es3q4");
@@ -2553,8 +2689,17 @@ public class LateAdolescent extends BaseObservable {
         Log.d(TAG, "sE3toString: ");
         JSONObject json = new JSONObject();
         json.put("es3q1", es3q1)
-                .put("es3q2", es3q2)
+                .put("es3q201", es3q201)
+                .put("es3q202", es3q202)
+                .put("es3q203", es3q203)
+                .put("es3q204", es3q204)
+                .put("es3q205", es3q205)
+                .put("es3q206", es3q206)
+                .put("es3q207", es3q207)
+                .put("es3q208", es3q208)
+                .put("es3q296", es3q296)
                 .put("es3q296x", es3q296x)
+                .put("es3q297", es3q297)
                 .put("es3q3", es3q3)
                 .put("es3q396x", es3q396x)
                 .put("es3q4", es3q4)
