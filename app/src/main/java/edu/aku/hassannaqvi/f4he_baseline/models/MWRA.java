@@ -4955,8 +4955,16 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     public void setBs7q3(String bs7q3) {
-        this.bs7q3 = bs7q3;
-        notifyPropertyChanged(BR.bs7q3);
+     this.bs7q3 = bs7q3;
+     setBs7q4a(bs7q3.equals("3") ? "" : this.bs7q4a);
+     setBs7q4b(bs7q3.equals("3") ? "" : this.bs7q4b);
+     setBs7q4c(bs7q3.equals("3") ? "" : this.bs7q4c);
+     setBs7q4d(bs7q3.equals("3") ? "" : this.bs7q4d);
+     setBs7q4e(bs7q3.equals("3") ? "" : this.bs7q4e);
+     setBs7q4f(bs7q3.equals("3") ? "" : this.bs7q4f);
+     setBs7q4g(bs7q3.equals("3") ? "" : this.bs7q4g);
+     setBs7q4h(bs7q3.equals("3") ? "" : this.bs7q4h);
+     notifyPropertyChanged(BR.bs7q3);
     }
 
     @Bindable
