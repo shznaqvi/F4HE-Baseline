@@ -117,16 +117,16 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
-                                    android:text="@string/bs1respline" />
+                                    android:text="@string/bs1resp" />
 
                                 <TextView
-                                    android:id="@+id/bs1respline"
+                                    android:id="@+id/bs1resp"
                                     style="@style/sub_labels"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                                     android:enabled="false"
-                                    android:text="@={mwra.bs1respline}" />
+                                    android:text="@={mwra.bs1resp}" />
 
                             </LinearLayout>
                         </LinearLayout>
