@@ -162,18 +162,16 @@
 
                             <RadioButton
                                 android:id="@+id/bs4bq301"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{mwra.bs7q3.equals(`1`)}"
                                 android:onClick="@{()->mwra.setBs7q3(`1`)}"
                                 android:text="@string/bs4bq301" />
 
                             <RadioButton
                                 android:id="@+id/bs4bq302"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{mwra.bs7q3.equals(`2`)}"
                                 android:onClick="@{()->mwra.setBs7q3(`2`)}"
                                 android:text="@string/bs4bq302" />

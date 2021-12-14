@@ -103,7 +103,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{ladol.es3q1.equals(`2`)}"
-                                android:onClick="@{()->ladol.setEs3q1(`2`) + es3q2.clearCheck()}"
+                                android:onClick="@{()->ladol.setEs3q1(`2`)}"
                                 android:text="@string/es3q102" />
 
                         </RadioGroup>
@@ -164,72 +164,72 @@
                                 android:id="@+id/es3q202"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`2`)}"
+                                android:checked="@{ladol.es3q202.equals(`2`)}"
                                 android:enabled="@{!ladol.es3q297.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`2`)?``:`2`)}"
+                                android:onClick="@{()->ladol.setEs3q202(ladol.es3q202.equals(`2`)?``:`2`)}"
                                 android:text="@string/es3q202" />
 
                             <CheckBox
                                 android:id="@+id/es3q203"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`3`)}"
+                                android:checked="@{ladol.es3q203.equals(`3`)}"
                                 android:enabled="@{!ladol.es3q297.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`3`)?``:`3`)}"
+                                android:onClick="@{()->ladol.setEs3q203(ladol.es3q203.equals(`3`)?``:`3`)}"
                                 android:text="@string/es3q203" />
 
                             <CheckBox
                                 android:id="@+id/es3q204"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`4`)}"
+                                android:checked="@{ladol.es3q204.equals(`4`)}"
                                 android:enabled="@{!ladol.es3q297.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`4`)?``:`4`)}"
+                                android:onClick="@{()->ladol.setEs3q204(ladol.es3q204.equals(`4`)?``:`4`)}"
                                 android:text="@string/es3q204" />
 
                             <CheckBox
                                 android:id="@+id/es3q205"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`5`)}"
+                                android:checked="@{ladol.es3q205.equals(`5`)}"
                                 android:enabled="@{!ladol.es3q297.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`5`)?``:`5`)}"
+                                android:onClick="@{()->ladol.setEs3q205(ladol.es3q205.equals(`5`)?``:`5`)}"
                                 android:text="@string/es3q205" />
 
                             <CheckBox
                                 android:id="@+id/es3q206"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`6`)}"
+                                android:checked="@{ladol.es3q206.equals(`6`)}"
                                 android:enabled="@{!ladol.es3q297.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`6`)?``:`6`)}"
+                                android:onClick="@{()->ladol.setEs3q206(ladol.es3q206.equals(`6`)?``:`6`)}"
                                 android:text="@string/es3q206" />
 
                             <CheckBox
                                 android:id="@+id/es3q207"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`7`)}"
+                                android:checked="@{ladol.es3q207.equals(`7`)}"
                                 android:enabled="@{!ladol.es3q297.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`7`)?``:`7`)}"
+                                android:onClick="@{()->ladol.setEs3q207(ladol.es3q207.equals(`7`)?``:`7`)}"
                                 android:text="@string/es3q207" />
 
                             <CheckBox
                                 android:id="@+id/es3q208"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`8`)}"
+                                android:checked="@{ladol.es3q208.equals(`8`)}"
                                 android:enabled="@{!ladol.es3q297.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`8`)?``:`8`)}"
+                                android:onClick="@{()->ladol.setEs3q208(ladol.es3q208.equals(`8`)?``:`8`)}"
                                 android:text="@string/es3q208" />
 
                             <CheckBox
                                 android:id="@+id/es3q296"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`96`)}"
+                                android:checked="@{ladol.es3q296.equals(`96`)}"
                                 android:enabled="@{!ladol.es3q297.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`96`)?``:`96`)}"
+                                android:onClick="@{()->ladol.setEs3q296(ladol.es3q296.equals(`96`)?``:`96`)}"
                                 android:text="@string/es3q296" />
 
                             <EditText
@@ -246,8 +246,8 @@
                                 android:id="@+id/es3q297"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{ladol.es3q201.equals(`97`)}"
-                                android:onClick="@{()->ladol.setEs3q201(ladol.es3q201.equals(`97`)?``:`97`)}"
+                                android:checked="@{ladol.es3q297.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs3q297(ladol.es3q297.equals(`97`)?``:`97`)}"
                                 android:text="@string/es3q297" />
 
                         </LinearLayout>
