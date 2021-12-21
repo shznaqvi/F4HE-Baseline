@@ -122,6 +122,7 @@
                                 android:text="@{ladol.es1resp}"
                                 android:spinnerMode="dropdown" />
 
+
                             <!--     <TextView
                                      android:id="@+id/es1respline"
                                      style="@style/textView"
