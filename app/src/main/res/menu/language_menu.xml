@@ -21,7 +21,10 @@
                 android:title="Tajik" />
             <item
                 android:id="@+id/KG"
-                android:title="Russian" />
+                android:title="Kyrgyz " />
+            <item
+                android:id="@+id/RU"
+                android:title="Russian " />
             <item
                 android:id="@+id/EN"
                 android:title="English" />

@@ -519,8 +519,37 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        String lang;
+        String country;
         // Handle item selection
-        switch (item.getItemId()) {
+        if (item.getItemId() == R.id.KG) {
+            lang = "ky";
+            country = "KG";
+            MainApp.editor
+                    .putString("lang", "3")
+                    .apply();
+        } else if (item.getItemId() == R.id.RU) {
+            lang = "ru";
+            country = "RU";
+            MainApp.editor
+                    .putString("lang", "2")
+                    .apply();
+        } else {
+            lang = "en";
+            country = "US";
+            MainApp.editor
+                    .putString("lang", "1")
+                    .apply();
+        }
+
+        Locale locale = new Locale(lang, country);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        config.setLayoutDirection(new Locale(lang, country));
+        this.getResources().updateConfiguration(config, this.getResources().getDisplayMetrics());
+
+       /* switch (item.getItemId()) {
             case R.id.NO:
                 return true;
 
@@ -551,7 +580,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         changeLanguage(MainApp.selectedLanguage);
         startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);*/
 
         return true;
     }
