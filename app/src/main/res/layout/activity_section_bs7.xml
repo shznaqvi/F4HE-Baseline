@@ -178,9 +178,8 @@
 
                             <RadioButton
                                 android:id="@+id/bs4bq303"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{mwra.bs7q3.equals(`3`)}"
                                 android:onClick="@{()->mwra.setBs7q3(`3`) + bs7q4a.clearCheck()+ bs7q4b.clearCheck()+ bs7q4c.clearCheck()+ bs7q4d.clearCheck()+ bs7q4e.clearCheck()+ bs7q4f.clearCheck()+ bs7q4g.clearCheck()+ bs7q4h.clearCheck()}"
                                 android:text="@string/bs4bq303" />

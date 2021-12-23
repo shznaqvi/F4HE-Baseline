@@ -8,9 +8,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
-
-import com.scottyab.rootbeer.RootBeer;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
@@ -45,6 +44,7 @@ public class MainApp extends Application {
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/f4he/app/hhsurvey";
     public static final String _EMPTY_ = "";
+    private static final String TAG = "MainApp";
     public static String IBAHC = "";
 
     //COUNTRIES
@@ -195,11 +195,11 @@ public class MainApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        RootBeer rootBeer = new RootBeer(this);
+/*        RootBeer rootBeer = new RootBeer(this);
         if (rootBeer.isRooted()) {
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
-        }
+        }*/
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);
@@ -215,6 +215,7 @@ public class MainApp extends Application {
             ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             Bundle bundle = ai.metaData;
             IBAHC = bundle.getString("YEK_REVRES").substring(16, 32);
+            Log.d(TAG, "onCreate: YEK " + IBAHC);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
