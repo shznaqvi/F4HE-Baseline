@@ -549,38 +549,34 @@ public class LoginActivity extends AppCompatActivity {
         config.setLayoutDirection(new Locale(lang, country));
         this.getResources().updateConfiguration(config, this.getResources().getDisplayMetrics());
 
-       /* switch (item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.NO:
                 return true;
 
-            case R.id.PK:
+            case R.id.EN:
                 MainApp.selectedLanguage = 1;
                 MainApp.langRTL = true;
                 break;
 
-            case R.id.AF:
+            case R.id.RU:
                 MainApp.selectedLanguage = 2;
                 MainApp.langRTL = true;
                 break;
 
-            case R.id.TJ:
+
+            case R.id.KG:
                 MainApp.selectedLanguage = 3;
                 MainApp.langRTL = false;
                 break;
 
-            case R.id.KG:
-                MainApp.selectedLanguage = 4;
-                MainApp.langRTL = false;
-                break;
-
             default:
-                MainApp.selectedLanguage = 0;
+                MainApp.selectedLanguage = 1;
                 MainApp.langRTL = false;
 
         }
         changeLanguage(MainApp.selectedLanguage);
         startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);*/
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         return true;
     }
