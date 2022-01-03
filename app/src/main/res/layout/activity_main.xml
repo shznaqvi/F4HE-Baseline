@@ -252,18 +252,6 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:drawableStart="@drawable/ic_baseline_bloodtype_24"
-                                android:drawablePadding="12dp"
-                                android:gravity="center_vertical"
-                                android:minWidth="460dp"
-                                android:text="@string/open_blood_form"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="16dp" />
-
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="36dp"
@@ -308,18 +296,6 @@
                             android:layout_margin="12dp"
                             android:layout_weight="1"
                             android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:drawableStart="@drawable/ic_stool"
-                                android:drawablePadding="12dp"
-                                android:gravity="center_vertical"
-                                android:minWidth="460dp"
-                                android:text="@string/open_stool_form"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="16dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"

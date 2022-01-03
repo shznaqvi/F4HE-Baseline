@@ -16,7 +16,7 @@
     <string name="database"> База данных </string>
     <string name="region"> ОБЛАСТЬ </string>
     <string name="district"> Район </string>
-    <string name="uc">  </string>
+    <string name="uc">UC</string>
     <string name="cityVillage"> Город /Село </string>
     <string name="btnSave"> Сохранить </string>
     <string name="btnEnd"> Отмена </string>
@@ -40,7 +40,7 @@
     <string name="appVer"> Приложение Новая версия </string>
     <string name="btnSync"> Скачать данные </string>
     <string name="downloaded"> Скачанные </string>
-    <string name="appDownload">  </string>
+    <string name="appDownload">appDownload</string>
     <string name="newVer"> Новая версия </string>
     <string name="downloading"> Загрузка </string>
     <string name="available"> Доступный </string>
@@ -123,7 +123,6 @@
     <string name="info_hh_form_not_exist"> Инфо: Информация о домохозяйстве не существует. </string>
     <string name="hh_not_found"> Домохозяйство не найдено </string>
     <string name="w202t2"> Определите тип человека, которого видели и запишите все ответы. </string>
-    <string name="w311t2">  </string>
     <string name="woman_child_info_missing"> Пожалуйста, заполните разделы о женщине и ребенке, прежде чем заполнить эти данные </string>
     <string name="child_info_missing"> Пожалуйста, заполните раздел о детях, прежде чем вводить эти данные </string>
     <string name="open_new_form"> Открыть новую форму </string>
@@ -149,37 +148,37 @@
     <string name="as1q09"> Имя главы домашнего хозяйства </string>
     <string name="as1q10"> На каком языке обычно говорят в семье? (Выберите все, что применимо) </string>
     <string name="as1q10t1"> Языки будут добавлены в соответствии с контекстом страны. </string>
-    <string name="as1q1001">  </string>
-    <string name="as1q1002">  </string>
-    <string name="as1q1003">  </string>
-    <string name="as1q1004">  </string>
-    <string name="as1q1005">  </string>
-    <string name="as1q1006">  </string>
-    <string name="as1q1007">  </string>
-    <string name="as1q1008">  </string>
-    <string name="as1q1009">  </string>
-    <string name="as1q1010">  </string>
-    <string name="as1q1011">  </string>
-    <string name="as1q1012">  </string>
-    <string name="as1q1021">  </string>
-    <string name="as1q1022">  </string>
-    <string name="as1q1023">  </string>
-    <string name="as1q1024">  </string>
-    <string name="as1q1025">  </string>
-    <string name="as1q1026">  </string>
-    <string name="as1q1027">  </string>
+    <string name="as1q1001"> Urdu </string>
+    <string name="as1q1002"> Punjabi </string>
+    <string name="as1q1003"> Sindhi </string>
+    <string name="as1q1004"> Pushto </string>
+    <string name="as1q1005"> Baluchi </string>
+    <string name="as1q1006"> Siraiki </string>
+    <string name="as1q1007"> Hindko </string>
+    <string name="as1q1008"> Baroshki </string>
+    <string name="as1q1009"> Shina </string>
+    <string name="as1q1010"> Khuar </string>
+    <string name="as1q1011"> Wakhi </string>
+    <string name="as1q1012"> Dhomki </string>
+    <string name="as1q1021"> Shughni </string>
+    <string name="as1q1022"> Rushani </string>
+    <string name="as1q1023"> Wakhi </string>
+    <string name="as1q1024"> Ishkoshimi </string>
+    <string name="as1q1025"> Bartangi </string>
+    <string name="as1q1026"> Yazgulomi </string>
+    <string name="as1q1027"> Tajik </string>
     <string name="as1q1028"> Русский </string>
     <string name="as1q1029"> Кыргызский </string>
-    <string name="as1q1030">  </string>
-    <string name="as1q1031">  </string>
+    <string name="as1q1030"> Darri </string>
+    <string name="as1q1031"> Pashto </string>
     <string name="as1q1032"> Узбекский </string>
-    <string name="as1q1033">  </string>
-    <string name="as1q1034">  </string>
-    <string name="as1q1035">  </string>
-    <string name="as1q1036">  </string>
-    <string name="as1q1037">  </string>
-    <string name="as1q1038">  </string>
-    <string name="as1q1039">  </string>
+    <string name="as1q1033"> Turkmen </string>
+    <string name="as1q1034"> Balochi </string>
+    <string name="as1q1035"> Nuristani </string>
+    <string name="as1q1036"> Arabic </string>
+    <string name="as1q1037"> Farsi </string>
+    <string name="as1q1038"> Hazargi </string>
+    <string name="as1q1039"> English </string>
     <string name="as1q11"> Номер анкеты </string>
     <string name="as1q12"> Идентификационный номер интервьюера </string>
     <string name="as1q13"> Идентификационный номер руководителя </string>
@@ -869,12 +868,6 @@
     <string name="cs1q02"> Сколько у вас детей в возрасте от 0 до 5 лет? </string>
     <string name="cs1q02c1"> Ребенок #1- Линейный № ребенка </string>
     <string name="cs1q02c1n"> Ребенок #1- Имя ребенка </string>
-    <string name="cs1q02c1age"> Возраст ребенка </string>
-    <string name="cs1q02c1agem"> Возраст в месяцах </string>
-    <string name="cs1q02c1agey"> Возраст в годах </string>
-    <string name="cs1q02c1sex"> Пол </string>
-    <string name="cs1q02c1sex01"> Мужской </string>
-    <string name="cs1q02c1sex02"> Женский </string>
     <string name="cs1q02c1ecd"> Ранее развитие детей: </string>
     <string name="cs1q02c101"> Не посещал </string>
     <string name="cs1q02c102"> Посещает в настоящее время </string>
@@ -882,12 +875,6 @@
     <string name="cs1q02c1cent"> Название центра (если применимо): </string>
     <string name="cs1q02c2"> Ребенок #2 - Линейный № ребенка </string>
     <string name="cs1q02c2n"> Ребенок #2- Имя ребенка </string>
-    <string name="cs1q02c2age"> Возраст ребенка </string>
-    <string name="cs1q02c2agem"> Возраст в месяцах </string>
-    <string name="cs1q02c2agey"> Возраст в годах </string>
-    <string name="cs1q02c2sex"> Пол </string>
-    <string name="cs1q02c2sex01"> Мужской </string>
-    <string name="cs1q02c2sex02"> Женский </string>
     <string name="cs1q02c2ecd"> Ранее развитие детей: </string>
     <string name="cs1q02c201"> Не посещал </string>
     <string name="cs1q02c202"> Посещает в настоящее время </string>
@@ -895,12 +882,6 @@
     <string name="cs1q02c2cent"> Название центра (если применимо): </string>
     <string name="cs1q02c3"> Ребенок #3- Линейный № ребенка </string>
     <string name="cs1q02c3n"> Ребенок #3- Имя ребенка </string>
-    <string name="cs1q02c3age"> Возраст ребенка </string>
-    <string name="cs1q02c3agem"> Возраст в месяцах </string>
-    <string name="cs1q02c3agey"> Возраст в годах </string>
-    <string name="cs1q02c3sex"> Пол </string>
-    <string name="cs1q02c3sex01"> Мужской </string>
-    <string name="cs1q02c3sex02"> Женский </string>
     <string name="cs1q02c3ecd"> Ранее развитие детей: </string>
     <string name="cs1q02c301"> Не посещал </string>
     <string name="cs1q02c302"> Посещает в настоящее время </string>
@@ -908,12 +889,6 @@
     <string name="cs1q02c3cent"> Название центра (если применимо): </string>
     <string name="cs1q02c4"> Ребенок #4- Линейный № ребенка </string>
     <string name="cs1q02c4n"> Ребенок #4- Имя ребенка </string>
-    <string name="cs1q02c4age"> Возраст ребенка </string>
-    <string name="cs1q02c4agem"> Возраст в месяцах </string>
-    <string name="cs1q02c4agey"> Возраст в годах </string>
-    <string name="cs1q02c4sex"> Пол </string>
-    <string name="cs1q02c4sex01"> Мужской </string>
-    <string name="cs1q02c4sex02"> Женский </string>
     <string name="cs1q02c4ecd"> Ранее развитие детей: </string>
     <string name="cs1q02c401"> Не посещал </string>
     <string name="cs1q02c402"> Посещает в настоящее время </string>
@@ -921,12 +896,6 @@
     <string name="cs1q02c4cent"> Название центра (если применимо): </string>
     <string name="cs1q02c5"> Ребенок #5- Линейный № ребенка </string>
     <string name="cs1q02c5n"> Ребенок #5- Имя ребенка </string>
-    <string name="cs1q02c5age"> Возраст ребенка </string>
-    <string name="cs1q02c5agem"> Возраст в месяцах </string>
-    <string name="cs1q02c5agey"> Возраст в годах </string>
-    <string name="cs1q02c5sex"> Пол </string>
-    <string name="cs1q02c5sex01"> Мужской </string>
-    <string name="cs1q02c5sex02"> Женский </string>
     <string name="cs1q02c5ecd"> Ранее развитие детей: </string>
     <string name="cs1q02c501"> Не посещал </string>
     <string name="cs1q02c502"> Посещает в настоящее время </string>
@@ -960,7 +929,7 @@
     <string name="cs2q01"> Имя ребенка </string>
     <string name="cs2q02"> Номер строки выбранного ребенка </string>
     <string name="cs2q05info"> Кто заботится о … %1$s большую часть времени, когда он (она) бодрствует? </string>
-    <string name="cs2q05t">  </string>
+    <string name="cs2q05t">In your household, who makes decsions about childs education (ECD)?</string>
     <string name="cs2q0501"> Мать </string>
     <string name="cs2q0502"> Отец </string>
     <string name="cs2q0503"> Бабушка </string>
@@ -2203,6 +2172,9 @@
     <string name="bs7q1_info">DROP DOWN LIST OF MARRIED MALE MEMBERS</string>
     <string name="cm"> cm </string>
     <string name="in"> Inch </string>
+    <string name="onitemselected" translatable="false">" onItemSelected(Samples):"</string>
+    <string name="folder_not_created" translatable="false">" Folder Not Created "</string>
+    <string name="hh_exists_form" translatable="false">" JSONException(Form): "</string>
 
 
 </resources>
