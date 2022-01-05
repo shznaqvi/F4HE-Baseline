@@ -200,6 +200,7 @@ public class DataDownWorkerALL extends Worker {
                 JSONArray jsonParam = new JSONArray();
 
                 jsonTable.put("table", uploadTable);
+                jsonTable.put("check", uploadTable);
                 //jsonTable.put("select", uploadColumns);
                 jsonTable.put("filter", uploadWhere);
 

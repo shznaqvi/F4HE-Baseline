@@ -60,6 +60,7 @@ import edu.aku.hassannaqvi.f4he_baseline.models.Villages;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final String TAG = "LoginActivity";
     protected static LocationManager locationManager;
 
     // UI references.
@@ -402,36 +403,29 @@ public class LoginActivity extends AppCompatActivity {
         String country;
 
         switch (countryCode) {
+
+
             case 1:
-                lang = "ur";
-                country = "PK";
+                lang = "ky";
+                country = "KG";
                 MainApp.editor
                         .putString("lang", "1")
                         .apply();
+                break;
             case 2:
-                lang = "ps";
-                country = "AF";
+                lang = "ru";
+                country = "RU";
                 MainApp.editor
                         .putString("lang", "2")
                         .apply();
-            case 3:
-                lang = "tg";
-                country = "TJ";
-                MainApp.editor
-                        .putString("lang", "3")
-                        .apply();
-            case 4:
-                lang = "ru";
-                country = "KG";
-                MainApp.editor
-                        .putString("lang", "4")
-                        .apply();
+                break;
             default:
                 lang = "en";
                 country = "US";
                 MainApp.editor
                         .putString("lang", "0")
                         .apply();
+
         }
 
         Locale locale = new Locale(lang, country);
@@ -489,12 +483,8 @@ public class LoginActivity extends AppCompatActivity {
      * Setting country code in Shared Preference
      * */
     private void initializingCountry() {
-        countryCode = Integer.parseInt(MainApp.sharedPref.getString("lang", "0"));
-        if (countryCode == 0) {
-            MainApp.editor.putString("lang", "1").apply();
-        }
-
-        changeLanguage(Integer.parseInt(MainApp.sharedPref.getString("lang", "0")));
+        MainApp.selectedCountry = Integer.parseInt(MainApp.sharedPref.getString("lang", "0"));
+        changeLanguage(MainApp.selectedCountry);
     }
 
 /*    public void TakePhoto(View view) {
@@ -519,61 +509,29 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        String lang;
-        String country;
         // Handle item selection
-        if (item.getItemId() == R.id.KG) {
-            lang = "ky";
-            country = "KG";
-            MainApp.editor
-                    .putString("lang", "3")
-                    .apply();
-        } else if (item.getItemId() == R.id.RU) {
-            lang = "ru";
-            country = "RU";
-            MainApp.editor
-                    .putString("lang", "2")
-                    .apply();
-        } else {
-            lang = "en";
-            country = "US";
-            MainApp.editor
-                    .putString("lang", "1")
-                    .apply();
-        }
-
-        Locale locale = new Locale(lang, country);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.setLocale(locale);
-        config.setLayoutDirection(new Locale(lang, country));
-        this.getResources().updateConfiguration(config, this.getResources().getDisplayMetrics());
-
         switch (item.getItemId()) {
             case R.id.NO:
                 return true;
 
-            case R.id.EN:
+
+            case R.id.KG:
                 MainApp.selectedLanguage = 1;
-                MainApp.langRTL = true;
+                MainApp.langRTL = false;
                 break;
+
 
             case R.id.RU:
                 MainApp.selectedLanguage = 2;
                 MainApp.langRTL = true;
                 break;
 
-
-            case R.id.KG:
-                MainApp.selectedLanguage = 3;
-                MainApp.langRTL = false;
-                break;
-
             default:
-                MainApp.selectedLanguage = 1;
+                MainApp.selectedLanguage = 0;
                 MainApp.langRTL = false;
 
         }
+        Log.d(TAG, "onOptionsItemSelected: "+ MainApp.selectedLanguage);
         changeLanguage(MainApp.selectedLanguage);
         startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -581,4 +539,3 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 }
-
