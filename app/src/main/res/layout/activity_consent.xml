@@ -344,7 +344,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`201`)}"
                                     android:onClick="@{()->form.setAs1q10(`201`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1021" />
 
                                 <RadioButton
@@ -353,7 +353,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`202`)}"
                                     android:onClick="@{()->form.setAs1q10(`202`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1022" />
 
                                 <RadioButton
@@ -362,7 +362,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`203`)}"
                                     android:onClick="@{()->form.setAs1q10(`203`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1023" />
 
                                 <RadioButton
@@ -371,7 +371,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`204`)}"
                                     android:onClick="@{()->form.setAs1q10(`204`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1024" />
 
                                 <RadioButton
@@ -380,7 +380,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`205`)}"
                                     android:onClick="@{()->form.setAs1q10(`205`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1025" />
 
                                 <RadioButton
@@ -389,7 +389,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`206`)}"
                                     android:onClick="@{()->form.setAs1q10(`206`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1026" />
 
                                 <RadioButton
@@ -398,7 +398,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`207`)}"
                                     android:onClick="@{()->form.setAs1q10(`207`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1027" />
 
                                 <RadioButton
@@ -407,7 +407,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`208`)}"
                                     android:onClick="@{()->form.setAs1q10(`208`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1028" />
 
                                 <RadioButton
@@ -416,7 +416,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`209`)}"
                                     android:onClick="@{()->form.setAs1q10(`209`)}"
-                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1029" />
 
                                 <RadioButton
@@ -425,7 +425,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`301`)}"
                                     android:onClick="@{()->form.setAs1q10(`301`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1030" />
 
                                 <RadioButton
@@ -434,7 +434,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`302`)}"
                                     android:onClick="@{()->form.setAs1q10(`302`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1031" />
 
                                 <RadioButton
@@ -443,7 +443,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`303`)}"
                                     android:onClick="@{()->form.setAs1q10(`303`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1032" />
 
                                 <RadioButton
@@ -452,7 +452,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`304`)}"
                                     android:onClick="@{()->form.setAs1q10(`304`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1033" />
 
                                 <RadioButton
@@ -461,7 +461,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`305`)}"
                                     android:onClick="@{()->form.setAs1q10(`305`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1034" />
 
                                 <RadioButton
@@ -470,7 +470,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`306`)}"
                                     android:onClick="@{()->form.setAs1q10(`306`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1035" />
 
                                 <RadioButton
@@ -479,7 +479,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`307`)}"
                                     android:onClick="@{()->form.setAs1q10(`307`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1036" />
 
                                 <RadioButton
@@ -488,7 +488,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`308`)}"
                                     android:onClick="@{()->form.setAs1q10(`308`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1037" />
 
                                 <RadioButton
@@ -497,7 +497,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`309`)}"
                                     android:onClick="@{()->form.setAs1q10(`309`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1038" />
 
                                 <RadioButton
@@ -506,7 +506,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.as1q10.equals(`310`)}"
                                     android:onClick="@{()->form.setAs1q10(`310`)}"
-                                    android:visibility="@{form.as1q01.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.as1q01.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/as1q1039" />
 
                                 <RadioButton
