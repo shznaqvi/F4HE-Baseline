@@ -419,6 +419,13 @@ public class LoginActivity extends AppCompatActivity {
                         .putString("lang", "2")
                         .apply();
                 break;
+            case 3:
+                lang = "tg";
+                country = "TJ";
+                MainApp.editor
+                        .putString("lang", "3")
+                        .apply();
+                break;
             default:
                 lang = "en";
                 country = "US";
@@ -523,6 +530,12 @@ public class LoginActivity extends AppCompatActivity {
 
             case R.id.RU:
                 MainApp.selectedLanguage = 2;
+                MainApp.langRTL = true;
+                break;
+
+
+            case R.id.TJ:
+                MainApp.selectedLanguage = 3;
                 MainApp.langRTL = true;
                 break;
 
