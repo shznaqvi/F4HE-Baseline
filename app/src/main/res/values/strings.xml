@@ -214,6 +214,7 @@
     <string name="as1q1040"> Russian </string>
     <string name="as1q1041"> Kyrgyz </string>
     <string name="as1q1042"> Uzbek </string>
+    <string name="as1q1096"> Other Specify </string>
     <string name="as1q08"> Questionnaire Number </string>
     <string name="as1q12"> Interviewer ID </string>
     <string name="as1q13"> Supervisor ID </string>

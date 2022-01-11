@@ -58,6 +58,7 @@ public class Form extends BaseObservable implements Observable {
     private String as1q08 = _EMPTY_;
     private String as1q09 = _EMPTY_;
     private String as1q10 = _EMPTY_;
+    private String as1q1096x = _EMPTY_;
     private String as1q11 = _EMPTY_;
     private String as1q12 = _EMPTY_;
     private String as1q13 = _EMPTY_;
@@ -344,7 +345,18 @@ public class Form extends BaseObservable implements Observable {
 
     public void setAs1q10(String as1q10) {
         this.as1q10 = as1q10;
+        setAs1q1096x(as1q10.equals("96") ? this.as1q1096x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.as1q10);
+    }
+
+    @Bindable
+    public String getAs1q1096x() {
+        return as1q1096x;
+    }
+
+    public void setAs1q1096x(String as1q1096x) {
+        this.as1q1096x = as1q1096x;
+        notifyPropertyChanged(BR.as1q1096x);
     }
 
     @Bindable
@@ -568,6 +580,7 @@ public class Form extends BaseObservable implements Observable {
             this.as1q08 = json.getString("as1q08");
             this.as1q09 = json.getString("as1q09");
             this.as1q10 = json.getString("as1q10");
+            this.as1q1096x = json.getString("as1q1096x");
             this.as1q11 = json.getString("as1q11");
             this.as1q12 = json.getString("as1q12");
             this.as1q13 = json.getString("as1q13");
@@ -603,6 +616,7 @@ public class Form extends BaseObservable implements Observable {
                 .put("as1q08", as1q08)
                 .put("as1q09", as1q09)
                 .put("as1q10", as1q10)
+                .put("as1q1096x", as1q1096x)
                 .put("as1q11", as1q11)
                 .put("as1q12", as1q12)
                 .put("as1q13", as1q13)
