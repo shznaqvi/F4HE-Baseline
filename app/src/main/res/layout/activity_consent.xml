@@ -552,7 +552,7 @@
                                     android:hint="@string/as1q1096"
                                     android:tag="as1q1096"
                                     android:text="@={form.as1q1096x}"
-                                    android:visibility="@{form.as1q1096.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:visibility="@{form.as1q10.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             </RadioGroup>
 
