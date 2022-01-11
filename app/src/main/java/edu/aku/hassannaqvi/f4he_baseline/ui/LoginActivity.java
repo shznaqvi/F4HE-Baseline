@@ -530,13 +530,13 @@ public class LoginActivity extends AppCompatActivity {
 
             case R.id.RU:
                 MainApp.selectedLanguage = 2;
-                MainApp.langRTL = true;
+                MainApp.langRTL = false;
                 break;
 
 
             case R.id.TJ:
                 MainApp.selectedLanguage = 3;
-                MainApp.langRTL = true;
+                MainApp.langRTL = false;
                 break;
 
             default:
