@@ -131,6 +131,15 @@
     <string name="start_data_entry"> Воридкунии маълумотро оғоз кунед </string>
 
 
+    <string name="fm">ҮЙ-БҮЛӨ МҮЧӨЛӨРҮ</string>
+    <string name="fc">Үй-бүлө толук</string>
+    <string name="proceed">Улантуу</string>
+    <string name="cnt">Улантуу</string>
+    <string name="search">Издөө</string>
+    <string name="mScreen">НЕГИЗГИ ЭКРАН</string>
+    <string name="dataSync">DATA SYNC</string>
+
+
     <string name="atitle"> Модуль A: Үй чарба деӊгээли </string>
     <string name="as1"> 1 Бөлүм: Үй чарба тууралуу маалымат </string>
     <string name="as1q01"> Өлкө </string>

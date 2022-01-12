@@ -130,6 +130,14 @@
     <string name="start_interview"> Начать интервью </string>
     <string name="start_data_entry"> Начать ввод данных </string>
 
+    <string name="fm">ЧЛЕНЫ СЕМЬИ</string>
+    <string name="fc">Семья завершена</string>
+    <string name="proceed">Продолжить</string>
+    <string name="cnt">Продолжать</string>
+    <string name="search">Поиск</string>
+    <string name="mScreen">ГЛАВНЫЙ ЭКРАН</string>
+    <string name="dataSync">СИНХРОНИЗАЦИЯ ДАННЫХ</string>
+
 
     <string name="atitle"> Модуль A: Уровень домохозяйства </string>
     <string name="as1"> Раздел 1: Информация о домохозяйстве </string>

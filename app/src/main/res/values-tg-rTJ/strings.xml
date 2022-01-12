@@ -182,6 +182,13 @@
     <string name="es1q9ca"> Ҳа </string>
     <string name="es1q9cb"> Не </string>
 
+    <string name="fm">АЪЗОИ ОИЛА</string>
+    <string name="fc">Оила пурра</string>
+    <string name="proceed">Давом диҳед</string>
+    <string name="cnt">Давом додан</string>
+    <string name="search">Ҷустуҷӯ</string>
+    <string name="mScreen">ЭКРАНИ АСОСЙ</string>
+    <string name="dataSync">синхронизатсияи маълумот</string>
 
     <string name="splashText"> </string>
 
