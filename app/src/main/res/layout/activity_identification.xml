@@ -513,7 +513,7 @@
                         android:backgroundTint="@color/colorAccent"
                         android:backgroundTintMode="src_atop"
                         android:onClick="btnContinue"
-                        android:text="Save"
+                        android:text="@string/btnSave"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold"

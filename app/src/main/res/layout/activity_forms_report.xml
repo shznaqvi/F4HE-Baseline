@@ -89,7 +89,7 @@
                         android:background="@color/colorPrimary"
                         android:drawableStart="@drawable/search"
                         android:onClick="filterForms"
-                        android:text="Search"
+                        android:text="@string/search"
                         android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>

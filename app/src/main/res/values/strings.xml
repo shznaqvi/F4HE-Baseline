@@ -140,6 +140,15 @@
     <string name="options">Options</string>
 
 
+    <string name="fm">FAMILY MEMBERS</string>
+    <string name="fc">Family Complete</string>
+    <string name="proceed">Proceed</string>
+    <string name="cnt">Continue</string>
+    <string name="search">Search</string>
+    <string name="mScreen">MAIN SCREEN</string>
+    <string name="dataSync">DATA SYNC</string>
+
+
     <string name="as1householdinformation_mainheading">AS1: Household Information: </string>
     <string name="as2householdroster_mainheading">AS2: Household Roster: </string>
     <string name="bs1basicinformation_mainheading">BS1: Basic Information: </string>

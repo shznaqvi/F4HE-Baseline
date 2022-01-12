@@ -373,7 +373,7 @@
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:onClick="btnEnd"
-                        android:text="Cancel"
+                        android:text="@string/cancel"
                         android:gravity="center"
                         android:textColor="@color/colorPrimary"
                         android:textSize="18sp"
@@ -389,7 +389,7 @@
                         android:backgroundTintMode="src_atop"
                         android:gravity="center"
                         android:onClick="btnContinue"
-                        android:text="Save"
+                        android:text="@string/btnSave"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />

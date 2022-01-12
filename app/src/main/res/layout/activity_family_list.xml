@@ -66,7 +66,7 @@
                         android:layout_alignParentBottom="true"
                         android:minHeight="56dp"
                         android:onClick="finalizeFamily"
-                        android:text="Family Complete" />
+                        android:text="@string/fc" />
                     <!--  <TextView
                           android:id="@+id/totalmember"
                           android:layout_width="0dp"
@@ -211,7 +211,7 @@
                                 android:background="@drawable/button_shape_green"
                                 android:drawableTint="#ea0000"
                                 android:onClick="btnProceed"
-                                android:text="Proceed"
+                                android:text="@string/proceed"
                                 android:textColor="@color/white" />
                         </LinearLayout>
 
@@ -259,7 +259,7 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:minHeight="56dp"
                     android:radius="10dp"
-                    android:text="FAMILY MEMBERS"
+                    android:text="@string/fm"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:textColor="@color/white" />
 
@@ -299,7 +299,7 @@
                     android:background="@drawable/button_shape_red"
                     android:drawableTint="#ea0000"
                     android:onClick="btnEnd"
-                    android:text="Cancel"
+                    android:text="@string/cancel"
                     android:textColor="@color/white" />
 
                 <Button
@@ -332,7 +332,7 @@
                     android:onClick="btnContinue"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
-                    android:text="Continue"
+                    android:text="@string/cnt"
                     android:textColor="@color/white" />
 
 

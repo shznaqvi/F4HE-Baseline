@@ -213,7 +213,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal|center_vertical"
-                            android:text="DATA SYNC"
+                            android:text="@string/dataSync"
                              />
 
                         <androidx.recyclerview.widget.RecyclerView

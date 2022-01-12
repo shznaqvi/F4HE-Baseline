@@ -149,7 +149,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:onClick="btnEnd"
-                        android:text="Cancel"
+                        android:text="@string/cancel"
                         android:textColor="@color/colorPrimary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -164,7 +164,7 @@
                         android:backgroundTintMode="src_atop"
                         android:gravity="center"
                         android:onClick="btnContinue"
-                        android:text="Select"
+                        android:text="@string/btnSave"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />

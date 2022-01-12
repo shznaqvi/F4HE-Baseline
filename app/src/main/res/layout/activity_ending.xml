@@ -171,7 +171,7 @@
                         android:backgroundTint="@color/colorAccentOverlay"
                         android:backgroundTintMode="src_atop"
                         android:onClick="BtnEnd"
-                        android:text="Save"
+                        android:text="@string/btnSave"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold"
