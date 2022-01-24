@@ -16,8 +16,9 @@
         android:fitsSystemWindows="true"
         android:gravity="center_horizontal"
         android:background="@drawable/app_bg"
-
         android:orientation="vertical">
+
+
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"

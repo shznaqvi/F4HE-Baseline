@@ -91,25 +91,25 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         String marStatus = "";
         switch (members.getHl7()) {
             case "1":
-                marStatus = "Married";
+                marStatus = mContext.getString(R.string.liststatusa);
                 break;
             case "2":
-                marStatus = "Widowed";
+                marStatus = mContext.getString(R.string.liststatush);
                 break;
             case "3":
-                marStatus = "Divorced";
+                marStatus = mContext.getString(R.string.liststatusi);
                 break;
             case "4":
-                marStatus = "Separated";
+                marStatus = mContext.getString(R.string.liststatusj);
                 break;
             case "5":
-                marStatus = "Un-Married";
+                marStatus = mContext.getString(R.string.liststatusc);
                 break;
             case "99":
-                marStatus = "Not Applicable";
+                marStatus = mContext.getString(R.string.liststatusb);
                 break;
             default:
-                marStatus = "Unknown";
+                marStatus = mContext.getString(R.string.liststatusk);
                 break;
         }
 
@@ -118,19 +118,19 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         int idxColor;
         switch (members.getIndexed()) {
             case "1":
-                idxStatus = " Mother  ";
+                idxStatus = mContext.getResources().getString(R.string.liststatusd);
                 idxColor = mContext.getResources().getColor(R.color.motherBg);
                 break;
             case "2":
-                idxStatus = "  Child  ";
+                idxStatus = mContext.getResources().getString(R.string.liststatuse);
                 idxColor = mContext.getResources().getColor(R.color.childBg);
                 break;
             case "3":
-                idxStatus = " Adol. M ";
+                idxStatus = mContext.getResources().getString(R.string.liststatusg);
                 idxColor = mContext.getResources().getColor(R.color.adolMaleBg);
                 break;
             case "4":
-                idxStatus = " Adol. F ";
+                idxStatus = mContext.getResources().getString(R.string.liststatusf);
                 idxColor = mContext.getResources().getColor(R.color.adolFemaleBg);
                 break;
 
@@ -160,20 +160,20 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
         switch (members.getMemCate()) {
             case "1":
-                memCate.setText("Mother");
+                memCate.setText(R.string.liststatusd);
                 break;
             case "2":
                 if (motherPresent) {
-                    memCate.setText("Child");
+                    memCate.setText(R.string.liststatuse);
                 } else {
                     memCate.setVisibility(View.GONE);
                 }
                 break;
             case "3":
-                memCate.setText("Adol. M");
+                memCate.setText(R.string.liststatusg);
                 break;
             case "4":
-                memCate.setText("Adol. F");
+                memCate.setText(R.string.liststatusf);
                 break;
             default:
                 memCate.setVisibility(View.GONE);

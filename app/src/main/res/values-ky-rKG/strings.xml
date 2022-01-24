@@ -139,6 +139,25 @@
     <string name="mScreen">НЕГИЗГИ ЭКРАН</string>
     <string name="dataSync">DATA SYNC</string>
 
+    <string name="naForage10"> 10 жашка чейинки балдар үчүн колдонулбайт </string>
+    <string name="bs3q14"> Сиздин оюӊузча, кыздар менен аялдар чечим чыгарууга жана жумушта иштөөгө бирдей укукка ээ болушу керекпи? </string>
+    <string name="openForm"> маекти баштоо үчүн ачык форма </string>
+    <string name="enterData"> Кагаздан маалыматтарды киргизүү үчүн ачыңыз </string>
+    <string name="notAvlDied"> Жеткиликтүү эмес/Өлгөн </string>
+    <string name="consent"> МАКУЛ БОЛУУ </string>
+    <string name="consInst"> Көрсөтмө: Керек болгондо респондентке толук макулдуктун текстин окуңуз, текстти ылдый жылдырыңыз </string>
+    <string name="liststatusa"> Үй-бүлөлүү </string>
+    <string name="liststatusb"> Жараксыз </string>
+    <string name="liststatusc"> Никесиз </string>
+    <string name="liststatusd"> Эне </string>
+    <string name="liststatuse"> Бала </string>
+    <string name="liststatusf"> Адоль Ф </string>
+    <string name="liststatusg"> Адоль М </string>
+    <string name="liststatush"> Бева </string>
+    <string name="liststatusi"> Ҷудошуда </string>
+    <string name="liststatusj"> Ҷудошуда </string>
+    <string name="liststatusk"> Номаълум </string>
+
 
     <string name="atitle"> Модуль A: Үй чарба деӊгээли </string>
     <string name="as1"> 1 Бөлүм: Үй чарба тууралуу маалымат </string>
@@ -653,7 +672,6 @@
     <string name="bs3q13"> Сиздин оюӊузча, кыздар менен аялдар билим алууга бирдей укукка ээ болушу керекпи? </string>
     <string name="bs3q1301"> Ооба </string>
     <string name="bs3q1302"> Жок </string>
-    <string name="bs3q14"> Сиздин оюӊузча, кыздар менен аялдар чечим чыгарууга жана жумушта иштөөгө бирдей укукка ээ болушу керекпи? </string>
     <string name="bs3q1401"> Ооба </string>
     <string name="bs3q1402"> Жок </string>
     <string name="bs3q15"> Сиздин оюӊузча, кыздар менен аялдар чечим чыгарууга жана медициналык кызматтарга кайрылууга бирдей укукка ээ болушу керекпи? </string>

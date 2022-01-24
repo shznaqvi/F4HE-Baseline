@@ -138,6 +138,23 @@
     <string name="child_info_missing">Please fill child sections before entering this information</string>
     <string name="open_new_form">OPEN NEW FORM</string>
     <string name="options">Options</string>
+    <string name="naForage10"> Not applicable for age less than 10 years </string>
+    <string name="openForm"> Open Form to start interview </string>
+    <string name="enterData"> Open to enter data from paper </string>
+    <string name="notAvlDied"> Not Available/Died </string>
+    <string name="consent"> CONSENT </string>
+    <string name="consInst"> Instruction: Read full consent text to the respondent scroll down the text when needed </string>
+    <string name="liststatusa"> Married </string>
+    <string name="liststatusb"> Not Applicable </string>
+    <string name="liststatusc"> Un-Married </string>
+    <string name="liststatusd"> Mother </string>
+    <string name="liststatuse"> Child </string>
+    <string name="liststatusf"> Adol F </string>
+    <string name="liststatusg"> Adol M </string>
+    <string name="liststatush"> Widowed </string>
+    <string name="liststatusi"> Divorced </string>
+    <string name="liststatusj"> Separated </string>
+    <string name="liststatusk"> Unknown </string>
 
 
     <string name="fm">FAMILY MEMBERS</string>

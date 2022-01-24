@@ -60,14 +60,15 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="CONSENT" />
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/consent" />
+
                         <TextView
                             style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Instruction: Read full Consent text to the respondent. \nScroll down the text when needed." />
+                            android:text="@string/consInst" />
 
                         <TextView
                             style="@null"

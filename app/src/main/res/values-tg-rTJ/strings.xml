@@ -191,6 +191,25 @@
     <string name="dataSync">синхронизатсияи маълумот</string>
 
     <string name="splashText"> </string>
+    <string name="naForage10"> Барои синни камтар аз 10 сола татбиқ карда намешавад </string>
+    <string name="bs3q14"> Ба фикри шумо: Ое духтарон ва занон ҳуқуқи баробар барои кор кардан доранд? </string>
+    <string name="openForm"> Шакли кушода барои оғози мусоҳиба </string>
+    <string name="enterData"> Барои ворид кардани маълумот аз коғаз кушоед </string>
+    <string name="notAvlDied"> Дастрас нест/ Мурда </string>
+    <string name="consent"> РИЗОГИ </string>
+    <string name="consInst"> Дастур: Матни пурраи ризоиятро ба мусоҳиб хонед, дар ҳолати зарурӣ матнро ба поён ҳаракат кунед </string>
+    <string name="liststatusa"> Оиладор </string>
+    <string name="liststatusb"> Иҷронашаванда </string>
+    <string name="liststatusc"> Беникоҳ </string>
+    <string name="liststatusd"> Модар </string>
+    <string name="liststatuse"> Кӯдак </string>
+    <string name="liststatusf"> Адоль Ф </string>
+    <string name="liststatusg"> Адол М </string>
+    <string name="liststatush"> Жесир калган </string>
+    <string name="liststatusi"> Ажырашкан </string>
+    <string name="liststatusj"> Ҷудошуда </string>
+    <string name="liststatusk"> Белгисиз </string>
+
 
     <string name="atitle"> Модули A: Сатҳи Хонавода </string>
     <string name="as1"> Қисми 1: Маълумот оиди хонавода </string>
@@ -695,7 +714,6 @@
     <string name="bs3q13"> Ба фикри шумо: Ое духтарон ва занон ҳуқуқи баробар барои донишомӯзӣ доранд? </string>
     <string name="bs3q1301"> Ҳа </string>
     <string name="bs3q1302"> Не </string>
-    <string name="bs3q14"> Ба фикри шумо: Ое духтарон ва занон ҳуқуқи баробар барои кор кардан доранд? </string>
     <string name="bs3q1401"> Ҳа </string>
     <string name="bs3q1402"> Не </string>
     <string name="bs3q15"> Ба фикри шумо: Ое духтарон ва занон ҳуқуқи баробар дар дастрасӣ доштан ба хизматрасонии марбут ба саломатӣ доранд? </string>

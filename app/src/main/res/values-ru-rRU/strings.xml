@@ -138,6 +138,25 @@
     <string name="mScreen">ГЛАВНЫЙ ЭКРАН</string>
     <string name="dataSync">СИНХРОНИЗАЦИЯ ДАННЫХ</string>
 
+    <string name="naForage10"> Не применимо для детей младше 10 лет </string>
+    <string name="bs3q14"> По вашему мнению: Должны ли девочки и женщины иметь равное право решать и зарабатывать? </string>
+    <string name="openForm"> Откройте форму, чтобы начать собеседование </string>
+    <string name="enterData"> Открыть для ввода данных с бумаги </string>
+    <string name="notAvlDied"> Недоступно/умер </string>
+    <string name="consent"> СОГЛАСИЕ </string>
+    <string name="consInst"> Инструкция: прочтите полный текст согласия респонденту, при необходимости прокрутите текст вниз. </string>
+    <string name="liststatusa"> Женат </string>
+    <string name="liststatusb"> Непригодный </string>
+    <string name="liststatusc"> Не замужем </string>
+    <string name="liststatusd"> Мама </string>
+    <string name="liststatuse"> Ребенок </string>
+    <string name="liststatusf"> Адоль Ф </string>
+    <string name="liststatusg"> Адол М </string>
+    <string name="liststatush"> Овдовела </string>
+    <string name="liststatusi"> В разводе </string>
+    <string name="liststatusj"> Разделенный </string>
+    <string name="liststatusk"> Неизвестный </string>
+
 
     <string name="atitle"> Модуль A: Уровень домохозяйства </string>
     <string name="as1"> Раздел 1: Информация о домохозяйстве </string>
@@ -640,7 +659,6 @@
     <string name="bs3q13"> По вашему мнению: Должны ли девочки и женщины иметь равное право решать и получать образование? </string>
     <string name="bs3q1301"> Да </string>
     <string name="bs3q1302"> Нет </string>
-    <string name="bs3q14"> По вашему мнению: Должны ли девочки и женщины иметь равное право решать и зарабатывать? </string>
     <string name="bs3q1401"> Да </string>
     <string name="bs3q1402"> Нет </string>
     <string name="bs3q15"> По вашему мнению: Должны ли девочки и женщины иметь равное право принимать решения и обращаться за медицинскими услугами? </string>

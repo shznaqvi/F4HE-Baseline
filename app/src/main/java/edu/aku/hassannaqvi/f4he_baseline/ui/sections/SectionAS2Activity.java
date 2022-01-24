@@ -89,7 +89,7 @@ public class SectionAS2Activity extends AppCompatActivity {
             fatherNames.add(fl.getHl2());
             fatherCodes.add(fl.getHl1());
         }
-        fatherNames.add("Not Available/Died");
+        fatherNames.add(getResources().getString(R.string.notAvlDied));
         fatherCodes.add("97");
 
         motherNames.add("...");
@@ -98,7 +98,7 @@ public class SectionAS2Activity extends AppCompatActivity {
             motherNames.add(fl.getHl2());
             motherCodes.add(fl.getHl1());
         }
-        motherNames.add("Not Available/Died");
+        motherNames.add(getResources().getString(R.string.notAvlDied));
         motherCodes.add("97");
 
         // Apply the adapter to the Father spinner
