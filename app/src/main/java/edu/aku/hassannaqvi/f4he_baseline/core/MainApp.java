@@ -18,6 +18,7 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
+import edu.aku.hassannaqvi.f4he_baseline.BuildConfig;
 import edu.aku.hassannaqvi.f4he_baseline.models.Child;
 import edu.aku.hassannaqvi.f4he_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
@@ -76,8 +77,8 @@ public class MainApp extends Application {
     public static SharedPreferences.Editor editor;
     public static SharedPreferences sharedPref;
     public static String deviceid;
-    public static int versionCode = edu.aku.hassannaqvi.f4he_baseline.BuildConfig.VERSION_CODE;
-    public static String versionName = edu.aku.hassannaqvi.f4he_baseline.BuildConfig.VERSION_NAME;
+    public static int versionCode = BuildConfig.VERSION_CODE;
+    public static String versionName = BuildConfig.VERSION_NAME;
     public static int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 2;
     public static long TWO_MINUTES = 1000 * 60 * 2;
     public static boolean permissionCheck = false;
