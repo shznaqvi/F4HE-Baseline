@@ -653,7 +653,7 @@
                                         android:hint="@string/es1q496"
                                         android:tag="es1q496"
                                         android:text="@={ladol.es1q496x}"
-                                        android:visibility="@{ladol.es1q4.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                        android:visibility="@{ladol.es1q496.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                                 </LinearLayout>
 
