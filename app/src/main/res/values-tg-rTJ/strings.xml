@@ -298,6 +298,8 @@
     <!--    <string name="hl2t"> Сараввал, лутфан номи ҳар шахсеро, ки одатан дар ин хона зиндагӣ мекунад аз роҳбари хонавода сар карда ба ман гӯед </string>-->
     <string name="hl3"> РОБИТА </string>
     <string name="hl3t"> Робитаи (НОМ) ба (Номи сардори хонавода) чи аст? </string>
+    <string name="hl3t1"> чи муносибат дорад </string>
+    <string name="hl3t2"> бо сардори хочагй </string>
     <string name="hl301"> роҳбар </string>
     <string name="hl302"> ҳамсар / ҳамшарик </string>
     <string name="hl303"> писар / духтар </string>

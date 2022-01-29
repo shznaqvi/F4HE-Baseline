@@ -127,7 +127,7 @@
     <string name="child_info_missing"> Пожалуйста, заполните раздел о детях, прежде чем вводить эти данные </string>
     <string name="open_new_form"> Открыть новую форму </string>
     <string name="options"> Опции </string>
-    <string name="start_interview"> Начать интервью </string>
+    <string name="start_interview"> НАЧАТЬ ИНТЕРВЬЮ </string>
     <string name="start_data_entry"> Начать ввод данных </string>
 
     <string name="fm">ЧЛЕНЫ СЕМЬИ</string>
@@ -244,6 +244,8 @@
     <string name="hl2t"> Во-первых, скажите, пожалуйста, имя каждого члена семьи, кто обычно проживает здесь, начиная с главы домохозяйства </string>
     <string name="hl3"> Отношение к главе домохозяйства </string>
     <string name="hl3t"> В каких отношениях состоит (имя) с (имя главы семьи)? </string>
+    <string name="hl3t1"> Каково отношение </string>
+    <string name="hl3t2"> с главой семьи </string>
     <string name="hl301"> Глава </string>
     <string name="hl302"> Супруг(-а)/Партнер </string>
     <string name="hl303"> Сын/Дочь </string>
@@ -836,7 +838,7 @@
     <string name="bs4bq2301"> Да, у меня есть личный телефон </string>
     <string name="bs4bq2302"> Да, я использую телефон члена моей семьи </string>
     <string name="bs4bq2303"> Нет </string>
-    <string name="bs6q1m"> Если вариант 2, пожалуйста, укажите какому члену семьи принадлежит телефон: </string>
+    <string name="bs6q1m"> упомянуть члена семьи </string>
     <string name="bs6q2"> Есть ли у вас доступ к Интернету на смартфоне? </string>
     <string name="bs4bq3101"> Да, большую часть времени </string>
     <string name="bs4bq3102"> Да, иногда у меня есть подключение к Интернету, но соединение слабое </string>

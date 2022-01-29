@@ -776,7 +776,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{mwra.bs4bq898.equals(`98`)}"
-                                    android:enabled="@{!mwra.bs4bq898.equals(`98`)}"
                                     android:onClick="@{()->mwra.setBs4bq898(mwra.bs4bq898.equals(`98`)?``:`98`)}"
                                     android:text="@string/bs4bq898" />
 

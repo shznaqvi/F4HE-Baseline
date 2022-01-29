@@ -127,7 +127,7 @@
     <string name="child_info_missing"> Лутфан пеш аз дохилкунии ин маълумот, қисми кӯдакро пур кунед. </string>
     <string name="open_new_form"> ФАКЛИ НАВ КУШОДА </string>
     <string name="options"> Имконот </string>
-    <string name="start_interview"> Мусоҳибаро оғоз кунед </string>
+    <string name="start_interview"> МАЕК БАШТА </string>
     <string name="start_data_entry"> Воридкунии маълумотро оғоз кунед </string>
 
 
@@ -141,7 +141,7 @@
 
     <string name="naForage10"> 10 жашка чейинки балдар үчүн колдонулбайт </string>
     <string name="bs3q14"> Сиздин оюӊузча, кыздар менен аялдар чечим чыгарууга жана жумушта иштөөгө бирдей укукка ээ болушу керекпи? </string>
-    <string name="openForm"> маекти баштоо үчүн ачык форма </string>
+    <string name="openForm"> Интервью баштоо үчүн форманы ачыңыз </string>
     <string name="enterData"> Кагаздан маалыматтарды киргизүү үчүн ачыңыз </string>
     <string name="notAvlDied"> Жеткиликтүү эмес/Өлгөн </string>
     <string name="consent"> МАКУЛ БОЛУУ </string>
@@ -245,6 +245,8 @@
     <string name="hl2t"> Биринчиден, үй-бүлө башчысынан баштап, адатта бул жерде жашаган ар бир үй-бүлө мүчөсүнүн аты-жөнүн айтып бериӊизчи. </string>
     <string name="hl3"> ТУУГАНЧЫЛЫГЫ </string>
     <string name="hl3t"> Айтыӊызчы, (аты-жөнү) (үй-бүлө башчысынын аты) менен тууганчылыгы кандай? </string>
+    <string name="hl3t1"> кандай байланышы бар </string>
+    <string name="hl3t2"> үй башчысы менен </string>
     <string name="hl301"> Глава </string>
     <string name="hl302"> Жубай / Өнөктөш </string>
     <string name="hl303"> Уулу /Кызы </string>
@@ -859,7 +861,7 @@
     <string name="bs4bq2301"> Ооба, менин жеке телефонум бар </string>
     <string name="bs4bq2302"> Ооба, мен үй-бүлө мүчөсүнүн телефонун колдоном </string>
     <string name="bs4bq2303"> Жок </string>
-    <string name="bs6q1m"> Эгерде 2 вариант болсо, телефон кайсы үй-бүлө мүчөсүнө таандык экенин жазыӊыз: </string>
+    <string name="bs6q1m"> үй-бүлө мүчөсүн белгиле </string>
     <string name="bs6q2"> Смартфонуӊузда Интернетке кирүү мүмкүнчүлүгү барбы? </string>
     <string name="bs4bq3101"> Ооба, көп убакытта </string>
     <string name="bs4bq3102"> Ооба, кээде менде Интернет байланышы бар, бирок байланыш начар </string>

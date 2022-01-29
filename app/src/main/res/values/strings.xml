@@ -282,6 +282,8 @@
     <string name="hl2t">First, please tell me the name of each person who usually lives here, starting with the head of the household.</string>
     <string name="hl3"> Relationship to head of household </string>
     <string name="hl3t"> What is the relationship of (name) to (name of the head of household) ? </string>
+    <string name="hl3t1"> What is the relationship of  </string>
+    <string name="hl3t2"> with the head of household </string>
     <string name="hl301"> Head </string>
     <string name="hl302"> Spouse / Partner </string>
     <string name="hl303"> Son / Daughter </string>
