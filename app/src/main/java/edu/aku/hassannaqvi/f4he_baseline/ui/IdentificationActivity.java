@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.f4he_baseline.ui;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.user;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -145,10 +147,23 @@ public class IdentificationActivity extends AppCompatActivity {
                 psuCode.add("...");
 
                 for (Villages v : villages) {
+                    if (user.getUserName().contains("user")) {
+                        // Only populate test clusters for test users
+                        if (MainApp.selectedPSU.charAt(0) == '9') {
+                            villageNames.add(v.getVillage());
+                            villageCodes.add(v.getVcode());
+                            psuCode.add(v.getPsucode());
+                        }
 
-                    villageNames.add(v.getVillage());
-                    villageCodes.add(v.getVcode());
-                    psuCode.add(v.getPsucode());
+                    } else {
+                        // Only populate actual clusters for actual users (NOT equals 9)
+                        if (MainApp.selectedPSU.charAt(0) != '9') {
+                            villageNames.add(v.getVillage());
+                            villageCodes.add(v.getVcode());
+                            psuCode.add(v.getPsucode());
+                        }
+                    }
+
 
                 }
 
@@ -210,7 +225,7 @@ public class IdentificationActivity extends AppCompatActivity {
     private void saveDraftForm() {
         MainApp.form = new Form();
 
-        MainApp.form.setUserName(MainApp.user.getUserName());
+        MainApp.form.setUserName(user.getUserName());
         MainApp.form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         MainApp.form.setDeviceId(MainApp.deviceid);
         MainApp.form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
