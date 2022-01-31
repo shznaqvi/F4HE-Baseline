@@ -149,7 +149,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 for (Villages v : villages) {
                     if (user.getUserName().contains("user")) {
                         // Only populate test clusters for test users
-                        if (MainApp.selectedPSU.charAt(0) == '9') {
+                        if (v.getPsucode().charAt(0) == '9') {
                             villageNames.add(v.getVillage());
                             villageCodes.add(v.getVcode());
                             psuCode.add(v.getPsucode());
@@ -157,7 +157,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
                     } else {
                         // Only populate actual clusters for actual users (NOT equals 9)
-                        if (MainApp.selectedPSU.charAt(0) == '9') {
+                        if (v.getPsucode().charAt(0) == '9') {
                             villageNames.add(v.getVillage());
                             villageCodes.add(v.getVcode());
                             psuCode.add(v.getPsucode());
