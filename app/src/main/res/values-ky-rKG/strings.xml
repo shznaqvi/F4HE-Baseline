@@ -535,8 +535,8 @@
     <string name="bs2q802"> Ден соолук жана экономикалык маселе катары кабыл алынган </string>
     <string name="bs2q803"> Тыюу салынган, атүгүл бир жыныстуу адамдардын арасында талкууланбайт </string>
     <string name="bs2q804"> Маалымдуулукту камсыз кылуу керек </string>
-    <string name="bs2q898"> Башка (жазыӊыз) </string>
-    <string name="bs2q896"> Билбейм </string>
+    <string name="bs2q898"> Билбейм </string>
+    <string name="bs2q896"> Башка (жазыӊыз)</string>
     <string name="bs3title"> Көрсөтмөлөр: Үй-бүлөнү пландаштыруу боюнча маалымат бергениӊиз үчүн чоӊ рахмат. Эми мен жыныстык жана репродуктивдүү ден соолук, жана сексуалдык укуктар, гендердик зомбулук боюнча сиздин пикириӊизди билгим келет. Кээ бир суроолор сиз үчүн кабыл алынбай калышы мүмкүн жана сиз аларга жооп бербөөгө укугуӊуз бар . </string>
     <string name="bs3q1"> Сиздин оюӊузча, эрте турмушка чыгуунун кесепети кандай болушу мүмкүн? </string>
     <string name="bs3q101"> Окууну токтотуу </string>
@@ -747,8 +747,8 @@
     <string name="bs4bq34"> ВПЧ-инфекциясы </string>
     <string name="bs4bq35"> Тамеки тартуу </string>
     <string name="bs4bq36"> Оралдык контрацептивдерди узак мөөнөттүү пайдалануу </string>
-    <string name="bs4bq398"> Башка </string>
-    <string name="bs4bq396"> Билбейм </string>
+    <string name="bs4bq398"> Билбейм</string>
+    <string name="bs4bq396"> Башка </string>
     <string name="bs4bq4"> Жатын моюнчасынын рагын белгилер пайда боло электе, б.а. алгачкы этаптарында, аныктоонун жолу барбы? </string>
     <string name="bs4bq41"> Ооба </string>
     <string name="bs4bq42"> Жок </string>
@@ -1746,8 +1746,8 @@
     <string name="es4q507"> Үй-бүлөнү пландаштыруу боюнча сүйлөшүүлөр </string>
     <string name="es4q508"> Үй-бүлөдөгү зомбулук </string>
     <string name="es4q509"> Сексуалдык зомбулук </string>
-    <string name="es4q596"> Билбейм </string>
-    <string name="es4q598"> Башка, жазыӊыз </string>
+    <string name="es4q596"> Башка, жазыӊыз</string>
+    <string name="es4q598"> Билбейм </string>
     <string name="es4q6"> Коомуӊуздагы сексуалдык жана гендердик зомбулуктун кеӊири таралган түрлөрүн аныктоого жардам бериӊизчи.</string>
     <string name="es4q601"> Сексуалдык асылуу (кыянаттык) </string>
     <string name="es4q602"> Мажбурлап эрте турмушка берүү </string>
@@ -2214,7 +2214,7 @@
     <string name="es1q9a"> Билим издөө? </string>
     <string name="es1q9aa"> Ооба </string>
     <string name="es1q9ab"> Жок </string>
-    <string name="es1q9b"> Earning / Job ? </string>
+    <string name="es1q9b"> Табыш / Жумуш? </string>
     <string name="es1q9ba"> Ооба </string>
     <string name="es1q9bb"> Жок </string>
     <string name="es1q9c"> саламаттыкты сактоо мүмкүнчүлүгү? </string>
