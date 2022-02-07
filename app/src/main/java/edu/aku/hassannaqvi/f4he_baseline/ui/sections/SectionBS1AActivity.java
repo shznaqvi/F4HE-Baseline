@@ -155,7 +155,8 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
         /*        //TODO: Need to Identify MWRA by ID
         if (familyMember.getHl6y().length() > 0 && mwra.getBs1q1().length() > 0) {
             if (Integer.parseInt(mwra.getBs1q1()) >= Integer.parseInt(familyMember.getHl6y())) {
@@ -178,5 +179,11 @@ public class SectionBS1AActivity extends AppCompatActivity {
             }
         }*/
         // replaced by (btnContinue) :         bi.bs1q6.setMaxvalue(Float.parseFloat(bi.bs1q3.getText().toString()));
+
+        // Condition applied on the instructions of Sir Imran
+        if (mwra.getBs1q4().length() > 0 && mwra.getBs1q3().length() > 0 && Integer.parseInt(mwra.getBs1q4()) > Integer.parseInt(mwra.getBs1q3())) {
+            return Validator.emptyCustomTextBox(this, bi.bs1q4, "Must Be Less Than BS1Q3");
+        }
+        return true;
     }
 }
