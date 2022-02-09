@@ -226,7 +226,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/info"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/as1q10t1" />

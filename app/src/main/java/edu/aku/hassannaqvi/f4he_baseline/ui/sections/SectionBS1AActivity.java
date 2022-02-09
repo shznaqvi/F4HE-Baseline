@@ -182,7 +182,7 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
         // Condition applied on the instructions of Sir Imran
         if (mwra.getBs1q4().length() > 0 && mwra.getBs1q3().length() > 0 && Integer.parseInt(mwra.getBs1q4()) > Integer.parseInt(mwra.getBs1q3())) {
-            return Validator.emptyCustomTextBox(this, bi.bs1q4, "Must Be Less Than BS1Q3");
+            return Validator.emptyCustomTextBox(this, bi.bs1q4, "Must be less than or equal to total pregnancies");
         }
         return true;
     }

@@ -303,8 +303,10 @@ public class DataUpWorkerALL extends Worker {
 
 
                     //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
+                    //wr.writeBytes(CipherSecure.encrypt(URLEncoder.encode(jsonParam.toString(), "utf-8")));
                     wr.writeBytes(CipherSecure.encrypt(jsonParam.toString()));
 
+                    //String writeEnc = CipherSecure.encrypt(URLEncoder.encode(jsonParam.toString(), "utf-8"));
                     String writeEnc = CipherSecure.encrypt(jsonParam.toString());
 
                     longInfo(writeEnc);
