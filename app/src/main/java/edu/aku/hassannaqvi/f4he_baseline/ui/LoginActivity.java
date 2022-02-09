@@ -439,6 +439,7 @@ public class LoginActivity extends AppCompatActivity {
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.setLocale(locale);
+        setTitle(R.string.app_name);
         config.setLayoutDirection(new Locale(lang, country));
         this.getResources().updateConfiguration(config, this.getResources().getDisplayMetrics());
 
