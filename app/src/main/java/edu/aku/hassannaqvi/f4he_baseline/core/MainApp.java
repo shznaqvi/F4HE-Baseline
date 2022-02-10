@@ -91,6 +91,7 @@ public class MainApp extends Application {
     public static List<Integer> adolListFemale;
     public static List<Integer> adolListAll;
     public static List<Integer> childOfSelectedMWRAList;
+    public static List<Integer> childList;
     public static List<FamilyMembers> fatherList;
     public static List<FamilyMembers> motherList;
     //public static FamilyMembers familyMember;

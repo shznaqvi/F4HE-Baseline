@@ -1,5 +1,10 @@
 package edu.aku.hassannaqvi.f4he_baseline.adapters;
 
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListFemale;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.adolListMale;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.childList;
+import static edu.aku.hassannaqvi.f4he_baseline.core.MainApp.mwraList;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
@@ -13,12 +18,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import edu.aku.hassannaqvi.f4he_baseline.R;
 import edu.aku.hassannaqvi.f4he_baseline.core.MainApp;
 import edu.aku.hassannaqvi.f4he_baseline.database.DatabaseHelper;
+import edu.aku.hassannaqvi.f4he_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.f4he_baseline.models.Form;
 
 /**
@@ -56,37 +63,46 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-/*        int childCount = 0;
-        childCount = db.getChildrenByUUID(fc.get(position).get_UID());
-        int photoChild = 0;
-        photoChild = db.getChildrenPhotoCheck(fc.get(position).get_UID());
-        int cardChild = 0;
-        cardChild = db.getChildrenCardCheck(fc.get(position).get_UID());*/
+        mwraList = new ArrayList<Integer>();
+        adolListFemale = new ArrayList<Integer>();
+        adolListMale = new ArrayList<Integer>();
+        childList = new ArrayList<Integer>();
 
-       /* int anthroStatus = 0;
-        anthroStatus = db.checkAnthro(fc.get(position).getUid());
-
-        int bloodStatus = 0;
-        bloodStatus = db.checkBlood(fc.get(position).getUid());
-
-        int stoolStatus = 0;
-        stoolStatus = db.checkStool(fc.get(position).getUid());
-
-        String motherName = "";
         try {
-            motherName = db.getWraName(fc.get(position).getUid());
+            MainApp.familyList = db.getMemberBYUID(fc.get(position).getUid());
+            for (FamilyMembers fm : MainApp.familyList) {
+
+                if (Integer.parseInt(fm.getHl6y()) < 5) {
+                    MainApp.childList.add(Integer.parseInt(fm.getHl1()));
+                    String motherSno = fm.getHl8(); // mother's line number from child
+                    if (!motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
+
+                        FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
+
+                        if (Integer.parseInt(mother.getHl6y()) < 50 && Integer.parseInt(mother.getHl6y()) >= 15) {
+                            MainApp.mwraList.add(Integer.parseInt(motherSno));
+                        }
+                    }
+                }
+
+                // Populate Adolescent
+                if (
+                        Integer.parseInt(fm.getHl6y()) >= 10 && Integer.parseInt(fm.getHl6y()) <= 19   // 10 - 19 year old
+                                && (fm.getHl7().equals("5") || fm.getHl7().equals("99"))
+
+                ) {
+                    // Male
+                    if (fm.getHl4().equals("1"))
+                        adolListMale.add(Integer.valueOf(fm.getHl1()));
+                    // Female
+                    if (fm.getHl4().equals("2"))
+                        adolListFemale.add(Integer.valueOf(fm.getHl1()));
+                }
+            }
         } catch (JSONException e) {
+            Toast.makeText(c, "JSONException (Family Members)" + e.getMessage(), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
-            Toast.makeText(c, "JSONException(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-
-        String childName = "";
-        try {
-            childName = db.getChildName(fc.get(position).getUid());
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(c, "JSONException(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }*/
 
         String iStatus = "Status  Unknown";
         int iColor = 0;
@@ -131,33 +147,13 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         holder.istatus.setText(iStatus);
         holder.fatherName.setText(fc.get(position).getAs1q09());
-      /*    holder.mwraCount.setText(anthroStatus == 2 ? "  Done   " : " Pending ");
-        holder.childCount.setText(bloodStatus == 2 ? "  Done   " : " Pending ");
-        holder.adolMaleCount.setText(stoolStatus == 2 ? "  Done   " : " Pending ");
-        holder.mwraCount.setTextColor(anthroStatus == 2 ? Color.GREEN : Color.RED);
-        holder.childCount.setTextColor(bloodStatus == 2 ? Color.GREEN : Color.RED);
-        holder.adolMaleCount.setTextColor(stoolStatus == 2 ? Color.GREEN : Color.RED);*/
+        holder.mwraCount.setText(mwraList.size() + "");
+        holder.childCount.setText(childList.size() + "");
+        holder.adolMaleCount.setText(adolListMale.size() + "");
+        holder.adolFemaleCount.setText(adolListFemale.size() + "");
 
         holder.sysdate.setText(fc.get(position).getSysDate());
         holder.istatus.setTextColor(iColor);
-
-
-      /*  holder.itemView.setOnClickListener(v -> {
-            // Get the current state of the item
-
-            MainApp.form = fc.get(position);
-            //MainApp.households.setVisitNo(String.valueOf(Integer.parseInt(MainApp.households.getVisitNo())+1));
-            if (!MainApp.form.getiStatus().equals("1")) {
-
-                editHousehold(position);
-
-            } else {
-                Toast.makeText(c, "This households has been locked. You cannot edit household for locked households", Toast.LENGTH_LONG).show();
-            }
-
-
-        });
-*/
     }
 
 
