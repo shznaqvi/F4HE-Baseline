@@ -47,6 +47,9 @@ public class FormsReportCluster extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         bi.fcRecyclerView.setLayoutManager(layoutManager);
         bi.clusterFilter.setVisibility(View.VISIBLE);
+        setTitle("Forms By Cluster");
+        bi.toolbar.setSubtitle("Please enter a Cluster No. to search forms");
+//        app:subtitle="Please enter a ebCode to search forms"
         db = MainApp.appInfo.dbHelper;
         fc = db.getFormsByCluster("0000000");
 

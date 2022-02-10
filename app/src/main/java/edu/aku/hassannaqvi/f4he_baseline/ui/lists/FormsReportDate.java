@@ -45,6 +45,8 @@ public class FormsReportDate extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         bi.fcRecyclerView.setLayoutManager(layoutManager);
         bi.dtFilter.setVisibility(View.VISIBLE);
+        setTitle("Forms By Date");
+        bi.toolbar.setSubtitle("Please enter a Form Date to search forms");
         db = MainApp.appInfo.dbHelper;
         fc = db.getTodayForms(sysdateToday);
 
