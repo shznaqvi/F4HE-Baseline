@@ -877,7 +877,7 @@
     <string name="bs7q3"> Баланын атасы барбы? </string>
     <string name="bs4bq301"> Бойго жеткен ата </string>
     <string name="bs4bq302"> Өспүрүм ата </string>
-    <string name="bs4bq303"> Өспүрүм ата </string>
+    <string name="bs4bq303"> Атасы каза болгон/Колдонулбайт </string>
     <string name="bs7q4title"> (Үй-бүлөлүк тизмедеги бойго жеткен атасынын аты) төмөнкүлөргө катышабы: </string>
     <string name="bs7q4a"> Жубайыӊызды/өнөктөшүӊүздү эмчек эмизүү жана кошумча тамактандыруу суроолорунда колдоого </string>
     <string name="bs7q4a1"> Ооба </string>

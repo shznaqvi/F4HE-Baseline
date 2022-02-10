@@ -854,7 +854,7 @@
     <string name="bs7q3"> Имеет ли ребенок отца? </string>
     <string name="bs4bq301"> Взрослый отец </string>
     <string name="bs4bq302"> Отец-подросток </string>
-    <string name="bs4bq303"> Отец-подросток </string>
+    <string name="bs4bq303"> Отец умер/не применимо </string>
     <string name="bs7q4title"> Принимает ли (имя взрослого отца из списка домохозяйства) участие в: </string>
     <string name="bs7q4a"> Поддержке супруга/партнера в вопросах исключительно грудного вскармливания и дополнительного питания </string>
     <string name="bs7q4a1"> Да </string>
