@@ -118,10 +118,13 @@ public class SectionBS1AActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (bi.bs1con1.isChecked()) {
-            // Before Validation: Set min Age at marriage
-            if (!bi.bs1q1.getText().toString().equals(""))
-                bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
 
+            // REMOVED AGE AT FIRST PREGNANCY CHECK FOR Kyrgyzistan only.
+            // Before Validation: Set min Age at marriage
+            if (MainApp.form.getAs1q01().equals("5")) {
+                if (!bi.bs1q1.getText().toString().equals(""))
+                    bi.bs1q5.setMinvalue(Float.parseFloat(bi.bs1q1.getText().toString()));
+            }
             // Before Validation: Set max number of pregnancies in last 5 years
             if (!bi.bs1q3.getText().equals(""))
                 bi.bs1q6.setMaxvalue(Float.parseFloat(bi.bs1q3.getText().toString()));
