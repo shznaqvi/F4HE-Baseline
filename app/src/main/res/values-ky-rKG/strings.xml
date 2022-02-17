@@ -1,9 +1,9 @@
 <resources>
 
-    <string name="app_name"> F4HE-базавӣ </string>
+    <string name="app_name"> F4HE-Базалык </string>
     <string name="splashText"> </string>
-    <string name="btnDownload"> Зеркашии маълумот </string>
-    <string name="btnUpload"> Маълумотро бор кунед </string>
+    <string name="btnDownload"> Маалыматтарды жүктөө </string>
+    <string name="btnUpload"> Дайындарды жүктөө </string>
     <string name="prompt_email"> Почтаи электронӣ </string>
     <string name="prompt_password"> Рамз </string>
     <string name="action_sign_in"> Даромадан </string>
@@ -21,19 +21,19 @@
     <string name="btnSave"> Сактоо </string>
     <string name="btnEnd"> Жокко чыгаруу </string>
     <string name="signin"> ДАРОМАД </string>
-    <string name="username"> Номи корбар </string>
-    <string name="password"> Рамз </string>
+    <string name="username"> Колдонуучунун аты </string>
+    <string name="password"> Купуя сөз </string>
     <string name="country"> Забон (Барои тағир додан клик кунед) </string>
     <string name="pakistan"> Покистон </string>
     <string name="tajikistan"> Точикистон </string>
-    <string name="btnLogin"> Даромадан </string>
+    <string name="btnLogin"> Маалыматтарды жүктөө </string>
     <string name="btnDownloadData"> Зеркашии маълумот </string>
     <string name="cs_MAexist"> шояд аллакай вуҷуд дошта бошад </string>
     <string name="netwrok"> Пайвасти шабака дастрас нест! </string>
     <string name="invalidpass"> Парол номувофиқ аст </string>
     <string name="unameRequired"> Номи корбар лозим аст </string>
     <string name="incorrcetPass"> Рамзи нодуруст </string>
-    <string name="downData"> Зеркашии маълумот </string>
+    <string name="downData"> Маалыматтарды жүктөө </string>
     <string name="permission"> Иҷозатномаҳо лозиманд </string>
     <string name="warning"> Огоҳӣ </string>
     <string name="newApp"> Замимаи нав зеркашӣ карда шуд !! </string>
@@ -51,7 +51,7 @@
     <string name="oldAppMsg"> Vers App." + " ҳоло дастрас аст. Шумо ҳоло Вери кӯҳнаро истифода мебаред." </string>
     <string name="installNewApp"> Барои истифодаи ин барнома версияи навро насб кунед </string>
     <string name="install"> Насб кунед </string>
-    <string name="cancel"> Бекор кардан </string>
+    <string name="cancel"> Жокко чыгаруу </string>
     <string name="complete"> пурра </string>
     <string name="updatingError"> Хатогӣ дар навсозии db!! </string>
     <string name="updateDbError1"> Бубахшед. Шумо дигар рафта наметавонед. </string>
@@ -118,7 +118,7 @@
     <string name="invalid_password"> Парол номувофиқ аст </string>
     <string name="username_required"> Номи корбар лозим аст. </string>
     <string name="incorrect_username_or_password"> Парол ва ё Номи корбар номувофиқ аст </string>
-    <string name="open_hh_form"> Шакли кушодаи хонавода </string>
+    <string name="open_hh_form"> Ачык үй чарба формасы </string>
     <string name="open_anhtro_form"> Формаи қаду вазнро кушоед </string>
     <string name="info_hh_form_not_exist"> INFO: Маълумот дар бораи хонавода вуҷуд надорад. </string>
     <string name="hh_not_found"> Хонавода ёфт нашуд </string>
@@ -128,7 +128,7 @@
     <string name="open_new_form"> ФАКЛИ НАВ КУШОДА </string>
     <string name="options"> Имконот </string>
     <string name="start_interview"> МАЕК БАШТА </string>
-    <string name="start_data_entry"> Воридкунии маълумотро оғоз кунед </string>
+    <string name="start_data_entry"> МААЛЫМАТТАРДЫ ЖАЗУУНУ БАШТАЙТ </string>
 
 
     <string name="fm">ҮЙ-БҮЛӨ МҮЧӨЛӨРҮ</string>
@@ -138,6 +138,7 @@
     <string name="search">Издөө</string>
     <string name="mScreen">НЕГИЗГИ ЭКРАН</string>
     <string name="dataSync">DATA SYNC</string>
+    <string name="selectIndMother">Индекстелген апаны тандаңыз</string>
 
     <string name="naForage10"> 10 жашка чейинки балдар үчүн колдонулбайт </string>
     <string name="bs3q14"> Сиздин оюӊузча, кыздар менен аялдар чечим чыгарууга жана жумушта иштөөгө бирдей укукка ээ болушу керекпи? </string>
@@ -247,7 +248,7 @@
     <string name="hl3t"> Айтыӊызчы, (аты-жөнү) (үй-бүлө башчысынын аты) менен тууганчылыгы кандай? </string>
     <string name="hl3t1"> кандай байланышы бар </string>
     <string name="hl3t2"> үй башчысы менен </string>
-    <string name="hl301"> Глава </string>
+    <string name="hl301"> Баш </string>
     <string name="hl302"> Жубай / Өнөктөш </string>
     <string name="hl303"> Уулу /Кызы </string>
     <string name="hl304"> Күйөө баласы/Келини </string>
