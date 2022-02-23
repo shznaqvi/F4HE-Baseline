@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -300,16 +301,13 @@ public class DataUpWorkerALL extends Worker {
                     Log.d(TAG, "Upload Begins: " + jsonParam);
                     longInfo(String.valueOf(jsonParam));
 
-
+                    wr.writeBytes(CipherSecure.encrypt(URLEncoder.encode(jsonParam.toString(), "utf-8")));
                     //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
-                    //wr.writeBytes(CipherSecure.encrypt(URLEncoder.encode(jsonParam.toString(), "utf-8")));
-                    wr.writeBytes(CipherSecure.encrypt(jsonParam.toString()));
+                    wr.writeBytes(jsonParam.toString().replace("\uFEFF", "") + "\n");
 
-                    //String writeEnc = CipherSecure.encrypt(URLEncoder.encode(jsonParam.toString(), "utf-8"));
-                    String writeEnc = CipherSecure.encrypt(jsonParam.toString());
+                    String writeEnc = CipherSecure.encrypt(URLEncoder.encode(jsonParam.toString(), "utf-8"));
 
                     longInfo(writeEnc);
-
                     //     wr.writeBytes(jsonParam.toString());
                     wr.flush();
                     wr.close();
