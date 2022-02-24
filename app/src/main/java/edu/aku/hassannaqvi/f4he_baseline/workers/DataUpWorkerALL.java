@@ -27,6 +27,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -38,6 +40,9 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateNotYetValidException;
 import java.security.cert.X509Certificate;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -301,9 +306,9 @@ public class DataUpWorkerALL extends Worker {
                     Log.d(TAG, "Upload Begins: " + jsonParam);
                     longInfo(String.valueOf(jsonParam));
 
-                    wr.writeBytes(CipherSecure.encrypt(URLEncoder.encode(jsonParam.toString(), "utf-8")));
-                    //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
-                    wr.writeBytes(jsonParam.toString().replace("\uFEFF", "") + "\n");
+                    wr.writeBytes(CipherSecure.encrypt(jsonParam.toString()));
+                    //wr.writeBytes(jsonParam.toString().replace("\uFEFF", "") + "\n");
+                    // wr.writeBytes(jsonParam.toString().replace("\uFEFF", "") + "\n");
 
                     String writeEnc = CipherSecure.encrypt(URLEncoder.encode(jsonParam.toString(), "utf-8"));
 
@@ -359,7 +364,7 @@ public class DataUpWorkerALL extends Worker {
                         .build();
                 return Result.failure(data);
 
-            } catch (IOException | JSONException e) {
+            } catch (IOException | JSONException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException | InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
                 Log.d(TAG, "doWork (IO Error): " + e.getMessage());
                 displayNotification(nTitle, "IO Error: " + e.getMessage());
                 data = new Data.Builder()
@@ -370,11 +375,23 @@ public class DataUpWorkerALL extends Worker {
                 return Result.failure(data);
 
             } finally {
-    //            urlConnection.disconnect();
+                //            urlConnection.disconnect();
             }
+        try {
             result = new StringBuilder(CipherSecure.decrypt(result.toString()));
+        } catch (NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException | InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
+            e.printStackTrace();
+            Log.d(TAG, "doWork (Encryption Error): " + e.getMessage());
+            displayNotification(nTitle, "Encryption Error: " + e.getMessage());
+            data = new Data.Builder()
+                    .putString("error", String.valueOf(e.getMessage()))
+                    .putInt("position", this.position)
+                    .build();
 
-            //Do something with the JSON string
+            return Result.failure(data);
+        }
+
+        //Do something with the JSON string
             if (result != null) {
                 displayNotification(nTitle, "Starting Data Processing");
 
